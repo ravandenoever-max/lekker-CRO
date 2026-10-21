@@ -68,17 +68,12 @@
     --lp-accent: var(--color-red);
     background: var(--color-white);
   }
-  body:has(.lp-hero) .color-black,
-  body:has(.lp-hero) main h1,
-  body:has(.lp-hero) main h2,
-  body:has(.lp-hero) main h3,
-  body:has(.lp-hero) main p,
-  body:has(.lp-hero) main li { color: var(--lp-ink); }
-  body:has(.lp-hero) main .color-white,
-  body:has(.lp-hero) main .color-white * { color: var(--color-white); }
-  body:has(.lp-hero) main .color-red { color: var(--color-red); }
-  body:has(.lp-hero) main .theme-button,
-  body:has(.lp-hero) main .theme-button * { color: inherit; }
+  body:has(.lp-hero) main :is(h1, h2, h3, h4, h5, h6, p, li, span, blockquote, strong, em, .color-black) { color: var(--lp-ink) !important; }
+  body:has(.lp-hero) main :is(.color-red, .color-red *, .lp-stars, .lp-star, .lp-check) { color: var(--color-red) !important; }
+  body:has(.lp-hero) main :is(.color-white, .color-white *, .lp-picker__badge) { color: var(--color-white) !important; }
+  body:has(.lp-hero) main .lp-star--empty { color: var(--color-lgrey) !important; }
+  body:has(.lp-hero) main .theme-button :is(span, strong, em) { color: inherit !important; }
+  body:has(.lp-hero) main [id] { scroll-margin-top: calc(var(--theme-header-height) + 20px); }
 
   .lp-hero__grid { display: grid; gap: var(--spacing-xs); align-items: center; }
   .lp-hero__media { order: 0; }

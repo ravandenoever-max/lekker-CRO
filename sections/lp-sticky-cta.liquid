@@ -32,6 +32,9 @@
   .lp-sticky__inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .lp-sticky__text { margin: 0; display: flex; flex-direction: column; line-height: 1.3; }
   .lp-sticky .theme-button { white-space: nowrap; }
+  @media screen and (max-width: 767px) {
+    body:has(.cky-btn-revisit-wrapper) .lp-sticky__inner { padding-left: 56px; }
+  }
 </style>
 
 <script>
