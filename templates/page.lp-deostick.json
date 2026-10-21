@@ -1,0 +1,668 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "lp-hero",
+      "blocks": {
+        "usp1": {
+          "type": "usp",
+          "settings": {
+            "text": "binnen twee werkdagen bezorgd"
+          }
+        },
+        "usp2": {
+          "type": "usp",
+          "settings": {
+            "text": "gratis verzending vanaf €25"
+          }
+        },
+        "usp3": {
+          "type": "usp",
+          "settings": {
+            "text": "ook in navulbare versie"
+          }
+        }
+      },
+      "block_order": [
+        "usp1",
+        "usp2",
+        "usp3"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "white",
+        "ink_color": "#215732",
+        "image": "shopify://shop_images/The_Lekker_Company_deo_sticks_-_Claudia_Rison___The_Originals_Photography-04311.jpg",
+        "rating_text": "4,7 uit 5 op Trustpilot, uit 432 reviews",
+        "heading": "een miljoen oksels gingen je voor",
+        "text": "<p>Natuurlijke deo stick met ingrediënten van 100% natuurlijke oorsprong. Zonder aluminiumzouten, de bekende boosdoener achter gele vlekken. Glijdt soepel, zonder plakkerig gevoel.</p>",
+        "price_product": "deodorant-stick-be-active",
+        "price_prefix": "deo stick vanaf",
+        "button_label": "kies jouw geur",
+        "button_link": "#kies",
+        "button_size": "button_large",
+        "button_color": "button_red",
+        "button_target": false,
+        "link_label": "of vind 'm in de winkel",
+        "link_url": "#winkels"
+      }
+    },
+    "voordelen": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "v1": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/1_50429431-efb9-4a36-89ad-b2e46aa6229c.png",
+            "predefined_image": "usp-plant",
+            "heading": "100% natuurlijke oorsprong"
+          }
+        },
+        "v2": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/2_8549df63-ccd5-4551-8914-2ee70f398b3c.png",
+            "predefined_image": "usp-effective",
+            "heading": "helpt zweetgeur neutraliseren"
+          }
+        },
+        "v3": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/4_160680ed-6d8c-44d5-8641-0e6ffb7ae197.png",
+            "predefined_image": "usp-sustainable",
+            "heading": "karton, mag bij het oud papier"
+          }
+        },
+        "v4": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/webshop_icoontjes.png",
+            "predefined_image": "usp-certified",
+            "heading": "b corp gecertificeerd"
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "xs",
+        "section_background_color": "white",
+        "page_width": "page-width",
+        "item_width_mobile": 200,
+        "item_width_desktop": 300,
+        "item_ratio": "10/6",
+        "grid_size_on_mobile": 2,
+        "show_intro": false,
+        "intro_heading": "",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "lg",
+        "heading_font_color": "red",
+        "text_font_color": "red",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": false,
+        "use_carousel_device": "mobile",
+        "use_carousel_auto_scroll": false,
+        "use_carousel_arrows": false,
+        "use_carousel_manual_scroll": false,
+        "item_font_color": "red",
+        "use_carousel_speed": "20"
+      }
+    },
+    "kies": {
+      "type": "lp-product-picker",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "anchor_id": "kies",
+        "heading": "kies jouw geur",
+        "intro": "<p>Twijfel je tussen de geuren? Met de combideal probeer je ze alle drie.</p>",
+        "products": [
+          "deodorant-stick-be-active",
+          "deodorant-stick-feel-floral",
+          "deodorant-stick-have-fun",
+          "combi-deal-deodorant-stick-mix"
+        ],
+        "products_per_row": "4",
+        "badges": "deodorant-stick-be-active|meest gekozen\ncombi-deal-deodorant-stick-mix|alle drie proberen",
+        "footnote": "<p>Vanaf €25 verzenden we gratis. Binnen twee werkdagen bezorgd.</p>"
+      }
+    },
+    "eerste_week_intro": {
+      "type": "theme-section__text",
+      "blocks": {
+        "intro": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "eerlijk: de eerste week is even wennen",
+            "block_content": "<p>Stap je over van een antitranspirant? Dan moeten je oksels even wennen. Weet je wat er gebeurt, dan hou je het makkelijker vol.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false
+          }
+        }
+      },
+      "block_order": [
+        "intro"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "eerste_week_stappen": {
+      "type": "theme-section__text",
+      "blocks": {
+        "stap1": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "dag 1 tot 3",
+            "block_content": "<p><strong>Je zweet misschien wat meer.</strong> Je oksels wennen eraan dat ze niet meer worden dichtgezet. Dat is normaal. Smeer één keer per dag op een schone, droge huid.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "normal",
+            "button_show": false
+          }
+        },
+        "stap2": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "dag 4 tot 10",
+            "block_content": "<p><strong>Je lichaam vindt zijn balans.</strong> Ruik je tussendoor iets? Was je oksels met water en breng opnieuw aan. Val niet terug op je oude deo, anders begin je weer opnieuw.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "normal",
+            "button_show": false
+          }
+        },
+        "stap3": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "na een week of twee",
+            "block_content": "<p><strong>Gewend.</strong> Voor de meeste mensen is het wennen dan voorbij. Vanaf nu is het gewoon smeren en gaan.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "normal",
+            "button_show": true,
+            "button_label": "ik probeer het",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "#kies",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "stap1",
+        "stap2",
+        "stap3"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "3",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "uitlegvideo": {
+      "type": "theme-section__visual",
+      "disabled": true,
+      "blocks": {
+        "video": {
+          "type": "visual_slide",
+          "settings": {
+            "textbox_show": false,
+            "font_color": "white",
+            "sub_heading": "",
+            "heading": "",
+            "text": "",
+            "video_show": true,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "9:16",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "9:16",
+            "video_autoplay": false,
+            "video_show_controls": true,
+            "button_show": false
+          }
+        }
+      },
+      "block_order": [
+        "video"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "medium",
+        "section_image_rounded_corners": "sm",
+        "use_animations": false
+      }
+    },
+    "reviews": {
+      "type": "lp-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Eindelijk geen gele okselvlekken meer in mijn T-shirts!",
+            "name": "Ben",
+            "product": "deo stick be active"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Ik ben al een tijdje aan het experimenteren met natuurlijke deodoranten en deze is veruit de beste!",
+            "name": "Julia",
+            "product": "deo stick feel floral"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Echt fijne deo, smeert goed en werkt fantastisch. Geen irritatie. Lekkere geur, niet te overheersend.",
+            "name": "Katrien",
+            "product": "deo stick have fun"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Wil niet meer zonder. In de ochtend smeren en verder geen omkijken meer naar.",
+            "name": "Manon",
+            "product": "deo stick be active"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lblue",
+        "anchor_id": "reviews",
+        "heading": "wat anderen ervan vinden",
+        "summary": "gemiddeld 4,7 uit 5"
+      }
+    },
+    "winkels_intro": {
+      "type": "theme-section__text",
+      "blocks": {
+        "intro": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "liever eerst even ruiken?",
+            "block_content": "<p>De deo stick ligt ook bij onder meer Albert Heijn, Etos, Holland & Barrett en DA. Niet elke winkel heeft alle geuren, dus kijk even op hun site.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "button_show": false
+          }
+        }
+      },
+      "block_order": [
+        "intro"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "winkels": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "ah": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.ah.nl/producten/merk/the-lekker-company",
+            "column_custom_image": "shopify://shop_images/ah.png",
+            "predefined_image": "usp-plant",
+            "heading": "Albert Heijn"
+          }
+        },
+        "etos": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.etos.nl/search/?prefn1=sortOfProduct&prefv1=Deodorant&q=lekker",
+            "column_custom_image": "shopify://shop_images/4png.png",
+            "predefined_image": "usp-plant",
+            "heading": "Etos"
+          }
+        },
+        "hb": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.hollandandbarrett.nl/shop/brands/the-lekker-company/",
+            "column_custom_image": "shopify://shop_images/7.png",
+            "predefined_image": "usp-plant",
+            "heading": "Holland&Barrett"
+          }
+        },
+        "da": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.da.nl/merken/the-lekker-company",
+            "column_custom_image": "shopify://shop_images/5.png",
+            "predefined_image": "usp-plant",
+            "heading": "DA drogist"
+          }
+        }
+      },
+      "block_order": [
+        "ah",
+        "etos",
+        "hb",
+        "da"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "page_width": "page-width",
+        "item_width_mobile": 200,
+        "item_width_desktop": 300,
+        "item_ratio": "15/10",
+        "grid_size_on_mobile": 2,
+        "show_intro": false,
+        "intro_heading": "",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": false,
+        "use_carousel_device": "mobile",
+        "use_carousel_auto_scroll": false,
+        "use_carousel_arrows": false,
+        "use_carousel_manual_scroll": false,
+        "item_font_color": "black",
+        "use_carousel_speed": "20"
+      }
+    },
+    "shop_of_winkel": {
+      "type": "theme-section__text",
+      "blocks": {
+        "shop": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "in onze eigen shop",
+            "block_content": "<ul><li>Alle geuren op één plek</li><li>Combideals die alleen hier bestaan</li><li>Ook producten die niet in de winkel liggen, zoals onze body wash</li><li>Binnen twee werkdagen bezorgd, vanaf €25 gratis</li></ul>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "manual",
+            "block_text_list_style": "bullet",
+            "button_show": true,
+            "button_label": "kies jouw geur",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "#kies",
+            "button_target": false
+          }
+        },
+        "winkel": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "in de winkel",
+            "block_content": "<ul><li>Handig als je hem vandaag nog wilt</li><li>Even ruiken voordat je kiest</li><li>Niet elke winkel heeft alle geuren</li></ul>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "manual",
+            "block_text_list_style": "bullet",
+            "button_show": true,
+            "button_label": "alle verkooppunten",
+            "button_size": "button_small",
+            "button_color": "button_hover_red",
+            "button_link": "/pages/verkooppunten",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "shop",
+        "winkel"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "navulbaar": {
+      "type": "theme-section__text",
+      "blocks": {
+        "tekst": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "ook in navulbare versie",
+            "block_content": "<p>Koop de houder één keer, daarna vul je alleen bij. De houder is van gerecycled plastic, de navullingen zitten in karton. Zo heb je minder afval.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "button_show": true,
+            "button_label": "bekijk de navulbare deo",
+            "button_size": "button_small",
+            "button_color": "button_hover_red",
+            "button_link": "/collections/refill-deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "tekst"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "faq": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "q1": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe werkt een natuurlijke deo?",
+            "faq_section_qa_a": "<p>Een antitranspirant zet je zweetklieren dicht. Onze deo doet dat niet: je zweet gewoon, en de deo helpt zweetgeur neutraliseren. Zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe lang duurt het wennen?",
+            "faq_section_qa_a": "<p>Voor de meeste mensen een week of twee. In die tijd kun je wat meer zweten of sneller iets ruiken. Blijf één keer per dag smeren op een schone huid en val niet terug op je oude deo.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Krijg ik gele vlekken in mijn kleding?",
+            "faq_section_qa_a": "<p>Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Ik heb een gevoelige huid, kan ik dit gebruiken?",
+            "faq_section_qa_a": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Waarom hier bestellen als het ook in de winkel ligt?",
+            "faq_section_qa_a": "<p>Hier vind je alle geuren, de combideals en producten die niet in de winkel liggen, zoals onze body wash. En je bestelling wordt binnen twee werkdagen bezorgd.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Wanneer krijg ik mijn bestelling?",
+            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Vanaf €25 verzenden we gratis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": true,
+        "intro_heading": "vragen die we vaak krijgen",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "30",
+        "max_content_width": "50"
+      }
+    },
+    "vaste_balk": {
+      "type": "lp-sticky-cta",
+      "settings": {
+        "label": "natuurlijke deo stick",
+        "price_product": "deodorant-stick-be-active",
+        "price_prefix": "vanaf",
+        "button_label": "kies jouw geur",
+        "button_link": "#kies",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_target": false,
+        "hide_on_anchor": "kies"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "voordelen",
+    "kies",
+    "eerste_week_intro",
+    "eerste_week_stappen",
+    "uitlegvideo",
+    "reviews",
+    "winkels_intro",
+    "winkels",
+    "shop_of_winkel",
+    "navulbaar",
+    "faq",
+    "vaste_balk"
+  ]
+}

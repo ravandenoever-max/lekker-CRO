@@ -1,0 +1,97 @@
+{%- comment -%}
+  Landingspagina: productkeuze. Je kiest in de theme editor zelf welke producten
+  erop komen en in welke volgorde. Gebruikt de bestaande productkaart van het thema
+  (snippets/product-card.liquid), dus met prijs, reviewsterren en koopknop.
+  Toegevoegd oktober 2026, CRO-project.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign spacing = 'padding-t-' | append: s.row_spacing_inner_top | append: ' padding-b-' | append: s.row_spacing_inner_bottom
+  assign per_row = s.products_per_row | plus: 0
+  if s.products.count < per_row
+    assign per_row = s.products.count
+  endif
+-%}
+
+<div class="section-inner lp-picker bg-{{ s.section_background_color }} {{ spacing }}" id="{{ s.anchor_id | default: 'kies' | handleize }}">
+  {%- if s.heading != blank or s.intro != blank -%}
+    <div class="page-width">
+      <div class="txt-align-center margin-b-xs">
+        {%- if s.heading != blank -%}
+          <h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>
+        {%- endif -%}
+        {%- if s.intro != blank -%}
+          <div class="lp-picker__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if s.products.count > 0 -%}
+    <div class="page-width">
+      <div class="elements-layout__grid product-card-size__std">
+        <div class="js-elements__wrapper elements__items-list element-row__{{ per_row }} lp-picker__grid">
+          {%- for this_product in s.products -%}
+            <div class="grid__item nomargin grid__item-{{ forloop.index }}" id="product-{{ this_product.variants.first.id }}">
+              {%- if s.badges != blank -%}
+                {%- assign badge_lines = s.badges | newline_to_br | split: '<br />' -%}
+                {%- for line in badge_lines -%}
+                  {%- assign parts = line | strip | split: '|' -%}
+                  {%- assign badge_handle = parts[0] | strip -%}
+                  {%- if badge_handle == this_product.handle and parts[1] != blank -%}
+                    <span class="lp-picker__badge font-size-3xs">{{ parts[1] | strip }}</span>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+              {%- render 'product-card', product_card_product: this_product, chosen_product_card_layout: 'std', button_size: 'small', product_card_color: 'white', animate_classname: 'no-animation', animate_waypoints: false -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if s.footnote != blank -%}
+    <div class="page-width">
+      <div class="lp-picker__footnote txt-align-center font-size-xxs margin-t-xs">{{ s.footnote }}</div>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  .lp-picker .grid__item { position: relative; }
+  .lp-picker__badge {
+    position: absolute; z-index: 5; top: 10px; left: 10px;
+    padding: 4px 10px; border-radius: 800px;
+    background: var(--color-red); color: var(--color-white);
+    text-transform: lowercase;
+  }
+  .lp-picker__intro p, .lp-picker__footnote p { margin: 0; }
+  @media screen and (max-width: 767px) {
+    .lp-picker .elements__items-list.lp-picker__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xxs); }
+    .lp-picker .lp-picker__grid > .grid__item { width: auto; max-width: none; margin: 0; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "LP productkeuze",
+  "tag": "section",
+  "class": "lp-section lp-picker-section",
+  "settings": [
+    { "type": "header", "content": "Layout" },
+    { "type": "select", "id": "row_spacing_inner_top", "default": "md", "label": "Spacing Top", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
+    { "type": "select", "id": "row_spacing_inner_bottom", "default": "md", "label": "Spacing Bottom", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
+    { "type": "select", "id": "section_background_color", "default": "white", "label": "Background Color", "options": [ { "value": "white", "label": "White" }, { "value": "lblue", "label": "Light Blue" }, { "value": "trans", "label": "Transparent" } ] },
+    { "type": "text", "id": "anchor_id", "label": "Anker (voor links als #kies)", "default": "kies" },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "heading", "label": "Kop", "default": "kies jouw geur" },
+    { "type": "richtext", "id": "intro", "label": "Intro" },
+    { "type": "product_list", "id": "products", "label": "Producten (volgorde = volgorde op de pagina)", "limit": 12 },
+    { "type": "select", "id": "products_per_row", "default": "4", "label": "Producten per rij (desktop)", "options": [ { "value": "3", "label": "3" }, { "value": "4", "label": "4" } ] },
+    { "type": "textarea", "id": "badges", "label": "Labels op kaarten", "info": "Eén per regel: product-handle|label. Bijvoorbeeld: deodorant-stick-be-active|meest gekozen" },
+    { "type": "richtext", "id": "footnote", "label": "Tekst onder de producten" }
+  ],
+  "presets": [ { "name": "LP productkeuze" } ]
+}
+{% endschema %}
