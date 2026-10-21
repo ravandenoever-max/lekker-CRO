@@ -37,7 +37,8 @@
           {%- if s.offer_text != blank -%}<div class="lp-offer__text font-size-xxs">{{ s.offer_text }}</div>{%- endif -%}
           <p class="lp-offer__price">
             <span class="font-fam-bold font-size-lg">{{ offer.price | money }}</span>
-            {%- if s.offer_compare != blank -%} <span class="lp-offer__compare font-size-xxs">{{ s.offer_compare }}</span>{%- endif -%}
+            {%- if s.offer_compare != blank -%} <s class="lp-offer__compare font-size-xxs">{{ s.offer_compare }}</s>{%- endif -%}
+            {%- if s.offer_saving != blank -%} <span class="lp-offer__saving font-size-3xs">{{ s.offer_saving }}</span>{%- endif -%}
           </p>
           {%- if s.offer_shipping != blank -%}<p class="lp-offer__shipping font-size-xxs"><span class="lp-check" aria-hidden="true">&#10003;</span> {{ s.offer_shipping }}</p>{%- endif -%}
           <div class="lp-offer__button">
@@ -101,16 +102,17 @@
   .lp-offer__text p { margin: 0; }
   .lp-offer__price { margin: var(--spacing-4xs) 0 2px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
   .lp-offer__compare { opacity: .75; }
+  .lp-offer__saving { background: var(--color-yellow); padding: 3px 10px; border-radius: 800px; text-transform: lowercase; }
   .lp-offer__shipping { margin: 0 0 var(--spacing-3xs); }
   .lp-offer__button .theme-button { display: block; width: 100%; }
-  .lp-offer__alt { display: inline-block; margin-top: 10px; text-decoration: underline; text-underline-offset: 3px; }
+  .lp-offer__alt { display: inline-block; margin-top: 14px; text-decoration: underline; text-underline-offset: 3px; }
 
   @media screen and (max-width: 767px) {
     .lp-offer { grid-template-columns: 38% 1fr; align-items: center; gap: 12px; padding: 12px; }
     .lp-offer__badge { top: 8px; left: 8px; }
     .lp-offer__img { border-radius: 10px; }
     .lp-offer__button { grid-column: 1 / -1; }
-    .lp-offer__alt { grid-column: 1 / -1; margin-top: 0; text-align: center; }
+    .lp-offer__alt { grid-column: 1 / -1; margin-top: 4px; text-align: center; }
   }
   @media screen and (min-width: 768px) and (max-width: 991px) {
     .lp-offer { grid-template-columns: 42% 1fr; align-items: center; }
@@ -119,7 +121,7 @@
     .lp-hero__grid { grid-template-columns: 1.05fr 1fr; grid-template-areas: 'head offer' 'extras offer'; gap: var(--spacing-xxs) var(--spacing-md); align-items: start; }
     .lp-offer { grid-template-columns: 40% 1fr; align-items: center; gap: var(--spacing-xxs); padding: var(--spacing-xxs); align-self: center; }
     .lp-offer__button { grid-column: 1 / -1; }
-    .lp-offer__alt { grid-column: 1 / -1; margin-top: 0; text-align: center; }
+    .lp-offer__alt { grid-column: 1 / -1; margin-top: 4px; text-align: center; }
   }
 </style>
 
@@ -163,6 +165,7 @@
     { "type": "text", "id": "offer_title", "label": "Titel (leeg = productnaam)" },
     { "type": "richtext", "id": "offer_text", "label": "Omschrijving" },
     { "type": "text", "id": "offer_compare", "label": "Tekst naast de prijs", "default": "los €24,87" },
+    { "type": "text", "id": "offer_saving", "label": "Besparing (geel label)", "default": "je bespaart €4,85" },
     { "type": "text", "id": "offer_shipping", "label": "Bezorgregel", "default": "gratis thuisbezorgd, binnen twee werkdagen" },
     { "type": "text", "id": "offer_button", "label": "Knoptekst", "default": "in winkelwagen" },
     { "type": "text", "id": "offer_alt_label", "label": "Link eronder", "default": "liever één geur? kies hieronder" },

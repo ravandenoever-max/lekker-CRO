@@ -45,14 +45,15 @@
         "retail_text": "Ligt ook bij Albert Heijn, Etos, Holland & Barrett en DA. Alle geuren samen, het starterspakket en de welkomstkorting vind je alleen hier.",
         "offer_product": "combi-deal-deodorant-stick-mix",
         "offer_background_color": "lblue",
-        "offer_badge": "starterspakket",
+        "offer_badge": "meest gekozen",
         "offer_title": "3 geuren, 3 sticks",
-        "offer_text": "<p>Be Active, Feel Floral en Have Fun, één van elk. Ontdek thuis welke geur bij je past.</p>",
-        "offer_compare": "los €24,87",
+        "offer_text": "<p>Be Active, Feel Floral en Have Fun, één van elk. Ontdek thuis welke geur bij je past. Los besteld betaal je €24,87 plus €3,95 verzending.</p>",
+        "offer_compare": "los besteld €28,82",
         "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
         "offer_button": "in winkelwagen",
         "offer_alt_label": "liever één geur? kies hieronder",
-        "offer_alt_link": "#kies"
+        "offer_alt_link": "#kies",
+        "offer_saving": "je bespaart €4,85"
       }
     },
     "trust": {
@@ -109,7 +110,7 @@
             "product": "deodorant-stick-be-active",
             "title": "be active",
             "scent": "den, bergamot en munt: kruidig en fris",
-            "badge": "meest gekozen",
+            "badge": "",
             "price_note": "",
             "highlight": false
           }
@@ -142,23 +143,23 @@
             "product": "combi-deal-deodorant-stick-mix",
             "title": "starterspakket",
             "scent": "alle drie de geuren, één van elk",
-            "badge": "gratis bezorgd",
-            "price_note": "voor 3 sticks",
+            "badge": "meest gekozen",
+            "price_note": "voor 3 sticks, gratis bezorgd",
             "highlight": true
           }
         }
       },
       "block_order": [
+        "c4",
         "c1",
         "c2",
-        "c3",
-        "c4"
+        "c3"
       ],
       "settings": {
         "section_background_color": "white",
         "anchor_id": "kies",
-        "heading": "of kies je eigen geur",
-        "intro": "<p>Elke stick is €8,29. Vanaf €25 bezorgen we gratis, het starterspakket altijd.</p>",
+        "heading": "kies jouw geur",
+        "intro": "<p>Het starterspakket bezorgen we gratis. Losse sticks zijn €8,29, vanaf €25 gratis bezorgd.</p>",
         "button_label": "in winkelwagen",
         "footnote": "<p>Twijfel je? Met het starterspakket kies je thuis pas.</p>"
       }
@@ -202,7 +203,7 @@
         "winkel"
       ],
       "settings": {
-        "section_background_color": "lblue",
+        "section_background_color": "white",
         "anchor_id": "waarom",
         "heading": "waarom hier bestellen en niet bij de drogist?",
         "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar daar ligt niet alles.</p>"
@@ -514,18 +515,111 @@
         "button_link": "#kies",
         "hide_on_anchor": "kies"
       }
+    },
+    "verkrijgbaar": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "ah": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/ah.png",
+            "predefined_image": "usp-plant",
+            "heading": "Albert Heijn"
+          }
+        },
+        "etos": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/4png.png",
+            "predefined_image": "usp-plant",
+            "heading": "Etos"
+          }
+        },
+        "hb": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/7.png",
+            "predefined_image": "usp-plant",
+            "heading": "Holland & Barrett"
+          }
+        },
+        "da": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/5.png",
+            "predefined_image": "usp-plant",
+            "heading": "DA drogist"
+          }
+        }
+      },
+      "block_order": [
+        "ah",
+        "etos",
+        "hb",
+        "da"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "page_width": "page-width",
+        "item_width_mobile": 150,
+        "item_width_desktop": 200,
+        "item_ratio": "15/10",
+        "grid_size_on_mobile": 2,
+        "show_intro": true,
+        "intro_heading": "ook te koop in de winkel",
+        "intro_content": "Bij deze winkels ligt onze deo stick in het schap, meestal met één of twee geuren. Alle geuren, het starterspakket en de welkomstkorting vind je alleen hier.",
+        "intro_align": "center",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "30",
+        "max_content_width": "60",
+        "use_carousel": false,
+        "use_carousel_device": "mobile",
+        "use_carousel_auto_scroll": false,
+        "use_carousel_arrows": false,
+        "use_carousel_manual_scroll": false,
+        "item_font_color": "black",
+        "use_carousel_speed": "20"
+      }
+    },
+    "verhaal": {
+      "type": "lp-story",
+      "settings": {
+        "section_background_color": "lpink",
+        "anchor_id": "verhaal",
+        "image": "shopify://shop_images/lekker-company-overons-port.jpg",
+        "heading": "waarom lekker bestaat",
+        "quote": "Op een gemiddeld cosmetica-etiket staan zoveel moeilijke termen dat bijna niemand kan lezen wat erin zit. Terwijl je het elke dag op je huid smeert. Bij eten wil je toch ook weten wat je binnenkrijgt?",
+        "text": "<p>Daarom begon Dewi aan haar keukentafel, met Pinterest en een beslagkom, zelf deodorant te maken. Dat simpele recept werd The Lekker Company: verzorging met ingrediënten van 100% natuurlijke oorsprong, elk etiket vertaald in gewone taal, verpakt in karton. Gemaakt in Utrecht, inmiddels in het schap bij Albert Heijn en Etos, en een miljoen oksels verder.</p>",
+        "name": "Dewi",
+        "role": "oprichter van The Lekker Company",
+        "button_label": "probeer het starterspakket",
+        "button_link": "#aanbod",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_target": false
+      }
     }
   },
   "order": [
     "hero",
     "trust",
     "kies",
+    "reviews",
     "waarom",
+    "korting",
+    "verkrijgbaar",
+    "verhaal",
     "eerste_week_intro",
     "eerste_week_stappen",
     "uitlegvideo",
-    "reviews",
-    "korting",
     "faq",
     "vaste_balk"
   ]
