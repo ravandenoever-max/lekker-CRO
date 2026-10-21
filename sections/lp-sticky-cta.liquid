@@ -5,14 +5,27 @@
 {%- liquid
   assign s = section.settings
   assign p = s.product
+  assign extras = s.product_extras
+  assign total = p.price
+  assign ids = p.variants.first.id | append: ''
+  assign extras_ok = true
+  for x in extras
+    assign total = total | plus: x.price
+    assign ids = ids | append: ',' | append: x.variants.first.id
+    unless x.available
+      assign extras_ok = false
+    endunless
+  endfor
 -%}
 <div class="lp-sticky" id="lp-sticky" aria-hidden="true">
   <div class="lp-sticky__inner page-width">
     <p class="lp-sticky__text font-size-xxs">
       {%- if s.label != blank -%}<span class="font-fam-bold">{{ s.label }}</span>{%- endif -%}
-      <span>{% if p != blank %}{{ p.price | money }}{% endif %}{% if s.sub != blank %}{% if p != blank %}, {% endif %}{{ s.sub }}{% endif %}</span>
+      <span>{% if p != blank %}{{ total | money }}{% endif %}{% if s.sub != blank %}{% if p != blank %}, {% endif %}{{ s.sub }}{% endif %}</span>
     </p>
-    {%- if p != blank and p.available and s.direct_add -%}
+    {%- if p != blank and extras.size > 0 and p.available and extras_ok and s.direct_add -%}
+      <div data-ids="{{ ids }}" class="lp-add-multi txt-align-center theme-button theme-button__round-small theme-button__red-white-red theme-button-hover__red-red-white lp-add" role="button" tabindex="0"><span>{{ s.button_label }}</span></div>
+    {%- elsif p != blank and p.available and s.direct_add -%}
       <div data-pid="{{ p.variants.first.id }}" class="js-trigger-add-product-inactive txt-align-center theme-button theme-button__round-small theme-button__red-white-red theme-button-hover__red-red-white lp-add"><span>{{ s.button_label }}</span></div>
       <div class="visually-hidden"><form method="post" action="/cart/add" id="pid-{{ p.variants.first.id }}"><input type="hidden" name="id" value="{{ p.variants.first.id }}"><input type="hidden" name="quantity" value="1"><input type="submit" value="Add"></form></div>
     {%- else -%}
@@ -50,6 +63,7 @@
   "settings": [
     { "type": "text", "id": "label", "label": "Tekst", "default": "starterspakket, 3 geuren" },
     { "type": "product", "id": "product", "label": "Product (voor prijs en direct bestellen)" },
+    { "type": "product_list", "id": "product_extras", "label": "Extra producten in het pakket (optioneel)", "limit": 3 },
     { "type": "text", "id": "sub", "label": "Tekst achter de prijs", "default": "gratis bezorgd" },
     { "type": "checkbox", "id": "direct_add", "label": "Knop legt product direct in de winkelwagen", "default": true },
     { "type": "text", "id": "button_label", "label": "Knoptekst", "default": "in winkelwagen" },

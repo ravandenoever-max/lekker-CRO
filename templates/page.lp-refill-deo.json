@@ -1,0 +1,660 @@
+{
+  "sections": {
+    "hero": {
+      "type": "lp-hero",
+      "blocks": {
+        "u1": {
+          "type": "usp",
+          "settings": {
+            "text": "binnen twee werkdagen bezorgd"
+          }
+        },
+        "u2": {
+          "type": "usp",
+          "settings": {
+            "text": "15% korting op je eerste bestelling"
+          }
+        },
+        "u3": {
+          "type": "usp",
+          "settings": {
+            "text": "navulling €7,49 in plaats van €8,29 voor een losse stick"
+          }
+        }
+      },
+      "block_order": [
+        "u1",
+        "u2",
+        "u3"
+      ],
+      "settings": {
+        "section_background_color": "white",
+        "ink_color": "#215732",
+        "rating_text": "4,7 uit 5 op Trustpilot. Een miljoen oksels gingen je voor.",
+        "heading": "de deo stick die je navult in plaats van weggooit",
+        "text": "<p>Koop de koker één keer. Daarna klik je er een navulling in, verpakt in karton, voor €7,49. Dezelfde natuurlijke deo, zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
+        "retail_text": "De navulbare koker en de navullingen liggen niet in de winkel. Die vind je alleen hier.",
+        "offer_product": "starter-refill-deo-stick-be-active",
+        "offer_background_color": "lblue",
+        "offer_badge": "starterspakket",
+        "offer_title": "koker + 3 navullingen",
+        "offer_text": "<p>Herbruikbare koker met navulling Be Active, plus twee losse navullingen: Be Active en Have Fun. Zo probeer je allebei de geuren.</p>",
+        "offer_compare": "apart besteld €36,87",
+        "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
+        "offer_button": "in winkelwagen",
+        "offer_alt_label": "liever alleen de starter? kies hieronder",
+        "offer_alt_link": "#kies",
+        "offer_saving": "je bespaart €7,90",
+        "offer_extras": [
+          "refill-deo-stick-be-active",
+          "refill-deo-stick-have-fun"
+        ]
+      }
+    },
+    "trust": {
+      "type": "lp-trust-strip",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "text": "100% natuurlijke oorsprong"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "text": "zonder aluminiumzouten"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "text": "koker van gerecycled plastic"
+          }
+        },
+        "t4": {
+          "type": "item",
+          "settings": {
+            "text": "navulling in karton, bij het oud papier"
+          }
+        },
+        "t5": {
+          "type": "item",
+          "settings": {
+            "text": "direct van de maker, uit Utrecht"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
+      "settings": {
+        "section_background_color": "lblue"
+      }
+    },
+    "kies": {
+      "type": "lp-product-picker",
+      "blocks": {
+        "c1": {
+          "type": "card",
+          "settings": {
+            "product": "starter-refill-deo-stick-be-active",
+            "title": "starter be active",
+            "scent": "koker + navulling: den, bergamot en munt",
+            "badge": "meest gekozen",
+            "price_note": "koker + 1 navulling",
+            "highlight": true
+          }
+        },
+        "c2": {
+          "type": "card",
+          "settings": {
+            "product": "starter-refill-deo-stick-have-fun",
+            "title": "starter have fun",
+            "scent": "koker + navulling: mandarijn en citroen",
+            "badge": "",
+            "price_note": "koker + 1 navulling",
+            "highlight": false
+          }
+        },
+        "c3": {
+          "type": "card",
+          "settings": {
+            "product": "refill-deo-stick-have-fun",
+            "title": "losse navulling have fun",
+            "scent": "mandarijn en citroen, past in de lichtblauwe koker",
+            "badge": "",
+            "price_note": "per navulling",
+            "highlight": false
+          }
+        },
+        "c4": {
+          "type": "card",
+          "settings": {
+            "product": "refill-deo-stick-be-active",
+            "title": "losse navulling be active",
+            "scent": "den, bergamot en munt, past in de lichtblauwe koker",
+            "badge": "",
+            "price_note": "per navulling",
+            "highlight": false
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "settings": {
+        "section_background_color": "white",
+        "anchor_id": "kies",
+        "heading": "kies jouw start",
+        "intro": "<p>De starter is de koker met één navulling. Vanaf €25 bezorgen we gratis, het starterspakket altijd.</p>",
+        "button_label": "in winkelwagen",
+        "footnote": "<p>Losse navullingen zijn er ook per 3 of 6.</p>"
+      }
+    },
+    "reviews": {
+      "type": "lp-reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Deze refill is geweldig. Wat top dat jullie deze hebben ontwikkeld. Met de refill deo is het aanbrengen nog makkelijker en de deo werkt ook nog heel goed.",
+            "name": "Kaatje",
+            "product": "starter refill be active"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Ideaal, een hele upgrade! Makkelijk in de hand, eenvoudiger in gebruik. Ben er super tevreden over.",
+            "name": "Lin",
+            "product": "starter refill have fun"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Fijne deodorant, duurzaam door zeer voordelig gebruik. Ruikt lekker, stick werkt prima.",
+            "name": "Audrey",
+            "product": "starter refill have fun"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Echt de oplossing voor deze deo, werkt veel fijner en schoner!",
+            "name": "AnnA",
+            "product": "starter refill have fun"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lblue",
+        "anchor_id": "reviews",
+        "heading": "wat anderen ervan vinden",
+        "summary": "gemiddeld 4,7 uit 5, swipe voor meer"
+      }
+    },
+    "verhaal": {
+      "type": "lp-story",
+      "settings": {
+        "section_background_color": "lpink",
+        "anchor_id": "verhaal",
+        "image": "shopify://shop_images/lekker-company-overons-port.jpg",
+        "heading": "waarom lekker bestaat",
+        "quote": "Op een gemiddeld cosmetica-etiket staan zoveel moeilijke termen dat bijna niemand kan lezen wat erin zit. Terwijl je het elke dag op je huid smeert. Bij eten wil je toch ook weten wat je binnenkrijgt?",
+        "text": "<p>Daarom begon Dewi aan haar keukentafel, met Pinterest en een beslagkom, zelf deodorant te maken. Dat simpele recept werd The Lekker Company: verzorging met ingrediënten van 100% natuurlijke oorsprong, elk etiket vertaald in gewone taal, verpakt in karton. Gemaakt in Utrecht, inmiddels in het schap bij Albert Heijn en Etos, en een miljoen oksels verder.</p>",
+        "name": "Dewi",
+        "role": "oprichter van The Lekker Company",
+        "button_label": "probeer het starterspakket",
+        "button_link": "#aanbod",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_target": false
+      }
+    },
+    "waarom": {
+      "type": "lp-compare",
+      "blocks": {
+        "hier": {
+          "type": "column",
+          "settings": {
+            "badge": "hier bij lekker",
+            "title": "navulbare deo stick",
+            "subtitle": "alleen hier, direct van de maker",
+            "lines": "+ De koker koop je één keer, daarna alleen navullingen\n+ Navulling €7,49 in plaats van €8,29 voor een losse stick\n+ Navulling in karton, mag bij het oud papier\n+ Starterspakket met 3 navullingen, gratis bezorgd\n+ 15% korting op je eerste bestelling",
+            "highlight": true,
+            "button_label": "bekijk het starterspakket",
+            "button_link": "#aanbod",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_target": false
+          }
+        },
+        "winkel": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "losse stick in de winkel",
+            "subtitle": "Albert Heijn, Etos, Holland & Barrett, DA",
+            "lines": "+ Handig als je hem vandaag nog wilt\n- Elke keer een nieuwe verpakking\n- €8,29 per stick\n- Geen navullingen in het schap",
+            "highlight": false,
+            "button_label": "",
+            "button_link": "",
+            "button_size": "button_small",
+            "button_color": "button_hover_red",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "hier",
+        "winkel"
+      ],
+      "settings": {
+        "section_background_color": "white",
+        "anchor_id": "waarom",
+        "heading": "waarom navulbaar, en waarom hier?",
+        "intro": "<p>In de winkel ligt de losse stick. De navulbare koker en de navullingen vind je alleen hier. En je eerste keer willen we goed doen: daarom zit in het starterspakket de koker plus drie navullingen in twee geuren.</p>"
+      }
+    },
+    "navullen": {
+      "type": "theme-section__text",
+      "blocks": {
+        "s1": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "1. ring los",
+            "block_content": "<p>Open de koker en draai de ring naar links.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false
+          }
+        },
+        "s2": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "2. navulling erin",
+            "block_content": "<p>Zet de navulling erin, zonder dop, en draai de ring weer vast.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false
+          }
+        },
+        "s3": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "3. smeren",
+            "block_content": "<p>Twee vegen op een schone, droge huid. Lege verpakking bij het oud papier.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": true,
+            "button_label": "ik begin met navullen",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "#aanbod",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "3",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "navullen_intro": {
+      "type": "theme-section__text",
+      "blocks": {
+        "i": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "zo werkt navullen",
+            "block_content": "<p>Dertig seconden, geen gedoe.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false
+          }
+        }
+      },
+      "block_order": [
+        "i"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "korting": {
+      "type": "lp-newsletter",
+      "settings": {
+        "section_background_color": "dgreen",
+        "anchor_id": "korting",
+        "badge": "alleen online",
+        "heading": "15% korting op je eerste bestelling",
+        "text": "<p>Schrijf je in en je krijgt de kortingscode in je mail. Zo kost het starterspakket met koker en drie navullingen je €24,62, gratis bezorgd.</p>",
+        "tag": "lp-refill-deo",
+        "small": "Uitschrijven kan altijd."
+      }
+    },
+    "eerste_week_intro": {
+      "type": "theme-section__text",
+      "blocks": {
+        "intro": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "eerlijk: de eerste week is even wennen",
+            "block_content": "<p>Stap je over van een antitranspirant? Dan moeten je oksels even wennen. Weet je wat er gebeurt, dan hou je het makkelijker vol.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "30",
+            "max_content_width": "60",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false
+          }
+        }
+      },
+      "block_order": [
+        "intro"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "eerste_week_stappen": {
+      "type": "theme-section__text",
+      "blocks": {
+        "stap1": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "dag 1 tot 3",
+            "block_content": "<p><strong>Je zweet misschien wat meer.</strong> Je oksels wennen eraan dat ze niet meer worden dichtgezet. Dat is normaal. Smeer één keer per dag op een schone, droge huid.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "normal",
+            "button_show": false
+          }
+        },
+        "stap2": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "dag 4 tot 10",
+            "block_content": "<p><strong>Je lichaam vindt zijn balans.</strong> Ruik je tussendoor iets? Was je oksels met water en breng opnieuw aan. Val niet terug op je oude deo, anders begin je weer opnieuw.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "normal",
+            "button_show": false
+          }
+        },
+        "stap3": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "na een week of twee",
+            "block_content": "<p><strong>Gewend.</strong> Voor de meeste mensen is het wennen dan voorbij. Vanaf nu is het gewoon smeren en gaan.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "block_text_style": "normal",
+            "button_show": true,
+            "button_label": "ik probeer het",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "#aanbod",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "stap1",
+        "stap2",
+        "stap3"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "3",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "uitlegvideo": {
+      "type": "theme-section__visual",
+      "disabled": true,
+      "blocks": {
+        "video": {
+          "type": "visual_slide",
+          "settings": {
+            "textbox_show": false,
+            "font_color": "white",
+            "sub_heading": "",
+            "heading": "",
+            "text": "",
+            "video_show": true,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "9:16",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "9:16",
+            "video_autoplay": false,
+            "video_show_controls": true,
+            "button_show": false
+          }
+        }
+      },
+      "block_order": [
+        "video"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "medium",
+        "section_image_rounded_corners": "sm",
+        "use_animations": false
+      }
+    },
+    "faq": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "q1": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Past de navulling ook in mijn gewone deo stick?",
+            "faq_section_qa_a": "<p>Nee. De navulling past alleen in de lichtblauwe herbruikbare koker uit de starter. Daarom begin je met de starter, daarna koop je alleen nog navullingen.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Welke geuren zijn er navulbaar?",
+            "faq_section_qa_a": "<p>Be Active (den, bergamot en munt) en Have Fun (mandarijn en citroen). In het starterspakket zitten ze allebei.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe lang duurt het wennen?",
+            "faq_section_qa_a": "<p>Stap je over van een antitranspirant? Voor de meeste mensen een week of twee. Blijf één keer per dag smeren op een schone huid en val niet terug op je oude deo.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Waar liggen de navullingen in de winkel?",
+            "faq_section_qa_a": "<p>Nergens. De losse deo stick ligt bij onder meer Albert Heijn en Etos, de navulbare koker en de navullingen vind je alleen hier.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Wanneer krijg ik mijn bestelling?",
+            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Vanaf €25 gratis, het starterspakket dus altijd.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe krijg ik de 15% korting?",
+            "faq_section_qa_a": "<p>Schrijf je hierboven in voor de nieuwsbrief. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": true,
+        "intro_heading": "vragen die we vaak krijgen",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "30",
+        "max_content_width": "50"
+      }
+    },
+    "vaste_balk": {
+      "type": "lp-sticky-cta",
+      "settings": {
+        "label": "starterspakket, koker + 3 navullingen",
+        "product": "starter-refill-deo-stick-be-active",
+        "sub": "gratis bezorgd",
+        "direct_add": true,
+        "button_label": "in winkelwagen",
+        "button_link": "#kies",
+        "hide_on_anchor": "kies",
+        "product_extras": [
+          "refill-deo-stick-be-active",
+          "refill-deo-stick-have-fun"
+        ]
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust",
+    "kies",
+    "reviews",
+    "verhaal",
+    "waarom",
+    "navullen_intro",
+    "navullen",
+    "korting",
+    "eerste_week_intro",
+    "eerste_week_stappen",
+    "uitlegvideo",
+    "faq",
+    "vaste_balk"
+  ]
+}

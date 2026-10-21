@@ -5,7 +5,18 @@
 {%- liquid
   assign s = section.settings
   assign offer = s.offer_product
+  assign extras = s.offer_extras
   assign offer_img = s.offer_image | default: offer.featured_image
+  assign offer_total = offer.price
+  assign offer_ids = offer.variants.first.id | append: ''
+  assign extras_ok = true
+  for x in extras
+    assign offer_total = offer_total | plus: x.price
+    assign offer_ids = offer_ids | append: ',' | append: x.variants.first.id
+    unless x.available
+      assign extras_ok = false
+    endunless
+  endfor
 -%}
 
 <div class="section-inner lp-hero bg-{{ s.section_background_color }} padding-t-xs padding-b-sm" id="lp-top">
@@ -36,13 +47,15 @@
           <h2 class="lp-offer__title font-fam-normal font-size-md txt-lowercase">{{ s.offer_title | default: offer.title }}</h2>
           {%- if s.offer_text != blank -%}<div class="lp-offer__text font-size-xxs">{{ s.offer_text }}</div>{%- endif -%}
           <p class="lp-offer__price">
-            <span class="font-fam-bold font-size-lg">{{ offer.price | money }}</span>
+            <span class="font-fam-bold font-size-lg">{{ offer_total | money }}</span>
             {%- if s.offer_compare != blank -%} <s class="lp-offer__compare font-size-xxs">{{ s.offer_compare }}</s>{%- endif -%}
             {%- if s.offer_saving != blank -%} <span class="lp-offer__saving font-size-3xs">{{ s.offer_saving }}</span>{%- endif -%}
           </p>
           {%- if s.offer_shipping != blank -%}<p class="lp-offer__shipping font-size-xxs"><span class="lp-check" aria-hidden="true">&#10003;</span> {{ s.offer_shipping }}</p>{%- endif -%}
           <div class="lp-offer__button">
-            {%- if offer.available -%}
+            {%- if extras.size > 0 and offer.available and extras_ok -%}
+              <div data-ids="{{ offer_ids }}" class="lp-add-multi txt-align-center theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__red-red-white lp-add" role="button" tabindex="0"><span>{{ s.offer_button | default: 'in winkelwagen' }}</span></div>
+            {%- elsif offer.available -%}
               <div data-pid="{{ offer.variants.first.id }}" class="js-trigger-add-product-inactive txt-align-center theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__red-red-white lp-add"><span>{{ s.offer_button | default: 'in winkelwagen' }}</span></div>
               <div class="visually-hidden"><form method="post" action="/cart/add" id="pid-{{ offer.variants.first.id }}"><input type="hidden" name="id" value="{{ offer.variants.first.id }}"><input type="hidden" name="quantity" value="1"><input type="submit" value="Add"></form></div>
             {%- else -%}
@@ -126,6 +139,27 @@
 </style>
 
 <script>
+  {%- comment -%} Pakket van twee producten in één keer in de winkelwagen (zelfde drawer-update als het thema). {%- endcomment -%}
+  (function () {
+    function addMulti(btn) {
+      if (btn.classList.contains('loading')) return;
+      var items = btn.getAttribute('data-ids').split(',').map(function (id) { return { id: parseInt(id, 10), quantity: 1 }; });
+      btn.classList.add('loading');
+      window.shopping_cart_content_has_changed = 'true';
+      fetch('/cart/add.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: items }) })
+        .then(function (r) { return r.json(); })
+        .then(function () {
+          if (typeof UpdateShoppingCartDrawer === 'function') UpdateShoppingCartDrawer('update');
+          if (typeof UpdateHeaderIconBubble === 'function') UpdateHeaderIconBubble(items.length);
+        })
+        .catch(function (e) { console.error(e); })
+        .finally(function () { btn.classList.remove('loading'); });
+    }
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('.lp-add-multi');
+      if (btn) { e.preventDefault(); addMulti(btn); }
+    });
+  })();
   (function () {
     function target(key) { return document.getElementById(key) || document.querySelector('[id$="__' + key + '"]'); }
     function go(el, smooth) { el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' }); }
@@ -159,6 +193,7 @@
     { "type": "text", "id": "retail_text", "label": "Regel over winkels (zonder link)", "default": "Ligt ook bij Albert Heijn, Etos, Holland & Barrett en DA. Alle geuren samen vind je alleen hier." },
     { "type": "header", "content": "Aanbod" },
     { "type": "product", "id": "offer_product", "label": "Product (wordt direct in de winkelwagen gelegd)" },
+    { "type": "product_list", "id": "offer_extras", "label": "Extra producten in het pakket (gaan samen in de winkelwagen)", "limit": 3 },
     { "type": "image_picker", "id": "offer_image", "label": "Afbeelding (leeg = productfoto)" },
     { "type": "select", "id": "offer_background_color", "default": "lblue", "label": "Achtergrond aanbod", "options": [ { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Lichtroze" }, { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" } ] },
     { "type": "text", "id": "offer_badge", "label": "Label", "default": "meest gekozen" },
