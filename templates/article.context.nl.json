@@ -1,0 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "article.json",
+  "context": {
+    "market": "nl"
+  },
+  "sections": {
+    "5c16352e-030f-4034-b932-09952899f207": {
+      "blocks": {
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0": {
+          "settings": {
+            "button_label": "onze deo's"
+          }
+        }
+      }
+    }
+  }
+}

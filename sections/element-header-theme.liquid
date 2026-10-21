@@ -1,0 +1,255 @@
+{%- liquid
+
+  assign filename = 'element-header-theme'
+
+  if settings.use_shopping_cart_mini == true
+    assign use_shopping_cart_mini = 'true'
+  else
+    assign use_shopping_cart_mini = 'false'
+  endif
+  if settings.use_shopping_cart_drawer == true
+    assign use_shopping_cart_drawer = 'true'
+  else
+    assign use_shopping_cart_drawer = 'false'
+  endif
+
+  if settings.desktop_submenu_version == 'mega'
+    assign use_desktop_submenu_menu_mega = 'true'
+    assign use_desktop_submenu_foldable = 'false'
+    assign use_desktop_submenu_dropdown = 'false'
+  elsif settings.desktop_submenu_version == 'foldable'
+    assign use_desktop_submenu_menu_mega = 'false'
+    assign use_desktop_submenu_foldable = 'true'
+    assign use_desktop_submenu_dropdown = 'false'
+  elsif settings.desktop_submenu_version == 'dropdown'
+    assign use_desktop_submenu_menu_mega = 'false'
+    assign use_desktop_submenu_foldable = 'false'
+    assign use_desktop_submenu_dropdown = 'true'
+  elsif settings.desktop_submenu_version == 'none'
+    assign use_desktop_submenu_menu_mega = 'false'
+    assign use_desktop_submenu_foldable = 'false'
+    assign use_desktop_submenu_dropdown = 'false'
+  endif
+  assign use_mobile_menu_foldable = 'true'
+  assign use_mobile_menu_drawer = 'false'
+
+
+  if settings.main_menu_icons_or_text == 'main_menu_icons'
+    assign use_main_menu_icons = 'true'
+    assign use_main_menu_text = 'false'
+  else
+    assign use_main_menu_icons = 'false'
+    assign use_main_menu_text = 'true'
+  endif
+  
+-%}
+
+{%- capture capture_header_classnames -%}
+  header::page-width::header--has-menu::header--{{ settings.logo_position }}::
+  {%- if use_desktop_submenu_menu_mega == 'true' -%}header--menu-mega::{%- elsif use_desktop_submenu_foldable == 'true' -%}header--foldable-left::{%- elsif use_desktop_submenu_dropdown == 'true' -%}header--dropdown::{%- endif -%}
+  {%- if use_mobile_menu_foldable == 'true' -%}header--mobile-foldable::{%- elsif use_mobile_menu_drawer == 'true' -%}header--mobile-drawer::{%- endif -%}
+  {%- if use_shopping_cart_mini == 'true' -%}header--shopping-cart-mini::{%- endif -%}no-se::
+{%- endcapture -%}
+{%- assign header_classnames = capture_header_classnames | replace: '::', ' ' | strip -%}
+
+{%- capture element_header_theme -%}
+  <div class="header-wrapper bg-white no-se">
+    <div class="{{ header_classnames }} page-m-width__full">
+
+      <nav class="menu-bar-mobile theme-f-hor theme-f-outside theme-hide-above-768 theme-visibility-hidden" aria-hidden="true">
+        <a title="{{ shop.name }}" href="{{ routes.root_url }}" class="header__heading-logo">
+          <img src="{{ settings.website_logo_image | asset_url }}" loading="eager" class="header__heading-logo-img" width="185" height="70" alt="{{ shop.name }}">
+          <h3 class="theme-hidden">{{ shop.name }}</h3>
+        </a>
+        <div class="menu-bar-mobile">
+          <div class="customer-account js-trigger-customer-account">
+            <a title="Account" href="/account/login" class="color-black _active">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="icon icon-account" fill="none" viewBox="0 0 18 19"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.5a3 3 0 116 0 3 3 0 01-6 0zm3-4a4 4 0 100 8 4 4 0 000-8zm5.58 12.15c1.12.82 1.83 2.24 1.91 4.85H1.51c.08-2.6.79-4.03 1.9-4.85C4.66 11.75 6.5 11.5 9 11.5s4.35.26 5.58 1.15zM9 10.5c-2.5 0-4.65.24-6.17 1.35C1.27 12.98.5 14.93.5 18v.5h17V18c0-3.07-.77-5.02-2.33-6.15-1.52-1.1-3.67-1.35-6.17-1.35z" fill="currentColor"></path></svg>
+              <span class="visually-hidden">Inloggen</span>
+            </a>
+          </div>
+          <div class="shopping-cart js-trigger-shopping-cart">
+            <a title="Shopping-cart" href="/cart" class="color-black _active">
+              {%- render 'theme-icon', icon: 'header-icon-cart' -%}
+              <div class="cart-count-bubble{%- if cart == empty %} visually-hidden{%- endif -%}">
+                <span aria-hidden="true">{{ cart.item_count }}</span>
+                <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+              </div>
+            </a>
+          </div>
+          <div class="hamburger js-trigger__menu-foldable hamburger-foldable">
+            <div class="hamburger-inner">
+              <span class="hamburger__line hamburger__line-top"></span>
+              <span class="hamburger__line hamburger__line-middle"></span>
+              <span class="hamburger__line hamburger__line-bottom"></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav id="main-menu-left" class="theme-w-512 desktop-main-menu header__inline-menu header__inline-menu__left theme-hide-below-768">
+        {%- liquid
+          assign header_menu = linklists[section.settings.menu_main_left]
+          assign header_menu_version = 'list-childs-only' 
+          assign header_menu_version = 'menu-mega'
+          render 'header-main-menus', header_menu: header_menu, header_menu_version: header_menu_version
+        -%}
+      </nav>
+      <a title="{{ shop.name }}" href="{{ routes.root_url }}" class="header__heading-logo js-hide-menu-mega theme-hide-below-768">
+        <div class="color-red theme-f-vert theme-f-middle header__heading-logo-img">
+          {%- render 'theme-logo' -%}
+        </div>
+        <span>{{ shop.name }}</span>
+      </a>   
+      <nav id="main-menu-right" class="theme-f-hor theme-f-right theme-w-512 desktop-main-menu header__inline-menu header__inline-menu__right js-hide-menu-mega theme-hide-below-768">
+        {%- liquid
+          assign header_menu = linklists[section.settings.menu_main_right]
+          assign header_menu_version = 'list-childs-only' 
+          assign header_menu_version = 'menu-mega' 
+          render 'header-main-menus', header_menu: header_menu, header_menu_version: header_menu_version
+          -%}
+        <ul class="list-menu list-menu--inline">     
+          {%- if settings.website_location_account == 'header' -%}
+            <li id="related-profile-login" class="main-menu-icon header__icon header__icon--account">
+              <a title="Account" href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="color-black _active">
+                {% render 'theme-icon', icon: 'icon-account' %}
+                <span class="visually-hidden">
+                  {%- liquid
+                    if customer
+                      echo 'customer.account_fallback' | t
+                    else
+                      echo 'customer.log_in' | t
+                    endif
+                  -%}
+                </span>
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if settings.website_shop_cart_style == 'icon' -%}
+            <li id="related-shopping-cart" class="main-menu-icon header__icon header__icon--cart js-trigger-shopping-cart mousepointer">
+              <a title="Shopping-cart" data-count="{{ cart.item_count }}" href="{{ routes.cart_url }}" class="color-black _active no-pe">
+                {%- render 'theme-icon', icon: 'header-icon-cart' -%}
+                <div class="cart-count-bubble{%- if cart == empty %} visually-hidden{%- endif -%}">
+                  <span aria-hidden="true">{{ cart.item_count }}</span>
+                  <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                </div>
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+  {%- liquid
+    if settings.website_location_search == 'header'
+      render 'header-search', use_main_menu_icons: use_main_menu_icons
+    endif
+    if use_shopping_cart_mini == 'true'
+      render 'header-mini-cart'
+    elsif use_shopping_cart_drawer == 'inside-header'
+      render 'header-cart-drawer'
+    endif
+    if use_mobile_menu_drawer == 'true'
+      assign header_menu = linklists.main-menu
+      if header_menu.size > 0
+        render 'header-mobile-menu', header_menu : header_menu
+      endif
+    endif
+  -%}
+{%- endcapture -%}
+{%- echo element_header_theme -%}
+
+{%- if settings.header_language_switch == true -%}
+  {%- assign current_market = localization.market.handle -%}
+  <div class="--theme-hidden language-switch-wrapper theme-f-vert theme-g-xs theme-bg-white theme-p-v-xxs theme-p-h-xxs">
+    <div class="language-switch" onClick='javascript:updateLocalization({country:"DE",language:"de"});'><span class="language-flag"><svg width="100%" height="100%" viewBox="0 0 513 342" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 -0.00195312H513V342.002H0V-0.00195312Z" fill="#D80027"></path><path d="M0 -0.00195312H513V113.995H0V-0.00195312Z" fill="black"></path><path d="M0 227.993H513V341.991H0V227.993Z" fill="#FFDA44"></path></g></svg></span><span>DE</span></div>
+    <div class="language-switch" onClick='javascript:updateLocalization({country:"UK",language:"en"});'><span class="language-flag"><svg width="100%" height="100%" viewBox="0 0 513 342" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0H513V342.004H0V0Z" fill="white"></path><path d="M288.562 -0.00305176H224.438V138.934H0V203.059H224.438V341.996H288.562V203.059H513V138.934H288.562V-0.00305176Z" fill="#D80027"></path><path d="M394.554 230.474L513 296.279V230.474H394.554ZM312.261 230.474L513 341.996V310.46L369.026 230.474H312.261ZM459.53 341.996L312.261 260.172V341.996H459.53Z" fill="#0052B4"></path><path d="M312.261 230.474L513 341.996V310.46L369.026 230.474H312.261Z" fill="white"></path><path d="M312.261 230.474L513 341.996V310.46L369.026 230.474H312.261Z" fill="#D80027"></path><path d="M90.5174 230.472L0 280.76V230.472H90.5174ZM200.739 244.654V341.995H25.5408L200.739 244.654Z" fill="#0052B4"></path><path d="M143.974 230.474L0 310.46V341.996L200.739 230.474H143.974Z" fill="#D80027"></path><path d="M118.446 111.518L0 45.7141V111.518H118.446ZM200.739 111.518L0 -0.00305176V31.5324L143.974 111.518H200.739ZM53.4702 -0.00305176L200.739 81.8204V-0.00305176H53.4702Z" fill="#0052B4"></path><path d="M200.739 111.518L0 -0.00305176V31.5324L143.974 111.518H200.739Z" fill="white"></path><path d="M200.739 111.518L0 -0.00305176V31.5324L143.974 111.518H200.739Z" fill="#D80027"></path><path d="M422.483 111.52L513 61.2324V111.52H422.483ZM312.261 97.3388V-0.00195312H487.459L312.261 97.3388Z" fill="#0052B4"></path><path d="M369.026 111.518L513 31.5324V-0.00305176L312.261 111.518H369.026Z" fill="#D80027"></path></g></svg></span><span>EN</span></div>
+    <div class="language-switch" onClick='javascript:updateLocalization({country:"FR",language:"fr"});'><span class="language-flag"></span><span>FR</span></div>
+    <div class="language-switch" onClick='javascript:updateLocalization({country:"BE",language:"nl"});'><span class="language-flag"></span><span>BE</span></div>
+    <div class="language-switch" onClick='javascript:updateLocalization({country:"NL",language:"nl"});'><span class="language-flag"><svg width="100%" height="100%" viewBox="0 0 513 342" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 114H513V228H0V114Z" fill="white"></path><path d="M0 0H513V114H0V0Z" fill="#CD1F2A"></path><path d="M0 228H513V342H0V228Z" fill="#1D4185"></path></g></svg></span><span>NL</span></div>
+  </div>
+  <script>
+    function updateLocalization({country, language}) {
+      const formId = crypto.randomUUID();
+      const formHtml = `<form id="${formId}" action="/localization" method="POST" hidden><input name="_method" value="PUT"><input name="country_code" value="${country}"><input name="language_code" value="${language}"></form>`;
+      document.body.insertAdjacentHTML("beforeend", formHtml);
+      document.getElementById(formId).submit();
+    }
+  </script>
+  <style>
+    @media screen and (max-width:767px) {
+      .language-switch-wrapper{display:none}
+    }
+    @media screen and (min-width:768px) {
+      .language-switch-wrapper{ position:absolute;max-width:10rem;top:3rem;left:3rem;border-radius:0.5rem;overflow:hidden; }
+      .language-switch-wrapper .language-switch{cursor:pointer;}
+      .language-switch-wrapper .language-switch .language-flag {display:inline-block;width:1.25rem;height:1rem;font-size:0;line-height:0;margin-right:0.25rem;border:0.5px solid rgba(0, 0, 0, 0.1);}
+    }
+  </style>
+{%- endif -%}
+
+{%- schema %}
+{
+  "name": "t:sections.header.name",
+  "tag": "header",
+  "class": "shopify-section-header section-header-theme",
+  "settings": [
+    {"type":"link_list","id":"menu_main_left","default":"main-menu","label":"First Main Menu"},
+    {"type":"link_list","id":"menu_main_right","default":"main-menu","label":"Second Main Menu"}
+  ],
+  "blocks": [
+    {
+      "type":"menu_mega",
+      "name": "Mega menu",
+      "settings": [
+        {"type":"text","id":"menu_item_title","label":"Menu Title"},
+        {"type":"text","id":"menu_item","label":"Menu item / ID","info": "Enter menu ID to apply a mega menu dropdown. [Learn more](https://support.maestrooo.com/article/180-navigation-enabling-and-configuring-mega-navigation)."},
+        {"type":"header","content": "Image 1"},
+        {"type":"image_picker","id":"mm_image_1","label":"Image","info": "600 x 400px .jpg recommended"},
+        {"type":"text","id":"mm_image_1_heading","label":"Heading","default":"New arrivals"},
+        {"type":"url","id":"mm_image_1_link","label":"Link"},
+        {"type":"select","id":"mm_image_1_ratio", "options": [
+            { "value":"4/5","label":"Portrait"},
+            { "value":"3/2","label":"Landscape MD"},
+            { "value":"2/1","label":"Landscape LG"},
+            { "value":"1/1","label":"Square" } ],"default":"1/1","label":"Image/block size"},
+        {"type":"header","content": "Image 2"},
+        {"type":"image_picker","id":"mm_image_2","label":"Image","info": "600 x 400px .jpg recommended"},
+        {"type":"text","id":"mm_image_2_heading","label":"Heading","default":"New arrivals"},
+        {"type":"url","id":"mm_image_2_link","label":"Link"},
+        {"type":"select","id":"mm_image_2_ratio", "options": [
+            { "value":"4/5","label":"Portrait"},
+            { "value":"3/2","label":"Landscape MD"},
+            { "value":"2/1","label":"Landscape LG"},
+            { "value":"1/1","label":"Square" } ],"default":"1/1","label":"Image/block size"},
+        {"type":"header","content": "Image 3"},
+        {"type":"image_picker","id":"mm_image_3","label":"Image","info": "600 x 400px .jpg recommended"},
+        {"type":"text","id":"mm_image_3_heading","label":"Heading","default":"New arrivals"},
+        {"type":"url","id":"mm_image_3_link","label":"Link"},
+        {"type":"select","id":"mm_image_3_ratio", "options": [
+            { "value":"4/5","label":"Portrait"},
+            { "value":"3/2","label":"Landscape MD"},
+            { "value":"2/1","label":"Landscape LG"},
+            { "value":"1/1","label":"Square" } ],"default":"1/1","label":"Image/block size"},              
+      ]
+    }
+  ]
+}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "          render 'header-main-menus' | header_menu:header_menu,header_menu_version:header_menu_version"
+  to: "          render 'header-main-menus', header_menu: header_menu, header_menu_version:
+    header_menu_version"
+  position: 4943..5047
+- from: "          render 'header-main-menus' | header_menu:header_menu,header_menu_version:header_menu_version "
+  to: "          render 'header-main-menus', header_menu: header_menu, header_menu_version:
+    header_menu_version"
+  position: 5781..5885
+- from: "      render 'header-search' | use_main_menu_icons:use_main_menu_icons"
+  to: "      render 'header-search', use_main_menu_icons: use_main_menu_icons"
+  position: 7625..7695
+{%- endcomment -%}

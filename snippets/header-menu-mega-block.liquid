@@ -1,0 +1,406 @@
+{%- liquid
+  assign filename = 'header-menu-mega-block'
+  assign hide_empty_collections = false
+
+  assign show_all_brands = false
+  assign setting__allow_autcomplete_brands_list = false
+  assign mega_menu_title = menu_mega.title | strip
+  assign downcase_title = mega_menu_title | downcase | strip | replace : 'aaaa' , 'aaaa'
+  assign mega_menu_handle = menu_mega.handle
+
+  assign menu_mega_block = nil
+  for m_block in section.blocks
+    assign downcase_block_menu_item = m_block.settings.menu_item | downcase | strip
+    if downcase_block_menu_item == mega_menu_handle
+      assign menu_mega_block = m_block
+      break
+    endif
+  endfor
+
+  assign menu_mega_links_size = menu_mega.links.size
+  assign has_two_images = false
+  if menu_mega_block.settings.mm_image_1 != blank and menu_mega_block.settings.mm_image_2 != blank
+    assign has_two_images = true
+  endif
+  assign menu_mega_classes = ''
+  if menu_mega_links_size <= 3
+    if has_two_images
+      assign menu_mega_classes = 'menu-mega__inner--left menu-mega__inner--large menu-mega__promo-twice '
+    else
+      assign menu_mega_classes = 'menu-mega__inner--left menu-mega__inner--large'
+    endif
+  else
+    assign menu_mega_classes = 'menu-mega__inner--left menu-mega__inner--large'
+  endif
+
+  assign show_menus = true
+  assign show_image_a = true
+  assign show_image_b = true
+  assign show_image_c = true
+
+  assign menu_mega__promo___use_button = 'false'
+
+  assign setting_create_new_column_count = 10
+  assign show__sub_link_label_title = true
+  
+  if setting__allow_autcomplete_brands_list == true
+    if downcase_title == 'brands' or downcase_title == 'all-brands'
+      assign show_all_brands = true
+      assign show_menus = false
+      assign total_brands = shop.vendors.size
+      assign setting_create_new_column_count = 8
+      assign my_float = setting_create_new_column_count | times: 1.0
+      assign menu_mega_links_size = total_brands | divided_by: my_float | ceil
+      assign settings_link_brand_page_vendor_set_main_page_version = settings.link_brand_page_vendor_set_main_page_version
+    endif
+  endif
+
+  if downcase_title == 'brands' or downcase_title == 'all-brands'
+    assign show__sub_link_label_title = false
+  endif
+
+  assign comment__hide_collection_has_no_products = 'hidden'
+  assign hide_collection_has_no_products = 'strikeout'   
+
+  if menu_mega_links_size == 0
+      assign show_menus = false
+  elsif menu_mega_links_size == 1
+      assign show_image_a = true
+      assign show_image_b = true
+      assign show_image_c = true
+  elsif menu_mega_links_size == 3
+      assign show_image_c = false
+  elsif menu_mega_links_size >= 4
+      assign show_image_a = false
+      assign show_image_b = false
+      assign show_image_c = false
+  endif
+  assign images_promo_position = 'right'  
+  assign debug_menu_mega = false
+  assign sub_sub_columns_counter = 0
+  assign toggle_menu_id = mega_menu_handle
+
+  if debug_menu_mega == true
+    echo '<br>ID:' | append : toggle_menu_id
+    echo ' has_two_images:' | append : has_two_images
+    echo ' menu_mega_links_size:' | append : menu_mega_links_size
+    echo ' images_promo_position:' | append : images_promo_position
+    echo ' show_image_a:' | append : show_image_a
+    echo ' show_image_b:' | append : show_image_b
+    echo ' show_image_c:' | append : show_image_c
+  endif
+
+-%}
+{%- capture header_menu_mega_block -%}
+<div id="{{ index }}" class="menu-mega js-menuid-{{ toggle_menu_id }} menu-mega-invisible" data-menu-id="{{ toggle_menu_id }}" data-type="menu" aria-hidden="true" role="list" {{ menu_mega_block.shopify_attributes }}>
+  <div class="container page-width">
+    <div class="menu-mega__inner menu-mega-promo__{{ images_promo_position }} {{ menu_mega_classes }}">
+      {%- if show_menus == true -%}
+        {%- capture menu_mega_columns -%}
+          {%- liquid
+            echo '<div class="menu-mega__column_wrapper menu-mega__column_wrapper__children-{{ menu_mega_links_size }} mega-menu__column-count__{{ sub_sub_columns_counter }}">' | replace: '{{ menu_mega_links_size }}' , menu_mega_links_size
+              for sub_link in menu_mega.links
+                assign menumega__column__columns_html__counter = 0
+                capture menumega__column__columns_html
+                  assign use_link_on_title = 'true'
+                  assign current_link = sub_link
+                  assign should_skip_link = false
+                  if current_link.type == 'collection_link' and current_link.links == blank
+                    assign should_skip_link = true
+                    for item in current_link.object.products
+                      if item.available
+                        assign should_skip_link = false
+                      endif
+                    endfor
+                  elsif current_link.type == 'collection_link'
+                    assign should_skip_link = true
+                    for current_child_link in current_link.links
+                      for item in current_child_link.object.products
+                        if item.available
+                          assign should_skip_link = false
+                        endif
+                      endfor
+                    endfor
+                  endif
+                  if hide_empty_collections == false
+                    assign should_skip_link = false
+                  endif
+                  if should_skip_link == false
+                    assign x_class = ''
+                    if sub_link.active
+                      assign x_class = ' is-active active'
+                    endif           
+                    assign sub_link_label_title = sub_link.title
+                    assign sub_link_label_title_downcase = sub_link_label_title | downcase
+                    if sub_link_label_title_downcase == downcase_title
+                      assign show__sub_link_label_title = false
+                    endif
+                    if show__sub_link_label_title == true
+                       if sub_link_label_title_downcase != 'section'                             
+                        assign sub_link_title = '[A], [B]' | replace: '[A]' , mega_menu_title | replace: '[B]' , sub_link_label_title
+                        if use_link_on_title == 'true'
+                          echo '<a href="{{ sub_link_url }}" title="[A]" class="menu-mega__title{{ x_class }}">' | replace: '{{ sub_link_url }}' , sub_link.url | replace: '[A]' , sub_link_title | replace: '{{ x_class }}' , x_class
+                            echo '<h2><span>[B]</span></h2>' | replace: '[B]' , sub_link_label_title_downcase
+                          echo '</a>'
+                        else
+                          echo '<span class="menu-mega__title{{ x_class }}">' | replace: '{{ x_class }}' , x_class
+                            echo '<h2><span>[B]</span></h2>' | replace: '[B]' , sub_link_label_title_downcase
+                          echo '</span>'
+                        endif
+                      else
+                        echo '<div class="menu-mega__spacer padding-b-xxs"></div>'
+                      endif
+                    else
+                      assign comment = '<div class="menu-mega__spacer padding-b-xxs"></div>'
+                    endif
+                    echo '<div class="theme-f-hor theme-g-xs">'
+                    assign sub_sub_has_link = false
+
+                    if sub_link.links.size > 1
+                      echo '<ul class="menu-mega__linklist">'
+                        assign menumega__column__columns_html__counter = menumega__column__columns_html__counter | plus : 1
+                        assign sub_sub_columns_counter = sub_sub_columns_counter | plus : 1
+                        assign sub_sub_link_counter = 0
+                        for sub_sub_link in sub_link.links
+                          assign current_link = sub_sub_link
+                          assign should_skip_link = false
+                          assign show_p_counter = 'false'
+                          if current_link.type == 'collection_link'
+                            assign show_p_counter = 'false'
+                            assign p_counter = current_link.object.all_products_count
+                            if hide_collection_has_no_products == 'hidden'
+                            elsif hide_collection_has_no_products == 'strikeout' 
+                                assign should_skip_link = false
+                                if p_counter > 0
+                                  assign visibiliy_class = ''
+                                else
+                                  assign visibiliy_class = ' no-products color-lgrey'
+                                 assign should_skip_link = true
+                                endif
+                            else 
+                                assign should_skip_link = false
+                            endif
+                          endif
+                          if hide_empty_collections == false
+                            assign should_skip_link = false
+                          endif
+
+                          if should_skip_link == false
+                            assign sub_sub_has_link = true
+                            assign sub_sub_link_counter = sub_sub_link_counter | plus : 1
+                            assign this_show_link = true
+                            assign this_new_column = false
+                            if sub_sub_link_counter > setting_create_new_column_count
+                              assign this_new_column = true
+                              assign this_show_link = true
+                            endif
+                            if sub_sub_link.title == 'eol'
+                              assign this_new_column = true
+                              assign this_show_link = false
+                            endif
+                            if this_new_column == true
+                              assign sub_sub_link_counter = 1
+                              assign menumega__column__columns_html__counter = menumega__column__columns_html__counter | plus : 1
+                              assign sub_sub_columns_counter = sub_sub_columns_counter | plus : 1
+                              echo '</ul>'
+                              echo '<ul class="menu-mega__linklist">'
+                            endif
+                            if this_show_link == true
+                              assign x_class = ''
+                              if sub_sub_link.active
+                                assign x_class = ' is-active active'
+                              endif
+                              assign sub_sub_link_label_title = sub_sub_link.title
+                              comment
+                                if sub_sub_link.type == 'collection_link'
+                                  assign this_collection = sub_sub_link.object
+                                  assign this_collection_metafields = this_collection.metafields.custom
+                                  if this_collection_metafields.collection_store_front_title.size > 2
+                                    assign sub_sub_link_label_title = this_collection_metafields.collection_store_front_title | append : ' - meta'
+                                  endif
+                                endif
+                              endcomment
+                              assign sub_sub_link_label_title = sub_sub_link_label_title
+                              assign sub_sub_link_label_title_downcase = sub_sub_link_label_title | downcase
+                              assign sub_sub_link_title = '[C], [B], [C]' | replace: '[A]', mega_menu_title | replace: '[B]', sub_link_label_title | replace: '[C]', sub_sub_link_label_title
+                              
+                              echo '<li class="menu-mega__item menu-mega__item-subsub[VISIBILITY_CLASS]">' | replace : '[VISIBILITY_CLASS]', visibiliy_class
+                                echo '<a href="[URL]" title="[C]" class="menu-mega__link link[XCLASS]">' | replace: '[URL]', sub_sub_link.url | replace: '[C]', sub_sub_link_title | replace: '[XCLASS]', x_class
+                                  echo '<span>[A]</span>' | replace: '[A]' , sub_sub_link_label_title_downcase
+                                  if show_p_counter == 'true'
+                                    echo '<span class="theme-hidden"> ({{ p_counter }})</span>' | replace: '{{ p_counter }}' , p_counter
+                                  endif
+                                echo '</a>'
+                              echo '</li>'
+                            endif
+                          endif
+                        endfor
+                        echo '</ul>'
+                    endif
+                    if sub_sub_has_link == false
+                      assign x_class = ''
+                      if sub_link.active
+                        assign x_class = ' is-active active'
+                      endif
+                      echo '<ul class="menu-mega__linklist">'
+                        echo '<li class="menu-mega__item menu-mega__item-sub">'
+                          echo '<a href="{{ sub_link_url }}" title="{{ mega_menu_title }} {{ sub_link_title }}" class="menu-mega__link link{{ x_class }}">' | replace: '{{ sub_link_url }}' , sub_link.url | replace: '{{ mega_menu_title }}' , mega_menu_title | replace: '{{ sub_link_title }}' , sub_link.title | replace: '{{ x_class }}' , x_class
+                            echo '<span> {{ sub_link_title }}</span>' | replace: '{{ sub_link_title }}' , sub_link.title
+                          echo '</a>'
+                        echo '</li>'
+                      echo '</ul>'
+                    endif
+                    echo '</div>'
+                  endif
+                endcapture
+                assign remove_empty_block = '<ul class="menu-mega__linklist"></ul>'
+                if menumega__column__columns_html contains remove_empty_block
+                  assign menumega__column__columns_html = menumega__column__columns_html | replace: remove_empty_block, ''
+                  assign menumega__column__columns_html__counter = menumega__column__columns_html__counter | minus : 1
+                  assign sub_sub_columns_counter = sub_sub_columns_counter | minus : 1
+                endif
+                if menumega__column__columns_html__counter < 1
+                  assign menumega__column__columns_html__counter = 1
+                endif
+                capture more_html
+                  echo '<div class="menu-mega__column menu-mega__column-count-[COUNT]">' | replace: '[COUNT]' , menumega__column__columns_html__counter
+                  echo menumega__column__columns_html
+                  echo '</div>'
+                endcapture
+                assign more_html = more_html | replace: '<div class="menu-mega__column menu-mega__column-count-1"></div>', ''
+                echo more_html
+              endfor
+              echo '<div class="visually-hidden mega-menu__column-count__{{ sub_sub_columns_counter }}">' | replace: '{{ sub_sub_columns_counter }}' , sub_sub_columns_counter
+              echo ' <span class="theme-ff-bold font-size-xs">mega-menu__column-count__{{ sub_sub_columns_counter }}</span>' | replace: '{{ sub_sub_columns_counter }}' , sub_sub_columns_counter
+              echo '</div>'
+            echo '</div>'
+          -%}
+        {%- endcapture -%}
+        {%- assign menu_mega_columns = menu_mega_columns | replace: '{{ sub_sub_columns_counter }}' , sub_sub_columns_counter -%}
+        {%- echo menu_mega_columns -%}
+      {%- endif -%}
+
+      {%- liquid
+      assign caption_class = 'color-black font-size-xxs'
+      if show_image_a == true or show_image_b == true or show_image_c == true
+        echo '<div class="menu-mega__promo_wrapper theme-f-hor">' | replace : '[AR]', menu_mega_block.settings.mm_image_1_ratio
+          if show_image_a == true and menu_mega_block.settings.mm_image_1 != blank
+            assign menu_mega__promo_block_a = '' 
+            if menu_mega_block.settings.mm_image_1_link != blank
+              assign menu_mega__promo___link = menu_mega_block.settings.mm_image_1_link
+              assign menu_mega__promo___start = '<a href="[menu_mega__promo___link]" class="menu-mega__promo menu-mega__promo-one">' | replace: '[menu_mega__promo___link]', menu_mega__promo___link
+              assign menu_mega__promo___end = '</a>'
+            else
+              assign menu_mega__promo___start = '<div class="menu-mega__promo menu-mega__promo-one">' | replace : '[AR]', menu_mega_block.settings.mm_image_1_ratio
+              assign menu_mega__promo___end = '</div>'
+            endif
+            capture menu_mega__promo___visual
+              echo '<div class="menu-mega__image-wrapper" style="aspect-ratio:[AR]">' | replace : '[AR]', menu_mega_block.settings.mm_image_1_ratio
+              render 'thumbnail-simple', media: menu_mega_block.settings.mm_image_1, position: forloop.index, image_alt: menu_mega_block.settings.mm_image_1.alt
+              echo '</div>'
+            endcapture
+            assign menu_mega__promo___button_title = menu_mega_block.settings.mm_image_1_heading
+            assign menu_mega__promo___button_title_down = menu_mega__promo___button_title | downcase
+            capture menu_mega__promo_block_a
+              echo menu_mega__promo___start
+              echo menu_mega__promo___visual
+              if menu_mega__promo___use_button == 'true'
+                echo '<div class="menu-mega__image-caption">'
+                echo '  <div class="theme-button theme-button__squared theme-button__black-white-black theme-button-hover__white-black-white">'
+                echo '    <span>[menu_mega__promo___button_title]</span>' | replace: '[menu_mega__promo___button_title]', menu_mega__promo___button_title_down
+                echo '  </div>'
+                echo '</div>'
+              else 
+                echo '<div class="menu-mega__image-caption">'
+                echo '  <h3 class="[C]">' | replace : '[C]', caption_class
+                echo '    <span>[menu_mega__promo___button_title]</span>' | replace: '[menu_mega__promo___button_title]', menu_mega__promo___button_title_down
+                echo '  </h3>'
+                echo '</div>'
+              endif
+              echo menu_mega__promo___end
+            endcapture
+            echo menu_mega__promo_block_a
+          endif
+
+          if show_image_b == true and menu_mega_block.settings.mm_image_2 != blank
+            assign menu_mega__promo_block_b = ''  
+            if menu_mega_block.settings.mm_image_2_link != blank
+              assign menu_mega__promo___link = menu_mega_block.settings.mm_image_2_link
+              assign menu_mega__promo___start = '<a href="[menu_mega__promo___link]" class="menu-mega__promo menu-mega__promo-two">' | replace: '[menu_mega__promo___link]', menu_mega__promo___link
+              assign menu_mega__promo___end = '</a>'
+            else
+              assign menu_mega__promo___start = '<div class="menu-mega__promo menu-mega__promo-two">'
+              assign menu_mega__promo___end = '</div>'
+            endif
+            capture menu_mega__promo___visual
+              echo '<div class="menu-mega__image-wrapper" style="aspect-ratio:[AR]">' | replace : '[AR]', menu_mega_block.settings.mm_image_2_ratio
+              render 'thumbnail-simple', media: menu_mega_block.settings.mm_image_2, position: forloop.index, image_alt: menu_mega_block.settings.mm_image_2.alt
+              echo '</div>'
+            endcapture
+            assign menu_mega__promo___button_title = menu_mega_block.settings.mm_image_2_heading | escape
+            assign menu_mega__promo___button_title_down = menu_mega__promo___button_title | downcase
+            capture menu_mega__promo_block_b
+              echo menu_mega__promo___start
+              echo menu_mega__promo___visual
+              if menu_mega__promo___use_button == 'true'
+                echo '<div class="menu-mega__image-caption">'
+                echo '  <div class="theme-button theme-button__squared theme-button__black-white-black theme-button-hover__white-black-white">'
+                echo '    <span>[menu_mega__promo___button_title]</span>' | replace: '[menu_mega__promo___button_title]', menu_mega__promo___button_title_down
+                echo '  </div>'
+                echo '</div>'
+              else 
+                echo '<div class="menu-mega__image-caption">'
+                echo '  <h3 class="[C]">' | replace : '[C]', caption_class
+                echo '    <span>[menu_mega__promo___button_title]</span>' | replace: '[menu_mega__promo___button_title]', menu_mega__promo___button_title_down
+                echo '  </h3>'
+                echo '</div>'
+              endif
+              echo menu_mega__promo___end
+            endcapture
+            echo menu_mega__promo_block_b
+          endif
+          if show_image_c == true and menu_mega_block.settings.mm_image_3 != blank
+            assign menu_mega__promo_block_c = ''  
+            if menu_mega_block.settings.mm_image_3_link != ''
+              assign menu_mega__promo___link = menu_mega_block.settings.mm_image_3_link
+              assign menu_mega__promo___start = '<a href="[menu_mega__promo___link]" class="menu-mega__promo menu-mega__promo-two">' | replace: '[menu_mega__promo___link]', menu_mega__promo___link
+              assign menu_mega__promo___end = '</a>'
+            else
+              assign menu_mega__promo___start = '<div class="menu-mega__promo menu-mega__promo-two">'
+              assign menu_mega__promo___end = '</div>'
+            endif
+            capture menu_mega__promo___visual
+              echo '<div class="menu-mega__image-wrapper" style="aspect-ratio:[AR]">' | replace : '[AR]', menu_mega_block.settings.mm_image_3_ratio
+              render 'thumbnail-simple', media: menu_mega_block.settings.mm_image_3, position: forloop.index, image_alt: menu_mega_block.settings.mm_image_3.alt
+              echo '</div>'
+            endcapture
+            assign menu_mega__promo___button_title = menu_mega_block.settings.mm_image_3_heading | escape
+            assign menu_mega__promo___button_title_down = menu_mega__promo___button_title | downcase
+            capture menu_mega__promo_block_c
+              echo menu_mega__promo___start
+              echo menu_mega__promo___visual
+              if menu_mega__promo___use_button == 'true'
+                echo '<div class="menu-mega__image-caption">'
+                echo '  <div class="theme-button theme-button__squared theme-button__black-white-black theme-button-hover__white-black-white">'
+                echo '    <span>[menu_mega__promo___button_title]</span>' | replace: '[menu_mega__promo___button_title]', menu_mega__promo___button_title_down
+                echo '  </div>'
+                echo '</div>'
+              else 
+                echo '<div class="menu-mega__image-caption">'
+                echo '  <h3 class="[C]">' | replace : '[C]', caption_class
+                echo '    <span>[menu_mega__promo___button_title]</span>' | replace: '[menu_mega__promo___button_title]', menu_mega__promo___button_title_down
+                echo '  </h3>'
+                echo '</div>'
+              endif
+              echo menu_mega__promo___end
+            endcapture
+            echo menu_mega__promo_block_c
+          endif
+        echo '</div>'
+      endif
+      -%}
+    </div>
+  </div>
+</div>
+{%- endcapture -%}
+{%- echo header_menu_mega_block -%}

@@ -1,0 +1,212 @@
+<div class="full-page-wrapper-maxed customer register full-page-max-h">
+  <div class="padding-b-lg padding-t-lg">
+    <h1 id="register" tabindex="-1" class="font-fam-light font-size-xl color-black txt-lowercase">{{- 'customer.register.title' | t -}}</h1>
+    <div class="account-form-wrapper">
+      {%- form 'create_customer' -%}
+        {%- if form.errors -%}
+          <h2 class="form__message" tabindex="-1" autofocus>
+            {%- render 'theme-icon', icon: 'icon-error' -%}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+          <ul class="list-unstyled form-error-list font-size-xxs ">
+            {%- for field in form.errors -%}
+              <li class="padding-v-5">
+                {%- if field == 'form' -%}
+                  {{ form.errors.messages[field] }}
+                {%- else -%}
+                  <a href="#RegisterForm-{{ field }}">
+                    {{ form.errors.translated_fields[field] | capitalize }}
+                    {{ form.errors.messages[field] }}
+                  </a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        <div class="field margin-b-xs">
+          <input class="js-required" type="text" name="customer[first_name]" id="RegisterForm-FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocomplete="given-name" placeholder="{{ 'customer.register.first_name' | t }}" required aria-required="true">
+          <label for="RegisterForm-FirstName">{{ 'customer.register.first_name' | t }}</label>
+        </div>
+        <div class="field margin-b-xs">
+          <input class="js-required" type="text" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocomplete="family-name" placeholder="{{ 'customer.register.last_name' | t }}" required aria-required="true">
+          <label for="RegisterForm-LastName">{{ 'customer.register.last_name' | t }}</label>
+        </div>
+        <div class="field margin-b-xs">
+          <input class="js-required js-person_email" type="email" name="customer[email]" id="RegisterForm-email" {% if form.email %} value="{{ form.email }}"{% endif %} spellcheck="false" autocapitalize="off" autocomplete="email" aria-required="true" required
+            {% if form.errors contains 'email' %} aria-invalid="true" aria-describedby="RegisterForm-email-error" {% endif %} placeholder="{{ 'customer.register.email' | t }}">
+          <label for="RegisterForm-email">{{ 'customer.register.email' | t }}</label>
+          <span id="RegisterForm-email-error" class="form__message">
+            {%- render 'theme-icon', icon: 'icon-error' -%}
+            {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
+          </span>
+        </div>
+        <div class="field margin-b-xs">
+          <input class="js-required" type="password" name="customer[password]" id="RegisterForm-password" {% if form.errors contains 'password' %} aria-invalid="true" aria-describedby="RegisterForm-password-error" {% endif %} placeholder="{{ 'customer.register.password' | t }}" required aria-required="true" >
+          <label for="RegisterForm-password">{{ 'customer.register.password' | t }}</label>
+        </div>
+        <div class="field margin-b-sm">
+          <input class="js-required" type="password" name="customer[password_repeat]" id="RegisterForm-password-repeat" placeholder="{{ 'customer.register.password_repeat' | t }}" required aria-required="true">
+          <label for="RegisterForm-password-repeat">{{ 'customer.register.password_repeat' | t }}</label>
+          <span id="RegisterForm-password-error" class="form__message">
+            {%- render 'theme-icon', icon: 'icon-error' -%}
+            {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
+          </span>
+        </div>
+        <span class="margin-b-sm js-trigger-register-form
+          theme-button theme-button__round-medium theme-button__black-white-black theme-button-hover__black-white-black">
+          {{ 'customer.register.submit' | t }}
+        </span>
+        <div class="visually-hidden">
+          <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+        </div>
+        <div class="margin-b-md">
+          <ul class="list-vertical list-padding-r-10 list-unstyled">
+            <li class="padding-v-5">
+              <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="text-decoration-none">
+                <span class="font-fam-light font-size-xs link link--from-left link-black color-black">
+                  {%- liquid
+                    if customer
+                      echo 'customer.account_fallback' | t
+                    else
+                      echo 'customer.log_in_already_account' | t
+                    endif
+                  -%}
+                </span>
+              </a>
+            </li>
+          </ul>
+          <div class="margin-t-sm">
+            <ul class="list-vertical list-padding-r-10 list-unstyled">
+              <li style="width:100%" class="txt-align-left margin-b-4">
+                <div class="checkbox-wrapper js-store-account-conditions" data-checkbox-name="store-account-conditions">
+                  <div class="checkbox-label disable-select">
+                    <div style="width:100%;" class="font-fam-light font-size-xs">
+                      {%- liquid
+                        assign text_including_links = 'customer.register.agree_terms_html' | t
+                        include 'get-language'
+                        
+                        if current_language == 'en'
+                          assign text_including_links = text_including_links | replace : "LINK_TC", "/policies/terms-of-service"
+                          assign text_including_links = text_including_links | replace : "LINK_PP", "/policies/privacy-policy"
+                        else 
+                          assign text_including_links = text_including_links | replace : "LINK_TC", "/nl/policies/terms-of-service"
+                          assign text_including_links = text_including_links | replace : "LINK_PP", "/nl/policies/privacy-policy"
+                        endif
+                        
+                      -%}
+                      {{- text_including_links -}}
+                    </div>
+                    <input type="checkbox" class="js-input the-checkbox" id="store-account-conditions" name="store-account-conditions" value="false">
+                  </div>
+                </div>
+              </li>
+              <li style="width:100%" class="txt-align-left">
+                <div class="checkbox-wrapper js-store-account-updates" data-checkbox-name="store-account-updates">
+                  <div class="checkbox-label disable-select">
+                    <div style="width:100%;" class="font-fam-light font-size-xs">
+                      {{- 'customer.register.signup_newsletter_html' | t -}}
+                    </div>
+                    <input type="checkbox" class="js-input the-checkbox" id="store-account-updates" name="store-account-updates" value="false">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      {%- endform -%}
+      <input id="password_repeat_error_empty" type="hidden" value="{{ 'customer.register.password_repeat_error_empty' | t }}">
+      <input id="password_repeat_error_notsame" type="hidden" value="{{ 'customer.register.password_repeat_error_notsame' | t }}">
+      <input id="cond_val_error" type="hidden" value="{{ 'customer.register.cond_val_error' | t }}">
+      <input id="all_required_error" type="hidden" value="{{ 'customer.register.all_required_error' | t }}">
+      <input id="input_email_error" type="hidden" value="{{ 'customer.register.input_email_error' | t }}">
+      <script>
+      $(document).ready(function(){ InitRegisterFrom(); });
+
+      function InitRegisterFrom() {
+        "use strict";
+
+        {%- if form.errors contains 'email' -%}
+          $('#RegisterForm-email-error').show();
+        {%- else -%}
+          $('#RegisterForm-email-error').hide();
+        {%- endif -%}
+        {%- if form.errors contains 'password' -%}
+          $('#RegisterForm-password-error').show();
+        {%- else -%}
+          $('#RegisterForm-password-error').hide();
+        {%- endif -%}
+
+        $('.js-trigger-register-form').on('click',function() {
+          window.form_passed = 't';
+          var form_el = $('#create_customer');
+
+          form_el.find('.js-required').removeClass('invalid');
+          form_el.find('.js-required').each(function() {
+            var given_value = $(this).val();
+            if (given_value.length < 1) {
+              $(this).addClass('invalid');
+              window.form_passed = 'f';
+            }
+          });
+          if (window.form_passed === 'f') {
+            var popup_message = $('#all_required_error').val();
+          }
+
+          if (window.form_passed === 't') {
+            var given_mail = form_el.find('.js-person_email').val();
+            var given_mail_valid = ValidateEmail(given_mail);
+            if (given_mail === '' || given_mail_valid === false) {
+              form_el.find('.js-person_email').addClass('invalid');
+              var popup_message = $('#input_email_error').val();
+              window.form_passed = 'f';
+            }
+          }
+          if (window.form_passed === 't') {
+            /* check password same */
+            var pass_val = $('#RegisterForm-password').val();
+            var repass_val = $('#RegisterForm-password-repeat').val();
+
+            if(( pass_val.length == 0) || ( repass_val.length == 0)){
+              window.form_passed = 'f';
+              var popup_message = $('#password_repeat_error_empty').val();
+            } else if (pass_val != repass_val) {
+              window.form_passed = 'f';
+              var popup_message = $('#password_repeat_error_notsame').val();
+            } else {
+              window.form_passed = 't';
+            }
+          }
+          if (window.form_passed === 't') {
+            var cond_val = $('#store-account-conditions').val();
+            if (cond_val !== 'true') {
+              window.form_passed = 'f';
+              $('.js-store-account-conditions').addClass('error');
+              var popup_message = $('#cond_val_error').val();
+            }
+          }
+          if ( $('body').hasClass('lang-en') ) {
+            var popup_this_title = 'Something went wrong';
+          } else {
+            var popup_this_title = 'Er ging iets mis';
+          }
+          if (window.form_passed === 'f') {
+            CustomAlertConfirm.open({
+              this_template: 'popup-message',
+              this_title: popup_this_title,
+              this_message: popup_message,
+              this_okText: 'Sluiten',
+              this_onok: () => { return false; }
+            });
+            return false;
+          } else {
+            var form_el = $('#create_customer');
+            ShowPageLoader();
+            submitForm(form_el);
+          }
+        });
+      }
+      </script>
+    </div>
+  </div>
+</div>

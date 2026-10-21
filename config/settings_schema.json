@@ -1,0 +1,234 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "LekkerCompany",
+    "theme_version": "1.0.1",
+    "theme_author": "Dutch Design Agency",
+    "theme_documentation_url": "https:\/\/dd.agency",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "General",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "checkbox",
+        "id": "website_use_loader",
+        "default":true,
+       "label":"Show Page loader"
+      },
+      {
+        "type": "checkbox",
+        "id": "website_use_cookie_alert",
+        "default":true,
+       "label":"Show Cookie Alert"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_collection_url_in_product_url",
+        "default":true,
+       "label":"Use Collection handle in Product URL"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_newsletter_popup",
+        "default":true,
+       "label":"Enable Newsletter Join Popup"
+      },
+      {
+        "type": "text",
+        "id": "use_newsletter_popup_page_count",
+        "default":"3",
+       "label":"Show popup after X pageviews"
+      },
+      {
+        "type": "text",
+        "id": "gtm_tag",
+       "label":"Google Tag Manager Code"
+      },
+      {
+        "type": "text",
+        "id": "ga_tag",
+       "label":"Google Analytics Code"
+      },
+      {
+        "type": "text",
+        "id": "use_newsletter_popup_title",
+        "default":"Want to stay updated?",
+       "label":"Popup Title"
+      },
+      {
+        "type": "text",
+        "id": "use_newsletter_popup_text",
+        "default":"Sign-up to receive 15% off your first order and be the first to know about new product drops and special offers.",
+       "label":"Popup Title"
+      },
+      {
+        "type": "text",
+        "id": "use_newsletter_popup_customer_tag",
+        "default":"customer_tag_offer_15",
+       "label":"Customer Tag after subscription"
+      },
+      {
+        "type": "header",
+        "content": "User Buy Route"
+      },
+      {
+        "type": "select",
+        "id": "settings_routes_cart_vs_checkout_url",
+        "options": [
+          {
+            "value":"goto_cart",
+           "label":"Shopping Cart"
+          },
+          {
+            "value":"goto_checkout",
+           "label":"Checkout"
+          }
+        ],
+        "default":"goto_checkout",
+       "label":"Direct to Shopping Cart\/Checkout"
+      }
+    ]
+  },
+  {
+    "name": "Shipping",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Free Shipping"
+      },
+      {
+        "type": "text",
+        "id": "website_free_shipping_nl",
+       "label":"Free Shipping Min Threshold (NL)"
+      },
+      {
+        "type": "text",
+        "id": "website_free_shipping_be",
+       "label":"Free Shipping Min Threshold (BE)"
+      }            
+
+    ]
+  },  
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header\/Navigation"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+       "label":"Logo"
+      },
+      {
+        "type": "select",
+        "id": "main_menu_icons_or_text",
+        "options": [
+          {
+            "value":"main_menu_none",
+           "label":"None"
+          }
+        ],
+        "default":"main_menu_none",
+       "label":"Use Text\/Label or Icons"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.social-media.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header__1.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "share_facebook",
+        "default":true,
+       "label":"t:settings_schema.social-media.settings.share_facebook.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "share_twitter",
+        "default":true,
+       "label":"t:settings_schema.social-media.settings.share_twitter.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "share_pinterest",
+        "default":true,
+       "label":"t:settings_schema.social-media.settings.share_pinterest.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header__2.content"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+       "label":"t:settings_schema.social-media.settings.social_twitter_link.label",
+        "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+       "label":"t:settings_schema.social-media.settings.social_facebook_link.label",
+        "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+       "label":"t:settings_schema.social-media.settings.social_pinterest_link.label",
+        "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+       "label":"t:settings_schema.social-media.settings.social_instagram_link.label",
+        "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+       "label":"t:settings_schema.social-media.settings.social_tiktok_link.label",
+        "info": "t:settings_schema.social-media.settings.social_tiktok_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+       "label":"t:settings_schema.social-media.settings.social_linkedin_link.label",
+        "info": "t:settings_schema.social-media.settings.social_linkedin_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+       "label":"t:settings_schema.social-media.settings.social_tumblr_link.label",
+        "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+       "label":"t:settings_schema.social-media.settings.social_snapchat_link.label",
+        "info": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+       "label":"t:settings_schema.social-media.settings.social_youtube_link.label",
+        "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+       "label":"t:settings_schema.social-media.settings.social_vimeo_link.label",
+        "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      }
+    ]
+  }
+]

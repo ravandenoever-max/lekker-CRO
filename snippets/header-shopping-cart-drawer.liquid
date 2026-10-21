@@ -1,0 +1,420 @@
+{%- liquid
+  assign filename = 'header-shopping-cart-drawer'
+  assign settings_routes_cart_vs_checkout_name = 'additional.checkout_button.label' | t
+  assign settings_routes_cart_vs_checkout_url = settings.settings_routes_cart_vs_checkout_url
+  if settings_routes_cart_vs_checkout_url == 'goto_checkout'
+    assign settings_routes_cart_vs_checkout_final_url = '/checkout'
+  else
+    assign settings_routes_cart_vs_checkout_final_url = routes.cart_url
+  endif
+  assign use_additional_products = 'true'
+
+  if use_additional_products == 'true'
+    assign this_collection = collections['shopping-cart-drawer']
+    assign additional_products_size = this_collection.all_products_count | plus : 0
+    if additional_products_size < 1    
+      assign this_collection = collections['all-products']
+    endif 
+    assign additional_products_size = this_collection.all_products_count | plus : 0
+    if additional_products_size < 1
+      assign use_additional_products = 'false'
+    endif
+  endif
+
+  assign current_market = localization.market.handle
+  assign shipping_free_min_order = ''
+  assign show_free_min_order = false
+  if current_market == 'nl'
+    assign show_free_min_order = true
+    assign shipping_free_min_order = settings.website_free_shipping_nl | plus : 0 | times : 100
+  elsif  current_market == 'be'
+    assign show_free_min_order = true
+    assign shipping_free_min_order = settings.website_free_shipping_be | plus : 0 | times : 100
+  endif
+
+  assign cart_total_price = cart.total_price 
+  assign cart_total_price_money = cart_total_price | money | replace : ',00',',-'
+-%}
+{%- liquid
+  assign spend_more_free_shipping = 0
+  if cart.item_count > 0
+    if shipping_free_min_order > 0
+      if cart_total_price < shipping_free_min_order
+        assign spend_more_free_shipping = shipping_free_min_order | minus : cart_total_price
+      endif
+      assign spend_more_free_shipping_money = spend_more_free_shipping | money | replace : ',00',',-'
+    endif
+  endif
+-%}
+{%- if show_free_min_order == true -%}
+  {%- capture spend_more_free_shipping_html -%}
+    <div class="sc-extra-spend-more-wrapper js-ajax-loaded-content">
+      {%- if spend_more_free_shipping > 0 -%}
+        <div class="sc-divider sc-divider-c margin-t-xxs"></div>
+        <h3 class="font-fam-light font-size-sm color-black -txt-uppercase padding-v-xxs">{{ 'sections.cart.spend_more_title_left' | t | replace : '[MONEY]', spend_more_free_shipping_money }}</h3>
+      {%- elsif cart.item_count > 0 -%}
+        <div class="sc-divider sc-divider-c margin-t-xxs"></div>
+        <h3 class="font-fam-light font-size-sm color-black -txt-uppercase padding-v-xxs">{{ 'sections.cart.spend_more_title_reached' | t | replace : '[MONEY]', spend_more_free_shipping_money }}</h3>
+      {%- endif -%}
+    </div>
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if use_additional_products == 'true' -%}
+  {%- capture additional_products_html -%}
+    <div class="sc-wrapper padding-t-xxs">
+      <div class="sc-divider sc-divider-c"></div>
+      <div class="sc-extra-products-wrapper sc-drawer-shuffle-products padding-t-xxs">
+        <h3 class="font-fam-bold font-size-sm txt-uppercase color-black">{{ 'sections.cart.extra_prod_title' | t }}</h3>
+        <div class="sc-extra-products padding-t-3xs">
+          {%- liquid
+            assign number_to_show = 5
+            assign number_to_fetch = 20
+          -%}
+          {%- capture this_products_html -%}
+            {%- for product in this_collection.products limit: number_to_show -%}
+              {%- assign product_id = product.variants.first.id -%}
+              <div class="grid__item nomargin mousepointer" id="product-{{ product_id }}">
+                {%- liquid 
+                  assign chosen_product_card_layout = 'hor'
+                  render 'product-card', collection:this_collection, chosen_product_card_layout:chosen_product_card_layout, product_card_product:product, button_size:'small', area_name:area_name, product_card_color:product_card_color
+                -%}
+              </div>
+            {%- endfor -%}
+          {%- endcapture -%}
+          {%- capture this_products_html_extra -%}
+            {%- for product in this_collection.products limit: number_to_fetch -%}
+              {%- assign product_id = product.variants.first.id -%}
+              <div class="li grid__item nomargin mousepointer" id="product-{{ product_id }}">
+                {%- liquid 
+                  assign chosen_product_card_layout = 'hor'
+                  render 'product-card', collection:this_collection, chosen_product_card_layout:chosen_product_card_layout, product_card_product:product, button_size:'small', area_name:area_name, product_card_color:product_card_color
+                -%}            </div>
+            {%- endfor -%}
+          {%- endcapture -%}
+
+          {%- liquid
+            echo '<div data-show="[number_to_show]" id="collection-product-cart-add-ons" class="collection-grid element-count-[number_to_show] list-unstyled">' | replace : '[number_to_show]', number_to_show
+            render'inline-html',input_html:this_products_html
+            echo '</div>'
+            echo '<div data-show="[number_to_show]" id="collection-product-cart-add-ons-extra" class="collection-grid element-count-[number_to_show] list-unstyled">' | replace : '[number_to_show]', number_to_show
+            render'inline-html',input_html:this_products_html_extra
+            echo '</div>'
+          -%}
+          <style>#collection-product-cart-add-ons-extra{display:none}</style>
+        </div>
+      </div>
+    </div>
+  {%- endcapture -%}
+{%- endif -%}
+<div class="shopping-cart">
+  <div class="sc-inner">
+    <div class="sc-section-top padding-t-xxs">
+      <div class="sc-title-wrapper">
+        <div class="sc-title"><h2 id="cart-title" class="font-fam-special font-size-lg color-black">{{ 'sections.cart.title' | t }}</h2></div>
+        <div class="sc-close js-close-sc">{%- render 'theme-icon', icon: 'icon-close' -%}</div>
+      </div>
+      <div class="sc-divider sc-divider-a margin-v-xxs"></div>
+    </div>
+    <div class="sc-section-middle theme-f-vert theme-f-outside">
+      <div class="sc-prod-items js-ajax-loaded-content" data-cart-items="{{ cart.item_count }}">
+
+        {% comment %}
+          <div class="sc-cart-items bg_green" data-cart-items="{{ cart.item_count }}">
+            {%- for item in cart.items -%}
+              {%- liquid
+                assign product_title = item.product.title | escape
+                assign this_product_id = item.product.id | escape
+                assign this_product_variant_id = item.id
+                assign this_product_key = item.key
+              -%}
+              <div class="sc-cart-item" id="sc-cart-{{ this_product_variant_id }}" data-prod-id="{{ this_product_variant_id }}" data-prod-key="{{ this_product_key }}">
+                <div class="sc-cart-item__details gl-p-b-2xs">
+                  <div class="gl-f-hor gl-g-3xs gl-f-outside gl-w-100">
+                    <div class="sc-cart-item__media">
+                      <a href="{{ item.product.url }}" alt="{{ product_title }}" class="bg-product-bg">
+                        {%- if item.image -%}
+                          {%- liquid
+                            assign product_image_a = item.image
+                            assign product_image_a_alt = product_image_a.alt                  
+                          -%}
+                          <div class="gl-r-prod">
+                            <img style="position:absolute;" class="sc-cart-item__image" src="{{ item.image | img_url: '200x' }}" alt="{{ item.image.alt | escape }}" loading="lazy" width="80" height="{{ 80 | divided_by: item.image.aspect_ratio | ceil }}">
+
+                          </div>
+                        {%- endif -%}
+                      </a>
+                    </div>            
+                    <div class="gl-f-vert gl-f-outside" style="flex:auto">
+                      <div class="gl-f-vert gl-g-6xs">
+                        <a href="{{ item.product.url }}" alt="{{ product_title }}" class="full-unstyled-link sc-cart-item__name break">
+                          <h5 class="gl-ff-bold gl-fs-sm gl-c-black">{{ product_title }}</h5>
+                        </a>
+                        <h6 class="gl-ff-light gl-fs-sm gl-c-black gl-hidden">{{ product_vendor | escape }}</h6>
+                        <div class="gl-ff-light gl-fs-sm">
+                          {%- render 'cart-product-variant-details',item:item,version:'drawer' -%}    
+                        </div>
+                      </div>
+                      <div class="gl-f-hor gl-f-outside">
+                        <div class="sc-cart-item__price-wrapper">
+                          <span class="price price--end gl-ff-bold gl-fs-sm gl-c-black">
+                            {{ item.price | money | replace: ',00',product_price__replace_zeros_width }}
+                          </span>
+                        </div>
+                        {%- if quantity_dropdown_vs_other == 'dropdown' -%}
+                          {%- liquid
+                            assign total_elements = 5
+                            assign total_elements_half = 3
+                            assign current_qty = item.quantity
+                            assign start_qty = current_qty | minus : total_elements_half
+                            if start_qty < 1 
+                              assign start_qty = 1
+                            endif
+                            assign end_qty = start_qty | plus : total_elements
+                          -%}
+                          <div class="gl-ff-bold gl-fs-xs txt-uppercase">
+                            <div class="sc-quantity__select gl-f-hor" style="position:relative;">
+                            <span class="gl-f-vert gl-f-middle gl-fs-md gl-c-dgrey" style="padding-top:2px">x&nbsp;</span>
+                            <select size="1" class="js-quantity__select js-quantity__select-inactive">
+                              {%- liquid
+                                capture qty_selecter
+                                  assign inventory_quantity = item.variant.inventory_quantity                 
+                                  for i in (start_qty..end_qty)
+                                    echo '<option value="[I]" ' | replace : '[I]', i
+                                    if current_qty == i
+                                      echo ' selected'
+                                    endif
+                                    if i > inventory_quantity
+                                      echo ' disabled'
+                                    endif
+                                    echo '>[I]</option>' | replace : '[I]', i
+                                  endfor
+                                endcapture
+                                echo qty_selecter
+                              -%}
+                            </select>
+                            <span class="i"></span>
+                            </div>
+                          </div>
+                        {%- else -%}
+                          <quantity-input class="quantity quantity-input gl-bg-red">
+                            <button class="quantity__button js-quantity-button-min-inactive no-js-hidden" name="minus" type="button">
+                              <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+                              {%- render 'theme-icon', icon: 'icon-minus' %}
+                            </button>
+                            <input class="quantity__input js-quantity__input-inactive" type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}" id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                            <button class="quantity__button js-quantity-button-plus-inactive no-js-hidden" name="plus" type="button">
+                              <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+                              {%- render 'theme-icon', icon: 'icon-plus' %}
+                            </button>
+                          </quantity-input>
+                        {%- endif -%}                 
+                      </div>
+                    </div>
+                    <div class="sc-cart-item__quantity gl-f-vert gl-f-outside gl-f-right">
+                      <div class="gl-p-t-7xs">
+                        <mini-cart-remove-button class="cart-remove-button js-cart-remove-button-inactive" id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                          <div class="gl-ff-bold gl-fs-xs txt-uppercase underlined-link mousepointer">
+                            <span>{{ 'sections.cart.remove_prod' | t }}</span>
+                          </div>
+                        </mini-cart-remove-button>
+                      </div>                
+                      <div class="sc-cart-item__price-wrapper">
+                        <span class="price price--end gl-ff-bold gl-fs-sm gl-c-black">
+                          {{ item.original_line_price | money | replace: ',00',product_price__replace_zeros_width }}
+                        </span>
+                      </div>
+                    </div>              
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        {% endcomment %}
+
+        {%- if cart.item_count > 0 -%}
+          <table class="sc-cart-items" data-cart-items="{{ cart.item_count }}" cellpadding="0" cellspacing="0">
+            <tbody>
+            {%- for item in cart.items -%}
+              {%- liquid
+                assign product_title = item.product.title | escape
+                assign this_product_id = item.product.id | escape
+                assign this_product_variant_id = item.id
+                assign this_product_key = item.key
+              -%}
+              {%- liquid
+                capture product_quantity_variant
+                  render 'cart-product-variant-details',item:item,version:'drawer'
+                endcapture
+              -%}
+
+              <tr class="sc-cart-item" id="sc-cart-{{ this_product_variant_id }}" data-prod-line="{{ item.index | plus: 1 }}" data-prod-id="{{ this_product_variant_id }}" data-prod-key="{{ this_product_key }}">
+                <td class="sc-cart-item__media">
+                  <a href="{{ item.product.url }}" style="aspect-ratio:1/1;" alt="{{ product_title }}" class="bg-product-bg">
+                    {%- if item.image -%}
+                      <img style="position:absolute;" class="sc-cart-item__image" src="{{ item.image | img_url: '200x' }}" alt="{{ item.image.alt | escape }}" loading="lazy" width="80" height="{{ 80 | divided_by: item.image.aspect_ratio | ceil }}">
+                    {%- endif -%}
+                  </a>
+                </td>
+                <td class="sc-cart-item__details padding-l-10 padding-b-xs">
+                  <a href="{{ item.product.url }}" alt="{{ product_title }}" class="full-unstyled-link sc-cart-item__name break">
+                    {%- liquid
+                      assign split_value = ' - '
+                      if product_title contains split_value
+                        assign product_title_array = product_title | split : split_value
+                        assign product_title_a = product_title_array[0]
+                        assign product_title_b = product_title_array[1]
+                        echo '<h5 class="font-fam-normal font-size-3xs txt-lowercase color-black">[T]</h5>' | replace: '[T]', product_title_a
+                        echo '<h6 class="font-fam-normal font-size-xs txt-lowercase color-black">[T]</h6>' | replace: '[T]', product_title_b
+                      else 
+                        echo '<h5 class="font-fam-bold font-size-xs txt-lowercase color-black">[T]</h5>' | replace: '[T]', product_title 
+                      endif
+                      comment
+                        echo '<h4 class="font-fam-normal font-size-xxs txt-lowercase color-black">[T]</h4>' | replace: '[T]', product_quantity_variant
+                      endcomment
+                    -%}   
+                  </a>          
+
+                </td>
+                <td class="sc-cart-item__quantity">
+                  <mini-cart-remove-button class="cart-remove-button js-cart-remove-button-inactive" id="Remove-{{ item.index | plus: 1 }}"  data-index="{{ item.index | plus: 1 }}">
+                    <div aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                      {% render 'theme-icon', icon: 'icon-remove' %}
+                    </div>
+                  </mini-cart-remove-button>
+                  <quantity-input class="quantity quantity-input">
+                    <button class="quantity__button js-quantity-button-min-inactive no-js-hidden" name="minus" type="button">
+                      <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
+                      {% render 'theme-icon', icon: 'icon-minus' %}
+                    </button>
+                    <input class="quantity__input js-quantity__input-inactive" type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}" id="Quantity-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+                    <button class="quantity__button js-quantity-button-plus-inactive no-js-hidden" name="plus" type="button">
+                      <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
+                      {% render 'theme-icon', icon: 'icon-plus' %}
+                    </button>
+                  </quantity-input>
+                </td>
+                <td class="sc-cart-item__totals right padding-r-xxs">
+                  <div class="sc-cart-item__price-wrapper medium-up" data-lp="{{ item.line_price }}" data-op="{{ item.original_line_price }}">
+                    {%- if item.line_price < item.original_line_price -%}
+                      <span style="text-decoration:line-through" class="price price--end font-fam-normal font-size-3xs txt-uppercase color-grey">{{ item.original_line_price | money | replace : ',00',',-' }}</span>
+                      <span class="price price--end font-fam-bold font-size-xs txt-uppercase color-black">{{ item.line_price | money | replace : ',00',',-' }}</span>
+                    {%- else -%}
+                      <span class="price price--end font-fam-bold font-size-xs txt-uppercase color-black">{{ item.original_line_price | money | replace : ',00',',-' }}</span>
+                    {%- endif -%}
+                  </div>
+                </td>
+              </tr>
+            {%- endfor -%}
+            </tbody>
+          </table>
+        {%- endif -%}
+
+
+          {%- if cart.item_count == 0 -%}
+            <div class="cart-empty-alert"><h5 class="font-fam-bold font-size-sm color-black ">{{ 'sections.cart.cart_empty' | t }}</h5></div>
+          {%- else -%}
+            <div class="cart-empty-alert visually-hidden"><h5 class="font-fam-bold font-size-sm color-black ">{{ 'sections.cart.cart_empty' | t }}</h5></div>
+          {%- endif -%} 
+
+          {{ spend_more_free_shipping_html }}
+          <div class="cart-empty-alert visually-hidden"><h5 class="font-fam-light font-size-sm color-black txt-uppercase">{{ 'sections.cart.cart_empty' | t }}</h5></div>
+          <input type="hidden" value="{{ 'sections.cart.sure_delete_alert' | t }}" class="sure_delete_alert">
+          <input type="hidden" value="{{ 'sections.cart.sure_delete_alert_yes' | t }}" class="sure_delete_alert_yes">
+          <input type="hidden" value="{{ 'sections.cart.sure_delete_alert_no' | t }}" class="sure_delete_alert_no">
+          <input type="hidden" value="{{ cart.item_count }}" class="total_prod_items_in_cart">
+        </div>
+        
+        {{ additional_products_html }}
+    </div>
+    <div class="sc-section-bottom padding-b-3xs">
+      <div class="sc-divider sc-divider-b margin-t-xxs margin-b-xxs"></div>
+      <div class="sc-totals margin-b-xxs font-size-sm">
+        <div class="sc-totals-desc">
+          {%- liquid
+            assign estimated_total_title = 'sections.cart.estimated_total_title' | t  | replace : '[break]', '<br>'
+            assign estimated_total_text = 'sections.cart.estimated_total_text' | t  | replace : '[break]', '<br>'
+          -%}
+          <p class="font-fam-bold font-size-xs txt-uppercase color-black">{{ estimated_total_title }}</p>
+          <p class="font-fam-light font-size-4xs --txt-uppercase color-grey">{{ estimated_total_text }}</p>
+        </div>
+        <div class="sc-totals-total js-ajax-loaded-content padding-l-m">
+          <span class="font-fam-bold font-size-md color-black">{{ cart_total_price_money }}</span>
+        </div>
+      </div>
+      <div class="sc-checkout-buttons margin-b-3xs" style="column-gap:1rem;row-gap:1rem;">
+        <div class="button-checkout" style="flex:1;">
+          <a href="{{ settings_routes_cart_vs_checkout_final_url }}" style="width:100%;" class="button-checkout theme-button theme-button__round-medium theme-button__white-white-red theme-button-hover__blue-grey-blue">
+            <span>{{ settings_routes_cart_vs_checkout_name }}</span>
+          </a>
+        </div>
+        <div class="button-continue">
+          <span class="js-close-sc theme-button theme-button__round-medium theme-button__white-black-white theme-button-hover__blue-grey-blue">
+            <span>{{ 'sections.cart.continue_shopping' | t }}</span>
+          </span>
+        </div>
+      </div>
+      <div class="sc-checkout-payment margin-b-xxs theme-w-100">
+        <div class="theme-f-hor theme-w-100 theme-f-center theme-g-6xs theme-payment-icons --no-pe">
+          <div class="icon icon-payment">
+
+            <svg class="icon icon--full-color" viewBox="0 0 620 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title>iDeal/Wero</title>
+              <rect x="5" y="5" width="610" height="237.5" rx="22.5" fill="white" stroke="black" stroke-opacity="0.07" stroke-width="10"/>
+              <rect x="10" y="10" width="600" height="227.5" rx="17.5" fill="white"/>
+              <path d="M23.7723 38.5875V209.088C23.7723 217.25 30.4848 223.925 38.6848 223.925H141.047C218.435 223.925 251.972 180.813 251.972 123.613C251.972 66.4125 218.422 23.75 141.035 23.75H38.6723C30.4723 23.75 23.7598 30.425 23.7598 38.5875H23.7723Z" fill="white"/>
+              <path d="M92.2852 65.6008V191.588H147.373C197.398 191.588 219.085 163.463 219.085 123.701C219.085 83.9383 197.385 56.1133 147.373 56.1133H101.823C96.5352 56.1133 92.2852 60.4133 92.2852 65.6133V65.6008Z" fill="#CC0066"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M52.0273 210.35H141.04C203.59 210.35 238.102 179.562 238.102 123.687C238.102 91.4874 225.502 37.3999 141.04 37.3999H52.0273C44.1273 37.3999 37.7148 43.7749 37.7148 51.6499V196.112C37.7148 203.975 44.1273 210.362 52.0273 210.362V210.35ZM42.4773 51.6499C42.4773 46.3874 46.7273 42.1499 52.0148 42.1499H141.027C175.465 42.1499 233.315 52.7624 233.315 123.687C233.315 176.512 200.515 205.6 141.027 205.6H52.0273C46.7398 205.6 42.4898 201.375 42.4898 196.1V51.6499H42.4773Z" fill="#232323"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M119.393 105.374C117.718 104.774 115.968 104.474 114.068 104.474V104.399H101.455V134.824H114.218C116.48 134.824 118.443 134.374 120.13 133.624C121.805 132.799 123.193 131.749 124.293 130.399C125.393 129.049 126.193 127.399 126.768 125.524C127.28 123.649 127.568 121.624 127.568 119.374C127.568 116.824 127.205 114.649 126.543 112.774C125.818 110.974 124.868 109.399 123.705 108.124C122.468 106.924 121.08 105.949 119.405 105.349L119.393 105.374ZM116.405 128.837C115.455 129.137 114.58 129.287 113.63 129.287V129.362H107.868V110.174H112.53C114.13 110.174 115.443 110.399 116.543 110.849C117.643 111.299 118.518 112.049 119.168 112.874C119.818 113.699 120.33 114.824 120.63 116.024C120.918 117.224 121.068 118.649 121.068 120.149C121.068 121.874 120.843 123.224 120.418 124.424C119.98 125.624 119.393 126.524 118.743 127.274C118.093 128.024 117.28 128.549 116.405 128.849V128.837Z" fill="white"/>
+              <path d="M153.887 104.486V110.111H138.275V116.636H152.637V121.811H138.275V129.236H154.25V134.861H131.787V104.436H153.887V104.511V104.486Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M187.287 134.912L176.199 104.487H169.424L158.262 134.912H164.824L167.162 128.162H178.249L180.512 134.912H187.299H187.287ZM172.837 111.975L176.562 123.137H168.912L172.774 111.975H172.849H172.837Z" fill="white"/>
+              <path d="M197.864 104.475V129.288H212.302V134.913H191.377V104.488H197.864V104.475Z" fill="white"/>
+              <path d="M66.6926 135.363C74.5926 135.363 80.9926 128.963 80.9926 121.051C80.9926 113.138 74.5926 106.738 66.6926 106.738C58.7926 106.738 52.3926 113.138 52.3926 121.051C52.3926 128.963 58.7926 135.363 66.6926 135.363Z" fill="#232323"/>
+              <path d="M75.2039 192.6C64.1289 192.6 55.2539 183.038 55.2539 171.288V154.65C55.2539 148.775 59.6914 143.95 65.2664 143.95C70.8414 143.95 75.2789 148.7 75.2789 154.65V192.6H75.2039Z" fill="#232323"/>
+              <path d="M517.002 124.526C517.002 107.801 528.902 92.5635 549.452 92.5635C570.002 92.5635 581.989 107.813 581.989 124.526C581.989 141.238 570.089 156.488 549.452 156.488C528.902 156.488 517.002 141.238 517.002 124.526ZM563.927 124.526C563.927 116.463 558.614 109.026 549.452 109.026C540.289 109.026 534.977 116.476 534.977 124.526C534.977 132.576 540.377 140.038 549.452 140.038C558.527 140.038 563.927 132.588 563.927 124.526Z" fill="#1D1C1C"/>
+              <path d="M504.358 136.401C511.208 132.501 515.321 125.051 515.321 116.826C515.321 104.614 506.496 94.2139 492.796 94.2139H464.033V154.851H481.846V139.351H485.183L495.371 154.851H516.346L504.358 136.401ZM489.208 125.389H481.846V108.239H489.296C494.096 108.239 497.171 112.139 497.171 116.814C497.171 121.489 493.996 125.389 489.208 125.389Z" fill="#1D1C1C"/>
+              <path d="M382.722 94.1382L372.035 130.276L361.61 94.1382H347.422L336.91 130.276L326.31 94.1382H307.51L329.047 154.663H344.51L354.51 121.713L364.422 154.663H379.972L401.51 94.1382H382.71H382.722Z" fill="#1D1C1C"/>
+              <path d="M428.473 139.887H428.435C421.773 139.887 417.098 135.862 415.098 130.537H460.36C460.723 128.537 460.91 126.487 460.91 124.412C460.91 107.737 449.048 92.5247 428.473 92.5122V108.937C435.173 108.95 439.798 112.975 441.785 118.287H396.585C396.223 120.287 396.035 122.337 396.035 124.412C396.035 141.1 407.91 156.325 428.423 156.325H428.46V139.887H428.473Z" fill="#1D1C1C"/>
+              <path d="M428.442 156.313C429.142 156.313 429.83 156.288 430.505 156.263C434.667 156.05 438.455 155.2 441.83 153.838C445.205 152.475 448.167 150.588 450.68 148.313C453.205 146.038 455.28 143.375 456.892 140.438C458.355 137.763 459.43 134.875 460.105 131.863H441.242C440.855 132.663 440.405 133.438 439.892 134.15C439.192 135.138 438.367 136.025 437.43 136.788C436.492 137.563 435.442 138.213 434.292 138.713C433.142 139.213 431.88 139.563 430.517 139.75C429.855 139.838 429.167 139.888 428.455 139.888C424.217 139.888 420.78 138.25 418.317 135.688L406.055 148.088C411.505 153.125 419.067 156.3 428.442 156.3V156.313Z" fill="url(#paint0_linear_979_1130)"/>
+              <path d="M428.44 92.5C411.04 92.5 399.853 103.45 396.865 116.95H415.665C417.915 112.3 422.34 108.925 428.44 108.925C433.303 108.925 437.078 111.025 439.54 114.2L451.915 101.687C446.39 96.0875 438.44 92.5 428.453 92.5H428.44Z" fill="url(#paint1_linear_979_1130)"/>
+              <path d="M279.512 191.25C278.137 191.25 277.012 190.125 277.012 188.75V58.75C277.012 57.375 278.137 56.25 279.512 56.25C280.887 56.25 282.012 57.375 282.012 58.75V188.75C282.012 190.125 280.887 191.25 279.512 191.25Z" fill="#1D1C1C"/>
+              <defs>
+                <linearGradient id="paint0_linear_979_1130" x1="450.905" y1="120.875" x2="422.755" y2="155.338" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.02" stop-color="#1D1C1C" stop-opacity="0"/>
+                  <stop offset="0.68" stop-color="#1D1C1C"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_979_1130" x1="401.803" y1="128.187" x2="430.653" y2="99.675" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.02" stop-color="#1D1C1C" stop-opacity="0"/>
+                  <stop offset="0.68" stop-color="#1D1C1C"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          
+          </div>      
+          <div class="icon icon-payment">
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-visa"><title id="pi-visa">Visa</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z" fill="#142688"></path></svg>        
+          </div>
+          <div class="icon icon-payment">
+            <svg width="100%" height="100%" viewBox="0 0 1529 965" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_2533_1727)"><path opacity="0.07" d="M1408.29 0H120.711C52.3079 0 0 52.2708 0 120.625V844.375C0 912.729 56.3316 965 120.711 965H1408.29C1476.69 965 1529 912.729 1529 844.375V120.625C1529 52.2708 1472.67 0 1408.29 0Z" fill="black"/><path d="M1408.29 40.2085C1452.55 40.2085 1488.76 76.396 1488.76 120.625V844.375C1488.76 888.604 1452.55 924.792 1408.29 924.792H120.711C76.45 924.792 40.2368 888.604 40.2368 844.375V120.625C40.2368 76.396 76.45 40.2085 120.711 40.2085H1408.29Z" fill="white"/><path d="M416.894 352.469C404.073 367.264 383.558 378.932 363.043 377.265C360.479 357.262 370.522 336.008 382.276 322.88C395.097 307.669 417.536 296.833 435.7 296C437.837 316.837 429.503 337.258 416.894 352.469ZM435.486 381.225C405.782 379.558 380.352 397.686 366.248 397.686C351.931 397.686 330.347 382.058 306.841 382.475C276.282 382.892 247.861 399.77 232.261 426.65C200.206 480.41 223.927 560.009 254.913 603.767C270.085 625.438 288.249 649.192 312.183 648.359C334.835 647.525 343.81 633.981 371.163 633.981C398.73 633.981 406.637 648.359 430.571 647.942C455.36 647.525 470.96 626.271 486.132 604.6C503.441 580.012 510.493 556.049 510.921 554.799C510.493 554.382 463.053 536.671 462.625 483.327C462.198 438.735 500.022 417.481 501.732 416.231C480.362 385.392 447.026 382.058 435.486 381.225ZM607.084 320.796V645.65H658.799V534.587H730.387C795.778 534.587 841.723 490.829 841.723 427.483C841.723 364.138 796.633 320.796 732.097 320.796H607.084ZM658.799 363.304H718.42C763.296 363.304 788.94 386.642 788.94 427.692C788.94 468.741 763.296 492.287 718.206 492.287H658.799V363.304ZM936.177 648.15C968.658 648.15 998.79 632.106 1012.47 606.684H1013.53V645.65H1061.4V483.952C1061.4 437.069 1022.94 406.854 963.743 406.854C908.823 406.854 868.221 437.485 866.725 479.577H913.311C917.158 459.573 936.177 446.445 962.248 446.445C993.875 446.445 1011.61 460.823 1011.61 487.286V505.206L947.075 508.957C887.026 512.5 854.545 536.462 854.545 578.137C854.545 620.228 888.095 648.15 936.177 648.15ZM950.067 609.601C922.5 609.601 904.977 596.682 904.977 576.887C904.977 556.466 921.859 544.589 954.127 542.714L1011.61 539.171V557.508C1011.61 587.931 985.113 609.601 950.067 609.601ZM1125.3 734C1175.73 734 1199.45 715.246 1220.18 658.361L1311 409.98H1258.43L1197.53 601.892H1196.46L1135.56 409.98H1081.49L1169.11 646.483L1164.4 660.861C1156.5 685.241 1143.68 694.617 1120.81 694.617C1116.75 694.617 1108.84 694.201 1105.64 693.784V732.75C1108.63 733.583 1121.45 734 1125.3 734Z" fill="black"/></g><defs><clipPath id="clip0_2533_1727"><rect width="1529" height="965" fill="white"/></clipPath></defs></svg>
+          </div>      
+          <div class="icon icon-payment">
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-master"><title id="pi-master">Mastercard</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><circle fill="#EB001B" cx="15" cy="12" r="7"></circle><circle fill="#F79E1B" cx="23" cy="12" r="7"></circle><path fill="#FF5F00" d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path></svg>
+          </div>
+          <div class="icon icon-payment">
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img" aria-labelledby="pi-paypal"><title id="pi-paypal">PayPal</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path><path fill="#003087" d="M23.9 8.3c.2-1 0-1.7-.6-2.3-.6-.7-1.7-1-3.1-1h-4.1c-.3 0-.5.2-.6.5L14 15.6c0 .2.1.4.3.4H17l.4-3.4 1.8-2.2 4.7-2.1z"></path><path fill="#3086C8" d="M23.9 8.3l-.2.2c-.5 2.8-2.2 3.8-4.6 3.8H18c-.3 0-.5.2-.6.5l-.6 3.9-.2 1c0 .2.1.4.3.4H19c.3 0 .5-.2.5-.4v-.1l.4-2.4v-.1c0-.2.3-.4.5-.4h.3c2.1 0 3.7-.8 4.1-3.2.2-1 .1-1.8-.4-2.4-.1-.5-.3-.7-.5-.8z"></path><path fill="#012169" d="M23.3 8.1c-.1-.1-.2-.1-.3-.1-.1 0-.2 0-.3-.1-.3-.1-.7-.1-1.1-.1h-3c-.1 0-.2 0-.2.1-.2.1-.3.2-.3.4l-.7 4.4v.1c0-.3.3-.5.6-.5h1.3c2.5 0 4.1-1 4.6-3.8v-.2c-.1-.1-.3-.2-.5-.2h-.1z"></path></svg>
+          </div>
+        </div>
+        {%- capture bloated_css -%}
+          <style>
+            .theme-payment-icons{padding-top:0.5rem}
+            .theme-payment-icons div.icon{filter:grayscale(0%);position:relative}
+            .theme-payment-icons div.icon.icon-payment{display:flex;flex-direction:column;align-items:center;justify-content:center;width:auto;height:1.5rem;font-size:0.5rem}
+            .theme-payment-icons div.icon.icon-payment svg,
+            .theme-payment-icons div.icon.icon-payment img{width:100%;height:100%}    
+          </style>
+        {%- endcapture -%}
+        {%- render 'inline-css',input_css:bloated_css -%}
+      </div>
+    </div>
+  </div>
+</div>

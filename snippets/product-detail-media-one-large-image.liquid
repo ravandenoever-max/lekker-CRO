@@ -1,0 +1,53 @@
+  <div class="product-detail-visuals --product__media-list --grid --grid--peek --list-unstyled">
+    {%- liquid
+      for media in product.media
+        assign this_image = media
+        if this_image.media_type == 'image'
+          if forloop.first != true
+            assign object_starts_hidden_class = 'second-image'
+          else
+            assign object_starts_hidden_class = 'first-image'
+          endif
+          echo '<div class="product__media-item --js-set-ratio-once LIQUID_OBJECT" data-ratio="1:1" data-media-id="LIQUID_SECTION-LIQUID_MEDIA" id="LIQUID_SECTION-LIQUID_MEDIA">' | replace :'LIQUID_OBJECT',object_starts_hidden_class | replace :'LIQUID_SECTION',section.id | replace :'LIQUID_MEDIA',media.id
+            render 'thumbnail-simple',min_srcset:800,max_srcset:3000,media:media,position:forloop.index,image_alt:media.alt,loop:section.settings.enable_video_looping,modal_id:section.id
+          echo '</div>'
+        endif
+      endfor
+    -%}
+  </div>
+  <style>
+    .product__media-item { overflow:hidden; }
+    .product__media-item.-once { }
+    .product__media-item img { object-fit:cover; width:100%;height:100%; }
+  </style>
+  {%- if product.media.size > 1 -%}
+  <div class="product__media-thumbnail-wrapper">
+    <div class="product__media-thumbnails">
+      <ul class="list-unstyled">
+      {%- for media in product.media -%}
+        {%- assign this_image = media -%}
+        {%- if this_image.media_type == 'image' -%}
+          <li data-media-id="{{ section.id }}-{{ this_image.id }}" class="js-change-main-img {% if forloop.first -%}active{%- endif -%}">
+            <div class="product__media media product-image-add-padding product-thumbnail-simple">
+              {%- render 'thumbnail-simple',max_srcset:300,media: this_image,position:forloop.index,image_alt:this_image.alt,loop:section.settings.enable_video_looping -%}
+            </div>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+  {%- endif -%}
+  <script>
+    $(window).load(function(){
+      $('.js-change-main-img').on('click',function() {
+        $('.product__media-thumbnails ul li').removeClass('active');
+        $(this).addClass('active');
+
+        $('.product-detail-visuals .product__media-item').addClass('hidden');
+        var activate_id = $(this).attr('data-media-id');
+        $('.product-detail-visuals .product__media-item#'+activate_id+'').removeClass('hidden');
+        return false;
+      });
+    });
+  </script>

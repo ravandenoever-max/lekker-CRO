@@ -1,0 +1,252 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/IMG_2244.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/The-Lekker-Company_photography.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Op date met frisse oksels",
+            "block_content": "<p>Een van de grootste afknappers op een eerste date is geur, en daarom hielpen we een handje in de liefde. We gingen de straat op in Utrecht en Amsterdam en trakteerden duizenden voorbijgangers op gratis mini-deo’s. Zo kon iedereen op Valentijnsdag fris hun date in. Of zonder date, gewoon lekker ruiken en eventueel zo een date scoren.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/IMG_2305.jpg",
+        "section_image_size": "square",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Keep your lover close, but Lekker closer :)",
+        "this_content": "<p>We startten op de start-up campus Dotslash in Utrecht en vervolgden onze liefdesreis naar het Gerard Douplein in Amsterdam. In bijpassende en zelfgemaakte (lekker duurzaam) Valentijns outfits deelden teamgenoten potjes deo uit met de kleuren van de regenboog. De gekleurde potjes staan symbool voor onze liefde voor iedereen met oksels. <\/p><p>“Onze deodorant is bijzonder, want hij is 100% natuurlijk, vegan en super effectief. Onze slogan is niet voor niets: smells lekker, works like a tierelier.”, aldus onze oprichtster Dewi.<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "13",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "20f3981a-be6e-4fb5-8c26-d0fa2342eb8e": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/neutraal_deo.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Maar hoe belangrijk is geur tijdens het daten?",
+        "this_content": "<p>Lichaamsgeur heeft invloed op tot wie we ons aangetrokken voelen. Het viel <a href=\"https:\/\/www.pbs.org\/wgbh\/evolution\/library\/01\/6\/l_016_08.html\"><span style=\"text-decoration:underline\">onderzoekers in 1995<\/span><\/a> al op dat dit vaak een tegenovergestelde lichaamsgeur is dan die van onszelf. Door bijvoorbeeld <a href=\"https:\/\/www.popsugar.co.uk\/beauty\/How-Perfume-Impacts-Your-Love-Life-45154675\"><span style=\"text-decoration:underline\">parfum te gebruiken<\/span><\/a> verberg je je eigen lichaamsgeur, waardoor je misschien wel de liefde van je leven misloopt. <\/p><p>What to do? Want daten is spannend en zorgt voor zweethandjes en -oksels! Een onfrisse geur is natuurlijk ook niet helpend. Ruil je parfum daarom in voor een beetje deodorant. Bijvoorbeeld eentje met <a href=\"https:\/\/thelekkercompany.com\/collections\/deodorant\/products\/mandarin-and-lemon-deodorant\"><span style=\"text-decoration:underline\">neutrale geur<\/span><\/a>. Zo ga je fris en zelfverzekerd je date in én laat je jouw lichaamsgeur zijn werk doen! <\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "20f3981a-be6e-4fb5-8c26-d0fa2342eb8e",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

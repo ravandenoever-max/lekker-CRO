@@ -1,0 +1,362 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_-_Claudia_Rison_The_Originals_photography-09109.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_-_Claudia_Rison_The_Originals_photography-09109.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "werken bij lekker",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "60",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Stage: Operations & Supply Chain",
+            "block_content": "<p>Wij zoeken een stagiair(e) die blij wordt van van spreadsheets, logistiek en dingen 'regelen' achter de schermen. Geen koffie halen bij ons, maar echt samen met de operations manager zorgen dat alles bij ons gesmeerd loopt. Ben jij potje precies minimaal 3 maanden beschikbaar? Zoek dan niet verder, want wij hebben de perfecte stage voor jou!<\/p><p><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https:\/\/greenjobs.nl\/vacature\/internationale-sales-stage-bij-the-lekker-company-kw",
+            "button_target": true
+          }
+        },
+        "e14d37e6-dc6c-4a9c-863c": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>The Lekker Company<\/strong><\/p><p>Wij zijn een positieve veranderaar in iedere badkamerroutine. Daarom maken wij 100% natuurlijke en 100% vegan huidverzorging die werkt als een tierelier. Wij geloven namelijk dat duurzaamheid niet ten koste moet gaan van kwaliteit. Ons assortiment bestaat uit een super effectieve deocrème, sticks en hydraterende lippenbalsems. Ieder kwartaal brengen we nieuwe producten uit die jouw badkamerroutine verder ondersteunt. Met deze producten liggen we o.a. al bij Albert Heijn, Etos, DA en Holland & Barrett. <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7",
+        "e14d37e6-dc6c-4a9c-863c"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "bcd81ab": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__bcd81ab-16667126691ea33499-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/The_Lekker_Company_photography-12.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_photography-12.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__bcd81ab-16667126691ea33499-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5": {
+      "type": "theme-section__text",
+      "blocks": {
+        "ac327348-5e63-49db-a163-4db62f8aa745": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Over de stage",
+            "block_content": "<p>Wij werken als merk met allerlei partners: winkels, distributiepartners, groothandels en logistieke partners. Hiernaast werken we samen met leveranciers en producenten die ons helpen met de ontwikkeling van het product dat uiteindelijk in de winkel komt te liggen. Als stagiair ondersteun je de operations manager en zorg je ervoor dat alle bestellingen goed lopen en dat er genoeg voorraad is. Je bent een echte spin in het web. <\/p><p><strong>In het kort betekent dit het volgende:<\/strong><\/p><p>Je verwerkt de b2b bestellingen die we binnen krijgen;<\/p><p><br\/>Je zorgt dat alles op voorraad is;<\/p><p><br\/>Je helpt bij het dagelijkse office management (Pieter Pot bestellingen bijvoorbeeld);<\/p><p>Je helpt ons de supply chain slimmer en sneller in te richten<\/p><p><br\/>Je gaat mee langs beurzen en events;<\/p><p>Maar bovenal ben je onderdeel van een team dat er alles aan doet om de badkamerroutine positief te veranderen.<br\/><\/p><p><strong>Wie ben jij? <\/strong><\/p><p>Je bent een georganiseerd type die houdt van efficiëntie en procesverbetering. Daarnaast ben je onderdeel van een dynamische start-up en sta je open voor diverse taken die het start-up leven met zich meebrengt. Er is bij Lekker dan ook altijd ruimte om werkzaamheden buiten je rol op te pakken wanneer je daar interesse in hebt.<\/p><p><strong> Verder: <\/strong><br\/><\/p><p>Ben je enthousiast over onze missie;<\/p><p>Houd je van logistieke uitdagingen;<\/p><p>Kan je goed overweg met de Nederlandse en Engelse taal;  <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:iris@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "ac327348-5e63-49db-a163-4db62f8aa745"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "17c73039-299d-481f-a426-17c56ca05c9f": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/LEKKER_-_201911_-_LR_-_002.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_d044ca25-efb6-432a-bdcb-cdb658696fa7.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "17c73039-299d-481f-a426-17c56ca05c9f"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c": {
+      "type": "theme-section__text",
+      "blocks": {
+        "37656141-9f76-42aa-87a0-206c0efa77e8": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>Wat bieden wij? <\/strong><\/p><p>Het is natuurlijk niet alleen werken als een tierelier, het voelt ook goed om bij ons te werken! <\/p><p>Je bent onderdeel van een jong en dynamisch team van zes, waarin geen dag hetzelfde is. <\/p><p>Je hebt daadwerkelijk vrijheid in je rol. Koffie halen kunnen we zelf :). <\/p><p>Een maandelijks salaris van €500 o.b.v. 4 dagen meelopen. <\/p><p>Een garantie om <em>lekker<\/em> te ruiken<strong><br\/><\/strong><\/p><p><strong>Praktisch<\/strong><\/p><p>Wij hebben je minimaal 3 maanden nodig. <\/p><p>Voelt dit al <em>lekker<\/em>? Mail ons via de '<strong>Solliciteer nu' button hieronder!<\/strong> Wij reageren altijd. <br\/><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:iris@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "37656141-9f76-42aa-87a0-206c0efa77e8"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338727",
+    "bcd81ab",
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5",
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a",
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c"
+  ]
+}

@@ -1,0 +1,74 @@
+{%- liquid
+  assign this_el_version = 'theme-2021'
+  assign cycle_use_pager = 'true'
+  assign cycle_use_arrows = 'true'
+-%}
+{%- if this_el_version == 'theme-2021' -%}
+  {%- if product.media.size > 1 -%}
+    <div class="product-media-carousel-wrapper no-select">
+      <div class="product-media-cycle-wrapper">
+        <div class="hier product-media-cycle">
+          <div class="cycle-slideshow-inactive" data-cycle-auto-init="false" data-cycle-fx="scrollHorz"
+            data-cycle-swipe="true" data-cycle-pause-on-hover="true" data-cycle-timeout="3000" data-cycle-speed="400"
+            {% if cycle_use_pager == 'true' %}data-cycle-pager="#product-media-cycle-pager"{% endif %}
+            {% if cycle_use_arrows == 'true' %}data-cycle-prev="#product-media-cycle-arrow-prev"{% endif %}
+            {% if cycle_use_arrows == 'true' %}data-cycle-next="#product-media-cycle-arrow-next"{% endif %}
+            data-cycle-slides=".product-media-slide" data-cycle-log="false">
+        {%- for media in product.media -%}
+            <div class="product-media-slide">
+              {% render 'product-thumbnail', media: media, position: forloop.index, image_alt: media.alt, modal_id: section.id %}
+            </div>
+        {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    {%- if cycle_use_arrows == 'true' %}
+      <div class="product-media-cycle-arrow-wrapper">
+        <div id="product-media-cycle-arrow-prev" class="product-media-cycle-arrow cycle-arrow-left">
+          {%- render 'theme-icon', icon: 'arrow-left-light' -%}
+        </div>
+        <div id="product-media-cycle-arrow-next" class="product-media-cycle-arrow cycle-arrow-right">
+          {%- render 'theme-icon', icon: 'arrow-right-light' -%}
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if cycle_use_pager == 'true' -%}
+      <div class="product-media-cycle-pager-wrapper">
+        <div id="product-media-cycle-pager" class="product-media-cycle-pager"></div>
+      </div>
+    {%- endif -%}
+    </div>
+  {%- else -%}
+    {%- for media in product.media -%}
+      {% render 'product-thumbnail', media: media, position: forloop.index, image_alt: media.alt, loop: section.settings.enable_video_looping, modal_id: section.id %}
+    {%- endfor -%}
+  {%- endif -%}
+{%- else -%}
+  <slider-component class="product-media-slider slider-mobile-gutter no-select">
+    <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile">
+      {%- if product.selected_or_first_available_variant.featured_media != null -%}
+        {%- assign media = product.selected_or_first_available_variant.featured_media -%}
+        <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+          {% render 'product-thumbnail', media: media, position: 'featured', image_alt: media.alt, loop: section.settings.enable_video_looping, modal_id: section.id %}
+        </li>
+      {%- endif -%}
+      {%- for media in product.media -%}
+        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+            {% render 'product-thumbnail', media: media, position: forloop.index, image_alt: media.alt, loop: section.settings.enable_video_looping, modal_id: section.id %}
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+    <div class="slider-buttons slider-buttons--overlay no-js-hidden{% if product.media.size < 2 %} small-hide{% endif %}">
+      <div class="slider-counter caption">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'accessibility.of' | t }}</span>
+        <span class="slider-counter--total">{{ product.media.size }}</span>
+      </div>
+      <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'accessibility.previous_slide' | t }}">{%- render 'theme-icon', icon: 'icon-caret' -%}</button>
+      <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'accessibility.next_slide' | t }}">{%- render 'theme-icon', icon: 'icon-caret' -%}</button>
+    </div>
+  </slider-component>
+{%- endif -%}

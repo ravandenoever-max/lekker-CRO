@@ -1,0 +1,141 @@
+{%- liquid
+  include 'get-language'
+
+  for block in section.blocks
+    if forloop.first == true
+      assign footer_menu_heading_a = block.settings.heading
+      assign footer_menu_list_a = block.settings.menu_footer
+    else
+      assign footer_menu_heading_b =  block.settings.heading
+      assign footer_menu_list_b =  block.settings.menu_footer
+    endif
+  endfor
+
+  assign current_url_en = '/en'
+  assign current_url_nl = '/'
+
+  if request.path != blank 
+    if current_language == 'nl'
+      assign current_url_nl = request.path
+      assign current_url_en = '/en' | append : request.path
+    else
+      assign current_url_nl = request.path | replace :'/en','/'
+      assign current_url_nl = request.path | replace :'/en','/'
+      assign current_url_en = request.path
+    endif
+  endif
+  assign current_url_nl = current_url_nl | replace :'//','/'
+  assign current_url_en = current_url_en | replace :'//','/'
+-%}
+
+<div class="footer footer-theme">
+  <div class="bg-red padding-t-xs padding-xs-t-sm padding-xxs-t-sm padding-b-md padding-xs-b-xxl padding-xxs-b-xxl">
+    <div class="page-width">
+      <div class="no-select footer-cols-wrapper color-white">
+        <div class="footer-col-grid">
+          <div class="footer-col-a align-left">
+        {%- if section.settings.enable_newsletter_signup -%}
+          <div class="newsl-wrapper">
+            {%- render 'footer-newsletter', form : form, given_tags : 'newsletter-footer' -%}
+          </div>
+        {%- else -%}
+          <a title="{{ shop.name }}" href="{{ routes.root_url }}" class="footer__logo-link color-white">
+            <img src="{{ settings.website_logo_image | asset_url }}" loading="eager" class="color-white footer__logo injectable-svg" width="185" alt="{{ shop.name }}">
+            <span>{{ shop.name }}</span>
+          </a>
+        {%- endif -%}
+          </div>
+          <div class="footer-col-b">
+            <h2 class="font-fam-normal font-size-md color-white txt-lowercase margin-b-xxs">{{ footer_menu_heading_a }}</h2>
+            <ul class="list-vertical list-unstyled">
+              {%- assign footer_menu = footer_menu_list_a -%}
+              {%- for link in footer_menu.links -%}
+                {%- if link.url != blank -%}
+                  <li class="padding-b-10 col-xxs-padding-b-4"><a title="{{ link.title }}" href="{{ link.url }}" class="link link--from-left link-white {% if link.active %} active list-menu__item--active{% endif %} font-fam-normal font-size-xs color-white txt-lowercase"><span>{{ link.title }}</span></a></li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+          <div class="footer-col-c">
+            <div class="padding-b-30">
+              <h2 class="font-fam-normal font-size-md color-white txt-lowercase margin-b-xxs">{{ footer_menu_heading_b }}</h2>
+              <ul class="list-vertical list-unstyled">
+                {%- assign footer_menu = footer_menu_list_b -%}
+                {%- for link in footer_menu.links -%}
+                  {%- if link.url != blank -%}
+                    <li class="padding-b-10 col-xxs-padding-b-4"><a title="{{ link.title }}" href="{{ link.url }}" class="link link--from-left link-white {% if link.active %} active list-menu__item--active{% endif %} font-fam-normal font-size-xs color-white txt-lowercase"><span>{{ link.title }}</span></a></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            </div>
+            <div class="">
+              <a title="Contact" class="link link--from-left link-white font-fam-normal font-size-xs color-white txt-lowercase" href="mailto:info@thelekkercompany.com"><span>info@thelekkercompany.com</span></a>
+            </div>
+            <div class="padding-v-3xs">
+              <div class="footer-language">
+                <ul class="list-horizontal list-padding-r-5 list-unstyled">
+                  <li><a title="NL" class="link link--from-left link-white footer-lang-nl {% if current_language == 'nl' %} active list-menu__item--active{% endif %} font-fam-normal font-size-xs color-black txt-uppercase" data-href="{{ current_url_nl }}" href="javascript:SetLanguageByUser('{{ current_url_nl }}','nl');"><span>NL</span></a></li>
+                  <li><a title="EN" class="link link--from-left link-white footer-lang-en {% if current_language == 'en' %} active list-menu__item--active{% endif %} font-fam-normal font-size-xs color-black txt-uppercase" data-href="{{ current_url_en }}" href="javascript:SetLanguageByUser('{{ current_url_en }}','en');"><span>EN</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-col-d">
+          {%- if section.settings.enable_social_media -%}
+            <h2 class="font-fam-normal font-size-md color-white txt-lowercase margin-b-xxs">Social</h2>
+            {%- render 'footer-socials' -%}
+          {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "tag": "footer",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default":"Menu title",
+         "label":"t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu_footer",
+          "default":"footer",
+         "label":"t:sections.footer.blocks.link_list.settings.menu_footer.label"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter_signup",
+      "default":false,
+     "label":"t:sections.footer.settings.enable_newsletter_signup.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_social_media",
+      "default":false,
+     "label":"Show social media"
+    }
+  ],
+  "default":{
+    "blocks": [
+      {
+        "type": "link_list"
+      }
+    ]
+  }
+}
+{% endschema %}

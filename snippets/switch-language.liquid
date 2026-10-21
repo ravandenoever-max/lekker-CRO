@@ -1,0 +1,96 @@
+{%- if localization.available_languages.size > 1 -%}
+  {%- liquid
+    assign current_url_en = '/en'
+    assign current_url_nl = '/'
+    if request.path != blank 
+      if current_language == 'nl'
+        assign current_url_nl = request.path
+        assign current_url_en = '/en' | append : request.path
+      else
+        assign current_url_nl = request.path | replace :'/en','/'
+        assign current_url_nl = request.path | replace :'/en','/'
+        assign current_url_en = request.path
+      endif
+    endif
+    assign current_url_nl = current_url_nl | replace :'//','/'
+    assign current_url_en = current_url_en | replace :'//','/'
+
+    assign this_version = 'original'
+    assign this_version = 'header-drop-down'
+
+    if given_version != blank
+      assign this_version = given_version
+    endif
+    assign include_noscript = false
+    if this_version == 'noscript-only'
+      assign include_noscript = true
+    endif
+  -%}
+  {%- capture switch_language_html -%}
+    {%- if include_noscript == true -%}
+      <noscript>
+        {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
+          <div class="localization-form__select">
+            <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">{{ 'localization.language_label' | t }}</h2>
+            <select class="localization-selector link" name="locale_code" aria-labelledby="FooterLanguageLabelNoScript">
+              {%- for language in localization.available_languages -%}
+                <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>{{ language.endonym_name | capitalize }}</option>
+              {%- endfor -%}
+            </select>
+            {%- render 'theme-icon', icon: 'icon-caret' -%}
+          </div>
+          <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
+        {%- endform -%}
+      </noscript>
+    {%- endif -%}
+    {%- if this_version == 'original' -%}
+      <localization-form>
+        {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
+          <div class="no-js-hidden">
+            <h2 class="caption-large" id="FooterLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+            <div class="disclosure">
+              <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="FooterLanguageList" aria-describedby="FooterLanguageLabel">
+                {{ localization.language.endonym_name | capitalize }}
+                {%- render 'theme-icon', icon: 'icon-caret' -%}
+              </button>
+              <ul id="FooterLanguageList" role="list" class="disclosure__list list-unstyled" hidden>
+                {%- for language in localization.available_languages -%}
+                  <li class="disclosure__item" tabindex="-1">
+                    <a class="link link--text disclosure__link caption-large{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">{{ language.endonym_name | capitalize }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+            <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+          </div>
+        {%- endform -%}
+      </localization-form>
+    {%- elsif this_version == 'header-drop-down' -%}
+      <div class="js-has-header-drop-down has-header-drop-down">
+        <span class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">
+          <span class="header__lang-switch txt-uppercase">
+            <span>{{ current_language }}</span>
+            <span><div class="css-arrow" data-version="chevron" data-color="white" data-size="small" data-direction="bottom"><span></span></div></span>
+          </span>
+        </span>
+        <div class="header__drop-down">
+          <div class="">
+            <ul class="list-vertical list-padding-r-5 list-unstyled">
+              <li><a title="NL" class="header__lang-switch txt-uppercase header-lang-nl" data-href="{{ current_url_nl }}" href="javascript:SetLanguageByUser('{{ current_url_nl }}','nl');"><span>NL</span></a></li>
+              <li><a title="EN" class="header__lang-switch txt-uppercase header-lang-en" data-href="{{ current_url_en }}" href="javascript:SetLanguageByUser('{{ current_url_en }}','en');"><span>EN</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- liquid
+    assign minify_this_html_input = switch_language_html
+    assign minify_this_html_block = true
+    if minify_this_html_block == true and settings.website_minify_inline_html != 'false'
+      render'inline-html',input_html:minify_this_html_input
+    else
+      echo minify_this_html_input
+    endif
+  -%}
+{%- endif -%}

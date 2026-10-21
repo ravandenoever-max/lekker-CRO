@@ -1,0 +1,405 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page-b2b": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "extra_page_b2b": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/1TheLekkerCompany_NaturalDeodorant_PeppermintRosemary_09_7d6918b7-ba1b-4269-823b-f13fa0affa07.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/1TheLekkerCompany_NaturalDeodorant_PeppermintRosemary_09_7d6918b7-ba1b-4269-823b-f13fa0affa07.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "extra_page_b2b"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "sm",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "yellow",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "10",
+        "slide_ratio_desktop": "30",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--18518132851027__3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2-16841435744478a02c-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Business to business",
+            "block_content": "<p>Wij brengen het Lekker gevoel graag naar jouw winkel. Met verrassende geuren, effectieve ingrediënten en verpakkingen die van je schap springen. Past lekker's missie bij jou? Of je nu inkoopt voor honderden winkels, onze producten als zakelijke (kerst) geschenken wilt inzetten, ons op je festival wilt hebben staan of het wilt verkopen in jouw onafhankelijke drogisterij. Samenwerken doen we graag. </p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18518132851027__3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2-16841435744478a02c-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "1852d7d5-e14f-41cf-af85-3b869491c58e": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "blue",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/Ontwerp_zonder_titel_8.png",
+        "section_image_size": "square",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Samenwerking op maat",
+        "this_content": "<p>Ons accounts team staat voor je klaar. Heb je meer dan 5 vestigingen of wil je per pallet bestellen? Dan is maatwerk waarschijnlijk aan jou besteed. Neem contact op met onze accountmanager Daan voor alle mogelijkheden. </p>",
+        "text_box_position": "center-left",
+        "text_box_position_mobile": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "white",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "white",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": true,
+        "button_label": "Neem contact op",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_link": "mailto:daan@thelekkercompany.com",
+        "button_target": false
+      }
+    },
+    "c738a502-65ee-4bd6-96e1-5702fac72026": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--18518132851027__c738a502-65ee-4bd6-96e1-5702fac72026-16841435744478a02c-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "\"Je moet onze producten zien, proberen en ruiken om écht dat lekker gevoel te krijgen\"",
+            "block_content": "<p>- Daan</p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "white",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "white",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18518132851027__c738a502-65ee-4bd6-96e1-5702fac72026-16841435744478a02c-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "blue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "82a15f1a-d065-4347-8154-e008ec42cf99": {
+      "type": "theme-section__visual-text",
+      "custom_css": [],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "lpink",
+        "section_background_color_direction": "image-down",
+        "section_background_size": "md",
+        "page_width": "page-width",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/Untitled_design_1.png",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Bestel direct zakelijk",
+        "this_content": "<p>Wat goed dat je ons mee wilt helpen om natuurlijke cosmetica de norm te maken. Met Lekker in je winkel zorg je voor producten die werken als een tierelier. Alles wat we maken is 100% natuurlijk, vegan en microplasticvrij. </p><p>Je kan direct bij ons bestellen via <a href=\"https://www.orderchamp.com/store/the-lekker-company\" target=\"_blank\" title=\"https://www.orderchamp.com/store/the-lekker-company\">Orderchamp</a>. Dit is een platform die hetzelfde werkt als een webwinkel. Je koopt direct bij ons en wij versturen jou ook de producten toe. De eerste order kan al vanaf €50, inclusief gratis verzending. Met de code THELE-GIFT krijg je daarnaast als nieuwe retailer 10% korting op alle bestellingen in de eerste 30 dagen. </p><p>Wil je liever via een groothandel bestellen? Dat kan ook bij een van onze partners: </p><p><a href=\"https://www.hollandpharma.nl/nl/assortiment/zoeken/?q=the+lekker+company\" target=\"_blank\" title=\"Holland Pharma - The Lekker Company\">Holland Pharma, </a><a href=\"https://customers.unipharma.nl/nl/products?query=the%20lekker%20company\" target=\"_blank\" title=\"Unipharma - The Lekker Company\">Unipharm, </a><a href=\"https://www.eco-groothandel.nl/ProductOverzicht.aspx?q=the%20lekker%20company\" target=\"_blank\" title=\"Eco Groothandel - The Lekker Company\">Eco-Groothandel </a>en <a href=\"https://www.vriesia.nl/index.php?route=vriesia/bestellen&query=8720299902923,8720865369129,8720865369112,8720865369105,8720865369068,8720865369044,8720865369037,8720865369020,8720299902961,8720299902947,8718781036751,8718781036522,8718781036423,8718781034290,8718781034283,8718781034276,8718781034269\" title=\"Vriesia\">Vriesia.</a></p><p>Als je bestelt vanuit Nederland, is het vaak de volgende dag al bij je in huis. De knop hieronder leid je naar Orderchamp, maar de andere partijen zijn ook uitstekende keuzes.</p><p>Een map vol met foto-materiaal, productomschrijvingen en EAN nummers vind je <a href=\"https://drive.google.com/drive/folders/1fRbxniTmiXOlJ7gVcOw5G09sXIbXrxt4?usp=drive_link\" title=\"Partner folder The Lekker Company\">hier</a>.</p>",
+        "text_box_position": "center-left",
+        "text_box_position_mobile": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": true,
+        "button_label": "Bestel direct",
+        "button_size": "button_large",
+        "button_color": "button_red",
+        "button_link": "https://www.orderchamp.com/nl/store/the-lekker-company/signup",
+        "button_target": true
+      }
+    },
+    "theme_section_custom_code_9AXqbJ": {
+      "type": "theme-section__custom-code",
+      "settings": {
+        "custom_liquid": "<iframe id=\"orderchamp_frame\"  src=\"https://www.orderchamp.com/invites/widget/open?storefront=U3RvcmVmcm9udDo3NTI2NTgxOTQ5Mzk5MDU&widget_type=type_big\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>\n<style>\n#orderchamp_frame{height:175vw}\n#orderchamp_frame{margin-bottom:80px}\n@media screen and (min-width:550px){ \n#orderchamp_frame{height:85vw}\n}\n@media screen and (min-width:768px){ \n#orderchamp_frame{height:55vw;max-height:540px}\n}\n@media screen and (min-width:992px){ \n#orderchamp_frame{height:50vw;max-height:540px}\n}\n@media screen and (min-width:1280px){ \n#orderchamp_frame{height:40vw;max-height:540px}\n}\n</style>",
+        "page_width": "page-width--narrow"
+      }
+    },
+    "c91f302f-ef25-425c-ba08-37dcb7217632": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--18518132851027__c91f302f-ef25-425c-ba08-37dcb7217632-16841457330de8538e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/IMG_2305.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_overlay_on_mobile": true,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "Slide content",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18518132851027__c91f302f-ef25-425c-ba08-37dcb7217632-16841457330de8538e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "75",
+        "slide_ratio_desktop": "60",
+        "section_image_rounded_corners": "xl",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "b62599e9-0e25-48ae-99a5-d44053d9365b": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "yellow",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/Ontwerp_zonder_titel_9.png",
+        "section_image_size": "square",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Marketing & Partnerships",
+        "this_content": "<p>Zoveel mogelijk verzorgingsroutines verduurzamen, dat is het doel van onze marketing en partnerships. Eigenlijk is dat de hele reden van ons bestaan. Alles wat we uiten proberen we positief, licht en leuk te doen. </p><p></p><p>No-nonsense marketing met een vleugje Dunglish. </p><p>Wil jij met ons samenwerken? Contact opnemen mag altijd. </p><p>Je mails worden altijd gelezen, maar we krijgen erg veel aanvragen dus je mail wordt niet altijd beantwoord. Bij interesse hoor je altijd van ons!</p>",
+        "text_box_position": "center-left",
+        "text_box_position_mobile": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "white",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "white",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": true,
+        "button_label": "Neem contact op",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_link": "mailto:dewi@thelekkercompany.com",
+        "button_target": false
+      }
+    },
+    "1495480a-92e4-4bb8-a64d-2b81dcba6664": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "15a33209-c51b-482b-9d76-dad12c5b27d4": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/ABRI_Lekker.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_overlay_on_mobile": true,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "Slide content",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "15a33209-c51b-482b-9d76-dad12c5b27d4"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "yellow",
+        "section_background_color_b": "lpink",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "75",
+        "slide_ratio_desktop": "60",
+        "section_image_rounded_corners": "xl",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    }
+  },
+  "order": [
+    "page-b2b",
+    "3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2",
+    "1852d7d5-e14f-41cf-af85-3b869491c58e",
+    "c738a502-65ee-4bd6-96e1-5702fac72026",
+    "82a15f1a-d065-4347-8154-e008ec42cf99",
+    "theme_section_custom_code_9AXqbJ",
+    "c91f302f-ef25-425c-ba08-37dcb7217632",
+    "b62599e9-0e25-48ae-99a5-d44053d9365b",
+    "1495480a-92e4-4bb8-a64d-2b81dcba6664"
+  ]
+}

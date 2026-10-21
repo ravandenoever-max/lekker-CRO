@@ -1,0 +1,359 @@
+{%- liquid
+  assign filename = 'main-collection-product-grid-filter'
+  assign sort_by = collection.sort_by | default: collection.default_sort_by 
+  assign total_active_values = 0
+  assign element_html_filtering = ''
+  assign element_html_filtering_active = ''
+  assign element_html_sorting = ''
+-%}
+
+{%- if enable_filtering -%}
+  {%- capture element_html_filtering -%}    
+    <div class="facets__wrapper">
+      {%- for filter in collection.filters -%}
+        {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+        {% case filter.type %}
+        {% when 'list' %}
+          <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
+            <summary class="facets__summary">
+              <div>
+                <span>{{ filter.label | escape }}</span>
+                <span class="count-bubble">{%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}</span>
+                {%- render 'theme-icon',icon:'arrow-bottom' -%}
+              </div>
+            </summary>
+            <div class="facets__display">
+              <div class="facets__header">
+                <span class="facets__selected no-js-hidden">{{ 'sections.collection_template.filters_selected' | t: count: filter.active_values.size }}</span>
+                <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
+              </div>
+              <ul class="facets__list list-unstyled">
+                {%- for value in filter.values -%}
+                  <li class="list-menu__item facets__item">
+                    <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
+                      <input type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                        {% if value.active %}checked{% endif %}
+                        {% if value.count == 0 and value.active == false %}disabled{% endif %} >
+                      <span class="check"></span>
+                      <span class="label">{{ value.label | escape }} ({{ value.count }})</span>
+                    </label>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          </details>
+          
+        {% when 'price_range' %}
+          {% liquid
+            assign currencies_using_comma_decimals = 'ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND' | split: ','
+            assign uses_comma_decimals = false
+            if currencies_using_comma_decimals contains cart.currency.iso_code
+              assign uses_comma_decimals = true
+            endif
+          %}
+
+          <details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
+            <summary class="facets__summary">
+              <div>
+                <span>{{ filter.label | escape }}</span>
+                <span class="count-bubble{%- if filter.min_value.value or filter.max_value.value -%}{{ filter.active_values.size }} count-bubble--dot{% endif %}"></span>
+                {%- render 'theme-icon', icon: 'icon-caret' -%}
+              </div>
+            </summary>
+            <div class="facets__display">
+              <div class="facets__header">
+                {%- assign max_price_amount = filter.range_max | money | escape -%}
+                <span class="facets__selected">{{ "sections.collection_template.max_price" | t: price: max_price_amount }}</span>
+                <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
+              </div>
+              <price-range class="facets__price">
+                <div class="field">
+                  <span class="field__currency">{{ cart.currency.symbol }}</span>
+                  <input class="field__input"
+                    name="{{ filter.min_value.param_name }}"
+                    id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                    {%- if filter.min_value.value -%}
+                      {%- if uses_comma_decimals -%}
+                        value="{{ filter.min_value.value | money_without_currency | replace : '.', '' | replace : ',', '.' }}"
+                      {%- else -%}
+                        value="{{ filter.min_value.value | money_without_currency | replace : ',', '' }}"
+                      {% endif %}
+                    {%- endif -%}
+                    type="number"
+                    placeholder="0"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace : ',', '' }}">
+                  </input>
+                  <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.from' | t }}</label>
+                </div>
+                <div class="field">
+                  <span class="field__currency">{{ cart.currency.symbol }}</span>
+                  <input class="field__input"
+                    name="{{ filter.max_value.param_name }}"
+                    id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+                    {%- if filter.max_value.value -%}
+                      {%- if uses_comma_decimals -%}
+                        value="{{ filter.max_value.value | money_without_currency | replace : '.', '' | replace : ',', '.' }}"
+                      {%- else -%}
+                        value="{{ filter.max_value.value | money_without_currency | replace : ',', '' }}"
+                      {% endif %}
+                    {%- endif -%}
+                    type="number"
+                    placeholder="{{ filter.range_max | money_without_currency | replace : ',', '' }}"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace : ',', '' }}">
+                  </input>
+                  <label class="field__label" for="Search-In-Modal">{{ 'sections.collection_template.to' | t }}</label>
+                </div>
+              </div>
+            </price-range>
+          </details>
+        {% endcase %}
+      {%- endfor -%}
+      <noscript>
+        <button type="submit" class="facets__button button">{{ 'sections.collection_template.filter_button' | t }}</button>
+      </noscript>
+    </div>
+    {%- if collection.current_vendor or collection.current_type -%}
+      <input type="hidden" name="q" value="{{ collection.current_vendor }}{{ collection.current_type }}">
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- capture element_html_filtering_active -%}   
+    {%- assign active_filter_count = 0 -%}
+    {%- for filter in collection.filters -%}
+      {%- for value in filter.active_values -%}
+        <a class="active-facets__button active-facets__button--light button button--tertiary js-facet-remove" href="{{ value.url_to_remove }}">
+          {{ value.label | escape }}
+          {% render 'theme-icon', icon: 'icon-close-small' %}
+        </a>
+        {%- assign active_filter_count = active_filter_count | plus : 1 -%}
+      {%- endfor -%}
+      {% if filter.type == "price_range" %}
+        {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+          <a class="active-facets__button active-facets__button--light button button--tertiary js-facet-remove" href="{{ filter.url_to_remove }}">
+            {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
+            {% render 'theme-icon', icon: 'icon-close-small' %}
+          </a>
+          {%- assign active_filter_count = active_filter_count | plus : 1 -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if active_filter_count > 1 -%}
+      <a href="{{ collection.url }}?sort_by={{ sort_by }}" class="active-facets__button button js-facet-remove">{{ 'sections.collection_template.clear_all' | t }}</a>
+    {%- endif -%}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if section.settings.enable_sorting -%}
+  {%- capture element_html_sorting -%}        
+    <div class="collection-filters__item sorting">
+      <div class="collection-filters__field">
+        <label class="collection-filters__label" for="SortBy">{{ 'sections.collection_template.sort_by_label' | t }}:</label>
+        <div class="select">
+          {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+          <select name="sort_by" class="select__select collection-filters__sort" id="SortBy" aria-describedby="a11y-refresh-page-message">
+            {%- for option in collection.sort_options -%}
+                {%- unless option.value contains 'created' or option.value contains 'manual' -%}
+                {%- liquid
+                  assign option_name = option.name | escape
+                  echo option_name
+                  if option_name == 'Alphabetically, A-Z'
+                    assign option_name = 'Product name, A-Z'
+                  elsif option_name == 'Alphabetically, Z-A'
+                    assign option_name = 'Product name, Z-A'
+                  elsif option_name == 'Price, low to high'
+                    assign option_name = 'Price, Low'
+                  elsif option_name == 'Price, high to low'
+                    assign option_name = 'Price, High'
+                  endif
+                  assign option_value = option.value
+                -%}
+                <option value="{{ option_value | escape }}"{% if option_value == sort_by %} selected="selected"{% endif %}>{{ option_name }}</option>
+              {%- endunless -%}
+            {%- endfor -%}
+          </select>
+          {%- render 'theme-icon',icon:'arrow-bottom' -%}
+        </div>
+      </div>
+      <noscript><button type="submit" class="button button--small">{{ 'sections.collection_template.sort_button' | t }}</button></noscript>
+    </div>
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+  <div class="theme-f-hor theme-f-outside theme-w-100 no-select">
+    <div class="collection-filters theme-f-hor theme-f-outside theme-w-100" id="main-collection-filters" data-id="{{ section.id }}">
+      <collection-filters-form class="facets theme-f-hor theme-f-outside theme-w-100">  
+        <form id="CollectionFiltersForm" class="facets__form theme-f-vert theme-w-100"> 
+          <div class="facets__form theme-f-hor theme-m-f-vert theme-f-middle theme-f-outside theme-m-f-left theme-g-5xs theme-w-100 theme-m-vert">
+            {{ element_html_filtering }}
+          {%- if element_html_filtering_active != '' -%}
+            <div class="active-facets --active-facets-desktop">            
+              {{ element_html_filtering_active }}
+            </div>
+          {%- endif -%}
+            {{ element_html_sorting }}
+          </div>
+        </form>
+      </collection-filters-form>
+    </div>    
+  </div>
+    
+  {%- capture bloated_css -%}
+    <style>
+
+
+      :root {
+        --this-font-size:var(--font-size-xs);
+        --this-font-color:var(--color-black);
+        --this-color-checkbox:var(--color-blue);
+      }
+      .collection-filters__item {
+        border:1px solid var(--this-font-color);
+        border-radius:50rem;
+        padding:0 0.75rem 0 0.75rem;
+      }
+      @media screen and (max-width:767px) {
+        .facets__list { min-width:100%; }
+        .facets__wrapper { min-width:100%; }
+        .facets__disclosure { min-width:100%; }
+        .facets__disclosure .facets__display { min-width:100%; }
+        .collection-filters__item { min-width:100%; }
+      }
+      @media screen and (min-width:768px) {
+        .collection-filters__item{min-width:300px}
+        .facets__wrapper{min-width:100px}
+        .facets__disclosure .facets__display{min-width:10rem;max-width:20rem}
+      }
+
+      .facets{display:block;z-index:5000}
+      .facets__wrapper {
+        display:flex;
+        flex-direction:row;
+        align-content:center;
+        justify-content:flex-start;
+        align-items:center;
+      }
+      .facets summary .icon--arrow-bottom,
+      .collection-filters .collection-filters__field div.select svg { 
+        position:absolute;
+        top:calc(50% - 0.25rem);
+        right:0px;
+        height:0.6rem;
+        pointer-events:none;
+      }
+      .facets summary .icon--arrow-bottom {right:0.75rem;}
+
+      .facets .facets__wrapper .count-bubble{display:none}
+      .facets__heading{display:block;color:var(--this-font-color);font-size:var(--this-font-size);line-height:1;margin:0 0 1rem 0.625rem;width:100%}
+      .facets__reset{margin-left:auto}
+      .facets .facets__wrapper .facets__disclosure{text-transform:lowercase;position:relative;border:1px solid var(--this-font-color);border-radius:50rem;margin:0}
+      .facets .facets__wrapper .facets__disclosure:hover{border:1px solid var(--this-font-color);color:var(--this-font-color)}
+
+
+
+      .facets .facets__wrapper .facets__disclosure .facets__summary{padding: 0 2.5rem 0 0.75rem;line-height:2rem;font-size:var(--this-font-size);color:var(--this-font-color)}
+      .facets .facets__wrapper .facets__disclosure .facets__summary > span{line-height:1}
+
+    @media screen and (max-width:767px) {      
+      .facets__summary { z-index:12040 }
+      .facets .facets__wrapper .facets__disclosure .facets__display{
+        background-color:var(--color-white);position:absolute;
+        border:1px solid var(--color-black);
+        box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.2);
+        top:-1px; padding-top:2rem;
+        left:-1px; right:-1px;
+        z-index:12000;
+        overflow-y:auto;
+        color:var(--this-font-color);
+        border-radius:1rem;overflow:hidden;
+      }   
+    }   
+
+      @media screen and (min-width:768px) {
+        .facets .facets__wrapper .facets__disclosure .facets__display{
+          background-color:var(--color-white);position:absolute;
+          border:1px solid var(--color-white);
+          box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.2);
+          top:calc(100% + 1rem);
+          left:-1px;z-index:12000;
+          overflow-y:auto;
+          color:var(--this-font-color);
+          border-radius:5px;overflow:hidden;
+        }
+      }
+
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__header{display:none}
+      /* .facets .facets__wrapper .facets__disclosure .facets__display .facets__header{border-bottom:1px solid var(--color-green);display:flex;justify-content:space-between;font-size:var(--this-font-size);position:sticky;top:0;background-color: var(--color-red);z-index:1} */
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__list{padding:1.25rem;}
+      @media screen and (min-width:768px) {
+        .facets .facets__wrapper .facets__disclosure .facets__display .facets__list{padding:1rem;}
+      }
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__list .facets__item{display:flex;align-items:center}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__list .facets__item label{white-space:nowrap;text-transform:lowercase;}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__list .facets__item label,
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__list .facets__item input[type='checkbox']{cursor:pointer}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__list .facet-checkbox{padding:2px;flex-grow:1;position:relative;font-size:var(--this-font-size);display:flex;word-break:break-word}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__list .facet-checkbox input[type='checkbox']{
+        display:none;
+        /* position:absolute;opacity:1;width:2rem;height:2rem;top:1rem;left:1rem;z-index:-1;appearance:none;-webkit-appearance:none */
+      }
+      .facets .facets__wrapper .facets__disclosure .facets__display .facet-checkbox > span.check{
+        border-radius:50rem;overflow:hidden;
+        background-color:rgba(0,0,0,0);
+        border:1px solid var(--this-font-color);
+        width:1rem;height:1rem;
+        margin:0.25rem;
+        transition:all 0.3s ease;
+      }
+
+      .facets .facets__wrapper .facets__disclosure .facets__display .facet-checkbox:hover span.check{background:var(--this-color-checkbox) !important; }
+      .facets .facets__wrapper .facets__disclosure .facets__display .facet-checkbox input[type='checkbox']:checked ~ span.check{background:var(--this-color-checkbox) !important; }
+      .facets .facets__wrapper .facets__disclosure .facets__display .facet-checkbox--disabled {color:var(--color-green)}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__price {display:flex;padding:2rem}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__price > * + * {margin-left:2rem}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__price .field{align-items:center}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__price .field .field__currency {margin-right:0.75rem}
+      .facets .facets__wrapper .facets__disclosure .facets__display .facets__price .field__label {left:1.25rem}
+      button.facets__button{min-height:0;margin:0 0 0 0.625rem;box-shadow:none;padding-top:2rem;padding-bottom:2rem;}
+      
+      .active-facets{
+        display:flex;
+        flex-wrap:wrap;
+        width:100%;
+        column-gap:0.5rem;
+        row-gap:0.5rem;
+      }
+
+      @media screen and (max-width:767px) {    
+        .active-facets{ order:12; }
+      }
+
+      a.active-facets__button{
+        color:white;border:1px solid var(--this-color-checkbox);
+        border-radius:50rem;font-size:var(--this-font-size);
+        line-height:2rem;text-transform:lowercase;
+        min-height:2rem;min-width:0;padding:0px 0.75rem;
+        background:var(--this-color-checkbox);
+        transition:all 0.3s ease;}
+      a.active-facets__button:hover{
+        color:white;border:1px solid black;
+        background:var(--this-font-color)}
+      a.active-facets__button svg{transform:rotate(0deg);transition:all 0.3s ease}
+      a.active-facets__button:hover svg{transform:rotate(90deg);color:white}
+
+
+      a.--active-facets__button{border:1px solid var(--this-color-checkbox)}
+      a.--active-facets__button:hover{border:1px solid var(--this-color-checkbox)}
+      a.--active-facets__button--light{border:1px solid var(--this-color-checkbox)}
+      a.--active-facets__button--light:hover{border:1px solid var(--this-text-color)}
+      a.active-facets__button:focus-visible,a.active-facets__button:focus{box-shadow:none;outline:none}
+      .active-facets__button svg{width:1rem;height:0.75rem;margin-left:5px;pointer-events:none}
+      .active-facets__button.disabled,
+      .mobile-facets__clear.disabled{pointer-events:none}
+    </style>
+  {%- endcapture -%}
+  {%- render'inline-css',input_css:bloated_css -%}
+
+{%- endif -%}

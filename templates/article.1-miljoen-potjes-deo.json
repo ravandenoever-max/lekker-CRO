@@ -1,0 +1,267 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/PhotoRoom_20230411_120931.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify://shop_images/PhotoRoom_20230411_120931.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "1 miljoen potjes deodorant verkocht",
+            "block_content": "<p>Een miljoen? Ja! We hebben ons miljoenste potje deodorant verkocht. Iets waar we als start-up ontzettend trots op zijn.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "5c16352e-030f-4034-b932-09952899f207": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Waar het allemaal begon: Dewi's keuken",
+            "block_content": "<p>The Lekker Company begon als een passieproject van oprichtster Dewi, die op zoek was naar natuurlijke en vegan verzorgingsproducten met begrijpelijke ingrediënten. Haar eerste product maakte zij zelf in haar keuken. Dit ging niet zonder slag of stoot, maar na een aantal mislukte pogingen vond ze het: een natuurlijke, lekkere en effectieve deodorant. Het werd al snel populair onder mensen die op zoek waren naar een alternatief voor traditionele deodorant met aluminium.</p><p>Het is niet bij <a href=\"https://thelekkercompany.com/collections/deodorant\" title=\"https://thelekkercompany.com/collections/deodorant\">deodorant </a>gebleven: inmiddels hebben we de productlijn uitgebreid met <a href=\"https://thelekkercompany.com/collections/lip-balm\" title=\"https://thelekkercompany.com/collections/lip-balm\">lippenbalsem</a> en zonnebrandcrème, die allemaal vegan en natuurlijk zijn. Daarnaast werken we hard om deze lijn uit te breiden en jouw verzorgingsroutine van begin tot eind te ondersteunen. Vandaag de dag zijn de producten verkrijgbaar in meer dan 4.000 <a href=\"https://thelekkercompany.com/pages/verkooppunten\" title=\"https://thelekkercompany.com/pages/verkooppunten\">verkooppunten </a>in heel Europa, variërend van kleine winkels tot grote supermarkten en drogisterijen. Zo is er altijd een winkel bij jou in de buurt. Bovendien zijn we een gecertificeerd <a href=\"https://thelekkercompany.com/blogs/personal-care/wij-zijn-een-b-corp-onderneming\" title=\"https://thelekkercompany.com/blogs/personal-care/wij-zijn-een-b-corp-onderneming\">B-Corp-bedrijf</a> wat betekent dat we ons inzetten voor duurzaamheid en sociale verantwoordelijkheid nemen. We kiezen niets voor niets voor kartonnen verpakkingen én <a href=\"https://thelekkercompany.com/pages/foundation\" title=\"https://thelekkercompany.com/pages/foundation\">doneren 1% van onze omzet om bomen te planten.</a></p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "onze deos",
+            "button_size": "button_small",
+            "button_color": "button_pink",
+            "button_link": "shopify://collections/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "row_spacing_mobile_top": "none",
+        "row_spacing_mobile_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/bundle-mix_1.png",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Lekker voordelig",
+        "this_content": "<p>\"We zijn ontzettend trots op deze mijlpaal en willen onze klanten bedanken voor het proberen en blijven kopen van onze potjes\", aldus Dewi van The Lekker Company. \"Toen ik begon met een beslagkom, had ik nooit gedacht dat we zoveel oksels zouden bereiken. Het is geweldig om te zien dat steeds meer mensen kiezen voor natuurlijke en duurzame producten.\"</p><p>Help jij ons op weg naar de volgende miljoen potjes? In <a href=\"https://thelekkercompany.com/collections\"><span style=\"text-decoration:underline\">onze webshop</span></a> vind je nu leuke combi deals. Zo kun jij meteen een voorraad aanleggen. Bestel nu, lekker voordelig. </p>",
+        "text_box_position": "center-left",
+        "text_box_position_mobile": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "5c16352e-030f-4034-b932-09952899f207",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

@@ -1,0 +1,69 @@
+{%- liquid
+  comment
+    -- settings.website_minify_inline_js  = false / "inline-per-line" / "compact"
+      -- capture bloated_css
+      --   echo '<script id="[this_section_id]__extra-js">[extra_js]</scriptstyle>' | replace: '[this_section_id]',this_section_id | replace: '[extra_js]',extra_js
+      -- endcapture
+      -- render'theme_inline-js',input_js:bloated_js   
+  endcomment
+
+  assign this_js = input_js
+
+  if settings.website_minify_inline_js != ""
+
+    if settings.website_minify_inline_js == "compact"
+      assign this_js = this_js | strip_newlines
+    endif
+
+    assign this_js = this_js | replace: '        ', ' '
+    assign this_js = this_js | replace: '       ', ' '
+    assign this_js = this_js | replace: '      ', ' '
+    assign this_js = this_js | replace: '     ', ' '
+    assign this_js = this_js | replace: '    ', ' '
+    assign this_js = this_js | replace: '  ', ' '
+    assign this_js = this_js | replace: '{ ', '{'
+    assign this_js = this_js | replace: ' {', '{'
+    assign this_js = this_js | replace: '} ', '}'
+    assign this_js = this_js | replace: ' }', '}'
+    assign this_js = this_js | replace: '} .', '}.'
+    assign this_js = this_js | replace: ' ( ', '('
+    assign this_js = this_js | replace: ') )', '))'
+    assign this_js = this_js | replace: '}  }', '}}'
+    assign this_js = this_js | replace: '}  }', '}}'
+    assign this_js = this_js | replace: '   ', ' '
+    assign this_js = this_js | replace: '  ', ' '
+    assign this_js = this_js | replace: ' || ', '||'
+    assign this_js = this_js | replace: ';  $', ';$'
+    assign this_js = this_js | replace: '; $', ';$'
+    assign this_js = this_js | replace: ';}', '}'
+    assign this_js = this_js | replace: '{ $', '{$'
+    assign this_js = this_js | replace: 'if (', 'if('
+    assign this_js = this_js | replace: '; if', ';if'
+    assign this_js = this_js | replace: ' = ', '='
+    assign this_js = this_js | replace: '; var', ';var'  
+
+    if settings.website_minify_inline_js == "compact"
+        assign comment_start = '/*'
+        assign comment_eind = '*/'
+        assign new_output = ''
+        assign input = this_js
+        if input contains comment_eind
+              assign input_array = input | split: comment_start
+              for input in input_array
+                  if input contains comment_eind
+                    assign new_input_array = input | split: comment_eind
+                    assign new_input = new_input_array[1]
+                  else
+                    assign new_input = input
+                  endif
+                  assign new_output = new_output | append : new_input
+              endfor
+          assign this_js = new_output
+        endif
+    endif
+
+  endif
+
+  echo this_js
+
+-%}

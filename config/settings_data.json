@@ -1,0 +1,195 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "website_use_loader": false,
+    "website_use_cookie_alert": false,
+    "use_collection_url_in_product_url": false,
+    "use_newsletter_popup": false,
+    "use_newsletter_popup_page_count": "3",
+    "gtm_tag": "",
+    "ga_tag": "UA-43143395-2",
+    "use_newsletter_popup_title": "",
+    "use_newsletter_popup_text": "",
+    "use_newsletter_popup_customer_tag": "newsletter-popup",
+    "settings_routes_cart_vs_checkout_url": "goto_checkout",
+    "website_free_shipping_nl": "25",
+    "website_free_shipping_be": "30",
+    "logo": "shopify://shop_images/theme-logo.svg",
+    "share_facebook": false,
+    "share_twitter": false,
+    "share_pinterest": false,
+    "social_facebook_link": "https://www.facebook.com/thelekkercompany/",
+    "social_instagram_link": "https://www.instagram.com/thelekkercompany/",
+    "social_tiktok_link": "https://tiktok.com/@thelekkercompany",
+    "social_linkedin_link": "https://www.linkedin.com/company/the-lekker-company/",
+    "social_youtube_link": "",
+    "website_use_shopping_cart": false,
+    "use_shopping_cart_mini": false,
+    "use_shopping_cart_alert": false,
+    "use_shopping_cart_drawer": true,
+    "website_location_search": "none",
+    "website_location_account": "header",
+    "website_shop_cart_style": "icon",
+    "checkout_logo_image": "shopify://shop_images/lekker-company-logo.png",
+    "checkout_logo_size": "small",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f9f9f9",
+    "checkout_heading_font": "Lato",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#000000",
+    "checkout_button_color": "#f93822",
+    "checkout_error_color": "#ff9a99",
+    "website_minify_inline_html": "segment-only",
+    "website_minify_inline_js": "compact",
+    "website_minify_inline_css": "compact",
+    "use_animations": true,
+    "hamburger_position": "top",
+    "logo_position": "center-center",
+    "mobile_menu_version": "foldable",
+    "desktop_submenu_version": "mega",
+    "website_use_recently_viewed": true,
+    "website_use_favorites": false,
+    "page_favorites_url": "/pages/favorites",
+    "website_logo_image": "lekker-company-logo.svg",
+    "website_logo_image_black": "lekker-company-logo-black.svg",
+    "website_logo_image_white": "lekker-company-logo-white.svg",
+    "website_logo_image_green": "lekker-company-logo-green.svg",
+    "website_logo_image_red": "lekker-company-logo-red.svg",
+    "website_loader_image": "lekker-company-logo.svg",
+    "sections": {
+      "element-announcement-bar": {
+        "type": "element-announcement-bar",
+        "blocks": {
+          "3c9db83c-3520-421a-a857-ffa0a7e0e80c": {
+            "type": "announcement",
+            "settings": {
+              "announcement": "<p>Beoordeeld met een 4.7 uit 5 ⭐️ Gratis verzending vanaf €25 naar NL 🇳🇱 en vanaf €30 naar BE 🇧🇪</p>",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "3c9db83c-3520-421a-a857-ffa0a7e0e80c"
+        ],
+        "custom_css": [
+          "a {text-decoration: underline;}"
+        ],
+        "settings": {
+          "show_announcement_bar": true,
+          "show_announcement_bar_only_on_homepage": false
+        }
+      },
+      "element-header-theme": {
+        "type": "element-header-theme",
+        "blocks": {
+          "menu_mega_7PFnVp": {
+            "type": "menu_mega",
+            "settings": {
+              "menu_item_title": "",
+              "menu_item": "",
+              "mm_image_1_heading": "New arrivals",
+              "mm_image_1_link": "",
+              "mm_image_1_ratio": "1/1",
+              "mm_image_2_heading": "New arrivals",
+              "mm_image_2_link": "",
+              "mm_image_2_ratio": "1/1",
+              "mm_image_3_heading": "New arrivals",
+              "mm_image_3_link": "",
+              "mm_image_3_ratio": "1/1"
+            }
+          },
+          "mm_shop_json": {
+            "type": "menu_mega",
+            "settings": {
+              "menu_item_title": "Shop",
+              "menu_item": "shop",
+              "mm_image_1": "shopify://shop_images/The_Lekker_Company_deo_sticks_-_Claudia_Rison___The_Originals_Photography-04585_4c4cd861-96aa-41ab-bf30-4316a55e3456.jpg",
+              "mm_image_1_heading": "",
+              "mm_image_1_link": "shopify://collections/deodorant",
+              "mm_image_1_ratio": "3/2",
+              "mm_image_2_heading": "",
+              "mm_image_2_link": "",
+              "mm_image_2_ratio": "3/2",
+              "mm_image_3_heading": "",
+              "mm_image_3_link": "",
+              "mm_image_3_ratio": ""
+            }
+          }
+        },
+        "block_order": [
+          "menu_mega_7PFnVp",
+          "mm_shop_json"
+        ],
+        "settings": {
+          "menu_main_left": "main-mega-menu-left",
+          "menu_main_right": "main-mega-menu-right"
+        }
+      },
+      "element-footer-theme": {
+        "type": "element-footer-theme",
+        "blocks": {
+          "footer-c6bc-4ae7-bf78-ba220b46617d": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Zoek",
+              "menu_footer": "footer"
+            }
+          },
+          "footer-fc63-49f0-bec3-fa91ac9c6838": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Contact",
+              "menu_footer": "footer-second-menu"
+            }
+          }
+        },
+        "block_order": [
+          "footer-c6bc-4ae7-bf78-ba220b46617d",
+          "footer-fc63-49f0-bec3-fa91ac9c6838"
+        ],
+        "settings": {
+          "enable_newsletter_signup": true,
+          "enable_social_media": true
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "5149645339031002760": {
+        "type": "shopify://apps/order-limits-minmaxify/blocks/app-embed-block/3acfba32-89f3-4377-ae20-cbb9abc48475",
+        "disabled": false,
+        "settings": {}
+      },
+      "15588394620387169604": {
+        "type": "shopify://apps/subify-subscriptions-app/blocks/app-embed-block/bc0dba25-cd46-4841-bea4-6bdfe9ac815f",
+        "disabled": false,
+        "settings": {}
+      },
+      "8232999584494105511": {
+        "type": "shopify://apps/drip-email-marketing-popup/blocks/drip_shopify_snippet/0c4de56d-b2fa-4621-acea-6293bc16aba8",
+        "disabled": false,
+        "settings": {
+          "account_param": "8816619"
+        }
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".rich-text-content p a {color: inherit;}"
+    ]
+  }
+}

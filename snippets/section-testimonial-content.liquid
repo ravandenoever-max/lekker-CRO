@@ -1,0 +1,22 @@
+<section class="section-testimonial section-testimonial-one bg-slgrey padding-v-s header-logo-white header-hamburger-white">
+  <div class="full-background-image">
+    {%- liquid
+      if section.settings.object_image != blank
+        assign this_image_obj = section.settings.object_image
+      else
+        assign this_image_filename = 'lekkercompany-footer-homepage.jpg'
+        assign this_image_obj = images[this_image_filename]
+      endif
+      render 'thumbnail-simple',max_srcset:4000,media:this_image_obj,this_classnames:'img-responsive'
+    -%}
+  </div>
+  <div class="page-width" style="position:relative;z-index:10;">
+    <div class="testimonial-content padding-v-s">
+      <h3 class="font-fam-light font-size-xs color-white margin-b-xxs">Bryan, Community Ambassador</h3>
+      <h2 class="font-fam-special font-size-lg color-white txt-uppercase margin-b-xxs">“I have never felt so creative and positive”</h2>
+      <p class="font-fam-light font-size-xs color-white">
+        Microdosing helped me find balance and positivity in my life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </div>
+</section>

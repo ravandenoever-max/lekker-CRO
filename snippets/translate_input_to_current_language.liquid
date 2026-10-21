@@ -1,0 +1,11 @@
+{%- liquid
+  assign translation_key = translation_key | downcase | replace : ' ','_' | replace : '-','_'
+  assign translation_key = 'products.product.variant_labels.' | append : translation_key
+  assign translation_local = translation_key | t | default: ''
+  if translation_local contains 'Translation missing' or translation_local == ''
+    assign option_name_translated = translation_fallback
+  else
+    assign option_name_translated = translation_local
+  endif
+  echo option_name_translated
+-%}

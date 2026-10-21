@@ -1,0 +1,30 @@
+{%- liquid
+  comment
+      -- Renders a COLLECTION card --
+      Accepts:
+      - collection_card: {Object} Product Liquid object (optional)
+      Usage:
+      render 'collection-card'
+  endcomment
+  assign product_detail_url = collection_card.url | default: '#'
+-%}
+
+<div class="collection-card-wrapper card-wrapper">
+  <a href="{{ product_detail_url }}" title="{{ collection_card.title | escape }}" class="full-unstyled-link">
+    <span class="visually-hidden">{{ collection_card.title | escape }}</span>
+    <div class="card card--product" tabindex="-1">
+      <div class="card__inner">
+        <div class="product-detail-image-wrapper">
+          <div class="product__media media product-image-add-padding product-thumbnail-simple media--hover-effect motion-reduce bg_slgrey">
+            {%- render 'thumbnail-simple', media: collection_card.image, position: forloop.index, image_alt: product_card_product.image.alt -%}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-information">
+      <div class="card-information__wrapper">
+        <h2 class="card-information__text"><span>{{- collection_card.title | escape -}}</span></h2>
+      </div>
+    </div>
+  </a>
+</div>

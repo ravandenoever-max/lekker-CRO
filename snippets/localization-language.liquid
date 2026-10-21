@@ -1,0 +1,92 @@
+{%- comment -%}
+  Renders the language picker for the localization form
+  Accepts:
+    - localPosition: pass in the position in which the form is coming up to create specific IDs
+{%- endcomment -%}
+{%- assign filename = 'localization-language' -%}
+
+<div class="menu-foldable__language localization-wrapper">
+  <div class="localization">
+    <button type="button" class="localization__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="{{ localPosition }}List" aria-describedby="{{ localPosition }}Label">
+      <span>{{ localization.language.iso_code | upcase }}</span>
+      {%- render 'theme-icon', icon: 'icon-caret' -%}
+    </button>
+    <div class="localization__list-wrapper" hidden>
+      <ul id="{{ localPosition }}List" role="list" class="localization__list list-unstyled">
+        {%- for language in localization.available_languages -%}
+          {%- if language.iso_code != localization.language.iso_code %}
+            <li tabindex="-1" class="localization__item" aria-current="false">
+              <a class="--link --link--text localization__link" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
+                <span>{{ language.iso_code | upcase }}</span>
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+  <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+</div>
+{%- capture bloated_css -%}
+  <style>
+    .section-announcement-theme .header__inline-menu__right { }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-selector.link {
+      font-family: var(--font-light-family);
+      font-weight:var(--font-light-weight);
+      font-style:var(--font-light-style); 
+      font-size:var(--font-size-xs);
+    }
+    .section-announcement-theme .header__inline-menu__right .localization { position:relative; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__button { align-items:center; cursor:pointer; display:flex; padding:0rem; font-size:1rem; background-color:transparent; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__list ul { padding-top:0em; padding-bottom:0em; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__list ul .localization__item { position:relative; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form { display:flex; flex-direction:column; flex:auto 1 0; padding:0rem; margin:0 auto; text-decoration:none; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form { padding:0rem 2rem 0rem 0; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form:first-of-type { padding-left:0; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form:only-child { justify-content:start; width:auto; margin:0; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form:only-child .button,
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form:only-child .localization-form__select { }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form .button { padding:1rem; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form__currency { opacity:1; transition:opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94); white-space:nowrap; padding-right:0rem; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form__select { position:relative; margin-bottom:0rem; padding-left:1rem; text-align:left; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__button.localization-form__select { 
+      height:var(--theme-announcement-height); padding:0rem;padding-left:0rem; border:none !important; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-form__select .icon-caret { position:absolute; content:''; height:0.5rem; right:0rem; top:calc(50% - 0.25rem); }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-selector.link { 
+
+      text-decoration:none; appearance:none; -webkit-appearance:none; -moz-appearance:none; color:var(--color-white); width:4rem; 
+      padding-right:2.5rem; padding-left:0.5rem; padding-bottom:0rem; }
+    noscript .localization-selector.link { padding-top:0rem; padding-left:1rem; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-selector option { color:#000000; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-selector + .localization__list-wrapper { opacity:1; animation:animateLocalization 0.3s ease forwards; }
+    @keyframes animateLocalization { 0%{opacity:0;transform:translateY(1.25rem0)} 100%{opacity:1;transform:translateY(0rem)} }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__list-wrapper { 
+      width:4rem;
+      border:none;position:absolute;top:100%;z-index:5400; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__list { 
+      overflow:hidden; overflow-y:auto; border:none; margin-top:0rem; margin-left:0rem; 
+      border-radius:0 0 0.5rem 0.5rem; background:var(--color-red); position:relative; overflow-y:auto; 
+      font-size:1rem; padding-bottom:0.5rem; padding-top:0rem; scroll-padding:0.5rem 0; }
+
+    .section-announcement-theme .header__inline-menu__right .localization .localization__link { 
+      display:grid; grid-template-columns:auto 1fr auto; gap:0.5rem; padding:0.25rem 0.5rem; 
+      text-decoration:none !important; color:var(--color-white); word-break:break-word; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__item.active .localization__link,
+    .section-announcement-theme .header__inline-menu__right .localization .localization__link:hover { text-decoration:underline !important; color:var(--color-white); }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__link .icon-checkmark { width:1rem; margin-right:0.2rem; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__link:hover .localization-form__currency,
+    .section-announcement-theme .header__inline-menu__right .localization .localization__link:focus-visible .localization-form__currency,
+    .section-announcement-theme .header__inline-menu__right .localization .localization__link:focus .localization-form__currency { display:inline-block; opacity:1; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization__button[aria-expanded='true'] .icon-caret { transform:rotate(180deg); }
+    /* Header icons (desktop) */
+    .section-announcement-theme .header__inline-menu__right .localization .localization-wrapper { display:flex; flex-wrap:wrap; justify-content:flex-end; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-wrapper .localization-selector + .localization__list-wrapper { animation:animateLocalization 0.3s ease; }
+    .section-announcement-theme .header__inline-menu__right .localization .localization-wrapper .localization-form:only-child { padding:0; }
+    @media screen and (min-width:350px) {
+      .section-announcement-theme .announcement-bar__element-right { min-width:2rem; }
+    }
+  </style>
+{%- endcapture -%}
+{%- render'inline-css',input_css:bloated_css -%}
+
+

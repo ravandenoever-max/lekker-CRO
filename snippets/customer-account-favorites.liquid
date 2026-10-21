@@ -1,0 +1,13 @@
+
+<div id="collection-product-grid" class="padding-b-sm margin-b-lg">
+    <div class="collection collection-template-classic no-page-width">
+        <ul id="favorites-products" data-id="{{ section.id }}" role="list" class="collection-grid element-count-3">
+        {%- for product in collection.products -%}
+            {%- assign product_id = product.variants.first.id -%}
+            <li class="grid__item nomargin margin-b-lg" id="product-{{ product_id }}">
+            {%- render 'product-card', product_card_product: product, button_size:'medium' -%}
+            </li>
+        {%- endfor -%}
+        </ul>
+    </div>
+</div>

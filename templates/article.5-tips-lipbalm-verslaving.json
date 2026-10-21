@@ -1,0 +1,295 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/pexels-tima-miroshnichenko-8727479.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/pexels-tima-miroshnichenko-8727479.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "5 tips om van je lippenbalsem verslaving af te komen",
+            "block_content": "<p><em>Geschreven door Daan Timmers.<\/em><\/p><p>Als je een lijstje zou mogen maken van vijf veel voorkomende verslavingen, zou lippenbalsem waarschijnlijk niet in deze lijst voorkomen. Terwijl het een stuk verslavender is dan je zou denken. Dit komt vooral door ingrediënten die je vaak in lippenbalsem vindt. Hoe dat precies zit kan je <a href=\"https:\/\/thelekkercompany.com\/blogs\/personal-care\/hierom-is-lippenbalsem-soms-verslavend\"><span style=\"text-decoration:underline\">hier<\/span><\/a> lezen. <\/p><p>Daar sta je dan met je goede gedrag. Totaal onverwacht een heuze lippenbalsemverslaving aan de haak geslagen en een vicieuze cirkel van droge lippen. Gelukkig is er hulp onderweg. Wij geven jou de tips om van jouw verslaving af te komen. <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "30473742-6df8-4950-a83f-7514fa3ae92d": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/foto_water.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "",
+        "this_content": "<p><strong>1. Eet minder zout<\/strong><br\/>-break-<br\/>Een van de grootste uitdrogers die we in het dagelijks leven gebruiken is zout. Dat geldt zowel voor je lichaam als voor je lippen. Die instant noedels kan je dus beter links laten liggen als je geen droge lippen wilt. <br\/>-break--break-<\/p><p><strong>2. Drink voldoende water<br\/><\/strong>-break-<br\/>Water prijkt bovenaan op heel veel gezondheidslijstjes en het wordt daarom ook flink gestimuleerd. Het is daarom ook jouw beste vriend tegen droge lippen. Probeer daarom minstens twee liter water per dag te drinken.-break--break-<\/p><p><strong>3. Lik je lippen wat minder af<\/strong><br\/>-break-<br\/>Zoute gerechten geven je bovendien de neiging je lippen vaker af te likken. Dat lijkt heel onschuldig, maar het zorgt er stiekem voor dat je veel meer het gevoel krijgt om een lippenbalsem te gebruiken. Je speeksel droogt je lippen namelijk nog meer uit dan het was, waardoor je precies het tegenovergestelde bereikt van wat je wilt.<br\/>-break--break-<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "100",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "646bd049-8465-47dd-bf66-3a5b09d9c1cd": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--18901193195859__646bd049-8465-47dd-bf66-3a5b09d9c1cd-16831980632f41ecff-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>4. Vermijd het ingrediënt aardolie <\/strong><\/p><p>-break-<\/p><p>Aardolie is het ingrediënt dat er in veel lippenbalsems voor zorgt dat je lippen worden afgesloten en ze daardoor steeds meer uitgedroogd voelen. Hierdoor heb je het gevoel dat je weer meer lippenbalsem wil smeren, waardoor ze in feite dus nog verder uitdrogen. Daarom is het belangrijk om te weten welke lippenbalsems aardolie bevatten. <\/p><p>De meesten van ons zullen niet snel alle ingrediënten lezen die in cosmetica zijn verwerkt. Dat is heel logisch, want alles is geschreven in INCI (internationale cosmetica taal). Dit maakt het lezen knap lastig. Met de juiste kennis kun je gelukkig wel de verschillende varianten van aardolie eruit halen. Zoek op verpakkingen daarom vooral op paraffine, petroleum, petrolatum of minerale olie. <br\/>-break--break-<\/p><p><em><strong>And last but not least...<\/strong><\/em><\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "50",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18901193195859__646bd049-8465-47dd-bf66-3a5b09d9c1cd-16831980632f41ecff-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-down",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/TheLekkerCompany_NaturalLipBalm_RaspberryLemonade_10.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "5. Get on the Lekker train!",
+        "this_content": "<p>Gelukkig zijn er ook varianten die 100% natuurlijk en niet verslavend zijn. Probeer bijvoorbeeld de Lekker lippenbalsem, verkrijgbaar in twee smaken: <a href=\"https:\/\/thelekkercompany.com\/en\/products\/raspberry-lemonade-lip-balm\" title=\"https:\/\/thelekkercompany.com\/en\/products\/raspberry-lemonade-lip-balm\"><span style=\"text-decoration:underline\">Raspberry lemonade<\/span><\/a> en <a href=\"https:\/\/thelekkercompany.com\/en\/products\/orange-vanilla-swirl-lip-balm\" title=\"https:\/\/thelekkercompany.com\/en\/products\/orange-vanilla-swirl-lip-balm\"><span style=\"text-decoration:underline\">Orange vanilla swirl<\/span><\/a><span style=\"text-decoration:underline\">.<\/span> Deze liggen bij iedere Kruidvat in Nederland. <\/p><p><em>Van 1 t\/m 14 mei 2023 shop je de lippenbalsem 1+1 gratis, alleen in Kruidvat-winkels.<\/em><\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "black",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "100",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "30473742-6df8-4950-a83f-7514fa3ae92d",
+    "646bd049-8465-47dd-bf66-3a5b09d9c1cd",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

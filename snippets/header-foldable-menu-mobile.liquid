@@ -1,0 +1,68 @@
+
+{%- liquid
+assign filename = 'header-foldable-menu-mobile'
+echo '<header-foldable class="header-foldable header-foldable-position-top animate-from-left" aria-expanded="false">'
+  comment
+    <div class="header-foldable-underlay"></div>
+  endcomment
+  echo '<div class="header-foldable-wrapper page-width">'
+    echo '<div class="header-foldable-level-a" aria-expanded="false">'
+      echo ' <div class="foldable-menu-inner no-select">'
+        echo '<div class="foldable-menu-wrapper">'
+          echo '<ul class="menu-foldable__menu list-menu" role="list" tabindex="-1">'
+
+            assign this_menu = header_menu.links
+            for link in this_menu
+              assign link_id = link.handle
+              assign link_title = link.title | escape
+              assign link_url = link.url
+              assign link_handle = link.handle
+              assign link_title_downcase = link_title | downcase | strip
+              if link_title_downcase == 'mega-menu-shop'
+                assign link_title = 'additional.main_menu_store.label' | t
+              elsif link_title_downcase == 'mega-menu-about'
+                assign link_title = 'additional.main_menu_about.label' | t
+              endif
+
+              if link.links != blank
+                echo '<li id="[link_id]" class="js-trigger-foldable-menu-mobile-b foldable-child-menu child-menu-a-related-[link_handle]" aria-expanded="false">' | replace : '[link_id]', link_id | replace : '[link_handle]', link_handle
+                  echo '<div class="cols">'
+                    echo '<div class="col-a"><span class="menu-foldable__menu-item" title="[link_title]"><span class="title level-a">[link_title]</span></span></div>'| replace : '[link_handle]', link_handle
+                    echo '<div class="col-b"><span class="icon-more"><div class="css-arrow" data-color="black" data-size="small" data-direction="right"><span></span></div></span></div>'
+                  echo '</div>'
+                echo '</li>'
+              else
+                echo '<li id="[link_id]">' | replace : '[link_id]', link_id
+                  assign acive_menu_class = ''
+                  if link.current
+                    assign acive_menu_class = ' menu-foldable__menu-item--active'
+                  endif
+                  echo '<a class="menu-foldable__menu-item [acive_menu_class]" title="[link_title]" href="[link_url]">' | replace : '[link_title]', link_title | replace : '[link_url]', link_url | replace : '[acive_menu_class]', acive_menu_class 
+                    echo '<span class="title level-a">[link_title]</span>' | replace : '[link_title]', link_title
+                  echo '</a>'
+                echo '</li>'
+              endif
+            endfor
+            if section.settings.enable_language_selector
+              echo '<div class="footer-language">'
+                echo '<ul class="list-horizontal list-padding-r-5 list-unstyled">'
+                  assign x_class_en = ''
+                  assign x_class_nl = ''
+                  if current_language == 'en'
+                    assign x_class_en = 'active list-menu__item--active'
+                  endif
+                  if current_language == 'nl'
+                    assign x_class_nl = 'active list-menu__item--active'
+                  endif
+                  echo '<li><a title="EN" class="link link--from-left link-white footer-lang-en [x_class_en] font-fam-normal font-size-xs color-black txt-uppercase" data-href="{{ current_url_en }}" href="javascript:SetLanguageByUser("[current_url_en]","en");"><span>English</span></a></li>' | replace : '[x_class_en]', x_class_en | replace : '[current_url_en]', current_url_en
+                  echo '<li><a title="NL" class="link link--from-left link-white footer-lang-nl [x_class_nl] font-fam-normal font-size-xs color-black txt-uppercase" data-href="{{ current_url_nl }}" href="javascript:SetLanguageByUser("[current_url_nl]","nl");"><span>Nederlands</span></a></li>' | replace : '[x_class_nl]', x_class_nl | replace : '[current_url_nl]', current_url_nl
+                echo '</ul>'
+              echo '</div>'
+            endif
+          echo '</ul>'
+        echo '</div>'
+      echo '</div>'
+    echo '</div>'
+  echo '</div>'
+echo '</header-foldable>'
+-%}

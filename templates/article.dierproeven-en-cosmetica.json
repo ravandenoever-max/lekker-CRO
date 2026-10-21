@@ -1,0 +1,295 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Ontwerp_zonder_titel.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/Ontwerp_zonder_titel.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Dierproeven en cosmetica: hoe zit het nou?",
+            "block_content": "<p>Als consument vraag je je wellicht af of jouw mascara of shampoo op dieren is getest. De wet- en regelgeving rondom dit onderwerp kan per land nog wel eens verschillen. Hoe zit het nu precies?<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "1000",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "9811e984-c712-47c0-8ae6-a29d0c21e8e4": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/pexels-oliviero-10926606_1.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "First things first: Nederland",
+        "this_content": "<p>In Nederland zijn dierproeven voor cosmetica al sinds 2013 verboden. Dat betekent dat het zowel verboden is om cosmetica op dieren te testen, als om de resultaten van dierproeven te gebruiken voor de ontwikkeling van nieuwe cosmetica. Dit geldt niet alleen voor make-up, maar ook voor alle andere verzorgingsproducten, zoals shampoo, tandpasta, zeep en losse ingrediënten voor deze producten. So far, so good.<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "7ba6bca0-7dde-42f4-bc1e-4b769efd5551": {
+      "type": "theme-section__text",
+      "blocks": {
+        "f491c400-2591-4263-b332-20c761f0ef4a": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Maar hoe zit het in China?",
+            "block_content": "<p>Merken die in China verkopen, testten tot voor kort op dieren. Gelukkig was er goed nieuws in 2021: vanaf 1 januari 2021 hoefden geïmporteerde cosmetica, zoals shampoo, blusher, mascara en parfum, niet langer op dieren getest te worden op oog- en huidirritatie in Chinese laboratoria. Dit was een grote stap vooruit in de strijd tegen dierproeven voor cosmetica. Vóór 2019 was het namelijk verplicht om alle cosmetica die in China werd verkocht op dieren te testen, waardoor veel merken gedwongen werden om een afweging te maken tussen winst en ethische principes. Gelukkig worden de wetten steeds verder aangepast en zijn er in 2019 en 2021 al versoepelingen doorgevoerd. Zo is het nu ook mogelijk om online dierproefvrije cosmetica te verkopen in China en zijn er in sommige gevallen mogelijkheden om fysieke winkels te openen zonder dierproeven te hoeven uitvoeren.<\/p><p>Hoewel deze regel geldt voor het merendeel van de producten die in China worden verkocht, zijn er nog veel uitzonderingen en complicaties. Wil je alle details hierover weten, lees dan <a href=\"https:\/\/www.shoplikeyougiveadamn.nl\/blogs\/alles-over-dierproeven-in-china-de-situatie-in-2023\/bl-365\"><span style=\"text-decoration:underline\"><strong>hier<\/strong><\/span><\/a> verder.<\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "onze deos",
+            "button_size": "button_small",
+            "button_color": "button_pink",
+            "button_link": "shopify:\/\/collections\/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "f491c400-2591-4263-b332-20c761f0ef4a"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/IMG_3175.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Is dierproefvrij ook vegan?",
+        "this_content": "<p>Let op, dierproefvrij betekent niet automatisch dat het product ook vegan is. Een dierproefvrij product kan namelijk wel dierlijke ingrediënten bevatten. Een vegan product is daarentegen altijd dierproefvrij én bevat geen dierlijke ingrediënten. Wil je jouw cosmetica-etiket even nalezen op dierlijke ingrediënten? Dan vind je<strong> <\/strong><a href=\"https:\/\/thelekkercompany.com\/blogs\/personal-care\/dierlijke-ingredienten-in-cosmetica\"><span style=\"text-decoration:underline\"><strong>hier<\/strong><\/span><\/a> de complete lijst.<\/p><p>Als je op zoek bent naar dierproefvrije producten, kun je kijken naar merken met een <strong>Leaping Bunny logo.<\/strong> Elk merk met deze certificering is dierproefvrij. Wil je er zeker van zijn dat het product ook vegan is, dan kun je letten op een vegan certificering. The Lekker Company is bijvoorbeeld zowel dierproefvrij als vegan.<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "9811e984-c712-47c0-8ae6-a29d0c21e8e4",
+    "7ba6bca0-7dde-42f4-bc1e-4b769efd5551",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

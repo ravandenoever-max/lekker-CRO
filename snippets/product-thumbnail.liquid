@@ -1,0 +1,115 @@
+{%- comment -%}
+    Renders a product thumbnail with a modal-opener
+    Accepts:
+    - media: {Object} Product Media object
+    - position: {String} Position of the media. Used for accessible label.
+    - loop: {Boolean} Enable video looping (optional)
+    - modal_id: {String} The product modal that will be shown by clicking the thumbnail
+    Usage:
+    {% render 'product-thumbnail',
+      media: media,
+      position: forloop.index,
+      image_alt: block.settings.image.alt,
+      loop: section.settings.enable_video_looping,
+      modal_id: section.id
+    %}
+{%- endcomment -%}
+{%- assign use_product_modal = 'false' -%}
+{%- if use_product_modal == 'true' -%}
+  <noscript>
+    {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+      <a href="{% if media.media_type == 'video' %}{{ media.sources[1].url }}{% else %}{{ media | external_video_url }}{% endif %}" aria-label="{{ 'products.product.video_exit_message' | t: title: product.title | escape }}">
+        <span class="product__media-icon motion-reduce">{% render 'theme-icon', icon: 'icon-play' %}</span>
+        <div class="product__media media product-image-add-padding product-thumbnail-simple">
+          {%- render 'thumbnail-simple', media: media, position: forloop.index, image_alt: media.alt, loop: section.settings.enable_video_looping -%}
+        </div>
+      </a>
+    {%- else -%}
+      <div class="product__media media product-image-add-padding product-thumbnail-simple">
+        {%- render 'thumbnail-simple', media: media, position: forloop.index, image_alt: media.alt, loop: section.settings.enable_video_looping -%}
+      </div>
+    {%- endif -%}
+  </noscript>
+  <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#product-modal--{{ modal_id }}">
+    <span class="product__media-icon motion-reduce" aria-hidden="true">
+      {%- liquid
+        case media.media_type
+        when 'video' or 'external_video'
+          render 'theme-icon', icon: 'icon-play'
+        when 'model'
+          render 'theme-icon', icon: 'icon-3d-model'
+        else
+          render 'theme-icon', icon: 'icon-zoom'
+        endcase
+      -%}
+    </span>
+    <div class="product__media media product-image-add-padding product-thumbnail-simple">
+      {%- render 'thumbnail-simple', media: media, position: forloop.index, image_alt: media.alt, media_id: media.id, loop: section.settings.enable_video_looping -%}
+    </div>
+    <button class="product__media-toggle" type="button" aria-haspopup="dialog" data-media-id="{{ media.id }}">
+      <span class="visually-hidden">
+        {%- if position == 'featured' %}
+          {{ 'products.product.media.open_featured_media' | t }}
+        {%- else -%}
+          {{ 'products.product.media.open_media' | t: index: position }}
+        {%- endif -%}
+      </span>
+    </button>
+  </modal-opener>
+{%- else -%}
+  <div class="product__image">
+    <div class="product__media media product-image-add-padding product-thumbnail-simple">
+      {%- render 'thumbnail-simple', media: media, position: forloop.index, image_alt: media.alt, media_id: media.id, loop: section.settings.enable_video_looping -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{%- if media.media_type != 'image' -%}
+  {%- if media.media_type == 'model' -%}
+    <product-model class="deferred-media media no-js-hidden" style="padding-top: 100%" data-media-id="{{ media.id }}">
+  {%- else -%}
+    <deferred-media class="deferred-media media no-js-hidden" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%" data-media-id="{{ media.id }}">
+  {%- endif -%}
+  <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
+    <span class="deferred-media__poster-button motion-reduce">
+      {%- if media.media_type == 'model' -%}
+        <span class="visually-hidden">{{ 'products.product.media.play_model' | t }}</span>
+        {%- render 'theme-icon', icon: 'icon-3d-model' -%}
+      {%- else -%}
+        <span class="visually-hidden">{{ 'products.product.media.play_video' | t }}</span>
+        {%- render 'theme-icon', icon: 'icon-play' -%}
+      {%- endif -%}
+    </span>
+    {%- comment -%}
+      {%- capture this_image_srcset -%}{%- render 'image-srcset', this_image: media -%}{%- endcapture -%}
+      <img srcset="{{ this_image_srcset }}" src="{{ media | img_url: '550x550' }}" sizes="(min-width:1200px) calc((1200px- (200)) / 2), (min-width:768px) calc((100vw- (30px)) / 2), calc(100vw - 80px)" loading="lazy" width="550" height="{{ 550 | divided_by: media.preview_image.aspect_ratio }}" alt="{{ media.preview_image.alt | escape }}">
+    {%- endcomment -%}
+    {%- render 'thumbnail-simple', media: media, position: forloop.index, image_alt: media.preview_image.alt, media_id: media.id -%}
+  </button>
+  <template>
+    {%- liquid
+      case media.media_type
+      when 'external_video'
+        assign video_class = 'js-' | append: media.host
+        if media.host == 'youtube'
+          echo media | external_video_url: autoplay: true, loop: loop, playlist: media.external_id | external_video_tag: class: video_class, loading: "lazy"
+        else
+          echo media | external_video_url: autoplay: true, loop: loop | external_video_tag: class: video_class, loading: "lazy"
+        endif
+      when 'video'
+        echo media | media_tag: image_size: "2048x", autoplay: true, loop: loop, controls: true, preload: "none", autoplay: true
+      when 'model'
+        echo media | media_tag: image_size: "2048x", toggleable: true
+      endcase
+    -%}
+  </template>
+  {%- if media.media_type == 'model' -%}
+    </product-model>
+    <button class="button button--full-width product__xr-button" type="button" aria-label="{{ 'products.product.xr_button_label' | t }}" data-shopify-xr data-shopify-model3d-id="{{ media.id }}" data-shopify-title="title" data-shopify-xr-hidden>
+      {% render 'theme-icon', icon: 'icon-3d-model' %}
+      {{ 'products.product.xr_button' | t }}
+    </button>
+  {%- else -%}
+    </deferred-media>
+  {%- endif -%}
+{%- endif -%}

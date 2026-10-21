@@ -1,0 +1,25 @@
+{%- liquid
+  assign given_min_w = 200
+  if this_min_srcset
+    assign given_min_w = this_min_srcset | plus: 0
+  endif
+  assign given_max_w = 3000
+  if this_max_srcset
+    assign given_max_w = this_max_srcset | plus: 0
+  endif
+  assign this_img_srcset_string = ''
+  assign px = '200:300:400:500:600:700:800:900:1000:1100:1200:1300:1400:1500:1600:1800:2000:2400:3000:4000'
+  assign px_array = px | split : ':'
+  for px_value in px_array
+    assign px_value_num = px_value | plus: 0
+    if this_image.width >= px_value_num and given_min_w <= px_value_num and given_max_w >= px_value_num
+      assign img_size = px_value | append:'x'
+      assign this_img = this_image | img_url:img_size
+      assign this_img_srcset_string = this_img_srcset_string | append:this_img | append:" PX_VALUEw:::"
+      assign this_img_srcset_string = this_img_srcset_string | replace:'PX_VALUE',px_value
+    endif
+  endfor
+  assign image_srcset_array = this_img_srcset_string | split:":::"
+  assign image_srcset = image_srcset_array | join: ","
+  echo image_srcset
+-%}

@@ -1,0 +1,428 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/TheLekkerCompany_NaturalDeodorant_Model_241_-_Bewerkt.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify://shop_images/TheLekkerCompany_NaturalDeodorant_Model_241_-_Bewerkt.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Duurzame deodorant: waarom je vandaag nog wilt overstappen",
+            "block_content": "<p>Dit artikel is afkomstig van <a href=\"https://soulstores.com/duurzame-deodorant-waarom-je-vandaag-nog-wilt-overstappen/\" target=\"_blank\" title=\"https://soulstores.com/duurzame-deodorant-waarom-je-vandaag-nog-wilt-overstappen/\">Soul Stores</a>.</p><p>De meeste mensen gebruiken dagelijks een deodorant. Maar veel deodorants bevatten stoffen die schadelijk kunnen zijn voor je lichaam en het milieu. Hoe gevaarlijk is dat eigenlijk? En kan het ook anders?</p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "5c16352e-030f-4034-b932-09952899f207": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Verschillende meningen",
+            "block_content": "<p>De meningen omtrent de schadelijkheid van deodorant of anti-transparant voor de gezondheid wisselend: Sommigen zeggen dat de hoeveelheid gevaarlijke stoffen zo klein is dat die je lichaam nauwelijks schade kunnen toebrengen. Anderen claimen dat het actieve ingrediënt dat in de meeste gangbare deo of anti-transpirant wordt gebruikt, zelfs kankerverwekkend(!)kan zijn.</p><p>Het meest besproken bestanddeel  heet <em>aluminiumchloorhydraat, </em>in de volksmond<em>aluminiumzout </em>genoemd. Er is nog veel onduidelijkheid omtrent de gezondheidseffecten op de lange termijn, maar één ding is zeker: er zit een luchtje aan.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "onze deos",
+            "button_size": "button_small",
+            "button_color": "button_pink",
+            "button_link": "shopify://collections/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/TheLekkerCompany_Model_NaturalDeodorant_23.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Meningen verschillen",
+        "this_content": "<p>De meningen omtrent de schadelijkheid van deodorant of anti-transparant voor de gezondheid zijn verdeeld: Sommigen zeggen dat de hoeveelheid gevaarlijke stoffen zo klein is dat die je lichaam nauwelijks schade kunnen toebrengen. Anderen claimen dat het actieve ingrediënt dat in de meeste gangbare deo of anti-transpirant wordt gebruikt, zelfs kankerverwekkend kan zijn. We hebben het hier over het bestanddeel <em>aluminiumchloorhydraat, </em>in de volksmond <em>aluminiumzout </em>genoemd. Er is nog veel onduidelijkheid omtrent de gezondheidseffecten op de lange termijn, maar één ding is zeker: er zit een luchtje aan.</p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Aluminium in je deo",
+            "block_content": "<p>Het is en blijft een hot topic: aluminium in deodorant en anti-transparant. Want: wat doet het daar eigenlijk? Het bestanddeel <em>aluminiumchloorhydraat </em>werkt als een soort stop op je zweetklieren, waardoor je tijdelijk niet zweet op de plekken waar je het product hebt aangebracht. De huid blijft droog waardoor ongewenste luchtjes geen kans krijgen. Dat lijkt goed nieuws, maar hoe gezond is het om dag in dag uit je zweetklieren te blokkeren? Er zijn dermatologische onderzoeken die uitwijzen dat dit niet per se slecht hoeft te zijn voor je gezondheid. Het huidoppervlak onder je oksel betreft namelijk maar <a href=\"https://www.trouw.nl/nieuws/is-deodorant-met-aluminium-nou-schadelijk-of-niet~b8e736e2/?referer=https%3A%2F%2Fwww.google.com%2F\" target=\"_blank\" title=\"Trouw: Is deodorant - met aluminium - nou schadelijk of niet?\">1% van je totale huidoppervlak</a> en zweet kan zijn weg naar buiten vinden via andere zweetklieren (wel eens een natte onderrug gehad?).</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "341b18db-4f30-48c8-b378-ff6111966d22": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Aluminium in je lijf",
+            "block_content": "<p>Alleen suggereert een <a href=\"https://www.rivm.nl/bibliotheek/rapporten/2015-0066.pdf\" target=\"_blank\">onderzoek van het RIVM</a> en het Noorse VKM, dat dagelijkse blootstelling van aluminium op je huid, kan leiden tot opname van die stof en daardoor op de lange termijn wel degelijk schadelijk kan zijn. Of – om het RIVM te quoten: “Na absorptie verdeelt het aluminium zich over alle weefsels, en is in staat om in sommige weefsels, zoals het botweefsel, te accumuleren. De eliminatie uit sommige weefsels is langzaam waardoor het aluminium, na stopzetten van de blootstelling, nog lang in het menselijk lichaam aanwezig kan blijven.”</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0",
+        "341b18db-4f30-48c8-b378-ff6111966d22"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "4d058f9d-f411-45ba-a6b8-04978316d90c": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/Ontwerp_zonder_titel_2.png",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Mogelijke gevolgen",
+        "this_content": "<p>Van aluminium is bekend dat overmatige blootstelling aan de stof epigenetische gevolgen, onomkeerbare veranderingen in de gen functies, kan hebben. De stof kan daarnaast DNA- veranderingen veroorzaken en mogelijk hormoonverstorend werken. Het is dan ook niet gek dat er wereldwijd wetenschappelijk onderzoek wordt gedaan naar aluminium als mogelijke veroorzaker van verminderde vruchtbaarheid en zelfs borstkanker. Als zijn over dat laatste de meningen verdeeld. Zo zegt het ene <a href=\"https://pubmed.ncbi.nlm.nih.gov/25233067/\" target=\"_blank\" title=\"Borstkankeronderzoek\">borstkankeronderzoek </a>dat er een verband is tussen aluminium in borstcellen en een snellere vorming van tumoren. Maar het <a href=\"https://www.kwf.nl/standpunten/deodorant-en-borstkanker\" target=\"_blank\">KWF weerlegt </a>dit. Wanneer je langdurig systematisch blootgesteld wordt aan aluminium, door inname van voedsel, water enhet gebruik van cosmetica, kan dit <a href=\"https://www.rivm.nl/bibliotheek/rapporten/2015-0066.pdf\" target=\"_blank\">schadelijk zijn voor je gezondheid.</a> Maar onderzoek staat nog in de kinderschoenen, en de gevolgen op de lange termijn zijn nog onbekend. Tot die tijd ben ik echter liever<em> safe than sorry.</em></p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "eb983b6e-0cf8-45de-b26b-739ed0b7c7b4": {
+      "type": "theme-section__text",
+      "blocks": {
+        "c27c93cf-3486-451a-ba86-57a70d60abfb": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Natuurlijke deodorant: sprayen, smeren of rollen?",
+            "block_content": "<p>Dat deodorant in spray- of rollervorm nou niet bepaald het meest duurzame cosmetica product ooit is, zal geen verrassing zijn. Al tasten de drijfgassen die vrijkomen bij spraybussen tegenwoordig de ozonlaag niet meer aan zoals de <a href=\"https://waarzitwatin.nl/stoffen/drijfgassen#:~:text=Butaan%2C%20isobutaan%20en%20propaan%20worden,als%20drijfgassen%20terug%20in%20bakspray.\">CFK’s </a>van vroeger. En worden de aluminium verpakkingen steeds vaker gerecycled. De meeste standaard deo rollers worden verkocht in plastic verpakkingen en bevatten een grote hoeveelheid microplastics. Daardoor dragen ze al jarenlang bij aan die alsmaar groeiende<em> plastic soup </em>in onze oceanen. Op de handige app <a href=\"https://www.beatthemicrobead.org/product-results/\">Beat the Microbead </a>kun je precies zien welke producten in jouw badkamerkastje microplastics bevatten. </p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "cc556936-92af-4b94-9127-02fdf859edc0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Duurzame deodorant: ook cruelty free?",
+            "block_content": "<p>Hoewel veel merken tegenwoordig claimen ‘cruelty free’ te zijn, is het goed om kritisch te blijven. <em>Dierproefvrij </em>en<em> vegan </em>zijn populaire marketing termen geworden en er zijn helaas ook cosmetica merken die dit misbruiken. Wil je weten of jouw producten vegan en/of dierproefvrij zijn? Kijk dan eens naar de <a href=\"https://www.shoplikeyougiveadamn.nl/nederlandse-dierproefvrije-cosmetica-lijst/bl-167/\">Nederlandse dierproefvrije cosmetica lijst</a> die website Shop Like You Give a Damn publiceerde.<br /><br />  <em>Deze gastblog is geschreven door Talita Kalloe.</em></p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "c27c93cf-3486-451a-ba86-57a70d60abfb",
+        "cc556936-92af-4b94-9127-02fdf859edc0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "5c16352e-030f-4034-b932-09952899f207",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e",
+    "4d058f9d-f411-45ba-a6b8-04978316d90c",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "eb983b6e-0cf8-45de-b26b-739ed0b7c7b4",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

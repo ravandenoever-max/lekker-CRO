@@ -1,0 +1,25 @@
+{%- liquid
+  assign filename = 'theme-section__custom-code'
+  assign page_width = section.settings.page_width
+-%}
+<div class="{{ page_width }}">
+  <div class="section-{{ section.id }}">
+    {{ section.settings.custom_liquid }}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Custom Code",
+  "tag": "section",
+  "class": "section__custom-code",
+  "settings": [
+    { "type": "liquid","id": "custom_liquid","label": "t:sections.custom-liquid.settings.custom_liquid.label","info": "t:sections.custom-liquid.settings.custom_liquid.info"},
+    {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [ { "value":"page-width--narrow","label":"Medium"},{ "value":"page-width","label":"Wide"}, { "value":"no-page-width","label":"Fullscreen" } ] }   
+  ],
+  "presets": [
+    {
+      "name": "t:sections.custom-liquid.presets.name"
+    }
+  ]
+}
+{% endschema %}

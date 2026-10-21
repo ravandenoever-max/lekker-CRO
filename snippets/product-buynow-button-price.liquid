@@ -1,0 +1,172 @@
+{% comment %}
+    assign filename = 'product-buynow-button-price'
+    Renders a list of product's price (regular, sale)
+    Accepts:
+    - product: {Object} Product Liquid object (optional)
+    - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
+    - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
+    - price_class: {String} Adds a price class to the price element (optional)
+    Explanation of description list:
+      - div.price__regular: Displayed when there are no variants on sale
+      - div.price__sale: Displayed when a variant is a sale
+      - div.price__availability: Displayed when the product is sold out
+{% endcomment %}
+
+{%- liquid
+  assign target = product
+  if use_variant
+    assign target = product
+    assign compare_at_price = target.compare_at_price
+    assign price = target.price | default: 1999
+    assign available = target.available | default: true
+    assign money_price = price | money | replace : ',00',',-'
+    assign compare_at_price_money = compare_at_price | money | replace : ',00',',-'
+  else
+    assign target = product
+    assign product_meta = target.metafields.my_fields
+    assign compare_at_price = target.compare_at_price
+    assign price = target.price | default: 1999
+    assign available = target.available | default: true
+    assign money_price = price | money | replace : ',00',',-'
+    if target == product and product.price_varies
+      assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+    endif
+    assign compare_at_price_money = compare_at_price | money | replace : ',00',',-'
+  endif
+
+  assign button_size_class = 'theme-button__round-small'
+  if button_size != blank
+    assign button_size_class = 'theme-button__round-'
+    assign button_size_class = button_size_class | append: button_size
+  endif
+  assign button_style_class = 'theme-button__red-red-white theme-button-hover__red-red-white'
+-%}
+
+{%- liquid   
+  if use_selected_variant_price == true
+    assign selected_variant = product.selected_or_first_available_variant
+    if request.params.variant 
+      assign url_variant = product.variants | where: "id", request.params.variant | first 
+      if url_variant
+        assign selected_variant = url_variant 
+      endif
+    endif
+    assign money_price = selected_variant.price | money 
+  else 
+    assign target = product
+    assign compare_at_price = target.compare_at_price
+    assign price = target.price | default: 1999
+    assign available = target.available | default: true
+    assign money_price = price | money | replace : ',00',',-'  
+  endif
+-%}
+
+
+{%- if show_as_button == true -%}
+  {%- liquid
+      if available == false
+        echo '<a data-url="[product_detail_url]" class="js-makelink txt-align-center theme-button [button_size_class] [button_style_class]">' | replace : '[product_detail_url]', product_detail_url | replace : '[button_size_class]', button_size_class | replace : '[button_style_class]', button_style_class
+          echo '<span>More info</span>'
+        echo '</a>'
+      else
+        assign product_id = product.variants.first.id
+        echo '<div data-pid="[product_id]" class="js-trigger-add-product-inactive txt-align-center theme-button [button_size_class] [button_style_class]">' | replace : '[product_id]', product_id | replace : '[button_size_class]', button_size_class | replace : '[button_style_class]', button_style_class
+        if show_as_button_price == true
+          if compare_at_price_money != blank
+              assign _label = 'additional.product_button_incl_price' | t
+              assign _price = money_price | replace : ',00',',-'
+              assign _compare_price = compare_at_price_money | replace : ',00',',-'
+              echo '<span>[_label]  - [_price]' | replace : '[_label]', _label | replace : '[_price]', _price
+                echo '<span class="p-from">[_compare_price]</span>' | replace : '[_compare_price]', _compare_price
+              echo '</span>'
+          else
+              assign _label = 'additional.product_button_incl_price' | t
+              assign _price = money_price | replace : ',00',',-'
+              echo '<span>[_label]  - [_price]</span>' | replace : '[_label]', _label | replace : '[_price]', _price
+          endif
+        else
+              assign _label = 'additional.product_button_add_cart' | t
+              echo '<span>[_label]</span>' | replace : '[_label]', _label
+        endif
+        echo '</div>'
+        echo '<div class="visually-hidden">'
+          echo '<form method="post" action="/cart/add" id="pid-[product_id]">' | replace : '[product_id]', product_id
+            echo '<input type="hidden" name="id" value="[product_id]" />' | replace : '[product_id]', product_id
+            echo '<input min="1" max="1" type="hidden" id="quantity" name="quantity" value="1"/>'
+            echo '<input type="submit" value="Add to bag/cart" />'
+          echo '</form>'
+        echo '</div>'
+      endif
+  -%}
+{%- elsif show_as_button == 'price-only' -%}
+  <div class="color-black price{%- if price_class %} {{ price_class }}{% endif -%}
+      {%- if available == false %} price--sold-out {% else -%}
+        {%- if compare_at_price != price %} price--on-sale {% else %} price--not-on-sale {% endif -%}
+      {%- endif -%}
+      {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}">
+      {% if show_badges != 'only' %}
+        <dl>
+          <div class="price__regular">
+            <dt><span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span></dt>
+            <dd {% if show_badges == false %}class="price__last"{% endif %}><span class="price-item price-item--regular">{{ money_price | replace : ',00',',-' }}</span></dd>
+          </div>
+          <div class="price__sale">
+            <dt><span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span></dt>
+            <dd {% if show_badges == false %}class="price__last"{% endif %}><span class="price-item price-item--sale">{{ money_price | replace : ',00',',-' }}</span></dd>
+            <dt class="price__compare"><span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span></dt>
+            <dd class="price__compare"><span class="price-item price-item--regular">{{ compare_at_price | money | replace : ',00',',-' }}</span></dd>
+          </div>
+        </dl>
+      {%- endif -%}
+  </div>
+{%- else -%}
+  <div class="font-fam-normal font-size-sm color-black price{%- if price_class %} {{ price_class }}{% endif -%}
+  {%- if available == false %} price--sold-out {% else -%}
+    {%- if compare_at_price != price %} price--on-sale {% else %} price--not-on-sale {% endif -%}
+  {%- endif -%}
+  {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}">
+  {% if show_badges != 'only' %}
+    <dl>
+      <div class="price__regular">
+        <dt><span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span></dt>
+        <dd {% if show_badges == false %}class="price__last"{% endif %}><span class="price-item price-item--regular">{{ money_price | replace : ',00',',-' }}</span></dd>
+      </div>
+      <div class="price__sale">
+        <dt><span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span></dt>
+        <dd {% if show_badges == false %}class="price__last"{% endif %}><span class="price-item price-item--sale">{{ money_price | replace : ',00',',-' }}</span></dd>
+        <dt class="price__compare"><span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span></dt>
+        <dd class="price__compare"><span class="price-item price-item--regular">{{ compare_at_price | money | replace : ',00',',-' }}</span></dd>
+      </div>
+      {%- comment -%}
+            <small class="unit-price caption{% if available == false or product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
+              <dt class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</dt>
+              <dd {% if show_badges == false %}class="price__last"{% endif %}>
+                <span>{{ product.selected_or_first_available_variant.unit_price | money | replace : ',00',',-' }}</span>
+                <span aria-hidden="true">/</span>
+                <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                <span>
+                  {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+                    {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+                  {%- endif -%}
+                  {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+                </span>
+              </dd>
+            </small>
+      {%- endcomment -%}
+    </dl>
+  {%- endif -%}
+  {%- if show_badges and settings.enable_badges == true -%}
+      {%- if available == false -%}
+      <span class="--badge product-detail__price__badge product-detail__price__badge-sold_out price__badge-sold_out color-red" aria-hidden="true"><img loading="lazy" class="injectable-svg" alt="{{ 'products.product.sold_out' | t }}" src="{{ 'sticker-sold-out.svg' | asset_url }}"></span>
+      {%- elsif compare_at_price > price and available -%}
+      <span class="--badge product-detail__price__badge product-detail__price__badge-sale price__badge-sale color-yellow" aria-hidden="true"><img loading="lazy" class="injectable-svg" alt="{{ 'products.product.sold_out' | t }}" src="{{ 'sticker-sold-out.svg' | asset_url }}"></span>
+      {%- elsif sticker_award == 'T' -%}
+      <span class="--badge product-detail__price__badge product-detail__price__badge-award price__badge-award color-lpink" aria-hidden="true"><img loading="lazy" class="injectable-svg" alt="{{ 'products.product.sold_out' | t }}" src="{{ 'sticker-sold-out.svg' | asset_url }}"></span>
+      {%- elsif sticker_favorite == 'T' -%}
+      <span class="--badge product-detail__price__badge product-detail__price__badge-favorite price__badge-favorite color-yellow" aria-hidden="true"><img loading="lazy" class="injectable-svg" alt="{{ 'products.product.sold_out' | t }}" src="{{ 'sticker-sold-out.svg' | asset_url }}"></span>
+      {%- elsif sticker_bestseller == 'T' -%}
+      <span class="--badge product-detail__price__badge product-detail__price__badge-bestseller price__badge-bestseller color-lpink" aria-hidden="true"><img loading="lazy" class="injectable-svg" alt="{{ 'products.product.sold_out' | t }}" src="{{ 'sticker-sold-out.svg' | asset_url }}"></span>
+      {%- endif -%}
+  {%- endif -%}
+  </div>
+{%- endif -%}

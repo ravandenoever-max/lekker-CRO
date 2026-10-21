@@ -1,0 +1,341 @@
+{%- liquid
+comment
+  //---------------------------------------------//
+  //-- general section settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign this_section_extra_classes = ''
+
+  assign spacing_t = ' padding-t-'
+  assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+  assign spacing_b = ' padding-b-'
+  assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+  assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+  assign this_section_id = section.id | sha1 | truncate : 20, ""
+  assign this_section_id = 'section-' | append : this_section_id
+
+comment
+  //---------------------------------------------//
+  //-- this section/template specific settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign section_background_color_b = section.settings.section_background_color_b
+  assign section_background_color_split = section.settings.section_background_color_split
+  if section_background_color_split contains '%'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]', section_background_color_split
+  elsif section_background_color_split contains 'px'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]', section_background_color_split
+  else
+    assign section_background_color_split_raw = 'calc(var(--spacing-[BACKGROUND_HEIGHT]) + 60px )'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]', section_background_color_split
+  endif
+
+  assign extra_css = ''
+  if section_background_color_b != 'none'
+    assign alignment_version = 'imagedown'  
+    assign alignment_version = 'appenddiv'
+    if alignment_version == 'imagedown'
+      assign extra_css = extra_css | append : "#[SECTION_ID].section-inner{margin-bottom:[BACKGROUND_HEIGHT]background:var(--color-[BACKGROUND_B])}"
+      assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative} "
+    else
+      assign extra_css = extra_css | append : "#[SECTION_ID].section-inner::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT];right:0;bottom:0;left:0;background:var(--color-[BACKGROUND_B])}"
+      assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative} "
+    endif
+
+    assign extra_css = extra_css | replace: '[SECTION_ID]',this_section_id
+    assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]',section_background_color_split_height
+    assign extra_css = extra_css | replace: '[BACKGROUND_B]',section_background_color_b
+  endif
+
+  assign settings_use_animations = section.settings.use_animations
+  assign animate_waypoints = false
+  assign animate_classname = 'no-animation'
+  if settings_use_animations == true
+    assign animate_classname = 'js-ani-me'
+    assign animate_waypoints = true
+  endif
+
+  assign page_width_class = section.settings.page_width
+  assign num_columns_desktop = section.settings.num_columns_desktop
+  assign num_columns_mobile = section.settings.num_columns_mobile
+  assign settings_template_blog_header = section.settings.template_blog_header 
+
+  if settings_template_blog_header == true
+    assign this_block_datum = article.published_at
+    for tag in article.tags
+      if tag contains "datum-"
+        assign this_block_datum = tag | replace : 'datum-', ''
+      endif
+    endfor
+    assign num_columns_desktop = '2'
+  endif
+-%}
+
+<div id="{{ this_section_id }}" class="section-inner {{ this_section_extra_classes }}" data-rel-tagname="{{ filter_product_tagname }}">
+  <div class="{{ page_width_class }}">
+  {%-  liquid
+    if animate_waypoints == true
+      echo '<span class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi animation-trigger-waypoint-multi-in-and-out" data-offset="85%">'
+        echo '<span class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="400" data-set-delay="0" data-set-delay-step="100" data-set-animation-out="fadeOutDown">'
+    endif
+  -%}
+      <div class="grid-text-columns grid-text-mobile-count-{{ num_columns_mobile }} grid-text-desktop-count-{{ num_columns_desktop }}">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign block_heading_font_size = 'font-size-' | append : block.settings.block_heading_font_size
+            assign block_heading_font_color = 'color-' | append : block.settings.block_heading_font_color
+            assign block_text_font_size = 'font-size-' | append : block.settings.block_text_font_size
+            assign block_text_font_color = 'color-' | append : block.settings.block_text_font_color
+            assign block_text_list_style = 'list-style-' | append : block.settings.block_text_list_style
+              assign this_block_heading = block.settings.block_heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+
+              comment
+                if settings_template_blog_header == true
+                  assign block_heading_font_size = 'font-size-xxl font-size-sm-xl'
+                endif
+              endcomment
+
+              if this_block_heading == '-' or this_block_heading == 'leeg' or this_block_heading == 'empty' or this_block_heading == 'spacer'
+                assign this_block_heading = '&nbsp;'
+              endif
+              if this_block_heading == 'empty-double'
+                assign this_block_heading = '&nbsp;<br />&nbsp;'
+              endif             
+              assign this_block_content = block.settings.block_content
+              comment
+                assign this_block_content_version = 'manual'
+                assign this_block_content_version = 'normal'
+              endcomment
+              assign this_block_content_version = block.settings.block_text_style
+
+              if this_block_content_version == 'normal'
+                  assign this_html = this_block_content
+                  assign this_block_content = '<div class="rich-text-content font-fam-normal [block_text_font_size] [color_classname]">'
+                  assign this_block_content = this_block_content | append : this_html
+                  assign this_block_content = this_block_content | append : '</div>'
+
+                  assign this_block_content = this_block_content | replace : '[UL]', ''
+                  assign this_block_content = this_block_content | replace : '[_UL]', ''
+                  assign this_block_content = this_block_content | replace : '[LI]', ''
+                  assign this_block_content = this_block_content | replace : '[_LI]', ''
+                  assign this_block_content = this_block_content | replace : '[EM]', ''
+                  assign this_block_content = this_block_content | replace : '[_EM]', ''
+                  assign this_block_content = this_block_content | replace : '[B]', ''
+                  assign this_block_content = this_block_content | replace : '[_B]', ''
+                  assign this_block_content = this_block_content | replace : "-break-", ""
+                  assign this_block_content = this_block_content | replace : "[break]", ""
+
+                  assign this_block_content_output = this_block_content
+
+              elsif this_block_content_version == 'manual'
+                  assign this_html = this_block_content
+                  assign this_html = this_html | replace : '<strong>', '[B]'
+                  assign this_html = this_html | replace : '</strong>', '[_B]'
+                  assign this_html = this_html | replace : '<em>', '[EM]'
+                  assign this_html = this_html | replace : '</em>', '[_EM]'
+                  assign this_html = this_html | replace : '<ul>', '[UL]'
+                  assign this_html = this_html | replace : '</ul>', '[_UL]'
+                  assign this_html = this_html | replace : '<li>', '[LI]'
+                  assign this_html = this_html | replace : '</li>', '[_LI]'
+                  assign this_html = this_html | replace : '[UL]', '</p><ul class="font-fam-normal [block_text_font_size] [color_classname] [block_text_list_style]">'
+                  assign this_html = this_html | replace : '[_UL]', '</ul><p class="font-fam-normal [block_text_font_size] [color_classname]">'
+                  assign this_html = this_html | replace : '[LI]', '<li>'
+                  assign this_html = this_html | replace : '[_LI]', '</li>'
+                  assign this_html = this_html | replace : '[EM]', '<em>'
+                  assign this_html = this_html | replace : '[_EM]', '</em>'
+                  assign this_html = this_html | replace : '[B]', '<strong>'
+                  assign this_html = this_html | replace : '[_B]', '</strong>'
+
+                  assign this_block_content = ''
+                  assign this_block_content = this_block_content | append : '<p class="font-fam-normal [block_text_font_size] [color_classname]">'
+                    assign this_block_content = this_block_content | append : this_html
+                  assign this_block_content = this_block_content | append : '</p>'
+                  assign this_block_content_output = this_block_content | replace : "-break-", "<br />"
+                  assign this_block_content_output = this_block_content | replace : "[break]", "<br />"
+              endif
+
+              assign this_block_content_output = this_block_content_output | replace : '[block_text_font_size]', block_text_font_size
+              assign this_block_content_output = this_block_content_output | replace : '[color_classname]', block_text_font_color
+              assign this_block_content_output = this_block_content_output | replace : '[block_text_list_style]', block_text_list_style
+
+              assign this_block_align = block.settings.block_align
+              assign set_max_width = block.settings.max_heading_width
+              assign max_heading_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+              assign set_max_width = block.settings.max_content_width
+              assign max_content_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+          -%}
+          {%- if this_block_heading != blank or this_block_content != blank or block.settings.button_label != blank -%}
+  {%- if settings_template_blog_header == true -%}
+      <div class="grid-text-columns-col grid-text-columns-col-align-top-left">
+        {%- if this_block_heading != blank -%}
+          <span class="{{ animate_classname }}">
+            <h3 class="font-fam-normal {{ block_heading_font_size }} {{ block_heading_font_color }}">
+              <span style="{{ max_heading_width }}">{{ this_block_heading }}</span>
+            </h3>
+          </span>
+        {%- endif -%}
+      </div>
+      <div class="grid-text-columns-col -- theme-f-vert theme-f-bottom flex-column-space-between">
+      {%- if settings.show_blog_datum == true -%}        
+        <div class="grid-text-columns-col-align-top-left bg-red">
+          <div style="{{ max_content_width }}" class="{{ block_text_font_color }} margin-b-xxs rich-text-content__{{ this_block_content_version }}">
+            <div class="rich-text-content">
+              <span class="{{ animate_classname }}">
+                <p class="font-fam-normal font-size-xs [color_classname]">{{ this_block_datum }}</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}        
+        <div class="grid-text-columns-col-align-top-left">
+        {%- if this_block_content != blank -%}
+          <div style="{{ max_content_width }}" class="{{ block_text_font_color }} rich-text-content__{{ this_block_content_version }}">
+            <div class="rich-text-content">
+              <span class="{{ animate_classname }}">
+                {{ this_block_content_output }}
+              </span>
+            </div>
+          </div>
+        {%- endif -%}
+        </div>
+      </div>
+  {%- else -%}
+      <div class="grid-text-columns-col grid-text-columns-col-align-top-{{ this_block_align }}">
+        {%- liquid
+          if this_block_heading != blank
+            if animate_waypoints == true
+              echo '<div>'
+                echo '<div>'
+                  echo '<span class="[animate_classname]" data-animation-in="fadeInUp">' | replace : '[animate_classname]', animate_classname
+                    echo '<div>'
+                      echo '<h3 class="font-fam-normal [block_heading_font_size] [block_heading_font_color] margin-b-xxs">' | replace : '[block_heading_font_size]', block_heading_font_size | replace : '[block_heading_font_color]', block_heading_font_color
+                        echo '<span style="[max_heading_width]">[this_block_heading]</span>' | replace : '[max_heading_width]', max_heading_width | replace : '[this_block_heading]', this_block_heading
+                      echo '</h3>'
+                    echo '</div>'
+                  echo '</span>'
+                echo '</div>'
+              echo '</div>'
+            else
+              echo '<h3 class="font-fam-normal [block_heading_font_size] [block_heading_font_color] margin-b-xxs">' | replace : '[block_heading_font_size]', block_heading_font_size | replace : '[block_heading_font_color]', block_heading_font_color
+                echo '<span style="[max_heading_width]">[this_block_heading]</span>' | replace : '[max_heading_width]', max_heading_width | replace : '[this_block_heading]', this_block_heading
+              echo '</h3>'
+            endif
+          endif
+          if this_block_content != blank
+            if animate_waypoints == true
+              echo '<div style="[max_content_width]" class="[block_text_font_color] rich-text-content__[this_block_content_version]">' | replace : '[max_content_width]', max_content_width | replace : '[block_text_font_color]', block_text_font_color | replace : '[this_block_content_version]', this_block_content_version
+                echo '<div class="rich-text-content">'
+                  echo '<span class="[animate_classname]" data-animation-in="fadeInUp">[this_block_content_output]</span>' | replace : '[animate_classname]', animate_classname | replace : '[this_block_content_output]', this_block_content_output
+                echo '</div>'
+              echo '</div>'
+            else 
+              echo '<div style="[max_content_width]" class="[block_text_font_color] rich-text-content__[this_block_content_version]">' | replace : '[max_content_width]', max_content_width | replace : '[block_text_font_color]', block_text_font_color | replace : '[this_block_content_version]', this_block_content_version
+                echo '[this_block_content_output]' | replace : '[animate_classname]', animate_classname | replace : '[this_block_content_output]', this_block_content_output
+              echo '</div>'
+            endif
+          endif
+          assign this_button_settings = block.settings
+          if this_button_settings.button_show == true and this_button_settings.button_label != '' and this_button_settings.button_link != ''
+            if animate_waypoints == true
+              echo '<div>'
+                echo '<div>'
+                  echo '<span class="[animate_classname]">' | replace : '[animate_classname]', animate_classname
+                    echo '<div class="button-wrapper margin-t-xs">'
+                      render 'theme-button', button_settings: this_button_settings
+                    echo '</div>'
+                  echo '</span>'
+                echo '</div>'
+              echo '</div>'
+            else 
+              echo '<div class="button-wrapper margin-t-xs">'
+                render 'theme-button', button_settings: this_button_settings
+              echo '</div>'
+            endif
+          endif
+        -%}
+      </div>
+  {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+  {%-  liquid
+    if animate_waypoints == true
+        echo '</span>'
+      echo '</span>'
+    endif
+  -%}
+  </div>
+  {%- liquid
+    if extra_css != blank
+      capture bloated_css
+        echo '<style id="[this_section_id]__extra-css">[extra_css]</style>' | replace : '[this_section_id]',this_section_id | replace : '[extra_css]',extra_css
+      endcapture
+      render'inline-css',input_css:bloated_css
+    endif 
+  -%}
+</div>
+
+{%- schema %}
+{
+  "name": "Text / Columns",
+  "tag": "section",
+  "class": "theme-section__text",
+  "max_blocks": 50,
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"},
+        {"type":"select","id":"row_spacing_inner_top","default":"md","label":"Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"md","label":"Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"section_background_color","default":"white","label":"Background Color First", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_b","default":"none","label":"Background Color Second", "options": [ { "value":"none","label":"None"},{ "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_split","default":"xxl","label":"Background Color Switch", "options": [ { "value":"50%","label":"Half"},{ "value":"90%","label":"Top"},{ "value":"xxl","label":"Bottom"}, { "value":"none","label":"None" } ] },
+        {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [ { "value":"page-width--narrow","label":"Medium"},{ "value":"page-width","label":"Wide"}, { "value":"no-page-width","label":"Fullscreen" } ] },
+        {"type":"select","id":"num_columns_mobile","default":"1","label":"Mobile Columns", "options": [ { "value":"1","label":"Single"},{ "value":"2","label":"Double"}] },
+        {"type":"select","id":"num_columns_desktop","default":"1","label":"Desktop Columns", "options": [ { "value":"1","label":"Single"},{ "value":"2","label":"Double"},{ "value":"3","label":"Three"},{ "value":"4","label":"Four"} ] },
+        {"type":"checkbox","id":"use_animations","default":true,"label":"Use Animations"},
+        {"type":"checkbox","id":"template_blog_header","default":false,"label": "Blog Detail Header"}
+
+      ],
+  "blocks": [
+    {
+      "type": "text_column",
+      "name": "Text Block",
+      "settings": [
+        { "type": "header", "content": "Content / Text"},
+        { "type": "text","id":"block_heading","default":"Title","label":"Title"},
+        { "type": "richtext","id":"block_content","default":"<p></p>","label":"Content"},
+        {"type":"select","id":"block_align","default":"left","label":"Align", "options": [ { "value":"left","label":"Left"}, { "value":"center","label":"Center"}, { "value":"right","label":"Right"} ] },
+        {"type":"select","id":"block_heading_font_size","default":"lg","label":"Title Font Size", "options": [ { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"} ] },
+        {"type":"select","id":"block_heading_font_color","default":"black", "label":"Title Font Color", "options":[ { "value":"white", "label":"White"}, { "value":"black", "label":"Black"}, { "value":"red", "label":"Red"}, { "value":"green", "label":"Green" } ] },
+        {"type":"select","id":"block_text_font_size","default":"xs", "label":"Text Font Size", "options":[ { "value":"md", "label":"Intro"}, { "value":"xs", "label":"Normal" } ] },
+        {"type":"select","id":"block_text_font_color","default":"black", "label":"Text Font color", "options":[ { "value":"white", "label":"White"}, { "value":"black", "label":"Black"}, { "value":"red", "label":"Red"}, { "value":"green", "label":"Green" } ] },
+        { "type": "text","id":"max_heading_width","default":"500","label":"Max Title Width"},
+        { "type": "text","id":"max_content_width","default":"500","label":"Max Content Width"},
+        {"type":"select","id":"block_text_style","default":"normal", "label":"Text Format", "options":[ { "value":"normal", "label":"Normal"}, { "value":"manual", "label":"Manual Add List" } ] },
+        {"type":"select","id":"block_text_list_style","default":"numbers", "label":"Text List Style", "options":[ { "value":"bullet", "label":"Bullet"}, { "value":"numbers", "label":"Numbers" } ] },
+
+    { "type": "header", "content": "Button"},
+        {"type":"checkbox","id":"button_show","default":false,"label": "Show Button"},
+        { "type": "text","id":"button_label","label":"Button Label"},
+        {"type":"select","id":"button_size","default":"button_small","label":"Button Style", "options": [ { "value":"button_small","label":"Button Standard"}, { "value":"button_large","label":"Button Large"}, { "value":"button_text","label":"Text Link" } ] },
+        {"type":"select","id":"button_color","default":"button_black","label":"Button Color", "options": [ { "value":"button_black","label":"Black"},{ "value":"button_white","label":"White"},{ "value":"button_red","label":"Red"},{ "value":"button_pink","label":"Pink"},{ "value":"button_green","label":"Green"},{ "value":"button_trans","label":"Transparent" } ] },
+        { "type": "url","id":"button_link","label":"Button Link"},
+        {"type":"checkbox","id":"button_target","default":false,"label":"Open link in new window" }
+      ]
+    }
+  ],
+  "presets": [ {
+    "name": "Text / Columns",
+    "blocks": [
+       { "type": "text_column" }
+     ]
+  } ]
+}
+{% endschema %}

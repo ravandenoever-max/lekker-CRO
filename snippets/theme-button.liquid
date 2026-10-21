@@ -1,0 +1,104 @@
+{%- liquid
+
+if button_settings contains ':::'
+  comment
+    button_show ::: button_label ::: button_size ::: button_color ::: button_link ::: button_target
+  endcomment
+  assign button_settings_array = button_settings | split : ':::'
+  assign button_settings_button_label = button_settings_array[1]
+  assign button_settings_button_size = button_settings_array[2]
+  assign button_settings_button_color = button_settings_array[3]
+  assign button_settings_button_link = button_settings_array[4]
+  assign button_settings_button_target = button_settings_array[5]
+else
+  assign button_settings_button_label = button_settings.button_label
+  assign button_settings_button_size = button_settings.button_size
+  assign button_settings_button_color = button_settings.button_color
+  assign button_settings_button_link = button_settings.button_link
+  assign button_settings_button_target = button_settings.button_target
+endif
+
+  if button_settings_button_color == 'button_white'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__black-black-white theme-button-hover__black-white-black'
+    assign logo_color = 'color-black'
+    assign logo_color_hover = 'color-white'
+  elsif button_settings_button_color == 'button_hover_white'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__black-white-black theme-button-hover__black-black-white'
+    assign logo_color = 'color-white'
+    assign logo_color_hover = 'color-black'
+  elsif button_settings_button_color == 'button_black'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__black-white-black theme-button-hover__black-black-white'
+    assign logo_color = 'color-white'
+    assign logo_color_hover = 'color-black'
+  elsif button_settings_button_color == 'button_hover_black'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__black-black-white theme-button-hover__black-white-black'
+    assign logo_color = 'color-black'
+    assign logo_color_hover = 'color-white'
+  elsif button_settings_button_color == 'button_red'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__red-white-red theme-button-hover__red-red-white'
+    assign logo_color = 'color-white'
+    assign logo_color_hover = 'color-red'
+  elsif button_settings_button_color == 'button_hover_red'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__red-red-white theme-button-hover__red-white-red'
+    assign logo_color = 'color-red'
+    assign logo_color_hover = 'color-white'
+  elsif button_settings_button_color == 'button_green'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__white-white-green theme-button-hover__green-green-white'
+    assign logo_color = 'color-white'
+    assign logo_color_hover = 'color-green'
+  elsif button_settings_button_color == 'button_hover_green'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__green-green-white theme-button-hover__white-white-green'
+    assign logo_color = 'color-green'
+    assign logo_color_hover = 'color-white'
+  elsif button_settings_button_color == 'button_dgreen'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__dgreen-white-dgreen theme-button-hover__dgreen-dgreen-white'
+    assign logo_color = 'color-white'
+    assign logo_color_hover = 'color-green'
+  elsif button_settings_button_color == 'button_hover_dgreen'
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__dgreen-dgreen-white theme-button-hover__white-white-dgreen'
+    assign logo_color = 'color-dgreen'
+    assign logo_color_hover = 'color-white'
+  else
+    assign _button_classnames = 'theme-button theme-button__round-[BUTTONSIZE] theme-button__red-red-white theme-button-hover__red-white-red'
+    assign logo_color = 'color-red'
+    assign logo_color_hover = 'color-white'
+  endif
+
+  if button_settings_button_size == 'button_small'
+    assign _button_classnames = _button_classnames | replace : "[BUTTONSIZE]", "small"
+  elsif button_settings_button_size == 'button_large'
+    assign _button_classnames = _button_classnames | replace : "[BUTTONSIZE]", 'medium'
+  else
+    if button_settings_button_color == 'button_white'
+      assign _button_classnames = 'link--button link--bottom link-white'
+    else if button_settings_button_color == 'button_black'
+      assign _button_classnames = 'link--button link--bottom link-black'
+    else if button_settings_button_color == 'button_black'
+      assign _button_classnames = 'link--button link--bottom link-black'
+    else if button_settings_button_color == 'button_black'
+      assign _button_classnames = 'link--button link--bottom link-black'
+    else if button_settings_button_color == 'button_black'
+      assign _button_classnames = 'link--button link--bottom link-black'
+    endif
+  endif
+
+  assign link_target_code = ''
+  if button_settings_button_target == 'true' or button_settings_button_target == true
+    assign link_target_code = ' target="_blank"'
+  endif
+
+
+
+  assign button_settings_button_label = button_settings_button_label | escape
+
+  assign inline_lekker_logo_code = "<span class='inline-lekker-logo [color]'>lekker</span> " | replace : '[color]', logo_color
+
+  comment
+      assign inline_lekker_logo_code = inline_lekker_logo_code | append : "<span class='inline-lekker-logo inline-lekker-logo__hover [color]'>lekker</span> " | replace : '[color]', logo_color_hover
+      assign button_settings_button_label = button_settings_button_label | replace: "@thelekker", '@theLEKKER'
+      assign button_settings_button_label = button_settings_button_label | replace: "lekker ", inline_lekker_logo_code
+      assign button_settings_button_label = button_settings_button_label | replace: "[lekker]", inline_lekker_logo_code
+      assign button_settings_button_label = button_settings_button_label | replace: "@theLEKKER", '@theLEKKER'
+  endcomment
+-%}
+<a{% if button_settings_button_link != blank %}{{ link_target_code }} href="{{ button_settings_button_link }}"{% else %} aria-disabled="true"{% endif %} class="{{ _button_classnames }}"><span>{{ button_settings_button_label }}</span></a>

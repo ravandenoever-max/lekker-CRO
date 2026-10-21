@@ -1,0 +1,34 @@
+{%- liquid
+  assign filename = 'header-menu-sub'  
+  
+-%}
+
+<details-disclosure>
+  <details>
+    <summary class="header__menu-item list-menu__item link focus-inset{%- if link.current %} active{% endif %}" style="background-color:red;">
+      <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+      {%- render 'theme-icon', icon: 'icon-caret' -%}
+    </summary>
+    <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
+      {%- for childlink in link.links -%}
+        <li>
+          {%- if childlink.links == blank -%}
+            <a title="{{ childlink.title | escape }}" href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}><span>{{ childlink.title | escape }}</span></a>
+          {%- else -%}
+            <details>
+              <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
+                <span>{{ childlink.title | escape }}</span>
+                {%- render 'theme-icon', icon: 'icon-caret' -%}
+              </summary>
+              <ul class="header__submenu list-menu motion-reduce">
+                {%- for grandchildlink in childlink.links -%}
+                  <li><a title="{{ grandchildlink.title | escape }}" href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}><span>{{ grandchildlink.title | escape }}</span></a></li>
+                {%- endfor -%}
+              </ul>
+            </details>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </details>
+</details-disclosure>

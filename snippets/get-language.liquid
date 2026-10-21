@@ -1,0 +1,11 @@
+{%- liquid
+assign current_language = 'nl'
+if request.path != blank
+  assign current_language = request.locale.iso_code
+endif
+if request.path != blank
+  if request.path contains '/en'
+    assign current_language = 'en'
+  endif
+endif
+-%}

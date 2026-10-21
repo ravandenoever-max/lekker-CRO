@@ -1,0 +1,103 @@
+{%- liquid
+  assign og_title = page_title | default: shop.name
+  assign og_url = canonical_url | default: shop.url
+  assign og_type = 'website'
+  assign og_description = page_description | default: shop.description | default: shop.name | truncate : 250 | strip_newlines
+  
+  assign request_page_type = request.page_type
+
+  if request_page_type == 'list-collections'
+    if current_language == 'en'  
+      assign og_description = 'Discover the natural, aluminum-free deodorants from The Lekker Company. Made with plant-based ingredients and fresh scents for a delicious, sustainable freshness. Shop now!'
+    else 
+      assign og_description = 'Ontdek de natuurlijke, aluminiumvrije deodorants van The Lekker Company. Gemaakt met plantaardige ingrediënten en frisse geuren voor een lekkere, duurzame frisheid. Shop nu!'
+    endif
+  endif
+
+  if request_page_type == 'product'
+    assign og_type = 'product'
+  elsif request_page_type == 'article'
+    assign og_type = 'article'
+  elsif request_page_type == 'collection'
+    assign og_type = 'product.group'
+  elsif request_page_type == 'password'
+    assign og_url = shop.url
+  endif 
+-%}
+
+{%- if og_description != blank -%}<meta name="description" content="{{ og_description }}">{%- endif -%}
+<meta property="og:site_name" content="{{ shop.name }}">
+<meta property="og:url" content="{{ og_url }}">
+<meta property="og:title" content="{{ og_title | escape }}">
+<meta property="og:type" content="{{ og_type }}">
+{%- if og_description != blank -%}<meta property="og:description" content="{{ og_description }}">{%- endif -%}
+{%- if request_page_type == 'product' and product.available == true -%}
+<meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
+<meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
+{%- endif -%}
+{%- if page_image -%}
+<meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
+<meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
+<meta property="og:image:width" content="{{ page_image.width }}">
+<meta property="og:image:height" content="{{ page_image.height }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https:{{ page_image | img_url: 'master' }}">
+{%- endif -%}
+{%- if settings.social_twitter_link != blank -%}
+<meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
+{%- endif -%}  
+<meta name="twitter:title" content="{{ og_title | escape }}">
+<meta name="twitter:description" content="{{ og_description | escape }}">
+
+<link rel="canonical" href="{{ canonical_url }}">
+
+{%- liquid
+  assign generate_hreflangs = true
+  if generate_hreflangs == true 
+    capture hreflang_html
+      assign hreflang_main_url = 'https://thelekkercompany.com'
+      if request_page_type == 'product'
+        comment
+          NL
+            <link rel="canonical" href="https://thelekkercompany.com/collections/deo-stick" />
+            <link rel="alternate" hreflang="nl" href="https://thelekkercompany.com/collections/deo-stick" />
+            <link rel="alternate" hreflang="en" href="https://thelekkercompany.com/en/collections/deo-stick" />
+            <link rel="alternate" hreflang="x-default" href="https://thelekkercompany.com/collections/deo-stick" />
+          EN
+            <link rel="canonical" href="https://thelekkercompany.com/en/collections/deo-stick" />
+            <link rel="alternate" hreflang="nl" href="https://thelekkercompany.com/collections/deo-stick" />
+            <link rel="alternate" hreflang="en" href="https://thelekkercompany.com/en/collections/deo-stick" />
+            <link rel="alternate" hreflang="x-default" href="https://thelekkercompany.com/collections/deo-stick" />
+        endcomment
+        assign this_product_metafields = product.metafields.custom
+        if this_product_metafields != blank
+          assign P_SLUG_MAIN = this_product_metafields.product_slug_nl
+          assign P_SLUG_NL = this_product_metafields.product_slug_nl
+          assign P_SLUG_EN = this_product_metafields.product_slug_en
+          echo '<link rel="alternate" hreflang="x-default" href="[hreflang_main_url]/products/[P_SLUG_MAIN]"/>' | replace : '[P_SLUG_MAIN]', P_SLUG_MAIN
+          echo '<link rel="alternate" hreflang="nl" href="[hreflang_main_url]/products/[P_SLUG_NL]"/>' | replace: '[P_SLUG_NL]', P_SLUG_NL
+          echo '<link rel="alternate" hreflang="en" href="[hreflang_main_url]/en/products/[P_SLUG_EN]"/>' | replace: '[P_SLUG_EN]', P_SLUG_EN
+        endif
+      elsif request_page_type == 'article'
+      elsif request_page_type == 'collection'
+        assign this_collection_metafields = collection.metafields.custom
+        if this_collection_metafields != blank
+          assign C_SLUG_MAIN = this_collection_metafields.collection_slug_nl  
+          assign C_SLUG_NL = this_collection_metafields.collection_slug_nl
+          assign C_SLUG_EN = this_collection_metafields.collection_slug_en
+          echo '<link rel="alternate" hreflang="x-default" href="[hreflang_main_url]/collections/[C_SLUG_MAIN]"/>' | replace : '[C_SLUG_MAIN]', C_SLUG_MAIN
+          echo '<link rel="alternate" hreflang="nl" href="[hreflang_main_url]/collections/[C_SLUG_NL]"/>' | replace: '[C_SLUG_NL]', C_SLUG_NL
+          echo '<link rel="alternate" hreflang="en" href="[hreflang_main_url]/en/collections/[C_SLUG_EN]"/>' | replace: '[C_SLUG_EN]', C_SLUG_EN
+        endif
+      elsif request_page_type == 'index'
+        echo '<link rel="alternate" hreflang="x-default" href="[hreflang_main_url]">'
+        echo '<link rel="alternate" hreflang="nl" href="[hreflang_main_url]"/>'
+        echo '<link rel="alternate" hreflang="en" href="[hreflang_main_url]/en"/>'
+      endif 
+    endcapture
+    if hreflang_html != blank
+      assign hreflang_html = hreflang_html | replace : '[hreflang_main_url]', hreflang_main_url
+      echo hreflang_html
+    endif
+  endif
+-%}

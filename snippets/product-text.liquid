@@ -1,0 +1,69 @@
+{%- liquid
+
+    if this_block_content_version == 'normal'
+      assign this_html = this_block_content
+      assign this_block_content = '<div class="rich-text-content product-desc padding-b-xs font-fam-[block_text_font_fam] [block_text_font_size] [color_classname]">'
+      assign this_block_content = this_block_content | append : this_html
+      assign this_block_content = this_block_content | append : '</div>'
+
+      assign this_block_content = this_block_content | replace : '[UL]', ''
+      assign this_block_content = this_block_content | replace : '[_UL]', ''
+      assign this_block_content = this_block_content | replace : '[LI]', ''
+      assign this_block_content = this_block_content | replace : '[_LI]', ''
+      assign this_block_content = this_block_content | replace : '[EM]', ''
+      assign this_block_content = this_block_content | replace : '[_EM]', ''
+      assign this_block_content = this_block_content | replace : '[B]', ''
+      assign this_block_content = this_block_content | replace : '[_B]', ''
+      assign this_block_content = this_block_content | replace : "-break-", ""
+      assign this_block_content = this_block_content | replace : "[break]", ""
+
+      assign this_block_content_output = this_block_content
+  elsif this_block_content_version == 'manual'
+      assign this_html = this_block_content
+      assign this_html = this_html | replace : '<strong>', '[B]'
+      assign this_html = this_html | replace : '</strong>', '[_B]'
+      assign this_html = this_html | replace : '<em>', '[EM]'
+      assign this_html = this_html | replace : '</em>', '[_EM]'
+      assign this_html = this_html | replace : '<ul>', '[UL]'
+      assign this_html = this_html | replace : '</ul>', '[_UL]'
+      assign this_html = this_html | replace : '<li>', '[LI]'
+      assign this_html = this_html | replace : '</li>', '[_LI]'
+      assign this_html = this_html | strip_html
+      assign this_html = this_html | replace : '[UL]', '</p><ul class="font-fam-[block_text_font_fam] [block_text_font_size] [color_classname]">'
+      assign this_html = this_html | replace : '[_UL]', '</ul><p class="font-fam-[block_text_font_fam] [block_text_font_size] [color_classname]">'
+      assign this_html = this_html | replace : '[LI]', '<li>'
+      assign this_html = this_html | replace : '[_LI]', '</li>'
+      assign this_html = this_html | replace : '[EM]', '<em>'
+      assign this_html = this_html | replace : '[_EM]', '</em>'
+      assign this_html = this_html | replace : '[B]', '<strong>'
+      assign this_html = this_html | replace : '[_B]', '</strong>'
+
+      assign element_example = 'Add link in text example: "Visit [A]https://example.com|Our Site[_A] for more info"'
+      assign delimiter = '|'
+      assign parts = this_html | split: '[A]'
+      assign processed_html = parts[0]
+      for part in parts offset:1
+        assign link_part = part | split: '[_A]' | first
+        assign link_elements = link_part | split: delimiter
+        if link_elements.size >= 2
+          assign link_url = link_elements[0] | strip
+          assign link_text = link_elements[1] | strip
+          assign link_html = '<a class="font-fam-[block_text_font_fam] [block_text_font_size] [color_classname] underlined-link" target="_blank" title="[TITLE]" href="[LINK]">[TITLE]</a>'
+          assign processed_html = processed_html | append: link_html
+          assign processed_html = processed_html | replace: '[TITLE]', link_text | replace: '[LINK]', link_url
+        endif
+        assign remaining_part = part | remove: link_part | remove: '[_A]'
+        assign processed_html = processed_html | append: remaining_part
+      endfor
+      assign this_html = processed_html
+
+      assign this_block_content = ''
+      assign this_block_content = this_block_content | append : '<p class="font-fam-[block_text_font_fam] [block_text_font_size] [color_classname]">'
+      assign this_block_content = this_block_content | append : this_html
+      assign this_block_content = this_block_content | append : '</p>'
+      assign this_block_content_output = this_block_content
+  endif
+
+  echo this_block_content_output
+
+-%}

@@ -1,0 +1,47 @@
+{%- liquid
+  comment
+    IMPLEMENTATION NOTE ABOUT MEGA MENUS: in Warehouse, on desktop, we have two different menu styles: one style where the first level is always visible, and a second style where the menu is displayed after hitting the "Menu" button.
+    The mega menu logic is as a consequence quite difference: in the first style, the menu-mega is actually part of the second dropdown menu (as each level is displayed as a dropdown). However on the second style, the menu-mega is checked on the first level, as the first menu (which holds the menu-mega) is always visible.
+    [[ https://support.maestrooo.com/article/204-navigation-configuring-menu-mega ]]
+  endcomment
+  assign filename = 'header-menu-mega-check'
+  assign is_menu_mega = false
+  assign debug_menu_mega = false
+ 
+  if section.blocks.size > 0
+    assign main_menu_id_list = section.blocks | map: 'settings' | map: 'menu_item'
+    assign main_menu_title_list = section.blocks | map: 'settings' | map: 'menu_item_title'
+    assign downcase_title = menu.handle | downcase | strip | replace : 'jewellery' , 'juwelen'
+    for menu_mega in main_menu_id_list
+      assign menu_mega_setting_downcase = menu_mega | downcase | strip
+      if debug_menu_mega == true
+        echo '<br><br><br><br><br>DT ' | append : downcase_title | append : ' - MM ' | append : menu_mega_setting_downcase
+      endif
+      if menu_mega_setting_downcase == downcase_title
+        assign forloop_index = forloop.index | plus : -1
+        assign is_menu_mega = true
+        assign menu_id = downcase_title
+        assign this_link_title = main_menu_title_list[forloop_index]
+        break
+      endif
+    endfor
+  endif
+assign this_link = menu.url
+if debug_menu_mega == true
+  echo '<br>A' | append : is_menu_mega
+endif 
+-%}
+{%- capture header_menu_mega_check -%}
+  {%- if is_menu_mega -%}
+    <a title="{{ this_link_title }}" href="{{ this_link }}" data-category-name="{{ menu_id }}" data-type="menuitem" class="header__menu-item {{ item_color_class }} list-menu__item link link--text focus-inset{%- if link.current %} header__menu-item__active{%- endif %}" 
+      {%- if link.current %} aria-current="page"{%- endif %} aria-expanded="false" aria-haspopup="true" aria-controls="{{ index }}" >
+      <span data-title="{{ this_link_title }}" class="menu-title menu-mega-title {{ item_color_class }}">{{ this_link_title | escape }}</span>
+      <span class="menu-mega-arrow">{%- render 'theme-icon', icon: 'arrow-bottom' -%}</span>
+    </a>
+    {%- render 'header-menu-mega-block', menu_mega:menu, index:index -%}
+  {%- else -%}
+    {%- render 'header-menu-sub', link: this_link, index: index -%}
+  {%- endif -%}
+{%- endcapture  -%}
+
+{%- echo header_menu_mega_check -%}

@@ -1,0 +1,110 @@
+
+{%- liquid
+  assign localization_forms = false   
+  if settings.enable_language_selector_in_mobile_menu and localization.available_countries.size > 1
+    assign localization_forms = true
+  endif
+-%}
+
+{%- if localization_forms == true -%}
+  {%- capture localization_form_html -%}
+    <localization-form class="no-js-hidden" data-prevent-hide>
+      {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
+          <h2 class="theme-hidden visually-hidden" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
+          {%- render 'localization-country', localPosition: 'FooterCountry' -%}
+      {%- endform -%}
+    </localization-form>
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- capture menu_toggle_icon -%}
+  <span class="menu_toggle_icon">{%- render 'theme-icon', icon: 'arrow-bottom' -%}</span>
+{%- endcapture -%}
+
+{%- capture theme_header_foldable_html -%}
+{%- liquid
+  assign _____comment = 'accordion or "cards/pages" '
+  assign settings_use_accordion_or_cards = 'cards'
+  assign settings_level_b_foldable = false
+  echo '<header-foldable class="header-foldable header-foldable-position-top header-foldable-version__[A] animate-from-bottom no-se">' | replace : '[A]', settings_use_accordion_or_cards
+    echo '<div class="header-foldable__wrapper theme-page-width__full theme-f-vert">'
+      echo '<div class="header-foldable__inner">'
+        echo '<div class="header-foldable-level header-foldable-level-a">'
+          echo ' <div class="foldable-menu__wrapper no-se">'
+            echo '<div class="foldable-menu__inner">'
+              echo '<ul class="foldable-menu__ul" role="list" tabindex="-1">'
+                assign this_menu = menu_a.links           
+                for first_link in this_menu
+                  render 'header-foldable-menu__content_a', first_link:first_link, style:settings_use_accordion_or_cards
+                endfor
+                assign this_menu = menu_b.links           
+                for first_link in this_menu
+                  render 'header-foldable-menu__content_a', first_link:first_link, style:settings_use_accordion_or_cards
+                endfor      
+              echo '</ul>'
+            echo '</div>'
+          echo '</div>'
+        echo '</div>'
+        if settings_use_accordion_or_cards == 'cards'
+          echo '<div class="header-foldable-level header-foldable-level-b">'
+            assign this_menu = menu_a.links
+            render 'header-foldable-menu__content_b', this_menu:this_menu, style:settings_use_accordion_or_cards
+            assign this_menu = menu_b.links
+            render 'header-foldable-menu__content_b', this_menu:this_menu, style:settings_use_accordion_or_cards
+          echo '</div>' 
+        endif
+      echo '</div>'   
+      
+      
+comment      
+      echo '<div class="menu-foldable__bottom-element theme-p-b-lg theme-f-hor theme-f-outside">'
+        if settings.show_mobile__extra_menu_top_or_bottom == 'bottom' or settings.show_mobile__extra_menu_top_or_bottom == 'both'
+          assign this_extra_menu = menu_extra.links
+          if this_extra_menu.links | size > 0
+            echo '<div class="extra-menu-wrapper theme-bg-blue">dd'
+              echo '<ul class="menu-extra__menu" role="list" tabindex="-1">'
+                for link in this_extra_menu
+                  assign link_id = link.handle
+                  assign link_title = link.title | escape
+                  assign link_url = link.url
+                  assign link_handle = link.handle
+                  assign link_type = link.type
+                  echo '<li id="extra-[link_id]">' | replace: '[link_id]', link_id
+                    assign active_menu_class = ''
+                    if link.current
+                      assign active_menu_class = ' active'
+                    endif
+                    echo '<a class="link link--from-center link-black theme-ff-bold theme-fs-xscolor-black [active_menu_class]" title="[link_title]" href="[link_url]">' | replace: '[link_title]', link_title | replace: '[link_url]', link_url | replace: '[active_menu_class]', active_menu_class 
+                      echo '<span>[link_title]</span>' | replace: '[link_title]', link_title
+                    echo '</a>'
+                  echo '</li>'   
+                endfor
+              echo '</ul>'
+            echo '</div>'
+          endif        
+        endif      
+        if localization_forms
+          echo '<div class="menu-foldable__language localization-wrapper">'
+          echo localization_form_html
+          echo '</div>'
+        endif
+        echo '<a href="/" class="menu-foldable__emblem">'
+          echo '[svg]'
+        echo '</a>'
+      echo '</div>'
+endcomment
+
+    echo '</div>'
+  echo '</header-foldable>'
+-%}
+{%- endcapture -%}
+
+{%- liquid
+  assign minify_this_html_input = theme_header_foldable_html
+  assign minify_this_html_block = true
+  if minify_this_html_block == true and settings.website_minify_inline_html != 'false'
+    render'inline-html',input_html:minify_this_html_input
+  else
+    echo minify_this_html_input
+  endif
+-%}

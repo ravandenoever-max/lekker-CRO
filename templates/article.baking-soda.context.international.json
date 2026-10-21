@@ -1,0 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "article.baking-soda.json",
+  "context": {
+    "market": "international"
+  },
+  "sections": {
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "settings": {
+        "this_content": "<p>We are all meant to sweat but that doesn’t mean we need to smell funky. Contrary to common belief, sweat is not the culprit behind body odour, sweat itself is actually odourless! It’s the bacteria that forms to break down the sweat into acids that cause for an unpleasant smell to develop. Baking soda antimicrobial benefits help fight off those odour causing bacteria by making the skin more acidic.</p>"
+      }
+    }
+  }
+}

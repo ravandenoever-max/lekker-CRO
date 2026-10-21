@@ -1,0 +1,409 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "verkooppunten": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/The_Lekker_Company_deo_sticks_-_Claudia_Rison___The_Originals_Photography-04311.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/The_Lekker_Company_deo_sticks_-_Claudia_Rison___The_Originals_Photography-04311.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 55,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-left",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "Verkooppunten",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "Hieronder vind je een overzicht van onze grootste retail partners. De meeste winkels verkopen een deel van ons assortiment. Ook veel kleine boetiekjes en salons hebben onze producten in het assortiment.",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "trans",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "medium",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "10",
+        "slide_ratio_desktop": "30",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "151f374f-6539-486e-9817-a55ce9b222e8": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "template--16681212739837__151f374f-6539-486e-9817-a55ce9b222e8-1669631196b9d790fe-0": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.ah.nl/producten/merk/the-lekker-company",
+            "column_custom_image": "shopify://shop_images/ah.png",
+            "predefined_image": "usp-plant",
+            "heading": "Albert Heijn"
+          }
+        },
+        "938acf0c-69e3-42f1-8713-0e1adfada119": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.hollandandbarrett.nl/shop/brands/the-lekker-company/",
+            "column_custom_image": "shopify://shop_images/7.png",
+            "predefined_image": "usp-plant",
+            "heading": "Holland&Barrett"
+          }
+        },
+        "cbb86dd5-0623-4093-b5fd-2f233e62ae39": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.etos.nl/search/?prefn1=sortOfProduct&prefv1=Deodorant&q=lekker",
+            "column_custom_image": "shopify://shop_images/4png.png",
+            "predefined_image": "usp-plant",
+            "heading": "Etos"
+          }
+        },
+        "a69623c8-ae59-4dc8-bf45-ef6a438d0237": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://organicpeople.nl/merken/the-lekker-company/",
+            "column_custom_image": "shopify://shop_images/HUIDIG_LOGO_ORGANIC_PEOPLE_groot.png",
+            "predefined_image": "usp-plant",
+            "heading": "Organic People"
+          }
+        },
+        "b75fa8c6-9421-4202-b58d-290f11db79a1": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.da.nl/merken/the-lekker-company",
+            "column_custom_image": "shopify://shop_images/5.png",
+            "predefined_image": "usp-plant",
+            "heading": "DA drogist"
+          }
+        },
+        "0a631594-514e-45dc-bc47-e55b9ff2089a": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "item_link": "https://www.dille-kamille.nl/catalogsearch/result/?q=deodorant",
+            "column_custom_image": "shopify://shop_images/1.png",
+            "predefined_image": "usp-plant",
+            "heading": "Dille & Kamille"
+          }
+        },
+        "d67108cb-a607-49f5-a084-f59ccd2e6263": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://puurenloos.nl/",
+            "column_custom_image": "shopify://shop_images/images_3.jpg",
+            "predefined_image": "usp-plant",
+            "heading": "LOOS"
+          }
+        },
+        "02170bc6-596e-40bf-9ebd-3fad4016c47e": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://pieter-pot.nl/search?q=the+lekker+company&options%5Bprefix%5D=last",
+            "column_custom_image": "shopify://shop_images/6.png",
+            "predefined_image": "usp-plant",
+            "heading": "Pieter Pot"
+          }
+        },
+        "c4137b85-6636-4536-8deb-18721020cac5": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/bol.com_logo.jpg",
+            "predefined_image": "usp-plant",
+            "heading": "Bol.com"
+          }
+        },
+        "b9ae4cb0-b577-4b8d-b50e-de80a1626dca": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "item_link": "https://ditiswaar.nl/",
+            "column_custom_image": "shopify://shop_images/WAARTheLekkerCompany_1.png",
+            "predefined_image": "usp-plant",
+            "heading": "WAAR"
+          }
+        },
+        "06b99fee-68cc-4682-afb1-ef6b9a24e260": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "item_link": "https://www.deheldersevallei.nl/",
+            "column_custom_image": "shopify://shop_images/deheldersevalleiTheLekkerCompany.jpg",
+            "predefined_image": "usp-plant",
+            "heading": "De helderse vallei"
+          }
+        }
+      },
+      "block_order": [
+        "template--16681212739837__151f374f-6539-486e-9817-a55ce9b222e8-1669631196b9d790fe-0",
+        "938acf0c-69e3-42f1-8713-0e1adfada119",
+        "cbb86dd5-0623-4093-b5fd-2f233e62ae39",
+        "a69623c8-ae59-4dc8-bf45-ef6a438d0237",
+        "b75fa8c6-9421-4202-b58d-290f11db79a1",
+        "0a631594-514e-45dc-bc47-e55b9ff2089a",
+        "d67108cb-a607-49f5-a084-f59ccd2e6263",
+        "02170bc6-596e-40bf-9ebd-3fad4016c47e",
+        "c4137b85-6636-4536-8deb-18721020cac5",
+        "b9ae4cb0-b577-4b8d-b50e-de80a1626dca",
+        "06b99fee-68cc-4682-afb1-ef6b9a24e260"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "page_width": "page-width",
+        "item_width_mobile": 250,
+        "item_width_desktop": 300,
+        "item_ratio": "15/10",
+        "grid_size_on_mobile": 0,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "center",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": true,
+        "use_carousel_device": "all",
+        "use_carousel_auto_scroll": true,
+        "use_carousel_arrows": true,
+        "use_carousel_manual_scroll": true,
+        "item_font_color": "black",
+        "use_carousel_speed": "20"
+      }
+    },
+    "aa809662-70d6-4900-a142-fb3756eae66b": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "0efc011e-0f1f-48c1-b60e-5d3c4d9ccf91": {
+          "type": "visual_slide",
+          "settings": {
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "bottom-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "online Verkooppunten",
+            "heading_font_size": "xl",
+            "max_heading_width": "25",
+            "text": "met volledig assortiment",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "0efc011e-0f1f-48c1-b60e-5d3c4d9ccf91"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "sm",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_start_color": "#accfff",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "6",
+        "slide_ratio_desktop": "10",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "278515ae-c308-4b8e-85bb-ac04ceed232c": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "3f6d54e8-92e7-4b19-8f1d-2385661fe3b6": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.zepig.nl/search/the%20lekker%20company",
+            "column_custom_image": "shopify://shop_images/zepig_logo.png",
+            "predefined_image": "usp-plant",
+            "heading": "Zepig"
+          }
+        },
+        "87e01db3-95f9-4432-abff-2c51ee56e922": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.biggreensmile.nl/search.aspx?q=the%20lekker%20company",
+            "column_custom_image": "shopify://shop_images/logo_biggreensmile.png",
+            "predefined_image": "usp-plant",
+            "heading": "Big Green Smile"
+          }
+        },
+        "a0b4e81d-09aa-4ead-b06f-a98adea82a0e": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.eco-logisch.nl/merk-The-LEKKER-company-739",
+            "column_custom_image": "shopify://shop_images/eco_logo.png",
+            "predefined_image": "usp-plant",
+            "heading": "Eco-Logisch"
+          }
+        },
+        "88deccf8-d6b0-4fd2-ab20-34710a0920c5": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://medimart.nl/search/?q=lekker%20company",
+            "column_custom_image": "shopify://shop_images/logo_medimart.png",
+            "predefined_image": "usp-plant",
+            "heading": "Medimart"
+          }
+        },
+        "3312d4e5-6dea-47fc-9077-760bb3c51d58": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.bioflorahealthproducts.nl/search?q=lekker+company",
+            "column_custom_image": "shopify://shop_images/Bio_Flora_Health_Products_Logo.png",
+            "predefined_image": "usp-plant",
+            "heading": "Bio Floral Health Products"
+          }
+        },
+        "f11add49-0ab4-4a51-b526-7d37840b8d05": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.trademed.nl/zoeken/lekker-company",
+            "column_custom_image": "shopify://shop_images/trademed_logo.png",
+            "predefined_image": "usp-plant",
+            "heading": "Trade  Med"
+          }
+        },
+        "2333293e-a79f-48cb-8ff8-9bca63e92271": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.joilys.com/",
+            "column_custom_image": "shopify://shop_images/JoilysHealthShopTheLekkerCompany_4.png",
+            "predefined_image": "usp-plant",
+            "heading": "Joily's Healthshop"
+          }
+        },
+        "cb171dc0-0a57-4a38-ac33-d083dff72db4": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.rerootmalta.com/",
+            "column_custom_image": "shopify://shop_images/Ontwerp_zonder_titel_1.png",
+            "predefined_image": "usp-plant",
+            "heading": "ReRoot (malta)"
+          }
+        }
+      },
+      "block_order": [
+        "3f6d54e8-92e7-4b19-8f1d-2385661fe3b6",
+        "87e01db3-95f9-4432-abff-2c51ee56e922",
+        "a0b4e81d-09aa-4ead-b06f-a98adea82a0e",
+        "88deccf8-d6b0-4fd2-ab20-34710a0920c5",
+        "3312d4e5-6dea-47fc-9077-760bb3c51d58",
+        "f11add49-0ab4-4a51-b526-7d37840b8d05",
+        "2333293e-a79f-48cb-8ff8-9bca63e92271",
+        "cb171dc0-0a57-4a38-ac33-d083dff72db4"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "page_width": "page-width",
+        "item_width_mobile": 250,
+        "item_width_desktop": 300,
+        "item_ratio": "15/10",
+        "grid_size_on_mobile": 0,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "center",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": true,
+        "use_carousel_device": "all",
+        "use_carousel_auto_scroll": true,
+        "use_carousel_arrows": true,
+        "use_carousel_manual_scroll": true,
+        "item_font_color": "black",
+        "use_carousel_speed": "20"
+      }
+    }
+  },
+  "order": [
+    "verkooppunten",
+    "151f374f-6539-486e-9817-a55ce9b222e8",
+    "aa809662-70d6-4900-a142-fb3756eae66b",
+    "278515ae-c308-4b8e-85bb-ac04ceed232c"
+  ]
+}

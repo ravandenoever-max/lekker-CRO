@@ -1,0 +1,641 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "WOWcdHR1ab": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__WOWcdHR1ab-16667126691ea33499-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/The_Lekker_Company_deo_sticks_-_Claudia_Rison___The_Originals_Photography-04795.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 20,
+            "image_mobile": "shopify://shop_images/lekker-company-overons-port.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 20,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "black",
+            "font_shadow": true,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "feel lekker now",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__WOWcdHR1ab-16667126691ea33499-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "",
+        "section_background_color_split": "",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "medium",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "56.25",
+        "slide_ratio_desktop": "56.25",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338726": {
+      "type": "theme-section__text",
+      "blocks": {
+        "7e74f5097338727_title": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Dit is lekker",
+            "block_content": "",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "red",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "7e74f5097338727_title"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>Het begon als een uit de hand gelopen hobby, uit frustratie. Op een gemiddeld cosmetica-etiket staan zoveel moeilijke termen dat bijna niemand kan lezen wat erin zit. Terwijl je het elke dag op je huid smeert. Bij eten wil je toch ook weten wat je binnenkrijgt? Waarom dan niet bij je verzorging?</p><p>Daarom startte ik, Dewi, The Lekker Company. <strong>The Lekker Company maakt persoonlijke verzorging natuurlijk en begrijpelijk.</strong> We vertalen elk etiket in gewone taal, zodat je precies weet wat je op je huid smeert. Onze producten zijn vegan, gemaakt met ingrediënten van 100% natuurlijke oorsprong en zonder toegevoegde microplastics. En we verpakken ze in karton en refills en vermijden daar zoveel mogelijk (virgin) plastic bij.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "50",
+            "max_content_width": "50",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "375161fb4ca": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-1": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/1_86219b9f-6f3e-42d4-ab6a-e84183d4f28a.png",
+            "predefined_image": "usp-plant",
+            "heading": "100% ingrediënten van natuurlijke oorsprong"
+          }
+        },
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-2": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/6_3c6f622a-5b2a-49cf-898f-36657908b554.png",
+            "predefined_image": "usp-vegan",
+            "heading": "onze hele lijn is vegan"
+          }
+        },
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-0": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/8_0b43b249-e314-40be-8248-544751d39728.png",
+            "predefined_image": "usp-effective",
+            "heading": "geen toegevoegde microplastics"
+          }
+        },
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-3": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/3_db24450b-fee7-424a-bf95-45fc83f21450.png",
+            "predefined_image": "usp-sustainable",
+            "heading": "beoordeeld met 4,7 uit 5"
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-1",
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-2",
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-0",
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-3"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "xs",
+        "section_background_color": "lblue",
+        "page_width": "page-width",
+        "item_width_mobile": 250,
+        "item_width_desktop": 300,
+        "item_ratio": "15/10",
+        "grid_size_on_mobile": 0,
+        "show_intro": true,
+        "intro_heading": "",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "lg",
+        "heading_font_color": "red",
+        "text_font_color": "red",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": false,
+        "use_carousel_device": "all",
+        "use_carousel_auto_scroll": false,
+        "use_carousel_arrows": false,
+        "use_carousel_manual_scroll": false,
+        "item_font_color": "white",
+        "use_carousel_speed": "20"
+      }
+    },
+    "theme_section_text_B7b4Nf": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_ipJX8d": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Een simpele missie",
+            "block_content": "<p>De lekker benadering van huidverzorging is eenvoudig. Houd je huid gezond en gelukkig door natuurlijke en voedende ingrediënten te gebruiken. Zoals biologische kokosolie en koolzaadwas.</p><p>Alle ingrediënten in Lekker-producten zijn zorgvuldig geselecteerd om 100% vegan formules te creëren. Wij zijn gepassioneerd over het maken van eerlijke huidverzorging - met ingrediënten waar we net zo makkelijk over praten als over wat er in je ontbijt zit.</p><p>Daarom vertalen wij op elk etiket in simpele taal wat er in de producten zit.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "50",
+            "max_content_width": "50",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "text_column_ipJX8d"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-07943_3.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-07943_3.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "60",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "WOW7e78727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Geen poespas",
+            "block_content": "<p>We houden het bij lekker graag zo eenvoudig en transparant mogelijk. Alle ingrediënten die in lekker-producten worden gebruikt, staan in begrijpelijke termen op de verpakking. Zo weet je precies wat je op je huid smeert.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "sm",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "bcd81ab": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__bcd81ab-16667126691ea33499-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-07967_2.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-07967_2.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__bcd81ab-16667126691ea33499-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "lpink",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e7727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dca": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Meet the team",
+            "block_content": "<p>Vanaf links hebben we Key Account Manager Daan, onze betrouwbare sales lead extraordinaire! Daan is een serieuze bordspel liefhebber en werkt er hard aan om lekker dichter bij jou te brengen. Interesse in een samenwerking? Daan staat klaar om je te helpen, bel hem of stuur hem een mail via: <a href=\"mailto:daan@thelekkercompany.com\" target=\"_blank\">daan@thelekkercompany.com</a><br/></p><p>Hiernaast staat Esther, onze nieuwe Marketing Manager! Je ziet haar vaak verschijnen in de content op onze socials, maar is stiekem ook giga data nerd. Buiten kantoor zal je haar vegetarische gerechten zien cheffen met een glas natuurwijn in haar hand.</p><p>En dan Dewi, de drijvende kracht achter The Lekker Company! Ze startte lekker met 200 euro en 100 glazen potten en Pinterest. Inmiddels heeft ze The lekker Company laten groeien tot waar het nu is en is ze verantwoordelijk voor alle nieuwe producten die we gaan lanceren. Vaak is Dewi op pad om het verhaal van lekker te vertellen. Ze is een dierenvriend(in) die haar kat Tofu genoemd heeft.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "white",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "white",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dcb": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "leeg",
+            "block_content": "<p>Feddo, rechts van Dewi, is onze co-owner die je wakker maakt voor een goed Excel-overleg. Hij is vaak in de duinen van Scheveningen te vinden met zijn gezin. We hangen met Feddo aan de lijn als we ingewikkelde berekeningen moeten maken en het over meerjaren-plannen hebben.</p><p>En helemaal rechts hebben we Iris, ons Operationeel Manager met een zwak voor karaoke. Ze wordt niet alleen onze kantoorstem genoemd, ook is ze verantwoordelijk voor dat al onze lekker producten op de juiste plek komen én dat we telkens net iets slimmer verzenden dan de keer ervoor.</p><p></p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "pink",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "white",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dca",
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dcb"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "sm",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_custom_code_nzD4rW": {
+      "type": "theme-section__custom-code",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<iframe id=\"orderchamp_frame\"  src=\"https://www.orderchamp.com/invites/widget/open?storefront=U3RvcmVmcm9udDo3NTI2NTgxOTQ5Mzk5MDU&widget_type=type_big\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>\n<style>\n#orderchamp_frame{height:175vw}\n#orderchamp_frame{margin-bottom:80px}\n@media screen and (min-width:550px){ \n#orderchamp_frame{height:85vw}\n}\n@media screen and (min-width:768px){ \n#orderchamp_frame{height:55vw;max-height:540px}\n}\n@media screen and (min-width:992px){ \n#orderchamp_frame{height:50vw;max-height:540px}\n}\n@media screen and (min-width:1280px){ \n#orderchamp_frame{height:40vw;max-height:540px}\n}\n</style>",
+        "page_width": "page-width--narrow"
+      }
+    },
+    "theme_section_our_team_A9caVR": {
+      "type": "theme-section__our-team",
+      "blocks": {
+        "column_4hG9GM": {
+          "type": "column",
+          "settings": {
+            "column_custom_image": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-08069_89515182-f7c3-4a6f-9985-7387088362b1.jpg",
+            "copy_name": "Dewi van de Waeter",
+            "copy_function": "Oprichter",
+            "copy_emailadres": ""
+          }
+        },
+        "column_L8QHDq": {
+          "type": "column",
+          "settings": {
+            "column_custom_image": "shopify://shop_images/The_Lekker_Company_TEAM_-_Claudia_Rison___The_Originals_photography_websize-09128-2.jpg",
+            "copy_name": "Daan Timmers",
+            "copy_function": "Key Account Manager",
+            "copy_emailadres": "daan@thelekkercompany.com"
+          }
+        },
+        "column_VBQUzp": {
+          "type": "column",
+          "settings": {
+            "column_custom_image": "shopify://shop_images/The_Lekker_Company_TEAM_-_Claudia_Rison___The_Originals_photography_websize-09128-4.jpg",
+            "copy_name": "Iris van 't Klooster",
+            "copy_function": "Operational Manager",
+            "copy_emailadres": ""
+          }
+        },
+        "column_zaW39N": {
+          "type": "column",
+          "settings": {
+            "column_custom_image": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography-08063.jpg",
+            "copy_name": "Esther van de Glind",
+            "copy_function": "Marketing Manager",
+            "copy_emailadres": "esther@thelekkercompany.com"
+          }
+        },
+        "column_L9qNBh": {
+          "type": "column",
+          "settings": {
+            "column_custom_image": "shopify://shop_images/IMG_4100_d562ce30-994b-4876-a34a-319e22df9de9.jpg",
+            "copy_name": "Nina Verstappen",
+            "copy_function": "Account Manager",
+            "copy_emailadres": "nina@thelekkercompany.com"
+          }
+        },
+        "column_pFnccH": {
+          "type": "column",
+          "settings": {
+            "column_custom_image": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-07967_2df99db5-7a63-455f-905a-850bea3e130d.jpg",
+            "copy_name": "Feddo Tamminga",
+            "copy_function": "Mede-eigenaar",
+            "copy_emailadres": ""
+          }
+        },
+        "column_HP7qGp": {
+          "type": "column",
+          "settings": {
+            "column_custom_image": "shopify://shop_images/IMG_4297_2-2.jpg",
+            "copy_name": "Laura Kiers",
+            "copy_function": "Junior Account Manager",
+            "copy_emailadres": "laura@thelekkercompany.com"
+          }
+        }
+      },
+      "block_order": [
+        "column_4hG9GM",
+        "column_L8QHDq",
+        "column_VBQUzp",
+        "column_zaW39N",
+        "column_L9qNBh",
+        "column_pFnccH",
+        "column_HP7qGp"
+      ],
+      "name": "Team Members",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xs",
+        "section_background_color": "white",
+        "page_width": "page-width",
+        "item_ratio": "1/1",
+        "item_width_mobile": "34vw",
+        "item_width_desktop": "24vw",
+        "show_intro": true,
+        "intro_heading": "Ons team",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": true,
+        "use_carousel_device": "all",
+        "use_carousel_auto_scroll": false,
+        "use_carousel_arrows": false,
+        "use_carousel_manual_scroll": true,
+        "item_font_color": "black",
+        "use_carousel_speed": "20"
+      }
+    }
+  },
+  "order": [
+    "WOWcdHR1ab",
+    "7e74f5097338726",
+    "7e74f5097338727",
+    "375161fb4ca",
+    "theme_section_text_B7b4Nf",
+    "95a6",
+    "WOW7e78727",
+    "bcd81ab",
+    "7e7727",
+    "theme_section_custom_code_nzD4rW",
+    "theme_section_our_team_A9caVR"
+  ]
+}

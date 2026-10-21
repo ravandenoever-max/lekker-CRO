@@ -1,0 +1,26 @@
+{%- if use_main_menu_icons == 'true' -%}
+  <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account focus-inset {%- if link.current %} active{% endif %}">
+    {% render 'theme-icon', icon: 'icon-account' %}
+    <span class="visually-hidden">
+      {%- liquid
+        if customer
+          echo 'customer.account_fallback' | t
+        else
+          echo 'customer.log_in' | t
+        endif
+      -%}
+    </span>
+  </a>
+{%- else -%}
+  {%- if customer -%}
+    <a href="{{ routes.account_url }}" class="header__label header__label--account link focus-inset {%- if link.current %} active{% endif %}">
+      <span class="header-label-account">{{ 'customer.account_fallback' | t }}</span>
+      <span class="visually-hidden">{{ 'customer.account_fallback' | t }}</span>
+    </a>
+  {%- else -%}
+    <a href="{{ routes.account_login_url }}" class="header__label header__label--account link focus-inset {%- if link.current %} active{% endif %}">
+      <span class="header-label-account">{{ 'customer.log_in' | t }}</span>
+      <span class="visually-hidden">{{ 'customer.log_in' | t }}</span>
+    </a>
+  {%- endif -%}
+{%- endif -%}

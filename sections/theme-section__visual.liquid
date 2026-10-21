@@ -1,0 +1,469 @@
+{%- liquid
+  comment
+    //---------------------------------------------//
+    //-- general section settings --//
+    //---------------------------------------------//
+  endcomment
+
+    assign slide_theme_layout = section.settings.slide_theme_layout
+    assign this_section_outer_spacing = 'section-outer-spacing'
+
+    if slide_theme_layout != 'fullscreen'
+
+      assign spacing_t = ' padding-t-'
+      assign spacing_t = spacing_t | append : section.settings.row_spacing_outer_top
+      assign this_section_outer_spacing = this_section_outer_spacing | append : spacing_t
+      assign spacing_b = ' padding-b-'
+      assign spacing_b = spacing_b | append : section.settings.row_spacing_outer_bottom
+      assign this_section_outer_spacing = this_section_outer_spacing | append : spacing_b
+ 
+    endif
+
+    assign this_section_inner_spacing = ''
+
+    assign spacing_t = ' padding-t-'
+    assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+    assign this_section_inner_spacing = this_section_inner_spacing | append : spacing_t
+    assign spacing_b = ' padding-b-'
+    assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+    assign this_section_inner_spacing = this_section_inner_spacing | append : spacing_b
+
+
+    assign this_section_extra_classes = ''
+    assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+    assign this_section_id = section.id | sha1 | truncate : 20, ""
+    assign this_section_id = 'section-' | append : this_section_id
+
+  comment
+    //---------------------------------------------//
+    //-- this section/template specific settings --//
+    //---------------------------------------------//
+  endcomment
+
+    assign section_background_color_b = section.settings.section_background_color_b
+    assign section_background_color_split = section.settings.section_background_color_split
+    if section_background_color_split contains '%'
+      assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+      assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+    elsif section_background_color_split contains 'px'
+      assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+      assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+    else
+      assign section_background_color_split_raw = 'calc(var(--spacing-[BACKGROUND_HEIGHT]) + 60px )'
+      assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+    endif
+
+    if section_background_color_b != 'none'
+      assign extra_css = ''
+      assign extra_css = extra_css | append : "#[SECTION_ID]{position:relative;}"
+      assign extra_css = extra_css | append : "#[SECTION_ID]::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT];right:0;bottom:0;left:0;background:var(--color-[BACKGROUND_B])}"
+      assign extra_css = extra_css | append : "#[SECTION_ID]>div{z-index:10;position:relative}"
+      assign extra_css = extra_css | replace: '[SECTION_ID]',this_section_id
+      assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]',section_background_color_split_height
+      assign extra_css = extra_css | replace: '[BACKGROUND_B]',section_background_color_b
+    endif
+
+    assign cycle_use_arrows = section.settings.slide_arrows
+    assign cycle_use_slide_count = section.settings.slide_count
+    assign cycle_use_pager = section.settings.slide_pager
+    assign cycle_ux_color = section.settings.slide_ux_color
+
+    assign this_section_extra_classes = this_section_extra_classes | append : ' section-visual-theme-' | append : slide_theme_layout
+    assign slides_length = section.blocks | size
+
+    assign slide_ratio_unit = section.settings.slide_ratio_unit
+    assign slide_ratio_mobile = section.settings.slide_ratio_mobile
+    assign slide_ratio_desktop = section.settings.slide_ratio_desktop
+    assign extra_slide_style = ''
+    if slide_theme_layout == 'custom'
+      if slide_ratio_mobile != blank
+        assign extra_slide_style = extra_slide_style | append : '@media screen and (max-width:991px){.section-visual-theme-custom .[this_section_id]-slide .visual-slide-inner{padding-top:[RATIO][UNIT]}}' | replace : "[this_section_id]", this_section_id | replace : "[UNIT]", slide_ratio_unit | replace : "[RATIO]", slide_ratio_mobile
+        assign extra_slide_style = extra_slide_style | append : '@media screen and (min-width:992px){.section-visual-theme-custom .[this_section_id]-slide .visual-slide-inner{padding-top:[RATIO][UNIT]}}' | replace : "[this_section_id]", this_section_id | replace : "[UNIT]", slide_ratio_unit | replace : "[RATIO]", slide_ratio_desktop
+        assign extra_slide_style = extra_slide_style | append : '@media screen and (max-width:991px){ html:not(.css-shopify-desigmode) #[this_section_id].section-visual-theme-custom{height:[RATIO][UNIT];overflow:hidden}}' | replace : "[this_section_id]", this_section_id | replace : "[UNIT]", slide_ratio_unit | replace : "[RATIO]", slide_ratio_mobile
+        assign extra_slide_style = extra_slide_style | append : '@media screen and (min-width:992px){ html:not(.css-shopify-desigmode) #[this_section_id].section-visual-theme-custom{height:[RATIO][UNIT];overflow:hidden}}' | replace : "[this_section_id]", this_section_id | replace : "[UNIT]", slide_ratio_unit | replace : "[RATIO]", slide_ratio_desktop
+      endif
+    endif
+
+    assign settings_use_animations = section.settings.use_animations
+    assign animate_waypoints = false
+    assign animate_classname = 'no-animation'
+    if settings_use_animations == true
+      assign animate_classname = ' js-ani-me '
+      assign animate_waypoints = true
+      if section.blocks.size > 1
+        assign animate_classname = 'cycle-animation-trigger animation-trigger'
+        assign animate_waypoints = false
+      endif
+    endif
+
+    assign margin_t_layout = 'margin-t-xxs'
+    if slide_theme_layout == 'large' or slide_theme_layout == 'fullscreen'
+      assign margin_t_layout = 'margin-t-xs'
+    endif
+    assign padding_t_layout = 'padding-t-xxs'
+    if slide_theme_layout == 'large' or slide_theme_layout == 'fullscreen'
+      assign padding_t_layout = 'padding-t-xs'
+    endif
+    assign page_width_class = section.settings.page_width
+    assign section_image_rounded_corners = section.settings.section_image_rounded_corners
+    if slide_theme_layout == 'fullscreen'
+      assign section_image_rounded_corners = 'none'
+    endif
+    assign video_as_background_cover = section.settings.video_as_background_cover
+    if video_as_background_cover == true
+      assign video_as_background_cover = 'true'
+    else
+      assign video_as_background_cover = 'false'
+    endif
+-%}
+
+{%- if section.blocks.size > 0 -%}
+  {%- capture theme_section__visual -%}
+    <div id="{{ this_section_id }}" class="{{ this_section_extra_classes }}">
+      <div class="{{ this_section_outer_spacing }}">
+        <div class="{{ page_width_class }} no-select">
+          <div class="section-inner theme-section__visual">
+            
+            {%-  liquid
+              if animate_waypoints == true and section.blocks.size == 1
+                echo '<span class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi animation-trigger-waypoint-multi-in-and-out" data-offset="70%">'
+                  echo '<span class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="400" data-set-delay="0" data-set-delay-step="100" data-set-animation-out="fadeOutDown">'
+              endif
+            -%}
+            {%- if section.blocks.size > 1 -%}
+            <div class="cycle-slideshow-inactive cycle-ux-color-{{ cycle_ux_color }}" data-cycle-auto-init="false" data-cycle-fx="fade" data-cycle-swipe="true" data-cycle-pause-on-hover="true" data-cycle-timeout="{{ section.settings.slide_speed }}" data-cycle-speed="600" data-cycle-slides=".{{ this_section_id }}-slide" data-cycle-log="false" {%- if cycle_use_pager == true %} data-cycle-pager="#{{ this_section_id }}-visual-cycle-pager" {% endif -%} {%- if cycle_use_arrows == true %} data-cycle-prev="#{{ this_section_id }}-cycle-arrow-prev" data-cycle-next="#{{ this_section_id }}-cycle-arrow-next"{% endif %}>
+            {%- endif -%}
+              {%- for block in section.blocks -%}
+                {%- liquid
+                  assign block_settings = block.settings
+                  assign textbox_show = block_settings.textbox_show
+                  if textbox_show == true
+                      assign desktop_text_box_position = block_settings.desktop_text_box_position
+                      assign font_size_classname = 'font-size-' | append : block_settings.heading_font_size
+                      assign font_color_classname = 'color-' | append : block_settings.font_color
+                      assign color_classname = 'color-' | append : block_settings.font_color
+                      assign this_sub_heading = block_settings.sub_heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+                      assign this_heading = block_settings.heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+                      assign this_text = block_settings.text | escape
+
+                      assign this_text_size_classname = 'font-size-' | append : block_settings.text_font_size
+                      assign set_max_width = block_settings.max_heading_width
+                        assign visual__box_heading_classname = 'display:inline-block;max-width:[[set_max_width]]ch;margin:0 auto;' | replace :'[[set_max_width]]', set_max_width
+                        if desktop_text_box_position contains 'left'
+                          assign visual__box_heading_classname = 'display:inline-block;max-width:[[set_max_width]]ch;margin:0;' | replace :'[[set_max_width]]', set_max_width
+                        elsif desktop_text_box_position contains 'right'
+                          assign visual__box_heading_classname = 'display:inline-block;max-width:[[set_max_width]]ch;margin:0;' | replace :'[[set_max_width]]', set_max_width
+                        endif
+                      assign set_max_width = block_settings.max_text_width
+                        assign visual__box_text_classname = 'display:inline-block;max-width:[[set_max_width]]ch;margin:0 auto;' | replace :'[[set_max_width]]', set_max_width
+                        if desktop_text_box_position contains 'left'
+                          assign visual__box_text_classname = 'display:inline-block;max-width:[[set_max_width]]ch;margin:0;' | replace :'[[set_max_width]]', set_max_width
+                        elsif desktop_text_box_position contains 'right'
+                          assign visual__box_text_classname = 'display:inline-block;max-width:[[set_max_width]]ch;margin:0;' | replace :'[[set_max_width]]', set_max_width
+                        endif
+                      assign font_shadow_class = ''
+                      if block_settings.font_shadow == true
+                        assign font_shadow_class = ' font-has-shadow'
+                      endif
+                  endif
+
+                  assign block_settings_video_show = block_settings.video_show
+                  if block_settings_video_show == true
+                      assign block_settings_video_type = block_settings.video_type
+                      if block_settings_video_type == blank
+                        assign block_settings_video_type =  'vimeo'
+                      endif
+                      assign block_settings_video_source_desktop = block_settings.video_source_desktop
+                      assign block_settings_video_aspect_desktop = block_settings.video_aspect_desktop
+                      assign block_settings_video_source_mobile = block_settings.video_source_mobile
+                      assign block_settings_video_aspect_mobile = block_settings.video_aspect_mobile
+                      assign block_settings_video_autoplay = block_settings.video_autoplay
+                      assign block_settings_video_show_controls = block_settings.video_show_controls
+                      if block_settings_video_autoplay == true
+                        assign video_autoplay = 1
+                      else
+                        assign video_autoplay = 0
+                      endif
+                      if block_settings_video_show_controls == true
+                        assign video_background = 0
+                      else
+                        assign video_background = 1
+                      endif
+                      assign video_aspect_mobile = block_settings.video_aspect_mobile
+                      assign video_aspect_mobile = block_settings.video_aspect_mobile
+                  endif
+
+                -%}
+                <div class="visual-slide rounded-corners-{{ section_image_rounded_corners }} {{ this_section_id }}-slide{{ font_shadow_class}} {{ font_color_classname }}{% if block_settings.image_mobile != blank %} has-mobile-image{%- endif -%}">
+                  {%- if section.blocks.size > 1 and cycle_use_slide_count == true -%}
+                  <div class="visual-slide-counter"><p class="font-fam-normal font-size-xxs color-{{ cycle_ux_color }}">{{ forloop.index }} / {{ slides_length }}</p></div>
+                  {%- endif -%}
+                  <div class="visual-slide-inner">
+                  {%- if textbox_show == true -%}
+                      <div class="visual-text-content {{ this_section_inner_spacing }} {%- if page_width_class == 'no-page-width' %} page-width{%- endif-%}">
+                      {%- if this_sub_heading != blank or this_heading != blank or this_text != blank -%}
+                        <div class="visual__content visual-align-items-{{ desktop_text_box_position }}">
+                          {%- liquid 
+                            capture slide_inner_content
+                              echo '<div class="visual__box custom-liquid-coded">'
+                              if this_heading != blank
+                                  echo '<span class="[animate_classname]">' | replace : '[animate_classname]', animate_classname
+                                    echo '<h1 style="[visual__box_heading_classname]" class="font-fam-normal [font_size_classname] [color_classname] font-size-xs-xxl font-size-xxs-xxl txt-lowercase"><span>[this_heading]</span></h1>' | replace : '[visual__box_heading_classname]', visual__box_heading_classname | replace : '[font_size_classname]', font_size_classname | replace : '[color_classname]', color_classname | replace : '[this_heading]', this_heading
+                                  echo '</span>'
+                              endif
+                              if this_sub_heading != blank
+                                  echo '<span class="[animate_classname]">' | replace : '[animate_classname]', animate_classname
+                                    echo '<h3 class="font-fam-normal font-size-lg [color_classname] txt-lowercase"><span>[this_sub_heading]</span></h3>' | replace : '[color_classname]', color_classname | replace : '[this_sub_heading]', this_sub_heading
+                                  echo '</span>'
+                              endif 
+                              if this_text != blank
+                                  echo '<div class="display-inline-block [PADDING_T]">' | replace : "[PADDING_T]", padding_t_layout
+                                    echo '<div style="[visual__box_text_classname]">' | replace : '[visual__box_text_classname]', visual__box_text_classname
+                                      echo '<div class="[animate_classname]">' | replace : '[animate_classname]', animate_classname
+                                        echo '<p style="[visual__box_text_classname]" class="font-fam-light [font_size_classname] [color_classname]">' | replace : '[visual__box_text_classname]', visual__box_text_classname | replace : '[font_size_classname]', this_text_size_classname | replace : '[color_classname]', color_classname
+                                          echo '<span>[this_text]</span>' | replace : '[this_text]', this_text
+                                        echo '</p>'
+                                      echo '</div>'
+                                    echo '</div>'
+                                  echo '</div>'
+                              endif
+                              assign this_button_settings = block_settings
+                              if this_button_settings.button_show == true and this_button_settings.button_label != '' and this_button_settings.button_link != ''
+                                echo '<div class="[animate_classname] [MARGIN_T]">' | replace : '[animate_classname]', animate_classname | replace : "[MARGIN_T]", margin_t_layout
+                                  echo '<div class="visual__buttons">'
+                                  render 'theme-button', button_settings: this_button_settings
+                                  echo '</div>'
+                                echo '</div>'
+                              endif
+                              echo ' </div>'
+                            endcapture
+                          -%}
+                          {{ slide_inner_content }}
+                        </div>
+                      {%- endif -%}
+                      </div>
+                  {%- endif -%}
+                  {%- liquid
+
+                    assign image_loading = 'lazy'
+                    if section.index == 1
+                      assign image_loading = 'eager'
+                    endif
+
+                    if block_settings.image_mobile != blank
+                        echo '<div class="visual-image-mobile">'
+                        if block_settings.image_overlay_on_mobile
+                          echo '<span class="visual-overlay visual-overlay-[A]"></span>' | replace : '[A]', block_settings.image_overlay_on_mobile_strength
+                        endif
+                        assign image_variable = block_settings.image_mobile
+                        assign image_start_url = image_variable | img_url: '200x', this_max_srcset: '1200'
+                        capture this_image_srcset
+                          render 'image-srcset', this_image: image_variable
+                        endcapture
+                        echo '<picture class="visual__media media">'
+                          assign img_w = image_variable.width
+                          assign img_h = image_variable.width | divided_by: image_variable.aspect_ratio | round
+                          assign img_alt = image_variable.alt | escape
+                          if image_loading == 'eager'
+                            echo '<img loading="[image_loading]" fetchpriority="high" importance="high" srcset="[this_image_srcset]" src="[image_start_url]" sizes="100vw" width="[img_w]" height="[img_h]" class="visual__media-image" alt="[img_alt]">' | replace: '[this_image_srcset]', this_image_srcset | replace: '[image_start_url]', image_start_url | replace: '[img_w]', img_w | replace: '[img_h]', img_h | replace: '[img_alt]', img_alt | replace : '[image_loading]', image_loading
+                          else 
+                            echo '<img loading="[image_loading]" srcset="[this_image_srcset]" src="[image_start_url]" data-sizes="auto" width="[img_w]" height="[img_h]" class="visual__media-image" alt="[img_alt]">' | replace: '[this_image_srcset]', this_image_srcset | replace: '[image_start_url]', image_start_url | replace: '[img_w]', img_w | replace: '[img_h]', img_h | replace: '[img_alt]', img_alt | replace : '[image_loading]', image_loading
+                          endif                        
+                        echo '</picture>'
+                        if block_settings_video_show == true and block_settings_video_source_mobile != blank
+                          echo '<div class="video-wrapper js-video-set-as-bg-cover-[video_as_background_cover]" org-video-data-size="[block_settings_video_aspect_mobile]">' | replace : '[video_as_background_cover]', video_as_background_cover | replace : '[block_settings_video_aspect_mobile]', block_settings_video_aspect_mobile
+                            echo '<div class="video-inner">'
+                              if block_settings_video_type == 'vimeo'
+                                echo '<iframe title="Video" class="js-lazy-load-iframe video-vimeo" style="width:100%;height:100%" data-video-delay="1500" data-video-src="https://player.vimeo.com/video/[block_settings_video_source_mobile]?background=[video_background]&autoplay=[video_autoplay]&autopause=0&loop=1&title=0&byline=0&dnt=true" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>' | replace : '[block_settings_video_source_mobile]', block_settings_video_source_mobile | replace : '[video_background]', video_background | replace : '[video_autoplay]', video_autoplay
+                              elsif block_settings_video_type == 'local'
+                                echo '<h3 class="font-fam-normal font-size-xs">[local video] block_settings_video_source_mobile [block_settings_video_source_mobile]</h3>' | replace : '[block_settings_video_source_mobile]', block_settings_video_source_mobile
+                              endif
+                            echo '</div>'
+                          echo '</div>'
+                        endif
+                        echo '</div>'
+                    endif
+                    if block_settings.image_desktop != blank
+                        echo '<div class="visual-image-desktop">'
+                        if block_settings.image_overlay_on_desktop
+                          echo '<span class="visual-overlay visual-overlay-[A]"></span>' | replace : '[A]', block_settings.image_overlay_on_desktop_strength
+                        endif
+                        assign image_variable = block_settings.image_desktop
+                        assign image_start_url = image_variable | img_url: '200x'
+                        capture this_image_srcset
+                          render 'image-srcset', this_image: image_variable, this_max_srcset: '2000'
+                        endcapture
+                        echo '<picture class="visual__media media">'
+                          assign img_w = image_variable.width
+                          assign img_h = image_variable.width | divided_by: image_variable.aspect_ratio | round
+                          assign img_alt = image_variable.alt | escape
+                          if image_loading == 'eager'
+                            echo '<img loading="[image_loading]" fetchpriority="high" importance="high" srcset="[this_image_srcset]" src="[image_start_url]" sizes="100vw" width="[img_w]" height="[img_h]" class="visual__media-image" alt="[img_alt]">' | replace: '[this_image_srcset]', this_image_srcset | replace: '[image_start_url]', image_start_url | replace: '[img_w]', img_w | replace: '[img_h]', img_h | replace: '[img_alt]', img_alt | replace : '[image_loading]', image_loading
+                          else 
+                            echo '<img loading="[image_loading]" srcset="[this_image_srcset]" src="[image_start_url]" data-sizes="auto" width="[img_w]" height="[img_h]" class="visual__media-image" alt="[img_alt]">' | replace: '[this_image_srcset]', this_image_srcset | replace: '[image_start_url]', image_start_url | replace: '[img_w]', img_w | replace: '[img_h]', img_h | replace: '[img_alt]', img_alt | replace : '[image_loading]', image_loading
+                          endif
+                      
+                        echo '</picture>'
+                        if block_settings_video_show == true and block_settings_video_source_desktop != blank
+                          echo '<div class="video-wrapper js-video-set-as-bg-cover-[video_as_background_cover]" org-video-data-size="[block_settings_video_aspect_desktop]">' | replace : '[video_as_background_cover]', video_as_background_cover | replace : '[block_settings_video_aspect_desktop]', block_settings_video_aspect_desktop
+                            echo '<div class="video-inner">'
+                              if block_settings_video_type == 'vimeo'
+                                echo '<iframe title="Video" class="js-lazy-load-iframe video-vimeo" style="width:100%;height:100%" data-video-delay="1500" data-video-src="https://player.vimeo.com/video/[block_settings_video_source_desktop]?background=[video_background]&autoplay=[video_autoplay]&autopause=0&loop=1&title=0&byline=0&portrait=0&quality=1080p&dnt=true" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>' | replace : '[block_settings_video_source_desktop]', block_settings_video_source_desktop | replace : '[video_background]', video_background | replace : '[video_autoplay]', video_autoplay
+                              elsif block_settings_video_type == 'local'
+                                echo '<h3 class="font-fam-normal font-size-xs">[local video] block_settings_video_source_desktop [block_settings_video_source_desktop]</h3>' | replace : '[block_settings_video_source_desktop]', block_settings_video_source_desktop
+                              endif
+                            echo '</div>'
+                          echo '</div>'
+                        endif
+                        echo '</div>'
+                    endif
+                  -%}
+                  </div>
+                </div>
+              {%- endfor -%}
+
+            {%- liquid
+              if cycle_use_arrows == true and section.blocks.size > 1
+                echo '<div id="[this_section_id]-cycle-arrow-prev" class="cycle-arrow cycle-arrow-prev">' | replace : '[this_section_id]', this_section_id
+                  render 'theme-icon', icon: 'arrow-left-light'
+                echo '</div>'
+                echo '<div id="[this_section_id]-cycle-arrow-next" class="cycle-arrow cycle-arrow-next">' | replace : '[this_section_id]', this_section_id
+                  render 'theme-icon', icon: 'arrow-right-light'
+                echo '</div>'
+              endif
+              if cycle_use_pager == true and section.blocks.size > 1
+                echo '<div id="[this_section_id]-visual-cycle-pager" class="visual-cycle-pager"></div>' | replace : '[this_section_id]', this_section_id
+              endif
+            -%}
+            {%- if section.blocks.size > 1 -%}
+            </div>
+            {%- endif -%}
+        {%-  liquid
+          if animate_waypoints == true and section.blocks.size == 1
+              echo '</span>'
+            echo '</span>'
+          endif
+        -%}
+          </div>
+        </div>
+        {%- capture bloated_css -%}
+          <style id="{{ this_section_id }}__extra-css">
+            {%-if extra_slide_style != '' -%}{{ extra_slide_style }}{%- endif -%}
+            .theme-section__visual .cycle-arrow svg { filter: drop-shadow( 2px 2px 3px rgb(0,0,0,0.2) ) }
+            #{{ this_section_id }} .video-wrapper{position:absolute;z-index:3;top:0px;right:0px;bottom:0px;left:0px;width:100%;height:100%}
+            #{{ this_section_id }} .video-wrapper .video-inner{position:relative;width:100%;height:100%}
+            #{{ this_section_id }} .video-wrapper .video-wrapper iframe{position:absolute;z-index:3;top:0px;right:0px;bottom:0px;left:0x;width:100%;height:100%}
+            #{{ this_section_id }}.section-visual-theme-custom { background-color: {{ section.settings.slide_start_color }}; }
+            @media screen and (max-width:991px) { 
+              .theme-section__visual .visual-slide.has-mobile-image .visual-slide-inner .visual-image-desktop { opacity:0; visibility:hidden; pointer-events:none; display:none; }
+            }
+            @media screen and (min-width:992px) {
+              .theme-section__visual .visual-slide.has-mobile-image .visual-slide-inner .visual-image-mobile { opacity:0; visibility:hidden; pointer-events:none; display:none; }
+            }
+          </style>
+        {%- endcapture -%}
+        {%- render'inline-css',input_css:bloated_css -%}
+      </div>
+    </div>
+  {%- endcapture -%}
+  {%- liquid
+    assign minify_this_html_input = theme_section__visual
+    assign minify_this_html_block = true
+    if minify_this_html_block == true and settings.website_minify_inline_html != 'false'
+      render'inline-html',input_html:minify_this_html_input
+    else
+      echo minify_this_html_input
+    endif
+  -%}
+{%- endif -%}
+
+{%- schema %}
+{
+  "name":"Visual",
+  "tag": "section",
+  "class": "theme-section__visual",
+
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"},
+        {"type":"select","id":"row_spacing_outer_top","default":"none","label":"Outer Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_outer_bottom","default":"none","label":"Outer Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_top","default":"none","label":"Inner Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"none","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"section_background_color","default":"pink","label":"Background Color First", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_b","default":"none","label":"Background Color Second", "options": [ { "value":"none","label":"None"},{ "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_split","default":"xxl","label":"Background Color Switch", "options": [ { "value":"50%","label":"Half"},{ "value":"90%","label":"Top"},{ "value":"xxl","label":"Bottom"}, { "value":"none","label":"None" } ] },
+        {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [{ "value":"page-width--narrow","label":"Medium"}, { "value":"page-width","label":"Wide"},{ "value":"no-page-width","label":"Fullscreen" } ] },
+        { "type": "text","id":"slide_start_color","default":"rgba(0,0,0,0)","label":"First Slide BG color", "info":"Slide color rgba / Hex #000000"},
+    { "type": "header", "content": "Slider Specifications"},
+        {"type":"select", "id":"slide_theme_layout","default":"medium", "label":"Banner Vertical Layout", "options":[ { "value":"fullscreen", "label":"Fullscreen"}, { "value":"large", "label":"Large"}, { "value":"medium", "label":"Medium"}, { "value":"custom", "label":"Custom" } ] },
+        {"type":"select","id":"slide_ratio_unit","default":"%","label":"Desktop Banner Unit", "info":"( % = responsive, px = static )", "options": [ { "value":"px","label":"Pixels"}, { "value":"%","label":"Percentage"} ] },
+        { "type": "text","id":"slide_ratio_mobile","default":"56.25","label":"Mobile Banner Height", "info":"Only applies if Banner Vertical Layout 'Custom' is used"},
+        { "type": "text","id":"slide_ratio_desktop","default":"56.25","label":"Desktop Banner Height", "info":"Only applies if Banner Vertical Layout 'Custom' is used"},
+        {"type":"select","id":"section_image_rounded_corners","default":"none","label":"Visual rounded corners", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"checkbox","id":"video_as_background_cover","default":false,"label":"Video Fit in Box", "info":"cover vs contain"},
+
+        { "type": "text","id":"slide_speed","default":"2500","label":"Slide speed (ms)"},
+        {"type":"select","id":"slide_ux_color","default":"red","label":"Font color", "options":[ { "value":"white", "label":"White"},{ "value":"black", "label":"Black"},{ "value":"green", "label":"Green"},{ "value":"dgreen", "label":"Dark Green"},{ "value":"red", "label":"Red" }] },
+        {"type":"checkbox","id":"slide_arrows","default":false,"label":"Show Slide Arrows"},
+        {"type":"checkbox","id":"slide_pager","default":false,"label":"Show Slide Pager"},
+        {"type":"checkbox","id":"slide_count","default":false,"label":"Show Slide Counter"},
+        {"type":"checkbox","id":"use_animations","default":true,"label":"Use Animations" }
+
+  ],
+  "blocks":[
+      {
+        "type":"visual_slide",
+        "name":"Slide",
+        "settings":[
+          { "type": "header", "content": "Visual"},
+              { "type": "image_picker", "id":"image_desktop", "label":"Desktop Visual"},
+              {"type":"checkbox","id":"image_overlay_on_desktop","default":false,"label":"Show overlay on Desktop"},
+              { "type": "range","id":"image_overlay_on_desktop_strength","default":50, "min": 10, "max": 80, "step": 5,"label":"Overlay strength"},
+              { "type": "image_picker", "id":"image_mobile", "label":"Mobile Visual"},
+              {"type":"checkbox","id":"image_overlay_on_mobile","default":false,"label":"Show overlay on Mobile"},
+              { "type": "range","id":"image_overlay_on_mobile_strength","default":50, "min": 10, "max": 80, "step": 5,"label":"Overlay strength"},
+
+          { "type": "header", "content": "Content"},
+              {"type":"checkbox","id":"textbox_show","default":true,"label": "Show Textbox"},
+              {"type":"select", "id":"desktop_text_box_position","default":"center-center", "label":"Content Layout", "options":[ { "value":"center-left","label":"Center Left"},{ "value":"center-half-left","label":"Center Half Left"},{ "value":"center-half-right","label":"Center Half Right"},{ "value":"center-center","label":"Center Center"}, { "value":"center-right","label":"Center Right"},{ "value":"top-left","label":"Top Left"},{ "value":"top-center","label":"Top Center"},{ "value":"top-right","label":"Top Right"},{ "value":"bottom-left","label":"Bottom Left"},{ "value":"bottom-center","label":"Bottom Center"},{ "value":"bottom-right","label":"Bottom Right" } ] },
+              {"type":"select", "id":"font_color","default":"red", "label":"Font color", "options":[ { "value":"white", "label":"White"},{ "value":"black", "label":"Black"},{ "value":"green", "label":"Green"},{ "value":"dgreen", "label":"Dark Green"},{ "value":"red", "label":"Red" }] },
+              {"type":"checkbox","id":"font_shadow","default":false,"label":"Font shadow"},
+              { "type": "text", "id":"sub_heading","default":"Subtitle","label":"t:sections.image-banner.blocks.sub_heading.settings.heading.label"},
+              { "type": "text", "id":"heading","default":"Slide Title","label":"t:sections.image-banner.blocks.heading.settings.heading.label"},
+              {"type":"select","id":"heading_font_size","default":"xxl","label":"Heading size", "options": [ { "value":"xxl","label":"Large"}, { "value":"xl","label":"Medium" } ] },
+              { "type": "text","id":"max_heading_width","default":"25","label":"Max Title Width"},
+              { "type": "text", "id":"text","default":"Slide content","label":"t:sections.image-banner.blocks.text.settings.text.label"},
+              {"type":"select","id":"text_font_size","default":"md","label":"Text Font Size", "options": [ { "value":"lg","label":"Intro"}, { "value":"md","label":"Normal" } ] },
+              { "type": "text","id":"max_text_width","default":"25","label":"Max Text Width"},
+
+          { "type": "header", "content": "Video"},
+              {"type":"checkbox","id":"video_show","default":false,"label": "Show Video"},
+              { "type": "text","id":"video_source_desktop","label":"Video Source Desktop", "info":"VimeoID"},
+              { "type": "text","id":"video_aspect_desktop","label":"Video Desktop Aspect ratio", "info":"Example : 4:3, 16:9, must be exact video ratio"},
+              { "type": "text","id":"video_source_mobile","label":"Video Source Mobile", "info":"VimeoID"},
+              { "type": "text","id":"video_aspect_mobile","label":"Video Mobile Aspect ratio", "info":"Example : 4:3, 16:9, must be exact video ratio"},
+              {"type":"checkbox","id":"video_autoplay","default":true,"label":"Video Autoplay"},
+              {"type":"checkbox","id":"video_show_controls","default":false,"label":"Video Show Controls"},
+
+          { "type": "header", "content": "Button"},
+              {"type":"checkbox","id":"button_show","default":false,"label": "Show Button"},
+              { "type": "text","id":"button_label","label":"Button Label"},
+              {"type":"select","id":"button_size","default":"button_small","label":"Button Style", "options": [ { "value":"button_small","label":"Button Standard"}, { "value":"button_large","label":"Button Large"}, { "value":"button_text","label":"Text Link" } ] },
+              {"type":"select","id":"button_color","default":"button_black","label":"Button Color", "options": [ { "value":"button_black","label":"Button Black"},{ "value":"button_white","label":"Button White"},{ "value":"button_red","label":"Button Red"},{ "value":"button_pink","label":"Button Pink"},{ "value":"button_green","label":"Button Green"},{ "value":"button_dgreen","label":"Button Dark Green"},{ "value":"button_trans","label":"Button Transparent" } ] },
+              { "type": "url","id":"button_link","label":"Button Link"},
+              {"type":"checkbox","id":"button_target","default":false,"label":"Open link in new window" }
+        ]
+      }
+    ],
+    "max_blocks": 3,
+    "presets": [
+    {
+      "name": "Visual",
+      "blocks": [
+        { "type": "visual_slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

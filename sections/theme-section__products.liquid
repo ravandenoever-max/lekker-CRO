@@ -1,0 +1,497 @@
+{%- liquid
+  comment
+    //---------------------------------------------//
+    //-- general section settings --//
+    //---------------------------------------------//
+  endcomment
+
+  assign this_section_extra_classes = ''
+
+  assign spacing_t = ' padding-t-'
+  assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+  assign spacing_b = ' padding-b-'
+  assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+  assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+  assign this_section_id = section.id | sha1 | truncate : 20, ""
+  assign this_section_id = 'section-' | append : this_section_id
+  
+comment
+  //---------------------------------------------//
+  //-- this section/template specific settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign section_background_color_b = section.settings.section_background_color_b
+  assign section_background_color_split = section.settings.section_background_color_split
+  if section_background_color_split contains '%'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  elsif section_background_color_split contains 'px'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  else 
+    assign section_background_color_split_raw = 'calc(var(--spacing-[BACKGROUND_HEIGHT]) + 60px )'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  endif
+
+  assign extra_css = ''
+  if section_background_color_b != 'none'
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT];right:0;bottom:0;left:0;background:var(--color-[BACKGROUND_B])}"
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative} "
+    assign extra_css = extra_css | replace: '[SECTION_ID]',this_section_id
+    assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]',section_background_color_split_height
+    assign extra_css = extra_css | replace: '[BACKGROUND_B]',section_background_color_b
+  endif
+
+  assign font_size_classname = 'font-size-' | append : section.settings.heading_font_size
+  assign font_color_classname = 'color-' | append : section.settings.heading_font_color
+  assign color_classname = 'color-' | append : section.settings.text_font_color
+
+  assign this_show_intro = section.settings.show_intro
+  assign this_intro_heading = section.settings.intro_heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+  assign this_intro_content = section.settings.intro_content | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+  assign this_intro_align = section.settings.intro_align
+
+  assign set_max_width = section.settings.max_heading_width
+  assign max_heading_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+  assign set_max_width = section.settings.max_content_width
+  assign max_content_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+
+  assign settings_use_animations = section.settings.use_animations
+  assign animate_waypoints = false
+  assign animate_classname = 'no-animation'
+  if settings_use_animations == true
+    assign animate_classname = 'js-ani-me'
+    assign animate_waypoints = true
+    if section.blocks.size > 1
+      assign animate_classname = 'animation-trigger'
+      assign animate_waypoints = false
+    endif
+  endif
+
+  assign chosen_product_grid_layout = section.settings.chosen_layout
+  assign this_collection = section.settings.collection
+  assign show_featured_products = section.settings.collection.products
+
+  assign chosen_grid_layout = 'rows'
+  if chosen_product_grid_layout == 'products_in_grid-special'
+    assign chosen_product_grid_layout = 'products_in_grid'
+    assign chosen_grid_layout = 'special'
+  endif
+  if chosen_product_grid_layout == 'products_in_row_large'
+    assign chosen_product_grid_layout = 'products_in_row'
+  endif
+
+  assign chosen_product_card_layout = section.settings.chosen_section_layout
+
+  if chosen_product_grid_layout == 'products_in_grid'
+    if chosen_grid_layout == 'special'
+      assign settings_products_to_show = 5
+    else
+      assign settings_products_to_show = section.settings.max_element_view | plus: 0
+    endif
+    assign settings_elements_count = this_collection.all_products_count
+    assign elements_to_display = settings_products_to_show
+  elsif chosen_product_grid_layout == 'products_in_row'
+    assign settings_products_to_show = section.settings.max_element_view | plus: 0
+    assign settings_elements_count = this_collection.all_products_count
+    assign elements_to_display = settings_elements_count
+    if settings_elements_count > settings_products_to_show
+      assign elements_to_display = settings_products_to_show
+    endif
+  endif
+
+  if chosen_product_grid_layout == 'products_in_grid'
+    assign classname_margin_button_top = 'margin-t-md'
+  elsif chosen_product_grid_layout == 'products_in_row'
+    assign classname_margin_button_top = 'margin-t-sm'
+  endif
+
+  if chosen_product_grid_layout == 'products_in_row'
+    assign product_card_color = 'white'
+    if section.settings.layout_color != 'white'
+      assign product_card_color = 'white'
+    endif
+  endif
+  if chosen_product_grid_layout == 'products_in_grid'
+    assign product_card_color = 'white'
+    assign grid_names_arr = "large-left,small-left-top,small-left-bottom,small-right-top,small-right-bottom," | split: ','
+  endif
+
+  if chosen_product_grid_layout == 'products_in_row'
+    assign block_settings_button_style = 'button-small'
+  elsif chosen_product_grid_layout == 'products_in_grid'
+    assign block_settings_button_style = 'button-small'
+  endif
+
+  assign filter_product_tagname = ''
+  if section.settings.filter_product_tagname != ''
+    assign filter_product_tagname = section.settings.filter_product_tagname
+  endif
+
+  assign use_hor_scroll_bar = section.settings.use_hor_scroll_bar
+  assign scrollbar_option_classes = 'scrollbar-wrapper js-scrollbar-wrapper'
+  if use_hor_scroll_bar == 'mobile'
+    assign scrollbar_option_classes = scrollbar_option_classes | append : ' scrollbar-wrapper__mobile'
+  elsif use_hor_scroll_bar == 'desktop'
+    assign scrollbar_option_classes = scrollbar_option_classes | append : ' scrollbar-wrapper__desktop'
+  elsif use_hor_scroll_bar == 'always'
+    assign scrollbar_option_classes = scrollbar_option_classes | append : ' scrollbar-wrapper__always'
+  endif
+
+  assign max_element_view_row = section.settings.max_element_view_row
+
+  assign settings_use_recently_viewed = section.settings.use_recently_viewed
+  assign settings_use_featured_collections = section.settings.use_featured_collections
+  assign current_product_handle = product.handle
+
+  assign element_tot_count = 0
+  assign element_hit_count = 0
+  if settings_use_recently_viewed != true and settings_use_featured_collections != true
+      assign show_featured_products = this_collection.products
+      if chosen_product_grid_layout == 'products_in_grid'
+
+          if chosen_grid_layout == 'special'
+            capture final_products
+              for this_product in show_featured_products
+                if this_product.handle != current_product_handle
+                  assign _show_element = false
+                  if filter_product_tagname != ''
+                    if this_product.tags contains filter_product_tagname
+                      assign _show_element = true
+                    endif
+                  else
+                    assign _show_element = true
+                  endif
+                  if _show_element == true
+                    assign element_hit_count = element_hit_count | plus: 1
+                    if element_hit_count <= settings_products_to_show
+                      assign element_tot_count = element_tot_count | plus: 1
+                      assign index_number = forloop.index | minus: 1
+                      assign this_product_id = this_product.variants.first.id
+                      assign area_name = grid_names_arr[index_number]
+                      echo '<div class="grid__item nomargin grid__item-[LOOP] grid-area-[AREA]" id="product-[PID]">' | replace :'[LOOP]',forloop.index | replace :'[AREA]',area_name | replace :'[PID]',this_product_id
+                        render 'product-card', collection:this_collection, chosen_product_card_layout:chosen_product_card_layout, product_card_product:this_product, button_size:'medium', area_name:area_name, product_card_color:product_card_color, animate_classname:animate_classname, animate_waypoints:animate_waypoints
+                      echo '</div>'
+                    endif
+                  endif
+                endif
+              endfor
+            endcapture
+          elsif chosen_grid_layout != 'special'
+            capture final_products
+              for this_product in show_featured_products
+                if this_product.handle != current_product_handle
+                  assign _show_element = false
+                  if filter_product_tagname != ''
+                    if this_product.tags contains filter_product_tagname
+                      assign _show_element = true
+                    endif
+                  else
+                    assign _show_element = true
+                  endif
+                  if _show_element == true
+                    assign element_hit_count = element_hit_count | plus: 1
+                    if element_hit_count <= settings_products_to_show
+                      assign element_tot_count = element_tot_count | plus: 1
+                      assign index_number = forloop.index | minus: 1
+                      assign this_product_id = this_product.variants.first.id
+                      echo '<div class="grid__item nomargin grid__item-[LOOP]" id="product-[PID]">' | replace :'[LOOP]',forloop.index | replace :'[PID]',this_product_id
+                        render 'product-card', collection:this_collection, chosen_product_card_layout:chosen_product_card_layout, product_card_product:this_product, button_size:'small', area_name:area_name, product_card_color:product_card_color, animate_classname:animate_classname, animate_waypoints:animate_waypoints
+                      echo '</div>'
+                    endif
+                  endif
+                endif
+              endfor
+            endcapture
+          endif
+
+          if element_hit_count < max_element_view_row
+            assign max_element_view_row = element_hit_count
+          endif
+      elsif chosen_product_grid_layout == 'products_in_row'
+        capture final_products
+          for this_product in show_featured_products
+            if this_product.handle != current_product_handle
+              assign _show_element = false
+              if filter_product_tagname != ''
+                if this_product.tags contains filter_product_tagname
+                  assign _show_element = true
+                endif
+              else
+                assign _show_element = true
+              endif
+              if _show_element == true
+                assign element_hit_count = element_hit_count | plus: 1
+                if element_hit_count <= settings_products_to_show
+                  assign element_tot_count = element_tot_count | plus: 1
+                  assign this_product_id = this_product.variants.first.id
+                  echo '<li class="grid__item nomargin" id="product-[PID]">' | replace :'[PID]',this_product_id
+                    render 'product-card', collection:this_collection, chosen_product_card_layout:chosen_product_card_layout, product_card_product:this_product, button_size:'small', product_card_color:product_card_color, animate_classname:animate_classname, animate_waypoints:animate_waypoints
+                  echo '</li>'
+                endif
+              endif
+            endif
+          endfor
+        endcapture
+        assign max_element_view_row = settings_products_to_show
+        assign element_per_row_count = max_element_view_row
+      endif
+  elsif settings_use_recently_viewed == true
+      assign final_products = ''
+      assign element_hit_count = 100
+      assign element_tot_count = 100
+      assign max_element_view_row = 6
+      assign element_per_row_count = 6
+
+  elsif settings_use_featured_collections == true
+      assign settings_products_to_show = 30
+      assign final_products = ''
+      assign element_hit_count = 0
+      assign max_element_view_row = 2
+      assign element_per_row_count = 2
+      assign chosen_grid_layout = 'rows'
+      assign products_list_to_display = ''
+      for t_col in collections
+        assign loop_collection_prod_count = 0
+        assign t_col_handle =  t_col.handle
+        assign t_col_title =  t_col.title
+        if t_col_handle != collection.handle and t_col_handle != 'all-products'
+          assign products_list_to_display = products_list_to_display | append : t_col_title | append : '[[['
+          for t_col_product in t_col.products
+            if t_col_product.handle != current_product_handle
+              assign t_col_product_id = t_col_product.variants.first.id
+              assign t_col_prod = t_col_product_id | append : '=' | append : t_col_product.handle | append : ':::'
+              assign _show_element = false
+              if filter_product_tagname != ''
+                if t_col_product.tags contains filter_product_tagname
+                  assign _show_element = true
+                endif
+              else
+                assign _show_element = true
+              endif
+              if products_list_to_display contains t_col_prod
+                assign _show_element = false
+              endif
+              if _show_element == true
+                assign element_hit_count = element_hit_count | plus: 1
+                assign loop_collection_prod_count = loop_collection_prod_count | plus: 1
+                if loop_collection_prod_count <= 6
+                  assign element_tot_count = element_tot_count | plus: 1
+                  assign products_list_to_display = products_list_to_display | append : t_col_prod
+                endif
+              endif
+            endif
+          endfor
+          assign products_list_to_display = products_list_to_display | append : ']]]'
+        endif
+      endfor
+  endif
+-%}
+
+{%- if element_tot_count > 0 -%}
+  {%- capture theme_section__products_html -%}
+
+    <div id="{{ this_section_id }}" class="section-inner {{ this_section_extra_classes }}" data-rel-tagname="{{ filter_product_tagname }}">
+      {%- liquid
+      if this_show_intro == true and this_intro_heading != blank
+        capture section_heading
+          echo '<div class="page-width [font_color_classname]">' | replace : '[font_color_classname]',font_color_classname
+          if animate_waypoints == true
+                echo '<span class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi animation-trigger-waypoint-multi-in-and-out" data-offset="85%">'
+                  echo '<span class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="300" data-set-delay="0" data-set-delay-step="100" data-set-animation-out="fadeOutDown">'
+                    echo '<div class="txt-align-[this_intro_align] margin-b-xs">' | replace : '[this_intro_align]',this_intro_align
+                      echo '<span class="[animate_classname]" data-animation-in="animated fadeInUp" data-delay-in="100" data-dur-in="500" data-animation-out="animated fadeOut">' | replace : '[animate_classname]', animate_classname  
+                        echo '<h2 class="font-fam-normal [font_size_classname] [font_color_classname]">' | replace : '[font_size_classname]',font_size_classname | replace : '[font_color_classname]',font_color_classname
+                          echo '<span style="[max_heading_width]">[this_intro_heading]</span>' | replace : '[max_heading_width]',max_heading_width | replace : '[this_intro_heading]',this_intro_heading
+                        echo '</h2>'
+                      echo '</span>'
+                      if this_intro_content != blank
+                        echo '<span class="[animate_classname]" data-animation-in="animated fadeInUp" data-delay-in="200" data-dur-in="500" data-animation-out="animated fadeOut">' | replace : '[animate_classname]', animate_classname  
+                          echo '<p class="font-fam-light font-size-xs [color_classname] margin-t-xxs">' | replace : '[color_classname]',color_classname
+                            echo '<span style="[max_content_width]">[this_intro_content]</span>' | replace : '[max_content_width]',max_content_width | replace : '[this_intro_content]',this_intro_content
+                          echo '</p>'
+                        echo '</span>'
+                      endif
+                      echo '</div>'
+                  echo '</span>'
+                echo '</span>'
+          else
+                echo '<div class="txt-align-[this_intro_align] margin-b-xs">' | replace : '[this_intro_align]',this_intro_align
+                  echo '<h2 class="font-fam-normal [font_size_classname] [font_color_classname]">' | replace : '[font_size_classname]',font_size_classname | replace : '[font_color_classname]',font_color_classname
+                    echo '<span style="[max_heading_width]">[this_intro_heading]</span>' | replace : '[max_heading_width]',max_heading_width | replace : '[this_intro_heading]',this_intro_heading
+                  echo '</h2>'
+                  if this_intro_content != blank
+                    echo '<p class="font-fam-light font-size-xs [color_classname] margin-t-xxs">' | replace : '[color_classname]',color_classname
+                      echo '<span style="[max_content_width]">[this_intro_content]</span>' | replace : '[max_content_width]',max_content_width | replace : '[this_intro_content]',this_intro_content
+                    echo '</p>'
+                  endif
+                echo '</div>'
+          endif
+          echo '</div>'
+        endcapture
+        echo section_heading
+      endif
+      -%}
+
+      <div class="page-width__full">
+        <div class="products__list featured-products"
+          {%- if settings_use_featured_collections == true %} id="featured-collections" {%- endif -%}
+          {%- if settings_use_recently_viewed == true %} id="recently-viewed-products" {%- endif -%}>
+          {%- if chosen_product_grid_layout == 'products_in_grid' -%}
+              {%- liquid
+                if chosen_grid_layout == 'rows'
+                  echo '<div class="page-width">'
+                    echo '<div class="elements-layout__grid product-card-size__[chosen_product_card_layout]">' | replace: '[chosen_product_card_layout]', chosen_product_card_layout
+                      echo '<span class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi animation-trigger-waypoint-multi-in-and-out" data-offset="85%">'
+                        echo '<span class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="300" data-set-delay="0" data-set-delay-step="100" data-set-animation-out="fadeOutDown">'
+                          echo '<div class="js-elements__wrapper elements__items-list element-row__[max_element_view_row]">' | replace : '[max_element_view_row]', max_element_view_row
+                            echo final_products
+                          echo '</div>'
+                        echo '</span>'
+                      echo '</span>'
+                    echo '</div>'
+                  echo '</div>'
+                else
+                  echo '<div class="page-width">'
+                    echo '<div class="js-elements__wrapper elements-layout__grid-special __product-card-size__{{ chosen_product_card_layout }}">'
+                      echo final_products
+                    echo '</div>'
+                  echo '</div>'
+                endif
+              -%}
+          {%- elsif chosen_product_grid_layout == 'products_in_row' and use_hor_scroll_bar != 'none' -%}
+            <div class="elements-layout__row product-card-size__{{ chosen_product_card_layout }}">
+              <div class="{{ scrollbar_option_classes }} element-count-{{ element_per_row_count }}">
+                <div class="scrollbar-inner">
+                  <ul class="js-elements__wrapper elements__items-list element-count-{{ element_per_row_count }}">
+                    {{ final_products }}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {%- elsif chosen_product_grid_layout == 'products_in_row' and use_hor_scroll_bar == 'none' -%}
+            <div class="page-width">
+              <div class="elements-layout__row product-card-size__{{ chosen_product_card_layout }}">
+                <div class="count-{{ element_per_row_count }}">
+                  <ul class="js-elements__wrapper elements__items-list element-count-{{ element_per_row_count }}">
+                    {{ final_products }}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+          {%- liquid
+            assign this_button_settings = section.settings
+            if this_button_settings.button_show == true and this_button_settings.button_label != '' and this_button_settings.button_link != ''
+              if animate_waypoints == true
+                echo '<span class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi animation-trigger-waypoint-multi-in-and-out" data-offset="85%">'
+                  echo '<span class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="300" data-set-delay="0" data-set-delay-step="100" data-set-animation-out="fadeOutDown">'
+              endif
+                echo '<div class="[animate_classname] margin-t-xs" data-animation-in="animated fadeInUp" data-delay-in="0" data-dur-in="500" data-animation-out="animated fadeOut">' | replace : '[animate_classname]', animate_classname
+                  echo '<div class="visual__buttons txt-align-center">'
+                    render 'theme-button', button_settings: this_button_settings
+                  echo '</div>'
+                echo '</div>'
+              if animate_waypoints == true
+                  echo '</span>'
+                echo '</span>'
+              endif
+            endif
+          -%}
+        </div>
+      </div>
+      {%- if settings_use_featured_collections == true -%}
+      <style>#{{ this_section_id }} .elements-layout__grid .elements__items-list h2.collection__title,#{{ this_section_id }} .elements-layout__grid .elements__items-list h2.collection__title span{color:var(--color-{{ section.settings.heading_font_color }})}</style>
+      {%- endif -%}
+      <style id="{{ this_section_id }}__extra-css">{{ extra_css }}</style>
+    </div>
+    {%- if settings_use_featured_collections == true -%}<input type="hidden" class="js-website-featured-collection-display" value="{{ products_list_to_display }}">{%- endif -%}
+    {%- if settings_use_recently_viewed == true -%}<input type="hidden" class="js-website-recently-product-display" value="{{ elements_to_display }}">{%- endif -%}
+
+  {%- endcapture -%}
+  {%- liquid
+    assign minify_this_html_input = theme_section__products_html
+    assign minify_this_html_block = true
+    if minify_this_html_block == true and settings.website_minify_inline_html != 'false'
+      render'inline-html',input_html:minify_this_html_input
+    else
+      echo minify_this_html_input
+    endif
+  -%}
+{%- endif -%}
+
+{%- comment -%}
+  <div class="padding-xxs bg-green color-white font-size-sm">
+    filter_product_tagname {{ filter_product_tagname  }}
+    <br>this_collection {{ this_collection }}
+    <br>collection_products {{ collection_products }}
+    <br>show_featured_products {{ show_featured_products }}
+    <br>element_per_row_count {{ element_per_row_count }}
+    <br>elements_to_display {{ elements_to_display }}
+    <br>chosen_product_grid_layout {{ chosen_product_grid_layout }}
+    <br>row_classnames {{ row_classnames }}
+    <br>
+    <br>use_hor_scroll_bar {{ use_hor_scroll_bar }}
+    <br>scrollbar_option_classes: {{ scrollbar_option_classes }}
+    <br>settings_elements_count: {{ settings_elements_count }}
+    <br><br>
+    <br>filter_product_tagname: {{ filter_product_tagname }}
+    <br>section.settings.filter_product_tagname: {{ section.settings.filter_product_tagname }}
+  </div>
+{%- endcomment -%}
+
+{% schema %}
+{
+  "name": "Products",
+  "tag": "section",
+  "class": "theme-section__products",
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"},
+        {"type":"select","id":"row_spacing_inner_top","default":"md","label":"Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"md","label":"Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"section_background_color","default":"blue","label":"Background Color First", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_b","default":"none","label":"Background Color Second", "options": [ { "value":"none","label":"None"},{ "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_split","default":"xxl","label":"Background Color Switch", "options": [ { "value":"50%","label":"Half"},{ "value":"90%","label":"Top"},{ "value":"xxl","label":"Bottom"}, { "value":"none","label":"None" } ] },
+        {"type":"checkbox","id":"use_animations","default":true,"label":"Use Animations"},
+
+    { "type": "header", "content": "Product Content"},
+        {"type":"checkbox","id":"use_featured_collections","default":false,"label": "Show other Collections"},
+        {"type":"checkbox","id":"use_recently_viewed","default":false,"label": "Recently viewed"},
+        { "type": "collection","id":"collection","label": "Collection"},
+        { "type": "text","id":"filter_product_tagname","label": "Filter product tagname"},
+        {"type":"select","id":"chosen_layout","options": [{ "value":"products_in_grid","label":"Rows"},{ "value":"products_in_row","label":"Scrollable Row" }],"default":"products_in_row","label": "Layout"},
+        {"type":"select","id":"chosen_section_layout","options": [{ "value":"std","label":"Medium"},{ "value":"xxl","label":"Large"},{ "value":"circle","label":"Rounded" }],"default":"std","label": "Product Layout"},
+        {"type":"select","id":"use_hor_scroll_bar","default":"always","label":"Horizontal Scroll", "options": [ { "value":"none","label":"None"}, { "value":"always","label":"On"} ] },
+        { "type": "range","id":"max_element_view","default":4, "min": 3, "max": 50, "step": 1,"label":"Max products shown"},
+        {"type":"select","id":"max_element_view_row","options": [{"value":"3","label": "3"},{"value":"4","label": "4"},{"value":"5","label": "5"},{"value":"6","label": "6"}],"default":"3","label": "Products per row"},
+
+    { "type": "header", "content": "Intro Content"},
+        {"type":"checkbox","id":"show_intro","default":false,"label":"Show Intro"},
+        { "type": "text","id":"intro_heading","default":"Title","label":"Title"},
+        { "type": "text","id":"intro_content","default":"Lorem Ipsum","label":"Content"},
+        {"type":"select","id":"intro_align","default":"left","label":"Align", "options": [ { "value":"left","label":"Left"}, { "value":"center","label":"Center"}, { "value":"right","label":"Right"} ] },
+        {"type":"select","id":"heading_font_size","default":"lg","label":"Title Font Size", "options": [ { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"} ] },
+        {"type":"select","id":"heading_font_color","default":"black", "label":"Title Font Color", "options":[ { "value":"white", "label":"White"}, { "value":"black", "label":"Black"}, { "value":"red", "label":"Red" } ] },
+        {"type":"select","id":"text_font_color","default":"black", "label":"Text Font color", "options":[ { "value":"white", "label":"White"}, { "value":"black", "label":"Black"}, { "value":"red", "label":"Red" } ] },
+        { "type": "text","id":"max_heading_width","default":"15","label":"Max Title Width"},
+        { "type": "text","id":"max_content_width","default":"50","label":"Max Content Width"},
+    { "type": "header", "content": "Button"},
+        {"type":"checkbox","id":"button_show","default":false,"label": "Show Button"},
+        { "type": "text","id":"button_label","label":"Button Label"},
+        {"type":"select","id":"button_size","default":"button_small","label":"Button Style", "options": [ { "value":"button_small","label":"Button Standard"}, { "value":"button_large","label":"Button Large"}, { "value":"button_text","label":"Text Link" } ] },
+        {"type":"select","id":"button_color","default":"button_black","label":"Button Color", "options": [ { "value":"button_black","label":"Black"},{ "value":"button_white","label":"White"},{ "value":"button_red","label":"Red"},{ "value":"button_pink","label":"Pink"},{ "value":"button_green","label":"Green"},{ "value":"button_trans","label":"Transparent" } ] },
+        { "type": "url","id":"button_link","label":"Button Link"},
+        {"type":"checkbox","id":"button_target","default":false,"label":"Open link in new window" }
+      ],
+  "presets": [
+    {
+      "name": "Products"
+    }
+  ]
+}
+{% endschema %}

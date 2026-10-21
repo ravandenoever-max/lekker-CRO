@@ -1,0 +1,24 @@
+{%- liquid
+  comment
+    fetch product tag 'collection-zonnebrand' / 'collection-main-zonnebrand'
+    fill in url with this collection instead 'all-proudcts'
+     -- same code also used in 'product-card.liquid 
+  endcomment
+  if settings.use_collection_url_in_product_url
+    for this_product_tag in product.tags
+      if this_product_tag contains 'collection-'
+        if this_product_tag contains 'collection-main-'
+          assign this_main_collection = this_product_tag | replace : 'collection-main-',''
+          assign product_detail_url = product.url | within: collections[this_main_collection]
+        else
+          assign this_main_collection = this_product_tag | replace : 'collection-',''
+          assign product_detail_url = product.url | within: collections[this_main_collection]
+        endif
+      endif
+    endfor
+  endif
+
+  assign product_detail_url = product.url
+  assign product_detail_url_pure = product.url
+
+-%}

@@ -1,0 +1,144 @@
+{%- liquid
+
+comment
+  //---------------------------------------------//
+  //-- general section settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign slide_theme_layout = section.settings.slide_theme_layout
+
+  assign this_section_outer_spacing = ''
+
+  if slide_theme_layout != 'fullscreen'
+    assign spacing_t = ' padding-t-'
+    assign spacing_t = spacing_t | append : section.settings.row_spacing_outer_top
+    assign this_section_outer_spacing = this_section_outer_spacing | append : spacing_t
+    assign spacing_b = ' padding-b-'
+    assign spacing_b = spacing_b | append : section.settings.row_spacing_outer_bottom
+    assign this_section_outer_spacing = this_section_outer_spacing | append : spacing_b
+  endif
+
+  assign this_section_inner_spacing = ''
+
+  assign spacing_t = ' padding-t-'
+  assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+  assign this_section_inner_spacing = this_section_inner_spacing | append : spacing_t
+  assign spacing_b = ' padding-b-'
+  assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+  assign this_section_inner_spacing = this_section_inner_spacing | append : spacing_b
+
+
+  assign this_section_extra_classes = ''
+  assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+comment
+  //---------------------------------------------//
+  //-- this section/template specific settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign this_section_id = 'section-collection-list'
+  assign this_section_extra_classes = ''
+
+-%}
+
+{%- comment -%}{{ 'component-card.css' | asset_url | stylesheet_tag }}{%- endcomment -%}
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+
+<section id="{{ this_section_id }}" class="aaa section-inner {{ this_section_extra_classes }}" data-rel-tagname="{{ filter_product_tagname }}">
+  <div class="page-width">
+    <h1 class="title title--primary">{{ section.settings.title | escape }}</h1>
+    {%- liquid
+      case section.settings.sort
+        when 'products_high' or 'products_low'
+          assign collections = collections | sort: 'all_products_count'
+        when 'date' or 'date_reversed'
+          assign collections = collections | sort: 'published_at'
+      endcase
+      if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
+        assign collections = collections | reverse
+      endif
+    -%}
+    <ul class="collection-list grid grid--1-col grid--3-col-tablet">
+      {%- for collection in collections -%}
+        <li class="collection-list__item grid__item">
+          <a{% if collection.all_products_count > 0 %} href="{{ collection.url }}"{% endif %} class="card animate-arrow{% if collection.image != blank %} card--media{% endif %} card--light-border" >
+            <div class="card--stretch card-colored">
+              {%- if collection.image != blank -%}
+                <div>
+                  <div class="media media--hover-effect overflow-hidden">
+                    {%- render 'thumbnail-simple', media: collection.image, position: forloop.index, image_alt: collection.image.alt, loop: section.settings.enable_video_looping -%}
+                  </div>
+                </div>
+                <div class="card__text card__text-spacing card__text-hover">
+                  <div class="overlay-card"></div>
+                  <h2 class="h3">{{- collection.title -}}<span class="icon-wrap">&nbsp;{%- render 'theme-icon', icon: 'icon-arrow' -%}</span></h2>
+                </div>
+              {%- else -%}
+                <div class="overlay-card"></div>
+                <div class="card__text-spacing card__text-hover">
+                  <h2 class="h1">
+                    {{- collection.title -}}{%- if collection.description == blank -%}<span class="icon-wrap">&nbsp;{%- render 'theme-icon', icon: 'icon-arrow' -%}</span>{% endif %}
+                  </h2>
+                  {%- if collection.description != blank -%}
+                    <p>
+                      {{- collection.description | strip_html | truncatewords: 12 -}}<span class="icon-wrap">&nbsp;{%- render 'theme-icon', icon: 'icon-arrow' -%}</span>
+                    </p>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+<section>
+
+{% schema %}
+{
+  "name": "t:sections.main-list-collections.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+     "label":"t:sections.main-list-collections.settings.title.label",
+      "default":"Collections"
+    },
+    {
+      "type": "select",
+      "id": "sort",
+      "options": [
+        {
+          "value":"alphabetical",
+         "label":"t:sections.main-list-collections.settings.sort.options__1.label"
+        },
+        {
+          "value":"alphabetical_reversed",
+         "label":"t:sections.main-list-collections.settings.sort.options__2.label"
+        },
+        {
+          "value":"date_reversed",
+         "label":"t:sections.main-list-collections.settings.sort.options__3.label"
+        },
+        {
+          "value":"date",
+         "label":"t:sections.main-list-collections.settings.sort.options__4.label"
+        },
+        {
+          "value":"products_high",
+         "label":"t:sections.main-list-collections.settings.sort.options__5.label"
+        },
+        {
+          "value":"products_low",
+         "label":"t:sections.main-list-collections.settings.sort.options__6.label"
+        }
+      ],
+      "default":"alphabetical",
+     "label":"t:sections.main-list-collections.settings.sort.label"
+    }
+
+  ]
+}
+{% endschema %}

@@ -1,0 +1,64 @@
+{%- liquid
+  comment
+    example data :
+      "use_newsletter_popup": true,
+      "use_newsletter_popup_page_count": "#",
+      "use_newsletter_popup_title": "Want to stay updated?",
+      "use_newsletter_popup_text": "Sign-up to receive 15% off your first order and be the first to know about new product drops and special offers.",
+      "use_newsletter_popup_customer_tag": "customer_tag_offer_15",
+  endcomment
+  assign this_page_count = settings.use_newsletter_popup_page_count
+  assign this_title = 'newsletter_alert.newsletter_alert_title' | t | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+  assign this_text = 'newsletter_alert.newsletter_alert_text' | t
+  assign this_button = 'newsletter_alert.newsletter_alert_button' | t
+  assign this_customer_tag = settings.use_newsletter_popup_customer_tag
+-%}
+
+<div class="newsletter-alert-box-wrapper" aria-hidden="true">
+  <div id="newsletter-alert-box" class="newsletter-alert-box">
+    <div class="newsletter-alert__inner">
+    {%- if show_badge == true -%}
+      <div class="newsletter-sticker color-red">
+        <img class="injectable-svg" alt="Join our world" src="{{ 'sticker-join.svg' | asset_url }}">
+      </div>
+    {%- endif -%}      
+      <div class="alert-close js-close-newsletter-alert color-black">
+        {% render 'theme-icon', icon: 'icon-close' %}
+      </div>
+      {%- if form.posted_successfully? -%}
+        <div class="txt-align-center margin-b-sm">
+          <h3 class="font-fam-normal font-size-xl txt-lowercase color-black margin-b-sm">Bedankt!</h3>
+        </div>
+      {% else %}
+        {%- form 'customer', class: 'newsletter-form' -%}
+        {{ form.errors | default_errors }}
+          <div class="txt-align-center margin-b-sm">
+            <h3 class="font-fam-normal font-size-xl txt-lowercase color-black margin-b-xxs">{{ this_title }}</h3>
+            <p class="font-fam-light font-size-sm color-black">{{ this_text }}</p>
+          </div>
+          <div class="row-flex-hor">
+            <div class="row-flex-hor__col_a input-group">
+              <div class="field">
+                <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" name="contact[email]" id="Email" autocorrect="off" autocapitalize="on" autocomplete="email" class="field__input __use-placeholder js-required js-newsletter_email" required aria-required="true"
+                  {% if form.errors %} aria-invalid="true" aria-describedby="Email-email-error" autofocus{% endif %}>
+                <label class="field-move-label" for="Email">{{ 'newsletter.label' | t }}</label>
+              </div>
+            </div>
+            <div class="row-flex-hor__col_b">
+              <div class="alert-checkout-buttons">
+                <div class="button-send">
+                  <button style="max-width:140px;" name="commit" id="Subscribe" class="theme-button theme-button__round-small theme-button__black-black-white theme-button-hover__black-white-black">
+                    <span>{{ this_button }}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="contact[tags]" value="newsletter, newsletter-popup, {{ this_customer_tag | escape }}">
+        {%- endform -%}
+        <input id="all_required_error" type="hidden" value="{{ 'newsletter.all_required_error' | t }}">
+        <input id="input_email_error" type="hidden" value="{{ 'newsletter.input_email_error' | t }}">
+      {%- endif -%}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,362 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/The_Lekker_Company_-_TEAM_-_Claudia_Rison_fotografie-09262.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_-_TEAM_-_Claudia_Rison_fotografie-09262.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "werken bij lekker",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "60",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Baan: Marketing Executive (24 uur)",
+            "block_content": "<p>Ben jij een creatieve bij die graag content maakt en partnerships aangaat met leuke andere merken? Op zoek naar een parttime baan waar je mag creëren en veel verantwoordelijkheid krijgt? Als je dan ook nog beschikbaar bent vanaf september of oktober, zoeken we jou!<\/p><p><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https:\/\/greenjobs.nl\/vacature\/internationale-sales-stage-bij-the-lekker-company-kw",
+            "button_target": true
+          }
+        },
+        "e14d37e6-dc6c-4a9c-863c": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>The Lekker Company<\/strong><\/p><p>Wij zijn een positieve veranderaar in iedere badkamerroutine. Daarom maken wij 100% natuurlijke en 100% vegan huidverzorging die werkt als een tierelier. Wij geloven namelijk dat duurzaamheid niet ten koste moet gaan van kwaliteit. Ons assortiment bestaat uit een super effectieve deocrème, een hydraterende lippenbalsem en een oceaanvriendelijke zonnebrand. Ieder kwartaal brengen we nieuwe producten uit die jouw badkamerroutine verder ondersteunt. Met deze producten liggen we o.a. al bij Albert Heijn, Etos, DA, Kruidvat, Dille & Kamille en Holland & Barrett. <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7",
+        "e14d37e6-dc6c-4a9c-863c"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "lpink",
+        "section_background_color_b": "lpink",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "bcd81ab": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__bcd81ab-16667126691ea33499-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/fotos_europalaan-500-in-ks-e30260c081c5cb689e36bf42e7d82033_normal.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_d044ca25-efb6-432a-bdcb-cdb658696fa7.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__bcd81ab-16667126691ea33499-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5": {
+      "type": "theme-section__text",
+      "blocks": {
+        "ac327348-5e63-49db-a163-4db62f8aa745": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Over de baan",
+            "block_content": "<p>Wij zoeken een creatieveling die het leuk vindt content te maken (in schrift én beeld) en social media heerlijk vindt. Iemand die het leuk vindt om onze missie en visie mooi neer te zetten op al onze marketing kanalen (onze website, LinkedIn, TikTok, Instagram, Mailchimp en Facebook.) <\/p><p><strong>Wie ben jij?<\/strong><\/p><p>Onze missie past bij jou<\/p><p>Je hebt minimaal 2 jaar relevante werkervaring<\/p><p>Je bent op maandag en donderdag bereid om naar kantoor te komen in Utrecht<\/p><p>Je schrijft graag<\/p><p>Je spreekt en schrijft Engels<\/p><p>Je bent creatief, pro-actief, sociaal en georganiseerd<\/p><p>Je bent bekend met Adobe suit programma's (Illustrator, Photoshop, Lightroom)<\/p><p><strong>Bonuspunten:<\/strong><\/p><p>Bonus: Je spreekt Duits en\/of bent goed bekend met de Duitse markt<\/p><p>Bonus: Je bent Belgisch en\/of bent goed bekend met de Belgische markt<\/p><p>Bonus: Je hebt ervaring met SEO<\/p><p>Bonus: Je hebt ervaring met online adverteren<\/p><p>Bonus: Je hebt ervaring met growth hacking<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:dewi@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "ac327348-5e63-49db-a163-4db62f8aa745"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "17c73039-299d-481f-a426-17c56ca05c9f": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/LEKKER_-_201911_-_LR_-_002.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_d044ca25-efb6-432a-bdcb-cdb658696fa7.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "17c73039-299d-481f-a426-17c56ca05c9f"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c": {
+      "type": "theme-section__text",
+      "blocks": {
+        "37656141-9f76-42aa-87a0-206c0efa77e8": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>Wat bieden wij? <\/strong><\/p><p>Het is natuurlijk niet alleen werken als een tierelier, het voelt ook goed om bij ons te werken! <\/p><p>Je bent onderdeel van een jong en dynamisch team, waarin geen dag hetzelfde is. <\/p><ul><li><\/li><li>Je hebt daadwerkelijk vrijheid in je rol. <\/li><\/ul><p>1800 bruto per maand o.b.v. 24 uur (dit is 3000 bruto o.b.v. 40 uur)<\/p><p>13,5 vakantiedag per jaar<\/p><p>reisvergoeding van maximaal 175 euro per maand<\/p><p>Een garantie om <em>lekker<\/em> te ruiken<\/p><p>Mogelijkheid om op te schalen naar max. 32 uur<\/p><p><strong><br\/><\/strong><\/p><p><strong>Praktisch<\/strong><\/p><p>Ons kantoor zit in Utrecht, op maandag en donderdag werken we graag hier, fijn als dit voor jou ook werkt. De eventuele 3e dag kun je zelf kiezen en thuis of op kantoor werken.<\/p><p><\/p><p>We hebben voor deze rol geen interesse in freelancers of mensen die 100% remote werken.<\/p><p>Voelt dit al <em>lekker<\/em>? Mail ons via de '<strong>Solliciteer nu' button hieronder!<\/strong> Wij reageren altijd. <br\/><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:dewi@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "37656141-9f76-42aa-87a0-206c0efa77e8"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338727",
+    "bcd81ab",
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5",
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a",
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c"
+  ]
+}

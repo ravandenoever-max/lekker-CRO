@@ -1,0 +1,362 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_33.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_-_TEAM_-_Claudia_Rison_fotografie-09262.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "werken bij lekker",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "60",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Baan: Chef Marketing",
+            "block_content": "<p>Ben jij een creatieve marketingdoener met een liefde voor merken die écht ergens voor staan? Zin om jouw ideeën los te laten op een snelgroeiend, vrolijk en plantaardig verzorgingsmerk?<\/p><p>Dan hebben wij iets heel lekkers voor je.<\/p><p><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https:\/\/greenjobs.nl\/vacature\/internationale-sales-stage-bij-the-lekker-company-kw",
+            "button_target": true
+          }
+        },
+        "e14d37e6-dc6c-4a9c-863c": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>Over The Lekker Company<\/strong><\/p><p> Wij maken natuurlijke verzorgingsproducten waar je huid (én de planeet) blij van wordt. Denk: deodorant in karton, lippenbalsems om te zoenen en formules zonder onzin. Je vindt ons bij <strong>Albert Heijn, Etos, DA, Holland & Barrett<\/strong> en natuurlijk online.<\/p><p>We zijn trots lid van <strong>B Corp<\/strong>, groeien als kool, en bouwen aan een merk met karakter. Onze slogan? 👉 <strong>feels lekker, works like a tierelier.<\/strong><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7",
+        "e14d37e6-dc6c-4a9c-863c"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "bcd81ab": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__bcd81ab-16667126691ea33499-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_-_Claudia_Rison_The_Originals_photography-09109.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_d044ca25-efb6-432a-bdcb-cdb658696fa7.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__bcd81ab-16667126691ea33499-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5": {
+      "type": "theme-section__text",
+      "blocks": {
+        "ac327348-5e63-49db-a163-4db62f8aa745": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Jouw rol bij lekker",
+            "block_content": "<p>Jij wordt onze <strong>marketing manager<\/strong>, maar eigenlijk ben je meteen <strong>chef marketing<\/strong>.<\/p><p>We hebben geen groot team (nog), maar daar werken we wél hard aan. Dus als jij goed gaat op ownership, maar ook toekomst ziet in een team om je heen: let’s go.<\/p><p>Samen met de founder (Dewi) bepaal je de koers, bedenk je campagnes en voer je ze ook uit. Van social tot PR, van nieuwsbrief tot influencer collabs – als jij het kunt dromen én doen, dan ben je hier op je plek.<\/p><p><\/p><p><strong>Wat je gaat doen:<\/strong><\/p><ul><li>Campagnes bedenken en uitvoeren – van strategie tot TikTok<br\/><br\/><\/li><li>Socials runnen met flair (en goede captions)<br\/><br\/><\/li><li>Samenwerkingen opzetten met influencers & merken<br\/><br\/><\/li><li>Nieuwsbrieven schrijven waar mensen op klikken<br\/><br\/><\/li><li>Persbenadering en PR-praatjes (ja, ook lekker brutaal bellen)<\/li><li>Partnerships aangaan met andere leuke merken<br\/><br\/><\/li><li>Creatief zijn met kleine(re) budgetten<br\/><br\/><\/li><li>Altijd op zoek naar manieren om meer mensen fan te maken van Lekker<\/li><\/ul>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:dewi@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "ac327348-5e63-49db-a163-4db62f8aa745"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "17c73039-299d-481f-a426-17c56ca05c9f": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/LEKKER_-_201911_-_LR_-_002.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/The_Lekker_Company_TEAM_d044ca25-efb6-432a-bdcb-cdb658696fa7.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "17c73039-299d-481f-a426-17c56ca05c9f"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c": {
+      "type": "theme-section__text",
+      "blocks": {
+        "37656141-9f76-42aa-87a0-206c0efa77e8": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>Jij bent iemand die…<br\/><\/strong> ✅ Minimaal 2 jaar ervaring heeft in marketing (bij een merk of bureau)<br\/> ✅ Gek is op authentieke merken met een missie<br\/> ✅ Campagnes zelfstandig van A tot Z kan oppakken<br\/> ✅ Creatief en vindingrijk is, ook zonder miljoenenbudget<br\/> ✅ Vloeiend Nederlands spreekt én schrijft (<strong>must!<\/strong>)<br\/> ✅ Gaat op een klein team en korte lijntjes<br\/> ✅ Zin heeft om door te groeien als we blijven groeien (en dat doen we!)<\/p><p><strong>Bonuspunten als je ook…<br\/><\/strong> 🌈 Ervaring hebt in FMCG of met retailmerken<br\/> 🖍️ Handig bent met designprogramma’s (Canva, Adobe, Figma…)<br\/> 🌍 Een extra taal spreekt<\/p><p><\/p><p><\/p><p><strong>Wat je van ons krijgt:<br\/><\/strong> 🏢 Een werkplek in hartje Utrecht<br\/> 💻 Hybride werken (maandag & donderdag op kantoor)<br\/> 📅 Een 4-daagse werkweek (vrij op dinsdag, woensdag of vrijdag – jij kiest)<br\/> 💰 Salaris tussen de €2.800 – €3.000 bruto (o.b.v. 32 uur)<br\/> 🌱 Pensioenregeling<br\/> 📦 Een kans om écht impact te maken bij een merk in opbouw<br\/> 🎉 Veel vrijheid, veel verantwoordelijkheid en heel veel deo<\/p><p><\/p><p><\/p><p><strong>Solliciteren?<br\/><\/strong> Mail je CV én iets creatiefs (motivatie, campagne-idee, video, TikTok, meme, PowerPoint – leef je uit) naar <strong>dewi@thelekkercompany.com<\/strong>.<\/p><p>Geen deadline, maar: hoe eerder je solliciteert, hoe eerder we kunnen kennismaken.<\/p><p>Let’s make it lekker samen. 💥<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:dewi@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "37656141-9f76-42aa-87a0-206c0efa77e8"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338727",
+    "bcd81ab",
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5",
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a",
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c"
+  ]
+}

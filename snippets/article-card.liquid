@@ -1,0 +1,90 @@
+{%- liquid
+
+  assign this_layout = 'normal'
+  assign blog_handle = article.handle
+  assign this_block_link = article.url
+  assign this_blog_visual = article.image
+
+  assign this_block_heading = article.title
+  assign this_block_heading_size = this_block_heading | size
+  assign max = 65
+  if this_block_heading_size > max
+    assign this_block_heading = article.title | truncate : max
+    assign this_block_heading_arr = this_block_heading | split : ' '
+    assign this_block_heading = ''
+    for el in this_block_heading_arr
+      unless forloop.last
+        assign this_block_heading = this_block_heading | append : el | append : ' '
+      endunless
+    endfor
+    assign this_block_heading = this_block_heading | append : '...'
+    assign this_block_heading = this_block_heading | replace : ' ...', '...'
+  endif
+
+  assign this_block_datum = article.published_at | date: "%d.%m.%Y"
+  for tag in article.tags
+    if tag contains "datum-"
+      assign this_block_datum = tag | replace : 'datum-', ''
+    endif
+  endfor
+
+  comment
+    button_show ::: button_label ::: button_size ::: button_color ::: button_link ::: button_target
+  endcomment
+  if show_button == true
+    assign this_button_settings = ''
+    assign this_button_settings = this_button_settings | append : 'true' | append : ':::'
+    assign this_button_settings = this_button_settings | append : '[BUTTON_LABEL]' | append : ':::'
+    assign this_button_settings = this_button_settings | append : 'button_small' | append : ':::'
+    assign this_button_settings = this_button_settings | append : 'button_red' | append : ':::'
+    assign this_button_settings = this_button_settings | append : this_block_link | append : ':::'
+    assign this_button_settings = this_button_settings | append : 'false'
+    assign this_button_label = 'blogs.article.read_more' | t
+    assign this_button_settings = this_button_settings | replace : '[BUTTON_LABEL]',this_button_label
+  endif
+-%}
+
+{%- if article.title != '' and this_block_link != '' -%}
+  {%- if this_layout == 'large' -%}
+    <article data-url="{{ this_block_link }}" class="js-makelink article-card article-card-{{ this_layout }} {% if article.image == blank or show_image == false %} article-card--no-image{% endif %}" aria-labelledby="Article-{{ article.id }}">
+  {%- else -%}
+    <article data-url="{{ this_block_link }}" class="js-makelink article-card article-card-{{ this_layout }} {% if article.image == blank or show_image == false %} article-card--no-image{% endif %}" aria-labelledby="Article-{{ article.id }}">
+  {%- endif -%}
+    <div class="article-content">
+      {%- if show_image == true and article.image -%}
+      <div class="article-card__image-wrapper">
+        <span class="js-ani-me" data-set-animation-in="fadeInUp">
+          <div class="article-card__image media media--portrait no-select">
+            {%- liquid
+              if layout == 'large'
+                render 'thumbnail-simple',max_srcset:1600,media:this_blog_visual,image_alt:this_blog_visual.src.alt,this_classnames:'img-responsive'
+              else
+                render 'thumbnail-simple',max_srcset:800,media:this_blog_visual,image_alt:this_blog_visual.src.alt,this_classnames:'img-responsive'
+              endif
+            -%}
+          </div>
+        </span>
+      </div>
+      {%- endif -%}
+      <div class="article-card__info">
+        <a href="{{ this_block_link }}" class="article-card__info__title-wrapper">
+        {%- if settings.show_blog_datum == true -%}          
+          <span class="js-ani-me" data-set-animation-in="fadeInUp">
+            <h3 class="font-fam-normal font-size-sm color-black margin-b-3xs">{{ this_block_datum }}</h3>
+          </span>
+        {%- endif -%}
+          <span class="js-ani-me" data-set-animation-in="fadeInUp">
+            <h2 class="font-fam-normal font-size-lg color-black">{{ this_block_heading }}</h2>
+          </span>
+        </a>
+        {%- liquid
+          if show_button == true and this_button_settings != ''
+            echo '<div class="button-wrapper margin-t-xxs">'
+            render 'theme-button', button_settings: this_button_settings
+            echo '</div>'
+          endif
+        -%}
+      </div>
+    </div>
+  </article>
+{%- endif -%}

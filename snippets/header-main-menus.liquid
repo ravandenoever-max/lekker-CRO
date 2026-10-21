@@ -1,0 +1,114 @@
+{%- liquid
+  assign filename = 'header-main-menus'
+  if settings.desktop_submenu_version == 'mega'
+    assign use_desktop_submenu_menu_mega = 'true'
+    assign use_desktop_submenu_foldable = 'false'
+    assign use_desktop_submenu_dropdown = 'false'
+  elsif settings.desktop_submenu_version == 'foldable'
+    assign use_desktop_submenu_menu_mega = 'false'
+    assign use_desktop_submenu_foldable = 'true'
+    assign use_desktop_submenu_dropdown = 'false'
+  elsif settings.desktop_submenu_version == 'dropdown'
+    assign use_desktop_submenu_menu_mega = 'false'
+    assign use_desktop_submenu_foldable = 'false'
+    assign use_desktop_submenu_dropdown = 'true'
+  elsif settings.desktop_submenu_version == 'none'
+    assign use_desktop_submenu_menu_mega = 'false'
+    assign use_desktop_submenu_foldable = 'false'
+    assign use_desktop_submenu_dropdown = 'false'
+  endif
+  assign header_menu_mega = use_desktop_submenu_menu_mega
+  assign header_foldable = use_desktop_submenu_foldable
+  assign header_dropdown = use_desktop_submenu_dropdown
+  assign menu_item_color_special = settings.header_menu_item_color_special | downcase
+  assign menu_item_color_special_array = menu_item_color_special | split : ','
+-%}
+
+{%- capture header_main_menus -%}
+
+{%- if header_menu.size > 0 -%}
+      {%- if header_menu_version == 'list-childs-only' -%}
+        {%- for header_link in header_menu.links -%}
+          {%- assign header_link_url = header_link.url -%}
+          {%- assign header_link_title = header_link.title | escape -%}
+          <li id="related-{{ header_link.handle }}" class="main-menu{%- if header_link.links != blank %} main-menu-has-kids{%- if header_foldable == 'true' %} js-trigger-foldable-menu-a{%- endif %}{%- endif -%}">
+          {%- if header_link.links != blank -%}
+            {%- if header_foldable == 'true' -%}
+              <a title="{{ header_link_title }}" data-title="{{ header_link_title }}" href="{{ header_link_url }}" class="js-hide-menu-mega header__menu-item list-menu__item link link--text focus-inset {%- if header_link.current %} active " aria-current="page{%- endif %}">
+                <span class="menu-title {%- if header_link.current %} header__active-menu-item"{%- endif %}">{{ header_link_title }}</span>
+              </a>
+            {%- elsif header_dropdown == 'true' -%}
+              {%- render 'header-menu-sub', link: link, index:index -%}
+            {%- endif -%}
+          {%- else -%}
+            <a title="{{ header_link_title }}" data-title="{{ header_link_title }}" href="{{ header_link_url }}" class="js-hide-menu-mega header__menu-item list-menu__item link link--text focus-inset {%- if header_link.current %} active " aria-current="page{%- endif %}">
+              <span class="menu-title {%- if header_link.current %}  header__active-menu-item{%- endif %}">{{ header_link_title }}</span>
+            </a>
+          {%- endif -%}
+          </li>
+        {%- endfor -%}
+      {%- elsif header_menu_version == 'list' -%}
+        <ul class="list-menu list-menu--inline header-menu-version__{{ header_menu_version }}">
+          {%- for header_link in header_menu.links -%}
+            {%- assign header_link_url = header_link.url -%}
+            {%- assign header_link_title = header_link.title | escape -%}
+            <li id="related-{{ header_link.handle }}" class="main-menu{%- if header_link.links != blank %} main-menu-has-kids{%- if header_foldable == 'true' %} js-trigger-foldable-menu-a{%- endif %}{%- endif -%}">
+            {%- if header_link.links != blank -%}
+              {%- if header_foldable == 'true' -%}
+                <a title="{{ header_link_title }}" data-title="{{ header_link_title }}" href="{{ header_link_url }}" class="js-hide-menu-mega header__menu-item list-menu__item link link--text focus-inset {%- if header_link.current %} active " aria-current="page{%- endif %}">
+                  <span class="menu-title {%- if header_link.current %}header__active-menu-item"{%- endif %}">{{ header_link_title }}</span>
+                </a>
+              {%- elsif header_dropdown == 'true' -%}
+                {%- render 'header-menu-sub', link: header_link, index:index -%}
+              {%- endif -%}
+            {%- else -%}
+              <a title="{{ header_link_title }}" data-title="{{ header_link_title }}" href="{{ header_link_url }}" class="js-hide-menu-mega header__menu-item list-menu__item link link--text focus-inset {%- if header_link.current %} active " aria-current="page{%- endif %}">
+                <span class="menu-title {%- if header_link.current %} header__active-menu-item{%- endif %}">{{ header_link_title }}</span>
+              </a>
+            {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- elsif header_menu_version == 'menu-mega' -%}
+        <ul class="list-menu list-menu--inline header-menu-version__{{ header_menu_version }}">
+          {%- for header_link in header_menu.links -%}
+            {%- liquid
+              assign header_link_url = header_link.url
+              assign header_link_handle = header_link.handle
+              assign header_link_slug = header_link.url | split: '/' | last
+              assign header_link_title = header_link.title | escape
+              assign header_link_title_lowercase = header_link_title | downcase
+              assign header_link_type = header_link.type
+              assign header_link_links = header_link.links
+              assign item_color_class = 'theme-force-c-black'
+              if menu_item_color_special_array contains header_link_title_lowercase
+                assign item_color_class = 'theme-force-c-red'
+              endif
+              assign show_menu_item = true
+              if header_link_type == 'collection_link'
+                assign this_collection = collections[header_link_slug]
+                assign p_counter = this_collection.all_products_count
+                if p_counter < 1
+                  assign show_menu_item = false
+                endif
+              endif
+            -%}
+            {%- if show_menu_item == true -%}
+              <li id="related-{{ header_link_handle }}" class="main-menu{%- if header_link_links != blank %} main-menu-has-kids{%- if header_foldable == 'true' %} js-trigger-foldable-menu-a{%- elsif header_menu_mega == 'true' %} has-menu-mega{%- endif %}{%- endif -%}">
+              {%- if header_link_links != blank -%}
+                {%- capture loop_index -%}desktop-menu-0-{{ forloop.index }}{%- endcapture -%}
+                {%- render 'header-menu-mega-check', section:section,menu:header_link,link:header_link,index:loop_index,item_color_class:item_color_class -%}
+              {%- else -%}
+                <a title="{{ header_link_title }}" data-title="{{ header_link_title }}" href="{{ header_link_url }}" class="js-hide-menu-mega header__menu-item list-menu__item link link--text focus-inset {{ item_color_class }}{%- if header_link.current %} active" aria-current="page{%- endif %}">
+                  <span class="menu-title {%- if header_link.current %} header__active-menu-item{%- endif %}">{{ header_link_title }}</span>
+                </a>
+              {%- endif -%}
+              </li>
+            {%- endif -%}            
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+{%- endif -%}
+{%- endcapture -%}
+
+{%- echo header_main_menus -%}

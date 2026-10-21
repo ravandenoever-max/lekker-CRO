@@ -1,0 +1,213 @@
+{%- liquid
+comment
+  //---------------------------------------------//
+  //-- general section settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign this_section_extra_classes = ''
+
+  assign spacing_t = ' padding-t-'
+  assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+  assign spacing_b = ' padding-b-'
+  assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+  assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+  assign this_section_id = section.id | sha1 | truncate : 20, ""
+  assign this_section_id = 'section-' | append : this_section_id
+
+comment
+  //---------------------------------------------//
+  //-- this section/template specific settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign section_background_color_b = section.settings.section_background_color_b
+  assign section_background_color_split = section.settings.section_background_color_split
+  if section_background_color_split contains '%'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  elsif section_background_color_split contains 'px'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  else
+    assign section_background_color_split_raw = 'calc(var(--spacing-[BACKGROUND_HEIGHT]) + 60px )'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  endif
+
+  assign extra_css = ''
+  if section_background_color_b != 'none'
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT];right:0;bottom:0;left:0;background:var(--color-[BACKGROUND_B])}"
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative} "
+    assign extra_css = extra_css | replace: '[SECTION_ID]',this_section_id
+    assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]',section_background_color_split_height
+    assign extra_css = extra_css | replace: '[BACKGROUND_B]',section_background_color_b
+  endif
+
+  assign font_size_classname = 'font-size-' | append : section.settings.heading_font_size
+  assign font_color_classname = 'color-' | append : section.settings.heading_font_color
+  assign color_classname = 'color-' | append : section.settings.text_font_color
+
+  assign this_show_intro = section.settings.show_intro
+  assign this_intro_heading = section.settings.intro_heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+  assign this_intro_content = section.settings.intro_content | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+  assign this_intro_align = section.settings.intro_align
+
+  assign set_max_width = section.settings.max_heading_width
+  assign max_heading_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+  assign set_max_width = section.settings.max_content_width
+  assign max_content_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+
+  assign settings_use_animations = section.settings.use_animations
+  assign animate_waypoints = false
+  assign animate_classname = 'no-animation'
+  if settings_use_animations == true
+    assign animate_classname = 'js-ani-me'
+    assign animate_waypoints = true
+  endif
+
+  assign page_width_class = section.settings.page_width
+  assign row_classnames = 'bg-white'
+  assign show_this_content_block = 'false'
+  if section.blocks.size > 0
+    assign show_this_content_block = 'true'
+  endif
+
+comment 
+  start html output
+endcomment
+
+echo '<div id="[this_section_id]" class="section-inner [this_section_extra_classes]" data-rel-tagname="[filter_product_tagname]">' | replace : '[this_section_id]', this_section_id | replace : '[this_section_extra_classes]', this_section_extra_classes | replace : '[filter_product_tagname]', filter_product_tagname
+  if this_show_intro == true and this_intro_heading != blank
+    capture section_heading
+      echo '<div class="page-width [font_color_classname]">' | replace : '[font_color_classname]',font_color_classname
+      if animate_waypoints == true
+            echo '<span class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi animation-trigger-waypoint-multi-in-and-out" data-offset="85%">'
+              echo '<span class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="300" data-set-delay="0" data-set-delay-step="100" data-set-animation-out="fadeOutDown">'
+                echo '<div class="txt-align-[this_intro_align] margin-b-xs">' | replace : '[this_intro_align]',this_intro_align
+                  echo '<span class="[animate_classname]" data-animation-in="animated fadeInUp" data-delay-in="100" data-dur-in="500" data-animation-out="animated fadeOut">' | replace : '[animate_classname]', animate_classname  
+                    echo '<h2 class="font-fam-normal [font_size_classname] [font_color_classname]">' | replace : '[font_size_classname]',font_size_classname | replace : '[font_color_classname]',font_color_classname
+                      echo '<span style="[max_heading_width]">[this_intro_heading]</span>' | replace : '[max_heading_width]',max_heading_width | replace : '[this_intro_heading]',this_intro_heading
+                    echo '</h2>'
+                  echo '</span>'
+                  if this_intro_content != blank
+                    echo '<span class="[animate_classname]" data-animation-in="animated fadeInUp" data-delay-in="200" data-dur-in="500" data-animation-out="animated fadeOut">' | replace : '[animate_classname]', animate_classname  
+                      echo '<p class="font-fam-light font-size-xs [color_classname] margin-t-xxs">' | replace : '[color_classname]',color_classname
+                        echo '<span style="[max_content_width]">[this_intro_content]</span>' | replace : '[max_content_width]',max_content_width | replace : '[this_intro_content]',this_intro_content
+                      echo '</p>'
+                    echo '</span>'
+                  endif
+                  echo '</div>'
+              echo '</span>'
+            echo '</span>'
+      else
+            echo '<div class="txt-align-[this_intro_align] margin-b-xs">' | replace : '[this_intro_align]',this_intro_align
+              echo '<h2 class="font-fam-normal [font_size_classname] [font_color_classname]">' | replace : '[font_size_classname]',font_size_classname | replace : '[font_color_classname]',font_color_classname
+                echo '<span style="[max_heading_width]">[this_intro_heading]</span>' | replace : '[max_heading_width]',max_heading_width | replace : '[this_intro_heading]',this_intro_heading
+              echo '</h2>'
+              if this_intro_content != blank
+                echo '<p class="font-fam-light font-size-xs [color_classname] margin-t-xxs">' | replace : '[color_classname]',color_classname
+                  echo '<span style="[max_content_width]">[this_intro_content]</span>' | replace : '[max_content_width]',max_content_width | replace : '[this_intro_content]',this_intro_content
+                echo '</p>'
+              endif
+            echo '</div>'
+      endif
+      echo '</div>'
+    endcapture
+    echo section_heading
+  endif
+
+  assign this_button_settings = ''
+  assign this_button_settings = this_button_settings | append : 'true' | append : ':::'
+  assign this_button_settings = this_button_settings | append : '[TITLE]' | append : ':::'
+  assign this_button_settings = this_button_settings | append : 'button_small' | append : ':::'
+  assign this_button_settings = this_button_settings | append : 'button_hover_red' | append : ':::'
+  assign this_button_settings = this_button_settings | append : '[LINK]' | append : ':::'
+  assign this_button_settings = this_button_settings | append : 'true'
+  capture base_button
+    render 'theme-button', button_settings: this_button_settings
+  endcapture
+
+  echo '<div class="[page_width_class] [font_color_classname]">' | replace : '[page_width_class]', page_width_class | replace : '[font_color_classname]',font_color_classname
+  for block in section.blocks
+    assign _handle = block.settings.store_country__title | handle
+    case block.type
+      when 'store_country'
+        assign store_country__title = block.settings.store_country__title
+        echo '<div class="country-list margin-b-lg" id="country-list__[_handle]">' | replace : '[_handle]', _handle
+          echo '<div class="margin-b-xxs">'
+            echo '<h2 class="font-fam-normal font-size-xl [font_color_classname]">' | replace : '[font_color_classname]',font_color_classname
+              echo store_country__title | capitalize
+            echo '</h2>'
+          echo '</div>'
+          echo '<div class="margin-b-xxs">'
+          assign store_list_string = block.settings.store_list
+          assign store_list_array = store_list_string | split : '####'
+          for this_single_store in store_list_array
+            assign this_store_details = this_single_store | split : ':::'
+            assign this_store_title = this_store_details[0]
+            assign this_store_link = this_store_details[1]
+            assign store_link_button = base_button
+            assign store_link_button = store_link_button | replace : '[TITLE]', this_store_title
+            assign store_link_button = store_link_button | replace : '[LINK]', this_store_link
+            echo '<div class="displayinlineblock  padding-h-5 margin-b-10">'
+            echo store_link_button
+            echo '</div>'
+          endfor
+          echo '</div>'
+        echo '</div>'
+    endcase
+  endfor
+  echo '</div>'
+
+  if extra_css != blank
+    capture bloated_css
+      echo '<style id="[this_section_id]__extra-css">[extra_css]</style>' | replace : '[this_section_id]',this_section_id | replace : '[extra_css]',extra_css
+    endcapture
+    render'inline-css',input_css:bloated_css
+  endif
+echo '</div>'
+-%}
+
+{% schema %}
+{
+    "name": "Stores / List",
+    "tag": "section",
+    "class": "theme-section__stores-list",
+    "settings": [
+      { "type": "header", "content": "Section Layout and Size"},
+          {"type":"select","id":"row_spacing_inner_top","default":"md","label":"Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+          {"type":"select","id":"row_spacing_inner_bottom","default":"md","label":"Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+          {"type":"select","id":"section_background_color","default":"blue","label":"Background Color First", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+          {"type":"select","id":"section_background_color_b","default":"none","label":"Background Color Second", "options": [ { "value":"none","label":"None"},{ "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+          {"type":"select","id":"section_background_color_split","default":"xxl","label":"Background Color Switch", "options": [ { "value":"50%","label":"Half"},{ "value":"90%","label":"Top"},{ "value":"xxl","label":"Bottom"}, { "value":"none","label":"None" } ] },
+          {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [ { "value":"page-width--narrow","label":"Medium"},{ "value":"page-width","label":"Wide"}, { "value":"no-page-width","label":"Fullscreen" } ] },
+          {"type":"checkbox","id":"use_animations","default":true,"label":"Use Animations"},
+      { "type": "header", "content": "Intro Content"},
+          {"type":"checkbox","id":"show_intro","default":false,"label":"Show Intro"},
+          { "type": "text","id":"intro_heading","default":"Title","label":"Title"},
+          { "type": "text","id":"intro_content","default":"Lorem Ipsum","label":"Content"},
+          {"type":"select","id":"intro_align","default":"left","label":"Align", "options": [ { "value":"left","label":"Left"}, { "value":"center","label":"Center"}, { "value":"right","label":"Right"} ] },
+          {"type":"select","id":"heading_font_size","default":"lg","label":"Title Font Size", "options": [ { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"} ] },
+          {"type":"select","id":"heading_font_color","default":"black", "label":"Title Font Color", "options":[ { "value":"white", "label":"White"}, { "value":"black", "label":"Black"}, { "value":"red", "label":"Red" } ] },
+          {"type":"select","id":"text_font_color","default":"black", "label":"Text Font color", "options":[ { "value":"white", "label":"White"}, { "value":"black", "label":"Black"}, { "value":"red", "label":"Red" } ] },
+          { "type": "text","id":"max_heading_width","default":"15","label":"Max Title Width"},
+          { "type": "text","id":"max_content_width","default":"50","label":"Max Content Width" }
+    ],
+    "blocks": [
+      {
+        "name": "Store Country", "type": "store_country", 
+        "settings": [
+          { "type": "text","id":"store_country__title","label":"Country","default":"Nederland"},
+          { "type": "textarea","label":"store_list","id":"store_list","default":"zepig::https://www.zepig.nl #### vitamins::https://www.vitamins.nl" }
+        ]
+      }
+	],
+    "presets": [ { "name": "Stores / List" }
+  ]
+
+}
+{% endschema %}

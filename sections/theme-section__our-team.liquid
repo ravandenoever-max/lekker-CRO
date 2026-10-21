@@ -1,0 +1,304 @@
+{%- liquid
+
+comment
+  //---------------------------------------------//
+  //-- general section settings --//
+  //---------------------------------------------//
+endcomment
+  assign filename = 'theme-section__visual-rows'
+  assign this_section_extra_classes = ''
+
+  assign spacing_t = ' padding-t-'
+  assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+  assign spacing_b = ' padding-b-'
+  assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+  assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+  assign this_section_id = section.id | sha1 | truncate : 20, ""
+  assign this_section_id = 'section-' | append : this_section_id
+
+comment
+  //---------------------------------------------//
+  //-- this section/template specific settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign font_size_classname = 'font-size-' | append : section.settings.heading_font_size
+  assign font_color_classname = 'color-' | append : section.settings.heading_font_color
+  assign color_classname = 'color-' | append : section.settings.text_font_color
+  assign item_font_color = 'color-' | append : section.settings.item_font_color
+
+  assign use_carousel = section.settings.use_carousel
+  assign use_carousel_device = section.settings.use_carousel_device
+  assign use_carousel_auto_scroll = section.settings.use_carousel_auto_scroll
+  assign use_carousel_arrows = section.settings.use_carousel_arrows
+  assign use_carousel_manual_scroll = section.settings.use_carousel_manual_scroll
+  assign use_carousel_speed = section.settings.use_carousel_speed | default : "20"
+
+  assign this_show_intro = section.settings.show_intro
+  assign this_intro_heading = section.settings.intro_heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+  assign this_intro_content = section.settings.intro_content | replace : "-break-", "<br />" | replace : "[break]", "<br />"
+
+  assign this_intro_align = section.settings.intro_align
+
+  assign set_max_width = section.settings.max_heading_width
+  assign max_heading_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+  assign set_max_width = section.settings.max_content_width
+  assign max_content_width = 'display:inline-block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+
+  assign scrollbar_option_classes = 'scrollbar-wrapper js-scrollbar-wrapper'
+  assign scrollbar_option_classes = scrollbar_option_classes | append : ' scrollbar-wrapper__always'
+  assign element_per_row_count = section.blocks | size
+
+-%}
+
+<div id="{{ this_section_id }}" class="section-inner {{ this_section_extra_classes }} section-use-carousel-{{ use_carousel }} section-use-carousel-device-{{ use_carousel_device }} section-use-carousel-auto-scroll-{{ use_carousel_auto_scroll }} section-use-carousel-arrows-{{ use_carousel_arrows }} section-use-carousel-manual-scroll-{{ use_carousel_manual_scroll }}">
+{%- liquid
+  if this_show_intro == true and this_intro_heading != blank
+    echo '<div class="[PW]">' | replace: '[PW]', section.settings.page_width
+      echo '<div class="txt-align-[this_intro_align] margin-b-xs">' | replace : '[this_intro_align]', this_intro_align
+        echo '<h2 class="font-fam-normal [font_size_classname] [font_color_classname]">' | replace : '[font_size_classname]', font_size_classname | replace : '[font_color_classname]', font_color_classname
+          echo '<span style="[max_heading_width]">[this_intro_heading]</span>' | replace : '[max_heading_width]', max_heading_width | replace : '[this_intro_heading]', this_intro_heading
+          echo '</h2>'
+      if this_intro_content != blank
+        echo '<p class="font-fam-light font-size-xs [color_classname] margin-t-xxs">' | replace : '[color_classname]', color_classname
+          echo '<span style="[max_content_width]">[this_intro_content]</span>' | replace : '[max_content_width]', max_content_width | replace : '[this_intro_content]', this_intro_content
+        echo '</p>'
+      endif
+      echo '</div>'
+    echo '</div>'
+  endif
+
+  capture final_elements_carousel
+    assign item_dom_el_start = '<li class="grid__item nomargin theme-f-vert theme-g-3xs">'
+    assign item_dom_el_end = '</li>'
+    for block in section.blocks
+      assign block_heading = block.settings.copy_name
+      assign block_heading_function = block.settings.copy_function
+      assign block_heading_emailadres = block.settings.copy_emailadres
+      assign block_link = block.settings.item_link
+      assign section_column_custom_image = block.settings.column_custom_image
+      if section_column_custom_image != blank
+        assign this_image_obj = section_column_custom_image
+      elsif block.settings.predefined_image != blank
+        assign this_image_name = 'icon-' | append: block.settings.predefined_image
+        assign this_image_name = this_image_name | append: '.png'
+        assign this_image_obj = images[this_image_name]
+      endif
+      echo item_dom_el_start
+        echo '<picture class="image-wrapper no-select">'
+          render 'thumbnail-simple', media: this_image_obj, image_alt: block.settings.image.alt, this_classnames: "usp-image"
+        echo '</picture>'
+         echo '<div class="theme-w-100 theme-f-vert theme-f-middle theme-f-center">'
+          if block_heading != blank
+            echo '<h5 class="font-fam-normal font-size-xs font-size-xxs-3xs txt-align-center [item_font_color]">[CONTENT]</h5>' | replace : '[item_font_color]', item_font_color | replace : '[CONTENT]', block_heading
+          endif
+          if block_heading_function != blank
+            echo '<h6 class="font-fam-normal font-size-xs font-size-xxs-3xs txt-align-center [item_font_color]">[CONTENT]</h6>' | replace : '[item_font_color]', item_font_color | replace : '[CONTENT]', block_heading_function
+          endif
+          if block_heading_emailadres != blank
+            echo '<a href="mailto:[CONTENT]" class="font-fam-normal font-size-xs font-size-xxs-3xs txt-align-center [item_font_color]">[CONTENT]</a>' | replace : '[item_font_color]', item_font_color | replace : '[CONTENT]', block_heading_emailadres
+          endif
+        echo '</div>'
+      echo item_dom_el_end
+    endfor
+  endcapture
+
+  capture final_elements_grid
+    for block in section.blocks
+      assign block_heading = block.settings.copy_name
+      assign block_heading_function = block.settings.copy_function
+      assign block_heading_emailadres = block.settings.copy_emailadres
+
+      assign block_link = block.settings.item_link
+      assign section_column_custom_image = block.settings.column_custom_image
+      if section_column_custom_image != blank
+        assign this_image_obj = section_column_custom_image
+      elsif block.settings.predefined_image != blank
+        assign this_image_name = 'icon-' | append: block.settings.predefined_image
+        assign this_image_name = this_image_name | append: '.png'
+        assign this_image_obj = images[this_image_name]
+      endif
+
+      assign item_dom_el_start = '<div class="row-flex-hor__col theme-f-vert theme-g-3xs">'
+      assign item_dom_el_end = '</div>'
+
+      echo item_dom_el_start
+        echo '<picture class="image-wrapper no-select">'
+          render 'thumbnail-simple', media: this_image_obj, image_alt: block.settings.image.alt, this_classnames: "usp-image"
+        echo '</picture>'
+        echo '<div class="theme-w-100 theme-f-vert theme-f-middle theme-f-center">'
+          if block_heading != blank
+            echo '<h5 class="font-fam-normal font-size-xs font-size-xxs-3xs txt-align-center [item_font_color]">[CONTENT]</h5>' | replace : '[item_font_color]', item_font_color | replace : '[CONTENT]', block_heading
+          endif
+          if block_heading_function != blank
+            echo '<h6 class="font-fam-normal font-size-xs font-size-xxs-3xs txt-align-center [item_font_color]">[CONTENT]</h6>' | replace : '[item_font_color]', item_font_color | replace : '[CONTENT]', block_heading_function
+          endif
+          if block_heading_emailadres != blank
+            echo '<a href="mailto:[CONTENT]" class="font-fam-normal font-size-xs font-size-xxs-3xs txt-align-center [item_font_color]">[CONTENT]</a>' | replace : '[item_font_color]', item_font_color | replace : '[CONTENT]', block_heading_emailadres
+          endif
+        echo '</div>'
+      echo item_dom_el_end
+
+    endfor
+  endcapture
+
+  if use_carousel == true and use_carousel_device == 'all'
+    assign show_carousel = true
+    assign show_grid = false
+  endif
+  if use_carousel == true and use_carousel_device == 'mobile'
+    assign x_class_carousel = x_class_carousel | append : ' hide-above-xs'
+    assign x_class_grid = x_class_grid | append : ' show-above-xs'
+    assign show_carousel = true
+    assign show_grid = true
+  endif
+  if use_carousel == false
+    assign x_class_carousel = x_class_carousel | append : ''
+    assign show_carousel = false
+    assign show_grid = true    
+  endif
+
+  if use_carousel_manual_scroll == false
+    assign x_class_carousel = x_class_carousel | append : ' no-pointer-events'
+  endif
+
+  if show_carousel == true
+    echo '<div class="page-width__full [x_class_carousel]">' | replace: '[x_class_carousel]', x_class_carousel
+      echo '<div class="elements-layout__row">'
+        echo '<div class="[scrollbar_option_classes] element-count-[element_per_row_count]">' | replace : '[scrollbar_option_classes]', scrollbar_option_classes | replace : '[element_per_row_count]', element_per_row_count 
+          echo '<div class="scrollbar-inner">'
+            echo '<ul class="js-elements__wrapper elements__items-list element-count-[element_per_row_count]">' | replace : '[element_per_row_count]', element_per_row_count 
+              echo final_elements_carousel
+            echo '</ul>'
+          echo '</div>'
+        echo '</div>'
+        if use_carousel_arrows == true
+            echo '<div class="js-scrollbar-nav-wrapper js-scrollbar-nav-wrapper-left">'
+              echo '<div class="color-black js-scrollbar-nav js-scrollbar-nav-left">'
+                echo '<span>'
+                  render 'theme-icon', icon: 'arrow-left-light'
+                echo '</span>'
+              echo '</div>'
+            echo '</div>'
+            echo '<div class="js-scrollbar-nav-wrapper js-scrollbar-nav-wrapper-right">'
+              echo '<div class="color-black js-scrollbar-nav js-scrollbar-nav-right">'
+                echo '<span>'
+                  render 'theme-icon', icon: 'arrow-right-light'
+                echo '</span>'
+              echo '</div>'
+            echo '</div>'
+        endif
+        echo '<input class="js-set-carousel-speed" type="hidden" value="[use_carousel_speed]">' | replace : '[use_carousel_speed]', use_carousel_speed
+      echo '</div>'
+    echo '</div>'
+  endif
+  if show_grid == true
+      echo '<div class="[PW] page-m-width [x_class_grid]">' | replace: '[x_class_grid]', x_class_grid | replace: '[PW]', section.settings.page_width  
+        echo '<div class="theme-f-hor theme-g-3xs">'
+          echo final_elements_grid
+        echo '</div>'
+      echo '</div>'
+  endif
+-%}
+
+{%- capture bloated_css -%}
+  <style>
+    #{{ this_section_id }} .elements-layout__row { }
+    #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__desktop.element-count-{{ element_per_row_count }} .scrollbar-inner ul,
+    #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__always.element-count-{{ element_per_row_count }} .scrollbar-inner ul { width:unset; }
+    #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__desktop .scrollbar-inner .grid__item,
+    #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__always .scrollbar-inner .grid__item { width:{{ section.settings.item_width_mobile }}; }
+    #{{ this_section_id }} .elements-layout__row .grid__item .image-wrapper { aspect-ratio:{{ section.settings.item_ratio }}; }
+    @media screen and (min-width:767px) {
+      #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__desktop .scrollbar-inner .grid__item,
+      #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__always .scrollbar-inner .grid__item { width:{{ section.settings.item_width_desktop }}; }
+    }
+    @media screen and (min-width:1600px) {
+      #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__desktop .scrollbar-inner .grid__item,
+      #{{ this_section_id }} .elements-layout__row .scrollbar-wrapper.scrollbar-wrapper__always .scrollbar-inner .grid__item { width:100%; }
+    }    
+    #{{ this_section_id }} .row-flex-hor__col .image-wrapper { aspect-ratio:{{ section.settings.item_ratio }}; }
+
+  </style>
+{%- endcapture -%}
+{%- render'inline-css',input_css:bloated_css -%}
+
+</div>
+{%- schema %}
+{
+  "name": "Team Members",
+  "tag": "section",
+  "class": "theme-section__visual-rows theme-section__our-team",
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"},
+        {"type":"select","id":"row_spacing_inner_top","default":"none","label":"Inner Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"none","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"section_background_color","default":"white","label":"Background Color", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [{ "value":"page-width--narrow","label":"Medium"}, { "value":"page-width","label":"Wide"},{ "value":"no-page-width","label":"Fullscreen" } ] },
+        {"type":"text","id":"item_ratio","default":"1/1","label":"Item Ratio"},
+        {"type":"text","id":"item_width_mobile","default":"34vw","label":"Item Width Mobile"},
+        {"type":"text","id":"item_width_desktop","default":"100%","label":"Item Width Desktop"},
+        
+    { "type": "header", "content": "Content"},
+        {"type":"checkbox","id":"show_intro","default":true,"label":"Show Intro"},
+        { "type": "text","id":"intro_heading","default":"Title","label":"Title"},
+        { "type": "text","id":"intro_content","default":"Lorem Ipsum","label":"Content"},
+        {"type":"select","id":"intro_align","default":"center","label":"Align", "options": [ { "value":"left","label":"Left"}, { "value":"center","label":"Center"}, { "value":"right","label":"Right"} ] },
+        {"type":"select","id":"heading_font_size","default":"lg","label":"Title Font Size", "options": [ { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"} ] },
+        {"type":"select","id":"heading_font_color","default" : "red", "label" : "Font color", "options":[ { "value" : "white", "label" : "White"}, { "value" : "black", "label" : "Black"}, { "value" : "red", "label" : "Red" } ] },
+        {"type":"select","id":"text_font_color","default" : "red", "label" : "Font color", "options":[ { "value" : "white", "label" : "White"}, { "value" : "black", "label" : "Black"}, { "value" : "red", "label" : "Red" } ] },
+        { "type": "text","id":"max_heading_width","default":"15","label":"Max Title Width"},
+        { "type": "text","id":"max_content_width","default":"50","label":"Max Content Width"},
+
+    { "type": "header", "content": "Carousel"},
+        {"type":"checkbox","id":"use_carousel","default":false,"label":"Use carousel"},
+        {"type":"select","id":"use_carousel_device","default":"all","label":"Show carousel on device", "options":[ { "value" : "all", "label" : "All"}, { "value" : "mobile", "label" : "Mobile only" } ] },
+        {"type":"checkbox","id":"use_carousel_auto_scroll","default":false,"label":"Use carousel autoscroll"},
+        {"type":"checkbox","id":"use_carousel_arrows","default":false,"label":"Show carousel arrows"},
+        {"type":"checkbox","id":"use_carousel_manual_scroll","default":false,"label":"Use carousel manual scroll"},
+        {"type":"select","id":"item_font_color","default" : "white", "label" : "Font color", "options":[ { "value" : "white", "label" : "White"}, { "value" : "black", "label" : "Black"}, { "value" : "red", "label" : "Red" } ] },
+        { "type": "text","id":"use_carousel_speed","default":"20","label":"Pixels per second" }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.collage.blocks.image.name",
+      "settings": [
+        { "type": "image_picker","id":"column_custom_image","label":"Image Visual"},
+        { "type":"text","id":"copy_name","default":"Name","label":"Name" },
+        { "type":"text","id":"copy_function","default":"Function","label":"Function" },
+        { "type":"text","id":"copy_emailadres","default":"Email","label":"Email" }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Team Members",
+      "blocks": [
+        { "type": "column" }
+      ]
+    }
+  ]
+}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '          render ''thumbnail-simple'', media: this_image_obj, image_alt:
+    block.settings.image.alt | escape, this_classnames: "usp-image"'
+  to: '          render ''thumbnail-simple'', media: this_image_obj, image_alt: block.settings.image.alt,
+    this_classnames: "usp-image"'
+  position: 5366..5491
+- from: '          render ''thumbnail-simple'', media: this_image_obj, image_alt:
+    block.settings.image.alt | escape, this_classnames: "usp-image"'
+  to: '          render ''thumbnail-simple'', media: this_image_obj, image_alt: block.settings.image.alt,
+    this_classnames: "usp-image"'
+  position: 7523..7648
+{%- endcomment -%}

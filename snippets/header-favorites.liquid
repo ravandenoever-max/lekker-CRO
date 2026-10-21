@@ -1,0 +1,11 @@
+{%- if use_main_menu_icons == 'true' -%}
+  <a href="{{ settings.page_favorites_url }}" class="header__icon header__icon--favorites focus-inset">
+    {%- render 'theme-icon', icon: 'header-icon-favorites' -%}
+    <div class="favorites-count-bubble"></div>
+  </a>
+{%- else -%}
+  <a href="{{ settings.page_favorites_url }}" class="header__icon header__icon--favorites link link--text focus-inset">
+    <span class="header-label-favorites">favorites</span>
+    <div class="favorites-count-bubble"></div>
+  </a>
+{%- endif -%}

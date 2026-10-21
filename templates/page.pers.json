@@ -1,0 +1,323 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact-header": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/lekker-company-press-banner.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 25,
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": true,
+            "sub_heading": "",
+            "heading": "Lekker in de pers",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": false,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "50",
+        "slide_ratio_desktop": "33",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "efc0ac6d-80de-4620-947e-cf6fb9f740e5": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--16685859963133__efc0ac6d-80de-4620-947e-cf6fb9f740e5-16678276748861b4ee-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>Soms verschijnen we op video, in een blaadje of op een blog. Hieronder onze bonte verzameling. Vaak nog onder de naam ‘lekkerineenpotje’, de naam van ons merk voordat we het in 2020 omtoverden tot The lekker Company.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16685859963133__efc0ac6d-80de-4620-947e-cf6fb9f740e5-16678276748861b4ee-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "3602da8a-a86c-4922-9a94-f61961b02cec": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--16685859963133__3602da8a-a86c-4922-9a94-f61961b02cec-16678280266e0bd378-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Lekker_Press.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/Lekker_Press.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "Slide content",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": false,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16685859963133__3602da8a-a86c-4922-9a94-f61961b02cec-16678280266e0bd378-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "md",
+        "row_spacing_outer_bottom": "md",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "31",
+        "slide_ratio_desktop": "31",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "e0fadd16-3376-4ef9-ac5d-fcdfb34171d1": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--16685859963133__e0fadd16-3376-4ef9-ac5d-fcdfb34171d1-16678276748861b4ee-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Video",
+            "block_content": "<p>- <a href=\"https://www.vice.com/nl/partners/asr-beleggingscampagne/voor-jonge-beleggers-en-ondernemers-staat-duurzaamheid-centraal\" target=\"_blank\" title=\"https://www.vice.com/nl/partners/asr-beleggingscampagne/voor-jonge-beleggers-en-ondernemers-staat-duurzaamheid-centraal\">Interview met VICE</a></p><p>- <a href=\"https://www.youtube.com/watch?v=pSFlMmEyQdQ&t=1s\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=pSFlMmEyQdQ&t=1s\">De leuke heren van Fast Moving Targets</a></p><p>- <a href=\"https://www.youtube.com/watch?v=XXJQ5aHM74s&feature=emb_logo\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=XXJQ5aHM74s&feature=emb_logo\">Interview met DUIC </a></p><p>- <a href=\"https://www.youtube.com/watch?v=y1CM027HWkU\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=y1CM027HWkU\">Video ABN AMRO DJ100</a> </p><p><a href=\"https://www.duurzaam-ondernemen.nl/dewi-van-de-waeter-the-lekker-company-stop-met-aluminium-onder-je-oksels/\" target=\"_blank\" title=\"https://www.duurzaam-ondernemen.nl/dewi-van-de-waeter-the-lekker-company-stop-met-aluminium-onder-je-oksels/\">- Duurzaam Ondernemen</a></p><p><a href=\"https://www.youtube.com/watch?v=TYLQbUPD920&t=12s\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=TYLQbUPD920&t=12s\">- VanSelfie</a></p><p><a href=\"https://www.youtube.com/watch?v=TYLQbUPD920&t=12s\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=TYLQbUPD920&t=12s\">- Fast moving Targets</a></p><p><a href=\"https://www.youtube.com/watch?v=ZD6rxP5JCVw&t=11s\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=ZD6rxP5JCVw&t=11s\">-TedX</a></p><p><a href=\"https://www.youtube.com/watch?v=y6lZzZvgzLQ\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=y6lZzZvgzLQ\">- Sustainable Innovators</a></p><p>- Dewi was finalist bij de TEdX Amsterdam Starup Awards in 2019</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "400",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "540c3697-fd6a-4e95-8d77-f60385cffbc0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Interviews",
+            "block_content": "<p>- <a href=\"https://business-bubbles.com/nl/powervrouw-dewi-strijdt-voor-transparantie-in-de-cosmetica-industrie/\" target=\"_blank\" title=\"https://business-bubbles.com/nl/powervrouw-dewi-strijdt-voor-transparantie-in-de-cosmetica-industrie/\">Met Business Bubbles</a></p><p><a href=\"https://retailtrends.nl/news/60006/powervrouw-dewi-van-de-waeter-the-lekker-company\" target=\"_blank\" title=\"https://retailtrends.nl/news/60006/powervrouw-dewi-van-de-waeter-the-lekker-company\">- RetialTrends</a></p><p>- <a href=\"https://www.dewereldwijven.com/2019/07/26/duurzaam-ondernemen-deodorant-vegan-albert-heijn/\" target=\"_blank\" title=\"https://www.dewereldwijven.com/2019/07/26/duurzaam-ondernemen-deodorant-vegan-albert-heijn/\">Met de Wereldwijven</a></p><p><a href=\"https://www.duurzaam-ondernemen.nl/dewi-van-de-waeter-we-willen-de-tony-chocolonely-van-de-cosmetica-worden/\" target=\"_blank\" title=\"https://www.duurzaam-ondernemen.nl/dewi-van-de-waeter-we-willen-de-tony-chocolonely-van-de-cosmetica-worden/\">- Duurzaam Ondernemen</a></p><p><a href=\"https://open.spotify.com/episode/5zCQTTYp051N4tCXqxYh3L?si=6c25abcd62a94114&nd=1&dlsi=1638b541b85247c0\" target=\"_blank\" title=\"https://open.spotify.com/episode/5zCQTTYp051N4tCXqxYh3L?si=6c25abcd62a94114&nd=1&dlsi=1638b541b85247c0\">- Semi Interessant part 1 </a></p><p><a href=\"https://open.spotify.com/episode/4MyZq3faVcM8LiUuKUScjW?si=47c842ccd2f34cc0&nd=1&dlsi=305d7bc8ee6341a2\" target=\"_blank\" title=\"https://open.spotify.com/episode/4MyZq3faVcM8LiUuKUScjW?si=47c842ccd2f34cc0&nd=1&dlsi=305d7bc8ee6341a2\">- Semi Interessant part 2 </a></p><p><a href=\"https://open.spotify.com/episode/2h0cuWIw4sRdk7WrImkti6?si=b7b9a537a7e34a1f&nd=1&dlsi=f4ca2e2ba63d4afa\" target=\"_blank\" title=\"https://open.spotify.com/episode/2h0cuWIw4sRdk7WrImkti6?si=b7b9a537a7e34a1f&nd=1&dlsi=f4ca2e2ba63d4afa\">- Positive Impact </a></p><p><a href=\"https://open.spotify.com/episode/080A879YXHbcBNyRfNYjdN?si=1e97b3c5598f4785&nd=1&dlsi=c38713931fa74e8e\" target=\"_blank\" title=\"https://open.spotify.com/episode/080A879YXHbcBNyRfNYjdN?si=1e97b3c5598f4785&nd=1&dlsi=c38713931fa74e8e\">- Gerhard te Velde - Groeivoer</a></p><p><a href=\"https://open.spotify.com/episode/3i89VP5DgK3ytjD2I9Yyk2?si=8efa5929ddf44b6a&nd=1&dlsi=b4de5c076883432b\" target=\"_blank\" title=\"https://open.spotify.com/episode/3i89VP5DgK3ytjD2I9Yyk2?si=8efa5929ddf44b6a&nd=1&dlsi=b4de5c076883432b\">- Podcast Aardkloot</a></p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "8a2763ac-f00c-4eb6-a7ce-41d3d1e8955d": {
+          "type": "text_column",
+          "disabled": true,
+          "settings": {
+            "block_heading": "Reviews",
+            "block_content": "<p>Review van Ecowijs <a href=\"https://ecowijs.nl/review-lekker-in-een-potje-natuurlijke-deodorant/\">https://ecowijs.nl/review-lekker-in-een-potje-natuurlijke-deodorant/</a> [break]Review van Zolea: <a href=\"https://zolea.be/review-lekkerineenpotje-deodorant-winactie/\">https://zolea.be/review-lekkerineenpotje-deodorant-winactie/</a> [break]Review van Sjaartje: <a href=\"https://sjaartje.nl/2018/10/deo-uit-een-potje/\">https://sjaartje.nl/2018/10/deo-uit-een-potje/</a> [break]Review van Huidnhaar: <a href=\"https://huidnhaar.nl/beauty/review-lekker-in-een-potje/\">https://huidnhaar.nl/beauty/review-lekker-in-een-potje/</a> [break]Review van Nannique: <a href=\"https://bosbeauty.nl/review-deodorant-lekkerineenpotje-van-nannique/\">https://bosbeauty.nl/review-deodorant-lekkerineenpotje-van-nannique/</a> [break]Review van Glamourista: <a href=\"https://www.glamourista.nl/ervaring-lekker-in-een-potje/\">https://www.glamourista.nl/ervaring-lekker-in-een-potje/</a> [break]Review (English) van Annaywentyseven: <a href=\"https://www.annatwentyseven.com/2019/01/lekkerineenpotje-review.html\">https://www.annatwentyseven.com/2019/01/lekkerineenpotje-review.html</a> [break]Review van DIYDiva: <a href=\"https://diydiva.nl/goede-leven/verantwoorde-deodorant/\">https://diydiva.nl/goede-leven/verantwoorde-deodorant/</a> [break]Review van Heartfullyconcious: <a href=\"http://www.heartfullyconscious.be/index.php/2019/12/30/review-deo-van-lekker-in-een-potje/\">http://www.heartfullyconscious.be/index.php/2019/12/30/review-deo-van-lekker-in-een-potje/</a> [break]Review van LifeofMaart: <a href=\"https://www.lifeofmaart.nl/post/review-solid-deodorant-niet-alleen-beter-voor-het-milieu-maar-ook-voor-jouw-lichaam\">https://www.lifeofmaart.nl/post/review-solid-deodorant-niet-alleen-beter-voor-het-milieu-maar-ook-voor-jouw-lichaam</a> [break]Review Enjoy the Vegan Movement: <a href=\"https://www.enjoytheveganmovement.nl/blog/vegan-deodorant-om-fris-mee-voor-de-dag-te-komen/\">https://www.enjoytheveganmovement.nl/blog/vegan-deodorant-om-fris-mee-voor-de-dag-te-komen/</a> [break]Review van Floor's Groene Hoekje: <a href=\"https://floorsgroenehoekje.nl/2019/10/04/lekker-in-een-potje-natuurlijke-vegan-deodorant/\">https://floorsgroenehoekje.nl/2019/10/04/lekker-in-een-potje-natuurlijke-vegan-deodorant/</a> [break]Reistop5: <a href=\"https://reistop5.com/5x-duurzame-natuurlijke-beauty-producten-voor-mee-op-reis/\">https://reistop5.com/5x-duurzame-natuurlijke-beauty-producten-voor-mee-op-reis/</a> [break]Review van Wayeoflife: <a href=\"https://www.wayeoflife.com/post/a-deodorant-that-got-me-thinking\">https://www.wayeoflife.com/post/a-deodorant-that-got-me-thinking</a> [break]Review van Froy: <a href=\"https://froy.wordpress.com/2020/05/09/the-lekker-company/\">https://froy.wordpress.com/2020/05/09/the-lekker-company/</a></p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "2f8f97be-e1f1-447d-aaac-556cc631b542": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikelen",
+            "block_content": "<p><a href=\"https://www.deondernemer.nl/innovatie/startup-the-lekker-company-viert-verkoop-van-miljoenste-potje-deodorant~e2bf28b\" target=\"_blank\" title=\"https://www.deondernemer.nl/innovatie/startup-the-lekker-company-viert-verkoop-van-miljoenste-potje-deodorant~e2bf28b\">- De Ondernemer</a></p><p><a href=\"https://www.biojournaal.nl/article/9524144/van-marktkraam-naar-winkelschap-the-lekker-company-lanceert-duurzame-lippenbalsem-bij-kruidvat/\" target=\"_blank\" title=\"https://www.biojournaal.nl/article/9524144/van-marktkraam-naar-winkelschap-the-lekker-company-lanceert-duurzame-lippenbalsem-bij-kruidvat/\">- Bio Journaal </a></p><p><a href=\"https://fonkmagazine.nl/artikelen/sustainable/the-lekker-company-plant-een-klein-bos-in-nederland-en-borneo-64997.html\" target=\"_blank\" title=\"https://fonkmagazine.nl/artikelen/sustainable/the-lekker-company-plant-een-klein-bos-in-nederland-en-borneo-64997.html\">- Fonk Magazine</a></p><p><a href=\"https://www.menshealth.com/nl/grooming/g43767615/natuurlijke-deodorant-mannen/\" target=\"_blank\" title=\"https://www.menshealth.com/nl/grooming/g43767615/natuurlijke-deodorant-mannen/\">- Men's Health</a></p><p><a href=\"https://www.biojournaal.nl/article/9510634/miljoenste-potje-deodorant-verkocht-na-bescheiden-start-aan-de-keukentafel/\" target=\"_blank\" title=\"https://www.biojournaal.nl/article/9510634/miljoenste-potje-deodorant-verkocht-na-bescheiden-start-aan-de-keukentafel/\">- Bio Journaal: Miljoenste potje</a></p><p><a href=\"https://www.oudersvannu.nl/producten/zwanger-en-last-van-zweet-onder-de-borsten-6-tips~ec278ce?referrer=https%3A%2F%2Fwww.google.com%2F\" target=\"_blank\" title=\"https://www.oudersvannu.nl/producten/zwanger-en-last-van-zweet-onder-de-borsten-6-tips~ec278ce?referrer=https%3A%2F%2Fwww.google.com%2F\">- Ouders van Nu</a></p><p><a href=\"https://www.biojournaal.nl/article/9502637/frisse-oksels-voor-valentijn/\" target=\"_blank\" title=\"https://www.biojournaal.nl/article/9502637/frisse-oksels-voor-valentijn/\">- Bio Journaal: Valentijn</a></p><p><a href=\"https://www.womenshealthmag.com/nl/beauty/g40349937/zonnebrandcreme-gezicht-natuurlijk-milieuvriendelijk/\" target=\"_blank\" title=\"https://www.womenshealthmag.com/nl/beauty/g40349937/zonnebrandcreme-gezicht-natuurlijk-milieuvriendelijk/\">- Women's Health</a></p><p><a href=\"https://www.hetkanwel.nl/natuurlijke-zonnebrandcreme/\" target=\"_blank\" title=\"https://www.hetkanwel.nl/natuurlijke-zonnebrandcreme/\">- HetkanWEL</a></p><p><a href=\"https://www.womenshealthmag.com/nl/beauty/g27284341/natuurlijke-deodorant-die-echt-werkt/\" target=\"_blank\" title=\"https://www.womenshealthmag.com/nl/beauty/g27284341/natuurlijke-deodorant-die-echt-werkt/\">- Women's Health: Natuurlijke deodorant die echt werken</a></p><p><a href=\"https://www.duurzaam-ondernemen.nl/the-lekker-company-is-officieel-een-bcorp/\" target=\"_blank\" title=\"https://www.duurzaam-ondernemen.nl/the-lekker-company-is-officieel-een-bcorp/\">- Duurzaam Ondernemen: Bcorp</a></p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "200",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "497ca29c-f207-40a2-9858-2cd121b87b4e": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Mist er nog iets? [break]Laat het ons weten!",
+            "block_content": "",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "200",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16685859963133__e0fadd16-3376-4ef9-ac5d-fcdfb34171d1-16678276748861b4ee-0",
+        "540c3697-fd6a-4e95-8d77-f60385cffbc0",
+        "8a2763ac-f00c-4eb6-a7ce-41d3d1e8955d",
+        "2f8f97be-e1f1-447d-aaac-556cc631b542",
+        "497ca29c-f207-40a2-9858-2cd121b87b4e"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xl",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "contact-header",
+    "efc0ac6d-80de-4620-947e-cf6fb9f740e5",
+    "3602da8a-a86c-4922-9a94-f61961b02cec",
+    "e0fadd16-3376-4ef9-ac5d-fcdfb34171d1"
+  ]
+}

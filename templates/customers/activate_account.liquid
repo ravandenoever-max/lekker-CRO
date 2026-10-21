@@ -1,0 +1,55 @@
+<div class="full-page-wrapper-maxed customer activate full-page-max-h">
+  <div class="padding-b-lg padding-t-lg">
+    <h1 tabindex="-1" class="font-fam-light font-size-xl color-black txt-lowercase">{{ 'customer.activate_account.title' | t }}</h1>
+    <div class="account-form-wrapper">
+      <p class="font-fam-light font-sizemd color-black txt-lowercase margin-t-xxs margin-b-xxs">{{ 'customer.activate_account.subtext' | t }}</p>
+      {%- form 'activate_customer_password' -%}
+        {%- if form.errors -%}
+          <h2 class="form__message" tabindex="-1" autofocus>
+            {%- render 'theme-icon', icon: 'icon-error' -%}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+          <ul>
+            {%- for field in form.errors -%}
+              <li>
+                {%- if field == 'form' -%}
+                  {{ form.errors.messages[field] }}
+                {%- else -%}
+                  <a href="#{{ field }}">
+                    {{ form.errors.translated_fields[field] | capitalize }}
+                    {{ form.errors.messages[field] }}
+                  </a>
+                {%- endif-%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        <div class="field margin-b-xs">
+          <input type="password" name="customer[password]" id="password" autocomplete="new-password" placeholder="{{ 'customer.activate_account.password' | t }}"
+            {% if form.errors contains 'password' %} aria-invalid="true" aria-describedby="password-error" {% endif %}>
+          <label for="password">{{ 'customer.activate_account.password' | t }}</label>
+          {%- if form.errors contains 'password' -%}
+            <small id="password-error" class="form__message">
+              {%- render 'theme-icon', icon: 'icon-error' -%}
+              {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}
+            </small>
+          {%- endif -%}
+        </div>
+        <div class="field margin-b-xs">
+          <input type="password" name="customer[password_confirmation]" id="password_confirmation" autocomplete="new-password" placeholder="{{ 'customer.activate_account.password_confirm' | t }}"
+            {% if form.errors contains 'password' %} aria-invalid="true" aria-describedby="password_confirmation-error" {% endif %}>
+          <label for="password_confirmation">{{ 'customer.activate_account.password_confirm' | t }}</label>
+          {%- if form.errors contains 'password_confirmation' -%}
+            <small id="password_confirmation-error" class="form__message">
+              {%- render 'theme-icon', icon: 'icon-error' -%}
+              {{ form.errors.translated_fields['password_confirmation'] | capitalize }} {{ form.errors.messages['password_confirmation'] }}
+            </small>
+          {%- endif -%}
+        </div>
+        <button class="theme-button theme-button__round-medium theme-button-hover__blue-grey-blue theme-button__red-white-red"><span>{{ 'customer.activate_account.submit' | t }}</span></button>
+        <button name="decline" class="theme-button theme-button__round-small theme-button-hover__red-white-red theme-button__red-red-white"><span>{{ 'customer.activate_account.cancel' | t }}</span></button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,302 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Foto_blog_zonnebrand.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/Foto_blog_zonnebrand.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Zonnebrand: de enige anti-rimpelcrème die werkt",
+            "block_content": "<p>De zomer is in aantocht en dat betekent dat we ons allemaal voorbereiden op lange dagen op het strand, in het park of op het terras. Terwijl we genieten van de zon, is het belangrijk om onze huid te beschermen tegen schadelijke UV-stralen. Zonnebrandcremè is niet alleen essentieel voor het voorkomen van zonnebrand, het is ook het middel bij uitstek om huidveroudering tegen te gaan. Niet alleen in de zomer is het belangrijk om onze huid te beschermen; het gehele jaar door kan jouw huid deze bescherming wel gebruiken en zorgen voor een stralende huid.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "5c16352e-030f-4034-b932-09952899f207": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Het proces van huidveroudering",
+            "block_content": "<p>Huidveroudering is een natuurlijk proces dat wordt veroorzaakt door de afbraak van collageen en elastine in onze huid. Deze eiwitten zijn verantwoordelijk voor het behoud van de stevigheid en elasticiteit van onze huid. Wanneer we worden blootgesteld aan UV-straling, wordt de afbraak van collageen en elastine versneld. Dit resulteert in (lach)rimpels, fijne lijntjes en een doffe huid. Dit is helemaal niet erg, want rimpels zijn wat ons betreft een teken van een mooi leven, maar het gebruik van zonnebrandcrème is wel een effectieve manier om de afbraak van collageen en elastine te vertragen. Door regelmatig zonnebrandcrème te gebruiken, wordt onze huid beschermd tegen UV-straling. Dit voorkomt niet alleen zonnebrand, maar ook de schade die UV-straling aan onze huidcellen kan toebrengen. <\/p><p>UV-straling is een van de belangrijkste oorzaken van (vroegtijdige) huidveroudering. Wanneer onze huid aan UV-straling wordt blootgesteld, treedt er schade op in de vorm van vrije radicalen. Deze vrije radicalen kunnen de huidcellen beschadigen en leiden tot tekenen van huidveroudering. <\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "onze deos",
+            "button_size": "button_small",
+            "button_color": "button_pink",
+            "button_link": "shopify:\/\/collections\/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/hond_met_rimpels.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Vier je rimpels",
+        "this_content": "<p>Het gebruik van zonnebrandcrème kan helpen bij het voorkomen van deze schade. Zonnebrandcrème beschermt de huid doormiddel van een UV-filter tegen UV-straling en voorkomt daarmee dat er vrije radicalen ontstaan. Hierdoor kan de huid gezond blijven en er langer jonger uitzien. In onze zonnebrand zit een minerale UV-filter. Een minerale UV-filter is een type zonnebrandcrème dat zijn bescherming biedt door middel van natuurlijke mineralen, zoals zinkoxide en titaniumdioxide. In <a href=\"https:\/\/thelekkercompany.com\/blogs\/personal-care\/wat-zit-er-in-de-lekker-natuurlijke-zonnebrandcreme\" title=\"Blog: Wat zit er in Lekker's natuurlijke zonnebrandcrème?\"><strong>deze blog<\/strong><\/a><strong> <\/strong>lees je meer over deze mineralen.<\/p><p>Daarnaast kan zonnebrandcrème ook helpen bij het voorkomen van hyperpigmentatie zoals donkere vlekken en ouderdomsvlekken. Deze vlekjes ontstaan vaak als gevolg van blootstelling aan UV-straling. Bestaande rimpels en vlekjes kunnen niet verdwijnen, dit hoeft ook niet want ze zijn een prachtige manier om te laten zien hoeveel jij hebt genoten van je leven. Vier je rimpels! Ze worden soms wel minder zichtbaar. Mocht je ze toch willen voorkomen (eerlijk: dat snappen we dan ook weer wel), dan helpt zonnebrand met een SPF echt als je hem in je routine stopt. <\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "84c2d3ba-b370-4e7e-95ae-d5fe93eb6b95": {
+      "type": "theme-section__text",
+      "blocks": {
+        "1c1a9439-6d4e-4cf4-9e44-e8a368ff30e5": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Zonnebrand als er geen zon is?",
+            "block_content": "<p>Veel mensen denken dat zonnebrandcrème alleen nodig is op zonnige dagen of tijdens het zonnebaden op het strand, maar niets is minder waar. De zonnestralen die verantwoordelijk zijn voor huidschade en huidveroudering, zijn het hele jaar door aanwezig, zelfs op bewolkte dagen. Dit komt omdat UV-straling door wolken heen kan dringen en onze huid kan bereiken. Het is daarom belangrijk om je huid dagelijks te beschermen met een zonnebrandcrème met een SPF van ten minste 30. Een leuk feitje: je kunt het beste eerst je moisturizer aanbrengen, even goed in laten trekken en dan pas je zonnebrandcrème. Dit wordt vaak andersom gedaan, maar dit is volgens huidexpert en onderzoeksarts Dr. Jetske Ultee de beste manier in je routine.<\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "onze deos",
+            "button_size": "button_small",
+            "button_color": "button_pink",
+            "button_link": "shopify:\/\/collections\/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "1c1a9439-6d4e-4cf4-9e44-e8a368ff30e5"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "0a46cf18-1372-4376-870c-eb26140b22ae": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/zonnebrand_creme_zonnetje.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "",
+        "this_content": "<p>Rimpels zijn prima, die je heb je verdiend, maar het is wel<br\/>fijn om er zo oud uit te zien als je bent. Rimpels verdwijnen niet met een crème, dat kan gewoon niet. Maar zonnebrand vertraagt wel de vorming van lijntjes. <a href=\"https:\/\/thelekkercompany.com\/collections\/zonnebrand\/products\/zonnebrand\" title=\"Zonnebrandcrème SPF30 van The Lekker Company\"><strong>Lekker's zonnebrand<\/strong> <\/a>met SPF 30<strong> <\/strong>is het hele jaar door dus je beste vriend. En zeg nou eens eerlijk? Wie wilt er niet voor altijd genieten van een zacht en mooi babyhuidje? Go protect your skin, baby!<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "5c16352e-030f-4034-b932-09952899f207",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "84c2d3ba-b370-4e7e-95ae-d5fe93eb6b95",
+    "0a46cf18-1372-4376-870c-eb26140b22ae",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

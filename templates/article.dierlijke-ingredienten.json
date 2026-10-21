@@ -1,0 +1,285 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/foto_lipbalm_compressed_blog_haaienvinnen.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/foto_lipbalm_compressed_blog_haaienvinnen.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Welke dierlijke ingrediënten zitten in jouw lippenbalsem?",
+            "block_content": "<p>Wie houdt er niet van een fijne lippenbalsem? Maar wist je dat de meeste van deze potjes en sticks vaak niet-vegan ingrediënten bevatten? Dat roept vragen op: wat of <em>wie<\/em> smeer ik eigenlijk op mijn lippen? We hebben de meest voorkomende dierlijke ingrediënten in lippenbalsem op een rij gezet, met de INCI-vertaling (internationale cosmetica-terminologie) zodat je jouw lippenbalsem even kunt checken. <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Van honing tot haaienvinnen",
+            "block_content": "<p><strong>Bijenwas<\/strong> is een van de meest voorkomende dierlijke ingrediënten in lippenbalsems. Het wordt gewonnen uit bijenkorven en creëert een beschermende laag op de lippen. Maar het oogsten van dit zoete elixer is een <a href=\"https:\/\/www.shoplikeyougiveadamn.nl\/blogs\/de-niet-zo-zoete-waarheid-achter-honing-en-bijenwas\/bl-317\"><span style=\"text-decoration:underline\">niet-zo-zoet verhaal<\/span><\/a>. <em>Bijenwas wordt in ingrediëntenlijsten ook wel aangeduid als “Cera Alba”, “Cera Flava” of “beeswax”. <\/em><br\/>-break-<br\/><strong>Honing<\/strong> is ook populair als ingrediënt in lippenbalsems, vanwege zijn hydraterende eigenschappen. Maar het oogsten van honing kan bijenpopulaties uitputten en hun leefomgeving aantasten <a href=\"https:\/\/www.shoplikeyougiveadamn.nl\/blogs\/de-niet-zo-zoete-waarheid-achter-honing-en-bijenwas\/bl-317\">(bron).<\/a> Smaakt lekker, maar honing niet gebruiken voelt dan weer lekkerder.<em> Honing wordt in ingrediëntenlijsten ook wel aangeduid als “Mel”.<\/em><\/p><p>-break-<\/p><p><strong>Lanoline<\/strong>, een vetachtige substantie gewonnen uit schapenwol, is ook vaak te vinden in lippenbalsems. Het heeft hydraterende eigenschappen en het vermogen om vocht vast te houden. Voor de productie het wolvet worden schapen gebruikt. Het exploiteren van schapen is per definitie niet veganistisch.Of de schapen in kwestie diervriendelijk geschoren worden is lastig te achterhalen. <em>Lanoline wordt in ingrediëntenlijsten ook wel aangeduid als “lanolin”.<\/em><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "341b18db-4f30-48c8-b378-ff6111966d22": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>Carmine<\/strong>, een rode kleurstof gewonnen uit de Cochenilleluis, kan ook in lippenbalsems (en in roze koeken!) voorkomen. Je leest het goed, een luis. <em>Karmijn wordt in ingrediëntenlijsten ook wel aangeduid als: “carminic acid”, “cochineal”, “natural red 4”, “E120”, of “C.I. 75470”.<\/em><\/p><p>-break-<\/p><p><strong>Schellak<\/strong>, een natuurlijke hars gewonnen uit de afscheidingen van de Lakkewants, wordt soms gebruikt in lippenbalsems vanwege zijn glanzende eigenschappen en het vermogen om de lippen te beschermen. Bizar idee: Voor de productie van 1 kg schellak worden rond de 300.000 insecten gedood (<a href=\"https:\/\/www.animalrights.nl\/kende-jij-deze-verborgen-dierlijke-ingredi%C3%ABnten-al\"><span style=\"text-decoration:underline\">bron<\/span><\/a>). <em>Schellak wordt in ingrediëntenlijsten ook wel aangeduid als ''shellac''.<\/em><br\/>-break-<br\/><strong>Oleic Acid,<\/strong> is vaak (maar niet altijd!) afkomstig van dierlijke vetten en wordt veel gebruikt in niet-natuurlijke lippenbalsems. Je kan altijd naar het vega(n) logo zoeken op de verpakking als je twijfelt, of de fabrikant even vragen of de oleic acid in kwestie vegan is.<em> Oleic acid en derivaten worden in ingrediëntenlijsten ook wel aangeduid als “oleyl stearate”, “oleyl oleate”, “tallow” of “talg”.<\/em><\/p><p>-break-<\/p><p><strong>Squalene en Squalane, <\/strong>meestal afkomstig van de levers van haaien en vaak te vinden in lippenbalsem. Er bestaat ook plantaardige squalane. Deze is meestal op basis van olijven of graan. Als er niet expliciet bij staat of de squalane vegan is, kun je het altijd navragen. <em>Squalene en Squalane<\/em><em><strong> <\/strong><\/em><em>worden in ingrediëntenlijsten ook wel aangeduid als “squalene”.<\/em><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0",
+        "341b18db-4f30-48c8-b378-ff6111966d22"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/TheLekkerCompany_NaturalLipBalm_RaspberryLemonade_10.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Er zijn ook opties zonder dierlijke ingrediënten",
+        "this_content": "<p>Hoewel sommige lippenbalsems dierlijke ingrediënten bevatten vanwege hun functionele eigenschappen, zijn er tegenwoordig fijne veganistische en dierproefvrije alternatieven beschikbaar die dezelfde of vergelijkbare resultaten opleveren. <\/p><p>Dus, heb jij liever een vegan lippenbalsem? Dan weet je nu welke ingrediënten je kunt vermijden. Gelukkig zijn er zat alternatieven: neem bijvoorbeeld <a href=\"https:\/\/thelekkercompany.com\/products\/raspberry-lemonade-lip-balm\" title=\"https:\/\/thelekkercompany.com\/products\/raspberry-lemonade-lip-balm\"><strong>Raspberry Lemonade<\/strong><\/a> of<strong> <\/strong><a href=\"https:\/\/thelekkercompany.com\/products\/orange-vanilla-swirl-lip-balm\" title=\"https:\/\/thelekkercompany.com\/products\/orange-vanilla-swirl-lip-balm\"><strong>Orange Vanilla<\/strong><\/a>, die vind je trouwens gewoon bij de Kruidvat. <\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "lg",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "50",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

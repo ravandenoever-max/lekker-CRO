@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../assets-css/style/theme-menu-foldable.scss","../assets-css/input/_component-menu-foldable.scss"],"names":[],"mappings":"AACA;ACDA","sourcesContent":["\n/*------- component-menu-foldable -------*/\n@import '../input/component-menu-foldable';","/* CSS Document */\n"]}

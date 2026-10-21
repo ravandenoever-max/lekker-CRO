@@ -1,0 +1,328 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/The-Lekker-Company_photography-9_Edited_2_2.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/The-Lekker-Company_photography-9_Edited_2_2.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Wat doet lavendelolie voor je huid?",
+            "block_content": "<p>Lavendelolie is een van de meest populaire essentiële oliën, afkomstig van de plant lavandula angustifolia. Lavendelolie staat vooral bekend om haar ontspannende eigenschappen; het vermindert angst en als je deze olie op je huid of kussen aanbrengt, kan de kwaliteit van je slaap verbeteren.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "5c16352e-030f-4034-b932-09952899f207": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Waan je in de franse riviera",
+            "block_content": "<p>Bij The Lekker Company houden we van lavendelolie omdat het verbazingwekkende antibacteriële eigenschappen bevat die wondjes en puistjes helpen genezen en eczeem doet verminderen. Ook zijn wij heel enthousiast over de geur van Lavendel! Lavendelolie heeft een fijne, rustgevende geur die je de hele dag bij je kan dragen als je onze <a href=\"https:\/\/www.thelekkercompany.com\/shop\/#!\/lavender\/p\/174938169\/category=123964016\">Lavender deodorant <\/a>op doet.<\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "Label button",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/image_15.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Wat doet lavendelolie voor je huid?",
+        "this_content": "<p><strong>1. Het geneest acne-uitbarstingen<\/strong>-break-<br\/>Dankzij de antibacteriële eigenschappen kan lavendelolie poriën ontstoppen en ontstekingen verminderen. Meng lavendelolie met een dragende olie zoals kokos- en amandelolie en breng het daarna aan op een schone huid.<br\/>-break--break-<br\/><strong>2. Kan angst verminderen<\/strong>-break-<br\/>Het inademen van de geur van lavendelolie kan je stemming verbeteren en angst verminderen.<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>3. Versnelt de genezingstijd van wonden <\/strong><br\/>-break-<br\/>Lavendelolie bevordert de genezing van je huid, waardoor het heel geschikt is voor de genezing van snijwonden en andere kleine wondjes. Verdun 4 tot 5 druppels van deze essentiële olie met 2 eetlepels kokosolie en aanbrengen maar! Gebruik bij voorkeur een wattenschijfje voor het aanbrengen van dit mengsel, zodat de bacteriën op je handen niet bij de wond terecht kunnen komen.<br\/>-break--break-<br\/><strong>4. Behandelt slapeloosheid <\/strong><br\/>-break-<br\/>Bij gebruik in de vorm van aromatherapie kan lavendel de kwaliteit en duur van je slaap verbeteren. Ook kan je lavendelolie, verdunt met water, op je kussen sprayen voor een betere nachtrust.<br\/>-break--break-<br\/><strong>5. Houdt insecten weg <\/strong><br\/>-break-<br\/>Jaa! zelfs tegen vervelende insecten kan lavendeolie werken. Voeg 7 druppels toe aan een kaars en laat deze daarna even branden. Of meng wat lavendelolie met 25 ml water en spray dit met een sprayflacon royaal over je huid en\/of kleding om muggen en andere vervelende insecten ver weg te houden.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "341b18db-4f30-48c8-b378-ff6111966d22": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><em>Let op belangrijke veiligheidstips:<\/em><br\/>-break-<br\/>Stop onmiddellijk met het gebruik van lavendelolie als je hiervan huiduitslag of andere irritaties krijgt. Wil je het op een gevoelige huid gebruiken? Doe dit dan onder toezicht van een professional. Voor meer informatie klik <a href=\"https:\/\/www.healthline.com\/health\/lavender-oil-for-huid#afstotend\" target=\"_blank\" title=\"https:\/\/www.healthline.com\/health\/lavender-oil-for-huid#afstotend\">hier<\/a><br\/>-break--break-<br\/><em>Vertaald door Denise Tekelenburg<\/em><\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0",
+        "341b18db-4f30-48c8-b378-ff6111966d22"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "5c16352e-030f-4034-b932-09952899f207",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

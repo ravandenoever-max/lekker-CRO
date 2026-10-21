@@ -1,0 +1,221 @@
+{%- liquid
+  comment
+      -- Renders a product card --
+      Accepts:
+      - product_card_product: {Object} Product Liquid object (optional)
+      Usage:
+      render 'product-card'
+  endcomment
+  assign product_meta = product_card_product.metafields
+  assign show_secondary_image = true
+  assign product_detail_url = product_card_product.url | default: '#'
+  comment
+    fetch product tag 'collection-zonnebrand' / 'collection-main-zonnebrand'
+    fill in url with this collection instead 'all-proudcts'
+     -- code also included in get-product-url.liquid
+  endcomment
+  if settings.use_collection_url_in_product_url
+    for this_product_tag in product_card_product.tags
+      if this_product_tag contains 'collection-'
+        if this_product_tag contains 'collection-main-'
+          assign this_main_collection = this_product_tag | replace : 'collection-main-',''
+          assign product_detail_url = product_card_product.url | within: collections[this_main_collection]
+        else
+          assign this_main_collection = this_product_tag | replace : 'collection-',''
+          assign product_detail_url = product_card_product.url | within: collections[this_main_collection]
+        endif
+      endif
+    endfor
+  endif
+
+  if chosen_product_card_layout == blank
+    assign chosen_product_card_layout = 'std'
+  endif
+
+  assign given_dom = 'div'
+  assign product_price = false
+  if chosen_product_card_layout == 'hor'
+    assign product_title = product_card_product.title | escape
+    assign product_sub_title = product_meta.product.small_desc.value | escape
+    assign show_product_price = true
+    assign given_button_size = 'small'
+  elsif chosen_product_card_layout == 'std'
+    assign product_title = product_card_product.title | escape
+    assign product_sub_title = product_meta.product.sub_title.value | escape
+    assign show_product_price = false
+  elsif chosen_product_card_layout == 'xxl'
+    assign product_title = product_card_product.title | escape
+    assign product_sub_title = product_meta.product.small_desc.value | escape
+    assign show_product_price = true
+  elsif chosen_product_card_layout == 'circle'
+    assign product_title = product_card_product.title | escape
+    assign product_sub_title = ''
+    assign show_product_price = false
+    assign given_button_size = 'none'
+    assign given_dom = 'li'
+  endif
+
+  assign product_sub_title = ''
+
+  if chosen_product_card_layout == 'hor'  
+    if product_title contains ' - '
+      assign product_title_arr = product_title | split : ' - '
+      assign product_title = product_title_arr[0]
+      assign product_sub_title = product_title_arr[1]
+    endif
+  endif
+
+  if product_meta.product_sticker_award.value == true
+    assign sticker_award = 'T'
+  else
+    assign sticker_award = 'F'
+  endif
+  if product_meta.product_sticker_favorite.value == true
+    assign sticker_favorite = 'T'
+  else
+    assign sticker_favorite = 'F'
+  endif
+  if product_meta.product_sticker_bestseller.value == true
+    assign sticker_bestseller = 'T'
+  else
+    assign sticker_bestseller = 'F'
+  endif
+
+  assign product_id = product_card_product.variants.first.id
+  assign product_handle = product_card_product.handle
+  assign product_image_a_url = product_card_product.featured_media
+  assign product_image_a_alt = product_card_product.featured_media.alt
+  assign product_availible = product_card_product.available
+  assign product_compare_at_price = product_card_product.compare_at_price
+  assign product_price = product_card_product.price
+  assign product_price__formatted = product_price | money | replace : ',00',',-'
+
+  assign given_button_size = ''
+  if product_template == 'small'
+    assign show_as_button = false
+    assign show_as_button_price = false
+    assign given_button_size = 'none'
+  else
+    assign show_as_button = true
+    assign show_as_button_price = false
+    assign given_button_size = 'small'
+    if button_size != blank
+      assign given_button_size = button_size
+    endif
+  endif
+
+  assign form_id = 'pid-' | append : product_id
+
+  assign product_card_color_classname = 'bg-product-bg'
+  assign product_card_inner_color_classname = ''
+  if product_card_color != 'standard' and product_card_color != blank
+    assign product_card_color_classname = 'bg-' | append: product_card_color
+    assign product_card_inner_color_classname = 'inner-bg-' | append: product_card_color
+  endif
+
+  if area_name != blank
+    assign area_name_class = 'area_name__[area_name]' | replace : '[area_name]', area_name
+  endif
+
+  assign product_use_animations = section.settings.use_animations
+  if product_use_animations == true
+    echo '<span class="[animate_classname]">' | replace : '[animate_classname]', animate_classname
+  endif
+  echo '<[DOM] data-pid="[PID]" class="card-wrapper card-wrapper-flex card-wrapper-[chosen_product_card_layout] [product_card_inner_color_classname] [area_name_class]">' | replace : '[chosen_product_card_layout]', chosen_product_card_layout | replace : '[product_card_inner_color_classname]', product_card_inner_color_classname | replace : '[area_name_class]', area_name_class | replace : '[DOM]', given_dom | replace : '[PID]', product_id
+    echo '<a href="[product_detail_url]" title="[product_title]" class="card-wrapper-inner">' | replace : '[product_detail_url]', product_detail_url | replace : '[product_title]', product_title
+      echo '<div class="card-wrapper-flex__media no-pe">'
+        echo '<span class="visually-hidden">[product_title]</span>' | replace : '[product_title]', product_title
+        echo '<div class="--[product_card_color_classname] no-select">' | replace : '[product_card_color_classname]', product_card_color_classname
+          echo '<div class="product-detail-image-wrapper">'
+            echo '<div class="product__media media product-image-add-padding product-thumbnail-simple media--hover-effect motion-reduce">'
+              render 'thumbnail-simple', max_srcset:1200, media:product_image_a_url, position:forloop.index, image_alt:product_image_a_alt, loop:section.settings.enable_video_looping
+            echo '</div>'
+          echo '</div>'
+          if settings.enable_badges == true
+            if product_availible == false
+                assign _sticker_label = 'products.product.sold_out' | t
+                assign _sticker_image = 'sticker-sold-out.svg' | asset_url
+                echo '<div class="card__badge card__badge-sold_out color-red"><img class="injectable-svg" alt="[_sticker_label]" src="[_sticker_image]"></div>'
+            elsif product_compare_at_price > product_price and product_availible
+                assign _sticker_label = 'products.product.on_sale' | t
+                assign _sticker_image = 'sticker-sale.svg' | asset_url
+                echo '<div class="card__badge card__badge-sale color-yellow"><img class="injectable-svg" alt="[_sticker_label]" src="[_sticker_image]"></div>'
+            elsif sticker_award == 'T'
+                assign _sticker_label = 'products.product.sticker_team_award' | t
+                assign _sticker_image = 'sticker-award.svg' | asset_url
+                echo '<div class="card__badge card__badge-award color-lpink"><img class="injectable-svg" alt="[_sticker_label]" src="[_sticker_image]"></div>'
+            elsif sticker_favorite == 'T'
+                assign _sticker_label = 'products.product.sticker_team_favorite' | t
+                assign _sticker_image = 'sticker-favo.svg' | asset_url
+                echo '<div class="card__badge card__badge-favo color-yellow"><img class="injectable-svg" alt="[_sticker_label]" src="[_sticker_image]"></div>'
+            elsif sticker_bestseller == 'T'
+                assign _sticker_label = 'products.product.sticker_team_bestseller' | t
+                assign _sticker_image = 'sticker-bestseller.svg' | asset_url
+                echo '<div class="card__badge card__badge-bestseller color-lpink"><img class="injectable-svg" alt="[_sticker_label]" src="[_sticker_image]"></div>'
+            endif
+          endif
+        echo '</div>'
+      echo '</div>'
+      if product_card_product.media[1] != nil and show_secondary_image
+        echo '<div class="card-wrapper-hover-image no-select">'
+          render 'thumbnail-simple',max_srcset:1200,media:product_card_product.media[1],position:forloop.index,image_alt:product_card_product.media[1].alt,this_classnames:product_card_color_classname
+        echo '</div>'
+      endif
+    echo '</a>'
+
+  if given_button_size != 'none'
+    echo '<div class="card-wrapper-flex__button content-align__top-center bg-trans">'
+      echo '<div class="card-wrapper-flex__title no-pe">'
+        echo '<div class="card-information__wrapper no-select">'
+          echo '<div class="card-information --js-makelink" data-url="[product_detail_url]">' | replace : '[product_detail_url]', product_detail_url
+
+          if chosen_product_card_layout == 'hor'
+              assign product_title = product_title | truncate: 30
+              echo '<div class="theme-f-vert theme-g-none">'
+              echo '  <h5 style="/*white-space:nowrap*/min-width:10ch" class="font-fam-bold font-size-xs txt-lowercase color-black">[product_title]</h5>' | replace : '[product_title]', product_title
+              if product_sub_title != ''
+                echo '  <h6 style="/*white-space:nowrap*/min-width:10ch" class="font-fam-normal font-size-xs txt-lowercase color-black">[product_sub_title]</h6>' | replace : '[product_sub_title]', product_sub_title
+              endif              
+              echo '</div>'
+          else              
+              echo '<h2 class="card-information__title"><span>[product_title]</span></h2>' | replace : '[product_title]', product_title
+              if product_sub_title != ''
+                echo '<h3 class="card-information__desc"><span>[product_sub_title]</span></h3>' | replace : '[product_sub_title]', product_sub_title
+              endif
+          endif
+          if show_product_price == true and product_availible == true
+            echo '<span class="card-information__price"><span class="font-size-xs">[product_price__formatted]</span></span>' | replace : '[product_price__formatted]', product_price__formatted
+          endif
+            echo '<div class="jdgm-widget jdgm-preview-badge">'
+              echo product_card_product.metafields.judgeme.badge
+            echo '</div>'
+          echo '</div>'
+        if settings.website_use_favorites == true
+          echo '<div class="add-to-favorites-wrapper fav-[product_id]-[product_handle]">' | replace : '[product_id]', product_id | replace : '[product_handle]', product_handle
+            echo '<span class="add-to-favorites inactive " data-pid="[product_id]" data-p-handle="[product_handle]">' | replace : '[product_id]', product_id | replace : '[product_handle]', product_handle
+              echo '<span class="modal__toggle-open icon icon-search" aria-hidden="true" focusable="false" role="presentation">'
+                render 'theme-icon', icon: 'header-icon-favorites'
+              echo '</span>'
+            echo '</span>'
+          echo '</div>'
+        endif
+        echo '</div>'
+      echo '</div>'
+      echo '<div style="z-index:120030;">'
+        if product_availible == true
+          render 'product-buynow-button-price',show_as_button:show_as_button, show_as_button_price:show_as_button_price, button_size:given_button_size, product:product_card_product, product_detail_url:product_detail_url, price_class:''
+        else
+          echo '<a href="[product_detail_url]" title="[product_title]" class="theme-button theme-button__disabled theme-button__round-small theme-button__grey-white-grey">' | replace : '[product_detail_url]', product_detail_url | replace : '[product_title]', product_title
+            echo 'products.product.sold_out' | t
+          echo '</a>'
+        endif
+      echo '</div>'
+    echo '</div>'
+
+  endif
+
+  echo '</[DOM]>' | replace : '[DOM]', given_dom
+  if product_use_animations == true
+    echo '</span>'
+  endif
+-%}

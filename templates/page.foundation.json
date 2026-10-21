@@ -1,0 +1,415 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "visual_slide_LBQf7Y": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Banner_Shopify_new_looks_9.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/Boomplantdag_Reutum_1_februari_80_40f94f69-95fd-477f-a0fa-82141b9c4cc9.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": false,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "visual_slide_LBQf7Y"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "140",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "6000",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338710": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "trees for all",
+            "block_content": "<p>Nu The lekker Company groeit, willen we graag wat teruggeven. Daarom kunnen we met trots vertellen dat we we vanaf 1 juli 2022 [B]<a href=\"https://treesforall.nl/\">Trees for All</a> [_B]steunen, én dat doen we nog steeds.</p><p>Tot nu toe hebben we maar liefst 4402(!) bomen geplant. De helft op Nederlandse bodem, en de andere helft in Borneo en Bolivia. Zie <a href=\"https://drive.google.com/drive/folders/1EuvOy5D_LzGOTxj_sT2EVkAEw3281hrz?usp=sharing\" target=\"_blank\" title=\"Trees For All - certificaten\">hier</a> de certificaten. </p><p>Op deze manier groeit onze impact samen met ons bedrijf.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "706db279-9818-46db-9e5c-5f9b513e11ea": {
+          "type": "text_column",
+          "disabled": true,
+          "settings": {
+            "block_heading": "",
+            "block_content": "",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7",
+        "706db279-9818-46db-9e5c-5f9b513e11ea"
+      ],
+      "custom_css": [],
+      "settings": {
+        "row_spacing_inner_top": "sm",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "503d4ae8-39f1-4c1b-a71c-b349cd8dfa86": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14386558926897__503d4ae8-39f1-4c1b-a71c-b349cd8dfa86-166679670165acc59a-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "\"Samen planten we bomen voor een groene en gezonde wereld\"",
+            "block_content": "<p>- Trees For All</p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386558926897__503d4ae8-39f1-4c1b-a71c-b349cd8dfa86-166679670165acc59a-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "sm",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_visual_text_eVxgCE": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "row_spacing_mobile_top": "none",
+        "row_spacing_mobile_bottom": "none",
+        "section_background_color": "red",
+        "section_background_color_b": "red",
+        "section_background_color_direction": "image-down",
+        "section_background_size": "none",
+        "page_width": "no-page-width",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/IMG_3063_5ac2a878-6a48-4ce0-9c7b-27b5427745a1.jpg",
+        "section_image_size": "square",
+        "section_image_rounded_corners": "none",
+        "this_heading": "Trees for all planten bomen voor het leven",
+        "this_content": "<p>'Bomen zijn essentieel voor al het leven op aarde. Ze geven ons zuurstof, schone lucht, voedsel, bescherming, verkoeling en water. Bossen zijn belangrijk voor de biodiversiteit en bieden een leefomgeving voor ontelbaar veel planten en dieren. Ook spelen bomen een belangrijke rol in het tegengaan van klimaatverandering.' - Trees For All</p>",
+        "text_box_position": "center-left",
+        "text_box_position_mobile": "center-center",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "white",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "white",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "feel lekker",
+        "button_size": "button_small",
+        "button_color": "button_white",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "theme_section_text_44gKhc": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_x7i6Gx": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>Samen verzamelen we onze krachten om zoveel mogelijk bomen te planten, voor het leven. Bij Lekker willen we de norm voor persoonlijke verzorging veranderen. Alle producten die wij maken zijn vegan, met ingrediënten van 100% natuurlijke oorsprong, en zo lekker mogelijk. Omdat veel van onze verpakkingen gemaakt worden van karton, is het een logische stap om ons in te zetten voor het planten van bomen - heel veel bomen.</p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_RyCkxB": {
+          "type": "text_column",
+          "disabled": true,
+          "settings": {
+            "block_heading": "",
+            "block_content": "",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "text_column_x7i6Gx",
+        "text_column_RyCkxB"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_text_X6FG8t": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_UjJRaA": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "hoe werkt het?",
+            "block_content": "<p>Voor elke €10 euro die gedoneerd wordt, plant Trees for All samen met hun partners twee bomen. Dit is altijd in een project in Nederland en in het buitenland (bijv. Mexico, Costa Rica) om een zo breed mogelijke impact te maken.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_jwbg4N": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "hoe doneer je?",
+            "block_content": "<p>Een deel van onze omzet gaat half-jaarlijks naar een donatie aan Trees4All. Maar je kunt ook direct bij hen een donatie doen, dan gaat de hele donatie naar het planten van bomen,</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "text_column_UjJRaA",
+        "text_column_jwbg4N"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded64dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Wie hebben wij eerder gesteund?",
+            "block_content": "<p>Eerder steunden wij elk halfjaar een andere stichting. Zo hebben wij samengewerkt met plasticfreeUK, Reef Restoration Foundation en 100WEEKS. Stuk voor stuk prachtige stichtingen.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded64dc7"
+      ],
+      "disabled": true,
+      "settings": {
+        "row_spacing_inner_top": "sm",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_custom_code_3QeU8y": {
+      "type": "theme-section__custom-code",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<div id=\"sn-5735585f-13d3-4bdb-8a94-e516b9bacb16\"></div>",
+        "page_width": "page-width--narrow"
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338710",
+    "503d4ae8-39f1-4c1b-a71c-b349cd8dfa86",
+    "theme_section_visual_text_eVxgCE",
+    "theme_section_text_44gKhc",
+    "theme_section_text_X6FG8t",
+    "7e74f5097338727",
+    "theme_section_custom_code_3QeU8y"
+  ]
+}

@@ -1,0 +1,239 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/LEKKER_X_Mariska_-_HR_-_058_wecompress.com.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/LEKKER_X_Mariska_-_HR_-_058_wecompress.com.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25"
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "5 Dingen waar je lippenbalsem ook voor kunt gebruiken",
+            "block_content": "<p>Lippenbalsem is een alledaags product dat we meestal gebruiken om onze lippen gehydrateerd en zacht te houden. Maar wist je dat lippenbalsem ook een veelzijdig hulpmiddel is dat op verschillende manieren kan worden gebruikt? Dus haal die lippenbalsem tevoorschijn en ontdek 5 nieuwe manieren om dit lekkere product te gebruiken!<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Van highlighter tot vastzittende ritsen",
+            "block_content": "<p><strong>1. Gebruik lippenbalsem als highlighter:<\/strong><\/p><p>Als je geen highlighter bij de hand hebt, kun je lippenbalsem gebruiken om een subtiele glans aan je jukbeenderen of wenkbrauwbot toe te voegen. Breng een kleine hoeveelheid lippenbalsem aan en dep het zachtjes op de gewenste gebieden voor een natuurlijke en gezonde gloed.<\/p><p><strong>2. Houd je wenkbrauwen in toom:<\/strong><\/p><p>Als je onderweg bent en je hebt geen wenkbrauwgel bij de hand, kun je een beetje lippenbalsem gebruiken om je wenkbrauwen in model te houden. Breng een kleine hoeveelheid aan op je wenkbrauwborsteltje en kam je wenkbrauwen in de gewenste vorm. De lippenbalsem fungeert als een lichte fixeergel en houdt je wenkbrauwen op hun plaats.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "341b18db-4f30-48c8-b378-ff6111966d22": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>3. Voorkom blaren bij nieuwe schoenen:<\/strong><\/p><p>Niets is vervelender dan blaren krijgen van nieuwe schoenen. Om dit te voorkomen, kun je een beetje lippenbalsem aanbrengen op de plekken waar je schoenen wrijving veroorzaken, zoals de achterkant van je hiel of de zijkanten van je tenen. De lippenbalsem creëert een gladde barrière die de wrijving vermindert en blaren helpt voorkomen.<\/p><p><strong>4. Verzacht ruwe nagelriemen:<\/strong><\/p><p>Droge, ruwe nagelriemen kunnen pijnlijk en onaangenaam zijn. Breng een beetje lippenbalsem aan op je nagelriemen en masseer het zachtjes in. De hydraterende eigenschappen van de lippenbalsem helpen de nagelriemen te verzachten en te hydrateren, waardoor ze er gezonder uitzien en aanvoelen.<\/p><p><strong>5. Maak vastzittende ritsen los:<\/strong><\/p><p>We hebben allemaal wel eens te maken gehad met een vastzittende rits op een jas of tas. In plaats van gefrustreerd te raken, kun je een beetje lippenbalsem op de rits aanbrengen en voorzichtig heen en weer bewegen. De lippenbalsem fungeert als een smeermiddel en helpt de rits soepeler te bewegen.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0",
+        "341b18db-4f30-48c8-b378-ff6111966d22"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

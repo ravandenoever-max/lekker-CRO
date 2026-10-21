@@ -1,0 +1,522 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Untitled_design_33.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/Untitled_design_33.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "werken bij lekker",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "60",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_LGk6mU": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Werken bij The Lekker Company",
+            "block_content": "<p>The Lekker Company is een vrolijke B-Corp start-up uit Utrecht, gevestigd in het hart van de stad, vlakbij het Janskerkhof. Onze missie? De cosmeticawereld op een positieve manier opschudden door fantastische producten te maken. Onze producten zijn inmiddels verkrijgbaar op duizenden locaties door Europa en we blijven gestaag groeien.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>Spreekt onze missie je aan? Misschien is een stage of baan bij ons dan wel iets voor jou.</p><p>Bekijk onder de video al onze openstaande vacatures.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https://greenjobs.nl/vacature/internationale-sales-stage-bij-the-lekker-company-kw",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "text_column_LGk6mU",
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "bcd81ab": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__bcd81ab-16667126691ea33499-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/DSC_0344.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/DSC_0344.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-left",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "Subtitle",
+            "heading": "Video",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "Slide content",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": true,
+            "video_source_desktop": "957709247",
+            "video_aspect_desktop": "1:1",
+            "video_source_mobile": "957709247",
+            "video_aspect_mobile": "1:1",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__bcd81ab-16667126691ea33499-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "a80c965b-2048-422e-b6d4-eff2b98c8fee": {
+      "type": "theme-section__text",
+      "blocks": {
+        "cafe7c95-375e-4fc9-92bd-92590af2478b": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Vacature: marketing executive (24 uur)",
+            "block_content": "<p>Ben jij een creatieve bij die graag content maakt en partnerships aangaat met leuke andere merken? Op zoek naar een parttime baan waar je mag creëren en veel verantwoordelijkheid krijgt? Klinkt dit goed? Dan zoeken we jou!</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "ga naar vacature",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://pages/vacature-marketing-executive",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "cafe7c95-375e-4fc9-92bd-92590af2478b"
+      ],
+      "disabled": true,
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_text_JJBPxP": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_qrFNPn": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Vacature: Marketing Manager",
+            "block_content": "<p><strong>📣 Vacature: Marketingmedewerker (32 uur) – jij bent de chef-campagne waar we van dromen</strong></p><p>Ben jij een creatieve marketingdoener met een liefde voor merken die écht ergens voor staan? Zin om jouw ideeën los te laten op een snelgroeiend, vrolijk en plantaardig verzorgingsmerk?</p><p>Dan hebben wij iets heel lekkers voor je.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "ga naar vacature",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://pages/marketing-manager",
+            "button_target": true
+          }
+        },
+        "text_column_NHHbqD": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "text_column_qrFNPn",
+        "text_column_NHHbqD"
+      ],
+      "disabled": true,
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "66f1bee1-3b19-45cc-bdb5-981262762bd7": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--18980642324819__66f1bee1-3b19-45cc-bdb5-981262762bd7-168452383282a142d1-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Vacature: account manager (32u)",
+            "block_content": "<p>Wij zoeken versterking in ons sales team! In deze rol combineer je sales en account management voor onze kleinere retailers in binnen en buitenland. Ben jij overtuigd van onze missie en kan jij die mooi overbrengen? Kan je goed luisteren en wordt je blij van de start-up/scaleup cultuur. Lees dan snel verder.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "ga naar vacature",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://pages/vacature-account-manager",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "template--18980642324819__66f1bee1-3b19-45cc-bdb5-981262762bd7-168452383282a142d1-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_text_rnVxEU": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_DDWy3V": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Vacature: marketing & branding stagiaire(e)",
+            "block_content": "<p>Ben jij een creatieve geest die graag content creëert? Zoek je een stage met veel verantwoordelijkheid? Dan zoeken wij jou! Bij The Lekker Company maak je 100% natuurlijke, vegan huidverzorging. Werk aan onze missie op al onze marketingkanalen. Ervaring met Adobe Suite is een plus. Solliciteer nu!</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "ga naar vacature",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://pages/vacature-marketing-branding",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "text_column_DDWy3V"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5": {
+      "type": "theme-section__text",
+      "blocks": {
+        "ac327348-5e63-49db-a163-4db62f8aa745": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Vacature: sales & account management stagiaire(e)",
+            "block_content": "<p>Wil jij stage lopen bij een start-up die 100% natuurlijke en vegan huidverzorging maakt? Als sales & operations stagiair bedenk je B2B campagnes, onderhoud je klantcontacten en zorg je voor de orderafhandeling. Enthousiast, flexibel en goed in Nederlands en Engels? Solliciteer nu!</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "ga naar vacature",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://pages/vacature-sales-account-management",
+            "button_target": true
+          }
+        },
+        "text_column_ikAEi4": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "ac327348-5e63-49db-a163-4db62f8aa745",
+        "text_column_ikAEi4"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "2fa83d74-f11f-4770-96a0-a87312cbf22e": {
+      "type": "theme-section__text",
+      "blocks": {
+        "abbabafd-5964-43b8-a087-3a5b7d5c5c1d": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Vacature: operations stagiaire(e)",
+            "block_content": "<p>Word jij blij van spreadsheets, logistiek en organiseren? Als stagiair(e) bij The Lekker Company ondersteun je de operations manager, beheer je b2b bestellingen en zorg je voor de voorraad. Minimaal 3 maanden beschikbaar en enthousiast over duurzaamheid? Solliciteer nu en werk mee aan onze missie!</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "ga naar vacature",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://pages/vacature-intern-operations",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "abbabafd-5964-43b8-a087-3a5b7d5c5c1d"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338727",
+    "bcd81ab",
+    "a80c965b-2048-422e-b6d4-eff2b98c8fee",
+    "theme_section_text_JJBPxP",
+    "66f1bee1-3b19-45cc-bdb5-981262762bd7",
+    "theme_section_text_rnVxEU",
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5",
+    "2fa83d74-f11f-4770-96a0-a87312cbf22e"
+  ]
+}

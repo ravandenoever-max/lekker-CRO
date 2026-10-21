@@ -1,0 +1,196 @@
+{%- liquid
+
+comment
+  //---------------------------------------------//
+  //-- general section settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign this_section_extra_classes = ''
+
+  assign spacing_t = ' padding-t-'
+  assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+  assign spacing_b = ' padding-b-'
+  assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+  assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+  assign this_section_id = section.id | sha1 | truncate : 20, ""
+  assign this_section_id = 'section-' | append : this_section_id
+
+comment
+//---------------------------------------------//
+//-- this section/template specific settings --//
+//---------------------------------------------//
+endcomment
+
+  assign section_background_color_b = section.settings.section_background_color_b
+  assign section_background_color_split = section.settings.section_background_color_split
+  if section_background_color_split contains '%'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  elsif section_background_color_split contains 'px'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  else
+    assign section_background_color_split_raw = 'calc(var(--spacing-[BACKGROUND_HEIGHT]) + 60px )'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  endif
+
+  assign extra_css = ''
+  if section_background_color_b != 'none'
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT];right:0;bottom:0;left:0;background:var(--color-[BACKGROUND_B])}"
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative} "
+    assign extra_css = extra_css | replace: '[SECTION_ID]',this_section_id
+    assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]',section_background_color_split_height
+    assign extra_css = extra_css | replace: '[BACKGROUND_B]',section_background_color_b
+  endif
+
+  assign page_width_class = section.settings.page_width
+
+  assign settings_use_animations = section.settings.use_animations
+  assign animate_waypoints = false
+  assign animate_classname = 'no-animation'
+  if settings_use_animations == true
+    assign animate_classname = 'js-ani-me'
+    assign animate_waypoints = true
+    if section.blocks.size > 1
+      assign animate_classname = 'animation-trigger'
+      assign animate_waypoints = false
+    endif
+  endif
+
+  assign layout_order = section.settings.layout_order
+  assign text_box_position = 'center-left'
+
+  assign font_size_classname = 'font-size-xl font-size-sm-lg'
+  assign font_color_classname = 'color-red'
+  assign color_classname = 'color-black'
+  assign max_heading_width = 'display:inline-block;width:100%;max-width:12ch'
+  assign max_content_width = 'display:inline-block;width:100%;max-width:200ch'
+  
+  assign this_block_content_version = 'rich'
+  assign this_block_content_version = 'normal'
+
+  assign b_articles = blog.articles | sort: "published_at"
+  assign b_articles = b_articles | reverse
+  for blog_article in b_articles
+    if forloop.index == 1
+      assign blog_handle = blog_article.handle
+      assign this_block_link = blog_article.url
+      assign this_blog_visual = blog_article.image
+      assign this_block_heading = blog_article.title
+
+      if blog_article.excerpt != blank
+        assign this_block_content_stripped = blog_article.excerpt | strip_html
+        assign this_block_content_rich = blog_article.excerpt
+      elsif blog_article.content != blank
+        assign this_block_content_stripped = blog_article.content | strip_html
+        assign this_block_content_rich = blog_article.content
+      endif
+
+      if this_block_content_version == 'rich'
+        assign this_block_content_text = this_block_content_rich
+      else 
+        assign this_block_content_text = this_block_content_stripped
+      endif
+      assign this_block_content_text = this_block_content_text | truncatewords: 40
+
+      assign this_block_content = ''
+      assign this_block_content = this_block_content | append : '<p class="font-fam-normal font-size-md [color_classname]">'
+      assign this_block_content = this_block_content | append : this_block_content_text
+      assign this_block_content = this_block_content | append : '</p>'
+      assign this_block_content_output = this_block_content | replace : '[color_classname]', color_classname
+      
+      assign this_block_datum = blog_article.published_at
+      for tag in blog_article.tags
+        if tag contains "datum-"
+          assign this_block_datum = tag | replace : 'datum-', ''
+        endif
+      endfor
+    endif
+  endfor
+
+  comment
+    button_show ::: button_label ::: button_size ::: button_color ::: button_link ::: button_target
+  endcomment
+  
+    assign this_button_settings = ''
+    assign this_button_settings = this_button_settings | append : 'true' | append : ':::'
+    assign this_button_settings = this_button_settings | append : '[BUTTON_LABEL]' | append : ':::'
+    assign this_button_settings = this_button_settings | append : 'button_small' | append : ':::'
+    assign this_button_settings = this_button_settings | append : 'button_red' | append : ':::'
+    assign this_button_settings = this_button_settings | append : this_block_link | append : ':::'
+    assign this_button_settings = this_button_settings | append : 'false'
+    assign this_button_label = 'blogs.article.read_more' | t
+    assign this_button_settings = this_button_settings | replace : '[BUTTON_LABEL]',this_button_label
+-%}
+
+{%- if blog_handle != blank -%}
+  <div id="{{ this_section_id }}" class="section-inner theme-section__main-blog section-two-cols {{ this_section_extra_classes }} {{ font_color_classname }}">
+    <div class="{{ page_width_class }}">
+      <div class="two-cols two-cols-{{ layout_order }}">
+        <div class="two-cols-col col-content col-content-{{ text_box_position }} js-makelink" data-url="{{ this_block_link }}">
+          <div class="padding-v-3xs {{ font_color_classname }}">
+            {%- if settings.show_blog_datum == true and this_block_datum != blank -%}
+              <p class="font-fam-light font-size-xs color-black margin-b-3xs">{{ this_block_datum }}</p>
+            {%- endif -%}
+            {%- if this_block_heading != blank -%}
+              <h1 class="font-fam-normal {{ font_size_classname }} {{ font_color_classname }} margin-b-xs">
+                <span style="{{ max_heading_width }}">{{ this_block_heading }}</span>
+              </h1>
+            {%- endif -%}
+            {%- if this_block_content != blank -%}
+              <div style="{{ max_content_width }}" class="margin-b-xxs {{ color_classname }} rich-text-content__{{ this_block_content_version }}">
+                {{ this_block_content_output }}
+              </div>
+            {%- endif -%}
+            {%- liquid
+              if this_button_settings != ''
+                echo '<div class="margin-t-xxs">'
+                render 'theme-button', button_settings: this_button_settings
+                echo '</div>'
+              endif
+            -%}
+          </div>
+        </div>
+        <div class="two-cols-col col-image-wrap">
+          <div class="media media-rounded-corners-{{ section_image_rounded_corners }} {%- if section_image_version == 'original' %} media--relative {%- else %} {{ section_image_version }} media--hover-scale {%- endif %} js-makelink" data-url="{{ this_block_link }}">
+            {%- liquid
+              assign this_image_obj = this_blog_visual
+              render 'thumbnail-simple',max_srcset:2400,media:this_image_obj,this_classnames:'img-responsive image-pos-relative'
+            -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% capture bloated_css -%}
+<style id="{{ this_section_id }}__extra-css">{{ extra_css }}</style>
+{%- endcapture -%}
+{%- render'inline-css',input_css:bloated_css -%}
+
+{% schema %}
+{
+  "name": "Blog Overview Top",
+  "tag": "section",
+  "class": "theme-section__main-blog",
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"},
+        {"type":"select","id":"row_spacing_inner_top","default":"md","label":"Inner Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"md","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"section_background_color","default":"blue","label":"Background Color First", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_b","default":"none","label":"Background Color Second", "options": [ { "value":"none","label":"None"},{ "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_split","default":"xxl","label":"Background Color Switch", "options": [ { "value":"50%","label":"Half"},{ "value":"90%","label":"Top"},{ "value":"xxl","label":"Bottom"}, { "value":"none","label":"None" } ] },
+        {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [{ "value":"page-width--narrow","label":"Medium"}, { "value":"page-width","label":"Wide"},{ "value":"no-page-width","label":"Fullscreen" } ] },
+        {"type":"select","id":"layout_order","default":"text-image","label":"Layout Order", "options": [{ "value":"image-text","label":"Image vs Text"},{ "value":"text-image","label":"Text vs Image"} ] },
+        {"type":"checkbox","id":"use_animations","default":true,"label":"Use Animations" }
+
+  ],
+  "presets": [ { "name": "Blog Overview Top" } ]
+}
+{% endschema %}

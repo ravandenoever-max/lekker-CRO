@@ -1,0 +1,197 @@
+{%- assign theme_product_ratio = 100 -%}
+{%- capture bloated_css -%}
+<style id="style-root" type="text/css">
+  html { height: -webkit-fill-available; }
+  body { min-height: 100vh; min-height: -webkit-fill-available; }
+  :root{
+    --spacing-none:0px; 
+    --spacing-6xs:4px;
+    --spacing-7xs:3px;
+    --spacing-8xs:2px;
+  }
+
+  @media screen and (max-width:549px) { :root { --spacing-3xl:100px;--spacing-xxl:80px;--spacing-xl:70px;--spacing-lg:50px;--spacing-md:40px;--spacing-sm:30px;--spacing-xs:20px;--spacing-xxs:15px;--spacing-3xs:10px;--spacing-4xs:8px;--spacing-5xs:5px; } }
+  @media screen and (min-width:550px) and (max-width:767px) { :root { --spacing-3xl:100px;--spacing-xxl:90px;--spacing-xl:80px;--spacing-lg:70px;--spacing-md:50px;--spacing-sm:40px;--spacing-xs:30px;--spacing-xxs:20px;--spacing-3xs:12px;--spacing-4xs:10px;--spacing-5xs:8px; } }
+  @media screen and (min-width:768px) and (max-width:991px) { :root { --spacing-3xl:100px;--spacing-xxl:90px;--spacing-xl:80px;--spacing-lg:70px;--spacing-md:50px;--spacing-sm:40px;--spacing-xs:30px;--spacing-xxs:20px;--spacing-3xs:12px;--spacing-4xs:10px;--spacing-5xs:8px; } }
+  @media screen and (min-width:992px) { :root { --spacing-3xl:250px;--spacing-xxl:150px;--spacing-xl:120px;--spacing-lg:80px;--spacing-md:60px;--spacing-sm:50px;--spacing-xs:40px;--spacing-xxs:20px;--spacing-3xs:12px;--spacing-4xs:10px;--spacing-5xs:8px; } }
+
+  :root {
+    --loader-image:url("{{ settings.website_loader_image | asset_url }}");
+    --theme-product-image-padding-top:{{ theme_product_ratio }}%;
+    --theme-announcement-height:40px;
+    --theme-header-height:70px;
+    --xs-theme-header-height:70px;
+    --font-light-family:euclid_flex_regular, Helvetica, Arial, sans-serif;
+    --font-light-weight:400;
+    --font-light-style:'normal';
+    --font-medium-family:euclid_flex_medium, Helvetica, Arial, sans-serif !important;
+    --font-medium-weight:700;
+    --font-medium-style:'normal';
+
+    --font-size-xxl:70px;
+    --font-size-xxl-lh:70px;
+    --font-size-xl:50px;
+    --font-size-xl-lh:54px;
+    --font-size-lg:30px;
+    --font-size-lg-lh:32px;
+    --font-size-md:20px;
+    --font-size-md-lh:25px;
+    --font-size-sm:17px; /* body base font */
+    --font-size-sm-lh:24px;
+    --font-size-xs:17px;
+    --font-size-xs-lh:24px;
+    --font-size-xxs:14px;
+    --font-size-xxs-lh:18px;
+    --font-size-3xs:12px;
+    --font-size-3xs-lh:15px;
+    --font-size-4xs:10px;
+    --font-size-4xs-lh:14px;
+
+    --font-size-sm-xxl:70px;
+    --font-size-sm-xxl-lh:70px;
+    --font-size-sm-xl:50px;
+    --font-size-sm-xl-lh:54px;
+    --font-size-sm-lg:30px;
+    --font-size-sm-lg-lh:32px;
+    --font-size-sm-md:20px;
+    --font-size-sm-md-lh:25px;
+    --font-size-sm-sm:15px;
+    --font-size-sm-sm-lh:20px;
+    --font-size-sm-xs:15px;
+    --font-size-sm-xs-lh:20px;
+    --font-size-sm-xxs:12px;
+    --font-size-sm-xxs-lh:16px;
+    
+    --font-size-xs-xxl:50px;
+    --font-size-xs-xxl-lh:54px;
+    --font-size-xs-xl:50px;
+    --font-size-xs-xl-lh:54px;
+    --font-size-xs-lg:30px;
+    --font-size-xs-lg-lh:32px;
+    --font-size-xs-md:20px;
+    --font-size-xs-md-lh:25px;
+    --font-size-xs-sm:15px;
+    --font-size-xs-sm-lh:20px;
+    --font-size-xs-xs:15px;
+    --font-size-xs-xs-lh:20px;
+    --font-size-xs-xxs:12px;
+    --font-size-xs-xxs-lh:16px;
+
+    --font-size-xxs-xxl:36px;
+    --font-size-xxs-xxl-lh:36px;
+    --font-size-xxs-xl:30px;
+    --font-size-xxs-xl-lh:32px;
+    --font-size-xxs-lg:22px;
+    --font-size-xxs-lg-lh:28px;
+    --font-size-xxs-md:18px;
+    --font-size-xxs-md-lh:22px;
+    --font-size-xxs-sm:15px;
+    --font-size-xxs-sm-lh:20px;
+    --font-size-xxs-xs:15px;
+    --font-size-xxs-xs-lh:20px;
+    --font-size-xxs-xxs:12px;
+    --font-size-xxs-xxs-lh:16px;
+    --font-size-xxs-3xs:10px;
+    --font-size-xxs-3xs-lh:14px;
+    --font-size-xxs-4xs:8px;
+    --font-size-xxs-4xs-lh:11px;
+
+    --color-product-bg:#FFFFFF;
+    --color-product-bg-rgba:rgba(255,255,255,1);
+
+/*
+
+    --color-dgrey:#333333;
+    --color-grey:#999999;
+    --color-lgrey:#eeeeee;
+    --color-slgrey:#F9F5F1;
+    --color-yellow:#f9e267;
+    --color-black:#212322;
+    --color-white:#FFFFFF;
+    --color-red:#f4633a;
+    --color-pink:#f8bed6;
+    --color-lpink:#FDF5F1;
+    --color-lblue:#83ADAA;
+    --color-blue:#00a5bd;
+    --color-green:#6FAD7E;
+    --color-dgreen:#324944;    
+*/
+
+    --color-dgrey:#333333;
+    --color-grey:#999999;
+    --color-lgrey:#eeeeee;
+    --color-slgrey:#F9F5F1;
+    --color-yellow:#f9e267;
+    --color-black:#212322;
+    --color-white:#FFFFFF;
+    --color-red:#F4633A;
+    --color-pink-old:#f8bed6;
+    --color-pink:#EE3681;
+    --color-lpink:#F8BED6;
+    --color-lblue:#ACCFFF;
+    --color-blue:#00a5bd;
+    --color-green:#6FAD7E;
+    --color-dgreen:#215732;
+    --color-non-white:#E1ECFA;
+
+    --color-backdrop-dark:rgba(0,0,0,0.25);
+    --color-backdrop-light:rgba(255,255,255,0.4);
+    --color-backdrop-light_xl:rgba(255,255,255,0.75);
+
+    --duration-short: 0.1s;
+    --duration-default: 0.3s;
+    --duration-long: 0.6s;
+
+    --mega-menu__promo-one-width:15rem;
+    --mega-menu__promo-two-width:15rem;    
+  }
+
+  @media screen and (min-width:370px) and (max-width:459px) {
+    :root .theme-section__visual .visual-slide {
+      --font-size-xxs-xxl:56px !important;
+      --font-size-xxs-xxl-lh:56px !important; 
+    }
+  }
+  @media screen and (min-width:460px) and (max-width:549px) {
+    :root .theme-section__visual .visual-slide {
+      --font-size-xxs-xxl:56px !important;
+      --font-size-xxs-xxl-lh:56px !important;
+    }
+  }
+  @media screen and (max-width:549px) {
+    body#page-verkooppunten-the-lekker-company .theme-section__visual .visual-slide .visual__box h1 {
+      font-size:13vw !important; line-height:13.4vw !important;
+    }
+  }
+
+  *,*:before,*:after{box-sizing:border-box}
+  html{box-sizing:border-box;height:100%}
+  body{min-height:100%;margin:0;font-family:var(--font-light-family),Helvetica,Arial,sans-serif!important;font-weight:var(--font-light-weight);font-style:var(--font-light-style);font-size:var(--font-size-sm);line-height:var(--font-size-sm-lh);overflow-x:hidden;}
+
+  .header-foldable{display:inline-block;position:fixed;top:0px;left:0px;right:0px;bottom:0px;width:100%;height:100%;z-index:80000080;text-align:center;overflow:auto;background:var(--color-lpink)}
+  .header-foldable .header-foldable-wrapper{width:100%;height:100%;padding:0px;position:relative;float:right;text-align:left;display:flex;align-items:flex-start !important;justify-content:center !important;padding:15px}
+  .header-foldable{max-height:0px;transition:max-height 0.4s ease 0.25s}
+  .header-foldable.open{max-height:100%;transition:max-height 0.2s ease 0s}
+
+  .theme-hide-above-480{display:inherit !important}.theme-hide-below-480{display:none}
+  @media screen and (min-width:480px){.theme-hide-above-480{display:none !important} .theme-hide-below-480{display:inherit !important}}
+  .theme-hide-above-550{display:inherit !important}.theme-hide-below-550{display:none}
+  @media screen and (min-width:550px){.theme-hide-above-550{display:none !important} .theme-hide-below-550{display:inherit !important}}
+  .theme-hide-above-768{display:inherit !important}.theme-hide-below-768{display:none}
+  @media screen and (min-width:768px){.theme-hide-above-768{display:none !important} .theme-hide-below-768{display:inherit !important}}
+  .theme-hide-above-992{display:inherit !important}.theme-hide-below-992{display:none}
+  @media screen and (max-width:767px) { .theme-m-hidden { display:none !important; opacity:0 !important; pointer-events:none !important } }
+  @media screen and (min-width:768px) { .theme-d-hidden { display:none !important; opacity:0 !important; pointer-events:none !important } }
+
+  .card-wrapper.card-wrapper-std .card-wrapper-flex__title .jdgm-widget.jdgm-widget{display:flex !important}
+  .card-wrapper.card-wrapper-std .card-wrapper-flex__title .jdgm-widget.jdgm-widget .jdgm-prev-badge{margin:0px auto}
+  .jdgm-prev-badge__text{padding-left:0.5rem}
+</style>
+{%- endcapture -%}
+{%- render'inline-css',input_css:bloated_css -%}
+
+<link rel="stylesheet" href="{{ 'theme-base.css' | asset_url }}" type="text/css" media="all">
+<link rel="stylesheet" href="{{ menu_css_mobile_menu_file | asset_url }}" type="text/css" media="screen and (max-width:767px)">
+{%- if menu_css_main_menu_file != 'none' -%}
+<link rel="stylesheet" href="{{ menu_css_main_menu_file | asset_url }}" type="text/css" media="screen and (min-width:768px)">
+{%- endif -%}

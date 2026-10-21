@@ -1,0 +1,371 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/LEKKER_-_201911_-_LR_-_029.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/LEKKER_-_201911_-_LR_-_029.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "7 tips om een droge huid te voorkomen",
+            "block_content": "<p>De dagen worden kouder en Jack Frost maakt zijn eerste debuut. Om de kou tegen te gaan, zetten we de verwarming hoger (natuurlijk niet te hoog!) en gaan we los met dekentjes en kussens. Maar hoe hard we ook proberen, de intense temperatuurdaling, droge lucht en stevige winterwind eisen nog steeds hun tol van ons lichaam en meer specifiek van onze huid.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "5c16352e-030f-4034-b932-09952899f207": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Winter is hier...",
+            "block_content": "<p>Is het je ooit opgevallen dat je huid tijdens de winter minder straalt en droger aanvoelt dan tijdens de andere seizoenen? Vanaf het puntje van je neus tot de onderkant van je tenen, je huid schreeuwt om wat extra aandacht.<\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "onze deos",
+            "button_size": "button_small",
+            "button_color": "button_pink",
+            "button_link": "shopify:\/\/collections\/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/TheLekkerCompany_NaturalDeodorant_Model_209_26105345-fcab-4d64-8788-8ea7c0c9d883.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Kenmerken van een droge huid",
+        "this_content": "<p>In de zomer is de luchtvochtigheid meestal hoog. Hierdoor kan je huid zelf genoeg vocht vasthouden. In de winter heeft je huid het zwaarder en kunnen er een aantal vervelende kwaaltjes opspelen door de lage luchtvochtigheid, waaronder:<br\/><br\/>1. Schilfers<br\/>2. Roodheid<br\/>3. Scheuren in je huid<br\/>4. Jeuk<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Wil jij een droge huid in de winter voorkomen? Dan zijn dit 7 handige tips voor jou.",
+            "block_content": "<p><strong>1. Houd je vochtige huid gehydrateerd <br\/><\/strong><em>The painful truth<\/em>; een warme douche of bad vermindert de natuurlijke oliën in je huid. Deze oliën zorgen ervoor dat je huid vocht vasthoudt. Daarom is het belangrijk om ze direct weer aan te vullen nadat je uit de douche of uit bad stapt. Het ideale moment om een vochtinbrengende crème aan te brengen is dus wanneer je huid nog vochtig is. Op dat moment staan je poriën nog goed open en kan je huid de crème het beste opnemen. Kies in de ochtend voor een vochtinbrengende crème en kies 's avonds voor een huidolie voor een intense hydratatie. Zo kan je een droge huid in de winter voorkomen.<br\/><br /><br /><br\/><strong>2. Houd het simpel<br\/><\/strong>Als je huid geïrriteerd, rood en ruw aanvoelt, overweeg dan om de hoeveelheid huidverzorgingsproducten die je gebruikt te verminderen. Je huid kan tijdens de wintermaanden namelijk heel gevoelig zijn voor kunstmatige geurstoffen en alcohol. Dus houd het simpel; breng 's ochtends een vochtinbrengende crème, oogcrème en SPF aan. Was je huid 's avonds met een zachte reiniger en breng daarna een moisturizer aan. Als je huid weer herstelt, kun je producten aan je routine gaan  toevoegen.<br /><br /><br\/><br\/><strong>3. Drink water<br\/><\/strong><em>So important<\/em>, drink voldoende water gedurende de dag! Een simpele tip die heel goed werkt. Hydratatie van de huid begint van binnenuit.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "341b18db-4f30-48c8-b378-ff6111966d22": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>4. Wees slim en breng zonnebrandcrème aan[break]<\/strong><\/p><p>Ondanks dat de zon vroeg naar bed gaat en het buiten misschien bewolkt is, slagen UVA-stralen er toch in om door de vochtbarrière van je huid heen te schijnen. Breng daarom elke ochtend na je moisturizer een laag zonnebrandcrème aan op je gezicht en hals. Zo behoud je toch een gezonde glans en houd je de vochtbalans van je huid onder controle. Onze beste keuze is natuurlijk <a href=\"https:\/\/www.thelekkercompany.com\/shop#!\/sunscreen-spf30\/p\/357681658\/category=123963025\"><span style=\"text-decoration:underline\">Lekker's all-natural SPF30<\/span><\/a>, een lichtgewicht en hydraterende optie.<br\/><br /><br /><br\/><strong>5. Let erop hoe je verzorgingsproducten aanbrengt[break]<\/strong><\/p><p>Masseer vochtinbrengende crèmes voorzichtig in je huid. Dit zorgt ervoor dat de bloedcirculatie van je lichaam verbetert en het product goed intrekt. Wees wel voorzichtig en wrijf niet te hard over je huid. Dit kan namelijk huidirritatie veroorzaken.<\/p><p><strong>6. Gebruik een luchtbevochtiger[break] <\/strong>De centrale verwarming zuigt vocht uit de lucht waardoor je huid droger kan aanvoelen. Dit voorkom je door een luchtbevochtiger in je huis of werkruimte te plaatsen. Door deze luchtbevochtiger in te zetten, hoef je minder vochtinbrengende crèmes te gebruiken en voorkom je droge ogen.<\/p><p><strong>7. Een droge huid in de winter voorkomen? Zet de verwarming lager[break]<\/strong>Zet de temperatuur in huis lager. Samen met een luchtbevochtiger zorgt dit voor een minder droge lucht in huis. Bovendien draag je hiermee meteen bij aan een beter milieu en is het goed voor de portemonnee. Hallo extra trui!<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0",
+        "341b18db-4f30-48c8-b378-ff6111966d22"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a970114e-e8ac-476e-8c6b-a18442d215d6": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--16701878862077__a970114e-e8ac-476e-8c6b-a18442d215d6-166911002050b6a628-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Een beetje extra liefde Geef je huid een beetje extra liefde tijdens de wintermaanden door goede producten in te zetten die aansluiten bij jouw huidtype. Hopelijk kun je hiermee de glans van je huid weer herstellen.",
+            "block_content": "",
+            "block_align": "center",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16701878862077__a970114e-e8ac-476e-8c6b-a18442d215d6-166911002050b6a628-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "5c16352e-030f-4034-b932-09952899f207",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a970114e-e8ac-476e-8c6b-a18442d215d6",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

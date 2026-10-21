@@ -1,0 +1,67 @@
+{%- liquid
+  comment
+    -- settings.website_minify_inline_css  = false / "inline-per-line" / "compact"
+      -- capture bloated_css
+      --   echo '<style id="[this_section_id]__extra-css">[extra_css]</style>' | replace: '[this_section_id]',this_section_id | replace: '[extra_css]',extra_css
+      -- endcapture
+      -- render'theme_inline-css',input_css:bloated_css
+  endcomment
+
+  assign m_css = input_css
+
+  if settings.website_minify_inline_css != ""
+
+    if settings.website_minify_inline_css == "compact"
+        assign comment_start = '/*'
+        assign comment_eind = '*/'
+        assign new_output = ''
+        assign input = m_css
+        if input contains comment_eind
+              assign input_array = input | split : comment_start
+              for input in input_array
+                  if input contains comment_eind
+                    assign new_input_array = input | split : comment_eind
+                    assign new_input = new_input_array[1]
+                  else
+                    assign new_input = input
+                  endif
+                  assign new_output = new_output | append : new_input
+              endfor
+          assign m_css = new_output
+        endif
+    endif
+
+    assign m_css = m_css | replace: '::before { ','::before{'
+    assign m_css = m_css | replace: '::after { ','::after{'
+    assign m_css = m_css | replace: '    ',''
+    assign m_css = m_css | replace: '   ',''
+    assign m_css = m_css | replace: '  ',''
+    assign m_css = m_css | replace: ': ',':'
+    assign m_css = m_css | replace: '; ',';'
+    assign m_css = m_css | replace: ' {','{'
+    assign m_css = m_css | replace: '{ ','{'
+    assign m_css = m_css | replace: ')+',') +'
+    assign m_css = m_css | replace: ')-',') -'
+    assign a = "} ."
+    assign b = "}."
+    assign m_css = m_css | replace: a,b
+    assign a = "; }"
+    assign b = "}"
+    assign m_css = m_css | replace: a,b
+    assign a = ";}"
+    assign b = "}"
+    assign m_css = m_css | replace: a,b
+    assign a = "} "
+    assign b = "}"
+    assign m_css = m_css | replace: a,b    
+    assign a = " {"
+    assign b = "{"
+    assign m_css = m_css | replace: a,b    
+
+    if settings.website_minify_inline_css == "compact"
+      assign m_css = m_css | strip_newlines
+    endif    
+  endif
+
+  echo m_css
+-%}

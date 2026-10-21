@@ -1,0 +1,17 @@
+<div class="page-width padding-t-40 padding-b-80">
+  <div class="page-width--narrow">
+    <h1 class="font_fam_special font_size_50 font_size_xxs_30 font_size_xs_40 color_black txt-uppercase margin-b-20">{{ page.title | replace :'-break-','<br>' }}</h1>
+    <div class="rte">
+      {{ page.content | newline_to_br }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page.name",
+  "tag": "section",
+  "class": "section-main-page main-page-section"
+}
+{% endschema %}
+

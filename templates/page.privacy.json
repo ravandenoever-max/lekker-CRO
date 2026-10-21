@@ -1,0 +1,391 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "terms": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "Privacy Beleid",
+            "heading_font_size": "xl",
+            "max_heading_width": "25",
+            "text": "de kleine lettertjes",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "sm",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "blue",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "10",
+        "slide_ratio_desktop": "20",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "6ef48581-3a55-42bd-850a-248b4d77b13d": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--16685776863485__6ef48581-3a55-42bd-850a-248b4d77b13d-166781996951d9d499-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>lekkerineenpotje B.V. , gevestigd aan Europalaan 20 1.1.15, 3526KS Utrecht, is verantwoordelijk voor de verwerking van persoonsgegevens zoals wergegeven in deze privacyverklaring.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16685776863485__6ef48581-3a55-42bd-850a-248b4d77b13d-166781996951d9d499-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xs",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "60e35d40-daa1-49a1-b854-748b2100373f": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--166857768996951d9d499-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Contactgegevens",
+            "block_content": "<p>info@thelekkercompany.com Europalaan 20 1.1.15 3526KS Utrecht +31681448264<br\/><br\/>Dewi van de Waeter is de Functionaris Gegevensbescherming van lekkerineenpotje B.V. Zij is te bereiken via info@thelekkercompany.com, www.thelekkercompany.com<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--166857768996951d9d499-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "60e35d40-daa1-49a1-b854-748b2100373f-2": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Persoonsgegevens",
+            "block_content": "<p>lekkerineenpotje B.V. verwerkt je persoonsgegevens doordat je gebruik maakt van onze diensten en/of omdat je deze gegevens zelf aan ons verstrekt. Hieronder vind je een overzicht van de persoonsgegevens die wij verwerken:[UL][LI]Bedrijfsnaam (optioneel)[_LI][LI]Voor- en achternaam[_LI][LI]Adresgegevens[_LI][LI]Telefoonnummer (optioneel)[_LI][LI]E-mailadres[_LI][LI]Overige persoonsgegevens die je actief verstrekt bijvoorbeeld door deze in comments toe te voegen aan een bestelling[_LI][LI]Gegevens over jouw bestellingen op onze website[_LI][_UL]<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-1": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Bijzondere en/of gevoelige persoonsgegevens die wij verwerken",
+            "block_content": "<p>Onze website en/of dienst heeft niet de intentie gegevens te verzamelen over websitebezoekers die jonger zijn dan 16 jaar. Tenzij ze toestemming hebben van ouders of voogd. We kunnen echter niet controleren of een bezoeker ouder dan 16 is. Wij raden ouders dan ook aan betrokken te zijn bij de online activiteiten van hun kinderen, om zo te voorkomen dat er gegevens over kinderen verzameld worden zonder ouderlijke toestemming. Als je er van overtuigd bent dat wij zonder die toestemming persoonlijke gegevens hebben verzameld over een minderjarige, neem dan contact met ons op via contact@lekker dan verwijderen wij deze informatie.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-2": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Met welk doel en op basis van welke grondslag wij persoonsgegevens verwerken",
+            "block_content": "<p>lekkerineenpotje B.V. verwerkt jouw persoonsgegevens voor de volgende doelen:[UL][LI]Het afhandelen van jouw bestelling[_LI][LI]Verzenden van onze nieuwsbrief[_LI][LI]Je te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren[_LI][LI]Om goederen en diensten bij je af te leveren[_LI][LI]Lekkerineenpotje B.V. verwerkt ook persoonsgegevens als wij hier wettelijk toe verplicht zijn, zoals gegevens die wij nodig hebben voor onze belastingaangifte.[_LI][_UL]<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-3": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Geautomatiseerde besluitvorming",
+            "block_content": "<p>lekkerineenpotje B.V. neemt niet op basis van geautomatiseerde verwerkingen besluiten over zaken die (aanzienlijke) gevolgen kunnen hebben voor personen. Het gaat hier om besluiten die worden genomen door computerprogramma's of -systemen, zonder dat daar een mens (bijvoorbeeld een medewerker van lekkerineenpotje B.V.) tussen zit. Lekkerineenpotje B.V. gebruikt de volgende computerprogramma's of -systemen:Ecwid met API verbinding naar Snappex van PostNL voor de webshop en Mailchimp voor de nieuwsbrief.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-4": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Hoe lang we persoonsgegevens bewaren",
+            "block_content": "<p>lekkerineenpotje B.V. bewaart je persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor je gegevens worden verzameld.<br\/>Wij hanteren de volgende bewaartermijnen voor de volgende (categorieën) van persoonsgegevens:<br\/>Webshop-bestellingen<br\/>persoonsgegevens:[UL][LI]Bedrijfsnaam (optioneel)[_LI][LI]Voor- en achternaam[_LI][LI]Adresgegevens[_LI][LI]Telefoonnummer (optioneel)[_LI][LI]E-mailadres[_LI][LI]Overige persoonsgegevens die je actief verstrekt bijvoorbeeld door deze in comments toe te voegen aan een bestelling[_LI][LI]Gegevens over jouw bestellingen op onze website[_LI][_UL]Bewaartermijn: 6 maanden<br\/><br\/>Nieuwsbrief persoonsgegevens:[UL][LI]e-mailadres (alleen bij actieve aanmelding)[_LI][_UL]Bewaartermijn: tot actieve uitschrijving<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-5": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Delen van persoonsgegevens met derden",
+            "block_content": "<p>lekkerineenpotje B.V. verkoopt jouw gegevens niet aan derden en zal deze uitsluitend verstrekken indien dit nodig is voor de uitvoering van onze overeenkomst met jou of om te voldoen aan een wettelijke verplichting. Met bedrijven die jouw gegevens verwerken in onze opdracht, sluiten wij een bewerkersovereenkomst om te zorgen voor eenzelfde niveau van beveiliging en vertrouwelijkheid van jouw gegevens. Lekkerineenpotje B.V. blijft verantwoordelijk voor deze verwerkingen.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-6": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Cookies, of vergelijkbare technieken, die wij gebruiken",
+            "block_content": "<p>lekkerineenpotje B.V. gebruikt alleen technische en functionele cookies. En analytische cookies die geen inbreuk maken op je privacy. Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen op jouw computer, tablet of smartphone. De cookies die wij gebruiken zijn noodzakelijk voor de technische werking van de website en jouw gebruiksgemak. Ze zorgen ervoor dat de website naar behoren werkt en onthouden bijvoorbeeld jouw voorkeursinstellingen. Ook kunnen wij hiermee onze website optimaliseren. Je kunt je afmelden voor cookies door je internetbrowser zo in te stellen dat deze geen cookies meer opslaat. Daarnaast kun je ook alle informatie die eerder is opgeslagen via de instellingen van je browser verwijderen.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Gegevens inzien, aanpassen of verwijderen",
+            "block_content": "<p>Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heb je het recht om je eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van jouw persoonsgegevens door lekkerineenpotje B.V. en heb je het recht op gegevensoverdraagbaarheid. Dat betekent dat je bij ons een verzoek kan indienen om de persoonsgegevens die wij van jou beschikken in een computerbestand naar jou of een ander, door jou genoemde organisatie, te sturen. Je kunt een verzoek tot inzage, correctie, verwijdering, gegevensoverdraging van je persoonsgegevens of verzoek tot intrekking van je toestemming of bezwaar op de verwerking van jouw persoonsgegevens sturen naar contact@lekkerineenpotje.nl. Om er zeker van te zijn dat het verzoek tot inzage door jou is gedaan, vragen wij jou een kopie van je identiteitsbewijs met het verzoek mee te sturen. Maak in deze kopie je pasfoto, MRZ (machine readable zone, de strook met nummers onderaan het paspoort), paspoortnummer en Burgerservicenummer (BSN) zwart. Dit ter bescherming van je privacy. We reageren zo snel mogelijk, maar binnen vier weken, op jouw verzoek . Lekkerineenpotje B.V. wil je er tevens op wijzen dat je de mogelijkheid hebt om een klacht in te dienen bij de nationale toezichthouder, de Autoriteit Persoonsgegevens. Dat kan via de volgende link: https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/tip-ons<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-8": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Hoe wij persoonsgegevens beveiligen",
+            "block_content": "<p>lekkerineenpotje B.V. neemt de bescherming van jouw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als jij het idee hebt dat jouw gegevens toch niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact op via info@thelekkercompany.com<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-0",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-1",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-2",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-3",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-4",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-5",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-6",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-7",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-8"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxl",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "terms",
+    "6ef48581-3a55-42bd-850a-248b4d77b13d",
+    "60e35d40-daa1-49a1-b854-748b2100373f",
+    "60e35d40-daa1-49a1-b854-748b2100373f-2"
+  ]
+}

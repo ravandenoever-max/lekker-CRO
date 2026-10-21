@@ -1,0 +1,317 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page-b2b": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "extra_page_b2b": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/NPL_webpagina_header_2.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/NPL_webpagina_header_2.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-right",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "extra_page_b2b"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "md",
+        "row_spacing_outer_bottom": "md",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "30",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--18518132851027__3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2-16841435744478a02c-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Hier is je kortingscode",
+            "block_content": "<p>Met kortingscode <strong>GIFTSET20</strong> krijg jij t/m 31 december 20% korting in onze webshop. Zo, die is in de pocket!</p><p>Wat leuk dat je onze code hebt gescand en we wensen je veel shop-plezier.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "Naar shop",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https://thelekkercompany.com/discount/LOTERIJ10/collections/all-products/",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18518132851027__3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2-16841435744478a02c-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "1852d7d5-e14f-41cf-af85-3b869491c58e": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "row_spacing_mobile_top": "none",
+        "row_spacing_mobile_bottom": "md",
+        "section_background_color": "lblue",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/25_c4ed95b7-56db-4348-8a6c-26944c988665.png",
+        "section_image_size": "square",
+        "section_image_rounded_corners": "xxl",
+        "this_heading": "Dit is onze best-seller",
+        "this_content": "<p>In jouw pakket zit de travel size van onze deodorant stick 'Be Active'. We hebben nog 2 populaire geuren. Dit setje is het meest verkochte trio in onze webshop. De full-size deo sticks gaan 2-3 maanden mee.</p>",
+        "text_box_position": "center-left",
+        "text_box_position_mobile": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "white",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "white",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": true,
+        "button_label": "Naar trio",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_link": "shopify://products/combi-deal-deodorant-stick-mix",
+        "button_target": false
+      }
+    },
+    "theme_section_text_F6gYXP": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_48PpCr": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Dit zit er in je pakketje👇",
+            "block_content": "",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "text_column_48PpCr"
+      ],
+      "name": "Text / Columns",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_visual_iUjkyQ": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "visual_slide_EnXWbw": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Screenshot_2026-03-12_at_16.14.24.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 25,
+            "image_mobile": "shopify://shop_images/Screenshot_2026-03-12_at_16.14.24.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": true,
+            "video_source_desktop": "1172957750",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "1172957750",
+            "video_aspect_mobile": "1:1",
+            "video_autoplay": false,
+            "video_show_controls": true,
+            "button_show": false,
+            "button_label": "bestel hier",
+            "button_size": "button_small",
+            "button_color": "button_white",
+            "button_link": "https://thelekkercompany.com/collections/refill-deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "visual_slide_EnXWbw"
+      ],
+      "name": "Visual",
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "md",
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "56.25",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": true,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "theme_section_text_LQrLAU": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_JP8CfQ": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Tijd voor een cadeautje🎁",
+            "block_content": "<p>Ben jij fan van onze handcrème, travel size deo’s en travel size lip balm? </p><p>Deze giftset is perfect om cadeau te doen… of gewoon lekker voor jezelf 😉 Met deze set zit je altijd goed. Klein, handig en vol met natuurlijke favorieten.💛</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "Shop",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https://thelekkercompany.com/collections/all-products",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "text_column_JP8CfQ"
+      ],
+      "name": "Text / Columns",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "page-b2b",
+    "3b385a89-8a1b-4b15-836b-4f5e7d4a3ea2",
+    "1852d7d5-e14f-41cf-af85-3b869491c58e",
+    "theme_section_text_F6gYXP",
+    "theme_section_visual_iUjkyQ",
+    "theme_section_text_LQrLAU"
+  ]
+}

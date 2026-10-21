@@ -1,0 +1,129 @@
+{%- liquid
+  comment
+    //---------------------------------------------//
+    //-- general section settings --//
+    //---------------------------------------------//
+  endcomment
+
+    assign this_section_extra_classes = ''
+
+    assign spacing_t = ' padding-t-'
+    assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+    assign spacing_b = ' padding-b-'
+    assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+    assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+    assign this_section_id = section.id | sha1 | truncate : 20, ""
+    assign this_section_id = 'section-' | append : this_section_id
+
+  comment
+    //---------------------------------------------//
+    //-- this section/template specific settings --//
+    //---------------------------------------------//
+  endcomment
+  
+-%}
+
+{%- capture theme_section__social_instagram_html -%}
+    <div id="{{ this_section_id }}" class="section-inner theme-section__social-instagram-feed {{ this_section_extra_classes }}">
+      <div class="txt-align-center">
+        <div class="instagram__wrapper">
+          <div class="page-width">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'heading' -%}
+                {%- assign section_settings_heading = block.settings.heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />" -%}
+                <h2 class="font-fam-normal font-size-xl color-black margin-b-3xs">{{ section_settings_heading }}</h2>
+              {%- when 'sub_heading' -%}
+                {%- assign section_settings_subheading = block.settings.sub_heading | escape | replace : "-break-", "<br />" | replace : "[break]", "<br />" -%}
+                <a target="_blank" class="text-decoration-none" title="{{ shop.name | escape }} on Instagram" href="{{ settings.social_instagram_link }}">
+                  <span class="font-fam-light font-size-xs link link--from-left link-black color-black txt-uppercase">{{ section_settings_subheading }}</span>
+                </a>
+            {%- endcase -%}
+          {%- endfor -%}
+          </div>
+          <div class="no-page-width">
+            {%- if section.settings.elfsight_account_embed_code != blank and section.settings.elfsight_account_embed_code != 'elfsight-app-####-####-####-####' -%}
+              <div class="margin-t-xxs margin-b-sm">
+                <div class="{{ section.settings.elfsight_account_embed_code }}"></div>
+              </div>
+              <script class="js-lazy-load-script" data-script-delay="3000" data-script-src="https://apps.elfsight.com/p/platform.js"></script>
+            {%- else -%}
+              <div class="margin-t-xs margin-b-sm padding-v-80 font-size-xs" style="background-color:rgba(0,0,0,0.05)">
+                {embed code is missing}
+              </div>
+            {%- endif -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'button' -%}
+                {%- liquid
+                  assign this_button_settings = block.settings
+                  if this_button_settings.button_show == true and this_button_settings.button_label != '' and this_button_settings.button_link != ''
+                    echo '<div class="margin-t-xs">'
+                    render 'theme-button', button_settings: this_button_settings
+                    echo '</div>'
+                  endif
+                -%}
+            {%- endcase -%}
+          {%- endfor -%}
+            <div>
+              <div class="trustpilot-widget" data-locale="nl-NL" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="5e60fa3f98c643000170dbee" data-style-height="24px" data-style-width="100%" data-theme="light" data-style-alignment="center"><a href="https://nl.trustpilot.com/review/thelekkercompany.com" target="_blank" rel="noopener">Trustpilot</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endcapture -%}
+  {%- liquid
+    assign minify_this_html_input = theme_section__social_instagram_html
+    assign minify_this_html_block = true
+    if minify_this_html_block == true and settings.website_minify_inline_html != 'false'
+      render'inline-html',input_html:minify_this_html_input
+    else
+      echo minify_this_html_input
+    endif
+  -%}
+
+{%- schema %}
+{
+  "name": "Social / Instagram",
+  "tag": "section",
+  "class": "theme-section__social-instagram",
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"}, 
+        {"type":"select","id":"row_spacing_inner_top","default":"none","label":"Inner Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"none","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"section_background_color","default":"pink","label":"Background Color", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+    { "type": "header", "content": "Connect"},
+        {  "type": "checkbox","id":"full_width","default":true,"label":"t:sections.rich-text.settings.full_width.label"},
+        {  "type": "text","id":"elfsight_account_embed_code","default":"elfsight-app-####-####-####-####","label":"Elfsight Account Embed Code" }
+  ],
+  "blocks": [
+    { "type": "sub_heading", "name": "Sub Title", "limit": 1, "settings": [ { "type": "text","id":"sub_heading","default":"@instagram_usename","label":"Sub Title" } ]},
+    { "type": "heading", "name": "Title", "limit": 1, "settings": [ { "type": "text","id":"heading","default":"Connect Elfsight for Instagram","label":"Title" } ] },
+    {
+      "type": "button",
+      "name": "t:sections.rich-text.blocks.button.name",
+      "limit": 1,
+      "settings": [
+        { "type": "header", "content": "Button"},
+          {"type":"checkbox","id":"button_show","default":false,"label": "Show Button"},
+          { "type": "text","id":"button_label","label":"Button Label"},
+          {"type":"select","id":"button_size","default":"button_large","label":"Button Style", "options": [ { "value":"button_small","label":"Button Standard"}, { "value":"button_large","label":"Button Large"}, { "value":"button_text","label":"Text Link" } ] },
+          {"type":"select","id":"button_color","default":"button_black","label":"Button Color", "options": [ { "value":"button_black","label":"Black"},{ "value":"button_white","label":"White"},{ "value":"button_red","label":"Red"},{ "value":"button_pink","label":"Pink"},{ "value":"button_green","label":"Green"},{ "value":"button_trans","label":"Transparent" } ] },
+          { "type": "url","id":"button_link","label":"Button Link"},
+          {"type":"checkbox","id":"button_target","default":false,"label":"Open link in new window" }
+      ]
+    }
+  ],
+  "presets": [ {
+    "name": "Social / Instagram",
+    "blocks": [
+      { "type": "heading"},
+      { "type": "sub_heading"},
+      { "type": "button" } ] 
+  } ] }
+{% endschema %}

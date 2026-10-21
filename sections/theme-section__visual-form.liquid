@@ -1,0 +1,323 @@
+{%- liquid
+  comment
+    //---------------------------------------------//
+    //-- general section settings --//
+    //---------------------------------------------//
+  endcomment
+    assign filename = 'theme-section__visual-form'
+    assign this_section_extra_classes = ''
+
+    assign spacing_t = ' padding-t-'
+    assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+    assign spacing_b = ' padding-b-'
+    assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+    assign spacing_t = ' padding-xxs-t-'
+    assign spacing_t = spacing_t | append : section.settings.row_spacing_mobile_top
+    assign spacing_t = spacing_t | append : ' padding-xs-t-'
+    assign spacing_t = spacing_t | append : section.settings.row_spacing_mobile_top      
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+    assign spacing_b = ' padding-xxs-b-'
+    assign spacing_b = spacing_b | append : section.settings.row_spacing_mobile_bottom
+    assign spacing_b = spacing_b | append : ' padding-xs-b-'
+    assign spacing_b = spacing_b | append : section.settings.row_spacing_mobile_bottom      
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+    assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+    assign this_section_id = section.id | sha1 | truncate : 20, ""
+    assign this_section_id = 'section-' | append : this_section_id
+
+  comment
+    //---------------------------------------------//
+    //-- this section/template specific settings --//
+    //---------------------------------------------//
+  endcomment
+
+    assign alignment_version = 'appenddiv'
+    assign alignment_version = 'image-up-or-down'
+
+    assign extra_css = ''
+    if alignment_version == 'image-up-or-down'
+        assign section_background_color_b = section.settings.section_background_color_b
+        assign section_background_color_direction = section.settings.section_background_color_direction
+
+        if section_background_color_b != 'none'
+          if section_background_color_direction == 'image-up'
+              assign padding_t = section.settings.row_spacing_inner_top
+
+              assign difference = section.settings.section_background_size
+              assign difference_extra = ' + 0px'
+              assign split_height_combined = 'calc( var(--spacing-[padding_t]) + var(--spacing-[difference]) * 1 )' | replace : '[padding_t]', padding_t | replace : '[difference]', difference
+              assign split_height = 'calc( var(--spacing-[difference]) * -1 )' | replace : '[difference]', difference
+              assign split_height_minus = 'calc( var(--spacing-[difference]) * 1 )' | replace : '[difference]', difference
+              assign split_height_extra = ' calc((var(--spacing-[difference]) [difference_extra] ) * 1)' | replace : '[difference]', difference | replace : '[difference_extra]', difference_extra
+              assign split_height_extra_minus = ' calc((var(--spacing-[difference]) [difference_extra] ) * -1)' | replace : '[difference]', difference | replace : '[difference_extra]', difference_extra
+              assign split_height_extra_double = ' calc((var(--spacing-[difference]) [difference_extra] ) * 2)' | replace : '[difference]', difference | replace : '[difference_extra]', difference_extra
+
+              assign extra_css = extra_css | append : "#[SECTION_ID]::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT_COMBINED];right:0;top:[BACKGROUND_HEIGHT_EXTRA_MINUS];left:0;background:var(--color-[BACKGROUND_B])}"
+              assign extra_css = extra_css | append : "#[SECTION_ID].section-inner{margin-top:[BACKGROUND_HEIGHT_EXTRA]}"
+              assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative}"
+              assign extra_css = extra_css | append : "#[SECTION_ID].section-inner .col-image-wrap .media{transform:translateY([BACKGROUND_HEIGHT]);margin-bottom:[BACKGROUND_HEIGHT]}"
+
+          elsif section_background_color_direction == 'image-down'
+              assign padding_b = section.settings.row_spacing_inner_bottom
+              assign difference = section.settings.section_background_size
+              assign difference_extra = ' + 0px'
+
+              assign split_height_combined = 'calc( var(--spacing-[padding_b]) + var(--spacing-[difference]) * 1 )' | replace : '[padding_b]', padding_b | replace : '[difference]', difference
+              assign split_height = 'calc( var(--spacing-[difference]) * 1 )' | replace : '[difference]', difference
+              assign split_height_minus = 'calc( var(--spacing-[difference]) * -1 )' | replace : '[difference]', difference
+              assign split_height_extra = 'calc(var(--spacing-[difference]) [difference_extra] )' | replace : '[difference]', difference | replace : '[difference_extra]', difference_extra
+              assign split_height_extra_minus = ' calc((var(--spacing-[difference]) [difference_extra] ) * -1)' | replace : '[difference]', difference | replace : '[difference_extra]', difference_extra
+              assign split_height_extra_double = ' calc((var(--spacing-[difference]) [difference_extra] ) * 2)' | replace : '[difference]', difference | replace : '[difference_extra]', difference_extra
+              assign extra_css = extra_css | append : "@media screen and (min-width:768px) {"
+              assign extra_css = extra_css | append : "#[SECTION_ID]::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT_COMBINED];right:0;bottom:[BACKGROUND_HEIGHT_EXTRA_MINUS];left:0;background:var(--color-[BACKGROUND_B])}"
+              assign extra_css = extra_css | append : "#[SECTION_ID].section-inner{margin-bottom:[BACKGROUND_HEIGHT_EXTRA]}"
+              assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative}"
+              assign extra_css = extra_css | append : "#[SECTION_ID].section-inner .col-image-wrap .media{transform:translateY([BACKGROUND_HEIGHT]);margin-top:[BACKGROUND_HEIGHT_MINUS]}"
+              assign extra_css = extra_css | append : "}"
+          endif
+
+          assign extra_css = extra_css | replace: '[SECTION_ID]', this_section_id
+          assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT_COMBINED]', split_height_combined
+          assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]', split_height
+          assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT_MINUS]', split_height_minus
+          assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT_EXTRA]', split_height_extra
+          assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT_EXTRA_MINUS]', split_height_extra_minus
+          assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT_EXTRA_DOUBLE]', split_height_extra_double
+          assign extra_css = extra_css | replace: '[BACKGROUND_B]', section_background_color_b
+        endif
+    else
+        assign section_background_color_b = section.settings.section_background_color_b
+        assign section_background_color_split = section.settings.section_background_color_split
+        if section_background_color_split contains '%'
+          assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+          assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+        elsif section_background_color_split contains 'px'
+          assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+          assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+        else
+          assign section_background_color_split_raw = 'calc(var(--spacing-[BACKGROUND_HEIGHT]) + 60px )'
+          assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+        endif
+        assign extra_css = ''
+        if section_background_color_b != 'none'
+          assign extra_css = extra_css | append : "#[SECTION_ID].section-inner::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT];right:0;bottom:0;left:0;background:var(--color-[BACKGROUND_B])}"
+          assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative} "
+          assign extra_css = extra_css | replace: '[SECTION_ID]', this_section_id
+          assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]', section_background_color_split_height
+          assign extra_css = extra_css | replace: '[BACKGROUND_B]', section_background_color_b
+        endif
+    endif
+
+    assign settings_use_animations = section.settings.use_animations
+    assign animate_waypoints = false
+    assign animate_classname = 'no-animation'
+    if settings_use_animations == true
+      assign animate_classname = 'js-ani-me'
+      assign animate_waypoints = true
+    endif
+
+    if section.settings.block_font_color == 'dark'
+      assign block_font_color = 'version-color-dark'
+      assign this_block_heading_font_color = 'black'
+      assign this_block_text_font_color = 'black'
+    else
+      assign block_font_color = 'version-color-light'
+      assign this_block_heading_font_color = 'white'
+      assign this_block_text_font_color = 'white'
+    endif
+
+    assign this_block_heading = section.settings.this_heading
+    assign block_heading_font_size = 'font-size-' | append : section.settings.block_heading_font_size
+    assign block_heading_font_color = 'color-' | append : this_block_heading_font_color
+    
+    comment
+      assign inline_lekker_logo_code = "<span class='inline-lekker-logo [color]'>lekker</span> " | replace : '[color]', block_heading_font_color
+      assign this_block_heading = this_block_heading | replace: "@thelekker", '@theLEKKER'
+      assign this_block_heading = this_block_heading | replace: "lekker ", inline_lekker_logo_code
+      assign this_block_heading = this_block_heading | replace: "[lekker]", inline_lekker_logo_code
+      assign this_block_heading = this_block_heading | replace: "@theLEKKER", '@theLEKKER'
+    endcomment
+    assign this_block_content = section.settings.this_content
+    assign block_text_font_size = 'font-size-' | append : section.settings.block_text_font_size
+    assign block_text_font_color = 'color-' | append : this_block_text_font_color
+
+    assign this_block_content_version = 'manual'
+    assign this_block_content_version = 'normal'
+
+    if this_block_content_version == 'normal'
+        assign this_html = this_block_content
+        assign this_block_content = '<div class="rich-text-content font-fam-normal [block_text_font_size] [color_classname]">'
+        assign this_block_content = this_block_content | append : this_html
+        assign this_block_content = this_block_content | append : '</div>'
+
+        assign this_block_content = this_block_content | replace : '[UL]', ''
+        assign this_block_content = this_block_content | replace : '[_UL]', ''
+        assign this_block_content = this_block_content | replace : '[LI]', ''
+        assign this_block_content = this_block_content | replace : '[_LI]', ''
+        assign this_block_content = this_block_content | replace : '[EM]', ''
+        assign this_block_content = this_block_content | replace : '[_EM]', ''
+        assign this_block_content = this_block_content | replace : '[B]', ''
+        assign this_block_content = this_block_content | replace : '[_B]', ''
+        assign this_block_content = this_block_content | replace : "-break-", ""
+        assign this_block_content = this_block_content | replace : "[break]", ""
+
+        assign this_block_content_output = this_block_content
+    elsif this_block_content_version == 'manual'
+        assign this_html = this_block_content
+        assign this_html = this_html | replace : '<strong>', '[B]'
+        assign this_html = this_html | replace : '</strong>', '[_B]'
+        assign this_html = this_html | replace : '<em>', '[EM]'
+        assign this_html = this_html | replace : '</em>', '[_EM]'
+        assign this_html = this_html | replace : '<ul>', '[UL]'
+        assign this_html = this_html | replace : '</ul>', '[_UL]'
+        assign this_html = this_html | replace : '<li>', '[LI]'
+        assign this_html = this_html | replace : '</li>', '[_LI]'
+        assign this_html = this_html | strip_html
+        assign this_html = this_html | replace : '[UL]', '</p><ul class="font-fam-normal [block_text_font_size] [color_classname]">'
+        assign this_html = this_html | replace : '[_UL]', '</ul><p class="font-fam-normal [block_text_font_size] [color_classname]">'
+        assign this_html = this_html | replace : '[LI]', '<li>'
+        assign this_html = this_html | replace : '[_LI]', '</li>'
+        assign this_html = this_html | replace : '[EM]', '<em>'
+        assign this_html = this_html | replace : '[_EM]', '</em>'
+        assign this_html = this_html | replace : '[B]', '<strong>'
+        assign this_html = this_html | replace : '[_B]', '</strong>'
+
+        assign this_block_content = ''
+        assign this_block_content = this_block_content | append : '<p class="font-fam-normal [block_text_font_size] [color_classname]">'
+          assign this_block_content = this_block_content | append : this_html
+        assign this_block_content = this_block_content | append : '</p>'
+        assign this_block_content_output = this_block_content
+    endif
+
+    assign this_block_content_output = this_block_content_output | replace : '[block_text_font_size]', block_text_font_size
+    assign this_block_content_output = this_block_content_output | replace : '[color_classname]', block_text_font_color
+    assign this_block_content_output = this_block_content_output | replace : "-break-", "<br />"
+    assign this_block_content_output = this_block_content_output | replace : "[break]", "<br />"
+
+    assign section_image_size = section.settings.section_image_size
+
+    if section_image_size != 'original' and section_image_size != 'portrait' and section_image_size != 'landscape' and section_image_size != 'square'
+      assign section_image_version = 'media--' | append : 'padding-top-' | append : section_image_size | append : 'P'
+    else
+      assign section_image_version = 'media--' | append : section_image_size
+    endif
+    if section_image_size == 'original'
+      assign section_image_version = 'original'
+    endif
+
+    assign section_image_rounded_corners = section.settings.section_image_rounded_corners
+
+    assign set_max_width = section.settings.max_heading_width
+    assign max_heading_width = 'display:block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+    assign set_max_width = section.settings.max_content_width
+    assign max_content_width = 'display:block;width:100%;max-width:[[set_max_width]]ch;' | replace :'[[set_max_width]]',set_max_width
+    assign page_width_class = section.settings.page_width
+    assign text_box_position = section.settings.text_box_position
+    assign text_box_position_mobile = section.settings.text_box_position_mobile
+    assign layout_order = section.settings.layout_order
+
+
+  echo '<div id="[this_section_id]" class="section-inner no-overflow-changes theme-section__visual-text section-two-cols [this_section_extra_classes] [block_font_color]">' | replace : '[this_section_id]', this_section_id | replace : '[this_section_extra_classes]', this_section_extra_classes | replace : '[block_font_color]', block_font_color
+    echo '<div class="[page_width_class]">' | replace : '[page_width_class]', page_width_class
+      echo '<div class="two-cols two-cols-[layout_order]">' | replace : '[layout_order]', layout_order
+        echo '<div class="two-cols-col col-content col-content-[text_box_position] col-content-mobile-[text_box_position_mobile]">' | replace : '[text_box_position]', text_box_position | replace : '[text_box_position_mobile]', text_box_position_mobile
+          if animate_waypoints == true
+            echo '<span class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi animation-trigger-waypoint-multi-in-and-out" data-offset="70%">'
+              echo '<span class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="400" data-set-delay="0" data-set-delay-step="100" data-set-animation-out="fadeOutDown">'
+          endif
+          echo '<div class="-padding-v-xs padding-xs-t-xxs -padding-xs-b-xxs padding-xxs-t-xxs -padding-xxs-b-xxs [block_heading_font_color]">' | replace : '[block_heading_font_color]', block_heading_font_color
+              if this_block_heading != blank
+                echo '<span class="[animate_classname]">' | replace : '[animate_classname]', animate_classname
+                  echo '<h1 class="font-fam-normal [block_heading_font_size] [block_heading_font_color] margin-b-xxs">' | replace : '[block_heading_font_size]', block_heading_font_size | replace : '[block_heading_font_color]', block_heading_font_color
+                    echo '<span class="theme-section-title" style="[max_heading_width]">[this_block_heading]</span>' | replace : '[max_heading_width]', max_heading_width | replace : '[this_block_heading]', this_block_heading
+                  echo '</h1>'
+                echo '</span>'
+              endif
+              if this_block_content_output != blank
+                echo '<div style="[max_content_width]" class="rich-text-content__[this_block_content_version]">' | replace : '[max_content_width]', max_content_width | replace : '[this_block_content_version]', this_block_content_version
+                  echo '<div class="margin-b-xxs rich-text-content__[this_block_content_version]">' | replace : '[this_block_content_version]', this_block_content_version
+                    echo '<div class="rich-text-content padding-b-xxs">'
+                      echo '<span class="[animate_classname]">[this_block_content_output]</span>' | replace : '[animate_classname]', animate_classname | replace : '[this_block_content_output]', this_block_content_output
+                    echo '</div>'
+                  echo '</div>'
+                echo '</div>'
+              endif
+
+              render 'footer-newsletter', version : 'minified_no_text', given_tags : section.settings.this_tags
+
+          echo '</div>'
+          if animate_waypoints == true
+              echo '</span>'
+            echo '</span>'
+          endif
+
+        echo '</div>'
+        echo '<div class="two-cols-col col-image-wrap no-select">'
+          if section_image_version == 'original'
+            assign col_extra_class = 'media--relative'
+          else
+            assign col_extra_class = 'media--hover-scale ' | append : section_image_version
+          endif
+          echo '<div class="media media-rounded-corners-[section_image_rounded_corners] [col_extra_class]">' | replace : '[section_image_rounded_corners]', section_image_rounded_corners | replace : '[col_extra_class]', col_extra_class
+            if section.settings.section_image != blank
+              assign this_image_obj = section.settings.section_image
+            endif
+            render 'thumbnail-simple',max_srcset:2400,media:this_image_obj,this_classnames:'img-responsive image-pos-relative'
+          echo '</div>'
+        echo '</div>'
+      echo '</div>'
+    echo '</div>'
+
+    if extra_css != blank
+      capture bloated_css
+        echo '<style id="[this_section_id]__extra-css">[extra_css]</style>' | replace : '[this_section_id]',this_section_id | replace : '[extra_css]', extra_css
+      endcapture
+      render'inline-css',input_css:bloated_css
+    endif
+  -%}
+</div>
+{%- schema %}
+{
+  "name": "Newsletter / Visual",
+  "tag": "section",
+  "class": "theme-section__visual-form",
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"},
+        {"type":"select","id":"row_spacing_inner_top","default":"md","label":"Inner Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"md","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_mobile_top","default":"none","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_mobile_bottom","default":"md","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+
+        {"type":"select","id":"section_background_color","default":"blue","label":"Background Color First", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_b","default":"none","label":"Background Color Second", "options": [ { "value":"none","label":"None"},{ "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"select","id":"section_background_color_direction","default":"image-down","label":"Direction", "options": [ { "value":"image-up","label":"Image Up"},{ "value":"image-down","label":"Image Down"} ] },
+        {"type":"select","id":"section_background_size","default":"md","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [{ "value":"page-width--narrow","label":"Medium"}, { "value":"page-width","label":"Wide"},{ "value":"no-page-width","label":"Fullscreen" } ] },
+        {"type":"select","id":"layout_order","default":"text-image","label":"Horizontal Layout Order", "options": [{ "value":"image-text","label":"Image vs Text"},{ "value":"text-image","label":"Text vs Image"} ] },
+        {"type":"checkbox","id":"use_animations","default":true,"label":"Use Animations"},
+
+    { "type": "header", "content": "Content / Visual"},
+        { "type": "image_picker","id":"section_image","label":"Image Visual"},
+        {"type":"select","default":"original","label":"Image Size","id":"section_image_size", "options": [ { "value":"original","label":"Original"}, { "value":"portrait","label":"Portrait"}, { "value":"landscape","label":"Landscape"}, { "value":"square","label":"Square"}, { "value":"75","label":"16:12"}, { "value":"56","label":"16:9"}, { "value":"50","label":"2:1" } ] },
+        {"type":"select","id":"section_image_rounded_corners","default":"xl","label":"Visual rounded corners", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+    { "type": "header", "content": "Content / Text"},
+        { "type": "text","id":"this_heading","default":"Title","label":"Title"},
+        { "type": "richtext","id":"this_content","default":"<p>Lorem Ipsum</p>","label":"Content"},
+        {"type":"select", "id":"text_box_position","default":"center-center", "label":"Content Layout", "options":[ { "value":"center-left","label":"Center Left"},{ "value":"center-center","label":"Center Center"}, { "value":"center-right","label":"Center Right"},{ "value":"top-left","label":"Top Left"},{ "value":"top-center","label":"Top Center"},{ "value":"top-right","label":"Top Right"},{ "value":"bottom-left","label":"Bottom Left"},{ "value":"bottom-center","label":"Bottom Center"},{ "value":"bottom-right","label":"Bottom Right" } ] },
+        {"type":"select", "id":"text_box_position_mobile","default":"center-left", "label":"Content Layout", "options":[ { "value":"center-left","label":"Center Left"},{ "value":"center-center","label":"Center Center"}, { "value":"center-right","label":"Center Right"},{ "value":"top-left","label":"Top Left"},{ "value":"top-center","label":"Top Center"},{ "value":"top-right","label":"Top Right"},{ "value":"bottom-left","label":"Bottom Left"},{ "value":"bottom-center","label":"Bottom Center"},{ "value":"bottom-right","label":"Bottom Right" } ] },
+        {"type":"select","id":"block_heading_font_size","default":"lg","label":"Title Font Size", "options": [ { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"} ] },
+        {"type":"select","id":"block_font_color","default":"dark", "label":"Section Font Color", "options":[ { "value":"light", "label":"Light"}, { "value":"dark", "label":"Dark" }] },
+        {"type":"select","id":"block_text_font_size","default":"xs", "label":"Text Font Size", "options":[ { "value":"md", "label":"Intro"}, { "value":"xs", "label":"Normal" } ] },
+        { "type": "text","id":"max_heading_width","default":"15","label":"Max Title Width"},
+        { "type": "text","id":"max_content_width","default":"50","label":"Max Content Width"},
+        { "type": "text","id":"this_tags","default":"newsletter, newsletter-unique-name","label":"Tags (comma seperated)"},
+    { "type": "header", "content": "Button" }
+  ],
+  "presets": [ { "name": "Newsletter / Visual" } ]
+}
+{% endschema %}

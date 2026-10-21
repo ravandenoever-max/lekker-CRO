@@ -1,0 +1,142 @@
+{%- liquid
+comment
+  //---------------------------------------------//
+  //-- general section settings --//
+  //---------------------------------------------//
+endcomment
+
+  assign this_section_extra_classes = ''
+
+  assign spacing_t = ' padding-t-'
+  assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+  assign spacing_b = ' padding-b-'
+  assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+  assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+  assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+  assign this_section_id = section.id | sha1 | truncate : 20, ""
+  assign this_section_id = 'section-' | append : this_section_id
+
+comment
+//---------------------------------------------//
+//-- this section/template specific settings --//
+//---------------------------------------------//
+endcomment
+
+  assign section_background_color_b = section.settings.section_background_color_b
+  assign section_background_color_split = section.settings.section_background_color_split
+  if section_background_color_split contains '%'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  elsif section_background_color_split contains 'px'
+    assign section_background_color_split_raw = '[BACKGROUND_HEIGHT]'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  else 
+    assign section_background_color_split_raw = 'calc(var(--spacing-[BACKGROUND_HEIGHT]) + 60px )'
+    assign section_background_color_split_height = section_background_color_split_raw | replace : '[BACKGROUND_HEIGHT]',section_background_color_split
+  endif
+
+  assign extra_css = ''
+  if section_background_color_b != 'none'
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner::after{content:'';z-index:2;position:absolute;width:100%;height:[BACKGROUND_HEIGHT];right:0;bottom:0;left:0;background:var(--color-[BACKGROUND_B])}"
+    assign extra_css = extra_css | append : "#[SECTION_ID].section-inner>div{z-index:10;position:relative} "
+    assign extra_css = extra_css | replace: '[SECTION_ID]',this_section_id
+    assign extra_css = extra_css | replace: '[BACKGROUND_HEIGHT]',section_background_color_split_height
+    assign extra_css = extra_css | replace: '[BACKGROUND_B]',section_background_color_b
+  endif
+
+  assign page_width_class = section.settings.page_width
+
+  assign settings_use_animations = section.settings.use_animations
+  assign animate_waypoints = false
+  assign animate_classname = 'no-animation'
+  if settings_use_animations == true
+    assign animate_classname = 'js-ani-me'
+    assign animate_waypoints = true
+    if section.blocks.size > 1
+      assign animate_classname = 'animation-trigger'
+      assign animate_waypoints = false
+    endif
+  endif
+
+  assign other_blog_articles = ''
+  assign loop_count = 1
+  assign b_articles = blog.articles | sort: "published_at"
+  assign b_articles = b_articles | reverse
+  for blog_article in b_articles
+    assign blog_article_handle = blog_article.handle
+    if blog_article_handle != blank
+      assign loop_count = loop_count | plus:1
+      if loop_count > 2
+        assign other_blog_articles = other_blog_articles | append: blog_article_handle | append:'-_-'
+      endif
+    endif
+  endfor
+  assign other_blog_articles_arr = other_blog_articles | split: '-_-'
+-%}
+
+{%- comment -%}
+  <div class="bg-blue font-size-xs padding-v-md">
+    {%- for blog_article_handle in other_blog_articles_arr -%}
+      {%- if blog_article_handle != blank -%}
+        {%- assign this_article = articles[blog_article_handle] -%}
+        {%- if this_article.title != '' -%}
+          <br>this_article.id {{ this_article.id }}
+        {%- else -%}
+          <br>this_article.id Empty  {{ this_article.id }}
+        {%- endif -%}
+      {%- endif -%}              
+    {%- endfor -%}
+  </div>
+{%- endcomment -%}
+
+{%- if other_blog_articles_arr.size > 0 -%}
+<div id="{{ this_section_id }}" class="section-inner theme-section__main-blog-second {{ this_section_extra_classes }} {{ font_color_classname }}">
+  <div class="{{ page_width_class }}">
+    <div class="main-blog-grid">
+{%- if animate_waypoints == true -%}
+      <div class="animation-trigger-waypoint-wrapper animation-trigger-waypoint-multi-in-and-out" data-offset="85%">
+        <div class="js-generate-animate-childs invisible" data-set-animation-in="fadeInUp" data-set-dur="300" data-set-delay="300" data-set-delay-step="50" data-set-animation-out="fadeOutDown">
+{%- endif -%}
+          <div class="blog-articles">
+            {%- for blog_article_handle in other_blog_articles_arr -%}
+              {%- if blog_article_handle != blank -%}
+                {%- assign this_article = articles[blog_article_handle] -%}
+                {%- if this_article.id != '' -%}
+                  <div class="blog-articles__article article">
+                    {%- render 'article-card', layout:'',article:this_article,show_image:true,show_button:false -%}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}              
+            {%- endfor -%}
+          </div>
+{%- if animate_waypoints == true -%}
+        </div>
+      </div>
+{%- endif -%}
+    </div>
+  </div>
+  <style id="{{ this_section_id }}__extra-css">{{ extra_css }}</style>
+</div>
+{%- endif -%}
+ 
+{%- schema %}
+  {
+    "name": "Blog Overview Grid",
+    "tag": "section",
+    "class": "theme-section__main-blog-second",
+    "settings": [
+      { "type": "header", "content": "Section Layout and Size"},
+          {"type":"select","id":"row_spacing_inner_top","default":"md","label":"Inner Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+          {"type":"select","id":"row_spacing_inner_bottom","default":"md","label":"Inner Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+          {"type":"select","id":"section_background_color","default":"blue","label":"Background Color First", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+          {"type":"select","id":"section_background_color_b","default":"none","label":"Background Color Second", "options": [ { "value":"none","label":"None"},{ "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+          {"type":"select","id":"section_background_color_split","default":"xxl","label":"Background Color Switch", "options": [ { "value":"50%","label":"Half"},{ "value":"90%","label":"Top"},{ "value":"xxl","label":"Bottom"}, { "value":"none","label":"None" } ] },
+          {"type":"select","id":"page_width","default":"page-width","label":"Horizontal Layout Size", "options": [{ "value":"page-width--narrow","label":"Medium"}, { "value":"page-width","label":"Wide"},{ "value":"no-page-width","label":"Fullscreen" } ] },
+          {"type":"checkbox","id":"use_animations","default":true,"label":"Use Animations" }
+    ],
+    "presets": [ { "name": "Blog Overview Grid" } ]
+  }
+{% endschema %}

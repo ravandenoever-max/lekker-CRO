@@ -1,0 +1,590 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "39284n5v534879430ucijmv02h45n9uv2mhy": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "visual_slide_7E7TAN": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Final_concept_2_4fdcfc30-a404-4a58-8de1-986c7acf9a58.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 60,
+            "image_mobile": "shopify://shop_images/1_de4b8153-ea3b-413d-8d3a-0dee9d116f89.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 60,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-left",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "feels lekker, works like a tierelier",
+            "heading_font_size": "xl",
+            "max_heading_width": "10",
+            "text": "Producten met ingrediënten van 100% natuurlijke oorsprong.",
+            "text_font_size": "md",
+            "max_text_width": "30",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": true,
+            "button_label": "shop nu",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https://thelekkercompany.com/collections/all-products",
+            "button_target": false
+          }
+        },
+        "visual_slide_6NYJ7U": {
+          "type": "visual_slide",
+          "disabled": true,
+          "settings": {
+            "image_desktop": "shopify://shop_images/Homepage_banner_1.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 60,
+            "image_mobile": "shopify://shop_images/Herfst_sale_socials_post_7ba9731d-7849-42e4-9d41-06c8a7baafd0.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 60,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "herfst sale",
+            "heading": "lekker 30% korting",
+            "heading_font_size": "xxl",
+            "max_heading_width": "20",
+            "text": "*automatisch verrekend in je winkelmandje",
+            "text_font_size": "md",
+            "max_text_width": "30",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": true,
+            "button_label": "shop nu",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://collections",
+            "button_target": false
+          }
+        },
+        "a53c93e76af76d9e": {
+          "type": "visual_slide",
+          "disabled": true,
+          "settings": {
+            "image_desktop": "shopify://shop_images/Untitled_design_2.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 60,
+            "image_mobile": "shopify://shop_images/Untitled_design_21.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 60,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-left",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "feels lekker, works like a tierelier",
+            "heading_font_size": "xxl",
+            "max_heading_width": "8",
+            "text": "Misschien wel de beste natuurlijke deodorant ter wereld.",
+            "text_font_size": "md",
+            "max_text_width": "30",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": true,
+            "button_label": "shop nu",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "shopify://collections/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "visual_slide_7E7TAN",
+        "visual_slide_6NYJ7U",
+        "a53c93e76af76d9e"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_start_color": "#F5E27B",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "vw",
+        "slide_ratio_mobile": "120",
+        "slide_ratio_desktop": "38",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "6000",
+        "slide_ux_color": "red",
+        "slide_arrows": true,
+        "slide_pager": true,
+        "slide_count": false,
+        "use_animations": false
+      }
+    },
+    "a0a19db4-f630-472c-b7cb-92333dee57cb": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "use_animations": false,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "deodorant",
+        "filter_product_tagname": "product-filter-discover",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "xxl",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 4,
+        "max_element_view_row": "4",
+        "show_intro": true,
+        "intro_heading": "Onze hardlopers",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "red",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": true,
+        "button_label": "Bekijk al onze producten",
+        "button_size": "button_small",
+        "button_color": "button_trans",
+        "button_link": "shopify://collections/all",
+        "button_target": false
+      }
+    },
+    "673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-1": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/all_natural_zonder_tekst_7bf9b761-2a0c-4d69-811a-5cb02ce91c95.png",
+            "predefined_image": "usp-sustainable",
+            "heading": "100% ingrediënten van natuurlijke oorsprong"
+          }
+        },
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-2": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/vegan_symbol_zonder_tekst.png",
+            "predefined_image": "usp-vegan",
+            "heading": "onze hele lijn is vegan"
+          }
+        },
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-0": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/free_from_symbol_zonder_tekst.png",
+            "predefined_image": "usp-effective",
+            "heading": "geen toegevoegde microplastics"
+          }
+        },
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/Works_zonder_tekst_8000x_5f10f799-151a-4f04-8d32-3d76e90f23b3.png",
+            "predefined_image": "usp-certified",
+            "heading": "beoordeeld met 4,7 uit 5"
+          }
+        }
+      },
+      "block_order": [
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-1",
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-2",
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-0",
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "lblue",
+        "page_width": "page-width",
+        "item_width_mobile": 200,
+        "item_width_desktop": 200,
+        "item_ratio": "10/6",
+        "grid_size_on_mobile": 2,
+        "show_intro": true,
+        "intro_heading": "feels lekker, works like a tierelier",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "white",
+        "text_font_color": "white",
+        "max_heading_width": "12",
+        "max_content_width": "50",
+        "use_carousel": false,
+        "use_carousel_device": "mobile",
+        "use_carousel_auto_scroll": true,
+        "use_carousel_arrows": false,
+        "use_carousel_manual_scroll": false,
+        "item_font_color": "white",
+        "use_carousel_speed": "50"
+      }
+    },
+    "d7ae77fb-4e80-4eda-a3f5-440b0da2f5c9": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--16015529869565__d7ae77fb-4e80-4eda-a3f5-440b0da2f5c9-16778673569b4312fd-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/TheLekkerCompany_NaturalDeodorant_10-BANNER_e9f8770c-e6f1-4611-bb84-822ced81c4f7.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 25,
+            "image_mobile": "shopify://shop_images/TheLekkerCompany_NaturalDeodorant_10-BANNER_e9f8770c-e6f1-4611-bb84-822ced81c4f7.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "Subtitle",
+            "heading": "Video",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "Slide content",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": true,
+            "video_source_desktop": "1074207315",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "1074210822",
+            "video_aspect_mobile": "1:1",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16015529869565__d7ae77fb-4e80-4eda-a3f5-440b0da2f5c9-16778673569b4312fd-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "md",
+        "row_spacing_outer_bottom": "md",
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "56.25",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": true,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "theme_section_visual_rows_atfCJr": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "column_Q7UcL6": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.oudersvannu.nl/producten/zwanger-zweet-onder-borsten~ec278ce?referrer=https%3A%2F%2Fwww.google.com%2F&referrer=https%3A%2F%2Fthelekkercompany.com%2F",
+            "column_custom_image": "shopify://shop_images/logo.svg",
+            "predefined_image": "usp-plant",
+            "heading": ""
+          }
+        },
+        "column_TBk3F4": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.youtube.com/watch?v=ZD6rxP5JCVw&t=40s",
+            "column_custom_image": "shopify://shop_images/tedx-logo.png",
+            "predefined_image": "usp-plant",
+            "heading": ""
+          }
+        },
+        "column_VjaPbN": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.volkskrant.nl/economie/the-lekker-company-moest-heel-wat-horden-over-voor[…]nkels-lag~b3765150/?referrer=https%3A%2F%2Fwww.google.com%2F",
+            "column_custom_image": "shopify://shop_images/Volkskrant.svg",
+            "predefined_image": "usp-plant",
+            "heading": ""
+          }
+        },
+        "column_MRMkxD": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.quotenet.nl/zakelijk/vrouwen-in-zaken/a34846732/hoe-dewi-van-de-waeter-met-haar-duurzame-deo-in-de-supermarkt-kwam-te-liggen/",
+            "column_custom_image": "shopify://shop_images/quote-1.svg",
+            "predefined_image": "usp-sustainable",
+            "heading": ""
+          }
+        },
+        "column_BcPWky": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://retailtrends.nl/news/60006/powervrouw-dewi-van-de-waeter-the-lekker-company",
+            "column_custom_image": "shopify://shop_images/retailtrends-zwart.webp",
+            "predefined_image": "usp-vegan",
+            "heading": ""
+          }
+        },
+        "column_VPe3fc": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.deondernemer.nl/groei/de-groeipijnen-van-the-lekker-company-ik-wil-te-snel-de-breedte-in-en-zie-overal-kansen~82f7ae2?referrer=https%3A%2F%2Fwww.google.com%2F",
+            "column_custom_image": "shopify://shop_images/de-ondernemer-logo.png",
+            "predefined_image": "usp-effective",
+            "heading": ""
+          }
+        },
+        "column_mmKi4m": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://maatschapwij.nu/duurzaam/dewi-van-de-waeter-the-lekker-company/",
+            "column_custom_image": "shopify://shop_images/icon-maatchapwij.png",
+            "predefined_image": "usp-plant",
+            "heading": ""
+          }
+        },
+        "column_6EAzrJ": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.duic.nl/ondernemen/duic-in-zaken-7-met-the-lekker-company/",
+            "column_custom_image": "shopify://shop_images/HMC-1500-DUIC-logo-november-2015.png",
+            "predefined_image": "usp-certified",
+            "heading": ""
+          }
+        },
+        "column_Tjfkdp": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.libelle.nl/mode-beauty/microplastics-verzorgingsproduct~b34ae55f/?referrer=https://www.google.com/",
+            "column_custom_image": "shopify://shop_images/libelle-logo.png",
+            "predefined_image": "usp-plant",
+            "heading": ""
+          }
+        },
+        "column_cXcPLL": {
+          "type": "column",
+          "settings": {
+            "item_link": "https://www.menshealth.com/nl/grooming/g43767615/natuurlijke-deodorant-mannen/",
+            "column_custom_image": "shopify://shop_images/Men_s_Health.svg",
+            "predefined_image": "usp-plant",
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Q7UcL6",
+        "column_TBk3F4",
+        "column_VjaPbN",
+        "column_MRMkxD",
+        "column_BcPWky",
+        "column_VPe3fc",
+        "column_mmKi4m",
+        "column_6EAzrJ",
+        "column_Tjfkdp",
+        "column_cXcPLL"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "lpink",
+        "page_width": "page-width",
+        "item_width_mobile": 250,
+        "item_width_desktop": 300,
+        "item_ratio": "15/10",
+        "grid_size_on_mobile": 5,
+        "show_intro": true,
+        "intro_heading": "bekend van",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "white",
+        "text_font_color": "white",
+        "max_heading_width": "13",
+        "max_content_width": "50",
+        "use_carousel": false,
+        "use_carousel_device": "mobile",
+        "use_carousel_auto_scroll": true,
+        "use_carousel_arrows": true,
+        "use_carousel_manual_scroll": false,
+        "item_font_color": "white",
+        "use_carousel_speed": "50"
+      }
+    },
+    "f2491a8a-c91f-4823-b528-c55c623aea20": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "row_spacing_mobile_top": "none",
+        "row_spacing_mobile_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/image_5.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Werkt als een tierelier",
+        "this_content": "<p>Wij maken effectieve en natuurlijke huidverzorging die echt werkt. Met onze smeerbare deodorant ruik je de hele dag fris. Geloof ons maar, je lichaam wil niet meer anders.</p>",
+        "text_box_position": "center-left",
+        "text_box_position_mobile": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "black",
+        "block_text_font_size": "md",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "30",
+        "button_show": true,
+        "button_label": "feel lekker",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_link": "shopify://collections/all",
+        "button_target": false
+      }
+    },
+    "daf32b42-0499-47d4-be26-72b2b71fd877": {
+      "type": "theme-section__social-instagram",
+      "blocks": {
+        "template--14373867421745__daf32b42-0499-47d4-be26-72b2b71fd877-1666607995fe3f88bb-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the Club"
+          }
+        },
+        "template--14373867421745__daf32b42-0499-47d4-be26-72b2b71fd877-1666607995fe3f88bb-1": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "@thelekkercompany"
+          }
+        }
+      },
+      "block_order": [
+        "template--14373867421745__daf32b42-0499-47d4-be26-72b2b71fd877-1666607995fe3f88bb-0",
+        "template--14373867421745__daf32b42-0499-47d4-be26-72b2b71fd877-1666607995fe3f88bb-1"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "full_width": true,
+        "elfsight_account_embed_code": "elfsight-app-2b4f7d41-85a8-4f6e-8660-2ba58a5e5b08"
+      }
+    },
+    "theme_section_visual_GBgmrt": {
+      "type": "theme-section__visual",
+      "name": "Visual",
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "pink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "medium",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "56.25",
+        "slide_ratio_desktop": "56.25",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "707ec269-9f8e-42c9-95de-3bee706d6d80_newsletter": {
+      "type": "theme-section__visual-form",
+      "settings": {
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "row_spacing_mobile_top": "none",
+        "row_spacing_mobile_bottom": "md",
+        "section_background_color": "lblue",
+        "section_background_color_b": "none",
+        "section_background_color_direction": "image-down",
+        "section_background_size": "none",
+        "page_width": "no-page-width",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify://shop_images/Untitled_design_12.png",
+        "section_image_size": "landscape",
+        "section_image_rounded_corners": "none",
+        "this_heading": "Benieuwd naar onze producten?",
+        "this_content": "<p>Meld je aan voor onze nieuwsbrief en ontvang 15% korting op je eerste bestelling!</p><p></p>",
+        "text_box_position": "center-center",
+        "text_box_position_mobile": "center-center",
+        "block_heading_font_size": "xl",
+        "block_font_color": "light",
+        "block_text_font_size": "xs",
+        "max_heading_width": "15",
+        "max_content_width": "26",
+        "this_tags": "newsletter-homepage"
+      }
+    }
+  },
+  "order": [
+    "39284n5v534879430ucijmv02h45n9uv2mhy",
+    "a0a19db4-f630-472c-b7cb-92333dee57cb",
+    "673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde",
+    "d7ae77fb-4e80-4eda-a3f5-440b0da2f5c9",
+    "theme_section_visual_rows_atfCJr",
+    "f2491a8a-c91f-4823-b528-c55c623aea20",
+    "daf32b42-0499-47d4-be26-72b2b71fd877",
+    "theme_section_visual_GBgmrt",
+    "707ec269-9f8e-42c9-95de-3bee706d6d80_newsletter"
+  ]
+}

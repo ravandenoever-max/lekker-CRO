@@ -1,0 +1,446 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "subtitle"
+          }
+        },
+        "d638a386-94a2-4741-b8a7-00a35d4800a3": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "product_description-99088cd4f981": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "product_related_products_html": {
+          "type": "related_products_html",
+          "settings": {}
+        },
+        "prod_quantity_price-f0ca212c1df9": {
+          "type": "prod_quantity_price",
+          "settings": {
+            "prod_quantity_price": "true"
+          }
+        },
+        "buy_buttons-a87445186ebd": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_price_in_buy_button": false,
+            "show_quantity_selector": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "d638a386-94a2-4741-b8a7-00a35d4800a3",
+        "prod_quantity_price-f0ca212c1df9",
+        "buy_buttons-a87445186ebd",        
+        "product_description-99088cd4f981",
+        "product_related_products_html"        
+
+      ],
+      "settings": {
+        "enable_badges": false
+      }
+    },
+    "6576457567457fde": {
+      "type": "theme-section__visual-rows",
+      "blocks": {
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-1": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "predefined_image": "usp-plant",
+            "heading": "100% natuurlijk"
+          }
+        },
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-2": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify:\/\/shop_images\/NCS_rood.svg",
+            "predefined_image": "usp-vegan",
+            "heading": "vegan"
+          }
+        },
+        "column_CYVnd8": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "item_link": "",
+            "predefined_image": "usp-plant",
+            "heading": "Title"
+          }
+        },
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-0": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "predefined_image": "usp-effective",
+            "heading": "super effectief"
+          }
+        },
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-3": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "predefined_image": "usp-sustainable",
+            "heading": "duurzaam"
+          }
+        },
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "predefined_image": "usp-certified",
+            "heading": "b corp gecertificeerd"
+          }
+        }
+      },
+      "block_order": [
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-1",
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-2",
+        "column_CYVnd8",
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-0",
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-3",
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xxs",
+
+        "item_width_mobile": 200,
+        "item_width_desktop": 300,
+        "item_ratio":"10/6",
+        "grid_size_on_mobile": 2,
+
+        "section_background_color": "slgrey",
+        "show_intro": false,
+        "intro_heading": "It's simple, we care.",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "l",
+        "heading_font_color": "red",
+        "text_font_color": "red",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": false,
+        "use_carousel_device": "mobile",
+        "use_carousel_auto_scroll": false,
+        "use_carousel_arrows": false,
+        "use_carousel_manual_scroll": false,
+        "item_font_color": "red",
+        "use_carousel_speed": "20"
+      }
+    },
+    "20936872049855498": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "single-slide-id-1": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/TheLekkerCompany_NaturalDeodorant_Model_243_826950e9-0121-429e-ab94-116ff7cb9b2b.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 80,
+            "image_mobile": "shopify:\/\/shop_images\/TheLekkerCompany_NaturalDeodorant_Model_243_826950e9-0121-429e-ab94-116ff7cb9b2b.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-half-right",
+            "font_color": "dgreen",
+            "font_shadow": true,
+            "sub_heading": "",
+            "heading": "natuurijke verzorging",
+            "heading_font_size": "xxl",
+            "max_heading_width": "8",
+            "text": "Eindelijk, persoonlijke verzorgingsproducten die net zo goed is als voor jou als voor de wereld. Helemaal natuurlijk, veganistisch en duurzaam - nou dat is lekker!",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": true,
+            "video_source_desktop": "804440646",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "804440646",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "voel lekker",
+            "button_size": "button_small",
+            "button_color": "button_dgreen",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_target": false
+          }
+        },
+        "single-slide-id-2": {
+          "type": "visual_slide",
+          "disabled": true,
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/The-Lekker-Company_photography-9_Edited_1.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 25,
+            "image_mobile": "shopify:\/\/shop_images\/the-lekker-comapny-sunscreen.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-half-right",
+            "font_color": "white",
+            "font_shadow": true,
+            "sub_heading": "",
+            "heading": "Now that's awesome.",
+            "heading_font_size": "xxl",
+            "max_heading_width": "8",
+            "text": "All- natural, vegan and sustainable cream deodorant.",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": true,
+            "button_label": "Smell lekker now",
+            "button_size": "button_small",
+            "button_color": "button_hover_black",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "single-slide-id-1",
+        "single-slide-id-2"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "lg",
+        "row_spacing_outer_bottom": "lg",
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "lpink",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "56.25",
+        "slide_ratio_desktop": "56.25",
+        "section_image_rounded_corners": "xl",
+        "video_as_background_cover": true,
+        "slide_speed": "4000",
+        "slide_arrows": false,
+        "slide_pager": true,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "a0a3456345645634563567cb": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "special-products",
+        "filter_product_tagname": "",
+        "chosen_layout": "products_in_row",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 4,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Discover our other products",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "color",
+        "text_font_color": "color",
+        "max_heading_width": "20",
+        "max_content_width": "50",
+        "button_show": true,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "f0d1584d-9ec4-4165-9f2b-de7174e75a6a": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "sm",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "lpink",
+        "section_background_color_b": "lpink",
+        "section_background_color_split": "xxl",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": true,
+        "collection": "all-products",
+        "filter_product_tagname": "",
+        "chosen_layout": "products_in_row",
+        "chosen_section_layout": "xxl",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_element_view_row": "4",
+        "show_intro": true,
+        "intro_heading": "iets voor jou?",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "theme_section_faq_multiple_XVKmb4": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "faq_section_kmAF9T": {
+          "type": "faq_section",
+          "disabled": true,
+          "settings": {
+            "faq_section_title": "Section Title"
+          }
+        },
+        "d4f0babc-f998-40cf-acd4-7c58541cafdb": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe is The Lekker Company begonnen?",
+            "faq_section_qa_a": "<p>Dewi's uit de hand gelopen hobby begon uit frustratie over de moeilijke terminologie op een gemiddeld cosmetica-etiket. Je leest het hele verhaal op de over ons pagina.</p>"
+          }
+        },
+        "f7f0e428-19f7-45f4-8288-f19ba7d8f64f": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Waar kan ik Lekker producten kopen?",
+            "faq_section_qa_a": "<p>Onze producten zijn te koop bij veel grote (online) supermarktketens, drogisterijen en natuurwinkels. Ze zijn verkrijgbaar via onze eigen webshop en bij: <br><br>Zonnebrandcrème: <br>NL: o.a. Dille Kamille, Holland & Barrett, Pieter Pot, WAAR winkels en enkele DA winkels\n<br>BE: o.a. Dille Kamille & Holland & Barrett <br><br>Lippenbalsem <br> NL: o.a. Kruidvat (vanaf 17\/04\/2023) en WAAR winkels <br> BE: o.a. Kruidvat (niet alle winkels) <br><br>Soft bamboo sensitive deodorant <br> NL: Etos, Albert Heijn, Holland & Barrett <br> BE: Holland & Barrett<br><br>Neutraal deodorant<br>NL & BE: Holland & Barrett <br><br>Mandarijn & Citroen deodorant<br>NL: Etos, Albert Heijn, Jumbo, DA, WAAR en Dille Kamille <br> BE: Kruidvat, Albert Heijn & Dille Kamille<br><br>Pepermunt & Rozemarijn deodorant <br>\nNL: Etos, Albert Heijn, Jumbo, DA, WAAR, Picnic en Dille Kamille<br><br>Lavendel deodorant <br>NL: Etos, Albert Heijn, DA, WAAR, Holland & Barrett en Dille Kamille<br><br>Woodland deodorant\n<br>NL: Holland & Barrett, WAAR, Dille Kamille <br>BE: Holland & Barrett, Dille Kamille</p>"
+          }
+        },
+        "d5c8b5cb-f2ae-4be3-bbe4-dbbe75449d12": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Naar welke landen verzenden jullie?",
+            "faq_section_qa_a": "<p>We verzenden naar alle EU-landen (en enkele niet-EU-landen). Door in jouw winkelmandje op ‘afrekenen’ te klikken, kun je daarna jouw land selecteren. Staat jouw land niet in het lijstje, laat het ons even weten. We versturen je pakketje gratis binnen Nederland bij besteding vanaf €35,-.</p>"
+          }
+        },
+        "51c926b3-24ac-4479-8c71-2e047f54a36b": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Met welke methodes kan ik betalen?",
+            "faq_section_qa_a": "<p>Je kunt betalen met iDeal, PayPal, GPay, ShopPay en je creditcard.</p>"
+          }
+        },       
+      },
+      "block_order": [
+        "d4f0babc-f998-40cf-acd4-7c58541cafdb",
+        "f7f0e428-19f7-45f4-8288-f19ba7d8f64f",
+        "d5c8b5cb-f2ae-4be3-bbe4-dbbe75449d12",
+        "51c926b3-24ac-4479-8c71-2e047f54a36b"
+      ],
+      "name": "Text \/ Accordion",
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "social-content": {
+      "type": "theme-section__visual-rows",
+      "disabled": true,
+      "blocks": {
+        "social-content-a":{"type":"column","settings":{"item_link":"","column_custom_image":"shopify:\/\/shop_images\/lekker-company-happy.jpg","predefined_image":"","heading":"Social Item"}},
+        "social-content-b":{"type":"column","settings":{"item_link":"","column_custom_image":"shopify:\/\/shop_images\/lekker-company-happy.jpg","predefined_image":"","heading":"Social Item"}},
+        "social-content-c":{"type":"column","settings":{"item_link":"","column_custom_image":"shopify:\/\/shop_images\/lekker-company-happy.jpg","predefined_image":"","heading":"Social Item"}},
+        "social-content-d":{"type":"column","settings":{"item_link":"","column_custom_image":"shopify:\/\/shop_images\/lekker-company-happy.jpg","predefined_image":"","heading":"Social Item"}},
+        "social-content-e":{"type":"column","settings":{"item_link":"","column_custom_image":"shopify:\/\/shop_images\/lekker-company-happy.jpg","predefined_image":"","heading":"Social Item"}},
+        "social-content-f":{"type":"column","settings":{"item_link":"","column_custom_image":"shopify:\/\/shop_images\/lekker-company-happy.jpg","predefined_image":"","heading":"Social Item"}},
+        "social-content-g":{"type":"column","settings":{"item_link":"","column_custom_image":"shopify:\/\/shop_images\/lekker-company-happy.jpg","predefined_image":"","heading":"Social Item"}}
+      },
+      "block_order": [
+        "social-content-a",
+        "social-content-b",
+        "social-content-c",
+        "social-content-d",
+        "social-content-e",
+        "social-content-f",
+        "social-content-g"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xs",
+        "section_background_color": "white",
+        "item_width_mobile": 300,
+        "item_width_desktop": 300,
+        "item_ratio":"4/5",
+        "show_intro": false,
+        "intro_align": "center",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "use_carousel": true,
+        "use_carousel_device": "all",
+        "use_carousel_auto_scroll": false,
+        "use_carousel_arrows": true,
+        "use_carousel_manual_scroll": true,
+        "item_font_color": "black",
+        "use_carousel_speed": "20"
+      }
+    }       
+  },
+  "order": [
+    "main",
+    "6576457567457fde",
+    "theme_section_faq_multiple_XVKmb4",
+    "social-content",
+    "f0d1584d-9ec4-4165-9f2b-de7174e75a6a",
+    "20936872049855498",
+    "a0a3456345645634563567cb"
+    
+  ]
+}

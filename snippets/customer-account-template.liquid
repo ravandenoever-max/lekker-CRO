@@ -1,0 +1,166 @@
+<div class="customer customer-account">
+  <div class="page-width">
+    <div class="customer-account-grid">
+      <div class="customer-account-grid__col-a">
+        <div class="customer-account__title margin-b-sm margin-t-md">
+          <h1 class="font-fam-normal font-size-lg color-black txt-lowercase">{{ 'customer.account.title_welcome' | t }} {{ customer.first_name }}!</h1>
+        </div>
+        <div class="customer-account__menu margin-b-xxl margin-sm-b-sm margin-xs-b-sm margin-xxs-b-sm">
+          <div class="margin-b-xxs">
+            <a data-rel="orders" href="{{ routes.account_url }}" class="--js-trigger js-trigger-ca-orders font-fam-normal font-size-xs txt-lowercase color-black customer-account-link">{{ 'customer.account.view_orders' | t }} ({{ customer.orders.size }})</a>
+          </div>  
+          <div class="margin-b-xxs">
+            <a data-rel="addresses" href="{{ routes.account_addresses_url }}" class="--js-trigger js-trigger-ca-addresses font-fam-normal font-size-xs txt-lowercase color-black customer-account-link">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+          </div>
+  {%- if settings.website_use_favorites == true -%}  
+          <div>
+            <a data-rel="favorites" href="{{ settings.page_favorites_url }}" class="js-trigger js-trigger-ca-favorites font-fam-normal font-size-xs txt-lowercase color-black customer-account-link">{{ 'customer.account.view_favorites' | t }}</a>
+          </div>
+  {%- endif -%}
+        </div>
+        <div class="customer-account__logout"><a class="font-fam-normal font-size-xs txt-lowercase color-black customer-account-link" href="{{ routes.account_logout_url }}">{{ 'customer.log_out' | t }}</a></div>
+      </div>
+      <div class="customer-account-grid__col-b full-page-max-h">
+        <div class="padding-t-m">
+
+  {%- if template == 'customers/order' -%}
+          <div class="customer-account__content_area customer-account-orders-wrapper">
+            {%- render 'customer-account-order-detail' -%}
+          </div>
+  {%- elsif template == 'customers/account' -%}
+          <div class="customer-account__content_area customer-account-orders-wrapper">
+            <h2 class="font-fam-normal font-size-md color-black txt-lowercase margin-b-xxs">{{ 'customer.orders.title' | t }}</h2>
+            {%- render 'customer-account-orders' -%}
+          </div>
+  {%- elsif template == 'customers/addresses' -%}
+          <div class="customer-account__content_area customer-account-addresses-wrapper">
+            <h2 class="font-fam-normal font-size-md color-black txt-lowercase margin-b-sm">{{ 'customer.addresses.title' | t }}</h2>
+            {%- render 'customer-account-addresses' -%}
+          </div>
+  {%- endif -%}
+  {%- if settings.website_use_favorites == true -%}  
+          <div class="customer-account__content_area customer-account-favorites-wrapper">
+            <h2 class="font-fam-normal font-size-md color-black txt-lowercase margin-b-sm">My favorites</h2>
+            {%- render 'customer-account-favorites' -%}
+          </div>
+  {%- endif -%}
+
+          <div class="customer-account__logout-mobile js-show-below-992">
+            <a class="font-fam-normal font-size-sm txt-lowercase color-black customer-account-link" href="{{ routes.account_logout_url }}">{{ 'customer.log_out' | t }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(window).load(function(){
+      window.windoww = getPageWidth();
+      if (window.windoww < 992) {
+        $('.customer-account').removeClass('bg-gradient-vert-pink-pinklight');
+        $('.customer-account').addClass('bg-white');
+      }
+      $('.customer-account__content_area').removeClass('active');
+      $('.customer-account__menu a').removeClass('active');
+
+      if ( $('body').hasClass('template-customers-addresses') === true ) {
+        $('.customer-account__content_area.customer-account-addresses-wrapper').addClass('active');
+        $('.customer-account__menu a.js-trigger-ca-addresses').addClass('active');
+      } else {
+        $('.customer-account__content_area.customer-account-orders-wrapper').addClass('active');
+        $('.customer-account__menu a.js-trigger-ca-orders').addClass('active');
+      }
+      /* favorites?!! */
+      $('.customer-account__menu a.js-trigger').on('click',function (e) {
+        e.preventDefault();
+        var open_el = $(this).attr('data-rel');
+        $('.customer-account__menu a').removeClass('active');
+        $('.customer-account__menu a.js-trigger-ca-'+open_el+'').addClass('active');
+        $('.customer-account__content_area').removeClass('active');
+        $('.customer-account__content_area.customer-account-'+open_el+'-wrapper').addClass('active');
+        return false;
+      });
+    });
+  </script>
+  <style>
+    .customer-account-link { text-decoration:none !important; transition:all 0.3s ease 0s; color:var(--color-black); position:relative; }
+    .customer-account-link:hover { text-decoration:none; color:var(--color-black) }
+    .customer-account-link::after {
+        content:''; position:absolute; display:inline;
+        background:var(--color-black);
+        z-index:2; width:0; height:2px; left:0; bottom:-6px;
+        transition:all 0.3s ease 0s; }
+    .customer-account-link:hover::after { width:100%; left:0; }
+    .customer-account-link.active::after { width:100%; left:0; }
+
+    .customer-account__content_area { width:100%; }
+    .customer-account__content_area:not(.active) { display:none; pointer-events:none }
+    .customer-account__content_area.active { display:inline-block; }
+    .customer-account-grid .customer-account-grid__col-a {
+      width:100%;
+      padding:10px 0px 45px 0px;
+      border-bottom:1px solid rgba(0,0,0,0.2);
+    }
+    .customer-account-grid .customer-account-grid__col-b {
+      width:100%;
+      padding:0px 0px 100px 0px;
+    }
+    .customer-account__logout-mobile {
+      padding-top:30px;
+      margin-top:30px; margin-bottom:0px;
+      border-top:1px solid rgba(0,0,0,0.2);
+    }
+    @media screen and (min-width:550px) {
+      .customer-account-grid .customer-account-grid__col-a { padding:10px 0px 45px 0px; }
+    }
+
+    @media screen and (min-width:992px) {
+      .customer-account-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+        width:100%; height:100%;
+      }
+      .customer-account-grid .customer-account-grid__col-a {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        width:450px;
+        padding:0px 30px 150px 0px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+        border-bottom:0px solid rgba(0,0,0,0);
+      }
+      .customer-account-grid .customer-account-grid__col-a > div.customer-account__title { order:0;flex:0 1 auto;align-self:auto; }
+      .customer-account-grid .customer-account-grid__col-a > div.customer-account__menu { order:0;flex:1 1 auto;align-self:auto;}
+      .customer-account-grid .customer-account-grid__col-a > div.customer-account__logout { order:0;flex:0 1 auto;align-self:auto;}
+      .customer-account-grid .customer-account-grid__col-b {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        width:calc(100% - 450px);
+        padding:75px 0px 150px 30px;
+        background:white;
+        position:relative;
+      }
+      .customer-account-grid .customer-account-grid__col-b::after {
+        content:'';
+        position:absolute;
+        z-index:1;
+        width:100vw;
+        top:0px;
+        left:100%;
+        bottom:0px;
+        height:100%;
+        background: white;
+      }
+    }
+  </style>
+</div>

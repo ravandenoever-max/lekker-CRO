@@ -1,0 +1,132 @@
+{%- liquid
+  assign filename = 'element-announcement-bar'
+  assign show_announcement_bar = false
+  if section.settings.show_announcement_bar
+    assign show_announcement_bar = true
+    if section.settings.show_announcement_bar_only_on_homepage
+      if template == 'index'
+        assign show_announcement_bar = true
+      else
+        assign show_announcement_bar = false
+      endif
+    endif
+  endif
+  include 'get-language'
+
+  if show_announcement_bar
+    echo'<div class="no-se bg-red" role="region">'
+      echo'<div class="page-width announcement-bar">'
+        echo'<div class="announcement-bar__element-left">'
+          for block in section.blocks
+            if block.settings.announcement != blank
+              echo'<div class="--announcement-marquee">'
+                echo'<div class="--announcement-marquee__inner">'
+                  if block.settings.link != blank
+                    echo'<a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">'
+                  endif
+                  echo'<span class="announcement-bar__message h5">'
+                    echo block.settings.announcement
+                    if block.settings.link != blank
+                      render 'theme-icon', icon: 'icon-arrow'
+                    endif
+                  echo'</span>'
+                  if block.settings.link != blank
+                    echo'</a>'
+                  endif
+                echo'</div>'
+              echo'</div>'
+            endif
+          endfor
+        echo'</div>'
+        if localization.available_languages.size > 1 
+          assign language_version = 'header-drop-down'
+          echo'<div class="announcement-bar__element-right">'
+            echo'<div class="desktop-main-menu header__inline-menu header__inline-menu__right">'
+              if language_version == 'original'
+                render 'header-localization'
+              else 
+                echo '<ul class="list-menu list-menu--inline">'
+                echo ' <li id="related-languages" class="main-menu">'
+                if language_version == 'header-drop-down'
+                  render 'switch-language', given_version: language_version, current_language: current_language
+                else
+                  assign link_title = link.title | escape
+                  assign link_url = link.url
+                  echo'<a title="[link_title]" href="[link_url] class="header__menu-item header__menu-item list-menu__item link link--text focus-inset">' | replace : '[link_url]', link_url  | replace : '[link_title]', link_title
+                    echo'<span class="header__lang-switch txtuppercase">'
+                      echo'<span>[C]</span>' | replace : '[C]', current_language
+                      echo'<span><div class="css-arrow" data-version="chevron" data-color="white" data-size="small" data-direction="bottom"><span></span></div></span>'
+                    echo'</span>'
+                  echo'</a>'
+                endif
+                echo ' </li>'
+                echo '</ul>'
+              endif
+                  
+
+            echo'</div>'
+          echo'</div>'
+        endif   
+      echo'</div>'
+    echo'</div>'
+  endif
+-%}
+{%- schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "tag": "aside",
+  "class": "shopify-section-announcement section-announcement-theme",
+  "max_blocks": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement_bar",
+      "default":false,
+     "label":"Show bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement_bar_only_on_homepage",
+      "default":false,
+     "label":"Only show on homepage"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "announcement",
+          "default":"<p><strong>&euro;5 korting</strong> op je bestelling bij besteding vanaf &euro;25,-</p>",
+         "label":"t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+         "label":"t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "default":{
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "                  render 'switch-language' | given_version:language_version,
+    current_language:current_language"
+  to: "                  render 'switch-language', given_version: language_version,
+    current_language: current_language"
+  position: 2126..2237
+{%- endcomment -%}

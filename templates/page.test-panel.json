@@ -1,0 +1,333 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Banner_Shopify_new_looks_1.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/Banner_Shopify_new_looks_1.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-right",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": false,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "large",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "60",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338710": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "test panel",
+            "block_content": "<p>Bij Lekker ontwikkelen en verbeteren we onze producten op basis van de wensen en feedback van onze klanten. We hebben een fantastisch en betrokken test panel, waarin honderden mensen hun ongezouten mening geven en zowel bestaande als nieuwe producten testen. Hun waardevolle input helpt ons continu om onze producten en de gebruikerservaring te verbeteren. Zo zorgen we ervoor dat onze producten steeds lekkerder worden.<\/p><p>Ons test panel bestaat uit een gemixte groep mensen met oksels, huid en haar. Vrijwilligers die uitvoerig onze producten testen en ons dan voorzien van ongefilterde feedback. Fijn, want met een klein team is het belangrijk om te luisteren en te verbeteren.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "706db279-9818-46db-9e5c-5f9b513e11ea": {
+          "type": "text_column",
+          "disabled": true,
+          "settings": {
+            "block_heading": "",
+            "block_content": "",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7",
+        "706db279-9818-46db-9e5c-5f9b513e11ea"
+      ],
+      "custom_css": [],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "503d4ae8-39f1-4c1b-a71c-b349cd8dfa86": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14386558926897__503d4ae8-39f1-4c1b-a71c-b349cd8dfa86-166679670165acc59a-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "\"Meten is zweten\"",
+            "block_content": "<p>- Iris van 't Klooster, hoofd test-panel<\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386558926897__503d4ae8-39f1-4c1b-a71c-b349cd8dfa86-166679670165acc59a-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_text_44gKhc": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_x7i6Gx": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "hoe werkt het?",
+            "block_content": "<p>Alle leden van ons testpanel ontvangen periodiek een enquête per mail. Hierin stellen we vragen over onze huidige producten of nieuwe producten. <\/p><p>Daarnaast krijg je af en toe een uitnodiging om gratis een fysiek product op te halen bij ons kantoor in het hartje van Utrecht. Dit product test je dan een paar weken en geef je ten slotte je feedback op. Meedoen is uiteraard gratis.<\/p><p>Als kers op de taart hebben we eens per jaar een vegan diner. Hier presenteren we een aantal dilemma's en casussen onder het genot van een vegan 3-gangen diner en (een paar) drankjes. Via het testpanel kun je hiervoor een uitnodiging verwachten. <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_kwUnqM": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "hoe meld ik mij aan?",
+            "block_content": "<p>Onder aan deze pagina vind je het aanmeldformulier. Hierin vragen we onder andere welke producten je al van ons kent en hebt gebruikt. Op deze manier kunnen wij rekening houden met jouw ervaring.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "text_column_x7i6Gx",
+        "text_column_kwUnqM"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded64dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Wie hebben wij eerder gesteund?",
+            "block_content": "<p>Eerder steunden wij elk halfjaar een andere stichting. Zo hebben wij samengewerkt met plasticfreeUK, Reef Restoration Foundation en 100WEEKS. Stuk voor stuk prachtige stichtingen.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_XC9hPp": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Title",
+            "block_content": "<p>Lorem Ipsum<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded64dc7",
+        "text_column_XC9hPp"
+      ],
+      "disabled": true,
+      "settings": {
+        "row_spacing_inner_top": "sm",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_custom_code_3QeU8y": {
+      "type": "theme-section__custom-code",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<div id=\"sn-5735585f-13d3-4bdb-8a94-e516b9bacb16\"><\/div>",
+        "page_width": "page-width--narrow"
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338710",
+    "503d4ae8-39f1-4c1b-a71c-b349cd8dfa86",
+    "theme_section_text_44gKhc",
+    "7e74f5097338727",
+    "theme_section_custom_code_3QeU8y"
+  ]
+}

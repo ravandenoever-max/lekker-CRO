@@ -1,0 +1,40 @@
+{%- liquid
+  assign settings_routes_cart_vs_checkout_url = settings.settings_routes_cart_vs_checkout_url
+  if settings_routes_cart_vs_checkout_url == 'goto_checkout'
+    assign settings_routes_cart_vs_checkout_final_url = '/checkout'
+  else
+    assign settings_routes_cart_vs_checkout_final_url = routes.cart_url
+  endif
+-%}
+{%- capture html_content -%}
+<div id="cart-alert-box" class="cart-alert-box" aria-hidden="true">
+  <div class="cart-alert__inner">
+    <div class="alert-title-wrapper">
+      <div class="alert-title">
+        <span class="title-icon checkmark">{%- render 'theme-icon', icon: 'icon-checkmark' -%}</span>
+        <h2 class="font-fam-light font-size-xs color-black txt-lowercase"><span><!-- x items --></span> {{ 'general.cart.item_added_short' | t }}</h2>
+      </div>
+      <div class="alert-close js-close-alert color-black">{% render 'theme-icon', icon: 'icon-close' %}</div>
+    </div>
+    <div class="alert-divider margin-t-10 margin-b-10"></div>
+    <div class="alert-prod-item">
+      <div class="alert-prod-item__image">
+        <img class="img-responsive" width="100" height="100">
+      </div>
+      <div class="alert-prod-item__title">
+        <span class="prod-title font-fam-light font-size-xs txt-lowercase color-black"><!-- Product title placeholder --></span>
+        <span class="prod-details font-fam-light font-size-xs txt-lowercase color-black"><!-- Product details placeholder --></span>
+      </div>
+    </div>
+    <div class="alert-checkout-buttons margin-t-xxs">
+      <div class="button-checkout">
+        <a href="{{ settings_routes_cart_vs_checkout_final_url }}" class="theme-button theme-button__round-small theme-button__red-white-red theme-button-hover__blue-grey-blue">
+          <span>{{ 'additional.checkout_button.label' | t }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endcapture -%}
+
+{%- echo html_content -%}

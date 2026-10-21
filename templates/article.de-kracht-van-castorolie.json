@@ -1,0 +1,295 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "baf393f3-d31a-461e-9b60-47fbeb3b4658": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "23ba407d-317e-4260-8da5-fe37520ec18d": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/LEKKER_X_Mariska_-_HR_-_004.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/LEKKER_X_Mariska_-_HR_-_004.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "23ba407d-317e-4260-8da5-fe37520ec18d"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "De kracht van Castorolie",
+            "block_content": "<p>Castorolie, ook bekend als ricinusolie en wonderolie, je hebt er ongetwijfeld wel eens van gehoord. Het ingrediënt staat bekend om zijn laxerende eigenschappen. Maar wist je ook dat dit veelzijdige goedje al eeuwenlang wordt gebruikt in verzorgingsproducten? <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/pexels-mike-murray-6925527_wecompress.com.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "First things first: wat is het?",
+        "this_content": "<p>Castorolie is een plantaardige olie die van origine een dikke, stroperige structuur heeft met een lichtgele kleur. Het wordt gewonnen uit de zaden van de Ricinus communis-boom door deze te oogsten, drogen en persen. Ze noemen de Ricinus communis-boom ook wel wonderboom, en dat is niet voor niets. <\/p><p>Laten we beginnen met de laxerende krachten. Castorolie bevat ricinolzuur, die de darmbewegingen stimuleert en kan helpen bij het verlichten van obstipatie. Maar maak je geen zorgen als je het op een productlabel ziet staan! Castorolie is een veelzijdig ingrediënt en kan voor van alles gebruikt worden. Het zorgt niet voor een sprint naar het toilet. ;)<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "3dbd6ed5-f384-46d7-b97c-4b340515d767": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--19048488239443__3dbd6ed5-f384-46d7-b97c-4b340515d767-168562842171d9a13e-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Een veelzijdig goedje",
+            "block_content": "<p>Castorolie is erg geliefd in de gezondheidszorg. <a href=\"https:\/\/www.ncbi.nlm.nih.gov\/pmc\/articles\/PMC5789535\/\"><span style=\"text-decoration:underline\">Onderzoek<\/span><\/a> toont aan dat castorolie ook ontstekingsremmende, genezende en antimicrobiële eigenschappen heeft. Deze superkrachten worden bij de behandeling van allerlei aandoeningen gebruikt. Van artritis tot brandwonden en zelfs infecties. Hoewel dit goedje vele voordelen heeft, is het altijd verstandig om te overleggen met je arts voor je het voor medische doeleinden inzet.<\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "50",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19048488239443__3dbd6ed5-f384-46d7-b97c-4b340515d767-168562842171d9a13e-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "f8b4638e-bc0c-4810-8497-ce212601a7c7": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "text-image",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/pexels-angela-roma-7479968.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Maar er is meer.",
+        "this_content": "<p>Zo zorgt het ook voor een stralende huid en lange lokken. Dit is te danken aan de hydraterende en verzachtende eigenschappen. Het wordt daarom veel gebruikt in verzorgingsproducten, zoals crèmes, lotions én onze <a href=\"https:\/\/thelekkercompany.com\/products\/orange-vanilla-swirl-lip-balm\"><span style=\"text-decoration:underline\">Orange Vanilla<\/span><\/a> en <a href=\"https:\/\/thelekkercompany.com\/products\/raspberry-lemonade-lip-balm\"><span style=\"text-decoration:underline\">Raspberry Lemonade<\/span><\/a> lippenbalsem. Zo kan het droogheid tegengaan, helpen bij acne en littekens verminderen. Voordat je er zelf mee aan de slag gaat, is het verstandig om eerst te checken of je er geen allergische reactie van krijgt. Breng een klein beetje aan op de huid en kijk of je geen rode plekken of jeuk krijgt. Is dit niet het geval? Dan ben je good to go.<\/p><p><\/p><p>Heb je last van vermoeide ogen? Een vleugje castorolie rond je ogen kan al helpen tegen zwelling, donkere kringen en droge oogleden. Daarnaast kan het haargroei stimuleren en versterken. Je kunt wat castorolie aanbrengen op de hoofdhuid, maar ook op je wimpers. Kom maar door met die glans van huid tot haar! <\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "baf393f3-d31a-461e-9b60-47fbeb3b4658",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "3dbd6ed5-f384-46d7-b97c-4b340515d767",
+    "f8b4638e-bc0c-4810-8497-ce212601a7c7",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

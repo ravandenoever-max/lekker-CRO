@@ -1,0 +1,78 @@
+{%- comment -%}
+  Renders the country picker for the localization form
+  Accepts:
+    - localPosition: pass in the position in which the form is coming up to create specific IDs
+{%- endcomment -%}
+{%- liquid
+  assign filename = 'localization-country'
+  assign currencies = localization.available_countries | map: 'currency' | map: 'iso_code' | uniq
+  assign popular_countries = localization.available_countries | where: 'popular?' | sort: 'name'
+  assign show_country_filter = false
+  if localization.available_countries.size > 12
+    assign show_country_filter = true
+  endif
+  assign show_popular_countries = false
+  if localization.available_countries.size > 12 and popular_countries.size > 1
+    assign show_popular_countries = true
+  endif
+  assign show_currencies = false
+  if currencies.size > 100
+    assign show_currencies = true
+  endif
+  capture active_market_label
+    echo localization.country.name
+    if show_currencies
+      echo ' '
+      echo localization.country.currency.iso_code
+      echo ' '
+      echo localization.country.currency.symbol
+    endif
+  endcapture
+-%}
+{%- capture country_selector_html -%}
+  <div class="localization">
+    <button type="button" class="localization__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="{{ localPosition }}-country-results" aria-describedby="{{ localPosition }}Label">
+      <span>{{ active_market_label }}</span>
+      {%- render 'theme-icon', icon: 'icon-caret' -%}
+    </button>
+    <div class="localization__list-wrapper country-selector" hidden="true">   
+      <div class="localization__list country-selector__list{%- if show_currencies %} country-selector__list--with-multiple-currencies{%- endif %}" id="{{ localPosition }}-country-results"> 
+        <ul role="list" class="list-unstyled countries">
+          {%- assign use_market_handle_filter = false -%}
+          {%- for country in localization.available_countries -%}
+            {%- liquid 
+              assign show_this_option = true
+              if use_market_handle_filter == true and country.market.handle != 'europe' 
+                assign show_this_option = false
+              endif
+            -%}
+            {%- if show_this_option == true %}
+              <li tabindex="-1"
+                {%- if country.iso_code == localization.country.iso_code %}
+                  class="localization__item active no-pe" aria-current="true"
+                {%- else %}              
+                  class="localization__item" aria-current="false"
+                {%- endif %}>
+                <a class="link link--text localization__link caption-large -focus-inset" href="#" data-value="{{ country.iso_code }}" id="{{ country.name }}">
+                  <span class="country">{{ country.name }}</span>
+                  <span class="localization-form__currency motion-reduce{%- unless show_currencies %} theme-hidden{%- endunless %}">{{ country.currency.iso_code }}{{ country.currency.symbol -}}</span>
+                </a>
+              </li>
+            {%- endif -%} 
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+    <div class="country-selector__overlay"></div>
+  </div>
+  <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+{%- endcapture -%}
+{%- liquid
+  assign minify_this_html_input = country_selector_html
+  assign minify_this_html_block = true
+  if minify_this_html_block == true and settings.website_minify_inline_html != 'false'
+    render'inline-html',input_html:minify_this_html_input
+  else
+    echo minify_this_html_input
+  endif
+-%}

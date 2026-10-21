@@ -1,0 +1,147 @@
+{%- liquid
+  assign filename = 'header-foldable-menu__content_b'
+  capture create_new_column_html
+    echo '  </ul>'
+    echo '</div>'
+    echo '<div class="theme-w-12">'
+    echo '  <ul class="foldable-menu__ul list-menu" role="list" tabindex="-1">'
+  endcapture
+
+  assign this_menu_start = 'collection'
+  assign this_menu_a_id = 'collection'
+  assign this_menu_b_id = ''
+  assign this_menu_c_id = ''
+  for link in this_menu
+
+    assign this_menu_a_id = this_menu_start | append : '__' | append : link.handle
+    assign link_title = link.title | escape
+    assign link_title_downcase = link_title | downcase | strip 
+    assign link_url = link.url
+    if link.links != blank
+      echo '<div class="foldable-child-menu child-menu-b-related-[this_menu_a_id]">' | replace: '[this_menu_a_id]' , this_menu_a_id
+        echo '<div class="foldable-menu__wrapper" style="padding-top:none !important">'
+          echo '<div class="theme-f-vert theme-f-left theme-g-none theme-p-t-xs">'
+
+            echo '<div class="theme-f-hor theme-f-middle theme-m-l-7xs theme-g-7xs theme-f-left arrow-back mousepointer js-trigger-foldable-menu-arrow-back-a">'
+              echo '<div class="level-b-arrow color-red">'
+              render  'theme-icon', icon: 'arrow-bottom'                    
+              echo '</div>'
+              echo '<span class="theme-ff-bold color-red theme-fs-xs" style="line-height:1.4rem !important;">back</span>'
+            echo '</div>'  
+
+            echo '<a class=" theme-p-l-3xs foldable-menu__ul-item[x_class]" title="[link_title]" href="[link_url]">' | replace: '[x_class]' , x_class | replace: '[link_title]' , link_title | replace: '[link_url]' , link_url
+              echo '<h2 class="title theme-ff-special txt-lowercase theme-fs-lg" data-href="[link_url]"><span>[link_title]</span></h2>' | replace: '[link_title]' , link_title | replace: '[link_url]' , link_url
+            echo '</a>'
+
+            echo '<div class="theme-f-hor theme-w-100 theme-p-t-sm theme-p-l-3xs theme-g-xs">'
+              echo '<div class="theme-w-12">'
+                echo '<ul class="foldable-menu__ul list-menu" role="list" tabindex="-1">'
+                  assign childlink_count = 0
+                  assign number_of_childeren = link.links | size
+                  for childlink in link.links
+                    assign childlink_count = childlink_count | plus : 1
+                    if number_of_childeren > 1 and childlink_count == 2
+                      echo create_new_column_html
+                    endif             
+                    assign childlink_handle = childlink.handle
+                    assign childlink_id = 'child-' | append: childlink_handle
+                    assign childlink_url = childlink.url                  
+                    assign childlink_title = childlink.title | escape
+                    assign childlink_title_downcase = childlink_title | downcase
+                    assign this_menu_b_id = this_menu_a_id | append : '__' | append : childlink_handle
+                    assign x_class = ''
+                    if childlink.current
+                      assign x_class = ' active'
+                    endif
+                    if childlink.links != blank
+                        assign childchildlink___counter = 0
+                        capture childchildlink___menu_html
+                          echo '<div id="[this_menu_b_id]" data-maxheight="20rem" class="collapse-sub-menu__child level-c">' | replace: '[this_menu_b_id]' , this_menu_b_id
+                            echo '<div class="___theme-m-t-3xs theme-m-b-sm">'
+                              echo '<ul class="foldable-menu__ul list-menu" role="list" tabindex="-1">'
+                                for childchildlink in childlink.links
+
+                                  assign childchildlink_id = 'sub-child-' | append: childchildlink.handle
+                                  assign childchildlink_url = childchildlink.url
+                                  assign childchildlink_title = childchildlink.title | escape
+                                  assign childchildlink_title_downcase = childchildlink_title | downcase
+                                  assign childchildlink_type = childchildlink.type
+                                  assign childchildlink_handle = childchildlink.handle
+                                  assign childchildlink_slug = childchildlink.url | split: '/' | last
+
+                                  assign show_menu_item = true
+                                  if childchildlink_type == 'collection_link'
+                                    assign this_collection = collections[childchildlink_slug]
+                                    assign p_counter = this_collection.all_products_count
+                                    if p_counter < 1
+                                      assign show_menu_item = false
+                                    endif 
+                                  endif
+                                  if childchildlink_title_downcase == childlink_title_downcase
+                                    assign show_menu_item = false
+                                  endif
+                                  assign this_menu_c_id = this_menu_b_id | append : '__' | append : childchildlink_handle
+
+                                  if childchildlink_title_downcase == 'eol'
+                                    assign show_menu_item = false
+                                  endif
+
+                                  if show_menu_item == true and childchildlink_title_downcase != 'section'
+                                    assign childchildlink___counter = subsubsubsub__counter | plus : 1
+                                    assign x_class = ''
+                                    if childchildlink.current
+                                      assign x_class = ' active'
+                                    endif
+                                    echo '<li class="li___level-c" id="[this_menu_c_id]">' | replace: '[this_menu_c_id]' , this_menu_c_id
+                                      echo '<a class="foldable-menu__ul-item [x_class]" title="[childchildlink_title]" href="[childchildlink_url]">' | replace: '[x_class]' , x_class | replace: '[childchildlink_url]' , childchildlink_url | replace: '[childchildlink_title]' , childchildlink_title
+                                        echo '<h3 class="title level-c">'
+                                          echo '<span>[childchildlink_title]</span>' | replace: '[childchildlink_title]' , childchildlink_title
+                                          echo '<span class="theme-hidden">({{ p_counter }})</span>' | replace: '{{ p_counter }}' , p_counter
+                                        echo '</h3>'
+                                      echo '</a>'
+                                    echo '</li>'
+                                  endif
+                                endfor
+                              echo '</ul>' 
+                            echo '</div>'
+                          echo '</div>'
+                        endcapture
+                        if childchildlink___counter > 0
+                          if settings_level_b_foldable == true
+                            echo '<li data-menu-c="[this_menu_b_id]" class="li___level-b js-collapse-sub-menu collapse-sub-menu nonactive __js-trigger-foldable-menu-c" id="[this_menu_b_id]">' | replace: '[this_menu_b_id]' , this_menu_b_id
+                              echo '<div class="theme-f-hor theme-f-outside theme-f-middle foldable-menu__ul-item[x_class]">' | replace: '[x_class]' , x_class
+                                echo '<h2 class="title theme-ff-bold -txt-uppercase theme-fs-sm level-b" data-href="[childlink_url]"><span>ss [childlink_title]</span></h2>' | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_url
+                                echo '<span class="theme-f-hor">'
+                                  echo menu_toggle_icon
+                                echo '</span>'
+                              echo '</div>'
+                              echo childchildlink___menu_html
+                            echo '</li>'
+                          else
+                            echo '<li data-menu-c="[this_menu_b_id]" class="li___level-b" id="[this_menu_b_id]">' | replace: '[this_menu_b_id]' , this_menu_b_id
+                              if childlink_title_downcase != link_title_downcase                              
+                                echo '<a href="[childlink_url]" title="[childlink_title]" class="theme-f-hor theme-f-outside theme-f-middle [x_class]">' | replace: '[x_class]' , x_class | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_
+                                echo '  <h2 class="title theme-ff-bold -txt-uppercase theme-fs-sm level-b"><span>[childlink_title]</span></h2>' | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_url
+                                echo '</a>'
+                              endif                               
+                              echo childchildlink___menu_html
+                            echo '</li>'
+                          endif
+                        endif
+                    else
+                        echo '<li class="li___level-b" id="[this_menu_b_id]">' | replace: '[this_menu_b_id]' , this_menu_b_id
+                          echo '<a class="foldable-menu__ul-item[x_class]" title="[childlink_title]" href="[childlink_url]">' | replace: '[x_class]' , x_class | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_url
+                            echo '<h2 class="title theme-ff-bold -txt-uppercase theme-fs-sm level-b" data-href="[childlink_url]"><span>[childlink_title]</span></h2>' | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_url
+                          echo '</a>'
+                        echo '</li>'
+                    endif
+                  endfor
+                echo '</ul>'
+              echo '</div>'
+            echo '</div>'
+          echo '</div>'
+        echo '</div>'
+      echo '</div>'
+    endif
+  endfor
+-%}

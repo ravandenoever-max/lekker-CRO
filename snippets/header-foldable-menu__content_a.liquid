@@ -1,0 +1,160 @@
+{%- liquid
+  assign filename = 'header-foldable-menu__content_a'
+  assign this_menu_start = 'collection'
+  assign this_menu_a_id = ''
+  assign this_menu_b_id = ''
+  assign this_menu_c_id = ''
+
+  assign first_link_id = first_link.handle
+  assign first_link_title = first_link.title | escape
+  assign first_link_title_lowercase = first_link_title | downcase
+  assign menu_item_color_special = settings.header_menu_item_color_special | downcase
+  assign menu_item_color_special_array = settings.header_menu_item_color_special | split : ','
+  assign item_color_class = 'theme-force-c-red'
+
+  comment
+    echo ' first_link_title_lowercase: ' | append: first_link_title_lowercase | append : ''
+    echo ' first_link_id: ' | append: first_link_title_lowercase | append : ''
+    echo ' menu_item_color_special_array: ' | append: menu_item_color_special_array | append : ''    
+  endcomment
+    
+  if menu_item_color_special_array contains first_link_title_lowercase
+    assign item_color_class = 'theme-force-c-red'
+  endif
+  if menu_item_color_special_array contains first_link_id
+    assign item_color_class = 'theme-force-c-red'
+  endif     
+
+  assign first_link_url = first_link.url
+  assign first_link_handle = first_link.handle
+  assign first_link_slug = first_link.url | split: '/' | last
+  assign first_link_title_downcase = first_link_title | downcase | strip
+  assign this_menu_a_id = this_menu_start | append : '__' | append : first_link_handle
+  assign first_link_type = first_link.type
+  assign active_menu_class = ''
+  if first_link.current
+    assign active_menu_class = ' active'
+  endif
+  if first_link.links != blank
+
+      assign is_first = true
+      assign this_second__menu = first_link.links
+      if style == 'accordion'
+        assign third_level_menu_html = ''
+        capture third_level_menu_html
+          for second_link in this_second__menu
+            if second_link.links != blank
+              assign second_link_id = second_link.handle
+              assign second_link_url = second_link.url
+              assign second_link_handle = second_link.handle
+              assign second_link_slug = second_link.url | split: '/' | last
+              assign second_link_title = second_link.title | escape
+              assign second_link_title_downcase = second_link_title | downcase | strip
+              assign second_link_type = second_link.type  
+              assign active_menu_class = ''
+              if second_link.current
+                assign active_menu_class = ' active'
+              endif
+              assign show_menu_item = true
+              if second_link_type == 'collection_link'
+                assign this_collection = collections[second_link_slug]
+                assign p_counter = this_collection.all_products_count
+                if p_counter < 1
+                  assign show_menu_item = false
+                endif 
+              endif
+              if second_link_title_downcase == 'eol'
+                assign show_menu_item = false
+              endif
+              if second_link_title_downcase == first_link_title_downcase
+                assign show_menu_item = false
+              endif                          
+              if show_menu_item == true
+                if is_first != true
+                  assign xclass = ' class="theme-p-t-sm"'
+                endif
+                echo '<li id="[second_link_id]" [xclass]>' | replace: '[second_link_id]', second_link_id | replace: '[xclass]', xclass
+                  echo '<a class="foldable-menu__ul-item[active_menu_class]" title="[second_link_title]" href="[second_link_url]">' | replace: '[second_link_title]', second_link_title | replace: '[second_link_url]', second_link_url | replace: '[active_menu_class]', active_menu_class 
+                    echo '<span class="title level-b theme-ff-bold txt-uppercase link link--from-center link-black">[second_link_title]</span>' | replace: '[second_link_title]', second_link_title
+                  echo '</a>'
+                echo '</li>'
+                assign is_first =  false
+              endif
+
+              assign this_third__menu = second_link.links
+              for third_link in this_third__menu
+                assign third_link_id = third_link.handle
+                assign third_link_title = third_link.title | escape
+                assign third_link_url = third_link.url
+                assign third_link_handle = third_link.handle
+                assign third_link_slug = third_link.url | split: '/' | last
+                assign third_link_title_downcase = third_link_title | downcase | strip
+                assign third_link_type = third_link.type  
+                assign active_menu_class = ''
+                if third_link.current
+                  assign active_menu_class = ' active'
+                endif
+                assign show_menu_item = true
+                if third_link_type == 'collection_link'
+                  assign this_collection = collections[third_link_slug]
+                  assign p_counter = this_collection.all_products_count
+                  if p_counter < 1
+                    assign show_menu_item = false
+                  endif 
+                endif
+                if third_link_title_downcase == 'eol'
+                  assign show_menu_item = false
+                endif
+                if show_menu_item == true
+                  echo '<li id="[third_link_id]">' | replace: '[third_link_id]', third_link_id
+                    echo '<a class="foldable-menu__ul-item[active_menu_class] [item_color_class]" title="[third_link_title]" href="[third_link_url]">' | replace: '[third_link_title]', third_link_title | replace: '[third_link_url]', third_link_url | replace: '[active_menu_class]', active_menu_class | replace: '[item_color_class]', item_color_class
+                      echo '<span class="title level-c theme-fs-sm link link--from-center link-black">[third_link_title]</span>' | replace: '[third_link_title]', third_link_title
+                    echo '</a>'
+                  echo '</li>'                              
+                endif
+              endfor
+            endif
+          endfor
+        endcapture
+        echo '<li id="[this_menu_a_id]" class="js-trigger-level__c">' | replace: '[this_menu_a_id]', this_menu_a_id
+          echo '<span class="foldable-menu__ul-item foldable-menu__ul-item__first [active_menu_class] [item_color_class]" title="[first_link_title]">' | replace: '[first_link_title]', first_link_title | replace: '[active_menu_class]', active_menu_class | replace: '[item_color_class]', item_color_class
+            echo '<span class="title level-a theme-fs-lg">[first_link_title]</span>' | replace: '[first_link_title]', first_link_title
+          echo '</span>'
+          if third_level_menu_html != ''
+            echo '<div class="level_c level_c_visible" data-maxheight="400px">'
+              echo '<ul class="foldable-menu__ul theme-p-t-3xs theme-p-b-sm" role="list" tabindex="-1">'
+              echo third_level_menu_html
+              echo '</ul>'
+            echo '</div>'
+          endif
+        echo '</li>'
+      elsif style == 'cards' 
+        echo '<li id="[this_menu_a_id]" data-menu-b="[this_menu_a_id]" class="js-trigger-foldable-menu-b foldable-child-menu">' | replace: '[this_menu_a_id]', this_menu_a_id
+          echo '<div class="foldable-menu__ul-item theme-w-100 theme-f-hor theme-f-outside theme-f-middle foldable-menu__ul-item__first [active_menu_class] [item_color_class]" title="[first_link_title]">' | replace: '[first_link_title]', first_link_title | replace: '[active_menu_class]', active_menu_class | replace: '[item_color_class]', item_color_class
+            echo '<span class="title level-a">[first_link_title]</span>' | replace: '[first_link_title]', first_link_title
+            echo '<span class="level-a-arrow">'
+            render 'theme-icon', icon: 'arrow-bottom'
+            echo '</span>'
+          echo '</div>'
+        echo '</li>'
+      endif
+  
+  else
+    assign show_menu_item = true
+    if first_link_type == 'collection_link'
+      assign this_collection = collections[first_link_slug]
+      assign p_counter = this_collection.all_products_count
+      if p_counter < 1
+        assign show_menu_item = false
+      endif 
+    endif
+    if show_menu_item == true
+      echo '<li id="[first_link_id]">' | replace: '[first_link_id]', first_link_id
+        echo '<a class="foldable-menu__ul-item theme-w-100 theme-f-hor theme-f-outside theme-f-middle [active_menu_class] [item_color_class]" title="[first_link_title]" href="[first_link_url]">' | replace: '[first_link_title]', first_link_title | replace: '[first_link_url]', first_link_url | replace: '[active_menu_class]', active_menu_class | replace: '[item_color_class]', item_color_class 
+          echo '<span class="title level-a">[first_link_title]</span>' | replace: '[first_link_title]', first_link_title
+        echo '</a>'
+      echo '</li>'
+    endif
+  endif
+
+-%}

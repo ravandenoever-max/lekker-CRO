@@ -1,0 +1,60 @@
+
+{% if section.settings.enable_collection_navigation %}
+  {%- liquid
+    assign current_collection_handle = collection.handle
+    assign main_menu = linklists.main-menu
+    assign current_collection_menu = blank
+    for main_menu_link in main_menu.links
+      if current_collection_menu != blank
+        break
+      endif
+      for sub_menu_link in main_menu_link.links
+        if current_collection_menu != blank
+          break
+        endif
+        for sub_sub_menu_link in sub_menu_link.links
+          if current_collection_handle == sub_sub_menu_link.handle
+            assign current_collection_menu = sub_menu_link.links
+            break
+          endif
+        endfor
+      endfor
+    endfor
+  -%}
+  
+  <span class="font-fam-bold font-size-xl color-black">Collections -> Navigation</span>
+
+  {%- if current_collection_menu != blank -%}
+  <nav class="collection-nav">
+    <div class="page-width">
+      <div class="collection-nav-wrapper margin-t-20">
+        <ul class="hor-list-menu list-unstyled">
+      {%- for collection_link in current_collection_menu -%}
+        {%- if collection_link.url != blank -%}
+          <li class="padding-v-2"><a title="{{ collection_link.title }}" href="{{ collection_link.url }}" class="{% if collection_link.active %} collection-nav-active{% endif %}"><span>{{ collection_link.title }}</span></a></li>
+        {%- endif -%}
+      {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {%- endif -%}
+  {%- endif -%}
+  
+  {% schema %}
+  {
+    "name": "Collection Navigation",
+    "tag": "section",
+    "class": "section-collection-navigation collection-navigation-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_collection_navigation",
+        "default":false,
+       "label":"Show Collections Navigation"
+      }
+  
+    ]
+  }
+  {% endschema %}
+  

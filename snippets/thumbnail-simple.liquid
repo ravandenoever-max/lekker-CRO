@@ -1,0 +1,100 @@
+{%- liquid
+  assign filename = 'thumbnail-simple'
+
+  if media.preview_image != blank
+    assign this_media = media.preview_image
+  elsif media != blank
+    assign this_media = media
+  else
+    assign this_media = images['1x1.jpg']
+  endif
+
+  assign this_image_aspect_ratio = this_media.aspect_ratio
+  capture this_image_srcset
+    render 'image-srcset', this_image:this_media, this_min_srcset:min_srcset,this_max_srcset:max_srcset
+  endcapture
+
+  assign largest_image_value = ''
+
+  assign this_image_srcset_array = this_image_srcset | split : ','
+  assign last_value = this_image_srcset_array.last
+  assign last_value_array = last_value | split : ' '
+  assign largest_image_filename = last_value_array[0]
+  
+  if add_data_largest == true
+    assign largest_image_size = last_value_array[1] | replace : 'w', ''
+    assign largest_image = ' data-largest-image="[IMAGE]"' | replace : '[IMAGE]' , largest_image_filename
+    assign largest_image = largest_image | append : ' data-largest-size="[SIZE]"' | replace : '[SIZE]' , largest_image_size
+  endif
+
+  if has_zoom == true
+    assign largest_image_size = last_value_array[1] | replace : 'w', ''
+    assign largest_image = ' data-zoom-image="[IMAGE]"' | replace : '[IMAGE]' , largest_image_filename
+    assign this_classnames = 'image-hover-zoom '
+  endif
+
+  if image_alt != blank
+    assign this_image_alt = image_alt
+  else
+    assign this_image_alt = this_media.alt
+  endif
+  if this_image_alt == blank
+    assign this_image_alt = 'yoekfashion'
+  endif 
+
+  assign this_image_alt = this_image_alt | replace: '[' , '' | replace: ']' , ''
+
+  if media_id != blank
+    assign this_media_id = media_id
+  endif
+
+  assign this_loading_method = 'lazy'
+  if this_given_loading != blank
+    assign this_loading_method = this_given_loading
+  endif
+  if given_lazy_load == '0'
+    assign this_loading_method = 'preload'
+  endif
+  if this_loading_method == 'eager' or this_loading_method == 'auto' 
+    assign this_classes = 'img-responsive'
+  else 
+    assign this_classes = 'img-responsive js-lazy-sizes'
+  endif
+  if this_classnames != blank
+    assign this_classes = this_classes | append : ' ' | append : this_classnames
+  endif
+
+  assign start_image_width = 250
+  assign start_image_height = ''
+  assign given_min_image_src = this_media | img_url : '100x'
+
+  if min_srcset
+    assign start_image_width = min_srcset
+    assign min_img_url = min_srcset | append : 'x'
+    assign given_min_image_src = this_media | img_url : min_img_url
+  endif
+  if this_image_aspect_ratio != blank and this_image_aspect_ratio > 0
+    assign start_image_height_num = start_image_width | divided_by: this_image_aspect_ratio | ceil
+    assign start_image_height = ' height="' | append : start_image_height_num | append : '"'
+  endif
+-%}
+{%- capture this_image_html -%}
+  {%- if this_loading_method == 'preload' -%}
+    <link rel="preload" as="image" href="{{- largest_image_filename -}}" imagesrcset="{{- this_image_srcset -}}" imagesizes="100vw">
+  {%- else -%}
+    <img loading="{{- this_loading_method -}}" width="{{- start_image_width -}}" {{- start_image_height -}} 
+      class="thumbnail-simple {{ this_classes }}" data-sizes="auto" data-srcset="{{- this_image_srcset -}}" data-src="{{- given_min_image_src -}}" src="{{- given_min_image_src -}}"
+      {{- largest_image -}}
+      {%- if this_media_id != blank %} data-media-id="{{ this_media_id }}" {%- endif -%}
+      {%- if this_image_alt != blank %} alt="{{ this_image_alt | escape }}"{%- endif %} {{ extra_data_attributes -}} />
+  {%- endif -%}    
+{%- endcapture -%}
+{%- liquid
+  assign minify_this_html_input = this_image_html
+  assign minify_this_html_block = true
+  if minify_this_html_block == true and settings.website_minify_inline_html != 'false'
+    render'inline-html',input_html:minify_this_html_input
+  else
+    echo minify_this_html_input
+  endif
+-%}

@@ -1,0 +1,600 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "terms": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "Algemene voorwaarden",
+            "heading_font_size": "xl",
+            "max_heading_width": "25",
+            "text": "de kleine lettertjes",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "sm",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "yellow",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "10",
+        "slide_ratio_desktop": "20",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "6ef48581-3a55-42bd-850a-248b4d77b13d": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--16685776863485__6ef48581-3a55-42bd-850a-248b4d77b13d-166781996951d9d499-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>Hoi, ik ben Dewi, founder van The Lekker Company. In deze voorwaarden lees je wat je van ons mag verwachten als je in onze webshop bestelt, en wat wij van jou vragen. Is er iets onduidelijk? Mail ons via klantenservice@thelekkercompany.com, dan beantwoorden we al je vragen.</p><p>Deze voorwaarden gelden voor consumenten. Bestel je zakelijk? Gebruik dan onze <a href=\"https://b2b.thelekkercompany.com/\" target=\"_blank\" title=\"https://b2b.thelekkercompany.com/\">B2B-portal</a>; daar gelden aparte zakelijke voorwaarden.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16685776863485__6ef48581-3a55-42bd-850a-248b4d77b13d-166781996951d9d499-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xs",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "60e35d40-daa1-49a1-b854-748b2100373f": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--166857768996951d9d499-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Inhoudsopgave",
+            "block_content": "<ol><li>Definities</li><li>Wie zijn wij</li><li>Wanneer gelden deze voorwaarden</li><li>Het aanbod</li><li>De overeenkomst</li><li>Herroepingsrecht: je bestelling annuleren</li><li>Zo maak je gebruik van je herroepingsrecht</li><li>Uitzonderingen op het herroepingsrecht</li><li>Kosten en terugbetaling bij herroeping</li><li>Prijzen en aanbiedingen</li><li>Conformiteit en wettelijke garantie</li><li>Levering</li><li>Betaling</li><li>Klachten</li><li>Geschillen en toepasselijk recht</li><li>Privacy</li><li>Slotbepalingen</li></ol><p>Bijlage: modelformulier voor herroeping</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "md",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--166857768996951d9d499-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "sm",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    },
+    "60e35d40-daa1-49a1-b854-748b2100373f-2": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 1 - Definities",
+            "block_content": "<p>In deze voorwaarden bedoelen we met:<br/>[UL][LI]Bedenktijd: de termijn van 14 dagen waarbinnen de consument zijn herroepingsrecht kan gebruiken;[_LI][LI]Consument: een natuurlijk persoon die niet handelt voor zijn beroep of bedrijf en een overeenkomst op afstand sluit met de ondernemer;[_LI][LI]Dag: kalenderdag;[_LI][LI]Duurzame gegevensdrager: elk middel, zoals e-mail, waarmee de consument of ondernemer persoonlijk aan hem gerichte informatie kan opslaan, later kan raadplegen en ongewijzigd kan reproduceren;[_LI][LI]Herroepingsfunctie (herroepingsknop): de functie in de webshop waarmee de consument de overeenkomst online kan herroepen;[_LI][LI]Herroepingsrecht: het recht van de consument om binnen de bedenktijd zonder opgave van redenen af te zien van de overeenkomst op afstand;[_LI][LI]Modelformulier voor herroeping: het formulier in de bijlage van deze voorwaarden;[_LI][LI]Ondernemer: The Lekker Company, zoals omschreven in artikel 2;[_LI][LI]Overeenkomst op afstand: een overeenkomst die via de webshop wordt gesloten, zonder dat consument en ondernemer tegelijk fysiek aanwezig zijn.[_LI][_UL]</p><h2></h2>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-1": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 2 - Wie wij zijn",
+            "block_content": "<p>The Lekker Company is een handelsnaam van lekkerineenpotje B.V.<br/>[UL][LI]Bezoekadres: Drift 3, 3512 BP Utrecht[_LI][LI]E-mailadres: info@thelekkercompany.com[_LI], [LI]KvK-nummer: 71138978[_LI][LI]Btw-identificatienummer: NL858594675B01[_LI][_UL]<br/>Het bezoekadres is geen afhaalpunt of retouradres. Het retouradres staat in de retourinstructies.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-2": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 3 - Wanneer gelden deze voorwaarden",
+            "block_content": "<p>[UL][LI]1. Deze voorwaarden gelden voor elk aanbod van de ondernemer aan consumenten en voor elke overeenkomst op afstand tussen de ondernemer en een consument via de webshop.[_LI][LI]2. Deze voorwaarden gelden niet voor zakelijke klanten. Zakelijke bestellingen lopen via de<a href=\"https://b2b.thelekkercompany.com/\" target=\"_blank\" title=\"https://b2b.thelekkercompany.com/\"> B2B-portal </a>, waarop aparte zakelijke voorwaarden van toepassing zijn.[_LI][LI]3. Voordat de overeenkomst wordt gesloten, stelt de ondernemer deze voorwaarden elektronisch beschikbaar, zodat de consument ze eenvoudig kan opslaan op een duurzame gegevensdrager. De consument kan de voorwaarden ook kosteloos per e-mail opvragen.[_LI][LI]4. Gelden naast deze voorwaarden ook specifieke product- of actievoorwaarden en zijn die met elkaar in strijd, dan mag de consument zich beroepen op de bepaling die voor hem het gunstigst is.[_LI][LI]5. Is een bepaling in deze voorwaarden nietig of wordt die vernietigd, dan blijven de overige bepalingen gelden. De nietige bepaling wordt vervangen door een bepaling die zo dicht mogelijk bij de bedoeling van de oorspronkelijke bepaling ligt.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-3": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 4 - Het aanbod",
+            "block_content": "<p>[UL][LI]1. Heeft een aanbod een beperkte geldigheidsduur of gelden er voorwaarden, dan staat dat duidelijk in het aanbod.[_LI][LI]2. Het aanbod bevat een volledige en nauwkeurige omschrijving van de producten, inclusief de wettelijk verplichte productinformatie zoals de ingrediënten, de inhoud, de houdbaarheid, de gebruiksaanwijzing en eventuele waarschuwingen. Afbeeldingen geven de producten waarheidsgetrouw weer.[_LI][LI]3. Kennelijke vergissingen of fouten in het aanbod, zoals een duidelijk verkeerde prijs, binden de ondernemer niet.[_LI][LI]4. Elk aanbod maakt duidelijk wat de rechten en plichten van de consument zijn als hij het aanbod aanvaardt. Het gaat in het bijzonder om:[UL][LI]a. de totaalprijs inclusief btw;[_LI][LI]b. de eventuele bezorgkosten;[_LI][LI]c. hoe de overeenkomst tot stand komt en welke stappen daarvoor nodig zijn;[_LI][LI]d. of het herroepingsrecht van toepassing is, en zo niet, waarom niet;[_LI][LI]e. de manier van betalen, bezorgen en uitvoeren van de overeenkomst;[_LI][LI]f. de manier waarop de consument zijn gegevens kan controleren en corrigeren voordat hij de bestelling plaatst;[_LI][LI]g. of de overeenkomst na het sluiten wordt gearchiveerd en hoe de consument die kan raadplegen.[_LI][_UL][_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-4": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 5 - De overeenkomst",
+            "block_content": "<p>[UL][LI]1. De overeenkomst komt tot stand zodra de consument het aanbod aanvaardt door de bestelling af te ronden met de knop \"Bestelling met betalingsverplichting\" of een vergelijkbaar duidelijke tekst.[_LI][LI]2. De ondernemer bevestigt de ontvangst van de bestelling direct per e-mail. Zolang die bevestiging niet is verstuurd, kan de consument de overeenkomst ontbinden.[_LI][LI]3. De ondernemer neemt passende technische en organisatorische maatregelen om de gegevensoverdracht en de betaling te beveiligen en zorgt voor een veilige webomgeving.[_LI][LI]4. De ondernemer mag binnen de wettelijke grenzen een bestelling gemotiveerd weigeren of er bijzondere voorwaarden aan verbinden, bijvoorbeeld bij vermoeden van misbruik of fraude.[_LI][LI]5. Uiterlijk bij levering ontvangt de consument op een duurzame gegevensdrager:[UL][LI]a. het bezoekadres van de ondernemer waar hij met klachten terechtkan;[_LI][LI]b. de voorwaarden en de manier waarop hij het herroepingsrecht kan gebruiken, of een duidelijke melding dat het herroepingsrecht is uitgesloten;[_LI][LI]c. informatie over de wettelijke garantie en eventuele service na aankoop;[_LI][LI]d. de gegevens uit artikel 4 lid 4, voor zover die nog niet eerder zijn verstrekt;[_LI][LI]e. het modelformulier voor herroeping en een link naar de herroepingsfunctie.[_LI][_UL][_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-5": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 6 - Herroepingsrecht",
+            "block_content": "<p>[UL][LI]1. De consument kan een overeenkomst binnen een bedenktijd van 14 dagen zonder opgave van redenen herroepen, behalve in de gevallen van artikel 8.[_LI][LI]2. De bedenktijd begint op de dag nadat de consument, of een door hem aangewezen derde die niet de vervoerder is, het product heeft ontvangen.[_LI][LI]3. Bestaat één bestelling uit meerdere producten die apart worden geleverd, dan begint de bedenktijd op de dag nadat het laatste product is ontvangen.[_LI][LI]4. De consument mag de overeenkomst ook al herroepen voordat hij het product heeft ontvangen.[_LI][LI]5. Heeft de ondernemer de consument niet of niet volledig geïnformeerd over het herroepingsrecht, dan wordt de bedenktijd verlengd volgens de wet, met maximaal 12 maanden.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-6": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 7 - Gebruik van het herroepingsrecht",
+            "block_content": "<p>[UL][LI]1. De consument meldt de herroeping binnen de bedenktijd op een van deze manieren:[UL][LI]a. via de herroepingsfunctie in de webshop, gelabeld als \"[Bestelling annuleren / Overeenkomst herroepen]\", te vinden via [locatie, bijvoorbeeld de link in de orderbevestiging en onderaan elke pagina];[_LI][LI]b. met het modelformulier voor herroeping in de bijlage;[_LI][LI]c. met een andere ondubbelzinnige verklaring, bijvoorbeeld per e-mail aan klantenservice@thelekkercompany.com.[_LI][_UL][_LI][LI]2. De herroepingsfunctie is gedurende de hele bedenktijd beschikbaar. De consument hoeft geen account aan te maken en vult alleen de gegevens in die nodig zijn om de bestelling te herkennen. Een reden opgeven is nooit verplicht.[_LI][LI]3. Na het versturen ontvangt de consument direct per e-mail een bevestiging van de herroeping, met daarin de datum en het tijdstip waarop die is ontvangen.[_LI][LI]4. De consument stuurt het product zo snel mogelijk, maar uiterlijk binnen 14 dagen na de melding, terug volgens de retourinstructies van de ondernemer. Hij heeft de termijn gehaald als hij het product vóór het einde van die 14 dagen verstuurt.[_LI][LI]5. De consument stuurt het product terug met alle geleverde toebehoren en, voor zover redelijkerwijs mogelijk, in de originele staat en verpakking.[_LI][LI]6. Tijdens de bedenktijd gaat de consument zorgvuldig om met het product en de verpakking. Hij pakt het product alleen uit of gebruikt het alleen voor zover nodig om de aard, kenmerken en werking vast te stellen, zoals hij dat ook in een winkel zou mogen doen.[_LI][LI]7. De consument is aansprakelijk voor waardevermindering van het product die het gevolg is van een behandeling die verder gaat dan in lid 6 is toegestaan.[_LI][LI]8. Het risico en de bewijslast voor het juist en tijdig herroepen en terugsturen liggen bij de consument. Bewaar daarom het verzendbewijs.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 8 - Uitzonderingen",
+            "block_content": "<p>Om gezondheids- en hygiëneredenen is het herroepingsrecht wettelijk uitgesloten voor:<br/>[UL][LI]1. verzegelde verzorgingsproducten die om gezondheids- of hygiëneredenen niet geschikt zijn om terug te sturen en waarvan de verzegeling na levering is verbroken, zoals een geopende pot, tube of fles, of een product waarvan het zegel of de beschermfolie is verwijderd;[_LI][LI]2. producten die volgens de specificaties van de consument zijn gemaakt of gepersonaliseerd, zoals een cadeauset met eigen tekst of etiket.[_LI][_UL]<br/>Bij elk product waarvoor een uitzondering geldt, staat dit duidelijk vermeld in de productomschrijving, voordat de consument bestelt. Ongeopende producten met een intacte verzegeling kunnen dus wel binnen de bedenktijd worden geretourneerd.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-8": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 9 – Kosten en terugbetaling",
+            "block_content": "<p>[UL][LI]1. De directe kosten van het terugsturen zijn voor rekening van de consument. [Of: De ondernemer vergoedt de retourkosten.][_LI][LI]2. De ondernemer betaalt alle betalingen van de consument terug, inclusief de bezorgkosten voor de standaardlevering, zo snel mogelijk en uiterlijk binnen 14 dagen na de dag waarop de consument de herroeping heeft gemeld.[_LI][LI]3. De ondernemer mag wachten met terugbetalen totdat hij het product heeft ontvangen of de consument aantoont dat hij het product heeft teruggestuurd, als dat eerder is.[_LI][LI]4. Heeft de consument gekozen voor een duurdere bezorgmethode dan de goedkoopste standaardlevering, dan hoeft de ondernemer de extra kosten niet terug te betalen.[_LI][LI]5. De ondernemer betaalt terug via hetzelfde betaalmiddel dat de consument heeft gebruikt, tenzij de consument instemt met een andere methode. Terugbetalen is kosteloos voor de consument.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-9": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 10 – Prijzen en aanbiedingen",
+            "block_content": "<p>[UL][LI]1. Alle prijzen zijn in euro's en inclusief btw. Bezorgkosten worden vóór het afronden van de bestelling apart en duidelijk getoond.[_LI][LI]2. Tijdens de geldigheidsduur van een aanbod worden de prijzen niet verhoogd, behalve door wijzigingen in btw-tarieven.[_LI][LI]3. Bij een prijsverlaging, zoals een korting of actie, vermeldt de ondernemer als vorige prijs de laagste prijs die hij in de 30 dagen vóór de verlaging voor dat product heeft gevraagd.[_LI][LI]4. Kortingscodes en acties zijn niet te combineren, niet inwisselbaar voor geld en alleen geldig binnen de vermelde periode, tenzij in de actievoorwaarden anders staat.[_LI][LI]5. Publiceert de ondernemer klantbeoordelingen, dan vermeldt hij of en hoe hij controleert dat die afkomstig zijn van klanten die het product echt hebben gekocht.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-10": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 11 – Conformiteit en garantie",
+            "block_content": "<p>[UL][LI]1. De ondernemer staat ervoor in dat de producten voldoen aan de overeenkomst, aan de specificaties in het aanbod, aan redelijke eisen van deugdelijkheid en bruikbaarheid en aan de wettelijke eisen op het moment van sluiten van de overeenkomst, waaronder de Europese cosmeticawetgeving en de eisen voor etikettering.[_LI][LI]2. Producten worden geleverd met een houdbaarheid die lang genoeg is voor normaal gebruik. Op de verpakking staat de minimale houdbaarheidsdatum of de houdbaarheid na opening.[_LI][LI]3. Voldoet een product niet aan de overeenkomst, dan heeft de consument recht op kosteloos herstel of vervanging. Is dat niet mogelijk of niet redelijk, dan heeft hij recht op prijsvermindering of ontbinding van de overeenkomst.[_LI][LI]4. Een gebrek dat binnen een jaar na levering zichtbaar wordt, wordt vermoed al bij levering aanwezig te zijn geweest, tenzij de ondernemer het tegendeel bewijst.[_LI][LI]5. De consument meldt een gebrek binnen twee maanden nadat hij het heeft ontdekt. Bij verzorgingsproducten raden we aan het gebrek zo snel mogelijk te melden, met een foto en het batch- of lotnummer als dat op de verpakking staat.[_LI][LI]6. Een extra garantie van de ondernemer, fabrikant of importeur doet nooit af aan de wettelijke rechten van de consument.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-11": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 12 - Levering",
+            "block_content": "<p>[UL][LI]1. De ondernemer bezorgt in alle lidstaten van de Europese Unie. Het afleveradres is het adres dat de consument bij de bestelling opgeeft.[_LI][LI]2. De ondernemer verzendt geaccepteerde bestellingen uiterlijk de eerstvolgende werkdag (maandag tot en met vrijdag, behalve officiële feestdagen) na de bestelling. De verwachte levertijd per land staat in de webshop. Bestellingen worden in elk geval binnen 30 dagen geleverd, tenzij een andere levertermijn is afgesproken.[_LI][LI]3. Loopt de levering vertraging op of kan een bestelling niet of maar gedeeltelijk worden uitgevoerd, dan hoort de consument dit zo snel mogelijk, uiterlijk 30 dagen na de bestelling. De consument mag de overeenkomst dan kosteloos ontbinden en krijgt zijn geld binnen 14 dagen terug.[_LI][LI]4. Is een besteld product niet leverbaar, dan levert de ondernemer alleen een vervangend product als de consument daar vooraf mee instemt.[_LI][LI]5. Het risico van beschadiging of verlies van producten ligt bij de ondernemer tot het moment van bezorging bij de consument of een door hem aangewezen derde die niet de vervoerder is.[_LI][LI]6. De consument bewaart en gebruikt producten volgens de aanwijzingen op de verpakking. Is de consument gevoelig of allergisch, dan controleert hij vóór gebruik de ingrediëntenlijst.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-12": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 13 - Betaling",
+            "block_content": "<p>[UL][LI]1. De consument kan betalen met iDEAL | Wero, Klarna, creditcard, PayPal en de cadeaukaarten die bij het afrekenen worden getoond [namen cadeaukaarten].[_LI][LI]2. Bij iDEAL | Wero, creditcard, PayPal en cadeaukaarten betaalt de consument het volledige bedrag direct bij het plaatsen van de bestelling. De ondernemer verwerkt de bestelling zodra de betaling is ontvangen.[_LI][LI]3. Wil de consument niet vooruitbetalen, dan kan hij kiezen voor achteraf betalen via Klarna. Daarvoor gelden de voorwaarden van Klarna. Klarna beoordeelt elke aanvraag zelf en kan die weigeren. De consument betaalt dan aan Klarna, binnen de termijn die Klarna vermeldt.[_LI][LI]4. Is het saldo van een cadeaukaart lager dan het orderbedrag, dan betaalt de consument het resterende bedrag met een andere betaalmethode. Bij terugbetaling wordt het met een cadeaukaart betaalde bedrag teruggezet op die cadeaukaart.[_LI][LI]5. De consument meldt onjuistheden in betaalgegevens direct aan de ondernemer.[_LI][LI]6. Wordt een betaling achteraf teruggedraaid of niet voldaan, dan ontvangt de consument eerst een kosteloze herinnering met een betaaltermijn van 14 dagen. Pas als hij ook dan niet betaalt, mag de ondernemer de wettelijke rente en de wettelijk toegestane incassokosten in rekening brengen.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-13": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 14 - Klachten",
+            "block_content": "<p>[UL][LI]1. Heeft de consument een klacht over de uitvoering van de overeenkomst, dan meldt hij die binnen redelijke tijd nadat hij het probleem heeft ontdekt, volledig en duidelijk omschreven, via klantenservice@thelekkercompany.com.[_LI][LI]2. De ondernemer beantwoordt klachten binnen 14 dagen na ontvangst. Vraagt een klacht meer tijd, dan stuurt de ondernemer binnen 14 dagen een ontvangstbevestiging met een indicatie van wanneer de consument een volledig antwoord kan verwachten.[_LI][LI]3. De consument en de ondernemer proberen een klacht eerst samen op te lossen.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_AXhAFQ": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 15 – Geschillen",
+            "block_content": "<p>[UL][LI]1. Op overeenkomsten tussen de ondernemer en de consument is Nederlands recht van toepassing. Woont de consument in een ander EU-land, dan behoudt hij de bescherming van de dwingende consumentenregels van dat land.[_LI][LI]2. Lukt het niet om een klacht samen op te lossen, dan kan de consument het geschil voorleggen aan de bevoegde rechter. [_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_k4QpEg": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 16 – Privacy",
+            "block_content": "<p>De ondernemer verwerkt persoonsgegevens van de consument volgens de Algemene verordening gegevensbescherming (AVG). In de <a href=\"/pages/privacy\" target=\"_blank\" title=\"Privacy Beleid\">privacyverklaring</a> staat welke gegevens we verwerken, waarom, hoe lang we ze bewaren en welke rechten de consument heeft.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_a8btke": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Artikel 17 – Slotbepalingen",
+            "block_content": "<p>[UL][LI]1. Aanvullende of afwijkende afspraken mogen niet in het nadeel van de consument zijn en worden vastgelegd op een duurzame gegevensdrager, zoals e-mail.[_LI][LI]2. De ondernemer mag deze voorwaarden wijzigen. Wijzigingen gelden niet voor overeenkomsten die al zijn gesloten. Voor elke bestelling gelden de voorwaarden zoals die golden op het moment van bestellen.[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "text_column_xyH8Dp": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Bijlage – Modelformulier",
+            "block_content": "<p>Vul dit formulier alleen in en stuur het alleen terug als je de overeenkomst wilt herroepen. Je kunt ook de herroepingsfunctie in de webshop gebruiken.<br/>Aan: lekkerineenpotje B.V. (The Lekker Company), Drift 3, 3512 BP Utrecht, info@thelekkercompany.com<br/>Ik deel u hierbij mede dat ik onze overeenkomst betreffende de verkoop van de volgende producten herroep:<br/>[UL][LI]Ordernummer: ……………………[_LI][LI]Besteld op / ontvangen op: ……………………[_LI][LI]Naam consument: ……………………[_LI][LI]Adres consument: ……………………[_LI][LI]Handtekening (alleen bij een papieren formulier): ……………………[_LI][LI]Datum: ……………………[_LI][_UL]</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-0",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-1",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-2",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-3",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-4",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-5",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-6",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-7",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-8",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-9",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-10",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-11",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-12",
+        "template--16685776863485__b8ed1691-d80e-41c9-a53d-b0ea85494d51-1667820253bcf6dc0d-13",
+        "text_column_AXhAFQ",
+        "text_column_k4QpEg",
+        "text_column_a8btke",
+        "text_column_xyH8Dp"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxl",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": false,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "terms",
+    "6ef48581-3a55-42bd-850a-248b4d77b13d",
+    "60e35d40-daa1-49a1-b854-748b2100373f",
+    "60e35d40-daa1-49a1-b854-748b2100373f-2"
+  ]
+}

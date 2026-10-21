@@ -1,0 +1,54 @@
+{%- liquid
+
+  comment
+    assign info_content = '[EM]italic[_EM][UL][LI]elemen[_LI][_UL]' | append : info_content
+  endcomment
+
+  assign info_content = info_content | replace : '-break-','<br />' | replace : '[break]','<br />'
+  assign info_content = info_content | replace : '<b>','<strong>' | replace : '</b>','</strong>'
+  assign info_content = info_content | replace : '<i>','<i>' | replace : '</i>','</i>'
+
+  assign info_content = info_content | replace : '<strong>', '[B]'
+  assign info_content = info_content | replace : '</strong>', '[_B]'
+  assign info_content = info_content | replace : '<em>', '[EM]'
+  assign info_content = info_content | replace : '</em>', '[_EM]'
+  assign info_content = info_content | replace : '<ul>', '[UL]'
+  assign info_content = info_content | replace : '</ul>', '[_UL]'
+  assign info_content = info_content | replace : '<li>', '[LI]'
+  assign info_content = info_content | replace : '</li>', '[_LI]'
+    comment
+      assign info_content = info_content | strip_html
+    endcomment
+  assign info_content = info_content | replace : '[UL]', '</p><ul class="font-fam-normal font-size-xs">'
+  assign info_content = info_content | replace : '[_UL]', '</ul><p class="font-fam-normal font-size-xs">'
+  assign info_content = info_content | replace : '[LI]', '<li>'
+  assign info_content = info_content | replace : '[_LI]', '</li>'
+  assign info_content = info_content | replace : '[EM]', '<em>'
+  assign info_content = info_content | replace : '[_EM]', '</em>'
+  assign info_content = info_content | replace : '[B]', '<strong>'
+  assign info_content = info_content | replace : '[_B]', '</strong>'
+   
+
+-%}
+
+<div class="product__accordion accordion">
+  <details>
+    <summary>
+      <div class="summary__title"><h2 class="font-fam-normal font-size-xs">{{ info_title }}</h2></div>
+      <span class="icon-acc-open">{%- render 'theme-icon', icon: 'icon-plus' -%}</span>
+      <span class="icon-acc-close">{%- render 'theme-icon', icon: 'icon-minus' -%}</span>
+    </summary>
+    <div class="accordion__content">
+      <p class="font-fam-normal font-size-xs">{{ info_content }}</p>
+    </div>
+  </details>
+  {%- comment -%}
+  <div class="line-sep-wrapper line-sep-type-waves margin-b-sm">
+    <div class="line-sep-track">
+      <img style="display:inline;float:left;width:984px;height:12px" width="984" alt="Seperator line" src="{{ 'theme-line-waves-black.png' | asset_url }}">
+      <img style="display:inline;float:left;width:984px;height:12px" width="984" alt="Seperator line" src="{{ 'theme-line-waves-black.png' | asset_url }}">
+      <img style="display:inline;float:left;width:984px;height:12px" width="984" alt="Seperator line" src="{{ 'theme-line-waves-black.png' | asset_url }}">
+    </div>
+  </div>
+  {%- endcomment -%}
+</div>

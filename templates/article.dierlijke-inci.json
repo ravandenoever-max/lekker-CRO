@@ -1,0 +1,374 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blog-header-visual": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/thelekkercompany_crueltyfreevegandeodorant.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 70,
+            "image_mobile": "shopify:\/\/shop_images\/thelekkercompany_crueltyfreevegandeodorant.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "100",
+        "slide_ratio_desktop": "40",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "45a885d5-09eb-400d-9f22-200d4957bfda": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Je moet zelfs in de ingrediëntenlijst van je tandpasta kijken",
+            "block_content": "<p>Je favoriete beauty- en huidverzorgings producten bevatten hoogstwaarschijnlijk talloze dierlijke bijproducten, ergens verstopt in de ingrediëntenlijst.<\/p><p>Vanuit een economisch oogpunt komt dit niet als een verrassing, aangezien de vleesindustrie verantwoordelijk is voor het enorme overschot in restjes die vervolgens kunnen worden gebruikt als een betaalbaar en effectief opvulmiddel in bekende beautyproducten.<\/p><p>Dierlijke ingrediënten in cosmetica kunnen prima als opvulmiddel worden gebruikt, maar dan is het wel zo fijn als dit duidelijk op de ingrediëntenlijst staat. Dit is nog steeds niet het geval. Daarom helpen wij je in deze blog met het oncijferen van de ingrediëntenlijst van je cosmetica.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xxl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__45a885d5-09eb-400d-9f22-200d4957bfda-1667316371cbf4faad-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": true
+      }
+    },
+    "5c16352e-030f-4034-b932-09952899f207": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Je moet zelfs in de ingrediëntenlijst van je tandpasta kijken",
+            "block_content": "<p>Voor iedereen die een vegan lifestyle heeft, kan het een enorme teleurstelling zijn om erachter te komen dat onze vertrouwde verzorgingsproducten zoals douchegel en dagcreme waarschijnlijk dierlijke vetten en andere dierlijke ingrediënten bevatten. Minder verrassend is het misschien om gelatine op de ingrediëntenlijst van een zakje snoep te lezen, dan een dierlijke glycerine in je tandpasta. Als je een bewuste keuze maakt om dit soort ingrediënten te vermijden, dan blijft het moeilijk om de vermelde ingrediënten in verzorgingsproducten te oncijferen en te begrijpen. De ingrediënten in een product worden vermeld aan de hand van de INCI (International Nomenclature Cosmetic Ingredients). Dit is een lijst met gestructureerde namen die internationaal worden erkend om cosmetische ingrediënten mee te identificeren. Hier gaan we verder in deze blog op in.<\/p>",
+            "block_align": "center",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "onze deos",
+            "button_size": "button_small",
+            "button_color": "button_pink",
+            "button_link": "shopify:\/\/collections\/deodorant",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__5c16352e-030f-4034-b932-09952899f207-166731686620a1ba3e-0"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000": {
+      "type": "theme-section__visual-text",
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_direction": "image-up",
+        "section_background_size": "lg",
+        "page_width": "page-width--narrow",
+        "layout_order": "image-text",
+        "use_animations": true,
+        "section_image": "shopify:\/\/shop_images\/IMG_3175.jpg",
+        "section_image_size": "original",
+        "section_image_rounded_corners": "xl",
+        "this_heading": "Meer dan 10.000 termen voor verschillende ingrediënten",
+        "this_content": "<p>De INCI bevat een zeer complexe taal met meer dan 10.000 termen voor verschillende ingrediënten. Helaas doen veel merken niet hun best om dit voor de gebruiker begrijpelijk te maken. Daarom maakten wij voor jullie een lijst met veelvoorkomende dierlijke ingrediënten in cosmetica (zowel in het Engels als in de INCI). Probeer deze producten te vermijden als je cosmetica wil gebruiken die vrij is van dierlijke producten.<\/p>",
+        "text_box_position": "center-left",
+        "block_heading_font_size": "xl",
+        "block_heading_font_color": "red",
+        "block_text_font_size": "xs",
+        "block_text_font_color": "black",
+        "max_heading_width": "10",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e": {
+      "type": "theme-section__text",
+      "blocks": {
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "The list goes on",
+            "block_content": "<p><strong>Een beknopte lijst die je kunt helpen:<\/strong><\/p><p>[UL][LI]CERA ALBA – bijenwas[_LI][LI]CARMINE E120 - een natuurlijk pigment gemaakt van luizen[_LI][LI]COLLAGEEN – <strong>soms <\/strong>een eiwit op basis van vis[_LI][LI]ELASTIN – proteïne, <strong>soms<\/strong> op basis van koeien[_LI][LI]GLYCERIN – glycerol, <strong>vaak <\/strong>op basis van dieren[_LI][LI]HONEY - honing, gemaakt van honingbijen[_LI][LI]HYALURONIC ACID - hyaluronzuur,<strong> vaak <\/strong>van dierenhuid of botweefsel[_LI][LI]FATTY ACID ESTERS - kunnen zowel plantaardige als dierlijke vetten zijn[_LI][LI]KERATIN– proteïne uit haar hoeven en botten van dieren[_LI][LI]LACTIC ACID – uit bloed, spieren of melk[_LI][LI]LACTALBUMIN- melk proteïnen[_LI][LI]LACTIS PROTEINUM - melk proteïnen[_LI][LI]LACTOPEROXIDASE - melk proteïnen[_LI][LI]LANOLIN OIL (LANOL\/LANOLATE) - een was, uitgescheiden door wol dragende dieren[_LI][LI]MUCOPOLYSACCHARIDEN - glycosaminoglycanen, suikermoleculen, van plantaardige of dierlijke basis. Deze stof wordt gebruikt om een product dik en gelachtig te maken[_LI][_UL]<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "manual",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "341b18db-4f30-48c8-b378-ff6111966d22": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "empty",
+            "block_content": "<p>[UL][LI]PARFUM – bevat <strong>soms <\/strong>dierlijke ingrediënten, parfum is een verzamelnaam[_LI][LI]RETINOL-<strong>soms <\/strong>uit lever of eieren[_LI][LI]ROYAL JELLY - stof die wordt uitgescheiden via de spijsverteringsbuis van de werkbijen[_LI][LI]SILK POWDER - fijn verpulverde zijde[_LI][LI]STEARIC ACID\/STEARYL ALCOHOL –<strong>soms <\/strong>dierlijk (vet)[_LI][LI]VITAMINEN –<strong>soms <\/strong>op basis van vis[_LI][LI]WHEY PROTEIN - melk proteïnen[_LI][LI]HYDROLYZED PEARL- fijngemalen parel, van levende of gedode weekdieren[_LI][LI]TALLOWATE- talg, gesmolten dierlijk vet[_LI][LI]GLUCOSAMINE - verbinding gevonden in kraakbeen[_LI][_UL] <\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "manual",
+            "block_text_list_style": "bullet",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "3837d5a8-be3b-4d3a-b333-53162cfbf738": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>Let op: Als we het woord <strong>soms<\/strong> of <strong>vaak<\/strong> gebruiken, dan betekent dit dat het ingrediënt zowel dierlijk, synthetisch als plantaardig kan zijn.<\/p><p>Ben je op zoek bent naar een meer gedetailleerde beschrijving van elk ingrediënt? Bekijk dan de handige site <a href=\"https:\/\/veganwiki.nl\/archive\/a\/Hoofdpagina\">vegan wiki<\/a>. Ben je op zoek bent naar een snelle en eenvoudige controle? Bij veel producten staat nu een gecertificeerd veganistisch logo op de verpakking. Check dit ook zeker!<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "d3fcc837-c566-41ef-b963-32f50ee69e6e": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p>Laten we allemaal hopen dat de industrie binnenkort transparanter wordt in de manier waarop ze ingrediënten gebruiken, door ze in begrijpelijke taal te vertalen en vermelden. Zo kan je wel goed de keuze maken of je dierlijke ingrediënten in cosmetica wil of niet.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "black",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14388232454193__260c293c-b4a5-4218-8e68-98bfe6f10f1e-1667318818ca0b8604-0",
+        "341b18db-4f30-48c8-b378-ff6111966d22",
+        "3837d5a8-be3b-4d3a-b333-53162cfbf738",
+        "d3fcc837-c566-41ef-b963-32f50ee69e6e"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xs",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de": {
+      "type": "theme-section__products",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "use_featured_collections": false,
+        "use_recently_viewed": false,
+        "collection": "all-products",
+        "filter_product_tagname": "ingredient-lavendel",
+        "chosen_layout": "products_in_grid",
+        "chosen_section_layout": "std",
+        "use_hor_scroll_bar": "none",
+        "max_element_view": 7,
+        "max_element_view_row": "3",
+        "show_intro": true,
+        "intro_heading": "Lavendel producten",
+        "intro_content": "",
+        "intro_align": "left",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50",
+        "button_show": false,
+        "button_label": "",
+        "button_size": "button_small",
+        "button_color": "button_black",
+        "button_link": "",
+        "button_target": false
+      }
+    },
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e": {
+      "type": "theme-section__blogs",
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "use_animations": true,
+        "blog": "personal-care",
+        "filter_blog_tagname": "",
+        "chosen_layout": "elements_in_row",
+        "use_hor_scroll_bar": "always",
+        "max_element_view": 6,
+        "max_el_view_row": "6",
+        "show_intro": true,
+        "intro_heading": "Andere blogs",
+        "intro_content": "",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "red",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "blog-header-visual",
+    "45a885d5-09eb-400d-9f22-200d4957bfda",
+    "5c16352e-030f-4034-b932-09952899f207",
+    "cc2a00c1-d697-4685-99bb-69c3e87a5000",
+    "260c293c-b4a5-4218-8e68-98bfe6f10f1e",
+    "a1564bc9-a7d4-4a16-95cf-ca8ef405f3de",
+    "a8ffcd58-eb18-4806-a6dd-f993ba5e512e"
+  ]
+}

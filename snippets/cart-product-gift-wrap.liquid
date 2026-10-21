@@ -1,0 +1,82 @@
+{%- if collections.gift-wrap.products.size > 0 -%}
+{%- assign first_product = collections.gift-wrap.products.first -%}
+{%- assign title = first_product.title -%}
+<div class="padding-xxs bg-red font-fam-normal font-size-xxs color-black">
+  <cart-gift-wrapper>
+    <div class="padding-xxs bg-green font-fam-normal font-size-xxs color-black">
+      <label class="font-fam-normal font-size-xxs color-black">
+        <span for="gift-wrapping">
+          <input type="hidden" name="attributes[gift-wrapping]" value="no" />
+          <input id="gift-wrapping" type="checkbox" name="attributes[gift-wrapping]" value="yes" {% if cart.attributes.gift-wrapping %} checked="checked"{% endif %} style="float: none" />
+          For {{ first_product.price | money }} per product, please add gift wrap to my order.
+        </span>
+      </label>
+    </div>
+    {%- liquid
+      assign product_gift_wraps_id = first_product.variants.first.id
+      assign product_gift_wraps_handle = first_product.handle
+      assign product_gift_wraps_in_cart = 0
+      for item in cart.items
+        if item.id == product_gift_wraps_id
+          assign product_gift_wraps_in_cart = item.quantity
+        endif
+      endfor
+      assign items_in_cart = cart.item_count | minus: product_gift_wraps_in_cart
+      echo 'items_in_cart: ' | append : items_in_cart
+      echo 'product_gift_wraps_in_cart: ' | append : product_gift_wraps_in_cart
+      -%}
+    <style> .cart__contents .cart-items .cart-handle-{{ product_gift_wraps_handle }} { display: none; } </style>
+    <script>
+      Shopify.Cart = Shopify.Cart || {};
+      Shopify.Cart.Gift_Wrap = {};
+      Shopify.Cart.Gift_Wrap.addGift_Wrap = function() {
+        Shopify.Cart.Gift_Wrap.UpdateCartStart();
+        $.ajax({ type:'POST', url:'/cart/update.js', data: { updates: { {{ product_gift_wraps_id }}: {{ items_in_cart }} }, attributes: { 'gift-wrapping':'yes' } }, dataType:'json', success: function() { Shopify.Cart.Gift_Wrap.UpdateCartEnd(); } });
+      }
+      Shopify.Cart.Gift_Wrap.removeGift_Wrap = function() {
+        Shopify.Cart.Gift_Wrap.UpdateCartStart();
+        $.ajax({ type:'POST', url:'/cart/update.js', data: { updates: { {{ product_gift_wraps_id }}: 0 }, attributes: { 'gift-wrapping':'' } }, dataType:'json', success: function() { Shopify.Cart.Gift_Wrap.UpdateCartEnd(); } });
+      }
+      Shopify.Cart.Gift_Wrap.UpdateCartStart = function() {
+        document.getElementById('main-cart-items').classList.add('cart__items--disabled');
+        document.querySelectorAll('.loading-overlay')[0].classList.remove('hidden');
+        window.shopping_cart_content_has_changed = 'true';
+      }
+      Shopify.Cart.Gift_Wrap.UpdateCartEnd = function() {
+        if (window.use_ajax_gift_wrapper == 'true') {
+          cl('UpdateCartContent');
+          $('cart-items').trigger('click');
+          cl('UpdateCartEnd');
+          document.getElementById('main-cart-items').classList.remove('cart__items--disabled');
+          document.querySelectorAll('.loading-overlay')[0].classList.add('hidden');
+          UpdateHeaderIconBubble(product_qty);
+        } else {
+          location.href = '/cart';
+        }
+      }
+      window.use_ajax_gift_wrapper = 'false';
+      function InitGift_Wrapper() {
+          {%- if cart.items.size == 1 and product_gift_wraps_in_cart > 0 -%}
+            $(function() { cl('Correction A'); Shopify.Cart.Gift_Wrap.removeGift_Wrap(); });
+          {%- elsif product_gift_wraps_in_cart > 0 and product_gift_wraps_in_cart != items_in_cart -%}
+            $(function() { cl('Correction B'); Shopify.Cart.Gift_Wrap.addGift_Wrap(); });
+          {%- elsif product_gift_wraps_in_cart > 0 and cart.attributes.gift-wrapping == blank -%}
+            $(function() { cl('Correction C'); Shopify.Cart.Gift_Wrap.addGift_Wrap(); });
+          {%-elsif product_gift_wraps_in_cart == 0 and cart.attributes.gift-wrapping != blank -%}
+            $(function() { cl('Correction D'); Shopify.Cart.Gift_Wrap.addGift_Wrap(); });
+          {%- endif -%}
+
+          SetHeaderIconBubble('{{ items_in_cart }}');
+
+          $('[name="attributes\[gift-wrapping\]"]').change(function() {
+            if ($(this).is(':checked')) {
+              Shopify.Cart.Gift_Wrap.addGift_Wrap();
+            } else {
+              Shopify.Cart.Gift_Wrap.removeGift_Wrap();
+            }
+          });
+      }
+    </script>
+  </cart-gift-wrapper>
+</div>
+{%- endif -%}

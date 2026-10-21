@@ -1,0 +1,241 @@
+<div class="full-page-wrapper-maxed customer login full-page-max-h">
+  <div class="padding-b-lg padding-t-lg">
+    <h1 id="recover" tabindex="-1" class="font-fam-light font-size-xl color-black txt-lowercase">{{- 'customer.recover_password.title' | t -}}</h1>
+    <div class="account-form-wrapper">
+      <p class="font-fam-normal font_size_16 color_black">{{ 'customer.recover_password.subtext' | t }}</p>
+      <div id="recover-customer-password">
+        {%- form 'recover_customer_password' -%}
+
+          {%- if form.errors -%}
+            <h2 class="form__message" tabindex="-1" autofocus>
+              <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+              {{ 'templates.contact.form.error_heading' | t }}
+            </h2>
+            {{ form.errors | default_errors }}
+          {%- endif -%}
+
+          {% assign recover_success = form.posted_successfully? %}
+          <div class="field margin-b-xs">
+            <input type="email" value="" name="email" id="RecoverEmail" autocorrect="off" autocapitalize="off" autocomplete="email"
+              class="js-required js-person_email" required aria-required="true"
+              {% if form.errors %} aria-invalid="true" aria-describedby="RecoverEmail-email-error" autofocus{% endif %}
+              placeholder="{{ 'customer.login_page.email' | t }}">
+            <label for="RecoverEmail">{{ 'customer.login_page.email' | t }}</label>
+          </div>
+
+          {%- comment -%}
+            {%- if form.errors -%}
+              <small id="RecoverEmail-email-error" class="form__message">
+                {%- render 'theme-icon', icon: 'icon-error' -%}
+                {{ form.errors.messages['form'] }}
+              </small>
+            {%- endif -%}
+          {%- endcomment -%}
+
+          <span class="margin-b-sm js-trigger-recover-form theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__blue-grey-blue">
+            {{ 'customer.login_page.submit' | t }}
+          </span>
+          <div class="visually-hidden">
+            <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+          </div>
+          <div class="margin-b-md">
+            <ul class="list-vertical list-padding-r-10 list-unstyled">
+              <li class="padding-v-5">
+                <a href="javascript:forceUrl('/account/login#login');" class="text-decoration-none" title="{{ 'customer.login_page.cancel' | t }}">
+                  <span class="font-fam-light font-size-xs link link--from-left link-black color-black">{{ 'customer.login_page.cancel' | t }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        {%- endform -%}
+      </div>
+      <script>
+        $(document).ready(function(){ InitRecoverFrom(); });
+
+        function InitRecoverFrom() {
+          "use strict";
+          $('.js-trigger-recover-form').on('click',function() {
+            window.form_passed = 't';
+            var form_el = $('#recover-customer-password form');
+            form_el.find('.js-required').removeClass('invalid');
+            form_el.find('.js-required').each(function() {
+              var given_value = $(this).val();
+              if (given_value.length < 1) {
+                $(this).addClass('invalid');
+                window.form_passed = 'f';
+              }
+            });
+            if (window.form_passed === 'f') {
+              var popup_message = $('#all_required_error').val();
+            }
+            if (window.form_passed === 't') {
+              var given_mail = form_el.find('.js-person_email').val();
+              var given_mail_valid = ValidateEmail(given_mail);
+              if (given_mail === '' || given_mail_valid === false) {
+                form_el.find('.js-person_email').addClass('invalid');
+                var popup_message = $('#input_email_error').val();
+                window.form_passed = 'f';
+              }
+            }
+
+            if ( $('body').hasClass('lang-en') ) {
+              var popup_this_title = 'Something went wrong';
+            } else {
+              var popup_this_title = 'Er ging iets mis';
+            }
+            if (window.form_passed === 'f') {
+              CustomAlertConfirm.open({
+                this_template: 'popup-message',
+                this_title: popup_this_title,
+                this_message: popup_message,
+                this_okText: 'Sluiten',
+                this_onok: () => { return false; }
+              });
+              return false;
+            } else {
+              var form_el = $('#recover-customer-password form');
+              ShowPageLoader();
+              submitForm(form_el);
+            }
+          });
+        }
+      </script>
+    </div>
+
+    <h1 id="login" tabindex="-1" class="font-fam-light font-size-xl color-black txt-lowercase">{{- 'customer.login_page.title' | t -}}</h1>
+    <div class="account-form-wrapper">
+      {%- if recover_success == true -%}
+        <h3 class="form__message" tabindex="-1" autofocus>
+          <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 13 13">
+            <path d="M6.5 12.35C9.73087 12.35 12.35 9.73086 12.35 6.5C12.35 3.26913 9.73087 0.65 6.5 0.65C3.26913 0.65 0.65 3.26913 0.65 6.5C0.65 9.73086 3.26913 12.35 6.5 12.35Z" fill="#428445" stroke="white" stroke-width="0.7"/>
+            <path d="M5.53271 8.66357L9.25213 4.68197" stroke="white"/>
+            <path d="M4.10645 6.7688L6.13766 8.62553" stroke="white">
+          </svg>
+          {{ 'customer.recover_password.success' | t }}
+        </h3>
+      {%- endif -%}
+      {%- form 'customer_login' -%}
+        {%- if form.errors -%}
+          <h2 class="form__message" tabindex="-1" autofocus>
+            <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+          {{ form.errors | default_errors }}
+        {%- endif -%}
+        <div class="field margin-b-xs">
+          <input type="email" name="customer[email]" id="CustomerEmail" autocomplete="email" autocorrect="off" autocapitalize="off"
+            class="js-required js-person_email" required aria-required="true"
+            {% if form.errors contains 'form' %} aria-invalid="true" {% endif %} placeholder="{{ 'customer.login_page.email' | t }}">
+          <label for="CustomerEmail">{{ 'customer.login_page.email' | t }}</label>
+        </div>
+      {%- if form.password_needed -%}
+        <div class="field margin-b-sm">
+          <input type="password" value="" name="customer[password]" id="CustomerPassword" autocomplete="current-password"
+            class="js-required" required aria-required="true"
+            {% if form.errors contains 'form' %} aria-invalid="true" {% endif %} placeholder="{{ 'customer.login_page.password' | t }}">
+          <label for="CustomerPassword">{{ 'customer.login_page.password' | t }}</label>
+        </div>
+      {%- endif -%}
+        <span class="margin-b-sm js-trigger-login-form theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__blue-grey-blue">{{ 'customer.login_page.sign_in' | t }}</span>
+        <div class="visually-hidden">
+          <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+        </div>
+        <div class="margin-b-sm">
+          <ul class="list-vertical list-padding-r-10 list-unstyled">
+          {%- if form.password_needed -%}
+            <li class="padding-v-5 txt-align-center">
+              <a href="javascript:forceUrl('/account/login#recover');" class="text-decoration-none" title="{{- 'customer.login_page.forgot_password' | t -}}">
+                <span class="font-fam-light font-size-xs link link--from-left link-black color-black">
+                  {{- 'customer.login_page.forgot_password' | t -}}
+                </span>
+              </a>
+            </li>
+          {%- endif -%}
+            <li class="padding-v-5 txt-align-center">
+              <a href="{{ routes.account_register_url }}" class="text-decoration-none" title="{{- 'customer.login_page.create_account' | t -}}">
+                <span class="font-fam-light font-size-xs link link--from-left link-black color-black">
+                  {{- 'customer.login_page.create_account' | t -}}
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      {%- endform -%}
+    </div>
+    <input id="all_required_error" type="hidden" value="{{ 'customer.login_page.all_required_error' | t }}">
+    <input id="input_email_error" type="hidden" value="{{ 'customer.login_page.input_email_error' | t }}">
+    <script>
+      $(document).ready(function(){ InitLoginFrom(); });
+
+      function InitLoginFrom() {
+        "use strict";
+
+        {%- if form.errors contains 'email' -%}
+          $('#LoginForm-email-error').show();
+        {%- else -%}
+          $('#LoginForm-email-error').hide();
+        {%- endif -%}
+  {%- if form.password_needed -%}
+        {%- if form.errors contains 'password' -%}
+          $('#LoginForm-password-error').show();
+        {%- else -%}
+          $('#LoginForm-password-error').hide();
+        {%- endif -%}
+  {%- endif -%}
+
+        $('.js-trigger-login-form').on('click',function() {
+          window.form_passed = 't';
+          var form_el = $('#customer_login');
+          form_el.find('.js-required').removeClass('invalid');
+          form_el.find('.js-required').each(function() {
+            var given_value = $(this).val();
+            if (given_value.length < 1) {
+              $(this).addClass('invalid');
+              window.form_passed = 'f';
+            }
+          });
+          if (window.form_passed === 'f') {
+            var popup_message = $('#all_required_error').val();
+          }
+          if (window.form_passed === 't') {
+            var given_mail = form_el.find('.js-person_email').val();
+            var given_mail_valid = ValidateEmail(given_mail);
+            if (given_mail === '' || given_mail_valid === false) {
+              form_el.find('.js-person_email').addClass('invalid');
+              var popup_message = $('#input_email_error').val();
+              window.form_passed = 'f';
+            }
+          }
+          if ( $('body').hasClass('lang-en') ) {
+            var popup_this_title = 'Something went wrong';
+          } else {
+            var popup_this_title = 'Er ging iets mis';
+          }
+          if (window.form_passed === 'f') {
+            CustomAlertConfirm.open({
+              this_template: 'popup-message',
+              this_title: popup_this_title,
+              this_message: popup_message,
+              this_okText: 'Sluiten',
+              this_onok: () => { return false; }
+            });
+            return false;
+          } else {
+            var form_el = $('#customer_login');
+            ShowPageLoader();
+            submitForm(form_el);
+          }
+        });
+      }
+    </script>
+    {%- if shop.checkout.guest_login -%}
+      <div>
+        <hr>
+        <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+        {%- form 'guest_login' -%}
+          <button>{{ 'customer.login_page.guest_continue' | t }}</button>
+        {%- endform -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

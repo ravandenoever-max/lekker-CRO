@@ -1,0 +1,478 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Handcreme_foto.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/Handcreme_foto.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": false,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "werken bij lekker",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "50",
+        "slide_ratio_desktop": "30",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Account Manager : kleine kanalen & nieuwe groei",
+            "block_content": "<ul><li>€3.000 p/m (32u) </li><li>Bonusregeling </li><li>Beauty/FMCG </li><li>B-Corp </li></ul><p></p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "https://greenjobs.nl/vacature/internationale-sales-stage-bij-the-lekker-company-kw",
+            "button_target": true
+          }
+        },
+        "e14d37e6-dc6c-4a9c-863c": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>lekker kort</strong></p><p><strong>Locatie</strong>: Utrecht(drift 3, Utrecht)</p><p><strong>Vergoeding:</strong> €3000 bruto (32u) + 8% vakantiegeld en bonusregeling</p><p><strong>Reisvergoeding</strong>: max. €175/mnd</p><p><strong>Kantoor</strong>: hybride (ma+do kantoordagen)<br/><br/><strong>Startdatum</strong>: lekker snel</p>",
+            "block_align": "left",
+            "block_heading_font_size": "md",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7",
+        "e14d37e6-dc6c-4a9c-863c"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "none",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "bcd81ab": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__bcd81ab-16667126691ea33499-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-07943_2.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/The_Lekker_Company_-_The_Originals_Brand_photography_web-07943_2.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__bcd81ab-16667126691ea33499-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5": {
+      "type": "theme-section__text",
+      "blocks": {
+        "ac327348-5e63-49db-a163-4db62f8aa745": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Over ons",
+            "block_content": "<p>Bij The Lekker Company geloven we in iets simpels maar radicaals: je lichaam is prima zoals het is. Wij maken 100% natuurlijke verzorgingsproducten die met je lichaam samenwerken in plaats van ertegen. Geen onnodige stoffen, geen onrealistische beloftes - wél fantastische geuren en producten die écht lekker werken.</p><p>We zijn een klein team (gestart aan de keukentafel) met grote ambities, ergens tussen start-up en scale-up in. We werken volgens de scale-up methode: snel schakelen, slim opschalen, en iedereen heeft invloed op waar we naartoe groeien.</p><p>Onze cultuur is enthousiast en nuchter. We lachen veel, houden van eerlijkheid en zijn gewoon lekker onszelf - stropdassen passen daar niet bij, korte broeken juist wel. Op donderdagmiddag gaat regelmatig de koelkast open voor een drankje (0.0 of niet, allemaal goed).</p><p><strong>Jouw rol</strong></p><p>Je werkt nauw samen met Daan, onze Key Account Manager voor grote retail en groothandel. Jij pakt de andere kant: de kleinere - maar minstens zo mooie - kanalen. Denk aan zelfstandige winkels, salons, boetieks, gifting-partners en B2B platforms.</p><p></p><p>We staan al goed vertegenwoordigd in een aantal grote ketens, maar de mooiste verhalen ontstaan vaak bij de unieke, losse winkel. Daar kun je het merkverhaal vertellen, een klik maken met de eigenaar, en net dat beetje extra binnenhalen. Niet zelden verkopen we per vierkante meter beter bij die ene bevlogen winkelier dan bij de grote keten ernaast - en daar zit jouw kans.</p><p>Je bent verantwoordelijk voor het onderhouden én uitbreiden van deze relaties in Nederland, maar je hebt ook de ruimte om kansen in het buitenland te pakken. Je wisselt soepel tussen accountmanagement en echte sales. En ja, je staat ook af en toe op een beurs of event. Met plezier, uiteraard.</p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:daan@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "ac327348-5e63-49db-a163-4db62f8aa745"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "17c73039-299d-481f-a426-17c56ca05c9f": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Pre-sale_-_body_wash_-_website_header_NL_Instagram_Post_45_1.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/4_170b5308-bf3c-4587-8f2f-27042657d70d.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "17c73039-299d-481f-a426-17c56ca05c9f"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c": {
+      "type": "theme-section__text",
+      "blocks": {
+        "37656141-9f76-42aa-87a0-206c0efa77e8": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><em><strong>Meteen lekker beginnen: net voordat jij start, lanceren we een product waar je vanaf dag één mee aan de slag kan: een navulbare body wash met blikjes - uniek in de Benelux, en ontzettend giftable. Een product dat letterlijk om een verhaal vraagt, en dat verhaal mag jij gaan vertellen. </strong></em></p><p></p><p><strong>Wat je doet</strong></p><p>- Beheren en uitbouwen van bestaande accounts: winkels tot 10 vestigingen, salons, losse retailers, gifting-partners en B2B platforms.</p><p>- Actief nieuwe klanten benaderen en binnenhalen,  jij wacht niet af.</p><p>- Kansen signaleren en vertalen naar concrete omzet, zowel in NL als daarbuiten.</p><p>- Creatief meedenken over nieuwe verkoopplekken, zie jij onze producten al in een display bij een sportschool, of onze navulbare douchegel bij een hotel? Dat soort ideeën zijn precies wat we zoeken.</p><p>- Vertegenwoordigen van The Lekker Company op beurzen en netwerkevenementen.</p><p>- Samenwerken met Daan en de rest van het team om onze groei samen te realiseren.</p><p></p><p><strong>Wat je meebrengt</strong></p><p>- Minimaal 3 jaar ervaring in sales of een commerciële rol.</p><p>- Je bent eerlijk, nieuwsgierig, open-minded en recht door zee, en durft verantwoordelijkheid te nemen, ook als iets niet meteen lukt.</p><p>- Assertief, sociaal en een echte luisteraar - je weet wat een klant nodig heeft vóórdat ze het zelf zeggen.</p><p>- Je staat met plezier op een netwerkborrel en voelt je daar als een vis in het water.</p><p>- Je herkent kansen en handelt erop, creatief, met lef, en zonder schroom om groot te denken.</p><p>- Je bent een sterke communicator die mensen meekrijgt in jouw idee, visie en commerciële blik.</p><p></p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:info@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "37656141-9f76-42aa-87a0-206c0efa77e8"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_visual_eq3ggD": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "visual_slide_ik8Pne": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/29_83dba2cd-81c1-4798-83b9-589e70581370.png",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify://shop_images/29_83dba2cd-81c1-4798-83b9-589e70581370.png",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "",
+            "video_aspect_desktop": "",
+            "video_source_mobile": "",
+            "video_aspect_mobile": "",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "visual_slide_ik8Pne"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "xxs",
+        "row_spacing_outer_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "white",
+        "section_background_color_b": "white",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "slide_start_color": "rgba(0,0,0,0)",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "70",
+        "slide_ratio_desktop": "50",
+        "section_image_rounded_corners": "lg",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "theme_section_text_AhFrDT": {
+      "type": "theme-section__text",
+      "blocks": {
+        "text_column_enf6GF": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "",
+            "block_content": "<p><strong>Grote pre's</strong></p><p>- Aantoonbare ervaring in de beauty- of FMCG-sector.</p><p>- Bestaand netwerk in de kanalen die jij gaat bedienen.</p><p>- Affiniteit met duurzaamheid en natuurlijke verzorging.</p><p>- Commercieel gevoel voor de internationale markt.</p><p>- Je spreekt naast Engels en Nederlands nog een Europese taal.</p><p></p><p><strong>Wat wij bieden</strong></p><p>- €3.000 bruto per maand op basis van 32 uur + 8% vakantiegeld.</p><p>- Bonusregeling op basis van behaalde resultaten.</p><p>- Reisvergoeding tot €175 per maand.</p><p>- Hybride werken: maandag en donderdag is het hele team op kantoor in hartje Utrecht (tenzij je afspraken op locatie hebt) - en heb je zin in een ijsje, dan loop je er zo even heen.</p><p>- Eén vrije dag per week naar eigen keuze (niet maandag of donderdag) - lekker vrij om te doen  waar jij zin in hebt.</p><p>- Autonomie en ruimte om je eigen aanpak te bepalen - wij geloven in jou.</p><p>- Een klein team met korte lijnen, veel vrijheid en een gezonde dosis ambitie.</p><p></p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "black",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": true,
+            "button_label": "solliciteer",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "mailto:daan@thelekkercompany.com",
+            "button_target": true
+          }
+        }
+      },
+      "block_order": [
+        "text_column_enf6GF"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "xxl",
+        "page_width": "page-width",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "1",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338727",
+    "bcd81ab",
+    "5d3e8d51-0a68-4690-bfa8-9e0c0a63a4d5",
+    "4b9305ac-a80d-4fb7-80ee-0b47be4e343a",
+    "37db5465-5bd8-44f2-bb18-56f12cde1d3c",
+    "theme_section_visual_eq3ggD",
+    "theme_section_text_AhFrDT"
+  ]
+}

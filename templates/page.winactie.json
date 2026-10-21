@@ -1,0 +1,163 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "95a6": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_10.jpg",
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_mobile": "shopify:\/\/shop_images\/Untitled_design_10.jpg",
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "red",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "none",
+        "row_spacing_outer_bottom": "none",
+        "row_spacing_inner_top": "xxs",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "slgrey",
+        "section_background_color_b": "white",
+        "section_background_color_split": "md",
+        "page_width": "no-page-width",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "60",
+        "slide_ratio_desktop": "45",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "7e74f5097338727": {
+      "type": "theme-section__text",
+      "blocks": {
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Win win win!",
+            "block_content": "<p>Wij geven maar liefst 3 van deze lekkere pakketten weg, vol met mooie producten van alleen maar 100% vegan en microplasticvrije merken.<\/p><p>Dit pakket bevat de fantastische crème van <a href=\"https:\/\/witlofskincare.nl\/?shpxid=36d9d3a2-dcd4-456d-90de-ffc3051a9077\" target=\"_blank\" title=\"https:\/\/witlofskincare.nl\/?shpxid=36d9d3a2-dcd4-456d-90de-ffc3051a9077\">Witlof<\/a>, pads van <a href=\"https:\/\/yoni.care\/nl\/\" target=\"_blank\" title=\"Yoni Care\">Yoni<\/a>, tissues van <a href=\"https:\/\/thegoodroll.nl\/\" target=\"_blank\" title=\"The Good Roll\">The Good Roll<\/a>, 3(!) handzepen van <a href=\"https:\/\/marcelsgreensoap.com\/en\" target=\"_blank\" title=\"Marcel's Green Soap\">Marcel's Green Soap<\/a>, Tooth-tabs van <a href=\"https:\/\/www.wesmyle.nl\/\" target=\"_blank\" title=\"Smyle\">Smyle<\/a>, Babybalm van <a href=\"https:\/\/naifcare.com\/\" target=\"_blank\" title=\"Naïf\">Naïf<\/a> en lippenbalsem en deodorant van onszelf. <\/p><p><strong>100% vegan en microplasticvrij!<\/strong><\/p><p>Met deze merken hebben we eerder een prachtige campagne gedaan onder de noemer 'Micro Plastics, Macro Probleem'. Het zijn dus stuk voor stuk merken waar we achter staan.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "xl",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "red",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        },
+        "e14d37e6-dc6c-4a9c-863c": {
+          "type": "text_column",
+          "settings": {
+            "block_heading": "Voorwaarden",
+            "block_content": "<p><strong>Stap 1 <\/strong>Volg de volgende merken op Instagram<\/p><p>@witlofskincare<\/p><p>@yoni.care<\/p><p>@thegoodroll<\/p><p>@marcelsgreensoap<\/p><p>@we.smyle<\/p><p>@naifcare<\/p><p>@thelekkercompany<\/p><p><strong>Stap 2 <\/strong>Reageer op de Instagram post en tag 2 personen die net als jij het pakket verdienen.<\/p><p><strong>Stap 3 <\/strong>Vul je e-mail aders in het formulier hieronder in.<\/p><p>Op maandag 4 november maken we de winnaars bekend per e-mail. Door je aan te melden voor de winactie, meld je je automatisch ook aan voor onze nieuwsbrief. Je kunt je natuurlijk altijd met 1 klik weer uitschrijven.<\/p>",
+            "block_align": "left",
+            "block_heading_font_size": "lg",
+            "block_heading_font_color": "red",
+            "block_text_font_size": "xs",
+            "block_text_font_color": "red",
+            "max_heading_width": "500",
+            "max_content_width": "500",
+            "block_text_style": "normal",
+            "block_text_list_style": "numbers",
+            "button_show": false,
+            "button_label": "Yeah!",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7",
+        "e14d37e6-dc6c-4a9c-863c"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "lg",
+        "row_spacing_inner_bottom": "lg",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "num_columns_mobile": "1",
+        "num_columns_desktop": "2",
+        "use_animations": true,
+        "template_blog_header": false
+      }
+    },
+    "theme_section_custom_code_nzD4rW": {
+      "type": "theme-section__custom-code",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<iframe id=\"orderchamp_frame\"  src=\"https:\/\/www.orderchamp.com\/invites\/widget\/open?storefront=U3RvcmVmcm9udDo3NTI2NTgxOTQ5Mzk5MDU&widget_type=type_big\" width=\"100%\" height=\"100%\" frameborder=\"0\"><\/iframe>\n<style>\n#orderchamp_frame{height:175vw}\n#orderchamp_frame{margin-bottom:80px}\n@media screen and (min-width:550px){ \n#orderchamp_frame{height:85vw}\n}\n@media screen and (min-width:768px){ \n#orderchamp_frame{height:55vw;max-height:540px}\n}\n@media screen and (min-width:992px){ \n#orderchamp_frame{height:50vw;max-height:540px}\n}\n@media screen and (min-width:1280px){ \n#orderchamp_frame{height:40vw;max-height:540px}\n}\n<\/style>",
+        "page_width": "page-width--narrow"
+      }
+    },
+    "theme_section_custom_code_MbidgE": {
+      "type": "theme-section__custom-code",
+      "settings": {
+        "custom_liquid": "<div id=\"sn-7d4aadd6-5b7a-4e4a-91df-5313f47e882e\"><\/div>",
+        "page_width": "page-width--narrow"
+      }
+    }
+  },
+  "order": [
+    "95a6",
+    "7e74f5097338727",
+    "theme_section_custom_code_nzD4rW",
+    "theme_section_custom_code_MbidgE"
+  ]
+}

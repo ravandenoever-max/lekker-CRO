@@ -1,0 +1,104 @@
+<div class="padding-t-lg padding-b-xl bg-slgrey">
+  {%- if section.blocks.size < 1  -%}
+  <div class="page-width">
+    <div class="txt-align-center margin-b-xs">
+      <h2 class="font-fam-normal color-black">
+        <span>Reviews</span>
+      </h2>
+      <p class="font-fam-normal font-size-xs color-black margin-t-xxs">
+        <span>Reviews placeholder</span>
+      </p>
+    </div>
+  </div>
+  {%- else -%}
+    {%- for block in section.blocks -%}
+      {%- if block.id != '' -%}
+        <div class="product-reviews-wrapper {% if section.settings.include_margins %}page-width--narrow{% endif %}">
+          <div class="product-reviews-title txt-align-center">
+            <h2 class="font-fam-normal font-size-xl color-black margin-b-lg">{{- 'product_review.title' | t -}}</h2>
+          </div>
+          <div class="product-reviews-content font-size-sm">
+            {%- render block -%}
+          </div>
+          {% capture bloated_css -%}
+          <style>
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-review-rating .spr-icon{color:black}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-review-rating .spr-icon.spr-icon-star-empty{color:black}
+            .product-reviews-wrapper .spr-container .spr-pagination a{text-transform:uppercase;color:black}
+            .product-reviews-wrapper .spr-container .spr-header .spr-summary-actions a{text-transform:uppercase;color:black}
+            .product-reviews-wrapper .spr-container .spr-content .spr-review .spr-review-footer a{text-transform:uppercase;color:black}
+            .product-reviews-wrapper .spr-container .spr-header h2{display:none}
+            .product-reviews-wrapper .spr-container .spr-content .spr-review h3.spr-review-header-title{font-family:var(--font-light-family);font-style:var(--font-light-style);font-weight:var(--font-light-weight);font-size:var(--font-size-sm);line-height:var(--font-size-sm-lh);text-transform:uppercase;text-decoration:none;margin-top:5px;margin-bottom:5px;color:black}
+            .product-reviews-wrapper .spr-container .spr-content .spr-review .spr-review-content-body{font-family:var(--font-light-family);font-style:var(--font-light-style);font-weight:var(--font-light-weight);font-size:var(--font-size-sm);line-height:var(--font-size-sm-lh);color:black}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form h3{font-family:var(--font-light-family);font-style:var(--font-light-style);font-weight:var(--font-light-weight);font-size:var(--font-size-sm);line-height:var(--font-size-sm-lh);text-transform:uppercase;text-decoration:none;margin-top:var(--spacing-xs);margin-bottom:var(--spacing-xs);color:black}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-label{font-family:var(--font-light-family);font-style:var(--font-light-style);font-weight:var(--font-light-weight);text-transform:uppercase;color:black}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-input{appearance:none;background-color:transparent;border:0;border-radius:0;line-height:30px;width:100%;min-height:30px;box-sizing:border-box;font-family:var(--font-light-family);font-style:var(--font-light-style);font-weight:var(--font-light-weight);font-size:var(--font-size-sm);color:var(--color-black) !important;border-bottom:1px solid var(--color-black)}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-input textarea{resize:vertical; height:100px; min-height:100px !important; border-bottom: 0px solid var(--color-black)}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-review-rating{border-bottom: 1px solid var(--color-black); padding-bottom:10px; padding-top:0px}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-review-rating .spr-form-input{border-bottom: 0px solid var(--color-black)}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-review-rating .spr-icon{font-size:18px}
+            .product-reviews-wrapper .spr-container .spr-content .spr-form .spr-form-review-rating .spr-icon.spr-icon-star-empty{opacity:1 !important}
+            .product-reviews-wrapper .spr-container .spr-form-message{border-radius:6px}
+            @media screen and (max-width:550px) {
+              .product-reviews-wrapper .spr-container .theme-button.theme-button{min-width:180px !important;float:left !important;margin-top:20px;font-size:18px !important;line-height:20px !important;border-radius:20px !important;padding:10px 18px !important}
+            }
+          </style>
+          {%- endcapture -%}
+          {%- render'inline-css',input_css:bloated_css -%}
+
+          {%- capture bloated_js -%}  
+            <script>
+              $(window).load(function(){
+                $('.product-reviews-wrapper').on('DOMSubtreeModified', function(){
+                  //cl('product-reviews-wrapper');
+                  var timesRun = 0;
+                  var interval = setInterval(function(){
+                    timesRun += 1;
+                    if ( $('.spr-form-input-textarea').length ) {
+                      clearInterval(interval);
+                      $('.spr-form-input-textarea').css({'resize':'vertical'}); $('.spr-form-input-textarea').attr('data-autoresize');
+                      $('.product-reviews-wrapper .spr-container .spr-content .spr-form .spr-button-primary').addClass('theme-button theme-button-round__medium theme-button__red-white-red theme-button-hover__blue-grey-blue');
+                      $('.product-reviews-wrapper .spr-container .spr-pagination a').addClass('js-click-no-loader');
+                      addTextareaAutoResize();
+                    } else if( timesRun === 300 ){ clearInterval(interval); }
+                  }, 10);
+                });
+              });
+            </script>
+          {%- endcapture -%}
+          {%- render 'inline-js', input_js: bloated_js -%}  
+        </div>
+      {%- else -%}
+        <div class="{% if section.settings.include_margins %}page-width{% endif %}">
+          {% render block %}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.apps.name",
+  "tag": "section",
+  "class": "section-app-embed",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "include_margins",
+      "default":true,
+     "label":"t:sections.apps.settings.include_margins.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.apps.presets.name"
+    }
+  ]
+}
+{% endschema %}

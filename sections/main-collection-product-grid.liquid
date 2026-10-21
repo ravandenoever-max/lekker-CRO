@@ -1,0 +1,214 @@
+{%- liquid
+  comment
+    //---------------------------------------------//
+    //-- general section settings --//
+    //---------------------------------------------//
+  endcomment
+
+    assign this_section_extra_classes = ''
+    
+    assign spacing_t = ' padding-t-'
+    assign spacing_t = spacing_t | append : section.settings.row_spacing_inner_top
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_t
+    assign spacing_b = ' padding-b-'
+    assign spacing_b = spacing_b | append : section.settings.row_spacing_inner_bottom
+    assign this_section_extra_classes = this_section_extra_classes | append : spacing_b
+
+    assign this_section_extra_classes = this_section_extra_classes | append : ' bg-' | append : section.settings.section_background_color 
+
+    assign this_section_id = section.id | sha1 | truncate : 20, ""
+    assign this_section_id = 'section-' | append : this_section_id
+
+  comment
+    //---------------------------------------------//
+    //-- this section/template specific settings --//
+    //---------------------------------------------//
+  endcomment
+
+  assign settings_template = section.settings
+  assign settings_template_layout = settings_template.template_layout
+  assign settings_products_per_page = settings_template.products_per_page
+  assign settings_products_per_row = 3
+  assign settings_limit_products_start = 0
+  assign settings_limit_products_end = 0
+
+  assign collection_products = collection.products
+  assign collection_products_size = collection_products.size
+  assign collection_show_title = true
+  assign collection_show_filter = true
+
+  assign chosen_product_card_layout = 'xxl'
+
+  assign settings_template_layout_prev = settings_template_layout
+
+  if settings_template_layout == 'visual-in-between-a'
+    assign settings_limit_products_start = 0
+    assign settings_limit_products_end = 3
+    assign chosen_product_card_layout = 'xxl'
+    assign settings_template_layout = 'classic'
+    assign collection_show_title = true
+    assign collection_show_filter = true
+  endif
+  if settings_template_layout == 'visual-in-between-b'
+    assign settings_limit_products_start = 4
+    assign chosen_product_card_layout = 'xxl'
+    assign settings_template_layout = 'classic'
+    assign collection_show_title = false
+    assign collection_show_filter = false
+  endif
+
+  assign element_tot_count = 0
+  assign element_hit_count = 0
+  assign filter_product_tagname = ''
+
+  capture final_products
+  for this_product in collection.products
+    assign _show_element = false
+    if filter_product_tagname != ''
+      if this_product.tags contains filter_product_tagname
+        assign _show_element = true
+      endif
+    else
+      assign _show_element = true
+    endif
+    if settings_limit_products_start > 0 and forloop.index < settings_limit_products_start
+      assign _show_element = false
+    endif
+    if settings_limit_products_end > 0 and forloop.index > settings_limit_products_end
+      assign _show_element = false
+    endif
+    if _show_element == true
+      assign element_hit_count = element_hit_count | plus: 1
+      if element_hit_count <= settings_products_per_page
+        assign element_tot_count = element_tot_count | plus: 1
+        assign index_number = forloop.index | minus: 1
+        assign this_product_id = this_product.variants.first.id
+        echo '<li class="grid__item nomargin grid__item-[LOOP]" id="product-[PID]">' | replace :'[LOOP]',forloop.index | replace :'[PID]',this_product_id
+          render 'product-card', collection:this_collection, chosen_product_card_layout:chosen_product_card_layout, product_card_product:this_product, button_size:'small', area_name:area_name, product_card_color:product_card_color
+        echo '</li>'
+      endif
+    endif
+  endfor
+  endcapture
+  assign collection_products_size = element_hit_count
+  assign collection_meta = collection.metafields.collection
+
+  comment
+    assign collection_image_gg = collection.image.src
+    echo collection_image_gg
+    assign collection_image_dd = collection_meta.collection_visual_banner_mobile.value
+    echo collection_image_dd
+    assign collection_image_dd = collection_meta.collection_visual_banner_desktop.value
+    echo collection_image_dd
+  endcomment
+
+  assign show_section = 'true'
+  if collection_products_size == 0 and settings_template_layout_prev == 'visual-in-between-b'
+      assign show_section = 'false'
+  endif
+
+  assign collection_title = collection.title
+  if collection_title == 'products'
+    assign collection_title = 'All products'
+  endif
+
+  assign enable_sorting = section.settings.enable_sorting
+  assign enable_filtering = section.settings.enable_filtering
+
+-%}
+
+{%- if show_section == 'true' -%}
+<div id="{{ this_section_id }}" class="section-inner {{ this_section_extra_classes }}">
+
+  <div id="collection-product-grid">
+  {%- paginate collection.products by settings_products_per_page -%}
+    {%- if collection_products_size == 0 and settings_template_layout_prev != 'visual-in-between-b' -%}
+      <div class="collection collection--empty page-width" id="main-collection-product-grid" data-id="{{ section.id }}">
+        <div class="collection__loading-overlay"><div class="loading-overlay__spinner"><svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg></div></div>
+        <div class="title-wrapper center">
+          <h2 class="font-fam-light font-size-md txt-lowercase color-black margin-b-xs">{{ 'sections.collection_template.empty' | t }}</h2>
+          <h3 class="font-fam-light font-size-sm txt-lowercase color-black">{{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}</h3>
+        </div>
+      </div>
+    {%- else -%}
+      {%- if settings_template_layout == 'classic' -%}
+        <div class="collection collection-template-classic page-width">
+          <div class="collection__loading-overlay"><div class="loading-overlay__spinner"><svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg></div></div>
+        {%- if collection_show_title == true -%}
+          <div class="title-wrapper center">
+            <h1 class="font-fam-light font-size-xl txt-lowercase color-red margin-b-sm">{{ collection_title }}</h1>
+          </div>
+        {%- endif -%}
+        {%- if collection_show_filter == true -%}
+          <div class="font-size-xs padding-b-xxs padding-xxs-b-md">
+            {%- render 'main-collection-product-grid-filter', enable_filtering:enable_filtering, enable_sorting:enable_sorting -%}
+          </div>
+        {%- endif -%}
+
+          <ul id="main-collection-product-grid" data-id="{{ section.id }}" role="list" class="collection-grid element-count-{{ settings_products_per_row }}">
+            {{ final_products }}
+          </ul>
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate, anchor: '', class: 'bg-red padding-v-md' -%}
+        {%- endif -%}
+        </div>
+      {%- elsif settings_template_layout == 'visual-on-left-side' -%}
+        <div class="collection collection-template-visual-on-left-side page-width">
+          <div class="padding-t-40 padding-b-80">
+            <div class="collection__loading-overlay"><div class="loading-overlay__spinner"><svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle></svg></div></div>
+          {%- if collection_show_title == true -%}
+            <div class="title-wrapper center">
+              <h2 class="font-fam-light font-size-xl txt-lowercase color-red margin-b-sm">{{ collection.title }}</h2>
+            </div>
+          {%- endif -%}
+            <ul id="main-collection-product-grid" data-id="{{ section.id }}" class="collection-grid-special">
+              <li class="grid__item grid__item-collection">
+                <div class="collection-image-cover">
+                  {%- render 'thumbnail-simple', media: collection.image, position: forloop.index, image_alt: collection.image.alt -%}
+                </div>
+              </li>
+              {{ final_products }}
+            </ul>
+          {%- if paginate.pages > 1 -%}
+            {%- render 'pagination', paginate: paginate, anchor: '', class: 'bg-red padding-v-md' -%}
+          {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  {%- endpaginate -%}
+  </div>
+</div>
+{%- endif -%} 
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "tag": "section",
+  "class": "section-grid-collection collection-grid-section",
+  "settings": [
+    { "type": "header", "content": "Section Layout and Size"},
+        {"type":"select","id":"row_spacing_inner_top","default":"md","label":"Spacing Top", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"row_spacing_inner_bottom","default":"md","label":"Spacing Bottom", "options": [ { "value":"3xl","label":"3xl"}, { "value":"xxl","label":"XXL"}, { "value":"xl","label":"XL"}, { "value":"lg","label":"LG"}, { "value":"md","label":"MD"}, { "value":"sm","label":"SM"}, { "value":"xs","label":"XS"}, { "value":"xxs","label":"xxs"}, { "value":"none","label":"none" } ] },
+        {"type":"select","id":"section_background_color","default":"pink","label":"Background Color", "options": [ { "value":"slgrey","label":"Light Grey"}, { "value":"black","label":"Black"}, { "value":"white","label":"White"}, { "value":"lblue","label":"Light Blue"}, { "value":"blue","label":"Blue"}, { "value":"red","label":"Red"}, { "value":"pink","label":"Pink"}, { "value":"lpink","label":"Light Pink"}, { "value":"yellow","label":"Yellow"}, { "value":"green","label":"Green"}, { "value":"dgreen","label":"Dark Green"}, { "value":"trans","label":"Transparent"} ] },
+        {"type":"checkbox","id":"enable_filtering","default":true,"label": "Show Filter"},
+        {"type":"checkbox","id":"enable_sorting","default":true,"label": "Show Sorting"},
+        {
+          "type": "select","id":"template_layout",
+          "options": [
+            { "value":"classic","label":"Classic"},
+            { "value":"visual-in-between-a","label":"Visual in between - A"},
+            { "value":"visual-in-between-b","label":"Visual in between - B"},
+            { "value":"visual-on-left-side","label":"Visual on the left" }
+          ],
+          "default":"classic",
+         "label":"Layout"
+        },
+        {
+          "type": "range","id":"products_per_page",
+          "min": 6, "max": 48,"step": 3,"default":24,
+         "label":"t:sections.main-collection-product-grid.settings.products_per_page.label"
+        }
+  ]
+}
+{% endschema %}

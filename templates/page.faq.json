@@ -1,0 +1,644 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "veelgesteldevragen": {
+      "type": "theme-section__visual",
+      "blocks": {
+        "template--14386062065713__95a6-166671017404c2a02e-0": {
+          "type": "visual_slide",
+          "settings": {
+            "image_overlay_on_desktop": false,
+            "image_overlay_on_desktop_strength": 50,
+            "image_overlay_on_mobile": false,
+            "image_overlay_on_mobile_strength": 50,
+            "textbox_show": true,
+            "desktop_text_box_position": "center-center",
+            "font_color": "white",
+            "font_shadow": false,
+            "sub_heading": "",
+            "heading": "Veelgestelde vragen",
+            "heading_font_size": "xxl",
+            "max_heading_width": "25",
+            "text": "",
+            "text_font_size": "md",
+            "max_text_width": "25",
+            "video_show": false,
+            "video_source_desktop": "764190865",
+            "video_aspect_desktop": "16:9",
+            "video_source_mobile": "764190865",
+            "video_aspect_mobile": "16:9",
+            "video_autoplay": true,
+            "video_show_controls": false,
+            "button_show": false,
+            "button_label": "",
+            "button_size": "button_small",
+            "button_color": "button_black",
+            "button_link": "",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14386062065713__95a6-166671017404c2a02e-0"
+      ],
+      "settings": {
+        "row_spacing_outer_top": "sm",
+        "row_spacing_outer_bottom": "sm",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "xxs",
+        "section_background_color": "yellow",
+        "section_background_color_b": "none",
+        "section_background_color_split": "none",
+        "page_width": "no-page-width",
+        "slide_start_color": "#accfff",
+        "slide_theme_layout": "custom",
+        "slide_ratio_unit": "%",
+        "slide_ratio_mobile": "10",
+        "slide_ratio_desktop": "20",
+        "section_image_rounded_corners": "none",
+        "video_as_background_cover": false,
+        "slide_speed": "2500",
+        "slide_ux_color": "red",
+        "slide_arrows": false,
+        "slide_pager": false,
+        "slide_count": false,
+        "use_animations": true
+      }
+    },
+    "6c840b5b-523e-4564-9845-fc6eeffe7ef9": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "6ffcf5c5-0308-465c-8bc6-09126ddf57f6": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Algemeen"
+          }
+        },
+        "d4f0babc-f998-40cf-acd4-7c58541cafdb": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe is The Lekker Company begonnen?",
+            "faq_section_qa_a": "<p>Dewi's uit de hand gelopen hobby begon uit frustratie over de moeilijke terminologie op een gemiddeld cosmetica-etiket. Je leest het hele verhaal op de <a href=\"https://thelekkercompany.com/pages/over-ons\" title=\"Over ons\">over ons</a> pagina.</p>"
+          }
+        },
+        "f7f0e428-19f7-45f4-8288-f19ba7d8f64f": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Waar kan ik Lekker producten kopen?",
+            "faq_section_qa_a": "<p>Onze producten zijn te koop bij veel grote (online) supermarktketens, drogisterijen en natuurwinkels. Veel kleinere winkels hebben ook ons assortiment. Hieronder vind je per product in welke ketens onze producten te vinden zijn in Nederland en België .<br/><br/><br/><strong>lippenbalsem</strong> <br/>Op dit moment verkrijgbaar bij Holland & Barrett en Bever winkels.<br/><br/><strong>deodorant crèmes<br/></strong><em>go gentle - deo crème </em><br/> NL: Holland & Barrett, Medi-Market<br/> BE: Holland & Barrett<br/><br/><em>get naked - deo crème</em><br/>NL: Holland & Barrett.<br/>BE: Holland & Barrett, Oxfam Magasins du Monde.<br/><br/><em>have fun - deo crème</em><br/>NL: Etos, Albert Heijn, Holland & Barrett.<br/>BE: Albert Heijn, Holland & Barrett.<br/><br/><em>stay fresh - deo crème</em><br/>NL: Etos, Albert Heijn, Holland & Barrett.<br/>BE: Albert Heijn, Holland & Barrett.<br/><br/><em>feel floral - deo crème </em><br/>NL & BE: Holland & Barrett, Albert Heijn, <br/><br/><em>be active - deo crème</em><br/>NL & BE: Holland & Barrett.<br/><br/><strong>deodorant sticks<br/></strong><em>have fun - deo stick</em><br/>NL: Etos, Albert Heijn, DA, Holland & Barrett, Bever, Medi-Market<br/>BE: Oxfam Magasins du Monde.<br/><br/><em>feel floral - deo stick </em><br/>NL: Etos, Albert Heijn, DA, Holland & Barrett, Bever<br/>BE: Oxfam Magasins du Monde, Holland & Barrett<br/><br/><em>be active - deo stick</em><br/>NL: Etos, Albert Heijn, DA, Holland & Barrett<br/>BE: Oxfam Magasins du Monde, Holland & Barrett</p><p><strong>De navulbare deo</strong></p><p>NL: Holland & Barrett</p><p>BE: Holland & Barrett</p><p></p><p><strong>De travel-size deodorant</strong></p><p>NL: Holland & Barrett</p><p>BE: Holland & Barrett</p><p><em><strong>De handcreme</strong></em></p><p>Nog niet in een fysieke keten verkrijgbaar</p><p><em><strong>De body wash </strong></em></p><p>Nog niet in een fysieke keten verkrijgbaar, wel mee te bestellen bij Holland & Barrett online</p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "6ffcf5c5-0308-465c-8bc6-09126ddf57f6",
+        "d4f0babc-f998-40cf-acd4-7c58541cafdb",
+        "f7f0e428-19f7-45f4-8288-f19ba7d8f64f"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "xl",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "50%",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Zonnebrand",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "center",
+        "heading_font_size": "xl",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "a2cb667f-e925-4736-b8c4-9902b0578bf4": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "ccd619e6-1bbc-493d-a9fb-ffba8c31517d": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Bestellen, verzenden & retourneren"
+          }
+        },
+        "d5c8b5cb-f2ae-4be3-bbe4-dbbe75449d12": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Naar welke landen verzenden jullie?",
+            "faq_section_qa_a": "<p>We verzenden naar alle EU-landen (en enkele niet-EU-landen). Door in jouw winkelmandje op ‘afrekenen’ te klikken, kun je daarna jouw land selecteren. Staat jouw land niet in het lijstje, laat het ons even weten, soms kunnen we een uitzondering maken.</p><p>We versturen je pakketje gratis binnen Nederland bij besteding vanaf 25 euro en vanaf 30 euro naar België.</p>"
+          }
+        },
+        "51c926b3-24ac-4479-8c71-2e047f54a36b": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Met welke methodes kan ik betalen?",
+            "faq_section_qa_a": "<p>Je kunt betalen met Wero (voorheen iDeal), PayPal, GPay, ShopPay en je creditcard.</p>"
+          }
+        },
+        "59780f10-0db2-4844-b62a-911dd5a9a5c5": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoelang duurt het voor ik mijn pakket binnen heb?",
+            "faq_section_qa_a": "<p>Bestel je voor 17.00 uur? Dan verzenden wij je pakket dezelfde dag nog. <br/><br/> Let op: op zondag, maandag en feestdagen worden er geen pakketten bezorgd.</p>"
+          }
+        },
+        "9305a3fa-4bc5-4040-8dd6-5ee9a667e50c": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Kan ik mijn bestelling retourneren?",
+            "faq_section_qa_a": "<p>Niet blij met je product? Stuur ons even een mail naar <a href=\"mailto:klantenservice@thelekkercompany.com\" target=\"_blank\" title=\"klantenservice@thelekkercompany.com\">klantenservice@thelekkercompany.com</a>. Dan zoeken we samen naar een passende oplossing.</p>"
+          }
+        },
+        "d52cb71a-8669-4ee9-b813-d490bf254a21": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Wanneer krijg ik gratis verzending?",
+            "faq_section_qa_a": "<p>Als je een bestelling doet naar Nederland vanaf 25 euro kun je 'gratis verzenden' aanklikken bij de check-out. We hebben deze optie voor België en Duitsland ook maar dan vanaf 30 euro. Helaas geldt deze regeling niet voor meer landen.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ccd619e6-1bbc-493d-a9fb-ffba8c31517d",
+        "d5c8b5cb-f2ae-4be3-bbe4-dbbe75449d12",
+        "51c926b3-24ac-4479-8c71-2e047f54a36b",
+        "59780f10-0db2-4844-b62a-911dd5a9a5c5",
+        "9305a3fa-4bc5-4040-8dd6-5ee9a667e50c",
+        "d52cb71a-8669-4ee9-b813-d490bf254a21"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "ce814c28-837e-4cb5-a46e-351ae6953755": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "dbf1642e-3e1c-4614-911d-8c07e9a432b9": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Lekker hotline"
+          }
+        },
+        "4145b4e8-5435-4932-84a1-c43975c92f03": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Help! Volgens mij heb ik een allergische reactie.",
+            "faq_section_qa_a": "<p>Oh nee! Dat is niet lekker. Hieronder lees je wat je het beste kunt doen, en wat je kunt proberen om klachten te voorkomen.</p><p><strong>Algemeen advies</strong><br/><br/>Merk je jeuk of roodheid? Stop dan met smeren en spoel de huid eventueel af met water. Blijven de klachten aanhouden, neem dan contact op met je huisarts.</p><p><strong>Deodorant</strong><br/><br/>Had je een reactie direct na het smeren? Dan kan je allergisch zijn voor (een van) onze etherische oliën  Probeer onze Get Naked (deze bevat geen etherische olie).</p><p>Kreeg je juist een reactie nadat je de deo al een tijdje gebruikte? Dan is het waarschijnlijk een reactie op de baking soda. Probeer in dat geval:</p><ol><li>Iets minder deo gebruiken[break]2. Appelcider-azijn en water 1:1 mengen en met een watje deppen op je oksel. Zo'n 4 keer per jaar is voldoende; veel mensen kunnen hierna weer tegen baking soda.[break]3. Een beetje aloë vera smeren voordat je de deo aanbrengt.</li></ol><p>Liever meteen een deo zonder baking soda? Onze Fresh Laundry (stick) en Go Gentle (crème) zijn beide baking soda-vrij.</p><p><strong>Lippenbalsem</strong><br/><br/>Onze Raspberry Lemonade lippenbalsem is allergenenvrij. In de Orange Vanilla zitten allergenen die van nature voorkomen in etherische olie: linalool, citral, citronellol en geraniol. Krijg je een allergische reactie? Stop dan met smeren.</p><p><strong>Body wash & handcrème</strong><br/><br/>Ook onze body wash (eucalyptus etherische olie) en handcrème (grapefruit etherische olie) bevatten etherische oliën die een reactie kunnen veroorzaken. Merk je klachten, stop dan met gebruiken en volg het algemene advies hierboven.</p>"
+          }
+        },
+        "40f0b9c2-bf82-4b2f-9b58-60371e30bad5": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Ik ben zwanger, kan ik jullie producten gebruiken?",
+            "faq_section_qa_a": "<p>Ja, je kunt onze producten prima gebruiken tijdens een zwangerschap. De hoeveelheid etherische oliën in de producten zit onder het maximale percentage dat gebruikt mag worden tijdens een zwangerschap.<br/>Let op, krijg je een rode huid of jeuk, stop dan altijd met het gebruik van onze producten.</p>"
+          }
+        },
+        "3a1f78c8-7047-4c76-bc65-0216b0640dfb": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Ik geef borstvoeding, kan ik jullie product gebruiken?",
+            "faq_section_qa_a": "<p>Ja, je kunt onze producten prima gebruiken als je borstvoeding geeft. Ondanks dat het niet schadelijk is, ligt een baby'tje natuurlijk dicht bij de oksel tijdens de borstvoeding. Sommige baby’s vinden bepaalde geuren onaangenaam. Je kunt in dat geval het beste kiezen voor onze deodorant met neutrale geur, de Get Naked variant.</p>"
+          }
+        },
+        "83ecf56c-a17e-485d-b7df-08a359b1f0bb": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Testen jullie producten op dieren?",
+            "faq_section_qa_a": "<p>Nee. Doe niet zo raar. Konijnen hebben echt niks aan deodorant of lippenbalsem.</p>"
+          }
+        },
+        "3a331658-6093-4ade-851a-f91074649973": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Zijn jullie producten vegan?",
+            "faq_section_qa_a": "<p>Ja. Al onze producten zijn volledig natuurlijk en geschikt voor veganisten.</p>"
+          }
+        },
+        "24d73333-0410-4dbe-835c-6142264308e8": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Zijn jullie producten biologisch?",
+            "faq_section_qa_a": "<p>Onze producten zijn gedeeltelijk biologisch. In de ingrediëntenlijst geven we dit aan met een * achter de biologische ingrediënten.</p>"
+          }
+        },
+        "82931146-b912-4152-aa20-c31d15631a0e": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Zijn jullie verpakkingen duurzaam?",
+            "faq_section_qa_a": "<p>Onze verpakkingen zijn voor meer dan 99% gemaakt van karton, en mogen om die reden bij het oud papier. Duurzamer kan altijd, maar wij hebben nog geen duurzamere verpakking gevonden die door de stabiliteitstest komt. Heb je een beter alternatief? Laat het ons weten!</p>"
+          }
+        },
+        "a6cc8100-da83-469b-88d2-fb1b78886dea": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Zijn jullie B-Corp?",
+            "faq_section_qa_a": "<p>JA! Hier zijn we echt trots op. Samen met meer dan 4.000 andere bedrijven werken wij hard aan een transparante wereld waarin milieu- en sociale verantwoordelijkheid wordt genomen. Zo maken we samen het verschil.</p>"
+          }
+        },
+        "e7aad052-b466-4876-8143-e87efeef5da0": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hebben jullie kortingscodes en aanbiedingen?",
+            "faq_section_qa_a": "<p>Zeker. Deze communiceren we in onze nieuwsbrief en sociale mediakanalen. Meld je aan om niets te missen! Daarnaast vind je in onze webshop combi deals, waarbij je meer producten voor minder kunt scoren.</p>"
+          }
+        },
+        "2fd3c4c7-fe79-43a4-a6a4-9d37a366c791": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Waar is jullie zonnebrand gebleven?",
+            "faq_section_qa_a": "<p>Helaas hebben we de zonnebrand uit de lijn gehaald. Om goed te functioneren in papieren potten hebben we een te stevige substatie moeten maken, met minder gebruiksgemak als gevolg.</p><p>Producten komen en mogen in onze lijn blijven bij een zeer hoge NPS (Net Promotor Scores), helaas voldeed onze zonnebrand daar net niet aan. Wellicht komen we ooit terug met een nog fijner recept.</p>"
+          }
+        },
+        "faq_section_qa_KkbWRf": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Ik wil graag producttester worden! Hoe kan ik me inschrijven?",
+            "faq_section_qa_a": "<p>Wat leuk dat je onze producten wilt testen en verder ontwikkelen met ons! Schrijf je hier in om tester te worden: <a href=\"https://thelekkercompany.com/pages/testpanel\" target=\"_blank\" title=\"www.thelekkercompany.com/pages/testpanel\">https://thelekkercompany.com/pages/testpanel</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "dbf1642e-3e1c-4614-911d-8c07e9a432b9",
+        "4145b4e8-5435-4932-84a1-c43975c92f03",
+        "40f0b9c2-bf82-4b2f-9b58-60371e30bad5",
+        "3a1f78c8-7047-4c76-bc65-0216b0640dfb",
+        "83ecf56c-a17e-485d-b7df-08a359b1f0bb",
+        "3a331658-6093-4ade-851a-f91074649973",
+        "24d73333-0410-4dbe-835c-6142264308e8",
+        "82931146-b912-4152-aa20-c31d15631a0e",
+        "a6cc8100-da83-469b-88d2-fb1b78886dea",
+        "e7aad052-b466-4876-8143-e87efeef5da0",
+        "2fd3c4c7-fe79-43a4-a6a4-9d37a366c791",
+        "faq_section_qa_KkbWRf"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "1217e8c3-1074-4829-8ec0-ef8f65063428": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "d22aafa6-d8e6-4e2d-8b65-152019f51613": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Deodorant"
+          }
+        },
+        "1c6f178e-0e9e-4f0d-8855-15d837f357e5": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoelang doe ik met jullie deodorant?",
+            "faq_section_qa_a": "<p>Onze <strong>crème deodorant</strong> is zeer geconcentreerd. Je hebt daarom maar een klein beetje, zo groot als een erwtje ongeveer, per oksel nodig. Gebruik je de deo crème dagelijks? Dan kun je wel 2 tot 3 maanden met één potje doen.<br/><br/><br/>Onze <strong>deodorant stick</strong> gebruik je net als een roller en werkt het best op een schone oksel. Twee vegen per oksel is meestal voldoende. Om vlekken te voorkomen moet je even goed kijken of er geen deo achterblijft op je oksel, anders even wegwrijven. Gebruik je de deo stick dagelijks? Dan doe je ongeveer 2 maanden met één stick.</p>"
+          }
+        },
+        "5795f1b2-8ba1-4bb3-9ef8-c3c9ba07cb9b": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe gebruik ik jullie deodorant?",
+            "faq_section_qa_a": "<p>Onze deo is een smeerbare, crème deodorant. Je gebruikt hem door een beetje uit het potje te scheppen met je vinger. Je hebt ongeveer de grootte van een erwtje nodig per oksel. Smeer dit uit onder je oksels en je ruikt de rest van de dag lekker!<br/><br/>De deodorant stick is net zo effectief als onze crème variant, maar nu in een handige stick.</p>"
+          }
+        },
+        "eb41f2ec-50f9-4d18-a7ff-1185b7afcce4": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe vaak moet ik de deodorant gebruiken?",
+            "faq_section_qa_a": "<p>Onze deodorant is zeer geconcentreerd. Je hebt daarom maar een klein beetje, zo groot als een erwtje ongeveer, per oksel nodig. Dit is genoeg om de hele dag lekker te ruiken. Maar voel je vrij om de deodorant zo vaak te gebruiken als jij en je oksels liefhebben.</p>"
+          }
+        },
+        "2f4a2952-edc5-44fb-8556-974e32ff5302": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Mijn deodorant ziet er gek uit, wat moet ik doen?",
+            "faq_section_qa_a": "<p>Onze deodorant is natuurlijk, hij ziet er daarom niet altijd 'perfect' uit. Maar als hij lekker ruikt en zacht aanvoelt is hij prima. Voelt de deodorant korrelig? Dan heeft de kokosolie gereageerd op warmteverschillen. Als je de korrels even uitwrijft tussen duim en wijsvinger wordt het weer zacht (een beetje zoals bij honing!). Toch nog twijfels over jouw deo? Mail ons dan met een omschrijving en foto op klantenservice@thelekkercompany.com.</p>"
+          }
+        },
+        "faq_section_qa_X6djY9": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Wat is de refill deodorant precies?",
+            "faq_section_qa_a": "<p><strong>Maak kennis met onze nieuwste toevoeging: de refill deo stick.</strong><br/><br/>Onze heerlijke geuren, maar in een navulbare verpakking. Zo geniet je van je favoriete natuurlijke deo én verminder je afval. Lekker makkelijk, lekker duurzaam. </p>"
+          }
+        },
+        "faq_section_qa_Wyw8Yb": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe werkt het navulproces van de refill deo?",
+            "faq_section_qa_a": "<p><strong>Stap 1:</strong> open de case.<br/><strong>Stap 2: </strong>draai de ring naar links en verwijder.<br/><strong>Stap 3:</strong> haal het witte kartonnetje uit de case.<br/><strong>Stap 4:</strong> plaats de refill zonder de dop.<br/><strong>Stap 5:</strong> draai terug en bevestig de vulling.<br/><strong>Stap 6: </strong>breng twee vegen deodorant aan op droge oksels.<br/><strong>Stap 7: </strong>geniet van de frisse en fruitige geur terwijl je de hele dag beschermd blijft tegen geurtjes.<br/><strong>Stap 8: </strong>bewaar op kamertemperatuur voor optimale frisheid.<br/><br/><strong>Het ringetje komt los, wat nu?</strong><br/>We ontvangen af en toe de melding dat het ringetje loskomt. We zijn hier al mee bezig! Zorg er in de tussentijd voor dat je het ringetje goed bevestigt door het stevig naar rechts te draaien.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "d22aafa6-d8e6-4e2d-8b65-152019f51613",
+        "1c6f178e-0e9e-4f0d-8855-15d837f357e5",
+        "5795f1b2-8ba1-4bb3-9ef8-c3c9ba07cb9b",
+        "eb41f2ec-50f9-4d18-a7ff-1185b7afcce4",
+        "2f4a2952-edc5-44fb-8556-974e32ff5302",
+        "faq_section_qa_X6djY9",
+        "faq_section_qa_Wyw8Yb"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "theme_section_faq_multiple_6x7iCC": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "faq_section_qECYJA": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Body wash"
+          }
+        },
+        "faq_section_qa_6XTPm8": {
+          "type": "faq_section_qa",
+          "disabled": true,
+          "settings": {
+            "faq_section_qa_q": "Hoe lang duurt de levering tijdens de pre-sale?",
+            "faq_section_qa_a": "<p>Wanneer je tijdens de pre-sale van dit product een bestelling plaatst, dan kan de <strong>levering</strong> wat langer duren. De verwachte levering staat op de productpagina aangegeven. Voor de body wash is dit mid. juli 2026.</p><p></p><p>Let op: wil je tegelijkertijd ook <strong>andere producten bestellen</strong> die niet in pre-sale zijn? Dan hebben deze producten dezelfde levertijd als de body wash. Dus wil je de andere producten eerder ontvangen, plaats hiervoor dan een losse bestelling.</p>"
+          }
+        },
+        "faq_section_qa_D3nzJV": {
+          "type": "faq_section_qa",
+          "disabled": true,
+          "settings": {
+            "faq_section_qa_q": "Hoe werkt de korting van de pre-sale?",
+            "faq_section_qa_a": "<p>Je kan via onze webshop korting krijgen op de body wash. Tot en met 7 juli 2026 geldt een korting van 20%. </p><p>Vanaf 8 juli tot en met 23 juli 2026 ontvang je 10% korting. Na deze data gelden de reguliere prijzen.</p><p>De kortingen worden automatisch verwerkt. Hiervoor hoef je niets te doen.</p>"
+          }
+        },
+        "faq_section_qa_B3MfEJ": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe gebruik ik de Starter Refill Body Wash?",
+            "faq_section_qa_a": "<p>Stap 1: open de case.<br/>Stap 2: verwijder het kartonnen schijfje.<br/>Stap 3: draai de case tot je de POP hoort.<br/>Stap 4: vervolgens kan je de case helemaal dicht draaien.<br/>Stap 5: draai de pomp erop en je bent klaar om te douchen.<br/><br/>Pomp en masseer in de huid, daarna afspoelen. Alleen voor uitwendig gebruik. Vermijd contact met de ogen. </p>"
+          }
+        },
+        "faq_section_qa_gAqCWk": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Kan ik het Refill Body Wash blikje ook los kopen?",
+            "faq_section_qa_a": "<p>Jazeker. Als je lekker wilt navullen, dan kan je dit gewoon via onze webshop bestellen. <br/><br/><strong>Let op:</strong> je hebt een Lekker case nodig om het blikje te openen en te kunnen gebruiken. Je kan dus beginnen met de Starter Refill Body Wash. Deze Lekker case kan je hergebruiken en daarna hoef je enkel de Refill Body Wash blikjes los aan te schaffen.</p>"
+          }
+        },
+        "faq_section_qa_hAFpBD": {
+          "type": "faq_section_qa",
+          "disabled": true,
+          "settings": {
+            "faq_section_qa_q": "Ik heb via de crowdfunding een pre-order geplaatst. Hoe werk dat?",
+            "faq_section_qa_a": "<p>Op basis van jouw investering kan het zo zijn dat je een pre-order hebt gedaan voor de Starter Refill Body Wash. Via de mail wordt je up-to-date gehouden over de crowdfunding. Heb je geen informatie ontvangen? Check dan je spam. Mocht je hier ook niets ontvangen hebben, neem dan contact op via <a href=\"mailto:info@thelekkercompany.com\" title=\"mailto:info@thelekkercompany.com\">info@thelekkercompany.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_section_qECYJA",
+        "faq_section_qa_6XTPm8",
+        "faq_section_qa_D3nzJV",
+        "faq_section_qa_B3MfEJ",
+        "faq_section_qa_gAqCWk",
+        "faq_section_qa_hAFpBD"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "b5234e15-e0ce-4e30-9a85-dfae66f81d9a": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "bfdc1296-6483-4793-8cf9-c2e31ce6a1eb": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Lippenbalsem"
+          }
+        },
+        "e31db75c-93b1-46fe-83a7-106dcec3e3d6": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe vaak moet ik de lippenbalsem gebruiken?",
+            "faq_section_qa_a": "<p>Zo vaak als jij en je lippen fijn vinden. Onze lippenbalsems zijn praktisch eetbaar en ruikt mega lekker. We snappen daarom dat je er niet vanaf kunt blijven ;)</p>"
+          }
+        },
+        "b8a34cbd-eaf9-4e74-932f-bc2eb5009785": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Is jullie lippenbalsem verslavend?",
+            "faq_section_qa_a": "<p>Nee. Minerale oliën in andere lippenbalsems sluiten de lippen af en drogen deze uit. Wij gebruiken geen minerale oliën en alleen natuurlijke ingrediënten. Onze lippenbalsems zijn daardoor niet verslavend, maar wel heel lekker!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "bfdc1296-6483-4793-8cf9-c2e31ce6a1eb",
+        "e31db75c-93b1-46fe-83a7-106dcec3e3d6",
+        "b8a34cbd-eaf9-4e74-932f-bc2eb5009785"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "24a69c12-c323-47e5-bf70": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "2e9fc6a5-17ca-4ea2-b5c9-983de799e175": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Carrières"
+          }
+        },
+        "6d0ca273-fb5a-42f2-9686-40a83016aedc": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Ik wil bij jullie komen werken, waar kan ik solliciteren?",
+            "faq_section_qa_a": "<p>Leuk! Stuur een mailtje naar dewi@thelekkercompany.com met je CV en een motivatiebrief. We nemen dan zo snel mogelijk contact met je op.\nIn onze footer staat ook een linkje naar de huidige vacatures.</p>"
+          }
+        },
+        "bf0e292e-8488-4d42-aea1-7fdd09f93b59": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Ik wil bij jullie stage komen lopen, waar kan ik solliciteren?",
+            "faq_section_qa_a": "<p>Leuk! Stuur een mailtje naar stage@thelekkercompany.com met je CV en een motivatiebrief. We nemen dan zo snel mogelijk contact met je op.\nIn onze footer staat ook een linkje naar de huidige vacatures.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "2e9fc6a5-17ca-4ea2-b5c9-983de799e175",
+        "6d0ca273-fb5a-42f2-9686-40a83016aedc",
+        "bf0e292e-8488-4d42-aea1-7fdd09f93b59"
+      ],
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "xl",
+        "section_background_color": "white",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Carrières",
+        "intro_content": "Carrières",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    },
+    "c2e8e89a-34d4-4d41-8306-ef7d1c2da968": {
+      "type": "theme-section__faq-multiple",
+      "blocks": {
+        "69104d19-934d-4668-bb39-2497b806b63d": {
+          "type": "faq_section",
+          "settings": {
+            "faq_section_title": "Contact"
+          }
+        },
+        "c302e47a-3898-4ff2-a2bd-eeaab4b75ca9": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Kan ik met jullie samenwerken?",
+            "faq_section_qa_a": "<p>Leuk! Stuur een mailtje naar <a href=\"mailto:info@thelekkercompany.com\" title=\"mailto:info@thelekkercompany.com\">info@thelekkercompany.com</a> of een dm naar @thelekkercompany op een van onze sociale mediakanalen met je ideeën. We nemen dan zo snel mogelijk contact met je op.</p>"
+          }
+        },
+        "461923fc-a80b-4b87-9a96-6e50477cbc51": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Kan ik een verkooppunt worden?",
+            "faq_section_qa_a": "<p>Waarschijnlijk wel! Stuur een mail naar <a href=\"mailto:sales@thelekkercompany.com\" title=\"mailto:sales@thelekkercompany.com\">sales@thelekkercompany.com</a> en dan hoor je snel van ons.<br/>In onze footer staat ook een overzicht met alle b2b verkooplocaties onder het kopje 'zakelijk'.</p>"
+          }
+        },
+        "c4b5f2c9-9cc0-45b7-aee0-ccdaa2c9ebd7": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Ik heb een andere vraag, hoe kan ik contact opnemen?",
+            "faq_section_qa_a": "<p>We helpen je graag. Stuur een mailtje naar <a href=\"mailto:klantenservice@thelekkercompany.com\" title=\"mailto:klantenservice@thelekkercompany.com\">klantenservice@thelekkercompany.com</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "69104d19-934d-4668-bb39-2497b806b63d",
+        "c302e47a-3898-4ff2-a2bd-eeaab4b75ca9",
+        "461923fc-a80b-4b87-9a96-6e50477cbc51",
+        "c4b5f2c9-9cc0-45b7-aee0-ccdaa2c9ebd7"
+      ],
+      "name": "Text / Accordion",
+      "settings": {
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "md",
+        "section_background_color": "lpink",
+        "section_background_color_b": "none",
+        "section_background_color_split": "md",
+        "page_width": "page-width--narrow",
+        "use_question_counter": false,
+        "use_animations": false,
+        "show_intro": false,
+        "intro_heading": "Title",
+        "intro_content": "Lorem Ipsum",
+        "intro_align": "left",
+        "heading_font_size": "lg",
+        "heading_font_color": "black",
+        "text_font_color": "black",
+        "max_heading_width": "15",
+        "max_content_width": "50"
+      }
+    }
+  },
+  "order": [
+    "veelgesteldevragen",
+    "6c840b5b-523e-4564-9845-fc6eeffe7ef9",
+    "a2cb667f-e925-4736-b8c4-9902b0578bf4",
+    "ce814c28-837e-4cb5-a46e-351ae6953755",
+    "1217e8c3-1074-4829-8ec0-ef8f65063428",
+    "theme_section_faq_multiple_6x7iCC",
+    "b5234e15-e0ce-4e30-9a85-dfae66f81d9a",
+    "24a69c12-c323-47e5-bf70",
+    "c2e8e89a-34d4-4d41-8306-ef7d1c2da968"
+  ]
+}
