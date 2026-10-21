@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero": {
@@ -161,7 +152,7 @@
         "heading": "kies jouw geur",
         "intro": "<p>Het starterspakket bezorgen we gratis. Losse sticks zijn €8,29, vanaf €25 gratis bezorgd.</p>",
         "button_label": "in winkelwagen",
-        "footnote": "<p>Twijfel je? Met het starterspakket kies je thuis pas.</p>"
+        "footnote": "<p>Weet je nog niet welke geur? Met het starterspakket probeer je ze alle drie thuis.</p>"
       }
     },
     "waarom": {
@@ -173,7 +164,7 @@
             "badge": "hier bij lekker",
             "title": "in onze eigen webshop",
             "subtitle": "direct van de maker, uit Utrecht",
-            "lines": "+ Alle drie de geuren bij elkaar\n+ Het starterspakket met 3 geuren, gratis bezorgd\n+ 15% korting op je eerste bestelling\n+ Ook wat niet in het schap ligt: navulbare deo, body wash en cadeausets\n+ Binnen twee werkdagen in huis",
+            "lines": "+ Het starterspakket: alle drie de geuren, door ons ingepakt, gratis bezorgd\n+ Je bespaart €4,85 ten opzichte van los bestellen\n+ 15% korting op je eerste bestelling\n+ Ook wat niet in het schap ligt: navulbare deo, body wash en cadeausets\n+ Binnen twee werkdagen in huis",
             "highlight": true,
             "button_label": "bekijk het starterspakket",
             "button_link": "#aanbod",
@@ -205,8 +196,8 @@
       "settings": {
         "section_background_color": "white",
         "anchor_id": "waarom",
-        "heading": "waarom hier bestellen en niet bij de drogist?",
-        "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar daar ligt niet alles.</p>"
+        "heading": "waarom hier bestellen als het ook in de winkel ligt?",
+        "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar je eerste keer natuurlijke deo willen we zelf goed doen. Daarom pakken wij je starterspakket in met alle drie de geuren, zodat je thuis ontdekt welke bij jou past. Voor een betere prijs dan los.</p>"
       }
     },
     "eerste_week_intro": {
@@ -407,7 +398,7 @@
         "section_background_color": "lblue",
         "anchor_id": "reviews",
         "heading": "wat anderen ervan vinden",
-        "summary": "gemiddeld 4,7 uit 5"
+        "summary": "gemiddeld 4,7 uit 5, swipe voor meer"
       }
     },
     "korting": {
@@ -613,10 +604,10 @@
     "trust",
     "kies",
     "reviews",
-    "waarom",
-    "korting",
-    "verkrijgbaar",
     "verhaal",
+    "waarom",
+    "verkrijgbaar",
+    "korting",
     "eerste_week_intro",
     "eerste_week_stappen",
     "uitlegvideo",
