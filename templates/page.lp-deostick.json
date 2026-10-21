@@ -12,141 +12,200 @@
     "hero": {
       "type": "lp-hero",
       "blocks": {
-        "usp1": {
+        "u1": {
           "type": "usp",
           "settings": {
             "text": "binnen twee werkdagen bezorgd"
           }
         },
-        "usp2": {
+        "u2": {
           "type": "usp",
           "settings": {
-            "text": "gratis verzending vanaf €25"
+            "text": "15% korting op je eerste bestelling"
           }
         },
-        "usp3": {
+        "u3": {
           "type": "usp",
           "settings": {
-            "text": "ook in navulbare versie"
+            "text": "ingrediënten van 100% natuurlijke oorsprong"
           }
         }
       },
       "block_order": [
-        "usp1",
-        "usp2",
-        "usp3"
+        "u1",
+        "u2",
+        "u3"
       ],
       "settings": {
-        "row_spacing_inner_top": "xs",
-        "row_spacing_inner_bottom": "sm",
         "section_background_color": "white",
         "ink_color": "#215732",
-        "image": "shopify://shop_images/The_Lekker_Company_deo_sticks_-_Claudia_Rison___The_Originals_Photography-04311.jpg",
-        "rating_text": "4,7 uit 5 op Trustpilot, uit 432 reviews",
-        "heading": "een miljoen oksels gingen je voor",
-        "text": "<p>Natuurlijke deo stick met ingrediënten van 100% natuurlijke oorsprong. Zonder aluminiumzouten, de bekende boosdoener achter gele vlekken. Glijdt soepel, zonder plakkerig gevoel.</p>",
-        "price_product": "deodorant-stick-be-active",
-        "price_prefix": "deo stick vanaf",
-        "button_label": "kies jouw geur",
-        "button_link": "#kies",
-        "button_size": "button_large",
-        "button_color": "button_red",
-        "button_target": false,
-        "link_label": "of vind 'm in de winkel",
-        "link_url": "#winkels"
+        "rating_text": "4,7 uit 5 op Trustpilot. Een miljoen oksels gingen je voor.",
+        "heading": "de natuurlijke deo stick zonder aluminiumzouten",
+        "text": "<p>Aluminiumzouten zijn de bekende boosdoener achter gele vlekken. Onze stick heeft ze niet. Hij helpt zweetgeur neutraliseren en glijdt soepel, zonder plakkerig gevoel.</p>",
+        "retail_text": "Ligt ook bij Albert Heijn, Etos, Holland & Barrett en DA. Alle geuren samen, het starterspakket en de welkomstkorting vind je alleen hier.",
+        "offer_product": "combi-deal-deodorant-stick-mix",
+        "offer_background_color": "lblue",
+        "offer_badge": "starterspakket",
+        "offer_title": "3 geuren, 3 sticks",
+        "offer_text": "<p>Be Active, Feel Floral en Have Fun, één van elk. Ontdek thuis welke geur bij je past.</p>",
+        "offer_compare": "los €24,87",
+        "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
+        "offer_button": "in winkelwagen",
+        "offer_alt_label": "liever één geur? kies hieronder",
+        "offer_alt_link": "#kies"
       }
     },
-    "voordelen": {
-      "type": "theme-section__visual-rows",
+    "trust": {
+      "type": "lp-trust-strip",
       "blocks": {
-        "v1": {
-          "type": "column",
+        "t1": {
+          "type": "item",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/1_50429431-efb9-4a36-89ad-b2e46aa6229c.png",
-            "predefined_image": "usp-plant",
-            "heading": "100% natuurlijke oorsprong"
+            "text": "100% natuurlijke oorsprong"
           }
         },
-        "v2": {
-          "type": "column",
+        "t2": {
+          "type": "item",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/2_8549df63-ccd5-4551-8914-2ee70f398b3c.png",
-            "predefined_image": "usp-effective",
-            "heading": "helpt zweetgeur neutraliseren"
+            "text": "zonder aluminiumzouten"
           }
         },
-        "v3": {
-          "type": "column",
+        "t3": {
+          "type": "item",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/4_160680ed-6d8c-44d5-8641-0e6ffb7ae197.png",
-            "predefined_image": "usp-sustainable",
-            "heading": "karton, mag bij het oud papier"
+            "text": "vegan en B Corp"
           }
         },
-        "v4": {
-          "type": "column",
+        "t4": {
+          "type": "item",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/webshop_icoontjes.png",
-            "predefined_image": "usp-certified",
-            "heading": "b corp gecertificeerd"
+            "text": "karton, mag bij het oud papier"
+          }
+        },
+        "t5": {
+          "type": "item",
+          "settings": {
+            "text": "direct van de maker, uit Utrecht"
           }
         }
       },
       "block_order": [
-        "v1",
-        "v2",
-        "v3",
-        "v4"
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
       ],
       "settings": {
-        "row_spacing_inner_top": "xs",
-        "row_spacing_inner_bottom": "xs",
-        "section_background_color": "white",
-        "page_width": "page-width",
-        "item_width_mobile": 200,
-        "item_width_desktop": 300,
-        "item_ratio": "10/6",
-        "grid_size_on_mobile": 2,
-        "show_intro": false,
-        "intro_heading": "",
-        "intro_content": "",
-        "intro_align": "center",
-        "heading_font_size": "lg",
-        "heading_font_color": "red",
-        "text_font_color": "red",
-        "max_heading_width": "15",
-        "max_content_width": "50",
-        "use_carousel": false,
-        "use_carousel_device": "mobile",
-        "use_carousel_auto_scroll": false,
-        "use_carousel_arrows": false,
-        "use_carousel_manual_scroll": false,
-        "item_font_color": "red",
-        "use_carousel_speed": "20"
+        "section_background_color": "lblue"
       }
     },
     "kies": {
       "type": "lp-product-picker",
+      "blocks": {
+        "c1": {
+          "type": "card",
+          "settings": {
+            "product": "deodorant-stick-be-active",
+            "title": "be active",
+            "scent": "den, bergamot en munt: kruidig en fris",
+            "badge": "meest gekozen",
+            "price_note": "",
+            "highlight": false
+          }
+        },
+        "c2": {
+          "type": "card",
+          "settings": {
+            "product": "deodorant-stick-feel-floral",
+            "title": "feel floral",
+            "scent": "lavendel: fris, kruidig en bloemig",
+            "badge": "",
+            "price_note": "",
+            "highlight": false
+          }
+        },
+        "c3": {
+          "type": "card",
+          "settings": {
+            "product": "deodorant-stick-have-fun",
+            "title": "have fun",
+            "scent": "mandarijn en citroen: fris en fruitig",
+            "badge": "",
+            "price_note": "",
+            "highlight": false
+          }
+        },
+        "c4": {
+          "type": "card",
+          "settings": {
+            "product": "combi-deal-deodorant-stick-mix",
+            "title": "starterspakket",
+            "scent": "alle drie de geuren, één van elk",
+            "badge": "gratis bezorgd",
+            "price_note": "voor 3 sticks",
+            "highlight": true
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
       "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "md",
         "section_background_color": "white",
         "anchor_id": "kies",
-        "heading": "kies jouw geur",
-        "intro": "<p>Twijfel je tussen de geuren? Met de combideal probeer je ze alle drie.</p>",
-        "products": [
-          "deodorant-stick-be-active",
-          "deodorant-stick-feel-floral",
-          "deodorant-stick-have-fun",
-          "combi-deal-deodorant-stick-mix"
-        ],
-        "products_per_row": "4",
-        "badges": "deodorant-stick-be-active|meest gekozen\ncombi-deal-deodorant-stick-mix|alle drie proberen",
-        "footnote": "<p>Vanaf €25 verzenden we gratis. Binnen twee werkdagen bezorgd.</p>"
+        "heading": "of kies je eigen geur",
+        "intro": "<p>Elke stick is €8,29. Vanaf €25 bezorgen we gratis, het starterspakket altijd.</p>",
+        "button_label": "in winkelwagen",
+        "footnote": "<p>Twijfel je? Met het starterspakket kies je thuis pas.</p>"
+      }
+    },
+    "waarom": {
+      "type": "lp-compare",
+      "blocks": {
+        "hier": {
+          "type": "column",
+          "settings": {
+            "badge": "hier bij lekker",
+            "title": "in onze eigen webshop",
+            "subtitle": "direct van de maker, uit Utrecht",
+            "lines": "+ Alle drie de geuren bij elkaar\n+ Het starterspakket met 3 geuren, gratis bezorgd\n+ 15% korting op je eerste bestelling\n+ Ook wat niet in het schap ligt: navulbare deo, body wash en cadeausets\n+ Binnen twee werkdagen in huis",
+            "highlight": true,
+            "button_label": "bekijk het starterspakket",
+            "button_link": "#aanbod",
+            "button_size": "button_small",
+            "button_color": "button_red",
+            "button_target": false
+          }
+        },
+        "winkel": {
+          "type": "column",
+          "settings": {
+            "badge": "",
+            "title": "in de winkel",
+            "subtitle": "Albert Heijn, Etos, Holland & Barrett, DA",
+            "lines": "+ Handig als je hem vandaag nog wilt\n+ Even ruiken voordat je kiest\n- Meestal maar één of twee geuren\n- Geen starterspakket, geen navullingen, geen body wash\n- Geen welkomstkorting",
+            "highlight": false,
+            "button_label": "",
+            "button_link": "",
+            "button_size": "button_small",
+            "button_color": "button_hover_red",
+            "button_target": false
+          }
+        }
+      },
+      "block_order": [
+        "hier",
+        "winkel"
+      ],
+      "settings": {
+        "section_background_color": "lblue",
+        "anchor_id": "waarom",
+        "heading": "waarom hier bestellen en niet bij de drogist?",
+        "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar daar ligt niet alles.</p>"
       }
     },
     "eerste_week_intro": {
@@ -176,7 +235,7 @@
       "settings": {
         "row_spacing_inner_top": "md",
         "row_spacing_inner_bottom": "none",
-        "section_background_color": "lblue",
+        "section_background_color": "white",
         "section_background_color_b": "none",
         "section_background_color_split": "none",
         "page_width": "page-width",
@@ -232,7 +291,7 @@
             "button_label": "ik probeer het",
             "button_size": "button_small",
             "button_color": "button_red",
-            "button_link": "#kies",
+            "button_link": "#aanbod",
             "button_target": false
           }
         }
@@ -245,7 +304,7 @@
       "settings": {
         "row_spacing_inner_top": "xs",
         "row_spacing_inner_bottom": "md",
-        "section_background_color": "lblue",
+        "section_background_color": "white",
         "section_background_color_b": "none",
         "section_background_color_split": "none",
         "page_width": "page-width",
@@ -286,7 +345,7 @@
         "row_spacing_outer_bottom": "none",
         "row_spacing_inner_top": "none",
         "row_spacing_inner_bottom": "md",
-        "section_background_color": "lblue",
+        "section_background_color": "white",
         "section_background_color_b": "none",
         "section_background_color_split": "none",
         "page_width": "page-width--narrow",
@@ -350,215 +409,16 @@
         "summary": "gemiddeld 4,7 uit 5"
       }
     },
-    "winkels_intro": {
-      "type": "theme-section__text",
-      "blocks": {
-        "intro": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "liever eerst even ruiken?",
-            "block_content": "<p>De deo stick ligt ook bij onder meer Albert Heijn, Etos, Holland & Barrett en DA. Niet elke winkel heeft alle geuren, dus kijk even op hun site.</p>",
-            "block_align": "center",
-            "block_heading_font_size": "lg",
-            "block_heading_font_color": "black",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "max_heading_width": "30",
-            "max_content_width": "60",
-            "block_text_style": "normal",
-            "button_show": false
-          }
-        }
-      },
-      "block_order": [
-        "intro"
-      ],
+    "korting": {
+      "type": "lp-newsletter",
       "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "none",
-        "section_background_color": "white",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width",
-        "num_columns_mobile": "1",
-        "num_columns_desktop": "1",
-        "use_animations": false,
-        "template_blog_header": false
-      }
-    },
-    "winkels": {
-      "type": "theme-section__visual-rows",
-      "blocks": {
-        "ah": {
-          "type": "column",
-          "settings": {
-            "item_link": "https://www.ah.nl/producten/merk/the-lekker-company",
-            "column_custom_image": "shopify://shop_images/ah.png",
-            "predefined_image": "usp-plant",
-            "heading": "Albert Heijn"
-          }
-        },
-        "etos": {
-          "type": "column",
-          "settings": {
-            "item_link": "https://www.etos.nl/search/?prefn1=sortOfProduct&prefv1=Deodorant&q=lekker",
-            "column_custom_image": "shopify://shop_images/4png.png",
-            "predefined_image": "usp-plant",
-            "heading": "Etos"
-          }
-        },
-        "hb": {
-          "type": "column",
-          "settings": {
-            "item_link": "https://www.hollandandbarrett.nl/shop/brands/the-lekker-company/",
-            "column_custom_image": "shopify://shop_images/7.png",
-            "predefined_image": "usp-plant",
-            "heading": "Holland&Barrett"
-          }
-        },
-        "da": {
-          "type": "column",
-          "settings": {
-            "item_link": "https://www.da.nl/merken/the-lekker-company",
-            "column_custom_image": "shopify://shop_images/5.png",
-            "predefined_image": "usp-plant",
-            "heading": "DA drogist"
-          }
-        }
-      },
-      "block_order": [
-        "ah",
-        "etos",
-        "hb",
-        "da"
-      ],
-      "settings": {
-        "row_spacing_inner_top": "xs",
-        "row_spacing_inner_bottom": "md",
-        "section_background_color": "white",
-        "page_width": "page-width",
-        "item_width_mobile": 200,
-        "item_width_desktop": 300,
-        "item_ratio": "15/10",
-        "grid_size_on_mobile": 2,
-        "show_intro": false,
-        "intro_heading": "",
-        "intro_content": "",
-        "intro_align": "center",
-        "heading_font_size": "lg",
-        "heading_font_color": "black",
-        "text_font_color": "black",
-        "max_heading_width": "15",
-        "max_content_width": "50",
-        "use_carousel": false,
-        "use_carousel_device": "mobile",
-        "use_carousel_auto_scroll": false,
-        "use_carousel_arrows": false,
-        "use_carousel_manual_scroll": false,
-        "item_font_color": "black",
-        "use_carousel_speed": "20"
-      }
-    },
-    "shop_of_winkel": {
-      "type": "theme-section__text",
-      "blocks": {
-        "shop": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "in onze eigen shop",
-            "block_content": "<ul><li>Alle geuren op één plek</li><li>Combideals die alleen hier bestaan</li><li>Ook producten die niet in de winkel liggen, zoals onze body wash</li><li>Binnen twee werkdagen bezorgd, vanaf €25 gratis</li></ul>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "block_text_style": "manual",
-            "block_text_list_style": "bullet",
-            "button_show": true,
-            "button_label": "kies jouw geur",
-            "button_size": "button_small",
-            "button_color": "button_red",
-            "button_link": "#kies",
-            "button_target": false
-          }
-        },
-        "winkel": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "in de winkel",
-            "block_content": "<ul><li>Handig als je hem vandaag nog wilt</li><li>Even ruiken voordat je kiest</li><li>Niet elke winkel heeft alle geuren</li></ul>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "block_text_style": "manual",
-            "block_text_list_style": "bullet",
-            "button_show": true,
-            "button_label": "alle verkooppunten",
-            "button_size": "button_small",
-            "button_color": "button_hover_red",
-            "button_link": "/pages/verkooppunten",
-            "button_target": false
-          }
-        }
-      },
-      "block_order": [
-        "shop",
-        "winkel"
-      ],
-      "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "md",
-        "section_background_color": "lblue",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width",
-        "num_columns_mobile": "1",
-        "num_columns_desktop": "2",
-        "use_animations": false,
-        "template_blog_header": false
-      }
-    },
-    "navulbaar": {
-      "type": "theme-section__text",
-      "blocks": {
-        "tekst": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "ook in navulbare versie",
-            "block_content": "<p>Koop de houder één keer, daarna vul je alleen bij. De houder is van gerecycled plastic, de navullingen zitten in karton. Zo heb je minder afval.</p>",
-            "block_align": "center",
-            "block_heading_font_size": "lg",
-            "block_heading_font_color": "black",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "max_heading_width": "30",
-            "max_content_width": "60",
-            "block_text_style": "normal",
-            "button_show": true,
-            "button_label": "bekijk de navulbare deo",
-            "button_size": "button_small",
-            "button_color": "button_hover_red",
-            "button_link": "/collections/refill-deodorant",
-            "button_target": false
-          }
-        }
-      },
-      "block_order": [
-        "tekst"
-      ],
-      "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "md",
-        "section_background_color": "white",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width",
-        "num_columns_mobile": "1",
-        "num_columns_desktop": "1",
-        "use_animations": false,
-        "template_blog_header": false
+        "section_background_color": "dgreen",
+        "anchor_id": "korting",
+        "badge": "alleen online",
+        "heading": "15% korting op je eerste bestelling",
+        "text": "<p>Schrijf je in en je krijgt de kortingscode in je mail. Zo kost het starterspakket met 3 geuren je €20,37, gratis bezorgd.</p>",
+        "tag": "lp-deostick",
+        "small": "Uitschrijven kan altijd."
       }
     },
     "faq": {
@@ -568,42 +428,49 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Hoe werkt een natuurlijke deo?",
-            "faq_section_qa_a": "<p>Een antitranspirant zet je zweetklieren dicht. Onze deo doet dat niet: je zweet gewoon, en de deo helpt zweetgeur neutraliseren. Zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>"
+            "faq_section_qa_a": "<p>Een antitranspirant zet je zweetklieren dicht. Onze deo doet dat niet: je zweet gewoon, en zuiveringszout, magnesiumhydroxide en zinkzout helpen zweetgeur neutraliseren. Zonder aluminiumzouten, dus je huid wordt niet afgesloten.</p>"
           }
         },
         "q2": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Krijg ik gele vlekken in mijn kleding?",
+            "faq_section_qa_a": "<p>Gele vlekken in je shirt komen meestal door aluminiumzouten in antitranspirant. Onze stick bevat geen aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>"
+          }
+        },
+        "q3": {
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Hoe lang duurt het wennen?",
             "faq_section_qa_a": "<p>Voor de meeste mensen een week of twee. In die tijd kun je wat meer zweten of sneller iets ruiken. Blijf één keer per dag smeren op een schone huid en val niet terug op je oude deo.</p>"
           }
         },
-        "q3": {
-          "type": "faq_section_qa",
-          "settings": {
-            "faq_section_qa_q": "Krijg ik gele vlekken in mijn kleding?",
-            "faq_section_qa_a": "<p>Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>"
-          }
-        },
         "q4": {
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Ik heb een gevoelige huid, kan ik dit gebruiken?",
-            "faq_section_qa_a": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>"
+            "faq_section_qa_a": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties, zoals de deo crème Go Gentle.</p>"
           }
         },
         "q5": {
           "type": "faq_section_qa",
           "settings": {
-            "faq_section_qa_q": "Waarom hier bestellen als het ook in de winkel ligt?",
-            "faq_section_qa_a": "<p>Hier vind je alle geuren, de combideals en producten die niet in de winkel liggen, zoals onze body wash. En je bestelling wordt binnen twee werkdagen bezorgd.</p>"
+            "faq_section_qa_q": "Waarom hier bestellen als het ook bij de Albert Heijn ligt?",
+            "faq_section_qa_a": "<p>In de winkel ligt meestal maar een deel van ons assortiment. Hier vind je alle geuren, het starterspakket met 3 geuren dat we gratis bezorgen, 15% korting op je eerste bestelling, en producten die niet in het schap liggen, zoals onze navulbare deo en de body wash.</p>"
           }
         },
         "q6": {
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Wanneer krijg ik mijn bestelling?",
-            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Vanaf €25 verzenden we gratis.</p>"
+            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Het starterspakket bezorgen we gratis, losse bestellingen vanaf €25.</p>"
+          }
+        },
+        "q7": {
+          "type": "faq_section_qa",
+          "settings": {
+            "faq_section_qa_q": "Hoe krijg ik de 15% korting?",
+            "faq_section_qa_a": "<p>Schrijf je hierboven in voor de nieuwsbrief. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
           }
         }
       },
@@ -613,7 +480,8 @@
         "q3",
         "q4",
         "q5",
-        "q6"
+        "q6",
+        "q7"
       ],
       "settings": {
         "row_spacing_inner_top": "md",
@@ -638,30 +506,26 @@
     "vaste_balk": {
       "type": "lp-sticky-cta",
       "settings": {
-        "label": "natuurlijke deo stick",
-        "price_product": "deodorant-stick-be-active",
-        "price_prefix": "vanaf",
-        "button_label": "kies jouw geur",
+        "label": "starterspakket, 3 geuren",
+        "product": "combi-deal-deodorant-stick-mix",
+        "sub": "gratis bezorgd",
+        "direct_add": true,
+        "button_label": "in winkelwagen",
         "button_link": "#kies",
-        "button_size": "button_small",
-        "button_color": "button_red",
-        "button_target": false,
         "hide_on_anchor": "kies"
       }
     }
   },
   "order": [
     "hero",
-    "voordelen",
+    "trust",
     "kies",
+    "waarom",
     "eerste_week_intro",
     "eerste_week_stappen",
     "uitlegvideo",
     "reviews",
-    "winkels_intro",
-    "winkels",
-    "shop_of_winkel",
-    "navulbaar",
+    "korting",
     "faq",
     "vaste_balk"
   ]

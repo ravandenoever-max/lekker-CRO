@@ -1,0 +1,82 @@
+{%- comment -%} Landingspagina: hier kopen of in de winkel, met vinkjes en kruisjes. Regels per blok: begin een regel met + (voordeel) of - (nadeel). Toegevoegd oktober 2026, CRO-project. {%- endcomment -%}
+{%- assign s = section.settings -%}
+<div class="section-inner lp-compare bg-{{ s.section_background_color }} padding-t-md padding-b-md" id="{{ s.anchor_id | default: 'waarom' | handleize }}">
+  <div class="page-width">
+    <div class="txt-align-center margin-b-xs">
+      {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>{%- endif -%}
+      {%- if s.intro != blank -%}<div class="lp-compare__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>{%- endif -%}
+    </div>
+    <div class="lp-compare__grid">
+      {%- for block in section.blocks -%}
+        <div class="lp-compare__card bg-white{% if block.settings.highlight %} lp-compare__card--highlight{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.badge != blank -%}<span class="lp-compare__badge font-size-3xs">{{ block.settings.badge }}</span>{%- endif -%}
+          <h3 class="font-fam-normal font-size-md txt-lowercase lp-compare__title">{{ block.settings.title }}</h3>
+          {%- if block.settings.subtitle != blank -%}<p class="font-size-xxs lp-compare__sub">{{ block.settings.subtitle }}</p>{%- endif -%}
+          <ul class="lp-compare__list font-size-xs" role="list">
+            {%- assign lines = block.settings.lines | newline_to_br | split: '<br />' -%}
+            {%- for line in lines -%}
+              {%- assign t = line | strip -%}
+              {%- if t == blank -%}{%- continue -%}{%- endif -%}
+              {%- assign first = t | slice: 0 -%}
+              {%- assign rest = t | remove_first: first | strip -%}
+              {%- if first == '-' -%}
+                <li class="lp-compare__no"><span class="lp-x" aria-hidden="true">&#10005;</span> {{ rest }}</li>
+              {%- elsif first == '+' -%}
+                <li class="lp-compare__yes"><span class="lp-check" aria-hidden="true">&#10003;</span> {{ rest }}</li>
+              {%- else -%}
+                <li class="lp-compare__yes"><span class="lp-check" aria-hidden="true">&#10003;</span> {{ t }}</li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+          {%- if block.settings.button_label != blank -%}
+            <div class="lp-compare__button">{%- render 'theme-button', button_settings: block.settings -%}</div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+<style>
+  .lp-compare__intro p { margin: 0; }
+  .lp-compare__grid { display: grid; gap: var(--spacing-xxs); }
+  .lp-compare__card { position: relative; border-radius: 20px; padding: var(--spacing-xs) var(--spacing-xxs); border: 2px solid transparent; display: flex; flex-direction: column; }
+  .lp-compare__card--highlight { border-color: var(--color-red); }
+  .lp-compare__badge { position: absolute; top: -12px; left: 20px; background: var(--color-red); color: var(--color-white) !important; padding: 4px 12px; border-radius: 800px; text-transform: lowercase; }
+  .lp-compare__title { margin: 0 0 2px; }
+  .lp-compare__sub { margin: 0 0 var(--spacing-3xs); opacity: .8; }
+  .lp-compare__list { list-style: none; margin: 0 0 var(--spacing-xxs); padding: 0; display: grid; gap: 8px; }
+  .lp-compare__list li { display: flex; gap: 8px; align-items: flex-start; }
+  .lp-compare__no { opacity: .75; }
+  .lp-check, .lp-x { color: var(--color-red); font-weight: 700; }
+  .lp-compare__button { margin-top: auto; }
+  .lp-compare__button .theme-button { display: block; width: 100%; }
+  @media screen and (min-width: 768px) { .lp-compare__grid { grid-template-columns: 1fr 1fr; gap: var(--spacing-xs); } }
+</style>
+{% schema %}
+{
+  "name": "LP hier of winkel",
+  "tag": "section",
+  "class": "lp-section lp-compare-section",
+  "settings": [
+    { "type": "select", "id": "section_background_color", "default": "lblue", "label": "Achtergrond", "options": [ { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Lichtroze" }, { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" } ] },
+    { "type": "text", "id": "anchor_id", "label": "Anker", "default": "waarom" },
+    { "type": "text", "id": "heading", "label": "Kop" },
+    { "type": "richtext", "id": "intro", "label": "Intro" }
+  ],
+  "blocks": [
+    { "type": "column", "name": "Kolom", "limit": 2, "settings": [
+      { "type": "text", "id": "badge", "label": "Label" },
+      { "type": "text", "id": "title", "label": "Titel" },
+      { "type": "text", "id": "subtitle", "label": "Ondertitel" },
+      { "type": "textarea", "id": "lines", "label": "Punten (één per regel, begin met + of -)" },
+      { "type": "checkbox", "id": "highlight", "label": "Uitlichten (rand)", "default": false },
+      { "type": "text", "id": "button_label", "label": "Knoptekst" },
+      { "type": "text", "id": "button_link", "label": "Knoplink" },
+      { "type": "select", "id": "button_size", "default": "button_small", "label": "Knopgrootte", "options": [ { "value": "button_small", "label": "Standaard" }, { "value": "button_large", "label": "Groot" } ] },
+      { "type": "select", "id": "button_color", "default": "button_red", "label": "Knopkleur", "options": [ { "value": "button_red", "label": "Oranje" }, { "value": "button_hover_red", "label": "Oranje rand" }, { "value": "button_dgreen", "label": "Donkergroen" } ] },
+      { "type": "checkbox", "id": "button_target", "default": false, "label": "Open in nieuw venster" }
+    ] }
+  ],
+  "presets": [ { "name": "LP hier of winkel" } ]
+}
+{% endschema %}

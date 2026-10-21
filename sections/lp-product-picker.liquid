@@ -1,76 +1,76 @@
 {%- comment -%}
-  Landingspagina: productkeuze. Je kiest in de theme editor zelf welke producten
-  erop komen en in welke volgorde. Gebruikt de bestaande productkaart van het thema
-  (snippets/product-card.liquid), dus met prijs, reviewsterren en koopknop.
+  Landingspagina: productkeuze met eigen kaarten (foto, label, naam, geur, sterren, prijs, direct in winkelwagen).
+  De knop gebruikt dezelfde cart-logica als de productkaarten van het thema (js-trigger-add-product + verborgen form).
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
-{%- liquid
-  assign s = section.settings
-  assign spacing = 'padding-t-' | append: s.row_spacing_inner_top | append: ' padding-b-' | append: s.row_spacing_inner_bottom
-  assign per_row = s.products_per_row | plus: 0
-  if s.products.count < per_row
-    assign per_row = s.products.count
-  endif
--%}
-
-<div class="section-inner lp-picker bg-{{ s.section_background_color }} {{ spacing }}" id="{{ s.anchor_id | default: 'kies' | handleize }}">
-  {%- if s.heading != blank or s.intro != blank -%}
-    <div class="page-width">
+{%- assign s = section.settings -%}
+<div class="section-inner lp-picker bg-{{ s.section_background_color }} padding-t-md padding-b-md" id="{{ s.anchor_id | default: 'kies' | handleize }}">
+  <div class="page-width">
+    {%- if s.heading != blank or s.intro != blank -%}
       <div class="txt-align-center margin-b-xs">
-        {%- if s.heading != blank -%}
-          <h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>
-        {%- endif -%}
-        {%- if s.intro != blank -%}
-          <div class="lp-picker__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>
-        {%- endif -%}
+        {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>{%- endif -%}
+        {%- if s.intro != blank -%}<div class="lp-picker__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>{%- endif -%}
       </div>
-    </div>
-  {%- endif -%}
+    {%- endif -%}
 
-  {%- if s.products.count > 0 -%}
-    <div class="page-width">
-      <div class="elements-layout__grid product-card-size__std">
-        <div class="js-elements__wrapper elements__items-list element-row__{{ per_row }} lp-picker__grid" style="--lp-cols: {{ per_row }};">
-          {%- for this_product in s.products -%}
-            <div class="grid__item nomargin grid__item-{{ forloop.index }}" id="product-{{ this_product.variants.first.id }}">
-              {%- if s.badges != blank -%}
-                {%- assign badge_lines = s.badges | newline_to_br | split: '<br />' -%}
-                {%- for line in badge_lines -%}
-                  {%- assign parts = line | strip | split: '|' -%}
-                  {%- assign badge_handle = parts[0] | strip -%}
-                  {%- if badge_handle == this_product.handle and parts[1] != blank -%}
-                    <span class="lp-picker__badge font-size-3xs">{{ parts[1] | strip }}</span>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endif -%}
-              {%- render 'product-card', product_card_product: this_product, chosen_product_card_layout: 'std', button_size: 'small', product_card_color: 'white', animate_classname: 'no-animation', animate_waypoints: false -%}
-            </div>
-          {%- endfor -%}
+    <div class="lp-cards">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign p = block.settings.product
+          if p == blank
+            continue
+          endif
+          assign v = p.selected_or_first_available_variant
+          assign img = block.settings.image | default: p.featured_image
+          assign card_title = block.settings.title | default: p.title
+        -%}
+        <div class="lp-card bg-white{% if block.settings.highlight %} lp-card--highlight{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.badge != blank -%}<span class="lp-card__badge font-size-3xs">{{ block.settings.badge }}</span>{%- endif -%}
+          <a href="{{ p.url }}" class="lp-card__media" aria-label="{{ card_title | escape }}">
+            {%- if img != blank -%}{{ img | image_url: width: 600 | image_tag: loading: 'lazy', sizes: '(min-width: 992px) 25vw, 50vw', widths: '300, 450, 600', class: 'lp-card__img', alt: card_title }}{%- endif -%}
+          </a>
+          <div class="lp-card__body">
+            <h3 class="lp-card__title font-fam-bold font-size-xs txt-lowercase">{{ card_title }}</h3>
+            {%- if block.settings.scent != blank -%}<p class="lp-card__scent font-size-xxs">{{ block.settings.scent }}</p>{%- endif -%}
+            <div class="jdgm-widget jdgm-preview-badge lp-card__stars">{{ p.metafields.judgeme.badge }}</div>
+            <p class="lp-card__price"><span class="font-fam-bold font-size-sm">{{ v.price | money }}</span>{% if block.settings.price_note != blank %} <span class="font-size-3xs">{{ block.settings.price_note }}</span>{% endif %}</p>
+            {%- if p.available -%}
+              <div data-pid="{{ v.id }}" class="js-trigger-add-product-inactive txt-align-center theme-button theme-button__round-small theme-button__red-white-red theme-button-hover__red-red-white lp-add"><span>{{ s.button_label | default: 'in winkelwagen' }}</span></div>
+              <div class="visually-hidden"><form method="post" action="/cart/add" id="pid-{{ v.id }}"><input type="hidden" name="id" value="{{ v.id }}"><input type="hidden" name="quantity" value="1"><input type="submit" value="Add"></form></div>
+            {%- else -%}
+              <a href="{{ p.url }}" class="theme-button theme-button__round-small theme-button__grey-white-grey"><span>uitverkocht</span></a>
+            {%- endif -%}
+          </div>
         </div>
-      </div>
+      {%- endfor -%}
     </div>
-  {%- endif -%}
 
-  {%- if s.footnote != blank -%}
-    <div class="page-width">
-      <div class="lp-picker__footnote txt-align-center font-size-xxs margin-t-xs">{{ s.footnote }}</div>
-    </div>
-  {%- endif -%}
+    {%- if s.footnote != blank -%}<div class="lp-picker__footnote txt-align-center font-size-xxs margin-t-xs">{{ s.footnote }}</div>{%- endif -%}
+  </div>
 </div>
 
 <style>
-  .lp-picker .grid__item { position: relative; }
-  .lp-picker__badge {
-    position: absolute; z-index: 5; top: 10px; left: 10px;
-    padding: 4px 10px; border-radius: 800px;
-    background: var(--color-red); color: var(--color-white);
-    text-transform: lowercase;
-  }
   .lp-picker__intro p, .lp-picker__footnote p { margin: 0; }
-  .lp-picker .elements__items-list.lp-picker__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-xxs); }
-  .lp-picker .lp-picker__grid > .grid__item { width: auto; max-width: none; margin: 0; }
+  .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-xxs); }
+  .lp-card { position: relative; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; border: 2px solid transparent; }
+  .lp-card--highlight { border-color: var(--color-red); }
+  .lp-card__badge { position: absolute; z-index: 2; top: 10px; left: 10px; background: var(--color-red); color: var(--color-white) !important; padding: 4px 10px; border-radius: 800px; text-transform: lowercase; }
+  .lp-card__media { display: block; background: var(--color-white); }
+  .lp-card__img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+  .lp-card__body { padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .lp-card__title { margin: 0; }
+  .lp-card__scent { margin: 0; opacity: .85; min-height: 2.6em; }
+  .lp-card__stars { min-height: 20px; }
+  .lp-card__stars .jdgm-prev-badge__text { font-size: 12px; }
+  .lp-card__price { margin: 2px 0 6px; }
+  .lp-card .theme-button { display: block; width: 100%; margin-top: auto; white-space: nowrap; }
+  @media screen and (max-width: 767px) {
+    .lp-card .theme-button { padding-left: 8px; padding-right: 8px; font-size: 14px; }
+    .lp-card__stars .jdgm-prev-badge__text { display: none; }
+  }
   @media screen and (min-width: 992px) {
-    .lp-picker .elements__items-list.lp-picker__grid { grid-template-columns: repeat(var(--lp-cols, 4), minmax(0, 1fr)); gap: var(--spacing-xs); }
+    .lp-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--spacing-xs); }
+    .lp-card__body { padding: 14px 16px 18px; }
   }
 </style>
 
@@ -80,18 +80,23 @@
   "tag": "section",
   "class": "lp-section lp-picker-section",
   "settings": [
-    { "type": "header", "content": "Layout" },
-    { "type": "select", "id": "row_spacing_inner_top", "default": "md", "label": "Spacing Top", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
-    { "type": "select", "id": "row_spacing_inner_bottom", "default": "md", "label": "Spacing Bottom", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
-    { "type": "select", "id": "section_background_color", "default": "white", "label": "Background Color", "options": [ { "value": "white", "label": "White" }, { "value": "lblue", "label": "Light Blue" }, { "value": "trans", "label": "Transparent" } ] },
-    { "type": "text", "id": "anchor_id", "label": "Anker (voor links als #kies)", "default": "kies" },
-    { "type": "header", "content": "Content" },
+    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Lichtroze" } ] },
+    { "type": "text", "id": "anchor_id", "label": "Anker", "default": "kies" },
     { "type": "text", "id": "heading", "label": "Kop", "default": "kies jouw geur" },
     { "type": "richtext", "id": "intro", "label": "Intro" },
-    { "type": "product_list", "id": "products", "label": "Producten (volgorde = volgorde op de pagina)", "limit": 12 },
-    { "type": "select", "id": "products_per_row", "default": "4", "label": "Producten per rij (desktop)", "options": [ { "value": "3", "label": "3" }, { "value": "4", "label": "4" } ] },
-    { "type": "textarea", "id": "badges", "label": "Labels op kaarten", "info": "Eén per regel: product-handle|label. Bijvoorbeeld: deodorant-stick-be-active|meest gekozen" },
-    { "type": "richtext", "id": "footnote", "label": "Tekst onder de producten" }
+    { "type": "text", "id": "button_label", "label": "Knoptekst", "default": "in winkelwagen" },
+    { "type": "richtext", "id": "footnote", "label": "Tekst onder de kaarten" }
+  ],
+  "blocks": [
+    { "type": "card", "name": "Product", "limit": 8, "settings": [
+      { "type": "product", "id": "product", "label": "Product" },
+      { "type": "image_picker", "id": "image", "label": "Afbeelding (leeg = productfoto)" },
+      { "type": "text", "id": "title", "label": "Naam (leeg = productnaam)" },
+      { "type": "text", "id": "scent", "label": "Geur in één regel" },
+      { "type": "text", "id": "badge", "label": "Label" },
+      { "type": "text", "id": "price_note", "label": "Tekst achter de prijs" },
+      { "type": "checkbox", "id": "highlight", "label": "Uitlichten (rand)", "default": false }
+    ] }
   ],
   "presets": [ { "name": "LP productkeuze" } ]
 }

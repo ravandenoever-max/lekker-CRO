@@ -1,0 +1,27 @@
+{%- comment -%} Landingspagina: smalle strook met korte zekerheden. Toegevoegd oktober 2026, CRO-project. {%- endcomment -%}
+{%- assign s = section.settings -%}
+<div class="section-inner lp-trust bg-{{ s.section_background_color }}">
+  <div class="page-width">
+    <ul class="lp-trust__list font-size-xxs" role="list">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}><span class="lp-check" aria-hidden="true">&#10003;</span> {{ block.settings.text }}</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+<style>
+  .lp-trust { padding: 10px 0; }
+  .lp-trust__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; }
+  .lp-trust__list li { white-space: nowrap; }
+  .lp-check { color: var(--color-red); font-weight: 700; }
+</style>
+{% schema %}
+{
+  "name": "LP trustrook",
+  "tag": "section",
+  "class": "lp-section lp-trust-section",
+  "settings": [ { "type": "select", "id": "section_background_color", "default": "lpink", "label": "Achtergrond", "options": [ { "value": "lpink", "label": "Lichtroze" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" } ] } ],
+  "blocks": [ { "type": "item", "name": "Punt", "limit": 6, "settings": [ { "type": "text", "id": "text", "label": "Tekst" } ] } ],
+  "presets": [ { "name": "LP trustrook" } ]
+}
+{% endschema %}

@@ -1,42 +1,33 @@
 {%- comment -%}
-  Landingspagina: vaste balk onderaan met prijs en knop.
-  Verschijnt zodra de hero uit beeld is en verdwijnt zolang de productkeuze in beeld is.
+  Landingspagina: vaste balk onderaan met het aanbod. Verschijnt zodra de hero uit beeld is, verdwijnt zolang de productkeuze in beeld is.
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
 {%- liquid
   assign s = section.settings
-  assign lp_product = s.price_product
+  assign p = s.product
 -%}
-
 <div class="lp-sticky" id="lp-sticky" aria-hidden="true">
   <div class="lp-sticky__inner page-width">
     <p class="lp-sticky__text font-size-xxs">
       {%- if s.label != blank -%}<span class="font-fam-bold">{{ s.label }}</span>{%- endif -%}
-      {%- if lp_product != blank %} <span>{{ s.price_prefix }} {{ lp_product.price_min | money }}</span>{%- endif -%}
+      <span>{% if p != blank %}{{ p.price | money }}{% endif %}{% if s.sub != blank %}{% if p != blank %}, {% endif %}{{ s.sub }}{% endif %}</span>
     </p>
-    {%- if s.button_label != blank -%}
-      {%- render 'theme-button', button_settings: s -%}
+    {%- if p != blank and p.available and s.direct_add -%}
+      <div data-pid="{{ p.variants.first.id }}" class="js-trigger-add-product-inactive txt-align-center theme-button theme-button__round-small theme-button__red-white-red theme-button-hover__red-red-white lp-add"><span>{{ s.button_label }}</span></div>
+      <div class="visually-hidden"><form method="post" action="/cart/add" id="pid-{{ p.variants.first.id }}"><input type="hidden" name="id" value="{{ p.variants.first.id }}"><input type="hidden" name="quantity" value="1"><input type="submit" value="Add"></form></div>
+    {%- else -%}
+      <a href="{{ s.button_link | default: '#kies' }}" class="theme-button theme-button__round-small theme-button__red-white-red theme-button-hover__red-red-white"><span>{{ s.button_label }}</span></a>
     {%- endif -%}
   </div>
 </div>
-
 <style>
-  .lp-sticky {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000;
-    background: var(--color-white);
-    box-shadow: 0 -4px 16px rgba(33, 87, 50, 0.12);
-    padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
-    transform: translateY(110%); transition: transform var(--duration-default) ease;
-  }
+  .lp-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000; background: var(--color-white); box-shadow: 0 -4px 16px rgba(33, 87, 50, 0.12); padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); transform: translateY(110%); transition: transform var(--duration-default) ease; }
   .lp-sticky.is-visible { transform: translateY(0); }
   .lp-sticky__inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .lp-sticky__text { margin: 0; display: flex; flex-direction: column; line-height: 1.3; }
   .lp-sticky .theme-button { white-space: nowrap; }
-  @media screen and (max-width: 767px) {
-    body:has(.cky-btn-revisit-wrapper) .lp-sticky__inner { padding-left: 56px; }
-  }
+  @media screen and (max-width: 767px) { body:has(.cky-btn-revisit-wrapper) .lp-sticky__inner { padding-left: 56px; } }
 </style>
-
 <script>
   (function () {
     var bar = document.getElementById('lp-sticky');
@@ -44,38 +35,25 @@
     var hero = document.getElementById('lp-top');
     var picker = document.getElementById('{{ s.hide_on_anchor | default: "kies" | handleize }}');
     var heroVisible = true, pickerVisible = false;
-    function update() {
-      var show = !heroVisible && !pickerVisible;
-      bar.classList.toggle('is-visible', show);
-      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.target === hero) heroVisible = en.isIntersecting;
-        if (en.target === picker) pickerVisible = en.isIntersecting;
-      });
-      update();
-    }, { threshold: 0 });
+    function update() { var show = !heroVisible && !pickerVisible; bar.classList.toggle('is-visible', show); bar.setAttribute('aria-hidden', show ? 'false' : 'true'); }
+    var io = new IntersectionObserver(function (entries) { entries.forEach(function (en) { if (en.target === hero) heroVisible = en.isIntersecting; if (en.target === picker) pickerVisible = en.isIntersecting; }); update(); }, { threshold: 0 });
     if (hero) io.observe(hero); else heroVisible = false;
     if (picker) io.observe(picker);
     update();
   })();
 </script>
-
 {% schema %}
 {
   "name": "LP vaste balk",
   "tag": "section",
   "class": "lp-section lp-sticky-section",
   "settings": [
-    { "type": "text", "id": "label", "label": "Tekst", "default": "natuurlijke deo stick" },
-    { "type": "product", "id": "price_product", "label": "Product voor de vanaf-prijs" },
-    { "type": "text", "id": "price_prefix", "label": "Tekst voor de prijs", "default": "vanaf" },
-    { "type": "text", "id": "button_label", "label": "Knop tekst", "default": "kies jouw geur" },
-    { "type": "text", "id": "button_link", "label": "Knop link", "default": "#kies" },
-    { "type": "select", "id": "button_size", "default": "button_small", "label": "Knop grootte", "options": [ { "value": "button_small", "label": "Standaard" }, { "value": "button_large", "label": "Groot" } ] },
-    { "type": "select", "id": "button_color", "default": "button_red", "label": "Knop kleur", "options": [ { "value": "button_red", "label": "Oranje" }, { "value": "button_dgreen", "label": "Donkergroen" } ] },
-    { "type": "checkbox", "id": "button_target", "default": false, "label": "Open in nieuw venster" },
+    { "type": "text", "id": "label", "label": "Tekst", "default": "starterspakket, 3 geuren" },
+    { "type": "product", "id": "product", "label": "Product (voor prijs en direct bestellen)" },
+    { "type": "text", "id": "sub", "label": "Tekst achter de prijs", "default": "gratis bezorgd" },
+    { "type": "checkbox", "id": "direct_add", "label": "Knop legt product direct in de winkelwagen", "default": true },
+    { "type": "text", "id": "button_label", "label": "Knoptekst", "default": "in winkelwagen" },
+    { "type": "text", "id": "button_link", "label": "Knoplink (als niet direct bestellen)", "default": "#kies" },
     { "type": "text", "id": "hide_on_anchor", "label": "Verberg zolang dit anker in beeld is", "default": "kies" }
   ],
   "presets": [ { "name": "LP vaste balk" } ]
