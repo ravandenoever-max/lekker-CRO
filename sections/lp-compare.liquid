@@ -8,8 +8,8 @@
     </div>
     <div class="lp-compare__grid">
       {%- for block in section.blocks -%}
-        <div class="lp-compare__card bg-white{% if block.settings.highlight %} lp-compare__card--highlight{% endif %}" {{ block.shopify_attributes }}>
-          {%- if block.settings.badge != blank -%}<span class="lp-compare__badge font-size-3xs">{{ block.settings.badge }}</span>{%- endif -%}
+        <div class="lp-compare__card {% if block.settings.highlight %}bg-yellow{% else %}bg-{{ s.card_background_color }}{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.badge != blank -%}<span class="lp-pill lp-compare__badge font-size-3xs">{{ block.settings.badge }}</span>{%- endif -%}
           <h3 class="font-fam-normal font-size-md txt-lowercase lp-compare__title">{{ block.settings.title }}</h3>
           {%- if block.settings.subtitle != blank -%}<p class="font-size-xxs lp-compare__sub">{{ block.settings.subtitle }}</p>{%- endif -%}
           <ul class="lp-compare__list font-size-xs" role="list">
@@ -39,15 +39,13 @@
 <style>
   .lp-compare__intro p { margin: 0; }
   .lp-compare__grid { display: grid; gap: var(--spacing-xxs); }
-  .lp-compare__card { position: relative; border-radius: 20px; padding: var(--spacing-xs) var(--spacing-xxs); border: 2px solid transparent; display: flex; flex-direction: column; }
-  .lp-compare__card--highlight { border-color: var(--color-red); }
-  .lp-compare__badge { position: absolute; top: -12px; left: 20px; background: var(--color-red); color: var(--color-white) !important; padding: 4px 12px; border-radius: 800px; text-transform: lowercase; }
+  .lp-compare__card { position: relative; border-radius: var(--lp-radius); padding: var(--spacing-xs) var(--spacing-xxs); display: flex; flex-direction: column; }
+  .lp-compare__badge { position: absolute; top: -12px; left: 24px; }
   .lp-compare__title { margin: 0 0 2px; }
-  .lp-compare__sub { margin: 0 0 var(--spacing-3xs); opacity: .8; }
+  .lp-compare__sub { margin: 0 0 var(--spacing-3xs); }
   .lp-compare__list { list-style: none; margin: 0 0 var(--spacing-xxs); padding: 0; display: grid; gap: 8px; }
   .lp-compare__list li { display: flex; gap: 8px; align-items: flex-start; }
-  .lp-compare__no { opacity: .75; }
-  .lp-check, .lp-x { color: var(--color-red); font-weight: 700; }
+  .lp-check, .lp-x { font-weight: 700; }
   .lp-compare__button { margin-top: auto; }
   .lp-compare__button .theme-button { display: block; width: 100%; }
   @media screen and (min-width: 768px) { .lp-compare__grid { grid-template-columns: 1fr 1fr; gap: var(--spacing-xs); } }
@@ -58,7 +56,8 @@
   "tag": "section",
   "class": "lp-section lp-compare-section",
   "settings": [
-    { "type": "select", "id": "section_background_color", "default": "lblue", "label": "Achtergrond", "options": [ { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Lichtroze" }, { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" } ] },
+    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ] },
+    { "type": "select", "id": "card_background_color", "default": "lblue", "label": "Achtergrond kolommen", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ], "info": "Een uitgelichte kolom is altijd geel." },
     { "type": "text", "id": "anchor_id", "label": "Anker", "default": "waarom" },
     { "type": "text", "id": "heading", "label": "Kop" },
     { "type": "richtext", "id": "intro", "label": "Intro" }
@@ -69,7 +68,7 @@
       { "type": "text", "id": "title", "label": "Titel" },
       { "type": "text", "id": "subtitle", "label": "Ondertitel" },
       { "type": "textarea", "id": "lines", "label": "Punten (één per regel, begin met + of -)" },
-      { "type": "checkbox", "id": "highlight", "label": "Uitlichten (rand)", "default": false },
+      { "type": "checkbox", "id": "highlight", "label": "Uitlichten (gele kolom)", "default": false },
       { "type": "text", "id": "button_label", "label": "Knoptekst" },
       { "type": "text", "id": "button_link", "label": "Knoplink" },
       { "type": "select", "id": "button_size", "default": "button_small", "label": "Knopgrootte", "options": [ { "value": "button_small", "label": "Standaard" }, { "value": "button_large", "label": "Groot" } ] },

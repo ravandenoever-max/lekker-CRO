@@ -20,9 +20,9 @@
 </div>
 <style>
   .lp-story__grid { display: grid; gap: var(--spacing-xs); align-items: center; }
-  .lp-story__img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; }
+  .lp-story__img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--lp-radius); }
   .lp-story__heading { margin: 0 0 var(--spacing-3xs); }
-  .lp-story__quote { margin: 0 0 var(--spacing-3xs); padding-left: 14px; border-left: 3px solid var(--color-red); }
+  .lp-story__quote { margin: 0 0 var(--spacing-3xs); font-style: italic; }
   .lp-story__text p { margin: 0 0 var(--spacing-4xs); }
   .lp-story__name { margin: var(--spacing-4xs) 0 0; }
   .lp-story__button { margin-top: var(--spacing-xxs); }
@@ -34,7 +34,7 @@
   "tag": "section",
   "class": "lp-section lp-story-section",
   "settings": [
-    { "type": "select", "id": "section_background_color", "default": "lpink", "label": "Achtergrond", "options": [ { "value": "lpink", "label": "Lichtroze" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" } ] },
+    { "type": "select", "id": "section_background_color", "default": "lpink", "label": "Achtergrond", "options": [ { "value": "lpink", "label": "Roze" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "yellow", "label": "Geel" }, { "value": "lilac", "label": "Lila" }, { "value": "white", "label": "Wit" } ] },
     { "type": "text", "id": "anchor_id", "label": "Anker", "default": "verhaal" },
     { "type": "image_picker", "id": "image", "label": "Foto" },
     { "type": "text", "id": "heading", "label": "Kop" },

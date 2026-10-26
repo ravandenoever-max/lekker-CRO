@@ -24,8 +24,8 @@
           assign img = block.settings.image | default: p.featured_image
           assign card_title = block.settings.title | default: p.title
         -%}
-        <div class="lp-card bg-white{% if block.settings.highlight %} lp-card--highlight{% endif %}" {{ block.shopify_attributes }}>
-          {%- if block.settings.badge != blank -%}<span class="lp-card__badge font-size-3xs">{{ block.settings.badge }}</span>{%- endif -%}
+        <div class="lp-card {% if block.settings.highlight %}bg-yellow lp-card--highlight{% else %}bg-{{ s.card_background_color }}{% endif %}" {{ block.shopify_attributes }}>
+          {%- if block.settings.badge != blank -%}<span class="lp-pill lp-card__badge font-size-3xs">{{ block.settings.badge }}</span>{%- endif -%}
           <a href="{{ p.url }}" class="lp-card__media" aria-label="{{ card_title | escape }}">
             {%- if img != blank -%}{{ img | image_url: width: 600 | image_tag: loading: 'lazy', sizes: '(min-width: 992px) 25vw, 50vw', widths: '300, 450, 600', class: 'lp-card__img', alt: card_title }}{%- endif -%}
           </a>
@@ -52,16 +52,16 @@
 <style>
   .lp-picker__intro p, .lp-picker__footnote p { margin: 0; }
   .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-xxs); }
-  .lp-card { position: relative; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; border: 2px solid transparent; }
-  .lp-card--highlight { border-color: var(--color-red); }
-  .lp-card__badge { position: absolute; z-index: 2; top: 10px; left: 10px; background: var(--color-red); color: var(--color-white) !important; padding: 4px 10px; border-radius: 800px; text-transform: lowercase; }
+  .lp-card { position: relative; border-radius: var(--lp-radius-sm); overflow: hidden; display: flex; flex-direction: column; }
+  .lp-card__badge { position: absolute; z-index: 2; top: 10px; left: 10px; }
   .lp-card__media { display: block; background: var(--color-white); }
   .lp-card__img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
   .lp-card__body { padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
   .lp-card__title { margin: 0; }
-  .lp-card__scent { margin: 0; opacity: .85; min-height: 2.6em; }
+  .lp-card__scent { margin: 0; min-height: 2.6em; }
   .lp-card__stars { min-height: 20px; }
   .lp-card__stars .jdgm-prev-badge__text { font-size: 12px; }
+  .lp-card__stars .jdgm-star { color: var(--lp-accent) !important; font-size: 15px; }
   .lp-card__price { margin: 2px 0 6px; }
   .lp-card .theme-button { display: block; width: 100%; margin-top: auto; white-space: nowrap; }
   @media screen and (max-width: 767px) {
@@ -81,7 +81,8 @@
   "tag": "section",
   "class": "lp-section lp-picker-section",
   "settings": [
-    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Lichtroze" } ] },
+    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ] },
+    { "type": "select", "id": "card_background_color", "default": "lblue", "label": "Achtergrond kaarten", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ], "info": "Een uitgelichte kaart is altijd geel." },
     { "type": "text", "id": "anchor_id", "label": "Anker", "default": "kies" },
     { "type": "text", "id": "heading", "label": "Kop", "default": "kies jouw geur" },
     { "type": "richtext", "id": "intro", "label": "Intro" },
@@ -96,7 +97,7 @@
       { "type": "text", "id": "scent", "label": "Geur in één regel" },
       { "type": "text", "id": "badge", "label": "Label" },
       { "type": "text", "id": "price_note", "label": "Tekst achter de prijs" },
-      { "type": "checkbox", "id": "highlight", "label": "Uitlichten (rand)", "default": false }
+      { "type": "checkbox", "id": "highlight", "label": "Uitlichten (gele kaart)", "default": false }
     ] }
   ],
   "presets": [ { "name": "LP productkeuze" } ]

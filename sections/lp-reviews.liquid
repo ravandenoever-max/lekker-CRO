@@ -16,7 +16,7 @@
       {%- endif -%}
       {%- if s.summary != blank -%}
         <p class="lp-reviews__summary font-size-xs margin-t-xxs">
-          <span class="lp-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> {{ s.summary }}
+          <span class="lp-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> {{ s.summary }}{% if s.swipe_text != blank %}<span class="lp-reviews__swipe">, {{ s.swipe_text }}</span>{% endif %}
         </p>
       {%- endif -%}
     </div>
@@ -41,13 +41,18 @@
 <style>
   .lp-reviews__summary { margin: 0; }
   .lp-reviews__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--spacing-xxs); }
-  .lp-reviews__item { border-radius: 16px; padding: var(--spacing-xxs); display: flex; flex-direction: column; gap: 8px; }
+  .lp-reviews__item { border-radius: var(--lp-radius-sm); padding: var(--spacing-xxs); display: flex; flex-direction: column; gap: 8px; }
   .lp-reviews__stars { margin: 0; letter-spacing: 1px; }
-  .lp-star { color: var(--color-red); }
-  .lp-star--empty { color: var(--color-lgrey); }
   .lp-reviews__quote { margin: 0; flex: 1; }
   .lp-reviews__author { margin: 0; }
+  @media screen and (max-width: 767px) {
+    .lp-reviews .page-width { padding-right: 0; }
+    .lp-reviews__list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding-right: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .lp-reviews__list::-webkit-scrollbar { display: none; }
+    .lp-reviews__item { flex: 0 0 78%; scroll-snap-align: start; }
+  }
   @media screen and (min-width: 768px) {
+    .lp-reviews__swipe { display: none; }
     .lp-reviews__list { grid-template-columns: repeat(2, 1fr); }
   }
   @media screen and (min-width: 992px) {
@@ -63,10 +68,11 @@
   "settings": [
     { "type": "select", "id": "row_spacing_inner_top", "default": "md", "label": "Spacing Top", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
     { "type": "select", "id": "row_spacing_inner_bottom", "default": "md", "label": "Spacing Bottom", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
-    { "type": "select", "id": "section_background_color", "default": "lblue", "label": "Background Color", "options": [ { "value": "white", "label": "White" }, { "value": "lblue", "label": "Light Blue" } ] },
+    { "type": "select", "id": "section_background_color", "default": "lblue", "label": "Background Color", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ] },
     { "type": "text", "id": "anchor_id", "label": "Anker", "default": "reviews" },
     { "type": "text", "id": "heading", "label": "Kop", "default": "wat anderen ervan vinden" },
-    { "type": "text", "id": "summary", "label": "Samenvatting", "info": "Noem Trustpilot hier niet als de hero dat al doet (maximaal één keer op de site)." }
+    { "type": "text", "id": "summary", "label": "Samenvatting", "info": "Noem Trustpilot hier niet als de hero dat al doet (maximaal één keer op de site)." },
+    { "type": "text", "id": "swipe_text", "label": "Tekst erachter, alleen op mobiel", "default": "swipe voor meer" }
   ],
   "blocks": [
     {

@@ -12,7 +12,7 @@
         "u2": {
           "type": "usp",
           "settings": {
-            "text": "15% korting op je eerste bestelling"
+            "text": "15% korting op je eerste bestelling via de nieuwsbrief"
           }
         },
         "u3": {
@@ -29,22 +29,25 @@
       ],
       "settings": {
         "section_background_color": "white",
-        "ink_color": "#215732",
+        "ink_color": "#212322",
         "rating_text": "4,7 uit 5 op Trustpilot. Een miljoen oksels gingen je voor.",
         "heading": "de natuurlijke deo stick zonder aluminiumzouten",
-        "text": "<p>Aluminiumzouten zijn de bekende boosdoener achter gele vlekken. Onze stick heeft ze niet. Hij helpt zweetgeur neutraliseren en glijdt soepel, zonder plakkerig gevoel.</p>",
+        "text": "<p>Helpt zweetgeur neutraliseren, zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
         "retail_text": "Ligt ook bij Albert Heijn, Etos, Holland & Barrett en DA. Alle geuren samen, het starterspakket en de welkomstkorting vind je alleen hier.",
         "offer_product": "combi-deal-deodorant-stick-mix",
         "offer_background_color": "lblue",
         "offer_badge": "meest gekozen",
         "offer_title": "3 geuren, 3 sticks",
-        "offer_text": "<p>Be Active, Feel Floral en Have Fun, één van elk. Ontdek thuis welke geur bij je past. Los besteld betaal je €24,87 plus €3,95 verzending.</p>",
+        "offer_text": "<p>Be Active, Feel Floral en Have Fun, één van elk. Ontdek thuis welke geur bij je past.</p>",
         "offer_compare": "los besteld €28,82",
         "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
         "offer_button": "in winkelwagen",
         "offer_alt_label": "liever één geur? kies hieronder",
         "offer_alt_link": "#kies",
-        "offer_saving": "je bespaart €4,85"
+        "offer_saving": "je bespaart €4,85",
+        "heading_color": "#ec0500",
+        "accent_color": "#ec0500",
+        "offer_image": "shopify://shop_images/lp-deo-stick-3-geuren.jpg"
       }
     },
     "trust": {
@@ -53,7 +56,7 @@
         "t1": {
           "type": "item",
           "settings": {
-            "text": "100% natuurlijke oorsprong"
+            "text": "ingrediënten van 100% natuurlijke oorsprong"
           }
         },
         "t2": {
@@ -65,7 +68,7 @@
         "t3": {
           "type": "item",
           "settings": {
-            "text": "vegan en B Corp"
+            "text": "B Corp gecertificeerd"
           }
         },
         "t4": {
@@ -77,7 +80,7 @@
         "t5": {
           "type": "item",
           "settings": {
-            "text": "direct van de maker, uit Utrecht"
+            "text": "Nederlands merk, bedacht in Utrecht"
           }
         }
       },
@@ -136,7 +139,8 @@
             "scent": "alle drie de geuren, één van elk",
             "badge": "meest gekozen",
             "price_note": "voor 3 sticks, gratis bezorgd",
-            "highlight": true
+            "highlight": true,
+            "image": "shopify://shop_images/lp-deo-stick-3-geuren.jpg"
           }
         }
       },
@@ -152,7 +156,8 @@
         "heading": "kies jouw geur",
         "intro": "<p>Het starterspakket bezorgen we gratis. Losse sticks zijn €8,29, vanaf €25 gratis bezorgd.</p>",
         "button_label": "in winkelwagen",
-        "footnote": "<p>Weet je nog niet welke geur? Met het starterspakket probeer je ze alle drie thuis.</p>"
+        "footnote": "<p>Weet je nog niet welke geur? Met het starterspakket probeer je ze alle drie thuis. Liever losse sticks? Bij 3 stuks krijg je 3% korting, bij 6 stuks 6%.</p>",
+        "card_background_color": "lblue"
       }
     },
     "waarom": {
@@ -163,8 +168,8 @@
           "settings": {
             "badge": "hier bij lekker",
             "title": "in onze eigen webshop",
-            "subtitle": "direct van de maker, uit Utrecht",
-            "lines": "+ Het starterspakket: alle drie de geuren, door ons ingepakt, gratis bezorgd\n+ Je bespaart €4,85 ten opzichte van los bestellen\n+ 15% korting op je eerste bestelling\n+ Ook wat niet in het schap ligt: navulbare deo, body wash en cadeausets\n+ Binnen twee werkdagen in huis",
+            "subtitle": "Nederlands merk, bedacht in Utrecht",
+            "lines": "+ Het starterspakket: alle drie de geuren in één doos, gratis bezorgd\n+ Je bespaart €4,85 ten opzichte van los bestellen\n+ 15% korting op je eerste bestelling via de nieuwsbrief\n+ Ook wat niet overal in het schap ligt: navulbare deo, body wash en cadeausets\n+ Binnen twee werkdagen in huis",
             "highlight": true,
             "button_label": "bekijk het starterspakket",
             "button_link": "#aanbod",
@@ -179,7 +184,7 @@
             "badge": "",
             "title": "in de winkel",
             "subtitle": "Albert Heijn, Etos, Holland & Barrett, DA",
-            "lines": "+ Handig als je hem vandaag nog wilt\n+ Even ruiken voordat je kiest\n- Meestal maar één of twee geuren\n- Geen starterspakket, geen navullingen, geen body wash\n- Geen welkomstkorting",
+            "lines": "+ Handig als je hem vandaag nog wilt\n+ Even ruiken voordat je kiest\n- Meestal maar één of twee geuren\n- Geen starterspakket en geen welkomstkorting\n- Body wash en cadeausets liggen er niet",
             "highlight": false,
             "button_label": "",
             "button_link": "",
@@ -197,153 +202,8 @@
         "section_background_color": "white",
         "anchor_id": "waarom",
         "heading": "waarom hier bestellen als het ook in de winkel ligt?",
-        "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar je eerste keer natuurlijke deo willen we zelf goed doen. Daarom pakken wij je starterspakket in met alle drie de geuren, zodat je thuis ontdekt welke bij jou past. Voor een betere prijs dan los.</p>"
-      }
-    },
-    "eerste_week_intro": {
-      "type": "theme-section__text",
-      "blocks": {
-        "intro": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "eerlijk: de eerste week is even wennen",
-            "block_content": "<p>Stap je over van een antitranspirant? Dan moeten je oksels even wennen. Weet je wat er gebeurt, dan hou je het makkelijker vol.</p>",
-            "block_align": "center",
-            "block_heading_font_size": "lg",
-            "block_heading_font_color": "black",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "max_heading_width": "30",
-            "max_content_width": "60",
-            "block_text_style": "normal",
-            "block_text_list_style": "bullet",
-            "button_show": false
-          }
-        }
-      },
-      "block_order": [
-        "intro"
-      ],
-      "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "none",
-        "section_background_color": "white",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width",
-        "num_columns_mobile": "1",
-        "num_columns_desktop": "1",
-        "use_animations": false,
-        "template_blog_header": false
-      }
-    },
-    "eerste_week_stappen": {
-      "type": "theme-section__text",
-      "blocks": {
-        "stap1": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "dag 1 tot 3",
-            "block_content": "<p><strong>Je zweet misschien wat meer.</strong> Je oksels wennen eraan dat ze niet meer worden dichtgezet. Dat is normaal. Smeer één keer per dag op een schone, droge huid.</p>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "block_text_style": "normal",
-            "button_show": false
-          }
-        },
-        "stap2": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "dag 4 tot 10",
-            "block_content": "<p><strong>Je lichaam vindt zijn balans.</strong> Ruik je tussendoor iets? Was je oksels met water en breng opnieuw aan. Val niet terug op je oude deo, anders begin je weer opnieuw.</p>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "block_text_style": "normal",
-            "button_show": false
-          }
-        },
-        "stap3": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "na een week of twee",
-            "block_content": "<p><strong>Gewend.</strong> Voor de meeste mensen is het wennen dan voorbij. Vanaf nu is het gewoon smeren en gaan.</p>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "block_text_style": "normal",
-            "button_show": true,
-            "button_label": "ik probeer het",
-            "button_size": "button_small",
-            "button_color": "button_red",
-            "button_link": "#aanbod",
-            "button_target": false
-          }
-        }
-      },
-      "block_order": [
-        "stap1",
-        "stap2",
-        "stap3"
-      ],
-      "settings": {
-        "row_spacing_inner_top": "xs",
-        "row_spacing_inner_bottom": "md",
-        "section_background_color": "white",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width",
-        "num_columns_mobile": "1",
-        "num_columns_desktop": "3",
-        "use_animations": false,
-        "template_blog_header": false
-      }
-    },
-    "uitlegvideo": {
-      "type": "theme-section__visual",
-      "disabled": true,
-      "blocks": {
-        "video": {
-          "type": "visual_slide",
-          "settings": {
-            "textbox_show": false,
-            "font_color": "white",
-            "sub_heading": "",
-            "heading": "",
-            "text": "",
-            "video_show": true,
-            "video_source_desktop": "",
-            "video_aspect_desktop": "9:16",
-            "video_source_mobile": "",
-            "video_aspect_mobile": "9:16",
-            "video_autoplay": false,
-            "video_show_controls": true,
-            "button_show": false
-          }
-        }
-      },
-      "block_order": [
-        "video"
-      ],
-      "settings": {
-        "row_spacing_outer_top": "none",
-        "row_spacing_outer_bottom": "none",
-        "row_spacing_inner_top": "none",
-        "row_spacing_inner_bottom": "md",
-        "section_background_color": "white",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width--narrow",
-        "slide_theme_layout": "medium",
-        "section_image_rounded_corners": "sm",
-        "use_animations": false
+        "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar je eerste keer natuurlijke deo willen we goed doen. Daarom is er het starterspakket met alle drie de geuren, zodat je thuis ontdekt welke bij jou past. Voor een betere prijs dan los.</p>",
+        "card_background_color": "lblue"
       }
     },
     "reviews": {
@@ -398,19 +258,8 @@
         "section_background_color": "lblue",
         "anchor_id": "reviews",
         "heading": "wat anderen ervan vinden",
-        "summary": "gemiddeld 4,7 uit 5, swipe voor meer"
-      }
-    },
-    "korting": {
-      "type": "lp-newsletter",
-      "settings": {
-        "section_background_color": "dgreen",
-        "anchor_id": "korting",
-        "badge": "alleen online",
-        "heading": "15% korting op je eerste bestelling",
-        "text": "<p>Schrijf je in en je krijgt de kortingscode in je mail. Zo kost het starterspakket met 3 geuren je €20,37, gratis bezorgd.</p>",
-        "tag": "lp-deostick",
-        "small": "Uitschrijven kan altijd."
+        "summary": "gemiddeld 4,7 uit 5",
+        "swipe_text": "swipe voor meer"
       }
     },
     "faq": {
@@ -434,7 +283,7 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Hoe lang duurt het wennen?",
-            "faq_section_qa_a": "<p>Voor de meeste mensen een week of twee. In die tijd kun je wat meer zweten of sneller iets ruiken. Blijf één keer per dag smeren op een schone huid en val niet terug op je oude deo.</p>"
+            "faq_section_qa_a": "<p>Stap je over van een antitranspirant? Sommige mensen moeten dan even wennen, dat kan een week of twee duren. Blijf één keer per dag smeren op een schone huid en val niet terug op je oude deo.</p>"
           }
         },
         "q4": {
@@ -448,7 +297,7 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Waarom hier bestellen als het ook bij de Albert Heijn ligt?",
-            "faq_section_qa_a": "<p>In de winkel ligt meestal maar een deel van ons assortiment. Hier vind je alle geuren, het starterspakket met 3 geuren dat we gratis bezorgen, 15% korting op je eerste bestelling, en producten die niet in het schap liggen, zoals onze navulbare deo en de body wash.</p>"
+            "faq_section_qa_a": "<p>In de winkel ligt meestal maar een deel van ons assortiment. Hier vind je alle geuren, het starterspakket met 3 geuren dat we gratis bezorgen, 15% korting op je eerste bestelling via de nieuwsbrief, en producten die niet overal in het schap liggen, zoals de body wash en de cadeausets.</p>"
           }
         },
         "q6": {
@@ -462,7 +311,7 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Hoe krijg ik de 15% korting?",
-            "faq_section_qa_a": "<p>Schrijf je hierboven in voor de nieuwsbrief. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
+            "faq_section_qa_a": "<p>Schrijf je in voor de nieuwsbrief, dat kan via het venster dat op deze pagina verschijnt of onderaan de site. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
           }
         }
       },
@@ -476,7 +325,7 @@
         "q7"
       ],
       "settings": {
-        "row_spacing_inner_top": "md",
+        "row_spacing_inner_top": "sm",
         "row_spacing_inner_bottom": "lg",
         "section_background_color": "white",
         "section_background_color_b": "none",
@@ -507,43 +356,53 @@
         "hide_on_anchor": "kies"
       }
     },
+    "verhaal": {
+      "type": "lp-story",
+      "settings": {
+        "section_background_color": "lpink",
+        "anchor_id": "verhaal",
+        "image": "shopify://shop_images/lekker-company-overons-port.jpg",
+        "heading": "waarom lekker bestaat",
+        "quote": "Op een gemiddeld cosmetica-etiket staan zoveel moeilijke termen dat bijna niemand kan lezen wat erin zit. Terwijl je het elke dag op je huid smeert. Bij eten wil je toch ook weten wat je binnenkrijgt?",
+        "text": "<p>Daarom begon Dewi aan haar keukentafel, met Pinterest en een beslagkom, zelf deodorant te maken. Dat simpele recept werd The Lekker Company: verzorging met ingrediënten van 100% natuurlijke oorsprong, elk etiket vertaald in gewone taal, verpakt in karton. Bedacht in Utrecht, geproduceerd in Nederland, inmiddels in het schap bij Albert Heijn en Etos, en een miljoen oksels verder.</p>",
+        "name": "Dewi",
+        "role": "oprichter van The Lekker Company",
+        "button_label": "probeer het starterspakket",
+        "button_link": "#aanbod",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_target": false
+      }
+    },
     "verkrijgbaar": {
-      "type": "theme-section__visual-rows",
+      "type": "lp-logos",
       "blocks": {
         "ah": {
-          "type": "column",
+          "type": "store",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/ah.png",
-            "predefined_image": "usp-plant",
-            "heading": "Albert Heijn"
+            "image": "shopify://shop_images/ah.png",
+            "name": "Albert Heijn"
           }
         },
         "etos": {
-          "type": "column",
+          "type": "store",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/4png.png",
-            "predefined_image": "usp-plant",
-            "heading": "Etos"
+            "image": "shopify://shop_images/4png.png",
+            "name": "Etos"
           }
         },
         "hb": {
-          "type": "column",
+          "type": "store",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/7.png",
-            "predefined_image": "usp-plant",
-            "heading": "Holland & Barrett"
+            "image": "shopify://shop_images/7.png",
+            "name": "Holland & Barrett"
           }
         },
         "da": {
-          "type": "column",
+          "type": "store",
           "settings": {
-            "item_link": "",
-            "column_custom_image": "shopify://shop_images/5.png",
-            "predefined_image": "usp-plant",
-            "heading": "DA drogist"
+            "image": "shopify://shop_images/5.png",
+            "name": "DA drogist"
           }
         }
       },
@@ -554,48 +413,69 @@
         "da"
       ],
       "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "md",
         "section_background_color": "white",
-        "page_width": "page-width",
-        "item_width_mobile": 150,
-        "item_width_desktop": 200,
-        "item_ratio": "15/10",
-        "grid_size_on_mobile": 2,
-        "show_intro": true,
-        "intro_heading": "ook te koop in de winkel",
-        "intro_content": "Bij deze winkels ligt onze deo stick in het schap, meestal met één of twee geuren. Alle geuren, het starterspakket en de welkomstkorting vind je alleen hier.",
-        "intro_align": "center",
-        "heading_font_size": "lg",
-        "heading_font_color": "black",
-        "text_font_color": "black",
-        "max_heading_width": "30",
-        "max_content_width": "60",
-        "use_carousel": false,
-        "use_carousel_device": "mobile",
-        "use_carousel_auto_scroll": false,
-        "use_carousel_arrows": false,
-        "use_carousel_manual_scroll": false,
-        "item_font_color": "black",
-        "use_carousel_speed": "20"
+        "card_background_color": "lblue",
+        "anchor_id": "verkrijgbaar",
+        "heading": "ook te koop in de winkel",
+        "intro": "<p>Bij deze winkels ligt onze deo stick in het schap, meestal met één of twee geuren.</p>",
+        "footnote": "<p>Alle geuren, het starterspakket en de welkomstkorting vind je alleen hier.</p>"
       }
     },
-    "verhaal": {
-      "type": "lp-story",
+    "eerste_week": {
+      "type": "lp-steps",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "dag 1 tot 3",
+            "text": "<p>Je zweet misschien wat meer. Je oksels wennen eraan dat ze niet meer worden dichtgezet. Smeer één keer per dag op een schone, droge huid.</p>"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "dag 4 tot 10",
+            "text": "<p>Je lichaam vindt zijn balans. Ruik je tussendoor iets? Was je oksels met water en breng opnieuw aan. Val niet terug op je oude deo.</p>"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "na een week of twee",
+            "text": "<p>Het wennen is voorbij, nu is het gewoon smeren en gaan.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
-        "section_background_color": "lpink",
-        "anchor_id": "verhaal",
-        "image": "shopify://shop_images/lekker-company-overons-port.jpg",
-        "heading": "waarom lekker bestaat",
-        "quote": "Op een gemiddeld cosmetica-etiket staan zoveel moeilijke termen dat bijna niemand kan lezen wat erin zit. Terwijl je het elke dag op je huid smeert. Bij eten wil je toch ook weten wat je binnenkrijgt?",
-        "text": "<p>Daarom begon Dewi aan haar keukentafel, met Pinterest en een beslagkom, zelf deodorant te maken. Dat simpele recept werd The Lekker Company: verzorging met ingrediënten van 100% natuurlijke oorsprong, elk etiket vertaald in gewone taal, verpakt in karton. Gemaakt in Utrecht, inmiddels in het schap bij Albert Heijn en Etos, en een miljoen oksels verder.</p>",
-        "name": "Dewi",
-        "role": "oprichter van The Lekker Company",
-        "button_label": "probeer het starterspakket",
+        "section_background_color": "white",
+        "anchor_id": "eerste-week",
+        "heading": "eerlijk: soms is het even wennen",
+        "intro": "<p>Stap je over van een antitranspirant? Sommige mensen moeten dan even wennen aan een natuurlijke deo. Dat kan een week of twee duren. Weet je wat er gebeurt, dan is het makkelijker.</p>",
+        "button_label": "ik probeer het",
         "button_link": "#aanbod",
         "button_size": "button_small",
         "button_color": "button_red",
         "button_target": false
+      }
+    },
+    "video": {
+      "type": "lp-video",
+      "settings": {
+        "section_background_color": "lilac",
+        "anchor_id": "video",
+        "heading": "lekker in actie",
+        "intro": "<p>Zo ziet de stick eruit en zo smeer je hem.</p>",
+        "products": [
+          "combi-deal-deodorant-stick-mix",
+          "deodorant-stick-have-fun"
+        ],
+        "max_videos": 2,
+        "note": "tik op een video voor geluid"
       }
     }
   },
@@ -607,10 +487,8 @@
     "verhaal",
     "waarom",
     "verkrijgbaar",
-    "korting",
-    "eerste_week_intro",
-    "eerste_week_stappen",
-    "uitlegvideo",
+    "video",
+    "eerste_week",
     "faq",
     "vaste_balk"
   ]

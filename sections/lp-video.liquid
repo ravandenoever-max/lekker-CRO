@@ -1,0 +1,77 @@
+{%- comment -%}
+  Landingspagina: korte video's van de productpagina's (metafield custom.socials), zelfde weergave als op de productpagina.
+  Speelt zonder geluid zodra de video in beeld is, tik voor geluid. Toegevoegd oktober 2026, CRO-project.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign max = s.max_videos | default: 2
+  assign seen = ''
+  assign count = 0
+-%}
+{%- capture videos -%}
+  {%- for p in s.products -%}
+    {%- for media in p.metafields.custom.socials.value -%}
+      {%- if media.media_type != 'video' -%}{%- continue -%}{%- endif -%}
+      {%- assign key = media.id | append: ',' -%}
+      {%- if seen contains key or count >= max -%}{%- continue -%}{%- endif -%}
+      {%- assign seen = seen | append: key -%}
+      {%- assign count = count | plus: 1 -%}
+      <li class="lp-video__item">{{ media | video_tag: autoplay: false, loop: true, muted: true, playsinline: true, preload: 'metadata', class: 'lp-video__video' }}</li>
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if videos contains '<li' -%}
+<div class="section-inner lp-video bg-{{ s.section_background_color }} padding-t-md padding-b-md" id="{{ s.anchor_id | default: 'video' | handleize }}">
+  <div class="page-width">
+    <div class="txt-align-center margin-b-xs">
+      {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>{%- endif -%}
+      {%- if s.intro != blank -%}<div class="lp-video__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>{%- endif -%}
+    </div>
+    <ul class="lp-video__list" role="list" data-count="{{ count }}">{{ videos }}</ul>
+    {%- if s.note != blank -%}<p class="lp-video__note txt-align-center font-size-3xs margin-t-xxs">{{ s.note }}</p>{%- endif -%}
+  </div>
+</div>
+<style>
+  .lp-video__intro p { margin: 0; }
+  .lp-video__list { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat({{ count }}, minmax(0, 1fr)); gap: 10px; max-width: 640px; }
+  .lp-video__item { border-radius: var(--lp-radius-sm); overflow: hidden; background: var(--color-white); }
+  .lp-video__video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; cursor: pointer; }
+  .lp-video__note { margin-bottom: 0; }
+  @media screen and (min-width: 768px) { .lp-video__list { gap: var(--spacing-xxs); } }
+</style>
+<script>
+  window.addEventListener('load', function () {
+    var videos = document.querySelectorAll('.lp-video__video');
+    if (!videos.length || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { var v = en.target; if (en.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); } });
+    }, { threshold: 0.5 });
+    videos.forEach(function (v) {
+      io.observe(v);
+      v.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var wasMuted = v.muted;
+        v.muted = !wasMuted;
+        videos.forEach(function (o) { if (o !== v) { o.muted = true; } });
+      });
+    });
+  });
+</script>
+{%- endif -%}
+{% schema %}
+{
+  "name": "LP video",
+  "tag": "section",
+  "class": "lp-section lp-video-section",
+  "settings": [
+    { "type": "select", "id": "section_background_color", "default": "lilac", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ] },
+    { "type": "text", "id": "anchor_id", "label": "Anker", "default": "video" },
+    { "type": "text", "id": "heading", "label": "Kop", "default": "lekker in actie" },
+    { "type": "richtext", "id": "intro", "label": "Intro" },
+    { "type": "product_list", "id": "products", "label": "Producten waarvan de video's worden getoond", "info": "Gebruikt de video's uit het metafield 'socials' van de productpagina.", "limit": 4 },
+    { "type": "range", "id": "max_videos", "label": "Maximaal aantal video's", "min": 1, "max": 4, "step": 1, "default": 2 },
+    { "type": "text", "id": "note", "label": "Regel onder de video's", "default": "tik op een video voor geluid" }
+  ],
+  "presets": [ { "name": "LP video" } ]
+}
+{% endschema %}

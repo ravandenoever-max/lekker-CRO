@@ -12,7 +12,7 @@
         "u2": {
           "type": "usp",
           "settings": {
-            "text": "15% korting op je eerste bestelling"
+            "text": "15% korting op je eerste bestelling via de nieuwsbrief"
           }
         },
         "u3": {
@@ -29,25 +29,27 @@
       ],
       "settings": {
         "section_background_color": "white",
-        "ink_color": "#215732",
-        "rating_text": "4,7 uit 5 op Trustpilot. Van de makers van de natuurlijke deo.",
+        "ink_color": "#212322",
+        "rating_text": "Van de makers van de Lekker deo",
         "heading": "de navulbare body wash zonder stroef gevoel",
-        "text": "<p>Milde douchegel met ingrediënten van 100% natuurlijke oorsprong en een frisse eucalyptusgeur. Het blikje draai je in een case die je gewoon in je badkamer wilt laten staan. Leeg? Nieuw blikje erin.</p>",
-        "retail_text": "Onze body wash ligt niet in de winkel. Alleen hier, direct van de maker.",
+        "text": "<p>Milde douchegel met een frisse eucalyptusgeur, zonder stroef gevoel na het douchen. Blikje leeg? Nieuw blikje in de case.</p>",
+        "retail_text": "Onze body wash ligt niet in de winkel. Die vind je alleen hier.",
         "offer_product": "starter-refill-body-wash-eucalyptus",
         "offer_background_color": "lblue",
         "offer_badge": "starterspakket",
         "offer_title": "case + 2 blikjes (660 ml)",
-        "offer_text": "<p>Herbruikbare case met pomp, een blikje eucalyptus en alvast een extra blikje voor als het eerste leeg is.</p>",
-        "offer_compare": "apart besteld €39,88",
+        "offer_text": "<p>Herbruikbare case met pomp, een blikje eucalyptus en alvast een extra blikje voor als het eerste leeg is. Zo zit je nooit zonder.</p>",
+        "offer_compare": "",
         "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
         "offer_button": "in winkelwagen",
         "offer_alt_label": "liever alleen de starter? kies hieronder",
         "offer_alt_link": "#kies",
-        "offer_saving": "je bespaart €7,90",
+        "offer_saving": "",
         "offer_extras": [
           "refill-body-wash-eucalyptus"
-        ]
+        ],
+        "heading_color": "#ec0500",
+        "accent_color": "#ec0500"
       }
     },
     "trust": {
@@ -56,7 +58,7 @@
         "t1": {
           "type": "item",
           "settings": {
-            "text": "100% natuurlijke oorsprong"
+            "text": "ingrediënten van 100% natuurlijke oorsprong"
           }
         },
         "t2": {
@@ -74,13 +76,13 @@
         "t4": {
           "type": "item",
           "settings": {
-            "text": "blikje van aluminium, bij het metaal"
+            "text": "leeg blikje bij het metaal of PMD"
           }
         },
         "t5": {
           "type": "item",
           "settings": {
-            "text": "direct van de maker, uit Utrecht"
+            "text": "Nederlands merk, geproduceerd in Italië"
           }
         }
       },
@@ -131,7 +133,8 @@
         "heading": "kies jouw start",
         "intro": "<p>De starter is de case met één blikje. Vanaf €25 bezorgen we gratis, het starterspakket altijd.</p>",
         "button_label": "in winkelwagen",
-        "footnote": "<p>Nog geen case? Begin dan met de starter. De navulling past alleen in de Lekker case.</p>"
+        "footnote": "<p>Nog geen case? Begin dan met de starter. De navulling past alleen in de Lekker case.</p>",
+        "card_background_color": "lblue"
       }
     },
     "reviews": {
@@ -186,7 +189,8 @@
         "section_background_color": "lblue",
         "anchor_id": "reviews",
         "heading": "wat anderen ervan vinden",
-        "summary": "gemiddeld 4,7 uit 5, swipe voor meer"
+        "summary": "gemiddeld 4,7 uit 5",
+        "swipe_text": "swipe voor meer"
       }
     },
     "verhaal": {
@@ -197,7 +201,7 @@
         "image": "shopify://shop_images/lekker-company-overons-port.jpg",
         "heading": "waarom lekker bestaat",
         "quote": "Op een gemiddeld cosmetica-etiket staan zoveel moeilijke termen dat bijna niemand kan lezen wat erin zit. Terwijl je het elke dag op je huid smeert. Bij eten wil je toch ook weten wat je binnenkrijgt?",
-        "text": "<p>Daarom begon Dewi aan haar keukentafel, met Pinterest en een beslagkom, zelf deodorant te maken. Dat simpele recept werd The Lekker Company: verzorging met ingrediënten van 100% natuurlijke oorsprong, elk etiket vertaald in gewone taal, verpakt in karton. Gemaakt in Utrecht, inmiddels in het schap bij Albert Heijn en Etos, en een miljoen oksels verder.</p>",
+        "text": "<p>Daarom begon Dewi aan haar keukentafel, met Pinterest en een beslagkom, zelf deodorant te maken. Dat simpele recept werd The Lekker Company: verzorging met ingrediënten van 100% natuurlijke oorsprong, elk etiket vertaald in gewone taal, verpakt in karton. Bedacht in Utrecht, inmiddels in het schap bij Albert Heijn en Etos, en een miljoen oksels verder.</p>",
         "name": "Dewi",
         "role": "oprichter van The Lekker Company",
         "button_label": "probeer het starterspakket",
@@ -215,8 +219,8 @@
           "settings": {
             "badge": "hier bij lekker",
             "title": "navulbare body wash",
-            "subtitle": "alleen hier, direct van de maker",
-            "lines": "+ De case koop je één keer, daarna alleen blikjes\n+ Blikje van 330 ml voor €9,99\n+ Aluminium blikje, mag bij het metaal\n+ Starterspakket met 2 blikjes, gratis bezorgd\n+ 15% korting op je eerste bestelling",
+            "subtitle": "alleen hier, Nederlands merk",
+            "lines": "+ Ingrediënten van 100% natuurlijke oorsprong, dat zie je bij een body wash bijna nooit\n+ De case koop je één keer, daarna alleen blikjes\n+ Blikje van 330 ml voor €9,99\n+ Leeg blikje? Recycle het bij metaal of PMD\n+ Starterspakket met 2 blikjes, gratis bezorgd\n+ 15% korting op je eerste bestelling via de nieuwsbrief",
             "highlight": true,
             "button_label": "bekijk het starterspakket",
             "button_link": "#aanbod",
@@ -249,134 +253,8 @@
         "section_background_color": "white",
         "anchor_id": "waarom",
         "heading": "waarom navulbaar, en waarom hier?",
-        "intro": "<p>Deze body wash ligt niet in de winkel. En je eerste keer willen we goed doen: daarom zit in het starterspakket de case met pomp plus twee blikjes, gratis bezorgd.</p>"
-      }
-    },
-    "navullen_intro": {
-      "type": "theme-section__text",
-      "blocks": {
-        "i": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "zo werkt het",
-            "block_content": "<p>Open, blikje erin, pomp erop. Klaar.</p>",
-            "block_align": "center",
-            "block_heading_font_size": "lg",
-            "block_heading_font_color": "black",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "max_heading_width": "30",
-            "max_content_width": "60",
-            "block_text_style": "normal",
-            "block_text_list_style": "bullet",
-            "button_show": false
-          }
-        }
-      },
-      "block_order": [
-        "i"
-      ],
-      "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "none",
-        "section_background_color": "lblue",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width",
-        "num_columns_mobile": "1",
-        "num_columns_desktop": "1",
-        "use_animations": false,
-        "template_blog_header": false
-      }
-    },
-    "navullen": {
-      "type": "theme-section__text",
-      "blocks": {
-        "s1": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "1. open de case",
-            "block_content": "<p>Haal het kartonnen schijfje eruit.</p>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "max_heading_width": "30",
-            "max_content_width": "60",
-            "block_text_style": "normal",
-            "block_text_list_style": "bullet",
-            "button_show": false
-          }
-        },
-        "s2": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "2. blikje erin",
-            "block_content": "<p>Zet het blikje erin en draai de case tot je een pop hoort. Draai hem helemaal dicht.</p>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "max_heading_width": "30",
-            "max_content_width": "60",
-            "block_text_style": "normal",
-            "block_text_list_style": "bullet",
-            "button_show": false
-          }
-        },
-        "s3": {
-          "type": "text_column",
-          "settings": {
-            "block_heading": "3. pomp erop",
-            "block_content": "<p>Draai de pomp erop en je kunt douchen. Leeg blikje bij het metaal.</p>",
-            "block_align": "left",
-            "block_heading_font_size": "md",
-            "block_heading_font_color": "red",
-            "block_text_font_size": "xs",
-            "block_text_font_color": "black",
-            "max_heading_width": "30",
-            "max_content_width": "60",
-            "block_text_style": "normal",
-            "block_text_list_style": "bullet",
-            "button_show": true,
-            "button_label": "ik probeer het",
-            "button_size": "button_small",
-            "button_color": "button_red",
-            "button_link": "#aanbod",
-            "button_target": false
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3"
-      ],
-      "settings": {
-        "row_spacing_inner_top": "md",
-        "row_spacing_inner_bottom": "md",
-        "section_background_color": "lblue",
-        "section_background_color_b": "none",
-        "section_background_color_split": "none",
-        "page_width": "page-width",
-        "num_columns_mobile": "1",
-        "num_columns_desktop": "3",
-        "use_animations": false,
-        "template_blog_header": false
-      }
-    },
-    "korting": {
-      "type": "lp-newsletter",
-      "settings": {
-        "section_background_color": "dgreen",
-        "anchor_id": "korting",
-        "badge": "alleen online",
-        "heading": "15% korting op je eerste bestelling",
-        "text": "<p>Schrijf je in en je krijgt de kortingscode in je mail. Zo kost het starterspakket met case en twee blikjes je €27,18, gratis bezorgd.</p>",
-        "tag": "lp-bodywash",
-        "small": "Uitschrijven kan altijd."
+        "intro": "<p>Deze body wash ligt niet in de winkel. En je eerste keer willen we goed doen: daarom zit in het starterspakket de case met pomp plus twee blikjes, gratis bezorgd.</p>",
+        "card_background_color": "lblue"
       }
     },
     "faq": {
@@ -393,7 +271,7 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Hoe werkt het navullen?",
-            "faq_section_qa_a": "<p>Open de case, haal het schijfje eruit, zet het blikje erin en draai tot je een pop hoort. Pomp erop en klaar. Een leeg blikje mag bij het metaal, bij de meeste gemeentes het PMD.</p>"
+            "faq_section_qa_a": "<p>Open de case, haal het kartonnen schijfje eruit, zet het blikje erin en draai tot je een POP hoort. Pomp erop en klaar. Leeg blikje? Recycle het bij metaal of PMD.</p>"
           }
         },
         "q3": {
@@ -421,7 +299,7 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Hoe krijg ik de 15% korting?",
-            "faq_section_qa_a": "<p>Schrijf je hierboven in voor de nieuwsbrief. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
+            "faq_section_qa_a": "<p>Schrijf je in voor de nieuwsbrief, dat kan via het venster dat op deze pagina verschijnt of onderaan de site. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
           }
         }
       },
@@ -434,7 +312,7 @@
         "q6"
       ],
       "settings": {
-        "row_spacing_inner_top": "md",
+        "row_spacing_inner_top": "sm",
         "row_spacing_inner_bottom": "lg",
         "section_background_color": "white",
         "section_background_color_b": "none",
@@ -467,6 +345,62 @@
           "refill-body-wash-eucalyptus"
         ]
       }
+    },
+    "navullen": {
+      "type": "lp-steps",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "open de case",
+            "text": "<p>Haal het kartonnen schijfje eruit.</p>"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "blikje erin",
+            "text": "<p>Zet het blikje erin en draai de case tot je een POP hoort. Draai hem helemaal dicht.</p>"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "pomp erop",
+            "text": "<p>Draai de pomp erop en je kunt douchen. Leeg blikje? Recycle het bij metaal of PMD.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "section_background_color": "white",
+        "anchor_id": "navullen",
+        "heading": "zo werkt het",
+        "intro": "<p>Open, blikje erin, pomp erop. Klaar.</p>",
+        "button_label": "ik probeer het",
+        "button_link": "#aanbod",
+        "button_size": "button_small",
+        "button_color": "button_red",
+        "button_target": false
+      }
+    },
+    "video": {
+      "type": "lp-video",
+      "settings": {
+        "section_background_color": "lilac",
+        "anchor_id": "video",
+        "heading": "lekker in actie",
+        "intro": "<p>Zo werkt de case en zo voelt de body wash.</p>",
+        "products": [
+          "starter-refill-body-wash-eucalyptus"
+        ],
+        "max_videos": 2,
+        "note": "tik op een video voor geluid"
+      }
     }
   },
   "order": [
@@ -476,9 +410,8 @@
     "reviews",
     "verhaal",
     "waarom",
-    "navullen_intro",
     "navullen",
-    "korting",
+    "video",
     "faq",
     "vaste_balk"
   ]

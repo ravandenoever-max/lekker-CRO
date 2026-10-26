@@ -1,0 +1,79 @@
+{%- comment -%}
+  Landingspagina: korte uitleg in genummerde stappen (zo werkt navullen, de eerste week). Compact op mobiel.
+  Toegevoegd oktober 2026, CRO-project.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<div class="section-inner lp-steps bg-{{ s.section_background_color }} padding-t-md padding-b-md" id="{{ s.anchor_id | default: 'stappen' | handleize }}">
+  <div class="page-width">
+    <div class="lp-steps__head">
+      {%- if s.icon != blank -%}
+        <div class="lp-steps__icon">{{ s.icon | image_url: width: 480 | image_tag: loading: 'lazy', widths: '240, 480', sizes: '240px', class: 'lp-steps__icon-img', alt: s.heading }}</div>
+      {%- endif -%}
+      <div>
+        {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase lp-steps__heading">{{ s.heading }}</h2>{%- endif -%}
+        {%- if s.intro != blank -%}<div class="lp-steps__intro font-size-xs">{{ s.intro }}</div>{%- endif -%}
+      </div>
+    </div>
+    <ol class="lp-steps__list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="lp-steps__item" {{ block.shopify_attributes }}>
+          <span class="lp-steps__num font-fam-bold" aria-hidden="true">{{ forloop.index }}</span>
+          <div class="lp-steps__body">
+            {%- if block.settings.title != blank -%}<h3 class="font-fam-bold font-size-xs txt-lowercase lp-steps__title">{{ block.settings.title }}</h3>{%- endif -%}
+            {%- if block.settings.text != blank -%}<div class="lp-steps__text font-size-xxs">{{ block.settings.text }}</div>{%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ol>
+    {%- if s.button_label != blank -%}
+      <div class="lp-steps__button txt-align-center">{%- render 'theme-button', button_settings: s -%}</div>
+    {%- endif -%}
+  </div>
+</div>
+<style>
+  .lp-steps__head { display: flex; gap: 16px; align-items: center; margin-bottom: var(--spacing-xxs); }
+  .lp-steps__icon { flex: 0 0 auto; }
+  .lp-steps__icon-img { display: block; width: auto; height: 120px; object-fit: contain; }
+  .lp-steps__heading { margin: 0 0 4px; }
+  .lp-steps__intro p { margin: 0; }
+  .lp-steps__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .lp-steps__item { display: flex; gap: 12px; align-items: flex-start; }
+  .lp-steps__num { flex: 0 0 32px; width: 32px; height: 32px; border-radius: 50%; background: var(--lp-accent); color: var(--color-white) !important; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; }
+  .lp-steps__title { margin: 0 0 2px; }
+  .lp-steps__text p { margin: 0; }
+  .lp-steps__button { margin-top: var(--spacing-xxs); }
+  @media screen and (min-width: 768px) {
+    .lp-steps__head { justify-content: center; text-align: center; }
+    .lp-steps__icon-img { height: 180px; }
+    .lp-steps__list { grid-template-columns: repeat(3, 1fr); gap: var(--spacing-xs); }
+    .lp-steps__item { flex-direction: column; align-items: center; text-align: center; }
+    .lp-steps__num { width: 40px; height: 40px; font-size: 18px; }
+    .lp-steps__button { margin-top: var(--spacing-xs); }
+  }
+</style>
+{% schema %}
+{
+  "name": "LP stappen",
+  "tag": "section",
+  "class": "lp-section lp-steps-section",
+  "settings": [
+    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "yellow", "label": "Geel" }, { "value": "lilac", "label": "Lila" } ] },
+    { "type": "text", "id": "anchor_id", "label": "Anker", "default": "stappen" },
+    { "type": "image_picker", "id": "icon", "label": "Icoon naast de kop (optioneel)" },
+    { "type": "text", "id": "heading", "label": "Kop" },
+    { "type": "richtext", "id": "intro", "label": "Intro" },
+    { "type": "text", "id": "button_label", "label": "Knoptekst" },
+    { "type": "text", "id": "button_link", "label": "Knoplink", "default": "#aanbod" },
+    { "type": "select", "id": "button_size", "default": "button_small", "label": "Knopgrootte", "options": [ { "value": "button_small", "label": "Standaard" }, { "value": "button_large", "label": "Groot" } ] },
+    { "type": "select", "id": "button_color", "default": "button_red", "label": "Knopkleur", "options": [ { "value": "button_red", "label": "Accentkleur" } ] },
+    { "type": "checkbox", "id": "button_target", "default": false, "label": "Open in nieuw venster" }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Stap", "limit": 5, "settings": [
+      { "type": "text", "id": "title", "label": "Titel" },
+      { "type": "richtext", "id": "text", "label": "Tekst" }
+    ] }
+  ],
+  "presets": [ { "name": "LP stappen" } ]
+}
+{% endschema %}

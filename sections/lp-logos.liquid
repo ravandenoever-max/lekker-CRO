@@ -1,0 +1,60 @@
+{%- comment -%}
+  Landingspagina: rij met winkels waar het product ligt (logo plus naam, zonder links). Toegevoegd oktober 2026, CRO-project.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<div class="section-inner lp-logos bg-{{ s.section_background_color }} padding-t-sm padding-b-md" id="{{ s.anchor_id | default: 'verkrijgbaar' | handleize }}">
+  <div class="page-width">
+    <div class="txt-align-center margin-b-xs">
+      {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>{%- endif -%}
+      {%- if s.intro != blank -%}<div class="lp-logos__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>{%- endif -%}
+    </div>
+    <ul class="lp-logos__list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="lp-logos__item bg-{{ s.card_background_color }}" {{ block.shopify_attributes }}>
+          <div class="lp-logos__media">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy', widths: '200, 400', sizes: '(min-width: 768px) 200px, 45vw', class: 'lp-logos__img', alt: block.settings.name }}
+            {%- endif -%}
+          </div>
+          {%- if block.settings.name != blank -%}<p class="lp-logos__name font-fam-bold font-size-xxs">{{ block.settings.name }}</p>{%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if s.footnote != blank -%}<div class="lp-logos__footnote txt-align-center font-size-xxs margin-t-xs">{{ s.footnote }}</div>{%- endif -%}
+  </div>
+</div>
+<style>
+  .lp-logos__intro p, .lp-logos__footnote p { margin: 0; }
+  .lp-logos__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .lp-logos__item { border-radius: var(--lp-radius-sm); padding: 14px 10px 12px; text-align: center; }
+  .lp-logos__media { height: 56px; display: flex; align-items: center; justify-content: center; }
+  .lp-logos__img { display: block; max-width: 100%; max-height: 56px; width: auto; height: auto; object-fit: contain; }
+  .lp-logos__name { margin: 8px 0 0; }
+  @media screen and (min-width: 768px) {
+    .lp-logos__list { grid-template-columns: repeat({{ section.blocks.size | at_least: 1 | at_most: 6 }}, minmax(0, 1fr)); gap: var(--spacing-xxs); max-width: 900px; margin: 0 auto; }
+    .lp-logos__media { height: 72px; }
+    .lp-logos__img { max-height: 72px; }
+  }
+</style>
+{% schema %}
+{
+  "name": "LP winkels",
+  "tag": "section",
+  "class": "lp-section lp-logos-section",
+  "settings": [
+    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ] },
+    { "type": "select", "id": "card_background_color", "default": "lblue", "label": "Achtergrond tegels", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "yellow", "label": "Geel" }, { "value": "lilac", "label": "Lila" } ] },
+    { "type": "text", "id": "anchor_id", "label": "Anker", "default": "verkrijgbaar" },
+    { "type": "text", "id": "heading", "label": "Kop", "default": "ook te koop in de winkel" },
+    { "type": "richtext", "id": "intro", "label": "Intro" },
+    { "type": "richtext", "id": "footnote", "label": "Tekst onder de logo's" }
+  ],
+  "blocks": [
+    { "type": "store", "name": "Winkel", "limit": 6, "settings": [
+      { "type": "image_picker", "id": "image", "label": "Logo" },
+      { "type": "text", "id": "name", "label": "Naam" }
+    ] }
+  ],
+  "presets": [ { "name": "LP winkels" } ]
+}
+{% endschema %}
