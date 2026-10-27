@@ -449,7 +449,7 @@
         "s3"
       ],
       "settings": {
-        "section_background_color": "white",
+        "section_background_color": "lpink",
         "anchor_id": "eerste-week",
         "heading": "eerlijk: soms is het even wennen",
         "intro": "<p>Stap je over van een antitranspirant? Sommige mensen moeten dan even wennen aan een natuurlijke deo. Dat kan een week of twee duren. Weet je wat er gebeurt, dan is het makkelijker.</p>",
@@ -463,7 +463,7 @@
     "video": {
       "type": "lp-video",
       "settings": {
-        "section_background_color": "lpink",
+        "section_background_color": "lblue",
         "anchor_id": "video",
         "heading": "lekker in actie",
         "intro": "<p>Zo ziet de stick eruit en zo smeer je hem.</p>",
@@ -474,18 +474,59 @@
         "max_videos": 2,
         "note": "tik op een video voor geluid"
       }
+    },
+    "ook_lekker": {
+      "type": "lp-product-picker",
+      "blocks": {
+        "x1": {
+          "type": "card",
+          "settings": {
+            "product": "starter-refill-deo-stick-be-active",
+            "title": "navulbare deo - starter",
+            "scent": "koker + navulling be active",
+            "badge": "",
+            "price_note": "koker + 1 navulling",
+            "highlight": false
+          }
+        },
+        "x2": {
+          "type": "card",
+          "settings": {
+            "product": "starter-refill-body-wash-eucalyptus",
+            "title": "body wash - starter",
+            "scent": "case met pomp + blikje eucalyptus",
+            "badge": "",
+            "price_note": "case + 1 blikje",
+            "highlight": false
+          }
+        }
+      },
+      "block_order": [
+        "x1",
+        "x2"
+      ],
+      "settings": {
+        "section_background_color": "lblue",
+        "card_background_color": "white",
+        "anchor_id": "ook-lekker",
+        "heading": "ook lekker",
+        "intro": "",
+        "button_label": "in winkelwagen",
+        "footnote": ""
+      }
     }
   },
   "order": [
     "hero",
     "trust",
     "kies",
-    "reviews",
-    "verhaal",
-    "waarom",
-    "verkrijgbaar",
     "video",
+    "verhaal",
+    "reviews",
+    "waarom",
     "eerste_week",
+    "verkrijgbaar",
+    "ook_lekker",
     "faq",
     "vaste_balk"
   ]

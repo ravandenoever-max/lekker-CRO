@@ -50,6 +50,13 @@
 </div>
 
 <style>
+  {%- comment -%} Bij minder dan 4 kaarten: kaarten gecentreerd op desktop. Gescoped op deze sectie, want er kunnen twee productkeuzes op een pagina staan. {%- endcomment -%}
+  {%- assign n = section.blocks.size -%}
+  {%- if n < 4 -%}
+  @media screen and (min-width: 992px) {
+    #shopify-section-{{ section.id }} .lp-cards { grid-template-columns: repeat({{ n }}, minmax(0, 1fr)) !important; max-width: {{ n | times: 300 }}px; margin: 0 auto; }
+  }
+  {%- endif -%}
   .lp-picker__intro p, .lp-picker__footnote p { margin: 0; }
   .lp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-xxs); }
   .lp-card { position: relative; border-radius: var(--lp-radius-sm); overflow: hidden; display: flex; flex-direction: column; }

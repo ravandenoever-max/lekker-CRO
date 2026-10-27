@@ -23,21 +23,31 @@
 {%- if videos contains '<li' -%}
 <div class="section-inner lp-video bg-{{ s.section_background_color }} padding-t-md padding-b-md" id="{{ s.anchor_id | default: 'video' | handleize }}">
   <div class="page-width">
-    <div class="txt-align-center margin-b-xs">
-      {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>{%- endif -%}
-      {%- if s.intro != blank -%}<div class="lp-video__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>{%- endif -%}
+    <div class="lp-video__grid">
+      <div class="lp-video__text">
+        {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase">{{ s.heading }}</h2>{%- endif -%}
+        {%- if s.intro != blank -%}<div class="lp-video__intro font-size-xs margin-t-xxs">{{ s.intro }}</div>{%- endif -%}
+        {%- if s.note != blank -%}<p class="lp-video__note font-size-3xs margin-t-xxs">{{ s.note }}</p>{%- endif -%}
+      </div>
+      <ul class="lp-video__list" role="list" data-count="{{ count }}">{{ videos }}</ul>
     </div>
-    <ul class="lp-video__list" role="list" data-count="{{ count }}">{{ videos }}</ul>
-    {%- if s.note != blank -%}<p class="lp-video__note txt-align-center font-size-3xs margin-t-xxs">{{ s.note }}</p>{%- endif -%}
   </div>
 </div>
 <style>
+  {%- comment -%} Mobiel: tekst boven de video's. Desktop: tekst links, video's rechts ernaast. {%- endcomment -%}
+  .lp-video__grid { display: grid; gap: var(--spacing-xs); }
+  .lp-video__text { text-align: center; }
   .lp-video__intro p { margin: 0; }
-  .lp-video__list { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat({{ count }}, minmax(0, 1fr)); gap: 10px; max-width: 640px; }
+  .lp-video__note { margin-bottom: 0; }
+  .lp-video__list { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat({{ count }}, minmax(0, 1fr)); gap: 10px; width: 100%; max-width: 640px; }
   .lp-video__item { border-radius: var(--lp-radius-sm); overflow: hidden; background: var(--color-white); }
   .lp-video__video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; cursor: pointer; }
-  .lp-video__note { margin-bottom: 0; }
   @media screen and (min-width: 768px) { .lp-video__list { gap: var(--spacing-xxs); } }
+  @media screen and (min-width: 992px) {
+    .lp-video__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); align-items: center; gap: var(--spacing-md); }
+    .lp-video__text { text-align: left; }
+    .lp-video__list { margin: 0; }
+  }
 </style>
 <script>
   window.addEventListener('load', function () {
