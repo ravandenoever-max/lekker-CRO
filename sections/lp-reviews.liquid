@@ -24,7 +24,7 @@
     <ul class="lp-reviews__list" role="list">
       {%- for block in section.blocks -%}
         {%- assign stars = block.settings.rating | plus: 0 -%}
-        <li class="lp-reviews__item bg-white" {{ block.shopify_attributes }}>
+        <li class="lp-reviews__item bg-{{ s.card_background_color | default: 'white' }}" {{ block.shopify_attributes }}>
           <p class="lp-reviews__stars" aria-label="{{ stars }} van 5 sterren">
             {%- for i in (1..5) -%}<span class="{% if i > stars %}lp-star--empty{% else %}lp-star{% endif %}" aria-hidden="true">&#9733;</span>{%- endfor -%}
           </p>
@@ -69,6 +69,7 @@
     { "type": "select", "id": "row_spacing_inner_top", "default": "md", "label": "Spacing Top", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
     { "type": "select", "id": "row_spacing_inner_bottom", "default": "md", "label": "Spacing Bottom", "options": [ { "value": "lg", "label": "LG" }, { "value": "md", "label": "MD" }, { "value": "sm", "label": "SM" }, { "value": "xs", "label": "XS" }, { "value": "none", "label": "none" } ] },
     { "type": "select", "id": "section_background_color", "default": "lblue", "label": "Background Color", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" } ] },
+    { "type": "select", "id": "card_background_color", "default": "white", "label": "Achtergrond kaarten", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" } ] },
     { "type": "text", "id": "anchor_id", "label": "Anker", "default": "reviews" },
     { "type": "text", "id": "heading", "label": "Kop", "default": "wat anderen ervan vinden" },
     { "type": "text", "id": "summary", "label": "Samenvatting", "info": "Noem Trustpilot hier niet als de hero dat al doet (maximaal één keer op de site)." },

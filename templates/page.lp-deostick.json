@@ -252,11 +252,12 @@
       "settings": {
         "row_spacing_inner_top": "md",
         "row_spacing_inner_bottom": "md",
-        "section_background_color": "lblue",
+        "section_background_color": "white",
         "anchor_id": "reviews",
         "heading": "wat anderen ervan vinden",
         "summary": "gemiddeld 4,7 uit 5",
-        "swipe_text": "swipe voor meer"
+        "swipe_text": "swipe voor meer",
+        "card_background_color": "lblue"
       }
     },
     "faq": {
@@ -449,7 +450,7 @@
         "s3"
       ],
       "settings": {
-        "section_background_color": "lpink",
+        "section_background_color": "white",
         "anchor_id": "eerste-week",
         "heading": "eerlijk: soms is het even wennen",
         "intro": "<p>Stap je over van een antitranspirant? Sommige mensen moeten dan even wennen aan een natuurlijke deo. Dat kan een week of twee duren. Weet je wat er gebeurt, dan is het makkelijker.</p>",
@@ -463,7 +464,7 @@
     "video": {
       "type": "lp-video",
       "settings": {
-        "section_background_color": "lblue",
+        "section_background_color": "white",
         "anchor_id": "video",
         "heading": "lekker in actie",
         "intro": "<p>Zo ziet de stick eruit en zo smeer je hem.</p>",

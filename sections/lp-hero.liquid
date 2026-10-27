@@ -106,6 +106,8 @@
   {{ sc }} .lp-pill { display: inline-block; background: var(--lp-accent); color: var(--color-white) !important; padding: 4px 12px; border-radius: 800px; text-transform: lowercase; line-height: 1.4; white-space: nowrap; }
   {{ sc }} .lp-pill--yellow { background: var(--color-yellow); color: var(--lp-ink) !important; }
   {{ sc }} [id] { scroll-margin-top: calc(var(--theme-header-height) + 16px); }
+  {%- comment -%} Twee witte secties onder elkaar: minder witruimte ertussen. {%- endcomment -%}
+  .lp-hero-section ~ .shopify-section:has(> .section-inner.bg-white) + .shopify-section:has(> .section-inner.bg-white) > .section-inner { padding-top: var(--spacing-xxs) !important; }
   body:has(.lp-hero) { background: var(--color-white); }
 
   .lp-hero__grid { display: grid; gap: var(--spacing-xxs); grid-template-areas: 'head' 'offer' 'extras'; }
