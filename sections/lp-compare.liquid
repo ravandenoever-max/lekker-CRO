@@ -8,7 +8,7 @@
     </div>
     <div class="lp-compare__grid">
       {%- for block in section.blocks -%}
-        <div class="lp-compare__card {% if block.settings.highlight %}bg-yellow{% else %}bg-{{ s.card_background_color }}{% endif %}" {{ block.shopify_attributes }}>
+        <div class="lp-compare__card {% if block.settings.highlight %}bg-{{ s.highlight_background_color | default: 'yellow' }}{% else %}bg-{{ s.card_background_color }}{% endif %}" {{ block.shopify_attributes }}>
           {%- if block.settings.badge != blank -%}<span class="lp-pill lp-compare__badge font-size-3xs">{{ block.settings.badge }}</span>{%- endif -%}
           <h3 class="font-fam-normal font-size-md txt-lowercase lp-compare__title">{{ block.settings.title }}</h3>
           {%- if block.settings.subtitle != blank -%}<p class="font-size-xxs lp-compare__sub">{{ block.settings.subtitle }}</p>{%- endif -%}
@@ -57,7 +57,8 @@
   "class": "lp-section lp-compare-section",
   "settings": [
     { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" } ] },
-    { "type": "select", "id": "card_background_color", "default": "lblue", "label": "Achtergrond kolommen", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" } ], "info": "Een uitgelichte kolom is altijd geel." },
+    { "type": "select", "id": "card_background_color", "default": "lblue", "label": "Achtergrond kolommen", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" } ], "info": "Bij een gekleurde achtergrond: kies wit." },
+    { "type": "select", "id": "highlight_background_color", "default": "yellow", "label": "Achtergrond uitgelichte kolom", "options": [ { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" } ] },
     { "type": "text", "id": "anchor_id", "label": "Anker", "default": "waarom" },
     { "type": "text", "id": "heading", "label": "Kop" },
     { "type": "richtext", "id": "intro", "label": "Intro" }
@@ -68,7 +69,7 @@
       { "type": "text", "id": "title", "label": "Titel" },
       { "type": "text", "id": "subtitle", "label": "Ondertitel" },
       { "type": "textarea", "id": "lines", "label": "Punten (één per regel, begin met + of -)" },
-      { "type": "checkbox", "id": "highlight", "label": "Uitlichten (gele kolom)", "default": false },
+      { "type": "checkbox", "id": "highlight", "label": "Uitlichten", "default": false },
       { "type": "text", "id": "button_label", "label": "Knoptekst" },
       { "type": "text", "id": "button_link", "label": "Knoplink" },
       { "type": "select", "id": "button_size", "default": "button_small", "label": "Knopgrootte", "options": [ { "value": "button_small", "label": "Standaard" }, { "value": "button_large", "label": "Groot" } ] },

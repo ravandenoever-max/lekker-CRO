@@ -248,11 +248,12 @@
         "winkel"
       ],
       "settings": {
-        "section_background_color": "white",
+        "section_background_color": "lblue",
         "anchor_id": "waarom",
         "heading": "waarom navulbaar, en waarom hier?",
         "intro": "<p>Deze body wash ligt niet in de winkel. En je eerste keer willen we goed doen: daarom zit in het starterspakket de case met pomp plus twee blikjes, gratis bezorgd.</p>",
-        "card_background_color": "lblue"
+        "card_background_color": "white",
+        "highlight_background_color": "white"
       }
     },
     "faq": {

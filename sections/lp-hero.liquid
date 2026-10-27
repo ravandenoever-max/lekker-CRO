@@ -105,6 +105,8 @@
   {{ sc }} .theme-button :is(span, strong, em) { color: inherit !important; }
   {{ sc }} .lp-pill { display: inline-block; background: var(--lp-accent); color: var(--color-white) !important; padding: 4px 12px; border-radius: 800px; text-transform: lowercase; line-height: 1.4; white-space: nowrap; }
   {{ sc }} .lp-pill--yellow { background: var(--color-yellow); color: var(--lp-ink) !important; }
+  {%- comment -%} Introteksten niet over de volle breedte, dat leest niet. {%- endcomment -%}
+  {{ sc }} :is(.lp-compare__intro, .lp-picker__intro, .lp-logos__intro, .lp-video__intro, .lp-steps__intro, .lp-picker__footnote, .lp-logos__footnote) { max-width: 720px; margin-left: auto; margin-right: auto; }
   {{ sc }} [id] { scroll-margin-top: calc(var(--theme-header-height) + 16px); }
   {%- comment -%} Twee witte secties onder elkaar: minder witruimte ertussen. {%- endcomment -%}
   .lp-hero-section ~ .shopify-section:has(> .section-inner.bg-white) + .shopify-section:has(> .section-inner.bg-white) > .section-inner { padding-top: var(--spacing-xxs) !important; }

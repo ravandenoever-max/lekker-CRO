@@ -196,11 +196,12 @@
         "winkel"
       ],
       "settings": {
-        "section_background_color": "white",
+        "section_background_color": "lblue",
         "anchor_id": "waarom",
         "heading": "waarom hier bestellen als het ook in de winkel ligt?",
         "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar je eerste keer natuurlijke deo willen we goed doen. Daarom is er het starterspakket met alle drie de geuren, zodat je thuis ontdekt welke bij jou past. Voor een betere prijs dan los.</p>",
-        "card_background_color": "lblue"
+        "card_background_color": "white",
+        "highlight_background_color": "white"
       }
     },
     "reviews": {
