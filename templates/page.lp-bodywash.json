@@ -29,7 +29,6 @@
       ],
       "settings": {
         "section_background_color": "white",
-        "ink_color": "#212322",
         "rating_text": "Van de makers van de Lekker deo",
         "heading": "de navulbare body wash zonder stroef gevoel",
         "text": "<p>Milde douchegel met een frisse eucalyptusgeur, zonder stroef gevoel na het douchen. Blikje leeg? Nieuw blikje in de case.</p>",
@@ -47,9 +46,7 @@
         "offer_saving": "",
         "offer_extras": [
           "refill-body-wash-eucalyptus"
-        ],
-        "heading_color": "#ec0500",
-        "accent_color": "#ec0500"
+        ]
       }
     },
     "trust": {
@@ -391,7 +388,7 @@
     "video": {
       "type": "lp-video",
       "settings": {
-        "section_background_color": "lilac",
+        "section_background_color": "lpink",
         "anchor_id": "video",
         "heading": "lekker in actie",
         "intro": "<p>Zo werkt de case en zo voelt de body wash.</p>",

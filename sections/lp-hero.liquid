@@ -88,17 +88,13 @@
 <style>
   {%- comment -%} Kleuren en regels voor de hele landingspagina (brandbook 2026): de hero en alle secties erna. {%- endcomment -%}
   .lp-hero-section, .lp-hero-section ~ .shopify-section {
-    --lp-ink: {{ s.ink_color }};
-    --lp-heading: {{ s.heading_color }};
-    --lp-accent: {{ s.accent_color }};
-    --lp-accent-dark: color-mix(in srgb, {{ s.accent_color }} 82%, #212322);
-    --lp-lblue: #bedeff;
-    --lp-lpink: #fba0ca;
-    --lp-yellow: #f9e267;
-    --lp-lilac: #c8bcf1;
+    --lp-ink: var(--color-black);
+    --lp-heading: var(--color-red);
+    --lp-accent: var(--color-red);
     --lp-radius: 30px;
     --lp-radius-sm: 20px;
   }
+  {%- comment -%} Alleen themakleuren gebruiken, zodat de pagina aansluit op de rest van de site. Knoppen houden de themastijl. {%- endcomment -%}
   {{ sc }} :is(p, li, span, blockquote, strong, em, label, s) { color: var(--lp-ink) !important; }
   {{ sc }} .color-black { color: var(--lp-ink) !important; }
   {{ sc }} :is(h1, h2, h3, h4, h5, h6), {{ sc }} :is(h1, h2, h3, h4, h5, h6).color-black { color: var(--lp-heading) !important; }
@@ -106,15 +102,9 @@
   {{ sc }} :is(.color-red, .color-red *, .lp-stars, .lp-star, .lp-check, .lp-x, .lp-accent) { color: var(--lp-accent) !important; }
   {{ sc }} :is(.color-white, .color-white *, .lp-on-dark, .lp-on-dark *) { color: var(--color-white) !important; }
   {{ sc }} .lp-star--empty { color: var(--color-lgrey) !important; }
-  {{ sc }} .bg-lblue { background-color: var(--lp-lblue) !important; }
-  {{ sc }} .bg-lpink { background-color: var(--lp-lpink) !important; }
-  {{ sc }} .bg-yellow { background-color: var(--lp-yellow) !important; }
-  {{ sc }} .bg-lilac { background-color: var(--lp-lilac) !important; }
-  {{ sc }} .theme-button:not(.theme-button__grey-white-grey) { background-color: var(--lp-accent) !important; border-color: var(--lp-accent) !important; color: var(--color-white) !important; box-shadow: none !important; }
-  {{ sc }} .theme-button:not(.theme-button__grey-white-grey):hover { background-color: var(--lp-accent-dark) !important; border-color: var(--lp-accent-dark) !important; color: var(--color-white) !important; }
   {{ sc }} .theme-button :is(span, strong, em) { color: inherit !important; }
   {{ sc }} .lp-pill { display: inline-block; background: var(--lp-accent); color: var(--color-white) !important; padding: 4px 12px; border-radius: 800px; text-transform: lowercase; line-height: 1.4; white-space: nowrap; }
-  {{ sc }} .lp-pill--yellow { background: var(--lp-yellow); color: var(--lp-ink) !important; }
+  {{ sc }} .lp-pill--yellow { background: var(--color-yellow); color: var(--lp-ink) !important; }
   {{ sc }} [id] { scroll-margin-top: calc(var(--theme-header-height) + 16px); }
   body:has(.lp-hero) { background: var(--color-white); }
 
@@ -210,11 +200,7 @@
   "tag": "section",
   "class": "lp-section lp-hero-section",
   "settings": [
-    { "type": "header", "content": "Kleuren (gelden voor de hele landingspagina)" },
-    { "type": "color", "id": "heading_color", "default": "#ec0500", "label": "Koppen", "info": "Brandbook 2026: #ec0500 of #ff9d1d" },
-    { "type": "color", "id": "ink_color", "default": "#212322", "label": "Tekst", "info": "Brandbook 2026: #212322" },
-    { "type": "color", "id": "accent_color", "default": "#ec0500", "label": "Knoppen, labels en vinkjes" },
-    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond hero", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "lilac", "label": "Lila" } ] },
+    { "type": "select", "id": "section_background_color", "default": "white", "label": "Achtergrond hero", "options": [ { "value": "white", "label": "Wit" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" } ] },
     { "type": "header", "content": "Tekst" },
     { "type": "text", "id": "rating_text", "label": "Reviewregel", "default": "4,7 uit 5 op Trustpilot" },
     { "type": "text", "id": "heading", "label": "Kop" },
@@ -224,7 +210,7 @@
     { "type": "product", "id": "offer_product", "label": "Product (wordt direct in de winkelwagen gelegd)" },
     { "type": "product_list", "id": "offer_extras", "label": "Extra producten in het pakket (gaan samen in de winkelwagen)", "limit": 3 },
     { "type": "image_picker", "id": "offer_image", "label": "Afbeelding (leeg = productfoto)" },
-    { "type": "select", "id": "offer_background_color", "default": "lblue", "label": "Achtergrond aanbod", "options": [ { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "yellow", "label": "Geel" }, { "value": "lilac", "label": "Lila" }, { "value": "white", "label": "Wit" } ] },
+    { "type": "select", "id": "offer_background_color", "default": "lblue", "label": "Achtergrond aanbod", "options": [ { "value": "lblue", "label": "Lichtblauw" }, { "value": "lpink", "label": "Roze" }, { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" } ] },
     { "type": "text", "id": "offer_badge", "label": "Label", "default": "meest gekozen" },
     { "type": "text", "id": "offer_title", "label": "Titel (leeg = productnaam)" },
     { "type": "richtext", "id": "offer_text", "label": "Omschrijving" },

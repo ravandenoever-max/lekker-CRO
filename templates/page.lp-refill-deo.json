@@ -29,7 +29,6 @@
       ],
       "settings": {
         "section_background_color": "white",
-        "ink_color": "#212322",
         "rating_text": "4,7 uit 5 op Trustpilot. Een miljoen oksels gingen je voor.",
         "heading": "de deo stick die je navult in plaats van weggooit",
         "text": "<p>Koop de koker één keer, daarna klik je er een navulling in. Dezelfde natuurlijke deo, zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
@@ -47,9 +46,7 @@
         "offer_saving": "je bespaart €4,44",
         "offer_extras": [
           "combi-deal-refill-bundle"
-        ],
-        "heading_color": "#ec0500",
-        "accent_color": "#ec0500"
+        ]
       }
     },
     "trust": {
@@ -458,7 +455,7 @@
     "video": {
       "type": "lp-video",
       "settings": {
-        "section_background_color": "lilac",
+        "section_background_color": "lpink",
         "anchor_id": "video",
         "heading": "lekker in actie",
         "intro": "<p>Zo ziet de navulbare koker eruit en zo smeer je hem.</p>",

@@ -29,7 +29,6 @@
       ],
       "settings": {
         "section_background_color": "white",
-        "ink_color": "#212322",
         "rating_text": "4,7 uit 5 op Trustpilot. Een miljoen oksels gingen je voor.",
         "heading": "de natuurlijke deo stick zonder aluminiumzouten",
         "text": "<p>Helpt zweetgeur neutraliseren, zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
@@ -45,8 +44,6 @@
         "offer_alt_label": "liever één geur? kies hieronder",
         "offer_alt_link": "#kies",
         "offer_saving": "je bespaart €4,85",
-        "heading_color": "#ec0500",
-        "accent_color": "#ec0500",
         "offer_image": "shopify://shop_images/lp-deo-stick-3-geuren.jpg"
       }
     },
@@ -466,7 +463,7 @@
     "video": {
       "type": "lp-video",
       "settings": {
-        "section_background_color": "lilac",
+        "section_background_color": "lpink",
         "anchor_id": "video",
         "heading": "lekker in actie",
         "intro": "<p>Zo ziet de stick eruit en zo smeer je hem.</p>",
