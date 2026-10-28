@@ -322,7 +322,7 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Hoe krijg ik gratis verzending op mijn eerste bestelling?",
-            "faq_section_qa_a": "<p>Meld je aan voor de nieuwsbrief, via het venster op deze pagina of onderaan de site. Dan bezorgen we je eerste bestelling vanaf €15 gratis. Daarna is verzending gratis vanaf €25.</p>"
+            "faq_section_qa_a": "<p>Meld je aan voor de nieuwsbrief, via het formulier op deze pagina. Je krijgt dan direct een code voor gratis verzending op je eerste bestelling vanaf €15. Daarna is verzending gratis vanaf €25.</p>"
           }
         }
       },
@@ -508,12 +508,26 @@
         "button_label": "in winkelwagen",
         "footnote": ""
       }
+    },
+    "gratis": {
+      "type": "lp-newsletter",
+      "settings": {
+        "section_background_color": "white",
+        "card_background_color": "lpink",
+        "anchor_id": "gratis-verzending",
+        "badge": "nieuw bij lekker?",
+        "heading": "gratis verzending op je eerste bestelling",
+        "text": "<p>Meld je aan voor de nieuwsbrief en je krijgt direct een code voor gratis verzending op je eerste bestelling vanaf €15.</p>",
+        "button_label": "ja, ik wil gratis verzending",
+        "small": "Uitschrijven kan altijd."
+      }
     }
   },
   "order": [
     "hero",
     "trust",
     "kies",
+    "gratis",
     "video",
     "verhaal",
     "reviews",

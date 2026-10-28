@@ -1,0 +1,155 @@
+{%- comment -%}
+  Popup gratis verzending eerste bestelling (Drip form 579861406), plus de stijl en het versturen van alle Drip formulieren
+  (popup en landingspagina's). Wordt geladen vanuit sections/element-footer-theme.liquid, dus op elke pagina.
+  Instellingen staan in de footer sectie onder "Popup gratis verzending".
+  Let op: deze HTML gaat door de inline-html minifier (newlines worden verwijderd). Geen // commentaar in de JavaScript.
+  Parameters: s (footer section.settings), lang (huidige taal).
+  Toegevoegd oktober 2026, CRO-project.
+{%- endcomment -%}
+{%- liquid
+  assign show_popup = false
+  if s.popup_enabled
+    assign show_popup = true
+  endif
+  if customer
+    assign show_popup = false
+  endif
+  if template.name == 'cart' or template.name == 'password' or template.name == 'gift_card' or template.directory == 'customers'
+    assign show_popup = false
+  endif
+  if lang != blank and lang != 'nl'
+    assign show_popup = false
+  endif
+-%}
+<style>
+  .lk-drip__form { display: grid; gap: 10px; margin: 0; }
+  .lk-drip__fields { display: grid; gap: 10px; }
+  .lk-drip__sr, .lk-drip__hp { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .lk-drip__input { display: block; width: 100%; margin: 0; padding: 12px 20px; border: 1px solid rgba(33, 35, 34, .2); border-radius: 800px; background: var(--color-white); color: var(--color-black); outline: none; box-shadow: none; -webkit-appearance: none; appearance: none; }
+  .lk-drip__input::placeholder { color: var(--color-black); opacity: .55; }
+  .lk-drip__input:focus { border-color: var(--color-red); }
+  .lk-drip__submit { display: block; width: 100%; cursor: pointer; -webkit-appearance: none; appearance: none; }
+  .lk-drip__submit span { color: inherit !important; }
+  .lk-drip__submit[disabled] { opacity: .6; cursor: wait; }
+  .lk-drip__error { margin: 0; color: var(--color-red); }
+  .lk-drip__success-title { margin: 0 0 4px; color: var(--color-red) !important; }
+  .lk-drip__success-text { margin: 0; }
+  @media screen and (min-width: 768px) {
+    .lk-drip__fields { grid-template-columns: 1fr 1fr; }
+  }
+  .lk-pop { position: fixed; inset: 0; z-index: 10050; display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .lk-pop[hidden] { display: none; }
+  .lk-pop__overlay { position: absolute; inset: 0; background: rgba(33, 35, 34, .45); opacity: 0; transition: opacity .25s ease; }
+  .lk-pop__card { position: relative; width: 100%; max-width: 440px; max-height: calc(100vh - 32px); overflow: auto; background: var(--color-white); color: var(--color-black); border-radius: 30px; opacity: 0; transform: translateY(16px); transition: opacity .3s ease, transform .3s ease; }
+  .lk-pop.is-open .lk-pop__overlay { opacity: 1; }
+  .lk-pop.is-open .lk-pop__card { opacity: 1; transform: none; }
+  .lk-pop__media { background: var(--color-lblue); }
+  .lk-pop__img { display: block; width: 100%; height: 190px; object-fit: cover; }
+  .lk-pop__body { padding: 28px 24px 24px; text-align: center; }
+  .lk-pop__badge { display: inline-block; margin: 0 0 10px; padding: 4px 12px; border-radius: 800px; background: var(--color-lblue); color: var(--color-black); text-transform: lowercase; }
+  .lk-pop__title { margin: 0 0 8px; color: var(--color-red) !important; }
+  .lk-pop__text { margin: 0 0 16px; }
+  .lk-pop__text p { margin: 0; }
+  .lk-pop__small { margin: 12px 0 0; opacity: .7; }
+  .lk-pop .lk-drip__fields { grid-template-columns: 1fr; }
+  .lk-pop__close { position: absolute; top: 12px; right: 12px; z-index: 1; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: var(--color-white); color: var(--color-black); font-size: 24px; line-height: 36px; text-align: center; cursor: pointer; }
+  .lk-pop-open { overflow: hidden; }
+  @media screen and (max-width: 767px) {
+    .lk-pop { align-items: flex-end; padding: 0; }
+    .lk-pop__card { max-width: none; max-height: 90vh; border-radius: 30px 30px 0 0; transform: translateY(40px); }
+    .lk-pop__img { height: 140px; }
+    .lk-pop__body { padding: 24px 20px 28px; }
+  }
+</style>
+{%- if show_popup -%}
+  <div class="lk-pop" id="lk-pop" data-delay="{{ s.popup_delay | default: 8 }}" data-close-days="{{ s.popup_close_days | default: 7 }}" hidden>
+    <div class="lk-pop__overlay" data-lk-close></div>
+    <div class="lk-pop__card" role="dialog" aria-modal="true" aria-labelledby="lk-pop-title">
+      <button type="button" class="lk-pop__close" data-lk-close aria-label="Sluiten">&times;</button>
+      {%- if s.popup_image != blank -%}
+        <div class="lk-pop__media">{{ s.popup_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 900', sizes: '(max-width: 767px) 100vw, 440px', class: 'lk-pop__img', alt: '' }}</div>
+      {%- endif -%}
+      <div class="lk-pop__body">
+        {%- if s.popup_badge != blank -%}<p class="lk-pop__badge font-size-3xs">{{ s.popup_badge }}</p>{%- endif -%}
+        <h2 id="lk-pop-title" class="lk-pop__title font-fam-normal font-size-lg txt-lowercase">{{ s.popup_heading | default: 'gratis verzending op je eerste bestelling' }}</h2>
+        {%- if s.popup_text != blank -%}<div class="lk-pop__text font-size-xs">{{ s.popup_text }}</div>{%- endif -%}
+        {%- render 'lekker-drip-form', location: 'popup', button_label: s.popup_button -%}
+        {%- if s.popup_small != blank -%}<p class="lk-pop__small font-size-3xs">{{ s.popup_small }}</p>{%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+<script>
+  (function () {
+    if (window.lkDripInit) { return; }
+    window.lkDripInit = true;
+    var KEY = 'lk_fs_popup';
+    var submitted = false;
+    function store(days) { try { localStorage.setItem(KEY, String(Date.now() + days * 86400000)); } catch (e) {} }
+    function suppressed() { try { return parseInt(localStorage.getItem(KEY) || '0', 10) > Date.now(); } catch (e) { return false; } }
+    function track(loc) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'newsletter_signup', signup_location: loc, signup_offer: 'gratis_verzending' }); }
+
+    document.addEventListener('submit', function (e) {
+      var form = e.target && e.target.closest ? e.target.closest('[data-lk-drip-form]') : null;
+      if (!form) { return; }
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if (form.reportValidity && !form.reportValidity()) { return; }
+      var wrap = form.closest('.lk-drip');
+      var btn = form.querySelector('button[type="submit"]');
+      var err = form.querySelector('.lk-drip__error');
+      if (btn) { btn.disabled = true; }
+      if (err) { err.hidden = true; }
+      fetch(form.action, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) }).then(function () {
+        submitted = true;
+        form.hidden = true;
+        var ok = wrap ? wrap.querySelector('.lk-drip__success') : null;
+        if (ok) { ok.hidden = false; }
+        store(365);
+        track(wrap ? wrap.getAttribute('data-lk-drip-location') : 'form');
+      }).catch(function () {
+        if (btn) { btn.disabled = false; }
+        if (err) { err.hidden = false; }
+      });
+    }, true);
+
+    var pop = document.getElementById('lk-pop');
+    if (!pop) { return; }
+    if (pop.parentNode !== document.body) { document.body.appendChild(pop); }
+    var params = new URLSearchParams(window.location.search);
+    if (params.has('__s')) { store(365); }
+    var force = params.get('lk_popup') === '1';
+    if (!force && suppressed()) { return; }
+    var delay = (parseInt(pop.getAttribute('data-delay'), 10) || 8) * 1000;
+    var closeDays = parseInt(pop.getAttribute('data-close-days'), 10) || 7;
+    var shown = false;
+    var lastFocus = null;
+    var started = Date.now();
+
+    function busy() { var b = document.body.classList; return b.contains('sc-drawer-visible') || b.contains('cart-alert-visible') || b.contains('newsletter-alert-visible'); }
+    function open() {
+      if (shown) { return; }
+      if (busy()) { setTimeout(open, 3000); return; }
+      shown = true;
+      lastFocus = document.activeElement;
+      pop.hidden = false;
+      document.documentElement.classList.add('lk-pop-open');
+      requestAnimationFrame(function () { pop.classList.add('is-open'); });
+      setTimeout(function () { var f = pop.querySelector('input[type="text"], input[type="email"]'); if (f && window.innerWidth >= 768) { f.focus(); } }, 350);
+      document.removeEventListener('mouseout', exitIntent);
+    }
+    function close() {
+      pop.classList.remove('is-open');
+      document.documentElement.classList.remove('lk-pop-open');
+      if (!submitted) { store(closeDays); }
+      setTimeout(function () { pop.hidden = true; }, 300);
+      if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
+    }
+    function exitIntent(e) { if (!e.relatedTarget && e.clientY <= 0 && Date.now() - started > 3000) { open(); } }
+
+    pop.addEventListener('click', function (e) { if (e.target.closest('[data-lk-close]')) { e.preventDefault(); close(); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && shown && !pop.hidden) { close(); } });
+    document.addEventListener('mouseout', exitIntent);
+    setTimeout(open, force ? 500 : delay);
+  })();
+</script>

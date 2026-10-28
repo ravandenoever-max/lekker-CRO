@@ -1,0 +1,28 @@
+{%- comment -%}
+  Drip formulier gratis verzending eerste bestelling (Drip form 579861406).
+  Gebruikt in de popup (snippets/lekker-drip.liquid) en op de landingspagina's (sections/lp-newsletter.liquid).
+  Versturen gaat via de JavaScript in snippets/lekker-drip.liquid. Zonder JavaScript post het formulier gewoon naar Drip.
+  Parameters: location (popup of lp), button_label, success_heading, success_text.
+  Toegevoegd oktober 2026, CRO-project.
+{%- endcomment -%}
+{%- assign uid = location | default: 'form' | handleize -%}
+<div class="lk-drip" data-lk-drip-location="{{ location | default: 'form' }}">
+  <form class="lk-drip__form" action="https://www.getdrip.com/forms/579861406/submissions" method="post" data-lk-drip-form>
+    <div class="lk-drip__fields">
+      <label class="lk-drip__sr" for="lk-drip-name-{{ uid }}">Voornaam</label>
+      <input class="lk-drip__input font-fam-normal font-size-xs" type="text" id="lk-drip-name-{{ uid }}" name="fields[first_name]" value="" placeholder="voornaam" autocomplete="given-name">
+      <label class="lk-drip__sr" for="lk-drip-email-{{ uid }}">E-mailadres</label>
+      <input class="lk-drip__input font-fam-normal font-size-xs" type="email" id="lk-drip-email-{{ uid }}" name="fields[email]" value="" placeholder="e-mailadres" autocomplete="email" required aria-required="true">
+    </div>
+    <div class="lk-drip__hp" aria-hidden="true">
+      <label for="lk-drip-website-{{ uid }}">Website</label>
+      <input type="text" id="lk-drip-website-{{ uid }}" name="website" tabindex="-1" autocomplete="off" value="">
+    </div>
+    <button type="submit" class="lk-drip__submit theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__red-red-white"><span>{{ button_label | default: 'ja, ik wil gratis verzending' }}</span></button>
+    <p class="lk-drip__error font-size-3xs" role="alert" hidden>Er ging iets mis. Probeer het nog een keer.</p>
+  </form>
+  <div class="lk-drip__success" role="status" hidden>
+    <p class="lk-drip__success-title font-fam-normal font-size-md txt-lowercase">{{ success_heading | default: 'check je mail' }}</p>
+    <p class="lk-drip__success-text font-size-xs">{{ success_text | default: 'Je code voor gratis verzending staat in je inbox. Zie je hem niet? Kijk dan even bij je spam.' }}</p>
+  </div>
+</div>
