@@ -462,11 +462,10 @@
         "heading": "lekker in actie",
         "intro": "<p>Zo ziet de navulbare koker eruit en zo smeer je hem.</p>",
         "products": [
-          "starter-refill-deo-stick-be-active",
-          "combi-deal-deodorant-stick-mix"
+          "starter-refill-deo-stick-be-active"
         ],
-        "max_videos": 2,
-        "note": "tik op een video voor geluid"
+        "max_videos": 1,
+        "note": "tik op de video voor geluid"
       }
     },
     "ook_lekker": {
