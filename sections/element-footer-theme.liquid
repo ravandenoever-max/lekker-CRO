@@ -131,7 +131,7 @@
      "label":"Show social media"
     },
     { "type": "header", "content": "Popup gratis verzending (Drip)" },
-    { "type": "paragraph", "content": "Popup met het Drip formulier voor gratis verzending op de eerste bestelling. Niet zichtbaar voor ingelogde klanten, in de winkelwagen en op de Engelse site. Testen: zet ?lk_popup=1 achter de url." },
+    { "type": "paragraph", "content": "Popup met het Drip formulier voor gratis verzending op de eerste bestelling. Niet zichtbaar voor ingelogde klanten, in de winkelwagen en op de Engelse site. Testen: zet ?lk_popup=1 achter de url, of wis de site-gegevens in je browser." },
     { "type": "checkbox", "id": "popup_enabled", "default": true, "label": "Popup tonen" },
     { "type": "image_picker", "id": "popup_image", "label": "Afbeelding (optioneel)" },
     { "type": "text", "id": "popup_badge", "default": "nieuw bij lekker?", "label": "Label" },
@@ -140,7 +140,8 @@
     { "type": "text", "id": "popup_button", "default": "ja, ik wil gratis verzending", "label": "Knoptekst" },
     { "type": "text", "id": "popup_small", "default": "Uitschrijven kan altijd.", "label": "Kleine lettertjes" },
     { "type": "range", "id": "popup_delay", "min": 3, "max": 60, "step": 1, "unit": "s", "default": 8, "label": "Tonen na" },
-    { "type": "range", "id": "popup_close_days", "min": 1, "max": 60, "step": 1, "unit": "d", "default": 7, "label": "Na wegklikken niet meer tonen voor" }
+    { "type": "range", "id": "popup_close_days", "min": 1, "max": 60, "step": 1, "unit": "d", "default": 3, "label": "Na wegklikken popup niet meer tonen voor" },
+    { "type": "text", "id": "popup_teaser", "default": "gratis verzending", "label": "Tekst op het tabje", "info": "Na wegklikken blijft een tabje aan de zijkant staan waarmee bezoekers de popup weer openen." }
   ],
   "default":{
     "blocks": [

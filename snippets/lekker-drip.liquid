@@ -54,6 +54,10 @@
   .lk-pop .lk-drip__fields { grid-template-columns: 1fr; }
   .lk-pop__close { position: absolute; top: 12px; right: 12px; z-index: 1; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: var(--color-white); color: var(--color-black); font-size: 24px; line-height: 36px; text-align: center; cursor: pointer; }
   .lk-pop-open { overflow: hidden; }
+  .lk-teaser { position: fixed; left: 0; top: 50%; z-index: 10040; transform: translateY(-50%); }
+  .lk-teaser[hidden] { display: none; }
+  .lk-teaser__open { display: block; margin: 0; padding: 16px 10px; border: 0; border-radius: 20px 0 0 20px; background: var(--color-red); color: var(--color-white) !important; writing-mode: vertical-rl; transform: rotate(180deg); cursor: pointer; box-shadow: none; -webkit-appearance: none; appearance: none; }
+  .lk-teaser__off { position: absolute; top: -10px; right: -10px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: var(--color-white); color: var(--color-black); font-size: 15px; line-height: 22px; text-align: center; cursor: pointer; box-shadow: 0 0 0 1px rgba(33, 35, 34, .15); }
   @media screen and (max-width: 767px) {
     .lk-pop { align-items: flex-end; padding: 0; }
     .lk-pop__card { max-width: none; max-height: 90vh; border-radius: 30px 30px 0 0; transform: translateY(40px); }
@@ -62,7 +66,7 @@
   }
 </style>
 {%- if show_popup -%}
-  <div class="lk-pop" id="lk-pop" data-delay="{{ s.popup_delay | default: 8 }}" data-close-days="{{ s.popup_close_days | default: 7 }}" hidden>
+  <div class="lk-pop" id="lk-pop" data-delay="{{ s.popup_delay | default: 8 }}" data-close-days="{{ s.popup_close_days | default: 3 }}" hidden>
     <div class="lk-pop__overlay" data-lk-close></div>
     <div class="lk-pop__card" role="dialog" aria-modal="true" aria-labelledby="lk-pop-title">
       <button type="button" class="lk-pop__close" data-lk-close aria-label="Sluiten">&times;</button>
@@ -78,16 +82,28 @@
       </div>
     </div>
   </div>
+  <div class="lk-teaser" id="lk-teaser" hidden>
+    <button type="button" class="lk-teaser__open font-fam-normal font-size-3xs txt-lowercase" data-lk-teaser-open aria-haspopup="dialog">{{ s.popup_teaser | default: 'gratis verzending' }}</button>
+    <button type="button" class="lk-teaser__off" data-lk-teaser-off aria-label="Verbergen">&times;</button>
+  </div>
 {%- endif -%}
 <script>
   (function () {
     if (window.lkDripInit) { return; }
     window.lkDripInit = true;
-    var KEY = 'lk_fs_popup';
-    var submitted = false;
-    function store(days) { try { localStorage.setItem(KEY, String(Date.now() + days * 86400000)); } catch (e) {} }
-    function suppressed() { try { return parseInt(localStorage.getItem(KEY) || '0', 10) > Date.now(); } catch (e) { return false; } }
+    var DONE = 'lk_fs_done';
+    var CLOSED = 'lk_fs_popup';
+    var TEASER_OFF = 'lk_fs_teaser_off';
+    function setUntil(key, days) { try { localStorage.setItem(key, String(Date.now() + days * 86400000)); } catch (e) {} }
+    function active(key) { try { return parseInt(localStorage.getItem(key) || '0', 10) > Date.now(); } catch (e) { return false; } }
     function track(loc) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'newsletter_signup', signup_location: loc, signup_offer: 'gratis_verzending' }); }
+    var teaser = document.getElementById('lk-teaser');
+    function hideTeaser() { if (teaser) { teaser.hidden = true; } }
+    function showTeaser() {
+      if (!teaser || active(DONE)) { return; }
+      try { if (sessionStorage.getItem(TEASER_OFF) === '1') { return; } } catch (e) {}
+      teaser.hidden = false;
+    }
 
     document.addEventListener('submit', function (e) {
       var form = e.target && e.target.closest ? e.target.closest('[data-lk-drip-form]') : null;
@@ -101,11 +117,11 @@
       if (btn) { btn.disabled = true; }
       if (err) { err.hidden = true; }
       fetch(form.action, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(new FormData(form)) }).then(function () {
-        submitted = true;
         form.hidden = true;
         var ok = wrap ? wrap.querySelector('.lk-drip__success') : null;
         if (ok) { ok.hidden = false; }
-        store(365);
+        setUntil(DONE, 365);
+        hideTeaser();
         track(wrap ? wrap.getAttribute('data-lk-drip-location') : 'form');
       }).catch(function () {
         if (btn) { btn.disabled = false; }
@@ -116,21 +132,24 @@
     var pop = document.getElementById('lk-pop');
     if (!pop) { return; }
     if (pop.parentNode !== document.body) { document.body.appendChild(pop); }
+    if (teaser && teaser.parentNode !== document.body) { document.body.appendChild(teaser); }
     var params = new URLSearchParams(window.location.search);
-    if (params.has('__s')) { store(365); }
+    if (params.has('__s')) { setUntil(DONE, 365); }
     var force = params.get('lk_popup') === '1';
-    if (!force && suppressed()) { return; }
+    if (!force && active(DONE)) { return; }
     var delay = (parseInt(pop.getAttribute('data-delay'), 10) || 8) * 1000;
-    var closeDays = parseInt(pop.getAttribute('data-close-days'), 10) || 7;
+    var closeDays = parseInt(pop.getAttribute('data-close-days'), 10) || 3;
     var shown = false;
     var lastFocus = null;
     var started = Date.now();
 
     function busy() { var b = document.body.classList; return b.contains('sc-drawer-visible') || b.contains('cart-alert-visible') || b.contains('newsletter-alert-visible'); }
-    function open() {
-      if (shown) { return; }
-      if (busy()) { setTimeout(open, 3000); return; }
+    function open(manual) {
+      if (pop.classList.contains('is-open')) { return; }
+      if (!manual && shown) { return; }
+      if (!manual && busy()) { setTimeout(open, 3000); return; }
       shown = true;
+      hideTeaser();
       lastFocus = document.activeElement;
       pop.hidden = false;
       document.documentElement.classList.add('lk-pop-open');
@@ -141,14 +160,21 @@
     function close() {
       pop.classList.remove('is-open');
       document.documentElement.classList.remove('lk-pop-open');
-      if (!submitted) { store(closeDays); }
+      if (!active(DONE)) { setUntil(CLOSED, closeDays); showTeaser(); }
       setTimeout(function () { pop.hidden = true; }, 300);
       if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
     }
     function exitIntent(e) { if (!e.relatedTarget && e.clientY <= 0 && Date.now() - started > 3000) { open(); } }
 
     pop.addEventListener('click', function (e) { if (e.target.closest('[data-lk-close]')) { e.preventDefault(); close(); } });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && shown && !pop.hidden) { close(); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pop.hidden) { close(); } });
+    if (teaser) {
+      teaser.addEventListener('click', function (e) {
+        if (e.target.closest('[data-lk-teaser-off]')) { e.preventDefault(); hideTeaser(); try { sessionStorage.setItem(TEASER_OFF, '1'); } catch (err) {} return; }
+        if (e.target.closest('[data-lk-teaser-open]')) { e.preventDefault(); open(true); }
+      });
+    }
+    if (!force && active(CLOSED)) { showTeaser(); return; }
     document.addEventListener('mouseout', exitIntent);
     setTimeout(open, force ? 500 : delay);
   })();
