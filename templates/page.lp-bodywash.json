@@ -12,7 +12,7 @@
         "u2": {
           "type": "usp",
           "settings": {
-            "text": "15% korting op je eerste bestelling via de nieuwsbrief"
+            "text": "gratis verzending bij je eerste bestelling vanaf €15"
           }
         },
         "u3": {
@@ -39,11 +39,11 @@
         "offer_title": "case + 2 blikjes (660 ml)",
         "offer_text": "<p>Herbruikbare case met pomp, een blikje eucalyptus en alvast een extra blikje voor als het eerste leeg is. Zo zit je nooit zonder.</p>",
         "offer_compare": "",
-        "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
+        "offer_shipping": "gratis verzonden, binnen twee werkdagen in huis",
         "offer_button": "in winkelwagen",
         "offer_alt_label": "liever alleen de starter? kies hieronder",
         "offer_alt_link": "#kies",
-        "offer_saving": "",
+        "offer_saving": "je bespaart €3,95 verzendkosten",
         "offer_extras": [
           "refill-body-wash-eucalyptus"
         ]
@@ -128,7 +128,7 @@
         "section_background_color": "white",
         "anchor_id": "kies",
         "heading": "kies jouw start",
-        "intro": "<p>De starter is de case met één blikje. Vanaf €25 bezorgen we gratis, het starterspakket altijd.</p>",
+        "intro": "<p>De starter is de case met één blikje. Het starterspakket bezorgen we gratis, en je eerste bestelling al vanaf €15.</p>",
         "button_label": "in winkelwagen",
         "footnote": "<p>Nog geen case? Begin dan met de starter. De navulling past alleen in de Lekker case.</p>",
         "card_background_color": "lblue"
@@ -218,7 +218,7 @@
             "badge": "hier bij lekker",
             "title": "navulbare body wash",
             "subtitle": "alleen hier, Nederlands merk",
-            "lines": "+ Ingrediënten van 100% natuurlijke oorsprong, dat zie je bij een body wash bijna nooit\n+ De case koop je één keer, daarna alleen blikjes\n+ Blikje van 330 ml voor €9,99\n+ Leeg blikje? Recycle het bij metaal of PMD\n+ Starterspakket met 2 blikjes, gratis bezorgd\n+ 15% korting op je eerste bestelling via de nieuwsbrief",
+            "lines": "+ Ingrediënten van 100% natuurlijke oorsprong, dat zie je bij een body wash bijna nooit\n+ De case koop je één keer, daarna alleen blikjes\n+ Blikje van 330 ml voor €9,99\n+ Leeg blikje? Recycle het bij metaal of PMD\n+ Starterspakket met 2 blikjes, gratis verzonden\n+ Gratis verzending bij je eerste bestelling vanaf €15",
             "highlight": true,
             "button_label": "bekijk het starterspakket",
             "button_link": "#aanbod",
@@ -291,14 +291,14 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Wanneer krijg ik mijn bestelling?",
-            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Vanaf €25 gratis, het starterspakket dus altijd.</p>"
+            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Het starterspakket bezorgen we altijd gratis. Je eerste bestelling vanaf €15 ook, daarna is verzending gratis vanaf €25.</p>"
           }
         },
         "q6": {
           "type": "faq_section_qa",
           "settings": {
-            "faq_section_qa_q": "Hoe krijg ik de 15% korting?",
-            "faq_section_qa_a": "<p>Schrijf je in voor de nieuwsbrief, dat kan via het venster dat op deze pagina verschijnt of onderaan de site. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
+            "faq_section_qa_q": "Hoe krijg ik gratis verzending op mijn eerste bestelling?",
+            "faq_section_qa_a": "<p>Meld je aan voor de nieuwsbrief, via het venster op deze pagina of onderaan de site. Dan bezorgen we je eerste bestelling vanaf €15 gratis. Daarna is verzending gratis vanaf €25.</p>"
           }
         }
       },
@@ -335,7 +335,7 @@
       "settings": {
         "label": "starterspakket, case + 2 blikjes",
         "product": "starter-refill-body-wash-eucalyptus",
-        "sub": "gratis bezorgd",
+        "sub": "gratis verzonden",
         "direct_add": true,
         "button_label": "in winkelwagen",
         "button_link": "#kies",
@@ -411,7 +411,7 @@
             "title": "deo stick starterspakket",
             "scent": "alle drie de geuren, één van elk",
             "badge": "",
-            "price_note": "3 sticks, gratis bezorgd",
+            "price_note": "€7,99 per stick",
             "highlight": false,
             "image": "shopify://shop_images/lp-deo-stick-3-geuren.jpg"
           }

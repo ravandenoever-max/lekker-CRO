@@ -12,7 +12,7 @@
         "u2": {
           "type": "usp",
           "settings": {
-            "text": "15% korting op je eerste bestelling via de nieuwsbrief"
+            "text": "gratis verzending bij je eerste bestelling vanaf €15"
           }
         },
         "u3": {
@@ -32,18 +32,18 @@
         "rating_text": "4,7 uit 5 op Trustpilot. Een miljoen oksels gingen je voor.",
         "heading": "de natuurlijke deo stick zonder aluminiumzouten",
         "text": "<p>Helpt zweetgeur neutraliseren, zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
-        "retail_text": "Ligt ook bij Albert Heijn, Etos, Holland & Barrett en DA. Alle geuren samen, het starterspakket en de welkomstkorting vind je alleen hier.",
+        "retail_text": "Ligt ook bij Albert Heijn, Etos, Holland & Barrett en DA. Alle geuren samen en het starterspakket vind je alleen hier.",
         "offer_product": "combi-deal-deodorant-stick-mix",
         "offer_background_color": "lblue",
         "offer_badge": "meest gekozen",
         "offer_title": "3 geuren, 3 sticks",
-        "offer_text": "<p>Be Active, Feel Floral en Have Fun, één van elk. Ontdek thuis welke geur bij je past.</p>",
-        "offer_compare": "los besteld €28,82",
-        "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
+        "offer_text": "<p>Be Active, Feel Floral en Have Fun, één van elk, voor €7,99 per stick. Ontdek thuis welke geur bij je past.</p>",
+        "offer_compare": "",
+        "offer_shipping": "gratis verzonden bij je eerste bestelling, binnen twee werkdagen in huis",
         "offer_button": "in winkelwagen",
         "offer_alt_label": "liever één geur? kies hieronder",
         "offer_alt_link": "#kies",
-        "offer_saving": "je bespaart €4,85",
+        "offer_saving": "je bespaart €3,95 verzendkosten",
         "offer_image": "shopify://shop_images/lp-deo-stick-3-geuren.jpg"
       }
     },
@@ -135,7 +135,7 @@
             "title": "starterspakket",
             "scent": "alle drie de geuren, één van elk",
             "badge": "meest gekozen",
-            "price_note": "voor 3 sticks, gratis bezorgd",
+            "price_note": "€7,99 per stick",
             "highlight": true,
             "image": "shopify://shop_images/lp-deo-stick-3-geuren.jpg"
           }
@@ -151,7 +151,7 @@
         "section_background_color": "white",
         "anchor_id": "kies",
         "heading": "kies jouw geur",
-        "intro": "<p>Het starterspakket bezorgen we gratis. Losse sticks zijn €8,29, vanaf €25 gratis bezorgd.</p>",
+        "intro": "<p>Je eerste bestelling vanaf €15 bezorgen we gratis, het starterspakket dus ook. Daarna is verzending gratis vanaf €25.</p>",
         "button_label": "in winkelwagen",
         "footnote": "<p>Weet je nog niet welke geur? Met het starterspakket probeer je ze alle drie thuis. Liever losse sticks? Bij 3 stuks krijg je 3% korting, bij 6 stuks 6%.</p>",
         "card_background_color": "lblue"
@@ -166,7 +166,7 @@
             "badge": "hier bij lekker",
             "title": "in onze eigen webshop",
             "subtitle": "Nederlands merk, bedacht in Utrecht",
-            "lines": "+ Het starterspakket: alle drie de geuren in één doos, gratis bezorgd\n+ Je bespaart €4,85 ten opzichte van los bestellen\n+ 15% korting op je eerste bestelling via de nieuwsbrief\n+ Ook wat niet overal in het schap ligt: navulbare deo, body wash en cadeausets\n+ Binnen twee werkdagen in huis",
+            "lines": "+ Het starterspakket: alle drie de geuren in één doos, €7,99 per stick\n+ Gratis verzending bij je eerste bestelling vanaf €15, je bespaart €3,95\n+ Ook wat niet overal in het schap ligt: navulbare deo, body wash en cadeausets\n+ Binnen twee werkdagen in huis",
             "highlight": true,
             "button_label": "bekijk het starterspakket",
             "button_link": "#aanbod",
@@ -181,7 +181,7 @@
             "badge": "",
             "title": "in de winkel",
             "subtitle": "Albert Heijn, Etos, Holland & Barrett, DA",
-            "lines": "+ Handig als je hem vandaag nog wilt\n+ Even ruiken voordat je kiest\n- Meestal maar één of twee geuren\n- Geen starterspakket en geen welkomstkorting\n- Body wash en cadeausets liggen er niet",
+            "lines": "+ Handig als je hem vandaag nog wilt\n+ Even ruiken voordat je kiest\n- Meestal maar één of twee geuren\n- Geen starterspakket met alle drie de geuren\n- Body wash en cadeausets liggen er niet",
             "highlight": false,
             "button_label": "",
             "button_link": "",
@@ -199,7 +199,7 @@
         "section_background_color": "lblue",
         "anchor_id": "waarom",
         "heading": "waarom hier bestellen als het ook in de winkel ligt?",
-        "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar je eerste keer natuurlijke deo willen we goed doen. Daarom is er het starterspakket met alle drie de geuren, zodat je thuis ontdekt welke bij jou past. Voor een betere prijs dan los.</p>",
+        "intro": "<p>Eerlijk is eerlijk: onze deo stick ligt ook in de winkel. Maar je eerste keer natuurlijke deo willen we goed doen. Daarom is er het starterspakket met alle drie de geuren, zodat je thuis ontdekt welke bij jou past. Voor €7,99 per stick, en je eerste bestelling bezorgen we gratis.</p>",
         "card_background_color": "white",
         "highlight_background_color": "white"
       }
@@ -296,21 +296,21 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Waarom hier bestellen als het ook bij de Albert Heijn ligt?",
-            "faq_section_qa_a": "<p>In de winkel ligt meestal maar een deel van ons assortiment. Hier vind je alle geuren, het starterspakket met 3 geuren dat we gratis bezorgen, 15% korting op je eerste bestelling via de nieuwsbrief, en producten die niet overal in het schap liggen, zoals de body wash en de cadeausets.</p>"
+            "faq_section_qa_a": "<p>In de winkel ligt meestal maar een deel van ons assortiment. Hier vind je alle geuren, het starterspakket met 3 geuren voor €7,99 per stick, gratis verzending bij je eerste bestelling vanaf €15, en producten die niet overal in het schap liggen, zoals de body wash en de cadeausets.</p>"
           }
         },
         "q6": {
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Wanneer krijg ik mijn bestelling?",
-            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Het starterspakket bezorgen we gratis, losse bestellingen vanaf €25.</p>"
+            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Je eerste bestelling vanaf €15 bezorgen we gratis, daarna is verzending gratis vanaf €25.</p>"
           }
         },
         "q7": {
           "type": "faq_section_qa",
           "settings": {
-            "faq_section_qa_q": "Hoe krijg ik de 15% korting?",
-            "faq_section_qa_a": "<p>Schrijf je in voor de nieuwsbrief, dat kan via het venster dat op deze pagina verschijnt of onderaan de site. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
+            "faq_section_qa_q": "Hoe krijg ik gratis verzending op mijn eerste bestelling?",
+            "faq_section_qa_a": "<p>Meld je aan voor de nieuwsbrief, via het venster op deze pagina of onderaan de site. Dan bezorgen we je eerste bestelling vanaf €15 gratis. Daarna is verzending gratis vanaf €25.</p>"
           }
         }
       },
@@ -348,7 +348,7 @@
       "settings": {
         "label": "starterspakket, 3 geuren",
         "product": "combi-deal-deodorant-stick-mix",
-        "sub": "gratis bezorgd",
+        "sub": "eerste bestelling gratis verzonden",
         "direct_add": true,
         "button_label": "in winkelwagen",
         "button_link": "#kies",
@@ -417,7 +417,7 @@
         "anchor_id": "verkrijgbaar",
         "heading": "ook te koop in de winkel",
         "intro": "<p>Bij deze winkels ligt onze deo stick in het schap, meestal met één of twee geuren.</p>",
-        "footnote": "<p>Alle geuren, het starterspakket en de welkomstkorting vind je alleen hier.</p>"
+        "footnote": "<p>Alle geuren en het starterspakket vind je alleen hier.</p>"
       }
     },
     "eerste_week": {

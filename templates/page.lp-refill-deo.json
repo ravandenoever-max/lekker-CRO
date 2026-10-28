@@ -12,7 +12,7 @@
         "u2": {
           "type": "usp",
           "settings": {
-            "text": "15% korting op je eerste bestelling via de nieuwsbrief"
+            "text": "gratis verzending bij je eerste bestelling vanaf €15"
           }
         },
         "u3": {
@@ -32,18 +32,18 @@
         "rating_text": "4,7 uit 5 op Trustpilot. Een miljoen oksels gingen je voor.",
         "heading": "de deo stick die je navult in plaats van weggooit",
         "text": "<p>Koop de koker één keer, daarna klik je er een navulling in. Dezelfde natuurlijke deo, zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
-        "retail_text": "De navulbare deo ligt ook bij Holland & Barrett. Het starterspakket met beide geuren en de welkomstkorting vind je alleen hier.",
+        "retail_text": "De navulbare deo ligt ook bij Holland & Barrett. Het starterspakket met beide geuren vind je alleen hier.",
         "offer_product": "starter-refill-deo-stick-be-active",
         "offer_background_color": "lblue",
         "offer_badge": "starterspakket",
         "offer_title": "koker + 3 navullingen",
         "offer_text": "<p>Herbruikbare koker met navulling Be Active, plus de refill bundel met Be Active en Have Fun. Zo probeer je allebei de geuren.</p>",
-        "offer_compare": "los besteld €32,92",
-        "offer_shipping": "gratis thuisbezorgd, binnen twee werkdagen",
+        "offer_compare": "",
+        "offer_shipping": "gratis verzonden, binnen twee werkdagen in huis",
         "offer_button": "in winkelwagen",
         "offer_alt_label": "liever alleen de starter? kies hieronder",
         "offer_alt_link": "#kies",
-        "offer_saving": "je bespaart €4,44",
+        "offer_saving": "je bespaart €3,95 verzendkosten",
         "offer_extras": [
           "combi-deal-refill-bundle"
         ]
@@ -152,7 +152,7 @@
         "section_background_color": "white",
         "anchor_id": "kies",
         "heading": "kies jouw start",
-        "intro": "<p>De starter is de koker met één navulling. Vanaf €25 bezorgen we gratis, het starterspakket altijd.</p>",
+        "intro": "<p>De starter is de koker met één navulling. Het starterspakket bezorgen we gratis, en je eerste bestelling al vanaf €15.</p>",
         "button_label": "in winkelwagen",
         "footnote": "<p>Losse navullingen zijn er ook per 3 of 6: bij 3 stuks 3% korting, bij 6 stuks 6%.</p>",
         "card_background_color": "lblue"
@@ -242,7 +242,7 @@
             "badge": "hier bij lekker",
             "title": "navulbare deo stick",
             "subtitle": "Nederlands merk, bedacht in Utrecht",
-            "lines": "+ De koker koop je één keer, daarna alleen navullingen\n+ Navulling €7,49 in plaats van €8,29 voor een losse stick\n+ Navulling in karton, mag bij het oud papier\n+ Starterspakket met 3 navullingen in 2 geuren, gratis bezorgd\n+ 15% korting op je eerste bestelling via de nieuwsbrief",
+            "lines": "+ De koker koop je één keer, daarna alleen navullingen\n+ Navulling €7,49 in plaats van €8,29 voor een losse stick\n+ Navulling in karton, mag bij het oud papier\n+ Starterspakket met 3 navullingen in 2 geuren, gratis verzonden\n+ Gratis verzending bij je eerste bestelling vanaf €15",
             "highlight": true,
             "button_label": "bekijk het starterspakket",
             "button_link": "#aanbod",
@@ -257,7 +257,7 @@
             "badge": "",
             "title": "in de winkel",
             "subtitle": "losse stick bij Albert Heijn, Etos en DA, navulbaar bij Holland & Barrett",
-            "lines": "+ Handig als je hem vandaag nog wilt\n- Losse stick: elke keer een nieuwe verpakking\n- Meestal één geur per winkel\n- Geen starterspakket en geen welkomstkorting",
+            "lines": "+ Handig als je hem vandaag nog wilt\n- Losse stick: elke keer een nieuwe verpakking\n- Meestal één geur per winkel\n- Geen starterspakket met beide geuren",
             "highlight": false,
             "button_label": "",
             "button_link": "",
@@ -308,21 +308,21 @@
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Ligt de navulbare deo ook in de winkel?",
-            "faq_section_qa_a": "<p>Ja, bij Holland & Barrett. De losse deo stick ligt bij onder meer Albert Heijn en Etos. Het starterspakket met beide geuren en de welkomstkorting vind je alleen hier.</p>"
+            "faq_section_qa_a": "<p>Ja, bij Holland & Barrett. De losse deo stick ligt bij onder meer Albert Heijn en Etos. Het starterspakket met beide geuren vind je alleen hier.</p>"
           }
         },
         "q5": {
           "type": "faq_section_qa",
           "settings": {
             "faq_section_qa_q": "Wanneer krijg ik mijn bestelling?",
-            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Vanaf €25 gratis, het starterspakket dus altijd.</p>"
+            "faq_section_qa_a": "<p>Binnen twee werkdagen bezorgd. Het starterspakket bezorgen we altijd gratis. Je eerste bestelling vanaf €15 ook, daarna is verzending gratis vanaf €25.</p>"
           }
         },
         "q6": {
           "type": "faq_section_qa",
           "settings": {
-            "faq_section_qa_q": "Hoe krijg ik de 15% korting?",
-            "faq_section_qa_a": "<p>Schrijf je in voor de nieuwsbrief, dat kan via het venster dat op deze pagina verschijnt of onderaan de site. Je krijgt de kortingscode per e-mail en vult hem in bij het afrekenen. Geldt op je eerste bestelling.</p>"
+            "faq_section_qa_q": "Hoe krijg ik gratis verzending op mijn eerste bestelling?",
+            "faq_section_qa_a": "<p>Meld je aan voor de nieuwsbrief, via het venster op deze pagina of onderaan de site. Dan bezorgen we je eerste bestelling vanaf €15 gratis. Daarna is verzending gratis vanaf €25.</p>"
           }
         }
       },
@@ -359,7 +359,7 @@
       "settings": {
         "label": "starterspakket, koker + 3 navullingen",
         "product": "starter-refill-deo-stick-be-active",
-        "sub": "gratis bezorgd",
+        "sub": "gratis verzonden",
         "direct_add": true,
         "button_label": "in winkelwagen",
         "button_link": "#kies",
@@ -479,7 +479,7 @@
             "title": "deo stick starterspakket",
             "scent": "alle drie de geuren, één van elk",
             "badge": "",
-            "price_note": "3 sticks, gratis bezorgd",
+            "price_note": "€7,99 per stick",
             "highlight": false,
             "image": "shopify://shop_images/lp-deo-stick-3-geuren.jpg"
           }
