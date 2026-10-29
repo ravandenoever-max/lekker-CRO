@@ -57,7 +57,7 @@
   .lk-pop-open { overflow: hidden; }
   .lk-teaser { position: fixed; left: 0; top: 50%; z-index: 10040; transform: translateY(-50%); }
   .lk-teaser[hidden] { display: none; }
-  .lk-teaser__open { display: block; margin: 0; padding: 16px 10px; border: 0; border-radius: 20px 0 0 20px; background: var(--color-red); color: var(--color-white) !important; writing-mode: vertical-rl; transform: rotate(180deg); cursor: pointer; box-shadow: none; -webkit-appearance: none; appearance: none; }
+  .lk-teaser__open { display: block; margin: 0; padding: 18px 12px; border: 0; border-radius: 20px 0 0 20px; font-size: 15px; line-height: 1; letter-spacing: .02em; background: var(--color-red); color: var(--color-white) !important; writing-mode: vertical-rl; transform: rotate(180deg); cursor: pointer; box-shadow: none; -webkit-appearance: none; appearance: none; }
   .lk-teaser__off { position: absolute; top: -10px; right: -10px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: var(--color-white); color: var(--color-black); font-size: 15px; line-height: 22px; text-align: center; cursor: pointer; box-shadow: 0 0 0 1px rgba(33, 35, 34, .15); }
   @media screen and (max-width: 767px) {
     .lk-pop { align-items: flex-end; padding: 0; }
@@ -85,7 +85,7 @@
     </div>
   </div>
   <div class="lk-teaser" id="lk-teaser" hidden>
-    <button type="button" class="lk-teaser__open font-fam-normal font-size-3xs txt-lowercase" data-lk-teaser-open aria-haspopup="dialog">{{ s.popup_teaser | default: 'gratis verzending' }}</button>
+    <button type="button" class="lk-teaser__open font-fam-bold txt-lowercase" data-lk-teaser-open aria-haspopup="dialog">{{ s.popup_teaser | default: 'gratis verzending' }}</button>
     <button type="button" class="lk-teaser__off" data-lk-teaser-off aria-label="Verbergen">&times;</button>
   </div>
 {%- endif -%}
