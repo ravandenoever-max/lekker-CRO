@@ -516,10 +516,11 @@
         "card_background_color": "lpink",
         "anchor_id": "gratis-verzending",
         "badge": "nieuw bij lekker?",
-        "heading": "gratis verzending op je eerste bestelling",
-        "text": "<p>Meld je aan voor de nieuwsbrief en je krijgt direct een code voor gratis verzending op je eerste bestelling vanaf €15.</p>",
+        "heading": "gratis verzending",
+        "text": "<p>Meld je aan voor de nieuwsbrief en ontvang direct je code.</p>",
         "button_label": "ja, ik wil gratis verzending",
-        "small": "Uitschrijven kan altijd."
+        "small": "Uitschrijven kan altijd.",
+        "subheading": "op je eerste bestelling vanaf €15"
       }
     }
   },

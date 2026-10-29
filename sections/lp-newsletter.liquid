@@ -10,6 +10,7 @@
       <div class="lp-news__copy">
         {%- if s.badge != blank -%}<p class="lp-news__badge font-size-3xs">{{ s.badge }}</p>{%- endif -%}
         {%- if s.heading != blank -%}<h2 class="font-fam-normal font-size-lg txt-lowercase lp-news__heading">{{ s.heading }}</h2>{%- endif -%}
+        {%- if s.subheading != blank -%}<p class="font-size-xs txt-lowercase lp-news__sub">{{ s.subheading }}</p>{%- endif -%}
         {%- if s.text != blank -%}<div class="font-size-xs lp-news__text">{{ s.text }}</div>{%- endif -%}
       </div>
       <div class="lp-news__form">
@@ -22,7 +23,8 @@
 <style>
   .lp-news__card { max-width: 960px; margin: 0 auto; padding: 28px 20px; border-radius: var(--lp-radius, 30px); text-align: center; display: grid; gap: 20px; }
   .lp-news__badge { display: inline-block; margin: 0 0 10px; padding: 4px 12px; border-radius: 800px; background: var(--color-white); color: var(--color-black); text-transform: lowercase; }
-  .lp-news__heading { margin: 0 0 8px; }
+  .lp-news__heading { margin: 0 0 2px; }
+  .lp-news__sub { margin: 0 0 10px; opacity: .8; }
   .lp-news__text p { margin: 0; }
   .lp-news__small { margin: 10px 0 0; opacity: .7; }
   @media screen and (min-width: 768px) {
@@ -39,8 +41,9 @@
     { "type": "select", "id": "card_background_color", "default": "lpink", "label": "Achtergrond kaart", "options": [ { "value": "lpink", "label": "Roze" }, { "value": "lblue", "label": "Lichtblauw" }, { "value": "yellow", "label": "Geel" }, { "value": "white", "label": "Wit" } ] },
     { "type": "text", "id": "anchor_id", "label": "Anker", "default": "gratis-verzending" },
     { "type": "text", "id": "badge", "label": "Label", "default": "nieuw bij lekker?" },
-    { "type": "text", "id": "heading", "label": "Kop", "default": "gratis verzending op je eerste bestelling" },
-    { "type": "richtext", "id": "text", "label": "Tekst", "default": "<p>Meld je aan voor de nieuwsbrief en je krijgt direct een code voor gratis verzending op je eerste bestelling vanaf €15.</p>" },
+    { "type": "text", "id": "heading", "label": "Kop", "default": "gratis verzending" },
+    { "type": "text", "id": "subheading", "label": "Kleine regel onder de kop", "default": "op je eerste bestelling vanaf €15" },
+    { "type": "richtext", "id": "text", "label": "Tekst", "default": "<p>Meld je aan voor de nieuwsbrief en ontvang direct je code.</p>" },
     { "type": "text", "id": "button_label", "label": "Knoptekst", "default": "ja, ik wil gratis verzending" },
     { "type": "text", "id": "small", "label": "Kleine lettertjes", "default": "Uitschrijven kan altijd." }
   ],

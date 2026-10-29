@@ -47,7 +47,8 @@
   .lk-pop__img { display: block; width: 100%; height: 190px; object-fit: cover; }
   .lk-pop__body { padding: 28px 24px 24px; text-align: center; }
   .lk-pop__badge { display: inline-block; margin: 0 0 10px; padding: 4px 12px; border-radius: 800px; background: var(--color-lblue); color: var(--color-black); text-transform: lowercase; }
-  .lk-pop__title { margin: 0 0 8px; color: var(--color-red) !important; }
+  .lk-pop__title { margin: 0 0 2px; color: var(--color-red) !important; }
+  .lk-pop__sub { margin: 0 0 12px; opacity: .8; }
   .lk-pop__text { margin: 0 0 16px; }
   .lk-pop__text p { margin: 0; }
   .lk-pop__small { margin: 12px 0 0; opacity: .7; }
@@ -75,7 +76,8 @@
       {%- endif -%}
       <div class="lk-pop__body">
         {%- if s.popup_badge != blank -%}<p class="lk-pop__badge font-size-3xs">{{ s.popup_badge }}</p>{%- endif -%}
-        <h2 id="lk-pop-title" class="lk-pop__title font-fam-normal font-size-lg txt-lowercase">{{ s.popup_heading | default: 'gratis verzending op je eerste bestelling' }}</h2>
+        <h2 id="lk-pop-title" class="lk-pop__title font-fam-normal font-size-lg txt-lowercase">{{ s.popup_heading | default: 'gratis verzending' }}</h2>
+        {%- if s.popup_subheading != blank -%}<p class="lk-pop__sub font-size-xs txt-lowercase">{{ s.popup_subheading }}</p>{%- endif -%}
         {%- if s.popup_text != blank -%}<div class="lk-pop__text font-size-xs">{{ s.popup_text }}</div>{%- endif -%}
         {%- render 'lekker-drip-form', location: 'popup', button_label: s.popup_button -%}
         {%- if s.popup_small != blank -%}<p class="lk-pop__small font-size-3xs">{{ s.popup_small }}</p>{%- endif -%}
