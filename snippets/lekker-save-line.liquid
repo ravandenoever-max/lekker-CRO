@@ -1,0 +1,44 @@
+{%- comment -%}
+  CRO-project 2026: laat onder de stuks-keuze zien wat je bespaart bij 3 of 6 stuks.
+  Leest data-price en data-compare-at van de gekozen optie. Verborgen bij 1 stuk.
+{%- endcomment -%}
+{%- liquid
+  if request.locale.iso_code == 'nl'
+    assign t_pay = 'Je betaalt'
+    assign t_save = 'en bespaart'
+  else
+    assign t_pay = 'You pay'
+    assign t_save = 'and save'
+  endif
+-%}
+<style>
+  .lk-save{margin:0.5rem 0 0.75rem;padding:0.625rem 1rem;border-radius:1rem;background:var(--color-lblue);color:var(--color-red);font-size:1rem;line-height:1.4}
+  .lk-save[hidden]{display:none}
+  .lk-save s{opacity:0.6}
+  .lk-save strong{font-family:inherit;font-weight:700}
+</style>
+<div class="lk-save" data-lk-save data-pay="{{ t_pay }}" data-save="{{ t_save }}" data-symbol="{{ cart.currency.symbol }}" hidden></div>
+<script>
+  (function () {
+    function fmt(c, sym) { return sym + (c / 100).toFixed(2).replace('.', ','); }
+    function upd() {
+      var box = document.querySelector('[data-lk-save]');
+      if (!box) { return; }
+      var r = document.querySelector('.variant_picker input[type=radio]:checked');
+      if (!r) { box.hidden = true; return; }
+      var p = parseInt(r.getAttribute('data-price'), 10) || 0;
+      var c = parseInt(r.getAttribute('data-compare-at'), 10) || 0;
+      var sym = box.getAttribute('data-symbol');
+      if (c > p) {
+        box.innerHTML = box.getAttribute('data-pay') + '&nbsp;<s>' + fmt(c, sym) + '</s>&nbsp;<strong>' + fmt(p, sym) + '</strong>&nbsp;' + box.getAttribute('data-save') + '&nbsp;<strong>' + fmt(c - p, sym) + '</strong>';
+        box.hidden = false;
+      } else {
+        box.hidden = true;
+      }
+    }
+    document.addEventListener('change', function (e) {
+      if (e.target && e.target.matches && e.target.matches('.variant_picker input[type=radio]')) { upd(); }
+    });
+    upd();
+  })();
+</script>

@@ -442,11 +442,11 @@
                               {{ value_number }}x <span class="per-item">{{ per_item_price | money }}</span>
                             </div> 
                           {%- if discount > 0 -%}
-                            <span class="discount theme-d-hidden font-fam-bold font-size-xs">bespaar {{ discount | round }}%</span>
+                            <span class="discount theme-d-hidden font-fam-bold font-size-xs">bespaar {{ variant.compare_at_price | minus: variant.price | money }}</span>
                           {%- endif -%}                            
                           </div>
                         {%- if discount > 0 -%}
-                          <span class="discount theme-m-hidden font-fam-bold font-size-3xs color_red">bespaar {{ discount | round }}%</span>
+                          <span class="discount theme-m-hidden font-fam-bold font-size-3xs color_red">bespaar {{ variant.compare_at_price | minus: variant.price | money }}</span>
                         {%- endif -%}
                         </div>
                       </label>
@@ -538,11 +538,11 @@
                           <div class="main font-size-sm">{{ value_label }}</div>
                           <div class="sub">{{ value_number }}x <span class="per-item">{{ per_item_price | money }}</span></div> 
                         {%- if discount > 0 -%}
-                          <span class="discount theme-d-hidden font-fam-bold font-size-xs">{{ 'products.product.discount_label' | t }} {{ discount }}%</span>
+                          <span class="discount theme-d-hidden font-fam-bold font-size-xs">{{ 'products.product.discount_label' | t }} {{ variant.compare_at_price | minus: variant.price | money }}</span>
                         {%- endif -%}                            
                         </div>
                       {%- if discount > 0 -%}
-                        <span class="discount theme-m-hidden font-fam-bold font-size-3xs color_red">{{ 'products.product.discount_label' | t }} {{ discount }}%</span>
+                        <span class="discount theme-m-hidden font-fam-bold font-size-3xs color_red">{{ 'products.product.discount_label' | t }} {{ variant.compare_at_price | minus: variant.price | money }}</span>
                       {%- endif -%}
                       </div>
                     </label>
@@ -735,6 +735,11 @@
     .variant_picker .product-form__input input[type='radio']:focus + label .label-button { box-shadow: 0 0 0 6px var(--color-black), 0 0 0 10px var(--color-black);}
     .variant_picker .product-form__input input[type='radio']:focus:not(:focus-visible) + label .label-button { box-shadow: none; }
 
+    .product-variant-fieldset .discount { white-space:nowrap }
+    @media screen and (min-width:768px) {
+      .product-variant-fieldset span.discount.theme-m-hidden { display:inline-block; margin-top:0.375rem; padding:0.125rem 0.625rem; border-radius:50rem; background:var(--color-red); color:#fff !important; font-size:0.8125rem; line-height:1.4; }
+      .product-grid > .product__media-wrapper { position:sticky; top:6rem; align-self:flex-start; }
+    }
     .product__social_media{width:100%}
     .product__social_media .social-wrapper{width:100%;overflow-y:hidden;overflow-x:auto}
     .product__social_media .social-wrapper ul{width:100%;display:flex;flex-wrap:nowrap;min-width:max-content;gap:0.5rem;padding-bottom:1rem}
@@ -816,6 +821,8 @@
                 <div data-element="product__variant_picker" class="variant_picker variant_picker_bundles margin-b-xxs margin-xxs-b-xs">{{ product__variant_picker_bundles }}</div>
                 <script src="{{ 'product-variants-bundles.js' | asset_url }}" defer="defer"></script>
               {%- endif -%}
+              {%- comment -%} CRO-project 2026: regel die laat zien wat je bespaart bij 3 of 6 stuks {%- endcomment -%}
+              {%- render 'lekker-save-line' -%}
               <div data-element="product__price_buttons" class="product__price_buttons theme-m-f-vert theme-f-hor theme-f-top theme-f-left theme-g-3xs">
                 <div data-element="product__prod_quantity" class="product__prod_quantity theme-m-w-100 theme-m-f-hor theme-m-f-right">
                   {{ product__prod_quantity_price }}
