@@ -113,7 +113,7 @@
           "settings": {
             "item_link": "",
             "predefined_image": "usp-sustainable",
-            "heading": "geen toegevoegde microplastics"
+            "heading": "binnen twee werkdagen bezorgd"
           }
         },
         "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4": {
@@ -513,10 +513,10 @@
   "order": [
     "main",
     "6576457567457fde",
+    "173230878117298f18",
     "theme_section_faq_multiple_XVKmb4",
     "social-content",
     "f0d1584d-9ec4-4165-9f2b-de7174e75a6a",
-    "173230878117298f18",
     "20936872049855498",
     "a0a3456345645634563567cb"
   ]
