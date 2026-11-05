@@ -1,0 +1,52 @@
+{%- comment -%}
+  Koopblok onder de koopknop op de productpagina: voordelen, twijfels en bezorging.
+  Inhoud per productlijn via de blokken "Koopblok (CRO)" in de productsectie. Parameter: b (het blok).
+  Let op: gaat door de inline-html minifier, dus geen JavaScript hier.
+  Toegevoegd november 2026, CRO-project (1.5).
+{%- endcomment -%}
+{%- assign s = b.settings -%}
+<div class="lk-buy margin-b-xs" {{ b.shopify_attributes }}>
+  {%- if s.usp_1 != blank or s.usp_2 != blank or s.usp_3 != blank or s.usp_4 != blank -%}
+    <ul class="lk-buy__usps" role="list">
+      {%- if s.usp_1 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_1 }}</li>{%- endif -%}
+      {%- if s.usp_2 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_2 }}</li>{%- endif -%}
+      {%- if s.usp_3 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_3 }}</li>{%- endif -%}
+      {%- if s.usp_4 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_4 }}</li>{%- endif -%}
+    </ul>
+  {%- endif -%}
+  {%- if s.q_1 != blank or s.q_2 != blank or s.q_3 != blank -%}
+    <div class="lk-buy__faq">
+      {%- if s.q_1 != blank -%}<details class="lk-buy__q"><summary class="font-fam-bold font-size-xs">{{ s.q_1 }}</summary><div class="lk-buy__a font-size-xs">{{ s.a_1 }}</div></details>{%- endif -%}
+      {%- if s.q_2 != blank -%}<details class="lk-buy__q"><summary class="font-fam-bold font-size-xs">{{ s.q_2 }}</summary><div class="lk-buy__a font-size-xs">{{ s.a_2 }}</div></details>{%- endif -%}
+      {%- if s.q_3 != blank -%}<details class="lk-buy__q"><summary class="font-fam-bold font-size-xs">{{ s.q_3 }}</summary><div class="lk-buy__a font-size-xs">{{ s.a_3 }}</div></details>{%- endif -%}
+    </div>
+  {%- endif -%}
+  {%- if s.delivery != blank or s.returns != blank -%}
+    <div class="lk-buy__service">
+      {%- if s.delivery != blank -%}
+        <p class="font-size-3xs"><svg class="lk-buy__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="17" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="17" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>{{ s.delivery }}</p>
+      {%- endif -%}
+      {%- if s.returns != blank -%}
+        <p class="font-size-3xs"><svg class="lk-buy__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7H4V2M4.5 7A8 8 0 1 1 4 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ s.returns }}</p>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
+<style>
+  .lk-buy { border: 1px solid rgba(33, 35, 34, .12); border-radius: 20px; padding: 16px 18px; color: var(--color-black); }
+  .lk-buy__usps { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 6px; }
+  .lk-buy__usps li { display: flex; gap: 10px; align-items: flex-start; margin: 0; }
+  .lk-buy__check { flex: 0 0 18px; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; background: var(--color-red); position: relative; }
+  .lk-buy__check::after { content: ""; position: absolute; left: 6px; top: 3px; width: 5px; height: 9px; border: solid var(--color-white); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .lk-buy__faq { border-top: 1px solid rgba(33, 35, 34, .12); }
+  .lk-buy__q { border-bottom: 1px solid rgba(33, 35, 34, .12); }
+  .lk-buy__q summary { list-style: none; cursor: pointer; padding: 10px 28px 10px 0; position: relative; text-transform: lowercase; }
+  .lk-buy__q summary::-webkit-details-marker { display: none; }
+  .lk-buy__q summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 20px; line-height: 1; color: var(--color-red); }
+  .lk-buy__q[open] summary::after { content: "\2212"; }
+  .lk-buy__a { padding: 0 0 12px; }
+  .lk-buy__a p { margin: 0; }
+  .lk-buy__service { margin-top: 12px; display: grid; gap: 4px; }
+  .lk-buy__service p { margin: 0; display: flex; gap: 8px; align-items: center; opacity: .85; }
+  .lk-buy__icon { flex: 0 0 18px; width: 18px; height: 18px; color: var(--color-red); }
+</style>

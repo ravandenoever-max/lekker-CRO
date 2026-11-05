@@ -60,6 +60,132 @@
           "settings": {
             "related_products_html": "true"
           }
+        },
+        "kb_refill": {
+          "type": "koopblok",
+          "settings": {
+            "tags": "refill",
+            "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
+            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "usp_1": "navulbaar: de koker koop je één keer, daarna alleen navullingen",
+            "usp_2": "minder afval: houder van gerecycled plastic, navullingen in karton",
+            "usp_3": "zonder aluminiumzouten, de bekende boosdoener achter gele vlekken",
+            "usp_4": "",
+            "q_1": "Is het even wennen?",
+            "a_1": "<p>Stap je over van een antitranspirant? Dan kan het een week of twee wennen, omdat je oksels niet meer worden dichtgezet. Smeer één keer per dag op een schone, droge huid en val niet terug op je oude deo.</p>",
+            "q_2": "Past de navulling in een gewone deo stick?",
+            "a_2": "<p>Nee. De navulling past alleen in de lichtblauwe koker uit de starter. Begin daarom met de starter, daarna koop je alleen nog navullingen.</p>",
+            "q_3": "Krijg ik gele vlekken in mijn kleding?",
+            "a_3": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>"
+          }
+        },
+        "kb_stick": {
+          "type": "koopblok",
+          "settings": {
+            "tags": "collection-main-deo-stick",
+            "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
+            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "usp_1": "zonder aluminiumzouten, de bekende boosdoener achter gele vlekken",
+            "usp_2": "glijdt soepel, zonder plakkerig gevoel",
+            "usp_3": "kartonnen verpakking, mag bij het oud papier",
+            "usp_4": "ook in navulbare versie",
+            "q_1": "Is het even wennen?",
+            "a_1": "<p>Stap je over van een antitranspirant? Dan kan het een week of twee wennen, omdat je oksels niet meer worden dichtgezet. Smeer één keer per dag op een schone, droge huid en val niet terug op je oude deo.</p>",
+            "q_2": "Krijg ik gele vlekken in mijn kleding?",
+            "a_2": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
+            "q_3": "Ik heb een gevoelige huid, kan ik deze gebruiken?",
+            "a_3": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>"
+          }
+        },
+        "kb_creme": {
+          "type": "koopblok",
+          "settings": {
+            "tags": "collection-main-deo-creme",
+            "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
+            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "usp_1": "zonder aluminiumzouten, de bekende boosdoener achter gele vlekken",
+            "usp_2": "helpt zweetgeur neutraliseren",
+            "usp_3": "kartonnen verpakking, mag bij het oud papier",
+            "usp_4": "",
+            "q_1": "Is het even wennen?",
+            "a_1": "<p>Stap je over van een antitranspirant? Dan kan het een week of twee wennen, omdat je oksels niet meer worden dichtgezet. Smeer één keer per dag op een schone, droge huid en val niet terug op je oude deo.</p>",
+            "q_2": "Krijg ik gele vlekken in mijn kleding?",
+            "a_2": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
+            "q_3": "Ik heb een gevoelige huid, kan ik deze gebruiken?",
+            "a_3": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>"
+          }
+        },
+        "kb_bodywash": {
+          "type": "koopblok",
+          "settings": {
+            "tags": "collection-main-body-wash",
+            "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
+            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "usp_1": "geen stroef gevoel na het douchen",
+            "usp_2": "navulbaar: de case koop je één keer, daarna alleen blikjes",
+            "usp_3": "ingrediënten van 100% natuurlijke oorsprong",
+            "usp_4": "",
+            "q_1": "Hoe werkt navullen?",
+            "a_1": "<p>Open de case, haal het kartonnen schijfje eruit, zet het blikje erin en draai tot je een POP hoort. Pomp erop en klaar. Leeg blikje? Recycle het bij metaal of PMD.</p>",
+            "q_2": "Ligt de body wash ook in de winkel?",
+            "a_2": "<p>Nee, de body wash vind je alleen hier in onze webshop.</p>",
+            "q_3": "Waar is de case van gemaakt?",
+            "a_3": "<p>Van 100% gerecycled plastic. De pomp nog niet, daar werken we aan.</p>"
+          }
+        },
+        "kb_hand": {
+          "type": "koopblok",
+          "settings": {
+            "tags": "collection-main-handcreme",
+            "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
+            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "usp_1": "trekt razendsnel in",
+            "usp_2": "geen plakkerige handen",
+            "usp_3": "ingrediënten van 100% natuurlijke oorsprong",
+            "usp_4": "",
+            "q_1": "Ik heb een gevoelige huid, kan ik deze gebruiken?",
+            "a_1": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid.</p>",
+            "q_2": "",
+            "a_2": "",
+            "q_3": "",
+            "a_3": ""
+          }
+        },
+        "kb_lip": {
+          "type": "koopblok",
+          "settings": {
+            "tags": "collection-main-lippenbalsem",
+            "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
+            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "usp_1": "kartonnen verpakking, mag bij het oud papier",
+            "usp_2": "ingrediënten van 100% natuurlijke oorsprong",
+            "usp_3": "",
+            "usp_4": "",
+            "q_1": "",
+            "a_1": "",
+            "q_2": "",
+            "a_2": "",
+            "q_3": "",
+            "a_3": ""
+          }
+        },
+        "kb_standaard": {
+          "type": "koopblok",
+          "settings": {
+            "tags": "",
+            "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
+            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "usp_1": "een miljoen oksels gingen je voor",
+            "usp_2": "ingrediënten van 100% natuurlijke oorsprong",
+            "usp_3": "",
+            "usp_4": "",
+            "q_1": "",
+            "a_1": "",
+            "q_2": "",
+            "a_2": "",
+            "q_3": "",
+            "a_3": ""
+          }
         }
       },
       "block_order": [
@@ -71,7 +197,14 @@
         "buy_buttons-a87445186ebd",
         "product_description-99088cd4f981",
         "variant_picker-99088cd4f981",
-        "product_related_products_html"
+        "product_related_products_html",
+        "kb_refill",
+        "kb_stick",
+        "kb_creme",
+        "kb_bodywash",
+        "kb_hand",
+        "kb_lip",
+        "kb_standaard"
       ],
       "custom_css": [
         ".product-desc {margin-top: 20px;}"

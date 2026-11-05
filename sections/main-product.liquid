@@ -638,8 +638,37 @@
           {%- capture product__app -%}
             {%- render block -%}
           {%- endcapture -%}
+      {%- when 'koopblok' -%}
+        {%- comment -%} CRO-project 2026: koopblok onder de koopknop, eerste blok waarvan een tag matcht, anders het blok zonder tags {%- endcomment -%}
+        {%- liquid
+          assign kb_match = false
+          assign kb_tags = block.settings.tags | strip
+          if kb_tags == blank
+            if kb_fallback_id == blank
+              assign kb_fallback_id = block.id
+            endif
+          else
+            assign kb_list = kb_tags | split: ','
+            for kb_tag in kb_list
+              assign kb_tag_clean = kb_tag | strip
+              if product.tags contains kb_tag_clean
+                assign kb_match = true
+              endif
+            endfor
+          endif
+        -%}
+        {%- if kb_match and product__koopblok == blank -%}
+          {%- capture product__koopblok -%}{%- render 'lekker-koopblok', b: block -%}{%- endcapture -%}
+        {%- endif -%}
     {%- endcase -%}
   {%- endfor -%}
+  {%- if product__koopblok == blank and kb_fallback_id != blank -%}
+    {%- for block in section.blocks -%}
+      {%- if block.id == kb_fallback_id -%}
+        {%- capture product__koopblok -%}{%- render 'lekker-koopblok', b: block -%}{%- endcapture -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
 
   {%- capture html_content_framed -%}
   {%- capture bloated_css -%}
@@ -799,6 +828,7 @@
               </div>
               {%- endform -%}
             </product-form>
+            {{ product__koopblok }}
 
             {{ product__popup }}
             {{ product__text }}
@@ -991,6 +1021,29 @@
           "id": "page",
          "label":"t:sections.main-product.blocks.collapsible_tab.settings.page.label"
         }
+      ]
+    },
+    {
+      "type": "koopblok",
+      "name": "Koopblok (CRO)",
+      "settings": [
+        { "type": "paragraph", "content": "Blok onder de koopknop met voordelen, twijfels en bezorging. Het eerste blok waarvan een tag op het product staat wordt getoond. Een blok zonder tags is de standaard voor alle andere producten." },
+        { "type": "text", "id": "tags", "label": "Producttags (komma gescheiden)", "info": "Bijvoorbeeld: collection-main-deo-stick. Leeg = standaard." },
+        { "type": "header", "content": "Voordelen" },
+        { "type": "text", "id": "usp_1", "label": "Voordeel 1" },
+        { "type": "text", "id": "usp_2", "label": "Voordeel 2" },
+        { "type": "text", "id": "usp_3", "label": "Voordeel 3" },
+        { "type": "text", "id": "usp_4", "label": "Voordeel 4" },
+        { "type": "header", "content": "Twijfels" },
+        { "type": "text", "id": "q_1", "label": "Vraag 1" },
+        { "type": "richtext", "id": "a_1", "label": "Antwoord 1" },
+        { "type": "text", "id": "q_2", "label": "Vraag 2" },
+        { "type": "richtext", "id": "a_2", "label": "Antwoord 2" },
+        { "type": "text", "id": "q_3", "label": "Vraag 3" },
+        { "type": "richtext", "id": "a_3", "label": "Antwoord 3" },
+        { "type": "header", "content": "Bezorging en retour" },
+        { "type": "text", "id": "delivery", "label": "Bezorging", "default": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België" },
+        { "type": "text", "id": "returns", "label": "Retour", "default": "30 dagen om te retourneren, ongebruikt en in de originele verpakking" }
       ]
     },
     {

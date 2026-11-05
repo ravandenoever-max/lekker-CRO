@@ -46,19 +46,10 @@
     endif
   endif
 -%}
-{%- if show_free_min_order == true -%}
-  {%- capture spend_more_free_shipping_html -%}
-    <div class="sc-extra-spend-more-wrapper js-ajax-loaded-content">
-      {%- if spend_more_free_shipping > 0 -%}
-        <div class="sc-divider sc-divider-c margin-t-xxs"></div>
-        <h3 class="font-fam-light font-size-sm color-black -txt-uppercase padding-v-xxs">{{ 'sections.cart.spend_more_title_left' | t | replace : '[MONEY]', spend_more_free_shipping_money }}</h3>
-      {%- elsif cart.item_count > 0 -%}
-        <div class="sc-divider sc-divider-c margin-t-xxs"></div>
-        <h3 class="font-fam-light font-size-sm color-black -txt-uppercase padding-v-xxs">{{ 'sections.cart.spend_more_title_reached' | t | replace : '[MONEY]', spend_more_free_shipping_money }}</h3>
-      {%- endif -%}
-    </div>
-  {%- endcapture -%}
-{%- endif -%}
+{%- comment -%} CRO-project 2026 (1.8): oude tekstregel vervangen door verzendbalk die zichzelf bijwerkt. Oude versie: zie git. {%- endcomment -%}
+{%- capture spend_more_free_shipping_html -%}
+  <div class="sc-extra-spend-more-wrapper">{%- render 'lekker-shipbar' -%}</div>
+{%- endcapture -%}
 
 {%- if use_additional_products == 'true' -%}
   {%- capture additional_products_html -%}

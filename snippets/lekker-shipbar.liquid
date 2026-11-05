@@ -1,0 +1,85 @@
+{%- comment -%}
+  Verzendbalk met voortgang naar gratis verzending (winkelwagenlade en winkelwagenpagina).
+  Drempel per land: NL uit settings.website_free_shipping_nl, BE uit settings.website_free_shipping_be. Andere landen: geen balk.
+  Werkt zichzelf bij via /cart.js zodra de inhoud van de lade verandert, zodat hij nooit een oude stand toont.
+  Let op: gaat door de inline-html minifier (newlines worden verwijderd). Geen // commentaar in de JavaScript.
+  Toegevoegd november 2026, CRO-project (1.8).
+{%- endcomment -%}
+{%- liquid
+  assign lk_country = localization.country.iso_code
+  assign lk_threshold = 0
+  if lk_country == 'NL'
+    assign lk_threshold = settings.website_free_shipping_nl | plus: 0 | times: 100
+  elsif lk_country == 'BE'
+    assign lk_threshold = settings.website_free_shipping_be | plus: 0 | times: 100
+  endif
+  if request.locale.iso_code == 'en'
+    assign lk_left = 'Spend [MONEY] more for free shipping'
+    assign lk_reached = 'Your order ships for free'
+  else
+    assign lk_left = 'Nog [MONEY] tot gratis verzending'
+    assign lk_reached = 'Je bestelling wordt gratis verzonden'
+  endif
+  assign lk_total = cart.total_price
+  assign lk_pct = 0
+  assign lk_rest = 0
+  if lk_threshold > 0
+    assign lk_pct = lk_total | times: 100 | divided_by: lk_threshold
+    if lk_pct > 100
+      assign lk_pct = 100
+    endif
+    if lk_total < lk_threshold
+      assign lk_rest = lk_threshold | minus: lk_total
+    endif
+  endif
+  assign lk_rest_money = lk_rest | money | replace: ',00', ',-'
+-%}
+{%- if lk_threshold > 0 -%}
+  <div class="lk-ship js-lk-ship{% if lk_rest == 0 %} is-free{% endif %}" data-threshold="{{ lk_threshold }}" data-left="{{ lk_left | escape }}" data-reached="{{ lk_reached | escape }}"{% if cart.item_count == 0 %} hidden{% endif %}>
+    <p class="lk-ship__text font-size-xs">
+      {%- if lk_rest > 0 -%}{{ lk_left | replace: '[MONEY]', lk_rest_money }}{%- else -%}{{ lk_reached }}{%- endif -%}
+    </p>
+    <div class="lk-ship__track" aria-hidden="true"><div class="lk-ship__fill" style="width: {{ lk_pct }}%"></div></div>
+  </div>
+  <style>
+    .lk-ship { margin: var(--spacing-xxs, 12px) 0; color: var(--color-black); }
+    .lk-ship[hidden] { display: none; }
+    .lk-ship__text { margin: 0 0 6px; }
+    .lk-ship__track { height: 8px; border-radius: 800px; background: var(--color-lblue); overflow: hidden; }
+    .lk-ship__fill { height: 100%; border-radius: 800px; background: var(--color-red); transition: width .3s ease; }
+    .lk-ship.is-free .lk-ship__text { font-weight: 700; }
+  </style>
+  <script>
+    (function () {
+      if (window.lkShipInit) { return; }
+      window.lkShipInit = true;
+      function money(cents) { var s = (cents / 100).toFixed(2).replace('.', ','); if (s.slice(-3) === ',00') { s = s.slice(0, -3) + ',-'; } return '€' + s; }
+      function render(cart) {
+        document.querySelectorAll('.js-lk-ship').forEach(function (el) {
+          var t = parseInt(el.getAttribute('data-threshold'), 10) || 0;
+          if (!t) { return; }
+          var total = cart.total_price;
+          var rest = Math.max(t - total, 0);
+          var pct = Math.min(100, Math.round(total * 100 / t));
+          el.hidden = cart.item_count === 0;
+          el.classList.toggle('is-free', rest === 0);
+          var txt = el.querySelector('.lk-ship__text');
+          if (txt) { txt.textContent = rest > 0 ? el.getAttribute('data-left').replace('[MONEY]', money(rest)) : el.getAttribute('data-reached'); }
+          var fill = el.querySelector('.lk-ship__fill');
+          if (fill) { fill.style.width = pct + '%'; }
+        });
+      }
+      var timer = null;
+      function refresh() { clearTimeout(timer); timer = setTimeout(function () { fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); }).then(render).catch(function () {}); }, 200); }
+      window.lkShipRefresh = refresh;
+      function watch() {
+        var targets = document.querySelectorAll('.sc-prod-items, .sc-totals-total, .cart-count-bubble');
+        if (!targets.length || !window.MutationObserver) { return; }
+        var mo = new MutationObserver(refresh);
+        targets.forEach(function (t) { mo.observe(t, { childList: true, subtree: true, characterData: true }); });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', watch); } else { watch(); }
+      document.addEventListener('visibilitychange', function () { if (!document.hidden) { refresh(); } });
+    })();
+  </script>
+{%- endif -%}
