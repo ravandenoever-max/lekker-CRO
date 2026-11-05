@@ -4,6 +4,8 @@
   Werkt zichzelf bij via /cart.js zodra de inhoud van de lade verandert, zodat hij nooit een oude stand toont.
   Let op: gaat door de inline-html minifier (newlines worden verwijderd). Geen // commentaar in de JavaScript.
   Toegevoegd november 2026, CRO-project (1.8).
+  Suggestie (2.1): onder de balk één of twee producten die het gat tot gratis verzending dichten, toevoegen zonder de lade te verlaten.
+  Kandidaten uit de collectie all-products: beschikbaar, prijs minimaal het restbedrag, goedkoopste eerst, niet al in de winkelwagen.
 {%- endcomment -%}
 {%- liquid
   assign lk_country = localization.country.iso_code
@@ -16,9 +18,13 @@
   if request.locale.iso_code == 'en'
     assign lk_left = 'Spend [MONEY] more for free shipping'
     assign lk_reached = 'Your order ships for free'
+    assign lk_sugg_title = 'Add one of these and shipping is free'
+    assign lk_sugg_add = 'add'
   else
     assign lk_left = 'Nog [MONEY] tot gratis verzending'
     assign lk_reached = 'Je bestelling wordt gratis verzonden'
+    assign lk_sugg_title = 'Hiermee wordt je bestelling gratis verzonden'
+    assign lk_sugg_add = 'toevoegen'
   endif
   assign lk_total = cart.total_price
   assign lk_pct = 0
@@ -40,7 +46,23 @@
       {%- if lk_rest > 0 -%}{{ lk_left | replace: '[MONEY]', lk_rest_money }}{%- else -%}{{ lk_reached }}{%- endif -%}
     </p>
     <div class="lk-ship__track" aria-hidden="true"><div class="lk-ship__fill" style="width: {{ lk_pct }}%"></div></div>
+    <div class="lk-sugg" hidden>
+      <p class="lk-sugg__title font-size-xxs">{{ lk_sugg_title }}</p>
+      <ul class="lk-sugg__list" role="list"></ul>
+    </div>
   </div>
+  {%- unless lk_sugg_done -%}
+    {%- assign lk_sugg_done = true -%}
+    <script type="application/json" id="lk-sugg-data" data-add="{{ lk_sugg_add | escape }}">[
+      {%- assign lk_first = true -%}
+      {%- for p in collections['all-products'].products limit: 40 -%}
+        {%- assign v = p.selected_or_first_available_variant -%}
+        {%- if p.available == false or p.gift_card? or v.price < 300 or v.price > 3000 -%}{%- continue -%}{%- endif -%}
+        {%- unless lk_first -%},{%- endunless -%}{%- assign lk_first = false -%}
+        {"pid":{{ p.id }},"vid":{{ v.id }},"price":{{ v.price }},"title":{{ p.title | json }},"url":{{ p.url | json }},"img":{{ p.featured_image | image_url: width: 120 | json }}}
+      {%- endfor -%}
+    ]</script>
+  {%- endunless -%}
   <style>
     .lk-ship { margin: var(--spacing-xxs, 12px) 0; color: var(--color-black); }
     .lk-ship[hidden] { display: none; }
@@ -48,6 +70,17 @@
     .lk-ship__track { height: 8px; border-radius: 800px; background: var(--color-lblue); overflow: hidden; }
     .lk-ship__fill { height: 100%; border-radius: 800px; background: var(--color-red); transition: width .3s ease; }
     .lk-ship.is-free .lk-ship__text { font-weight: 700; }
+    .lk-sugg { margin-top: 12px; }
+    .lk-sugg[hidden] { display: none; }
+    .lk-sugg__title { margin: 0 0 8px; }
+    .lk-sugg__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .lk-sugg__item { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 14px; background: var(--color-lblue); }
+    .lk-sugg__img { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 10px; object-fit: cover; background: var(--color-white); }
+    .lk-sugg__info { flex: 1; min-width: 0; font-size: 13px; line-height: 1.3; }
+    .lk-sugg__name { display: block; color: var(--color-black); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-transform: lowercase; }
+    .lk-sugg__price { font-weight: 700; }
+    .lk-sugg__add { flex: 0 0 auto; border: 0; border-radius: 800px; padding: 8px 14px; background: var(--color-red); color: var(--color-white); font: inherit; font-size: 13px; cursor: pointer; }
+    .lk-sugg__add[disabled] { opacity: .6; cursor: wait; }
   </style>
   <script>
     (function () {
@@ -67,8 +100,56 @@
           if (txt) { txt.textContent = rest > 0 ? el.getAttribute('data-left').replace('[MONEY]', money(rest)) : el.getAttribute('data-reached'); }
           var fill = el.querySelector('.lk-ship__fill');
           if (fill) { fill.style.width = pct + '%'; }
+          suggest(el, cart, rest);
         });
       }
+      var pool = null;
+      var addLabel = 'toevoegen';
+      function loadPool() {
+        if (pool !== null) { return pool; }
+        pool = [];
+        var d = document.getElementById('lk-sugg-data');
+        if (d) { try { pool = JSON.parse(d.textContent); addLabel = d.getAttribute('data-add') || addLabel; } catch (e) { pool = []; } }
+        return pool;
+      }
+      function suggest(el, cart, rest) {
+        var box = el.querySelector('.lk-sugg');
+        if (!box) { return; }
+        var list = box.querySelector('.lk-sugg__list');
+        if (rest <= 0 || cart.item_count === 0) { box.hidden = true; return; }
+        var inCart = {};
+        cart.items.forEach(function (i) { inCart[i.product_id] = true; });
+        var picks = loadPool().filter(function (p) { return p.price >= rest && !inCart[p.pid]; }).sort(function (a, b) { return a.price - b.price; }).slice(0, 2);
+        if (!picks.length) { box.hidden = true; return; }
+        list.innerHTML = '';
+        picks.forEach(function (p) {
+          var li = document.createElement('li');
+          li.className = 'lk-sugg__item';
+          li.innerHTML = '<img class="lk-sugg__img" alt="" loading="lazy"><div class="lk-sugg__info"><a class="lk-sugg__name"></a><span class="lk-sugg__price"></span></div><button type="button" class="lk-sugg__add"></button>';
+          li.querySelector('img').src = p.img;
+          var a = li.querySelector('a'); a.href = p.url; a.textContent = p.title;
+          li.querySelector('.lk-sugg__price').textContent = money(p.price);
+          var b = li.querySelector('button'); b.textContent = '+ ' + addLabel; b.setAttribute('data-vid', p.vid);
+          list.appendChild(li);
+        });
+        box.hidden = false;
+      }
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest ? e.target.closest('.lk-sugg__add') : null;
+        if (!b) { return; }
+        e.preventDefault();
+        b.disabled = true;
+        window.shopping_cart_content_has_changed = 'true';
+        fetch('/cart/add.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ items: [{ id: parseInt(b.getAttribute('data-vid'), 10), quantity: 1 }] }) })
+          .then(function (r) { return r.json(); })
+          .then(function () {
+            if (document.body.classList.contains('template-cart') || window.location.pathname.indexOf('/cart') !== -1) { window.location.reload(); return; }
+            if (typeof UpdateShoppingCartDrawer === 'function') { UpdateShoppingCartDrawer('update'); }
+            if (typeof UpdateHeaderIconBubble === 'function') { UpdateHeaderIconBubble(1); }
+            refresh();
+          })
+          .catch(function () { b.disabled = false; });
+      });
       var timer = null;
       function refresh() { clearTimeout(timer); timer = setTimeout(function () { fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); }).then(render).catch(function () {}); }, 200); }
       window.lkShipRefresh = refresh;
@@ -78,7 +159,8 @@
         var mo = new MutationObserver(refresh);
         targets.forEach(function (t) { mo.observe(t, { childList: true, subtree: true, characterData: true }); });
       }
-      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', watch); } else { watch(); }
+      function start() { watch(); refresh(); }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', start); } else { start(); }
       document.addEventListener('visibilitychange', function () { if (!document.hidden) { refresh(); } });
     })();
   </script>
