@@ -1,28 +1,55 @@
 {%- comment -%}
-  Drip formulier gratis verzending eerste bestelling (Drip form 579861406).
+  Drip formulier gratis verzending eerste bestelling (Drip form 579861406 NL, 543425556 EN, gekozen op de taal van de bezoeker).
   Gebruikt in de popup (snippets/lekker-drip.liquid) en op de landingspagina's (sections/lp-newsletter.liquid).
   Versturen gaat via de JavaScript in snippets/lekker-drip.liquid. Zonder JavaScript post het formulier gewoon naar Drip.
   Parameters: location (popup of lp), button_label, success_heading, success_text.
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
-{%- assign uid = location | default: 'form' | handleize -%}
+{%- liquid
+  assign uid = location | default: 'form' | handleize
+  assign f_lang = request.locale.iso_code | slice: 0, 2
+  if f_lang == 'en'
+    assign f_id = '543425556'
+    assign f_name = 'First name'
+    assign f_name_ph = 'first name'
+    assign f_email = 'Email address'
+    assign f_email_ph = 'email address'
+    assign f_button = 'yes, I want free shipping'
+    assign f_error = 'Something went wrong. Please try again.'
+    assign f_ok_title = 'check your inbox'
+    assign f_ok_text = "Your free shipping code is in your inbox. Can't find it? Check your spam folder."
+    assign button_label = f_button
+    assign success_heading = blank
+    assign success_text = blank
+  else
+    assign f_id = '579861406'
+    assign f_name = 'Voornaam'
+    assign f_name_ph = 'voornaam'
+    assign f_email = 'E-mailadres'
+    assign f_email_ph = 'e-mailadres'
+    assign f_button = 'ja, ik wil gratis verzending'
+    assign f_error = 'Er ging iets mis. Probeer het nog een keer.'
+    assign f_ok_title = 'check je mail'
+    assign f_ok_text = 'Je code voor gratis verzending staat in je inbox. Zie je hem niet? Kijk dan even bij je spam.'
+  endif
+-%}
 <div class="lk-drip" data-lk-drip-location="{{ location | default: 'form' }}">
-  <form class="lk-drip__form" action="https://www.getdrip.com/forms/579861406/submissions" method="post" data-lk-drip-form>
+  <form class="lk-drip__form" action="https://www.getdrip.com/forms/{{ f_id }}/submissions" method="post" data-lk-drip-form>
     <div class="lk-drip__fields">
-      <label class="lk-drip__sr" for="lk-drip-name-{{ uid }}">Voornaam</label>
-      <input class="lk-drip__input font-fam-normal font-size-xs" type="text" id="lk-drip-name-{{ uid }}" name="fields[first_name]" value="" placeholder="voornaam" autocomplete="given-name">
-      <label class="lk-drip__sr" for="lk-drip-email-{{ uid }}">E-mailadres</label>
-      <input class="lk-drip__input font-fam-normal font-size-xs" type="email" id="lk-drip-email-{{ uid }}" name="fields[email]" value="" placeholder="e-mailadres" autocomplete="email" required aria-required="true">
+      <label class="lk-drip__sr" for="lk-drip-name-{{ uid }}">{{ f_name }}</label>
+      <input class="lk-drip__input font-fam-normal font-size-xs" type="text" id="lk-drip-name-{{ uid }}" name="fields[first_name]" value="" placeholder="{{ f_name_ph }}" autocomplete="given-name">
+      <label class="lk-drip__sr" for="lk-drip-email-{{ uid }}">{{ f_email }}</label>
+      <input class="lk-drip__input font-fam-normal font-size-xs" type="email" id="lk-drip-email-{{ uid }}" name="fields[email]" value="" placeholder="{{ f_email_ph }}" autocomplete="email" required aria-required="true">
     </div>
     <div class="lk-drip__hp" aria-hidden="true">
       <label for="lk-drip-website-{{ uid }}">Website</label>
       <input type="text" id="lk-drip-website-{{ uid }}" name="website" tabindex="-1" autocomplete="off" value="">
     </div>
-    <button type="submit" class="lk-drip__submit theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__red-red-white"><span>{{ button_label | default: 'ja, ik wil gratis verzending' }}</span></button>
-    <p class="lk-drip__error font-size-3xs" role="alert" hidden>Er ging iets mis. Probeer het nog een keer.</p>
+    <button type="submit" class="lk-drip__submit theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__red-red-white"><span>{{ button_label | default: f_button }}</span></button>
+    <p class="lk-drip__error font-size-3xs" role="alert" hidden>{{ f_error }}</p>
   </form>
   <div class="lk-drip__success" role="status" hidden>
-    <p class="lk-drip__success-title font-fam-normal font-size-md txt-lowercase">{{ success_heading | default: 'check je mail' }}</p>
-    <p class="lk-drip__success-text font-size-xs">{{ success_text | default: 'Je code voor gratis verzending staat in je inbox. Zie je hem niet? Kijk dan even bij je spam.' }}</p>
+    <p class="lk-drip__success-title font-fam-normal font-size-md txt-lowercase">{{ success_heading | default: f_ok_title }}</p>
+    <p class="lk-drip__success-text font-size-xs">{{ success_text | default: f_ok_text }}</p>
   </div>
 </div>

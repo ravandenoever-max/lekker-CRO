@@ -1,7 +1,7 @@
 {%- comment -%}
-  Popup gratis verzending eerste bestelling (Drip form 579861406), plus de stijl en het versturen van alle Drip formulieren
+  Popup gratis verzending eerste bestelling (Drip form 579861406 NL, 543425556 EN), plus de stijl en het versturen van alle Drip formulieren
   (popup en landingspagina's). Wordt geladen vanuit sections/element-footer-theme.liquid, dus op elke pagina.
-  Instellingen staan in de footer sectie onder "Popup gratis verzending".
+  Instellingen staan in de footer sectie onder "Popup gratis verzending" (Nederlands). De Engelse teksten staan hieronder in de code.
   Let op: deze HTML gaat door de inline-html minifier (newlines worden verwijderd). Geen // commentaar in de JavaScript.
   Parameters: s (footer section.settings), lang (huidige taal).
   Toegevoegd oktober 2026, CRO-project.
@@ -17,8 +17,30 @@
   if template.name == 'cart' or template.name == 'password' or template.name == 'gift_card' or template.directory == 'customers'
     assign show_popup = false
   endif
-  if lang != blank and lang != 'nl'
+  assign lk_lang = request.locale.iso_code | slice: 0, 2
+  if lk_lang != 'nl' and lk_lang != 'en'
     assign show_popup = false
+  endif
+  if lk_lang == 'en'
+    assign p_badge = 'new to lekker?'
+    assign p_heading = 'free shipping'
+    assign p_sub = 'on your first order from €15'
+    assign p_text = '<p>Subscribe to our newsletter and instantly receive your code.</p>'
+    assign p_button = 'yes, I want free shipping'
+    assign p_small = 'You can unsubscribe at any time.'
+    assign p_teaser = 'free shipping'
+    assign p_close = 'Close'
+    assign p_hide = 'Hide'
+  else
+    assign p_badge = s.popup_badge
+    assign p_heading = s.popup_heading | default: 'gratis verzending'
+    assign p_sub = s.popup_subheading
+    assign p_text = s.popup_text
+    assign p_button = s.popup_button
+    assign p_small = s.popup_small
+    assign p_teaser = s.popup_teaser | default: 'gratis verzending'
+    assign p_close = 'Sluiten'
+    assign p_hide = 'Verbergen'
   endif
 -%}
 <style>
@@ -70,23 +92,23 @@
   <div class="lk-pop" id="lk-pop" data-delay="{{ s.popup_delay | default: 8 }}" data-close-days="{{ s.popup_close_days | default: 3 }}" hidden>
     <div class="lk-pop__overlay" data-lk-close></div>
     <div class="lk-pop__card" role="dialog" aria-modal="true" aria-labelledby="lk-pop-title">
-      <button type="button" class="lk-pop__close" data-lk-close aria-label="Sluiten">&times;</button>
+      <button type="button" class="lk-pop__close" data-lk-close aria-label="{{ p_close }}">&times;</button>
       {%- if s.popup_image != blank -%}
         <div class="lk-pop__media">{{ s.popup_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 900', sizes: '(max-width: 767px) 100vw, 440px', class: 'lk-pop__img', alt: '' }}</div>
       {%- endif -%}
       <div class="lk-pop__body">
-        {%- if s.popup_badge != blank -%}<p class="lk-pop__badge font-size-3xs">{{ s.popup_badge }}</p>{%- endif -%}
-        <h2 id="lk-pop-title" class="lk-pop__title font-fam-normal font-size-lg txt-lowercase">{{ s.popup_heading | default: 'gratis verzending' }}</h2>
-        {%- if s.popup_subheading != blank -%}<p class="lk-pop__sub font-size-xs txt-lowercase">{{ s.popup_subheading }}</p>{%- endif -%}
-        {%- if s.popup_text != blank -%}<div class="lk-pop__text font-size-xs">{{ s.popup_text }}</div>{%- endif -%}
-        {%- render 'lekker-drip-form', location: 'popup', button_label: s.popup_button -%}
-        {%- if s.popup_small != blank -%}<p class="lk-pop__small font-size-3xs">{{ s.popup_small }}</p>{%- endif -%}
+        {%- if p_badge != blank -%}<p class="lk-pop__badge font-size-3xs">{{ p_badge }}</p>{%- endif -%}
+        <h2 id="lk-pop-title" class="lk-pop__title font-fam-normal font-size-lg txt-lowercase">{{ p_heading }}</h2>
+        {%- if p_sub != blank -%}<p class="lk-pop__sub font-size-xs txt-lowercase">{{ p_sub }}</p>{%- endif -%}
+        {%- if p_text != blank -%}<div class="lk-pop__text font-size-xs">{{ p_text }}</div>{%- endif -%}
+        {%- render 'lekker-drip-form', location: 'popup', button_label: p_button -%}
+        {%- if p_small != blank -%}<p class="lk-pop__small font-size-3xs">{{ p_small }}</p>{%- endif -%}
       </div>
     </div>
   </div>
   <div class="lk-teaser" id="lk-teaser" hidden>
-    <button type="button" class="lk-teaser__open font-fam-bold txt-lowercase" data-lk-teaser-open aria-haspopup="dialog">{{ s.popup_teaser | default: 'gratis verzending' }}</button>
-    <button type="button" class="lk-teaser__off" data-lk-teaser-off aria-label="Verbergen">&times;</button>
+    <button type="button" class="lk-teaser__open font-fam-bold txt-lowercase" data-lk-teaser-open aria-haspopup="dialog">{{ p_teaser }}</button>
+    <button type="button" class="lk-teaser__off" data-lk-teaser-off aria-label="{{ p_hide }}">&times;</button>
   </div>
 {%- endif -%}
 <script>
@@ -98,7 +120,7 @@
     var TEASER_OFF = 'lk_fs_teaser_off';
     function setUntil(key, days) { try { localStorage.setItem(key, String(Date.now() + days * 86400000)); } catch (e) {} }
     function active(key) { try { return parseInt(localStorage.getItem(key) || '0', 10) > Date.now(); } catch (e) { return false; } }
-    function track(loc) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'newsletter_signup', signup_location: loc, signup_offer: 'gratis_verzending' }); }
+    function track(loc) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'newsletter_signup', signup_location: loc, signup_offer: 'gratis_verzending', signup_language: (document.documentElement.lang || '').slice(0, 2) }); }
     var teaser = document.getElementById('lk-teaser');
     function hideTeaser() { if (teaser) { teaser.hidden = true; } }
     function showTeaser() {
