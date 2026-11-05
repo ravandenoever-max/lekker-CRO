@@ -89,7 +89,7 @@
   }
 </style>
 {%- if show_popup -%}
-  <div class="lk-pop" id="lk-pop" data-delay="{{ s.popup_delay | default: 8 }}" data-close-days="{{ s.popup_close_days | default: 3 }}" hidden>
+  <div class="lk-pop" id="lk-pop" data-delay="{% if template.suffix contains 'lp-' %}15{% else %}{{ s.popup_delay | default: 8 }}{% endif %}" data-close-days="{{ s.popup_close_days | default: 3 }}" hidden>
     <div class="lk-pop__overlay" data-lk-close></div>
     <div class="lk-pop__card" role="dialog" aria-modal="true" aria-labelledby="lk-pop-title">
       <button type="button" class="lk-pop__close" data-lk-close aria-label="{{ p_close }}">&times;</button>
