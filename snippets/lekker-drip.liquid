@@ -4,6 +4,7 @@
   Instellingen staan in de footer sectie onder "Popup gratis verzending" (Nederlands). De Engelse teksten staan hieronder in de code.
   Let op: deze HTML gaat door de inline-html minifier (newlines worden verwijderd). Geen // commentaar in de JavaScript.
   Parameters: s (footer section.settings), lang (huidige taal).
+  Tabje na wegklikken: op pc aan de linkerzijkant, op mobiel als knopje rechtsonder zodat het niet over de tekst valt (11 nov).
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
 {%- liquid
@@ -86,6 +87,10 @@
     .lk-pop__card { max-width: none; max-height: 90vh; border-radius: 30px 30px 0 0; transform: translateY(40px); }
     .lk-pop__img { height: 140px; }
     .lk-pop__body { padding: 24px 20px 28px; }
+    .lk-teaser { left: auto; right: 12px; top: auto; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); transform: none; }
+    .lk-teaser__open { padding: 11px 16px; border-radius: 800px; font-size: 14px; writing-mode: horizontal-tb; transform: none; box-shadow: 0 4px 14px rgba(33, 35, 34, .2); }
+    .lk-teaser__off { right: auto; left: -8px; top: -8px; }
+    body:has(.lp-sticky) .lk-teaser { bottom: calc(112px + env(safe-area-inset-bottom, 0px)); }
   }
 </style>
 {%- if show_popup -%}
