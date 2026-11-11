@@ -228,7 +228,7 @@
       "sure_delete_alert_yes": "Ja",
       "sure_delete_alert_no": "Nee",
       "estimated_total_title": "Subtotaal",
-      "estimated_total_text": "Kortingscodes kunnen in de volgende stap worden toegepast.[break]Verzendkosten & BTW worden bij het afrekenen getoond.",
+      "estimated_total_text": "Verzendkosten & BTW worden bij het afrekenen getoond.",
       "continue_shopping": "Verder winkelen",
       "extra_prod_title": "Maak het lekker af",
       "spend_more_title_left": "Besteed [MONEY] meer voor gratis verzending",
@@ -266,8 +266,8 @@
     "footer": {
       "payment": "Betaalmethoden",
       "social_placeholder": "Volg ons op social media.",
-      "footer_newsletter_title": "Laten we contact houden!",
-      "footer_newsletter_text": "Meld je aan voor onze nieuwsbrief en ontvang 15% korting."
+      "footer_newsletter_title": "Benieuwd naar onze producten?",
+      "footer_newsletter_text": "Meld je aan voor onze nieuwsbrief en krijg gratis verzending op je eerste bestelling vanaf €15."
     },
     "featured_blog": {
       "view_all": "Alles bekijken",
