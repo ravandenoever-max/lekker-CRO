@@ -6,6 +6,7 @@
   Toegevoegd november 2026, CRO-project (1.8).
   Suggestie (2.1): onder de balk één of twee producten die het gat tot gratis verzending dichten, toevoegen zonder de lade te verlaten.
   Kandidaten uit de collectie all-products: beschikbaar, prijs minimaal het restbedrag, goedkoopste eerst, niet al in de winkelwagen.
+  Staat er een verzendcode met lager minimum in de winkelwagen (zie ld_ship_codes in lekker-disc), dan rekent de balk met dat minimum.
 {%- endcomment -%}
 {%- liquid
   assign lk_country = localization.country.iso_code
@@ -41,7 +42,7 @@
   assign lk_rest_money = lk_rest | money | replace: ',00', ',-'
 -%}
 {%- if lk_threshold > 0 -%}
-  <div class="lk-ship js-lk-ship{% if lk_rest == 0 %} is-free{% endif %}" data-threshold="{{ lk_threshold }}" data-left="{{ lk_left | escape }}" data-reached="{{ lk_reached | escape }}"{% if cart.item_count == 0 %} hidden{% endif %}>
+  <div class="lk-ship js-lk-ship{% if lk_rest == 0 %} is-free{% endif %}" data-threshold="{{ lk_threshold }}" data-country="{{ lk_country }}" data-left="{{ lk_left | escape }}" data-reached="{{ lk_reached | escape }}"{% if cart.item_count == 0 %} hidden{% endif %}>
     <p class="lk-ship__text font-size-xs">
       {%- if lk_rest > 0 -%}{{ lk_left | replace: '[MONEY]', lk_rest_money }}{%- else -%}{{ lk_reached }}{%- endif -%}
     </p>
@@ -93,6 +94,9 @@
         document.querySelectorAll('.js-lk-ship').forEach(function (el) {
           var t = parseInt(el.getAttribute('data-threshold'), 10) || 0;
           if (!t) { return; }
+          var sc = window.lkShipCodes || {};
+          var ctry = el.getAttribute('data-country');
+          (cart.discount_codes || []).forEach(function (d) { var r = sc[d.code.toLowerCase()]; if (r && r.min < t && r.countries.indexOf(ctry) !== -1) { t = r.min; } });
           var total = cart.total_price;
           var rest = Math.max(t - total, 0);
           var pct = Math.min(100, Math.round(total * 100 / t));
