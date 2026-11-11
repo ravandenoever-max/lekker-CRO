@@ -1,0 +1,147 @@
+{%- comment -%}
+  Kortingscode in de winkelwagen (feedback Esther 11 november 2026, meerwerk).
+  Code invullen in de lade of op de winkelwagenpagina, via de Shopify Ajax API (/cart/update.js met discount).
+  De code gaat automatisch mee naar de checkout. In de lade wordt het blok net boven het subtotaal gezet.
+  Wordt gerenderd vanuit lekker-shipbar. Terugdraaien: die render-regel weghalen.
+{%- endcomment -%}
+{%- liquid
+  if request.locale.iso_code == 'en'
+    assign ld_ph = 'discount code'
+    assign ld_btn = 'apply'
+    assign ld_ok = 'Your code has been added and will be applied at checkout.'
+    assign ld_na = 'This code does not apply to your cart (yet). Please check the conditions, such as the minimum amount.'
+    assign ld_err = 'Something went wrong. Please try again.'
+    assign ld_tag = 'not applicable'
+    assign ld_rm = 'Remove code'
+  else
+    assign ld_ph = 'kortingscode'
+    assign ld_btn = 'toepassen'
+    assign ld_ok = 'Je code is toegevoegd en wordt bij het afrekenen verrekend.'
+    assign ld_na = 'Deze code geldt (nog) niet voor je winkelwagen. Check de voorwaarden, bijvoorbeeld het minimale bedrag.'
+    assign ld_err = 'Er ging iets mis. Probeer het nog een keer.'
+    assign ld_tag = 'geldt niet'
+    assign ld_rm = 'Code verwijderen'
+  endif
+-%}
+<div class="lk-disc js-lk-disc" data-ok="{{ ld_ok | escape }}" data-na="{{ ld_na | escape }}" data-err="{{ ld_err | escape }}" data-tag="{{ ld_tag | escape }}" data-rm="{{ ld_rm | escape }}"{% if cart.item_count == 0 %} hidden{% endif %}>
+  <div class="lk-disc__form">
+    <input class="lk-disc__input" type="text" form="lk-disc-none" placeholder="{{ ld_ph }}" aria-label="{{ ld_ph }}" autocomplete="off" autocapitalize="characters" spellcheck="false">
+    <button type="button" class="lk-disc__apply">{{ ld_btn }}</button>
+  </div>
+  <ul class="lk-disc__codes" role="list"></ul>
+  <p class="lk-disc__msg" role="status" hidden></p>
+</div>
+<style>
+  .lk-disc { margin: 12px 0; }
+  .lk-disc[hidden], .sc-extra-spend-more-wrapper .lk-disc { display: none !important; }
+  .lk-disc__form { display: flex; gap: 8px; margin: 0; }
+  .lk-disc__input { flex: 1; min-width: 0; width: 100%; margin: 0; padding: 10px 16px; border: 1px solid rgba(33, 35, 34, .2); border-radius: 800px; background: var(--color-white); color: var(--color-black); font: inherit; font-size: 16px; line-height: 1.2; outline: none; -webkit-appearance: none; appearance: none; }
+  .lk-disc__input:focus { border-color: var(--color-red); }
+  .lk-disc__apply { flex: 0 0 auto; border: 1px solid var(--color-red); border-radius: 800px; padding: 10px 16px; background: var(--color-white); color: var(--color-red); font: inherit; font-size: 14px; cursor: pointer; }
+  .lk-disc__apply[disabled] { opacity: .6; cursor: wait; }
+  .lk-disc__codes { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .lk-disc__codes:empty { display: none; }
+  .lk-disc__code { display: inline-flex; align-items: center; gap: 6px; padding: 4px 6px 4px 12px; border-radius: 800px; background: var(--color-lblue); color: var(--color-black); font-size: 13px; line-height: 1.2; }
+  .lk-disc__code.is-off { background: var(--color-lgrey); }
+  .lk-disc__remove { border: 0; background: transparent; color: inherit; font-size: 16px; line-height: 1; padding: 2px 6px; cursor: pointer; }
+  .lk-disc__msg { margin: 6px 0 0; height: auto; font-size: 13px; line-height: 1.35; color: var(--color-black); }
+  .lk-disc__msg.is-error { color: var(--color-red); }
+</style>
+<script>
+  (function () {
+    if (window.lkDiscInit) { return; }
+    window.lkDiscInit = true;
+    var codes = [];
+    var drawerBox = null;
+    function onCartPage() { return /^\/(en\/)?cart\/?$/.test(window.location.pathname); }
+    function place() {
+      var totals = document.querySelector('.shopping-cart-drawer .sc-totals, #shopping-cart-drawer .sc-totals');
+      var drawer = totals ? totals.closest('.shopping-cart-drawer, #shopping-cart-drawer') : null;
+      var boxes = drawer ? drawer.querySelectorAll('.js-lk-disc') : [];
+      if (!drawerBox && boxes.length) { drawerBox = boxes[0]; }
+      var box = drawerBox;
+      for (var j = 0; j < boxes.length; j++) { if (boxes[j] !== box) { boxes[j].parentNode.removeChild(boxes[j]); } }
+      if (totals && box && box.nextElementSibling !== totals) { totals.parentNode.insertBefore(box, totals); }
+      document.querySelectorAll('.sc-totals-desc p.color-grey').forEach(function (p) { if (/^\s*(Kortingscodes|Discount codes)/i.test(p.textContent)) { p.innerHTML = p.innerHTML.replace(/^\s*[^<]*<br\s*\/?>\s*/i, ''); } });
+    }
+    function render(cart) {
+      codes = (cart.discount_codes || []).map(function (d) { return d.code; });
+      document.querySelectorAll('.js-lk-disc').forEach(function (el) {
+        el.hidden = cart.item_count === 0;
+        var list = el.querySelector('.lk-disc__codes');
+        list.innerHTML = '';
+        (cart.discount_codes || []).forEach(function (d) {
+          var li = document.createElement('li');
+          li.className = 'lk-disc__code' + (d.applicable ? '' : ' is-off');
+          li.innerHTML = '<span></span><button type="button" class="lk-disc__remove">&times;</button>';
+          li.querySelector('span').textContent = d.code + (d.applicable ? '' : ' (' + el.getAttribute('data-tag') + ')');
+          var rb = li.querySelector('button');
+          rb.setAttribute('aria-label', el.getAttribute('data-rm'));
+          rb.setAttribute('data-code', d.code);
+          list.appendChild(li);
+        });
+      });
+    }
+    function load() { return fetch('/cart.js', { headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json(); }).then(function (c) { render(c); return c; }); }
+    function save(list) {
+      return fetch('/cart/update.js', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ discount: list.join(',') }) })
+        .then(function (r) { if (!r.ok) { throw new Error('update'); } return r.json(); })
+        .then(function (cart) {
+          render(cart);
+          if (onCartPage()) { window.setTimeout(function () { window.location.reload(); }, 1200); return cart; }
+          window.shopping_cart_content_has_changed = 'true';
+          if (typeof UpdateShoppingCartDrawer === 'function') { UpdateShoppingCartDrawer('update'); }
+          if (window.lkShipRefresh) { window.lkShipRefresh(); }
+          return cart;
+        });
+    }
+    function say(el, text, isError) { var m = el.querySelector('.lk-disc__msg'); m.textContent = text; m.hidden = !text; m.classList.toggle('is-error', !!isError); }
+    function apply(el) {
+      var input = el.querySelector('.lk-disc__input');
+      var code = (input.value || '').trim();
+      if (!code) { input.focus(); return; }
+      var btn = el.querySelector('.lk-disc__apply');
+      if (btn.disabled) { return; }
+      btn.disabled = true;
+      say(el, '', false);
+      var list = codes.filter(function (c) { return c.toLowerCase() !== code.toLowerCase(); });
+      list.push(code);
+      save(list).then(function (cart) {
+        var hit = (cart.discount_codes || []).filter(function (d) { return d.code.toLowerCase() === code.toLowerCase(); })[0];
+        if (hit && hit.applicable) { say(el, el.getAttribute('data-ok'), false); input.value = ''; } else { say(el, el.getAttribute('data-na'), true); }
+      }).catch(function () { say(el, el.getAttribute('data-err'), true); }).then(function () { btn.disabled = false; });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' || !e.target.classList || !e.target.classList.contains('lk-disc__input')) { return; }
+      e.preventDefault();
+      e.stopPropagation();
+      apply(e.target.closest('.js-lk-disc'));
+    }, true);
+    document.addEventListener('click', function (e) {
+      var ab = e.target.closest ? e.target.closest('.lk-disc__apply') : null;
+      if (ab) { e.preventDefault(); apply(ab.closest('.js-lk-disc')); return; }
+      var rb = e.target.closest ? e.target.closest('.lk-disc__remove') : null;
+      if (!rb) { return; }
+      e.preventDefault();
+      var el = rb.closest('.js-lk-disc');
+      var code = rb.getAttribute('data-code');
+      save(codes.filter(function (c) { return c !== code; })).then(function () { say(el, '', false); }).catch(function () { say(el, el.getAttribute('data-err'), true); });
+    });
+    function start() {
+      place();
+      load().catch(function () {});
+      var targets = document.querySelectorAll('.shopping-cart-drawer, #shopping-cart-drawer, .cart-count-bubble');
+      if (window.MutationObserver && targets.length) {
+        var t = null;
+        var mo = new MutationObserver(function (list) {
+          var own = list.every(function (m) { var n = m.target.nodeType === 1 ? m.target : m.target.parentElement; return n && n.closest && (n.closest('.js-lk-disc') || n.closest('.js-lk-ship')); });
+          if (own) { return; }
+          place();
+          clearTimeout(t); t = setTimeout(function () { load().catch(function () {}); }, 300);
+        });
+        targets.forEach(function (n) { mo.observe(n, { childList: true, subtree: true }); });
+      }
+    }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', start); } else { start(); }
+  })();
+</script>
