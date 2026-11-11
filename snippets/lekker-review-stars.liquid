@@ -4,6 +4,7 @@
   Score = gewogen gemiddelde van reviews.rating en reviews.rating_count (door Judge.me bijgehouden) van alle producten in de groep.
   Hoort het product bij geen groep, of heeft de groep nog geen reviews, dan de gewone Judge.me-badge.
   Parameters: product (verplicht), wrap (true = met jdgm-wrapper zoals op de productkaarten).
+  jdgm--done-setup zorgt dat Judge.me de badge niet herschrijft, zodat overal dezelfde tekst staat ("41 reviews").
   Toegevoegd november 2026, CRO-project (1.4, reviews samenvoegen).
 {%- endcomment -%}
 {%- liquid
@@ -45,7 +46,7 @@
     assign rs_avg = rs_sum | divided_by: rs_count
     assign rs_avg2 = rs_avg | round: 2
   -%}
-  <div class="{% if wrap %}jdgm-widget jdgm-preview-badge {% endif %}lk-rev-badge" data-lk-group="{{ rs_group.system.handle }}">
+  <div class="{% if wrap %}jdgm-widget jdgm-preview-badge jdgm--done-setup {% endif %}lk-rev-badge" data-lk-group="{{ rs_group.system.handle }}">
     <div class="jdgm-prev-badge" data-average-rating="{{ rs_avg2 }}" data-number-of-reviews="{{ rs_count }}" data-number-of-questions="0">
       <span class="jdgm-prev-badge__stars" data-score="{{ rs_avg2 }}" role="img" aria-label="{{ rs_avg2 }} / 5">
         {%- for i in (1..5) -%}

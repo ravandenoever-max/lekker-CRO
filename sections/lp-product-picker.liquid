@@ -32,7 +32,7 @@
           <div class="lp-card__body">
             <h3 class="lp-card__title font-fam-bold font-size-xs txt-lowercase">{{ card_title }}</h3>
             {%- if block.settings.scent != blank -%}<p class="lp-card__scent font-size-xxs">{{ block.settings.scent }}</p>{%- endif -%}
-            <div class="jdgm-widget jdgm-preview-badge lp-card__stars">{{ p.metafields.judgeme.badge }}</div>
+            <div class="lp-card__stars">{%- render 'lekker-review-stars', product: p, wrap: true -%}</div>
             <p class="lp-card__price"><span class="font-fam-bold font-size-sm">{{ v.price | money }}</span>{% if block.settings.price_note != blank %} <span class="font-size-3xs">{{ block.settings.price_note }}</span>{% endif %}</p>
             {%- if p.available -%}
               <div data-pid="{{ v.id }}" class="js-trigger-add-product-inactive txt-align-center theme-button theme-button__round-small theme-button__red-white-red theme-button-hover__red-red-white lp-add"><span>{{ s.button_label | default: 'in winkelwagen' }}</span></div>

@@ -105,7 +105,7 @@
         var sum = 0; var dist = [0, 0, 0, 0, 0];
         reviews.forEach(function (r) { sum += r.rating; var k = Math.max(1, Math.min(5, Math.round(r.rating))); dist[k - 1]++; });
         var avg = n ? sum / n : 0;
-        box.querySelector('.lk-rev__avg').textContent = avg.toFixed(1).replace('.', ',');
+        box.querySelector('.lk-rev__avg').textContent = avg.toFixed(1).replace('.', '{% if request.locale.iso_code == 'en' %}.{% else %},{% endif %}');
         var big = box.querySelector('.lk-rev__stars--big'); big.innerHTML = stars(avg); big.setAttribute('role', 'img'); big.setAttribute('aria-label', avg.toFixed(1) + ' / 5');
         var counts = {}; reviews.forEach(function (r) { if (r.scent) { counts[r.scent] = (counts[r.scent] || 0) + 1; } });
         var scents = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
