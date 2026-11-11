@@ -70,12 +70,14 @@
     .lk-ship__track { height: 8px; border-radius: 800px; background: var(--color-lblue); overflow: hidden; }
     .lk-ship__fill { height: 100%; border-radius: 800px; background: var(--color-red); transition: width .3s ease; }
     .lk-ship.is-free .lk-ship__text { font-weight: 700; }
+    .sc-extra-products-wrapper > h3.txt-uppercase, .sc-totals-desc > p.txt-uppercase { text-transform: lowercase !important; }
     .lk-sugg { margin-top: 12px; }
     .lk-sugg[hidden] { display: none; }
     .lk-sugg__title { margin: 0 0 8px; }
     .lk-sugg__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
     .lk-sugg__item { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 14px; background: var(--color-lblue); }
-    .lk-sugg__img { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 10px; object-fit: cover; background: var(--color-white); }
+    .lk-sugg__media { flex: 0 0 48px; display: block; }
+    .lk-sugg__img { display: block; flex: 0 0 48px; width: 48px; height: 48px; border-radius: 10px; object-fit: cover; background: var(--color-white); }
     .lk-sugg__info { flex: 1; min-width: 0; font-size: 13px; line-height: 1.3; }
     .lk-sugg__name { display: block; color: var(--color-black); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-transform: lowercase; }
     .lk-sugg__price { font-weight: 700; }
@@ -121,13 +123,17 @@
         cart.items.forEach(function (i) { inCart[i.product_id] = true; });
         var picks = loadPool().filter(function (p) { return p.price >= rest && !inCart[p.pid]; }).sort(function (a, b) { return a.price - b.price; }).slice(0, 2);
         if (!picks.length) { box.hidden = true; return; }
+        var key = picks.map(function (p) { return p.vid; }).join(',');
+        if (box.getAttribute('data-key') === key && list.children.length) { box.hidden = false; return; }
+        box.setAttribute('data-key', key);
         list.innerHTML = '';
         picks.forEach(function (p) {
           var li = document.createElement('li');
           li.className = 'lk-sugg__item';
-          li.innerHTML = '<img class="lk-sugg__img" alt="" loading="lazy"><div class="lk-sugg__info"><a class="lk-sugg__name"></a><span class="lk-sugg__price"></span></div><button type="button" class="lk-sugg__add"></button>';
+          li.innerHTML = '<a class="lk-sugg__media"><img class="lk-sugg__img" alt=""></a><div class="lk-sugg__info"><a class="lk-sugg__name"></a><span class="lk-sugg__price"></span></div><button type="button" class="lk-sugg__add"></button>';
           li.querySelector('img').src = p.img;
-          var a = li.querySelector('a'); a.href = p.url; a.textContent = p.title;
+          li.querySelector('.lk-sugg__media').href = p.url;
+          var a = li.querySelector('.lk-sugg__name'); a.href = p.url; a.textContent = p.title;
           li.querySelector('.lk-sugg__price').textContent = money(p.price);
           var b = li.querySelector('button'); b.textContent = '+ ' + addLabel; b.setAttribute('data-vid', p.vid);
           list.appendChild(li);

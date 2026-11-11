@@ -3,6 +3,7 @@
   Inhoud per productlijn via de blokken "Koopblok (CRO)" in de productsectie. Parameter: b (het blok).
   Let op: gaat door de inline-html minifier, dus geen JavaScript hier.
   Toegevoegd november 2026, CRO-project (1.5).
+  Bevat ook de kleuraanpassingen op de productpagina uit de feedback van Esther (11 november): knop combideals groen, reviews en 'iets voor jou?' lichtblauw.
 {%- endcomment -%}
 {%- assign s = b.settings -%}
 <div class="lk-buy margin-b-xs" {{ b.shopify_attributes }}>
@@ -49,4 +50,15 @@
   .lk-buy__service { margin-top: 12px; display: grid; gap: 4px; }
   .lk-buy__service p { margin: 0; display: flex; gap: 8px; align-items: center; opacity: .85; }
   .lk-buy__icon { flex: 0 0 18px; width: 18px; height: 18px; color: var(--color-red); }
+  .combi_products .theme-button { background: #1c5636 !important; border-color: #1c5636 !important; color: var(--color-white) !important; }
+  .combi_products .theme-button span { color: inherit !important; }
+  .combi_products .theme-button:hover { background: var(--color-white) !important; color: #1c5636 !important; }
+  .shopify-section[id$="__theme_section_review_app"], .shopify-section[id$="__173230878117298f18"], .shopify-section[id$="__theme_section_review_app"] .jdgm-widget, .shopify-section[id$="__173230878117298f18"] .jdgm-widget { background: #bedeff !important; }
+  .shopify-section[id$="__f0d1584d-9ec4-4165-9f2b-de7174e75a6a"] > .section-inner, .shopify-section[id$="__f0d1584d-9ec4-4165-9f2b-de7174e75a6a"] .bg-lpink { background: #bedeff !important; }
+  body:has(.lk-buy) { background: var(--color-white) !important; }
+  @media screen and (max-width: 767px) {
+    .shopify-section[id$="__6576457567457fde"] .elements__items-list { width: auto !important; min-width: 0 !important; display: flex !important; gap: 12px !important; }
+    .shopify-section[id$="__6576457567457fde"] .elements__items-list > li.grid__item { width: 112px !important; min-width: 112px !important; max-width: 112px !important; flex: 0 0 112px !important; margin: 0 !important; }
+    .shopify-section[id$="__6576457567457fde"] .scrollbar-inner { width: max-content !important; }
+  }
 </style>

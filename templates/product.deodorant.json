@@ -66,17 +66,17 @@
           "settings": {
             "tags": "refill",
             "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
-            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "returns": "Niet tevreden? Dan krijg je altijd je geld terug",
             "usp_1": "navulbaar: de koker koop je één keer, daarna alleen navullingen",
             "usp_2": "minder afval: houder van gerecycled plastic, navullingen in karton",
             "usp_3": "zonder aluminiumzouten, de bekende boosdoener achter gele vlekken",
             "usp_4": "",
-            "q_1": "Is het even wennen?",
-            "a_1": "<p>Stap je over van een antitranspirant? Dan kan het een week of twee wennen, omdat je oksels niet meer worden dichtgezet. Smeer één keer per dag op een schone, droge huid en val niet terug op je oude deo.</p>",
-            "q_2": "Past de navulling in een gewone deo stick?",
-            "a_2": "<p>Nee. De navulling past alleen in de lichtblauwe koker uit de starter. Begin daarom met de starter, daarna koop je alleen nog navullingen.</p>",
-            "q_3": "Krijg ik gele vlekken in mijn kleding?",
-            "a_3": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>"
+            "q_1": "Past de navulling in een gewone deo stick?",
+            "a_1": "<p>Nee. De navulling past alleen in de lichtblauwe koker uit de starter. Begin daarom met de starter, daarna koop je alleen nog navullingen.</p>",
+            "q_2": "Krijg ik gele vlekken in mijn kleding?",
+            "a_2": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
+            "q_3": "",
+            "a_3": ""
           }
         },
         "kb_stick": {
@@ -84,17 +84,17 @@
           "settings": {
             "tags": "collection-main-deo-stick",
             "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
-            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "returns": "Niet tevreden? Dan krijg je altijd je geld terug",
             "usp_1": "zonder aluminiumzouten, de bekende boosdoener achter gele vlekken",
             "usp_2": "glijdt soepel, zonder plakkerig gevoel",
             "usp_3": "kartonnen verpakking, mag bij het oud papier",
             "usp_4": "ook in navulbare versie",
-            "q_1": "Is het even wennen?",
-            "a_1": "<p>Stap je over van een antitranspirant? Dan kan het een week of twee wennen, omdat je oksels niet meer worden dichtgezet. Smeer één keer per dag op een schone, droge huid en val niet terug op je oude deo.</p>",
-            "q_2": "Krijg ik gele vlekken in mijn kleding?",
-            "a_2": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
-            "q_3": "Ik heb een gevoelige huid, kan ik deze gebruiken?",
-            "a_3": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>"
+            "q_1": "Krijg ik gele vlekken in mijn kleding?",
+            "a_1": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
+            "q_2": "Ik heb een gevoelige huid, kan ik deze gebruiken?",
+            "a_2": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>",
+            "q_3": "",
+            "a_3": ""
           }
         },
         "kb_creme": {
@@ -102,17 +102,17 @@
           "settings": {
             "tags": "collection-main-deo-creme",
             "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
-            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "returns": "Niet tevreden? Dan krijg je altijd je geld terug",
             "usp_1": "zonder aluminiumzouten, de bekende boosdoener achter gele vlekken",
             "usp_2": "helpt zweetgeur neutraliseren",
             "usp_3": "kartonnen verpakking, mag bij het oud papier",
             "usp_4": "",
-            "q_1": "Is het even wennen?",
-            "a_1": "<p>Stap je over van een antitranspirant? Dan kan het een week of twee wennen, omdat je oksels niet meer worden dichtgezet. Smeer één keer per dag op een schone, droge huid en val niet terug op je oude deo.</p>",
-            "q_2": "Krijg ik gele vlekken in mijn kleding?",
-            "a_2": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
-            "q_3": "Ik heb een gevoelige huid, kan ik deze gebruiken?",
-            "a_3": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>"
+            "q_1": "Krijg ik gele vlekken in mijn kleding?",
+            "a_1": "<p>Gele vlekken in je kleding komen meestal door aluminiumzouten in antitranspirant. Onze deo is zonder aluminiumzouten, de bekende boosdoener achter gele vlekken.</p>",
+            "q_2": "Ik heb een gevoelige huid, kan ik deze gebruiken?",
+            "a_2": "<p>Onze producten zijn allemaal gemaakt met ingrediënten van 100% natuurlijke oorsprong, dus heel geschikt voor de gevoelige huid. Sommige mensen zijn gevoelig voor baking soda. Kies dan een van onze baking soda vrije opties: Go Gentle of Fresh Laundry.</p>",
+            "q_3": "",
+            "a_3": ""
           }
         },
         "kb_bodywash": {
@@ -120,7 +120,7 @@
           "settings": {
             "tags": "collection-main-body-wash",
             "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
-            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "returns": "Niet tevreden? Dan krijg je altijd je geld terug",
             "usp_1": "geen stroef gevoel na het douchen",
             "usp_2": "navulbaar: de case koop je één keer, daarna alleen blikjes",
             "usp_3": "ingrediënten van 100% natuurlijke oorsprong",
@@ -138,7 +138,7 @@
           "settings": {
             "tags": "collection-main-handcreme",
             "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
-            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "returns": "Niet tevreden? Dan krijg je altijd je geld terug",
             "usp_1": "trekt razendsnel in",
             "usp_2": "geen plakkerige handen",
             "usp_3": "ingrediënten van 100% natuurlijke oorsprong",
@@ -156,7 +156,7 @@
           "settings": {
             "tags": "collection-main-lippenbalsem",
             "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
-            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "returns": "Niet tevreden? Dan krijg je altijd je geld terug",
             "usp_1": "kartonnen verpakking, mag bij het oud papier",
             "usp_2": "ingrediënten van 100% natuurlijke oorsprong",
             "usp_3": "",
@@ -174,7 +174,7 @@
           "settings": {
             "tags": "",
             "delivery": "Binnen twee werkdagen bezorgd, gratis vanaf €25 in Nederland en €30 naar België",
-            "returns": "30 dagen om te retourneren, ongebruikt en in de originele verpakking",
+            "returns": "Niet tevreden? Dan krijg je altijd je geld terug",
             "usp_1": "een miljoen oksels gingen je voor",
             "usp_2": "ingrediënten van 100% natuurlijke oorsprong",
             "usp_3": "",
@@ -287,11 +287,11 @@
         "text_font_color": "red",
         "max_heading_width": "15",
         "max_content_width": "50",
-        "use_carousel": false,
+        "use_carousel": true,
         "use_carousel_device": "mobile",
         "use_carousel_auto_scroll": false,
         "use_carousel_arrows": false,
-        "use_carousel_manual_scroll": false,
+        "use_carousel_manual_scroll": true,
         "item_font_color": "red",
         "use_carousel_speed": "20"
       }
