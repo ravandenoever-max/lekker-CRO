@@ -1,0 +1,61 @@
+{%- comment -%}
+  "iets voor jou?" onder de productpagina (sectie theme-section__products met "Recently viewed" aan).
+  Vervangt de functie PopulateRecentlyViewed van het thema: eerst de producten die de bezoeker recent bekeek,
+  daarna aangevuld met de vaste producten uit de collectie iets-voor-jou (Shopify > Collecties), samen maximaal 6.
+  Het huidige product en dubbele producten worden overgeslagen. Is de collectie leeg of weg, dan werkt alles weer zoals het thema het deed.
+  Wordt geladen vanuit sections/element-footer-theme.liquid. Gaat door de inline-html minifier: geen // commentaar in de JavaScript.
+  Toegevoegd november 2026, CRO-project.
+{%- endcomment -%}
+{%- assign lk_rf = collections['iets-voor-jou'] -%}
+{%- if lk_rf.products.size > 0 -%}
+<script>
+  (function () {
+    var fixed = [{%- for p in lk_rf.products limit: 12 -%}{%- if p.available -%}{ "id": "{{ p.id }}", "handle": {{ p.handle | json }} },{%- endif -%}{%- endfor -%}];
+    function removeSection(w) { var sec = w.closest('.shopify-section') || w.closest('section'); if (sec) { sec.remove(); } }
+    window.PopulateRecentlyViewed = function () {
+      var w = document.getElementById('recently-viewed-products');
+      if (!w || w.getAttribute('data-lk-init')) { return; }
+      w.setAttribute('data-lk-init', '1');
+      var ul = w.querySelector('.js-elements__wrapper');
+      if (!ul) { return; }
+      var maxEl = document.querySelector('.js-website-recently-product-display');
+      var max = parseInt(maxEl ? maxEl.value : '', 10) || 6;
+      var curEl = document.querySelector('.js-website-product-handle');
+      var curId = curEl ? curEl.value.split('=')[0] : '';
+      var root = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+      var raw = '';
+      var m = document.cookie.match(/(?:^|; )store-recently-viewed=([^;]*)/);
+      if (m) { try { raw = decodeURIComponent(m[1]); } catch (e) { raw = m[1]; } }
+      var seen = {};
+      if (curId) { seen[curId] = true; }
+      var items = [];
+      raw.split(':::').forEach(function (s) {
+        var p = s.split('=');
+        if (p.length < 2 || !p[0] || !p[1] || seen[p[0]]) { return; }
+        seen[p[0]] = true;
+        items.push({ id: p[0], handle: p[1] });
+      });
+      fixed.forEach(function (f) { if (!seen[f.id]) { seen[f.id] = true; items.push(f); } });
+      items = items.slice(0, max);
+      if (!items.length) { removeSection(w); return; }
+      Promise.all(items.map(function (it) {
+        return fetch(root + 'products/' + it.handle + '/product-card?_=' + Date.now(), { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.text() : ''; }).catch(function () { return ''; });
+      })).then(function (list) {
+        list.forEach(function (html) {
+          if (!html) { return; }
+          var li = new DOMParser().parseFromString(html, 'text/html').querySelector('li');
+          if (li) { ul.appendChild(li); }
+        });
+        var n = ul.children.length;
+        if (!n) { removeSection(w); return; }
+        [w.querySelector('.scrollbar-wrapper'), ul].forEach(function (el) {
+          if (el) { el.className = el.className.replace(/(^|\s)element-count-\S+/g, '') + ' element-count-' + n; }
+        });
+        try { if (typeof window.SVGInject === 'function') { window.SVGInject(document.querySelectorAll('img.injectable-svg')); } } catch (e) {}
+        try { if (typeof window.InitAddToCartButtons === 'function') { window.InitAddToCartButtons(); } } catch (e) {}
+        try { if (typeof window.InitSecondProductImage === 'function') { window.InitSecondProductImage(); } } catch (e) {}
+      });
+    };
+  })();
+</script>
+{%- endif -%}
