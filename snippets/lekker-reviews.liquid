@@ -1,0 +1,98 @@
+{%- comment -%}
+  Reviews van de hele productlijn op de productpagina (alle geuren samen), in eigen opmaak.
+  Groepen: metaobject "Reviewgroep" (lekker_reviewgroep) in Shopify, Inhoud > Metaobjecten.
+  De reviews komen live van Judge.me via dezelfde openbare route die de gratis Judge.me-widget gebruikt (reviews_for_widget), per product van de groep.
+  Het blok wordt bij het laden in de Judge.me-sectie gezet en vervangt de lijst van Judge.me. Het formulier "schrijf een review" blijft van Judge.me.
+  Lukt ophalen niet, dan blijft gewoon de Judge.me-widget staan.
+  Wordt gerenderd vanuit lekker-koopblok. Terugdraaien: die render-regel weghalen.
+  Let op: gaat door de inline-html minifier. Geen // commentaar in de JavaScript, overal puntkomma's.
+  Toegevoegd november 2026, CRO-project (1.4, reviews samenvoegen).
+{%- endcomment -%}
+{%- liquid
+  assign lr_found = false
+  for g in metaobjects.lekker_reviewgroep.values
+    if lr_found == false
+      for p in g.producten.value
+        if p.id == product.id
+          assign lr_found = true
+          assign lr_group = g
+        endif
+      endfor
+    endif
+    if lr_found == false
+      for p in g.alleen_tonen_op.value
+        if p.id == product.id
+          assign lr_found = true
+          assign lr_group = g
+        endif
+      endfor
+    endif
+  endfor
+  if request.locale.iso_code == 'en'
+    assign lr_t_title = 'reviews'
+    assign lr_t_based = 'based on [N] reviews'
+    assign lr_t_all_scents = 'across all scents'
+    assign lr_t_all = 'all'
+    assign lr_t_new = 'newest'
+    assign lr_t_high = 'highest rating'
+    assign lr_t_low = 'lowest rating'
+    assign lr_t_pics = 'with photos first'
+    assign lr_t_more = 'show more reviews'
+    assign lr_t_write = 'write a review'
+    assign lr_t_verified = 'verified buyer'
+    assign lr_t_reply = 'reply from The Lekker Company'
+    assign lr_t_sort = 'sort'
+    assign lr_t_locale = 'en-GB'
+  else
+    assign lr_t_title = 'reviews'
+    assign lr_t_based = 'gebaseerd op [N] reviews'
+    assign lr_t_all_scents = 'van alle geuren samen'
+    assign lr_t_all = 'alle'
+    assign lr_t_new = 'nieuwste'
+    assign lr_t_high = 'hoogste score'
+    assign lr_t_low = 'laagste score'
+    assign lr_t_pics = 'met foto’s eerst'
+    assign lr_t_more = 'meer reviews'
+    assign lr_t_write = 'schrijf een review'
+    assign lr_t_verified = 'geverifieerde koper'
+    assign lr_t_reply = 'reactie van The Lekker Company'
+    assign lr_t_sort = 'sorteer'
+    assign lr_t_locale = 'nl-NL'
+  endif
+-%}
+{%- if lr_found -%}
+  {%- capture lr_products -%}[
+    {%- for p in lr_group.producten.value -%}
+      {%- assign lr_parts = p.title | split: ' - ' -%}
+      {%- if lr_parts.size > 1 -%}{%- assign lr_label = lr_parts[1] | strip -%}{%- else -%}{%- assign lr_label = p.title -%}{%- endif -%}
+      {%- unless forloop.first -%},{%- endunless -%}{"id":{{ p.id }},"h":{{ p.handle | json }},"g":{{ lr_label | downcase | json }}}
+    {%- endfor -%}
+  ]{%- endcapture -%}
+  {%- render 'lekker-reviews-style' -%}
+  <template id="lk-rev-badge-tpl">{%- render 'lekker-review-stars', product: product -%}</template>
+  <div id="lk-reviews" class="lk-rev" data-products="{{ lr_products | escape }}" data-pid="{{ product.id }}" data-shop="{{ shop.permanent_domain }}" data-locale="{{ lr_t_locale }}" data-based="{{ lr_t_based | escape }}" data-scents="{{ lr_t_all_scents | escape }}" data-all="{{ lr_t_all | escape }}" data-verified="{{ lr_t_verified | escape }}" data-reply="{{ lr_t_reply | escape }}">
+    <div class="lk-rev__head">
+      <div>
+        <h2 class="lk-rev__title theme-ff-special txt-lowercase theme-fs-lg">{{ lr_t_title }}</h2>
+        <div class="lk-rev__score"><span class="lk-rev__avg"></span><span class="lk-rev__stars lk-rev__stars--big"></span></div>
+        <p class="lk-rev__based"></p>
+      </div>
+      <ul class="lk-rev__bars" role="list"></ul>
+      <button type="button" class="lk-rev__write">{{ lr_t_write }}</button>
+    </div>
+    <div class="lk-rev__tools">
+      <div class="lk-rev__chips"></div>
+      <label><span class="visually-hidden">{{ lr_t_sort }}</span>
+        <select class="lk-rev__sort">
+          <option value="new">{{ lr_t_new }}</option>
+          <option value="high">{{ lr_t_high }}</option>
+          <option value="low">{{ lr_t_low }}</option>
+          <option value="pics">{{ lr_t_pics }}</option>
+        </select>
+      </label>
+    </div>
+    <ul class="lk-rev__list" role="list"></ul>
+    <button type="button" class="lk-rev__more" hidden>{{ lr_t_more }}</button>
+  </div>
+  {%- render 'lekker-reviews-script' -%}
+{%- endif -%}

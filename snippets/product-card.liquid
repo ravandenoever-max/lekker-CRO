@@ -57,7 +57,7 @@
 
   assign product_sub_title = ''
 
-  if chosen_product_card_layout == 'hor'  
+  if chosen_product_card_layout == 'hor'
     if product_title contains ' - '
       assign product_title_arr = product_title | split : ' - '
       assign product_title = product_title_arr[0]
@@ -175,9 +175,9 @@
               echo '  <h5 style="/*white-space:nowrap*/min-width:10ch" class="font-fam-bold font-size-xs txt-lowercase color-black">[product_title]</h5>' | replace : '[product_title]', product_title
               if product_sub_title != ''
                 echo '  <h6 style="/*white-space:nowrap*/min-width:10ch" class="font-fam-normal font-size-xs txt-lowercase color-black">[product_sub_title]</h6>' | replace : '[product_sub_title]', product_sub_title
-              endif              
+              endif
               echo '</div>'
-          else              
+          else
               echo '<h2 class="card-information__title"><span>[product_title]</span></h2>' | replace : '[product_title]', product_title
               if product_sub_title != ''
                 echo '<h3 class="card-information__desc"><span>[product_sub_title]</span></h3>' | replace : '[product_sub_title]', product_sub_title
@@ -186,9 +186,7 @@
           if show_product_price == true and product_availible == true
             echo '<span class="card-information__price"><span class="font-size-xs">[product_price__formatted]</span></span>' | replace : '[product_price__formatted]', product_price__formatted
           endif
-            echo '<div class="jdgm-widget jdgm-preview-badge">'
-              echo product_card_product.metafields.judgeme.badge
-            echo '</div>'
+            render 'lekker-review-stars', product: product_card_product, wrap: true
           echo '</div>'
         if settings.website_use_favorites == true
           echo '<div class="add-to-favorites-wrapper fav-[product_id]-[product_handle]">' | replace : '[product_id]', product_id | replace : '[product_handle]', product_handle

@@ -1,0 +1,61 @@
+{%- comment -%}
+  Sterren met de score van de hele productlijn (alle geuren samen), in dezelfde opmaak als de Judge.me-badge.
+  Groepen staan in Shopify als metaobject "Reviewgroep" (lekker_reviewgroep): Inhoud > Metaobjecten.
+  Score = gewogen gemiddelde van reviews.rating en reviews.rating_count (door Judge.me bijgehouden) van alle producten in de groep.
+  Hoort het product bij geen groep, of heeft de groep nog geen reviews, dan de gewone Judge.me-badge.
+  Parameters: product (verplicht), wrap (true = met jdgm-wrapper zoals op de productkaarten).
+  Toegevoegd november 2026, CRO-project (1.4, reviews samenvoegen).
+{%- endcomment -%}
+{%- liquid
+  assign rs_found = false
+  for g in metaobjects.lekker_reviewgroep.values
+    if rs_found == false
+      for p in g.producten.value
+        if p.id == product.id
+          assign rs_found = true
+          assign rs_group = g
+        endif
+      endfor
+    endif
+    if rs_found == false
+      for p in g.alleen_tonen_op.value
+        if p.id == product.id
+          assign rs_found = true
+          assign rs_group = g
+        endif
+      endfor
+    endif
+  endfor
+  assign rs_count = 0
+  assign rs_sum = 0.0
+  if rs_found
+    for p in rs_group.producten.value
+      assign rs_c = p.metafields.reviews.rating_count.value | plus: 0
+      if rs_c > 0
+        assign rs_r = p.metafields.reviews.rating.value.rating | plus: 0.0
+        assign rs_part = rs_r | times: rs_c
+        assign rs_sum = rs_sum | plus: rs_part
+        assign rs_count = rs_count | plus: rs_c
+      endif
+    endfor
+  endif
+-%}
+{%- if rs_found and rs_count > 0 -%}
+  {%- liquid
+    assign rs_avg = rs_sum | divided_by: rs_count
+    assign rs_avg2 = rs_avg | round: 2
+  -%}
+  <div class="{% if wrap %}jdgm-widget jdgm-preview-badge {% endif %}lk-rev-badge" data-lk-group="{{ rs_group.system.handle }}">
+    <div class="jdgm-prev-badge" data-average-rating="{{ rs_avg2 }}" data-number-of-reviews="{{ rs_count }}" data-number-of-questions="0">
+      <span class="jdgm-prev-badge__stars" data-score="{{ rs_avg2 }}" role="img" aria-label="{{ rs_avg2 }} / 5">
+        {%- for i in (1..5) -%}
+          {%- assign rs_half = i | minus: 0.5 -%}
+          {%- if rs_avg >= i -%}<span class="jdgm-star jdgm--on"></span>{%- elsif rs_avg >= rs_half -%}<span class="jdgm-star jdgm--half"></span>{%- else -%}<span class="jdgm-star jdgm--off"></span>{%- endif -%}
+        {%- endfor -%}
+      </span>
+      <span class="jdgm-prev-badge__text">{{ rs_count }} reviews</span>
+    </div>
+  </div>
+{%- elsif wrap -%}
+  <div class="jdgm-widget jdgm-preview-badge">{{ product.metafields.judgeme.badge }}</div>
+{%- endif -%}

@@ -1,0 +1,171 @@
+{%- comment -%} Script van het reviewblok, hoort bij lekker-reviews (CRO-project 1.4, november 2026). Leest alles uit de data-attributen van #lk-reviews. Geen // commentaar (minifier). {%- endcomment -%}
+<script>
+    (function () {
+      var box = document.getElementById('lk-reviews');
+      if (!box || box.getAttribute('data-init')) { return; }
+      box.setAttribute('data-init', '1');
+      var tpl = document.getElementById('lk-rev-badge-tpl');
+      var holder = document.querySelector('[id*="judge_me_reviews_preview_badge"]');
+      function toReviews(e) { e.preventDefault(); var t = document.getElementById('lk-reviews'); if (t) { t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+      if (tpl && holder && tpl.content && tpl.content.firstElementChild) {
+        var badge = tpl.content.firstElementChild.cloneNode(true);
+        badge.setAttribute('role', 'link');
+        badge.setAttribute('tabindex', '0');
+        badge.addEventListener('click', toReviews);
+        badge.addEventListener('keydown', function (e) { if (e.key === 'Enter') { toReviews(e); } });
+        holder.appendChild(badge);
+      }
+      var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" fill="FILL" stroke="var(--color-red)" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+      function stars(v) { var h = ''; for (var i = 1; i <= 5; i++) { h += STAR.replace('FILL', v >= i - 0.25 ? 'var(--color-red)' : 'none'); } return h; }
+      var products = []; try { products = JSON.parse(box.getAttribute('data-products')); } catch (e) { products = []; }
+      var labels = {}; products.forEach(function (p) { labels[p.h] = p.g; });
+      var shop = box.getAttribute('data-shop');
+      var locale = box.getAttribute('data-locale');
+      var reviews = [];
+      var state = { scent: 'all', sort: 'new', shown: 5 };
+      var section = null;
+      var multi = false;
+      var attempts = 0;
+      function fetchProduct(id) {
+        var all = [];
+        function page(n) {
+          var url = 'https://api.judge.me/reviews/reviews_for_widget?url=' + encodeURIComponent(shop) + '&shop_domain=' + encodeURIComponent(shop) + '&platform=shopify&product_id=' + id + '&page=' + n + '&per_page=100';
+          return fetch(url).then(function (r) { if (!r.ok) { throw new Error('jdgm'); } return r.json(); }).then(function (d) {
+            var doc = new DOMParser().parseFromString(d.html || '', 'text/html');
+            var items = doc.querySelectorAll('.jdgm-rev');
+            items.forEach(function (el) { all.push(parse(el)); });
+            if (items.length === 100 && n < 10) { return page(n + 1); }
+            return all;
+          });
+        }
+        return page(1);
+      }
+      function txt(el, sel) { var n = el.querySelector(sel); return n ? n.textContent.replace(/\s+/g, ' ').trim() : ''; }
+      function parse(el) {
+        var url = el.getAttribute('data-product-url') || '';
+        var handle = url.split('/').pop();
+        var time = el.querySelector('.jdgm-rev__timestamp');
+        var body = el.querySelector('.jdgm-rev__body');
+        var paras = [];
+        if (body) { var ps = body.querySelectorAll('p'); if (ps.length) { ps.forEach(function (p) { var t = p.textContent.trim(); if (t) { paras.push(t); } }); } else { var t = body.textContent.trim(); if (t) { paras.push(t); } } }
+        var pics = [];
+        el.querySelectorAll('.jdgm-rev__pics img').forEach(function (img) { var s = img.getAttribute('data-src') || img.getAttribute('src'); if (s) { pics.push(s); } });
+        var reply = el.querySelector('.jdgm-rev__reply');
+        var replyText = reply ? reply.textContent.replace(/\s+/g, ' ').trim() : '';
+        var rating = el.querySelector('.jdgm-rev__rating');
+        return {
+          id: el.getAttribute('data-review-id'),
+          rating: rating ? parseFloat(rating.getAttribute('data-score')) || 0 : 0,
+          date: time ? (time.getAttribute('datetime') || '') : '',
+          author: txt(el, '.jdgm-rev__author'),
+          title: txt(el, '.jdgm-rev__title'),
+          body: paras,
+          pics: pics,
+          reply: replyText,
+          verified: el.getAttribute('data-verified-buyer') === 'true',
+          scent: labels[handle] || ''
+        };
+      }
+      function fmtDate(s) { var d = new Date(s); if (isNaN(d)) { return ''; } try { return d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return d.toISOString().slice(0, 10); } }
+      function el(tag, cls, text) { var n = document.createElement(tag); if (cls) { n.className = cls; } if (text) { n.textContent = text; } return n; }
+      function visible() {
+        var list = reviews.filter(function (r) { return state.scent === 'all' || r.scent === state.scent; });
+        var by = { new: function (a, b) { return b.date < a.date ? -1 : (b.date > a.date ? 1 : 0); } };
+        list.sort(function (a, b) {
+          if (state.sort === 'high' && a.rating !== b.rating) { return b.rating - a.rating; }
+          if (state.sort === 'low' && a.rating !== b.rating) { return a.rating - b.rating; }
+          if (state.sort === 'pics' && (a.pics.length > 0) !== (b.pics.length > 0)) { return a.pics.length > 0 ? -1 : 1; }
+          return by.new(a, b);
+        });
+        return list;
+      }
+      function renderList() {
+        var ul = box.querySelector('.lk-rev__list');
+        var list = visible();
+        ul.innerHTML = '';
+        list.slice(0, state.shown).forEach(function (r) {
+          var li = el('li', 'lk-rev__item');
+          var meta = el('div', 'lk-rev__meta');
+          var st = el('span', 'lk-rev__stars'); st.innerHTML = stars(r.rating); st.setAttribute('role', 'img'); st.setAttribute('aria-label', r.rating + ' / 5'); meta.appendChild(st);
+          meta.appendChild(el('span', 'lk-rev__author', r.author));
+          if (r.verified) { meta.appendChild(el('span', 'lk-rev__verified', box.getAttribute('data-verified'))); }
+          meta.appendChild(el('span', 'lk-rev__date', fmtDate(r.date)));
+          if (r.scent && multi) { meta.appendChild(el('span', 'lk-rev__scent', r.scent)); }
+          li.appendChild(meta);
+          if (r.title) { li.appendChild(el('p', 'lk-rev__rtitle', r.title)); }
+          var body = el('div', 'lk-rev__body'); r.body.forEach(function (t) { body.appendChild(el('p', '', t)); }); li.appendChild(body);
+          if (r.pics.length) { var pics = el('div', 'lk-rev__pics'); r.pics.forEach(function (s) { var a = el('a'); a.href = s; a.target = '_blank'; a.rel = 'noopener'; var img = el('img'); img.src = s; img.alt = ''; img.loading = 'lazy'; a.appendChild(img); pics.appendChild(a); }); li.appendChild(pics); }
+          if (r.reply) { var rp = el('div', 'lk-rev__reply'); rp.appendChild(el('strong', '', box.getAttribute('data-reply'))); rp.appendChild(el('span', '', r.reply)); li.appendChild(rp); }
+          ul.appendChild(li);
+        });
+        box.querySelector('.lk-rev__more').hidden = list.length <= state.shown;
+      }
+      function renderHead() {
+        var n = reviews.length;
+        var sum = 0; var dist = [0, 0, 0, 0, 0];
+        reviews.forEach(function (r) { sum += r.rating; var k = Math.max(1, Math.min(5, Math.round(r.rating))); dist[k - 1]++; });
+        var avg = n ? sum / n : 0;
+        box.querySelector('.lk-rev__avg').textContent = avg.toFixed(1).replace('.', ',');
+        var big = box.querySelector('.lk-rev__stars--big'); big.innerHTML = stars(avg); big.setAttribute('role', 'img'); big.setAttribute('aria-label', avg.toFixed(1) + ' / 5');
+        var counts = {}; reviews.forEach(function (r) { if (r.scent) { counts[r.scent] = (counts[r.scent] || 0) + 1; } });
+        var scents = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; });
+        multi = scents.length > 1;
+        var based = box.getAttribute('data-based').replace('[N]', n);
+        if (scents.length > 1) { based += ' ' + box.getAttribute('data-scents'); }
+        box.querySelector('.lk-rev__based').textContent = based;
+        var bars = box.querySelector('.lk-rev__bars'); bars.innerHTML = '';
+        for (var s = 5; s >= 1; s--) {
+          var li = el('li', 'lk-rev__bar');
+          li.appendChild(el('span', '', s + '★'));
+          var track = el('span', 'lk-rev__bar-track'); var fill = el('span', 'lk-rev__bar-fill'); fill.style.display = 'block'; fill.style.width = (n ? Math.round(dist[s - 1] * 100 / n) : 0) + '%'; track.appendChild(fill); li.appendChild(track);
+          li.appendChild(el('span', 'lk-rev__bar-n', String(dist[s - 1])));
+          bars.appendChild(li);
+        }
+        var chips = box.querySelector('.lk-rev__chips'); chips.innerHTML = '';
+        if (scents.length > 1) {
+          var opts = [['all', box.getAttribute('data-all') + ' (' + n + ')']].concat(scents.map(function (k) { return [k, k + ' (' + counts[k] + ')']; }));
+          opts.forEach(function (o) { var b = el('button', 'lk-rev__chip' + (state.scent === o[0] ? ' is-active' : ''), o[1]); b.type = 'button'; b.setAttribute('data-scent', o[0]); b.setAttribute('aria-pressed', state.scent === o[0] ? 'true' : 'false'); chips.appendChild(b); });
+        }
+      }
+      function fallback() { if (section) { section.classList.add('lk-rev-fallback'); } box.classList.remove('is-placed'); }
+      function start() {
+        box.setAttribute('data-state', 'start-' + attempts);
+        var jw = document.querySelector('.shopify-section .jdgm-review-widget');
+        section = jw ? jw.closest('.shopify-section') : document.querySelector('.shopify-section[id$="__theme_section_review_app"], .shopify-section[id$="__173230878117298f18"]');
+        if (!section) { attempts++; if (attempts < 20) { setTimeout(start, 500); } return; }
+        section.insertBefore(box, section.firstChild);
+        Promise.all(products.map(function (p) { return fetchProduct(p.id).catch(function () { return null; }); })).then(function (res) {
+          if (res.every(function (r) { return r === null; })) { fallback(); return; }
+          var seen = {};
+          res.forEach(function (list) { (list || []).forEach(function (r) { if (r.id && !seen[r.id]) { seen[r.id] = true; reviews.push(r); } }); });
+          if (!reviews.length) { fallback(); return; }
+          box.classList.add('is-placed');
+          renderHead();
+          renderList();
+        });
+        box.addEventListener('click', function (e) {
+          var chip = e.target.closest('.lk-rev__chip');
+          if (chip) { state.scent = chip.getAttribute('data-scent'); state.shown = 5; renderHead(); renderList(); return; }
+          if (e.target.closest('.lk-rev__more')) { state.shown += 5; renderList(); return; }
+          if (e.target.closest('.lk-rev__write')) {
+            section.classList.add('lk-rev-writing');
+            var tries = 0;
+            var open = function (x) { return !!x && x.style.display !== 'none' && x.offsetHeight > 0; };
+            var step = function () {
+              tries++;
+              var f = section.querySelector('.jdgm-form-wrapper');
+              var dyn = section.querySelector('.jdgm-form-dynamic-wrapper');
+              var link = section.querySelector('.jdgm-write-rev-link');
+              if (open(f) || open(dyn)) { (open(dyn) ? dyn : f).scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+              if (link && (tries === 3 || tries === 8)) { link.click(); }
+              if (tries === 12 && f) { f.style.display = ''; }
+              if (tries < 15) { setTimeout(step, 200); } else { section.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            };
+            setTimeout(step, 200);
+          }
+        });
+        box.querySelector('.lk-rev__sort').addEventListener('change', function (e) { state.sort = e.target.value; state.shown = 5; renderList(); });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', start); } else { start(); }
+    })();
+</script>
