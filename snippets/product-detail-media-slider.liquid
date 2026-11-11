@@ -38,7 +38,7 @@
       </div>
     {%- endif -%}
     </div>
-    {%- comment -%} CRO-project 2026: alle foto's als kleine afbeeldingen onder de grote foto {%- endcomment -%}
+    {%- comment -%} CRO-project 2026: alle foto's als kleine afbeeldingen onder de grote foto. Fotobalk nooit breder dan de foto, hoogte van de foto past zich aan bij een ander schermformaat (11 nov). {%- endcomment -%}
     <style>
       .product-media-carousel-wrapper .product-media-cycle-pager-wrapper{display:none}
       .lk-thumbs{display:flex;gap:0.5rem;width:fit-content;max-width:100%;margin:0 auto;padding:0.75rem 0 0.25rem;overflow-x:auto;scrollbar-width:none}
@@ -47,7 +47,7 @@
       .lk-thumb img{width:100%;height:100%;object-fit:cover;display:block}
       .lk-thumb.is-active,.lk-thumb:hover{border-color:var(--color-red);opacity:1}
       @media screen and (max-width:767px){.lk-thumbs{padding-left:20px;padding-right:20px}.lk-thumb{width:3.75rem;height:3.75rem}}
-      @media screen and (min-width:768px){main.content-for-layout:has(.product__media-wrapper){overflow:clip !important}.product__media-wrapper .product-media-carousel-wrapper,.product__media-wrapper .lk-thumbs{max-width:calc((100vh - 220px) * 0.72);margin-left:auto;margin-right:auto}}
+      @media screen and (min-width:768px){main.content-for-layout:has(.product__media-wrapper){overflow:clip !important}.product__media-wrapper .product-media-carousel-wrapper,.product__media-wrapper .lk-thumbs{max-width:min(100%, calc((100vh - 220px) * 0.72));margin-left:auto;margin-right:auto}}
     </style>
     <div class="lk-thumbs" data-lk-thumbs>
       {%- for media in product.media -%}
@@ -58,6 +58,15 @@
     </div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        var rsz = null;
+        function fitSlides() {
+          var sl = document.querySelectorAll('.product-media-carousel-wrapper .product-media-slide');
+          var h = 0; var k;
+          for (k = 0; k < sl.length; k++) { sl[k].style.minHeight = ''; }
+          for (k = 0; k < sl.length; k++) { if (sl[k].offsetHeight > h) { h = sl[k].offsetHeight; } }
+          if (h > 0) { for (k = 0; k < sl.length; k++) { sl[k].style.minHeight = h + 'px'; } }
+        }
+        window.addEventListener('resize', function () { clearTimeout(rsz); rsz = setTimeout(fitSlides, 150); });
         var box = document.querySelector('[data-lk-thumbs]');
         if (!box || !window.jQuery) { return; }
         var btns = box.querySelectorAll('.lk-thumb');
