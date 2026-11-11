@@ -120,7 +120,7 @@
                           else
                             echo '<li data-menu-c="[this_menu_b_id]" class="li___level-b" id="[this_menu_b_id]">' | replace: '[this_menu_b_id]' , this_menu_b_id
                               if childlink_title_downcase != link_title_downcase                              
-                                echo '<a href="[childlink_url]" title="[childlink_title]" class="theme-f-hor theme-f-outside theme-f-middle [x_class]">' | replace: '[x_class]' , x_class | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_
+                                echo '<a href="[childlink_url]" title="[childlink_title]" class="theme-f-hor theme-f-outside theme-f-middle [x_class]">' | replace: '[x_class]' , x_class | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_url
                                 echo '  <h2 class="title theme-ff-bold -txt-uppercase theme-fs-sm level-b"><span>[childlink_title]</span></h2>' | replace: '[childlink_title]' , childlink_title | replace: '[childlink_url]' , childlink_url
                                 echo '</a>'
                               endif                               
