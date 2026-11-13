@@ -22,7 +22,7 @@
       var shop = box.getAttribute('data-shop');
       var locale = box.getAttribute('data-locale');
       var reviews = [];
-      var state = { scent: 'all', sort: 'new', shown: 5 };
+      var state = { scent: 'all', sort: 'top', shown: 5 };
       var section = null;
       var multi = false;
       var attempts = 0;
@@ -71,6 +71,12 @@
       function visible() {
         var list = reviews.filter(function (r) { return state.scent === 'all' || r.scent === state.scent; });
         var by = { new: function (a, b) { return b.date < a.date ? -1 : (b.date > a.date ? 1 : 0); } };
+        if (state.sort === 'top') {
+          var strength = function (r) { return (r.pics.length ? 1000 : 0) + Math.min(r.body.join(' ').length, 999); };
+          var top = list.filter(function (r) { return r.rating >= 5 && r.body.join(' ').length >= 40; }).sort(function (a, b) { return strength(b) - strength(a) || by.new(a, b); }).slice(0, 3);
+          var rest = list.filter(function (r) { return top.indexOf(r) === -1; }).sort(by.new);
+          return top.concat(rest);
+        }
         list.sort(function (a, b) {
           if (state.sort === 'high' && a.rating !== b.rating) { return b.rating - a.rating; }
           if (state.sort === 'low' && a.rating !== b.rating) { return a.rating - b.rating; }

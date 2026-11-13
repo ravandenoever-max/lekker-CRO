@@ -33,6 +33,7 @@
     assign lr_t_based = 'based on [N] reviews'
     assign lr_t_all_scents = 'across all scents'
     assign lr_t_all = 'all'
+    assign lr_t_top = 'featured first'
     assign lr_t_new = 'newest'
     assign lr_t_high = 'highest rating'
     assign lr_t_low = 'lowest rating'
@@ -48,6 +49,7 @@
     assign lr_t_based = 'gebaseerd op [N] reviews'
     assign lr_t_all_scents = 'van alle geuren samen'
     assign lr_t_all = 'alle'
+    assign lr_t_top = 'uitgelicht'
     assign lr_t_new = 'nieuwste'
     assign lr_t_high = 'hoogste score'
     assign lr_t_low = 'laagste score'
@@ -84,6 +86,7 @@
       <div class="lk-rev__chips"></div>
       <label><span class="visually-hidden">{{ lr_t_sort }}</span>
         <select class="lk-rev__sort">
+          <option value="top">{{ lr_t_top }}</option>
           <option value="new">{{ lr_t_new }}</option>
           <option value="high">{{ lr_t_high }}</option>
           <option value="low">{{ lr_t_low }}</option>
