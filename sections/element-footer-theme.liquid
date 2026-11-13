@@ -71,6 +71,10 @@
             <div class="">
               <a title="Contact" class="link link--from-left link-white font-fam-normal font-size-xs color-white txt-lowercase" href="mailto:info@thelekkercompany.com"><span>info@thelekkercompany.com</span></a>
             </div>
+            {%- comment -%} CRO-project nov 2026: vervangt het zwevende CookieYes-icoontje. Opent de cookie-instellingen van CookieYes. {%- endcomment -%}
+            <div class="padding-t-3xs">
+              <a href="#" class="cky-banner-element link link--from-left link-white font-fam-normal font-size-xs color-white txt-lowercase" onclick="if (window.revisitCkyConsent) { window.revisitCkyConsent(); } return false;"><span>{% if current_language == 'en' %}cookie settings{% else %}cookie-instellingen{% endif %}</span></a>
+            </div>
             <div class="padding-v-3xs">
               <div class="footer-language">
                 <ul class="list-horizontal list-padding-r-5 list-unstyled">
