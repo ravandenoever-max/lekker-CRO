@@ -1,0 +1,9 @@
+{%- comment -%}
+  Kleine CSS-fixes op bestaande thema-onderdelen (CRO-project, november 2026). Geladen vanuit sections/element-footer-theme.liquid.
+  1. Filter-uitklapmenu in het productoverzicht: de onzichtbare kliklaag over de productkaarten (.card-wrapper-inner::after, z-index 120000)
+     lag boven het filterblok (collection-filters-form, z-index 5000). Wie op een filter klikte, kwam op de productpagina eronder.
+     Filterblok nu boven die laag, onder de header (z-index 90000000).
+{%- endcomment -%}
+<style>
+  .collection-filters collection-filters-form.facets { z-index: 130000; }
+</style>

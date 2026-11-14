@@ -5,6 +5,7 @@
   Let op: deze HTML gaat door de inline-html minifier (newlines worden verwijderd). Geen // commentaar in de JavaScript.
   Parameters: s (footer section.settings), lang (huidige taal).
   Tabje na wegklikken: knopje rechtsonder (op elk scherm), zodat het niet over de tekst valt (11 nov).
+  z-index boven de kliklaag van de productkaarten (120000) en onder de winkelwagenlade (90006000), anders vallen klikken op de popup door naar een product (14 nov).
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
 {%- liquid
@@ -60,7 +61,7 @@
   @media screen and (min-width: 768px) {
     .lk-drip__fields { grid-template-columns: 1fr 1fr; }
   }
-  .lk-pop { position: fixed; inset: 0; z-index: 10050; display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .lk-pop { position: fixed; inset: 0; z-index: 90005000; display: flex; align-items: center; justify-content: center; padding: 16px; }
   .lk-pop[hidden] { display: none; }
   .lk-pop__overlay { position: absolute; inset: 0; background: rgba(33, 35, 34, .45); opacity: 0; transition: opacity .25s ease; }
   .lk-pop__card { position: relative; width: 100%; max-width: 440px; max-height: calc(100vh - 32px); overflow: auto; background: var(--color-white); color: var(--color-black); border-radius: 30px; opacity: 0; transform: translateY(16px); transition: opacity .3s ease, transform .3s ease; }
@@ -78,7 +79,7 @@
   .lk-pop .lk-drip__fields { grid-template-columns: 1fr; }
   .lk-pop__close { position: absolute; top: 12px; right: 12px; z-index: 1; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: var(--color-white); color: var(--color-black); font-size: 24px; line-height: 36px; text-align: center; cursor: pointer; }
   .lk-pop-open { overflow: hidden; }
-  .lk-teaser { position: fixed; left: 0; top: 50%; z-index: 10040; transform: translateY(-50%); }
+  .lk-teaser { position: fixed; left: 0; top: 50%; z-index: 90004000; transform: translateY(-50%); }
   .lk-teaser[hidden] { display: none; }
   .lk-teaser__open { display: block; margin: 0; padding: 18px 12px; border: 0; border-radius: 20px 0 0 20px; font-size: 15px; line-height: 1; letter-spacing: .02em; background: var(--color-red); color: var(--color-white) !important; writing-mode: vertical-rl; transform: rotate(180deg); cursor: pointer; box-shadow: none; -webkit-appearance: none; appearance: none; }
   .lk-teaser__off { position: absolute; top: -10px; right: -10px; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: var(--color-white); color: var(--color-black); font-size: 15px; line-height: 22px; text-align: center; cursor: pointer; box-shadow: 0 0 0 1px rgba(33, 35, 34, .15); }
