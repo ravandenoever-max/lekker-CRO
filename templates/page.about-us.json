@@ -168,7 +168,7 @@
             "item_link": "",
             "column_custom_image": "shopify://shop_images/1_86219b9f-6f3e-42d4-ab6a-e84183d4f28a.png",
             "predefined_image": "usp-plant",
-            "heading": "100% ingrediënten van natuurlijke oorsprong"
+            "heading": "100% natuurlijke oorsprong"
           }
         },
         "template--14386062065713__375161fb4ca-16667101734a1d36d0-2": {
@@ -177,7 +177,7 @@
             "item_link": "",
             "column_custom_image": "shopify://shop_images/6_3c6f622a-5b2a-49cf-898f-36657908b554.png",
             "predefined_image": "usp-vegan",
-            "heading": "onze hele lijn is vegan"
+            "heading": "vegan"
           }
         },
         "template--14386062065713__375161fb4ca-16667101734a1d36d0-0": {
@@ -186,7 +186,7 @@
             "item_link": "",
             "column_custom_image": "shopify://shop_images/8_0b43b249-e314-40be-8248-544751d39728.png",
             "predefined_image": "usp-effective",
-            "heading": "geen toegevoegde microplastics"
+            "heading": "zonder aluminiumzouten"
           }
         },
         "template--14386062065713__375161fb4ca-16667101734a1d36d0-3": {
@@ -197,13 +197,23 @@
             "predefined_image": "usp-sustainable",
             "heading": "beoordeeld met 4,7 uit 5"
           }
+        },
+        "lk_usp_bcorp": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/webshop_icoontjes.png",
+            "predefined_image": "usp-certified",
+            "heading": "b corp gecertificeerd"
+          }
         }
       },
       "block_order": [
         "template--14386062065713__375161fb4ca-16667101734a1d36d0-1",
         "template--14386062065713__375161fb4ca-16667101734a1d36d0-2",
         "template--14386062065713__375161fb4ca-16667101734a1d36d0-0",
-        "template--14386062065713__375161fb4ca-16667101734a1d36d0-3"
+        "template--14386062065713__375161fb4ca-16667101734a1d36d0-3",
+        "lk_usp_bcorp"
       ],
       "settings": {
         "row_spacing_inner_top": "xs",

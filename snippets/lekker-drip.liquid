@@ -6,6 +6,7 @@
   Parameters: s (footer section.settings), lang (huidige taal).
   Tabje na wegklikken: knopje rechtsonder (op elk scherm), zodat het niet over de tekst valt (11 nov).
   z-index boven de kliklaag van de productkaarten (120000) en onder de winkelwagenlade (90006000), anders vallen klikken op de popup door naar een product (14 nov).
+  Popup per pagina, product of collectie uitzetten zonder code: vinkje "Popup gratis verzending verbergen" (metafield lekker.popup_verbergen) in de admin (18 nov).
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
 {%- liquid
@@ -17,6 +18,15 @@
     assign show_popup = false
   endif
   if template.name == 'cart' or template.name == 'password' or template.name == 'gift_card' or template.directory == 'customers'
+    assign show_popup = false
+  endif
+  if template.name == 'page' and page.metafields.lekker.popup_verbergen.value == true
+    assign show_popup = false
+  endif
+  if template.name == 'product' and product.metafields.lekker.popup_verbergen.value == true
+    assign show_popup = false
+  endif
+  if template.name == 'collection' and collection.metafields.lekker.popup_verbergen.value == true
     assign show_popup = false
   endif
   assign lk_lang = request.locale.iso_code | slice: 0, 2

@@ -3,7 +3,10 @@
   1. Filter-uitklapmenu in het productoverzicht: de onzichtbare kliklaag over de productkaarten (.card-wrapper-inner::after, z-index 120000)
      lag boven het filterblok (collection-filters-form, z-index 5000). Wie op een filter klikte, kwam op de productpagina eronder.
      Filterblok nu boven die laag, onder de header (z-index 90000000).
+  2. USP-rij op de blauwe secties (home, collecties, over ons): het B Corp-icoon bestaat alleen in oranje.
+     Op die blauwe secties maken we het wit, net als de andere iconen (18 nov).
 {%- endcomment -%}
 <style>
   .collection-filters collection-filters-form.facets { z-index: 130000; }
+  .shopify-section[id$="__usp_elements"] img[src*="webshop_icoontjes"], .shopify-section[id$="__usp_elements"] img[srcset*="webshop_icoontjes"], .shopify-section[id$="__usp_elements"] img[data-src*="webshop_icoontjes"], .shopify-section[id$="__usp_elements"] img[data-srcset*="webshop_icoontjes"], .shopify-section[id$="__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde"] img[src*="webshop_icoontjes"], .shopify-section[id$="__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde"] img[srcset*="webshop_icoontjes"], .shopify-section[id$="__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde"] img[data-src*="webshop_icoontjes"], .shopify-section[id$="__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde"] img[data-srcset*="webshop_icoontjes"], .shopify-section[id$="__375161fb4ca"] img[src*="webshop_icoontjes"], .shopify-section[id$="__375161fb4ca"] img[srcset*="webshop_icoontjes"], .shopify-section[id$="__375161fb4ca"] img[data-src*="webshop_icoontjes"], .shopify-section[id$="__375161fb4ca"] img[data-srcset*="webshop_icoontjes"] { filter: brightness(0) invert(1); }
 </style>

@@ -193,7 +193,7 @@
             "item_link": "",
             "column_custom_image": "shopify://shop_images/all_natural_zonder_tekst_7bf9b761-2a0c-4d69-811a-5cb02ce91c95.png",
             "predefined_image": "usp-sustainable",
-            "heading": "100% ingrediënten van natuurlijke oorsprong"
+            "heading": "100% natuurlijke oorsprong"
           }
         },
         "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-2": {
@@ -202,7 +202,7 @@
             "item_link": "",
             "column_custom_image": "shopify://shop_images/vegan_symbol_zonder_tekst.png",
             "predefined_image": "usp-vegan",
-            "heading": "onze hele lijn is vegan"
+            "heading": "vegan"
           }
         },
         "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-0": {
@@ -211,7 +211,7 @@
             "item_link": "",
             "column_custom_image": "shopify://shop_images/free_from_symbol_zonder_tekst.png",
             "predefined_image": "usp-effective",
-            "heading": "geen toegevoegde microplastics"
+            "heading": "zonder aluminiumzouten"
           }
         },
         "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4": {
@@ -222,13 +222,23 @@
             "predefined_image": "usp-certified",
             "heading": "beoordeeld met 4,7 uit 5"
           }
+        },
+        "lk_usp_bcorp": {
+          "type": "column",
+          "settings": {
+            "item_link": "",
+            "column_custom_image": "shopify://shop_images/webshop_icoontjes.png",
+            "predefined_image": "usp-certified",
+            "heading": "b corp gecertificeerd"
+          }
         }
       },
       "block_order": [
         "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-1",
         "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-2",
         "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-0",
-        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4"
+        "template--14373867421745__673dfdbf-4e8f-4e40-b60e-1f7d8b93ffde-166600671295c25acc-4",
+        "lk_usp_bcorp"
       ],
       "settings": {
         "row_spacing_inner_top": "lg",
