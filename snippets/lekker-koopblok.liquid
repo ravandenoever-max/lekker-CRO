@@ -1,18 +1,63 @@
 {%- comment -%}
   Koopblok onder de koopknop op de productpagina: voordelen, twijfels en bezorging.
   Inhoud per productlijn via de blokken "Koopblok (CRO)" in de productsectie. Parameter: b (het blok).
-  Let op: gaat door de inline-html minifier, dus geen JavaScript hier.
+  Let op: gaat door de inline-html minifier. JavaScript alleen zonder // commentaar en met puntkomma's.
   Toegevoegd november 2026, CRO-project (1.5).
   Bevat ook de kleuraanpassingen op de productpagina uit de feedback van Esther (11 november): knop combideals groen, reviews en 'iets voor jou?' lichtblauw.
 {%- endcomment -%}
 {%- assign s = b.settings -%}
+{%- comment -%}
+  "ook in navulbare versie" alleen tonen als er van deze geur een navulbare versie is (refill uit Reviewgroep refill-deo met dezelfde geur, starter eerst).
+  Geuren komen uit het productveld lekker.geur. Geen navulbare versie: alternatieve USP (kb_alt). Toegevoegd 18 nov.
+{%- endcomment -%}
+{%- liquid
+  assign kb_geur = ''
+  assign kb_refill_url = ''
+  assign kb_pg = product.metafields.lekker.geur.value
+  assign kb_rg = metaobjects.lekker_reviewgroep['refill-deo'].producten.value
+  for kb_pass in (1..2)
+    for g in kb_pg
+      for rp in kb_rg
+        if kb_refill_url == blank
+          if kb_pass == 2 or rp.handle contains 'starter'
+            for rgeur in rp.metafields.lekker.geur.value
+              if rgeur.system.handle == g.system.handle
+                assign kb_refill_url = rp.url
+                if kb_pg.size == 1
+                  assign kb_geur = g.naam.value
+                endif
+              endif
+            endfor
+          endif
+        endif
+      endfor
+    endfor
+  endfor
+  if request.locale.iso_code == 'en'
+    assign kb_alt = 'helps you smell fresh all day'
+    assign kb_more = 'more about this product'
+  else
+    assign kb_alt = 'helpt je de hele dag lekker te ruiken'
+    assign kb_more = 'meer over dit product'
+  endif
+-%}
 <div class="lk-buy margin-b-xs" {{ b.shopify_attributes }}>
   {%- if s.usp_1 != blank or s.usp_2 != blank or s.usp_3 != blank or s.usp_4 != blank -%}
     <ul class="lk-buy__usps" role="list">
-      {%- if s.usp_1 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_1 }}</li>{%- endif -%}
-      {%- if s.usp_2 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_2 }}</li>{%- endif -%}
-      {%- if s.usp_3 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_3 }}</li>{%- endif -%}
-      {%- if s.usp_4 != blank -%}<li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ s.usp_4 }}</li>{%- endif -%}
+      {%- for i in (1..4) -%}
+        {%- assign kb_key = 'usp_' | append: i -%}
+        {%- assign kb_usp = s[kb_key] -%}
+        {%- if kb_usp == blank -%}{%- continue -%}{%- endif -%}
+        {%- if kb_usp contains 'navulbare versie' -%}
+          {%- if kb_refill_url != blank -%}
+            <li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span><span>{% if kb_geur != blank %}{{ kb_geur }} is er ook {% else %}ook {% endif %}in <a href="{{ kb_refill_url }}" class="lk-buy__link">navulbare versie</a></span></li>
+          {%- else -%}
+            <li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ kb_alt }}</li>
+          {%- endif -%}
+        {%- else -%}
+          <li class="font-size-xs"><span class="lk-buy__check" aria-hidden="true"></span>{{ kb_usp }}</li>
+        {%- endif -%}
+      {%- endfor -%}
     </ul>
   {%- endif -%}
   {%- if s.q_1 != blank or s.q_2 != blank or s.q_3 != blank -%}
@@ -50,9 +95,16 @@
   .lk-buy__service { margin-top: 12px; display: grid; gap: 4px; }
   .lk-buy__service p { margin: 0; display: flex; gap: 8px; align-items: center; opacity: .85; }
   .lk-buy__icon { flex: 0 0 18px; width: 18px; height: 18px; color: var(--color-red); }
-  .combi_products .theme-button { background: #1c5636 !important; border-color: #1c5636 !important; color: var(--color-white) !important; }
+  .combi_products .card-wrapper-flex.card-wrapper-hor .card-wrapper-flex__button .theme-button:not(.theme-button__disabled), .combi_products .card-wrapper-flex.card-wrapper-hor .card-wrapper-flex__button .theme-button:not(.theme-button__disabled):hover, .combi_products .card-wrapper-flex.card-wrapper-hor .card-wrapper-flex__button .theme-button:not(.theme-button__disabled):focus, .combi_products .card-wrapper-flex.card-wrapper-hor .card-wrapper-flex__button .theme-button:not(.theme-button__disabled):active { background: #1c5636 !important; border-color: #1c5636 !important; color: var(--color-white) !important; }
+  .combi_products .card-wrapper-flex.card-wrapper-hor .card-wrapper-flex__button .theme-button:not(.theme-button__disabled):hover { opacity: .85; }
   .combi_products .theme-button span { color: inherit !important; }
-  .combi_products .theme-button:hover { background: var(--color-white) !important; color: #1c5636 !important; }
+  .lk-buy__link { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .lk-desc { border-top: 1px solid rgba(33, 35, 34, .12); border-bottom: 1px solid rgba(33, 35, 34, .12); margin-bottom: 20px; }
+  .lk-desc > summary { list-style: none; cursor: pointer; padding: 12px 28px 12px 0; position: relative; text-transform: lowercase; }
+  .lk-desc > summary::-webkit-details-marker { display: none; }
+  .lk-desc > summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 20px; line-height: 1; color: var(--color-red); }
+  .lk-desc[open] > summary::after { content: "\2212"; }
+  .lk-desc .rich-text-content__manual { padding-bottom: 12px; }
   .shopify-section[id$="__theme_section_review_app"], .shopify-section[id$="__173230878117298f18"], .shopify-section[id$="__theme_section_review_app"] .jdgm-widget, .shopify-section[id$="__173230878117298f18"] .jdgm-widget { background: #bedeff !important; }
   .shopify-section[id$="__f0d1584d-9ec4-4165-9f2b-de7174e75a6a"] > .section-inner, .shopify-section[id$="__f0d1584d-9ec4-4165-9f2b-de7174e75a6a"] .bg-lpink, .shopify-section[id$="__f0d1584d-9ec4-4165-9f2b-de7174e75a6a"] .section-inner::after, .shopify-section[id$="__f0d1584d-9ec4-4165-9f2b-de7174e75a6a"] .scrollbar-wrapper::after { background: #bedeff !important; }
   body:has(.lk-buy) { background: var(--color-white) !important; }
@@ -62,5 +114,23 @@
     .shopify-section[id$="__6576457567457fde"] .scrollbar-inner { width: max-content !important; }
   }
 </style>
+{%- comment -%} Lange productbeschrijving in een uitklapblok (18 nov). De korte beschrijving bovenaan blijft staan. Het laatste lijstje met voordelen valt weg, dat staat al in het koopblok. Zonder JavaScript blijft alles gewoon zichtbaar. {%- endcomment -%}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var box = document.querySelector('.rich-text-content__manual');
+    if (!box || box.closest('.lk-desc')) { return; }
+    var desc = box.querySelector('.product-desc');
+    var last = desc ? desc.lastElementChild : null;
+    if (last && (last.tagName === 'UL' || (last.querySelector('ul') && last.textContent.trim() === last.querySelector('ul').textContent.trim()))) { last.style.display = 'none'; }
+    var d = document.createElement('details');
+    d.className = 'lk-desc';
+    var sm = document.createElement('summary');
+    sm.className = 'font-fam-bold font-size-xs';
+    sm.textContent = {{ kb_more | json }};
+    d.appendChild(sm);
+    box.parentNode.insertBefore(d, box);
+    d.appendChild(box);
+  });
+</script>
 {%- comment -%} Reviews van de hele productlijn (CRO-project 1.4), wordt bij het laden in de reviewsectie gezet {%- endcomment -%}
 {%- render 'lekker-reviews' -%}
