@@ -2,7 +2,8 @@
   Drip formulier gratis verzending eerste bestelling (Drip form 579861406 NL, 543425556 EN, gekozen op de taal van de bezoeker).
   Gebruikt in de popup (snippets/lekker-drip.liquid) en op de landingspagina's (sections/lp-newsletter.liquid).
   Versturen gaat via de JavaScript in snippets/lekker-drip.liquid. Zonder JavaScript post het formulier gewoon naar Drip.
-  Parameters: location (popup of lp), button_label, success_heading, success_text.
+  Parameters: location (popup, lp, ...), offer (aanbod voor analytics, standaard gratis_verzending), button_label, success_heading, success_text.
+  Elke aanmelding krijgt in Drip de tag bron:<locatie>, net als de Droppie-pagina (bron:droppie). Toegevoegd 19 nov.
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
 {%- liquid
@@ -33,7 +34,7 @@
     assign f_ok_text = 'Je code voor gratis verzending staat in je inbox. Zie je hem niet? Kijk dan even bij je spam.'
   endif
 -%}
-<div class="lk-drip" data-lk-drip-location="{{ location | default: 'form' }}">
+<div class="lk-drip" data-lk-drip-location="{{ location | default: 'form' }}" data-lk-drip-offer="{{ offer | default: 'gratis_verzending' }}">
   <form class="lk-drip__form" action="https://www.getdrip.com/forms/{{ f_id }}/submissions" method="post" data-lk-drip-form>
     <div class="lk-drip__fields">
       <label class="lk-drip__sr" for="lk-drip-name-{{ uid }}">{{ f_name }}</label>
@@ -41,6 +42,7 @@
       <label class="lk-drip__sr" for="lk-drip-email-{{ uid }}">{{ f_email }}</label>
       <input class="lk-drip__input font-fam-normal font-size-xs" type="email" id="lk-drip-email-{{ uid }}" name="fields[email]" value="" placeholder="{{ f_email_ph }}" autocomplete="email" required aria-required="true">
     </div>
+    <input type="hidden" name="tags[]" value="bron:{{ location | default: 'form' | handleize }}">
     <div class="lk-drip__hp" aria-hidden="true">
       <label for="lk-drip-website-{{ uid }}">Website</label>
       <input type="text" id="lk-drip-website-{{ uid }}" name="website" tabindex="-1" autocomplete="off" value="">

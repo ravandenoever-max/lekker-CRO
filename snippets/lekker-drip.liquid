@@ -6,6 +6,7 @@
   Parameters: s (footer section.settings), lang (huidige taal).
   Tabje na wegklikken: knopje rechtsonder (op elk scherm), zodat het niet over de tekst valt (11 nov).
   z-index boven de kliklaag van de productkaarten (120000) en onder de winkelwagenlade (90006000), anders vallen klikken op de popup door naar een product (14 nov).
+  Analytics: aanbod per formulier via data-lk-drip-offer. Zonder dat attribuut: popup en lp = gratis_verzending, andere formulieren krijgen hun locatie als aanbod (bijv. droppie), zodat niet elke aanmelding als gratis verzending telt (19 nov).
   Popup per pagina, product of collectie uitzetten zonder code: vinkje "Popup gratis verzending verbergen" (metafield lekker.popup_verbergen) in de admin (18 nov).
   Toegevoegd oktober 2026, CRO-project.
 {%- endcomment -%}
@@ -136,7 +137,13 @@
     var TEASER_OFF = 'lk_fs_teaser_off';
     function setUntil(key, days) { try { localStorage.setItem(key, String(Date.now() + days * 86400000)); } catch (e) {} }
     function active(key) { try { return parseInt(localStorage.getItem(key) || '0', 10) > Date.now(); } catch (e) { return false; } }
-    function track(loc) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'newsletter_signup', signup_location: loc, signup_offer: 'gratis_verzending', signup_language: (document.documentElement.lang || '').slice(0, 2) }); }
+    function track(wrap) {
+      var loc = (wrap && wrap.getAttribute('data-lk-drip-location')) || 'form';
+      var offer = wrap && wrap.getAttribute('data-lk-drip-offer');
+      if (!offer) { offer = (loc === 'popup' || loc === 'lp') ? 'gratis_verzending' : loc; }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'newsletter_signup', signup_location: loc, signup_offer: offer, signup_language: (document.documentElement.lang || '').slice(0, 2) });
+    }
     var teaser = document.getElementById('lk-teaser');
     function hideTeaser() { if (teaser) { teaser.hidden = true; } }
     function showTeaser() {
@@ -162,7 +169,7 @@
         if (ok) { ok.hidden = false; }
         setUntil(DONE, 365);
         hideTeaser();
-        track(wrap ? wrap.getAttribute('data-lk-drip-location') : 'form');
+        track(wrap);
       }).catch(function () {
         if (btn) { btn.disabled = false; }
         if (err) { err.hidden = false; }
