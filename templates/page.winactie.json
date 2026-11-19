@@ -15,10 +15,10 @@
         "template--14386062065713__95a6-166671017404c2a02e-0": {
           "type": "visual_slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_10.jpg",
+            "image_desktop": "shopify://shop_images/Inschrijfpagina_banner_voor_Droppie_2.png",
             "image_overlay_on_desktop": false,
             "image_overlay_on_desktop_strength": 50,
-            "image_mobile": "shopify:\/\/shop_images\/Untitled_design_10.jpg",
+            "image_mobile": "shopify://shop_images/Inschrijfpagina_banner_voor_Droppie.png",
             "image_overlay_on_mobile": false,
             "image_overlay_on_mobile_strength": 50,
             "textbox_show": true,
@@ -54,12 +54,13 @@
       "settings": {
         "row_spacing_outer_top": "none",
         "row_spacing_outer_bottom": "none",
-        "row_spacing_inner_top": "xxs",
-        "row_spacing_inner_bottom": "xxs",
+        "row_spacing_inner_top": "none",
+        "row_spacing_inner_bottom": "none",
         "section_background_color": "slgrey",
         "section_background_color_b": "white",
         "section_background_color_split": "md",
         "page_width": "no-page-width",
+        "slide_start_color": "rgba(0,0,0,0)",
         "slide_theme_layout": "custom",
         "slide_ratio_unit": "%",
         "slide_ratio_mobile": "60",
@@ -67,6 +68,7 @@
         "section_image_rounded_corners": "none",
         "video_as_background_cover": false,
         "slide_speed": "2500",
+        "slide_ux_color": "red",
         "slide_arrows": false,
         "slide_pager": false,
         "slide_count": false,
@@ -79,8 +81,8 @@
         "e14d37e6-dc6c-4a9c-863c-09ded6f84dc7": {
           "type": "text_column",
           "settings": {
-            "block_heading": "Win win win!",
-            "block_content": "<p>Wij geven maar liefst 3 van deze lekkere pakketten weg, vol met mooie producten van alleen maar 100% vegan en microplasticvrije merken.<\/p><p>Dit pakket bevat de fantastische crème van <a href=\"https:\/\/witlofskincare.nl\/?shpxid=36d9d3a2-dcd4-456d-90de-ffc3051a9077\" target=\"_blank\" title=\"https:\/\/witlofskincare.nl\/?shpxid=36d9d3a2-dcd4-456d-90de-ffc3051a9077\">Witlof<\/a>, pads van <a href=\"https:\/\/yoni.care\/nl\/\" target=\"_blank\" title=\"Yoni Care\">Yoni<\/a>, tissues van <a href=\"https:\/\/thegoodroll.nl\/\" target=\"_blank\" title=\"The Good Roll\">The Good Roll<\/a>, 3(!) handzepen van <a href=\"https:\/\/marcelsgreensoap.com\/en\" target=\"_blank\" title=\"Marcel's Green Soap\">Marcel's Green Soap<\/a>, Tooth-tabs van <a href=\"https:\/\/www.wesmyle.nl\/\" target=\"_blank\" title=\"Smyle\">Smyle<\/a>, Babybalm van <a href=\"https:\/\/naifcare.com\/\" target=\"_blank\" title=\"Naïf\">Naïf<\/a> en lippenbalsem en deodorant van onszelf. <\/p><p><strong>100% vegan en microplasticvrij!<\/strong><\/p><p>Met deze merken hebben we eerder een prachtige campagne gedaan onder de noemer 'Micro Plastics, Macro Probleem'. Het zijn dus stuk voor stuk merken waar we achter staan.<\/p>",
+            "block_heading": "Vul alleen even het formulier in",
+            "block_content": "<p>Je bent er bijna, als je je naam en e-mail adres hieronder invult kun je erna je gratis mini deo claimen.</p>",
             "block_align": "left",
             "block_heading_font_size": "xl",
             "block_heading_font_color": "red",
@@ -101,8 +103,8 @@
         "e14d37e6-dc6c-4a9c-863c": {
           "type": "text_column",
           "settings": {
-            "block_heading": "Voorwaarden",
-            "block_content": "<p><strong>Stap 1 <\/strong>Volg de volgende merken op Instagram<\/p><p>@witlofskincare<\/p><p>@yoni.care<\/p><p>@thegoodroll<\/p><p>@marcelsgreensoap<\/p><p>@we.smyle<\/p><p>@naifcare<\/p><p>@thelekkercompany<\/p><p><strong>Stap 2 <\/strong>Reageer op de Instagram post en tag 2 personen die net als jij het pakket verdienen.<\/p><p><strong>Stap 3 <\/strong>Vul je e-mail aders in het formulier hieronder in.<\/p><p>Op maandag 4 november maken we de winnaars bekend per e-mail. Door je aan te melden voor de winactie, meld je je automatisch ook aan voor onze nieuwsbrief. Je kunt je natuurlijk altijd met 1 klik weer uitschrijven.<\/p>",
+            "block_heading": "",
+            "block_content": "",
             "block_align": "left",
             "block_heading_font_size": "lg",
             "block_heading_font_color": "red",
@@ -126,9 +128,9 @@
         "e14d37e6-dc6c-4a9c-863c"
       ],
       "settings": {
-        "row_spacing_inner_top": "lg",
-        "row_spacing_inner_bottom": "lg",
-        "section_background_color": "white",
+        "row_spacing_inner_top": "md",
+        "row_spacing_inner_bottom": "none",
+        "section_background_color": "trans",
         "section_background_color_b": "none",
         "section_background_color_split": "md",
         "page_width": "page-width--narrow",
@@ -140,16 +142,8 @@
     },
     "theme_section_custom_code_nzD4rW": {
       "type": "theme-section__custom-code",
-      "disabled": true,
       "settings": {
-        "custom_liquid": "<iframe id=\"orderchamp_frame\"  src=\"https:\/\/www.orderchamp.com\/invites\/widget\/open?storefront=U3RvcmVmcm9udDo3NTI2NTgxOTQ5Mzk5MDU&widget_type=type_big\" width=\"100%\" height=\"100%\" frameborder=\"0\"><\/iframe>\n<style>\n#orderchamp_frame{height:175vw}\n#orderchamp_frame{margin-bottom:80px}\n@media screen and (min-width:550px){ \n#orderchamp_frame{height:85vw}\n}\n@media screen and (min-width:768px){ \n#orderchamp_frame{height:55vw;max-height:540px}\n}\n@media screen and (min-width:992px){ \n#orderchamp_frame{height:50vw;max-height:540px}\n}\n@media screen and (min-width:1280px){ \n#orderchamp_frame{height:40vw;max-height:540px}\n}\n<\/style>",
-        "page_width": "page-width--narrow"
-      }
-    },
-    "theme_section_custom_code_MbidgE": {
-      "type": "theme-section__custom-code",
-      "settings": {
-        "custom_liquid": "<div id=\"sn-7d4aadd6-5b7a-4e4a-91df-5313f47e882e\"><\/div>",
+        "custom_liquid": "<style>\n  .lk-droppie { max-width: 460px; padding: 48px 0 48px; }\n  .lk-droppie .lk-drip__fields { grid-template-columns: 1fr; }\n  .lk-droppie .lk-drip__submit { width: auto; justify-self: start; padding-left: 32px; padding-right: 32px; }\n  .lk-droppie__small { margin: 4px 0 0; opacity: .7; }\n  @media screen and (min-width: 768px) {\n    .lk-droppie { padding: 34px 0 64px; }\n  }\n</style>\n<div class=\"lk-droppie\">\n  <div class=\"lk-drip\" data-lk-drip-location=\"droppie\">\n    <form class=\"lk-drip__form\" action=\"https://www.getdrip.com/forms/893662033/submissions\" method=\"post\" data-lk-drip-form>\n      <div class=\"lk-drip__fields\">\n        <label class=\"lk-drip__sr\" for=\"lk-drip-name-droppie\">Voornaam</label>\n        <input class=\"lk-drip__input font-fam-normal font-size-xs\" type=\"text\" id=\"lk-drip-name-droppie\" name=\"fields[first_name]\" value=\"\" placeholder=\"je voornaam\" autocomplete=\"given-name\" required aria-required=\"true\">\n        <label class=\"lk-drip__sr\" for=\"lk-drip-email-droppie\">E-mailadres</label>\n        <input class=\"lk-drip__input font-fam-normal font-size-xs\" type=\"email\" id=\"lk-drip-email-droppie\" name=\"fields[email]\" value=\"\" placeholder=\"je e-mailadres\" autocomplete=\"email\" required aria-required=\"true\">\n      </div>\n      <input type=\"hidden\" name=\"tags[]\" value=\"bron:droppie\">\n      <div class=\"lk-drip__hp\" aria-hidden=\"true\">\n        <label for=\"lk-drip-website-droppie\">Website</label>\n        <input type=\"text\" id=\"lk-drip-website-droppie\" name=\"website\" tabindex=\"-1\" autocomplete=\"off\" value=\"\">\n      </div>\n      <button type=\"submit\" class=\"lk-drip__submit theme-button theme-button__round-medium theme-button__red-white-red theme-button-hover__red-red-white\"><span>claim mijn deo</span></button>\n      <p class=\"lk-droppie__small font-size-3xs\">Je komt op de nieuwsbrief van The Lekker Company, zodat we je kunnen vragen hoe de deo bevalt. Uitschrijven kan altijd.</p>\n      <p class=\"lk-drip__error font-size-3xs\" role=\"alert\" hidden>Er ging iets mis. Probeer het nog een keer.</p>\n    </form>\n    <div class=\"lk-drip__success\" role=\"status\" hidden>\n      <p class=\"lk-drip__success-title font-fam-normal font-size-md txt-lowercase\">gelukt! 🎉</p>\n      <p class=\"lk-drip__success-text font-size-xs\">Laat dit scherm zien aan de baliemedewerker en je deo is van jou. Per ongeluk weggeklikt? Je krijgt ook meteen een mail die je kunt laten zien.</p>\n    </div>\n  </div>\n</div>",
         "page_width": "page-width--narrow"
       }
     }
@@ -157,7 +151,6 @@
   "order": [
     "95a6",
     "7e74f5097338727",
-    "theme_section_custom_code_nzD4rW",
-    "theme_section_custom_code_MbidgE"
+    "theme_section_custom_code_nzD4rW"
   ]
 }

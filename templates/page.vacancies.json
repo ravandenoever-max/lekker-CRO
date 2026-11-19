@@ -387,6 +387,7 @@
       "block_order": [
         "text_column_DDWy3V"
       ],
+      "disabled": true,
       "settings": {
         "row_spacing_inner_top": "md",
         "row_spacing_inner_bottom": "md",

@@ -51,10 +51,10 @@
         "slide-id-aa": {
           "type": "visual_slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/Shop_banner_91d844f6-aa8c-490f-b23c-31a1ecd71088.png",
+            "image_desktop": "shopify://shop_images/TheLekkerCompany_NaturalDeodorant_10-BANNER_8cadc30d-0f79-48e3-8d05-04742aaa934c.jpg",
             "image_overlay_on_desktop": false,
             "image_overlay_on_desktop_strength": 50,
-            "image_mobile": "shopify://shop_images/Herfst_sale_socials_post_7ba9731d-7849-42e4-9d41-06c8a7baafd0.png",
+            "image_mobile": "shopify://shop_images/TheLekkerCompany_NaturalDeodorant_10-BANNER_8cadc30d-0f79-48e3-8d05-04742aaa934c.jpg",
             "image_overlay_on_mobile": false,
             "image_overlay_on_mobile_strength": 50,
             "textbox_show": true,
