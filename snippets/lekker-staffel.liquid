@@ -1,0 +1,69 @@
+{%- comment -%}
+  Staffelkorting op de productpagina: keuze 1, 3 of 6 stuks, zonder aparte varianten (dus zonder extra SKU's).
+  In de winkelwagen komt altijd de gewone variant, maal het aantal stuks (zie InitProductAddCartSubmit in layout/theme.liquid, die leest
+  data-first-variant-id van variant-radios-bundle en data-package-size van de gekozen optie). Op deze producten laadt main-product.liquid
+  product-variants-bundles.js niet, zodat het element niet naar varianten zoekt.
+  De korting zelf geven de automatische kortingen in Shopify (Kortingen, "... buy 3 get 3%" en "... buy 6 get 6%", als percentage).
+
+  AANPASSEN (alleen door ons, optie 1 gekozen door Esther op 19 nov 2026):
+  - st_tiers: aantal stuks en kortingspercentage, gescheiden door komma's. Moet gelijk zijn aan de automatische kortingen in Shopify.
+  - st_handles: producten waarop de staffel geldt (product-handles). Product erbij = handle toevoegen en het product ook toevoegen aan de kortingen.
+  Producten die niet in de lijst staan krijgen geen keuze, alleen het gewone aantal.
+  Toegevoegd 19 nov 2026 (meerwerk combideal-bundels).
+{%- endcomment -%}
+{%- liquid
+  assign st_tiers = '1:0,3:3,6:6'
+  assign st_handles = 'deodorant-stick-feel-floral,deodorant-stick-have-fun,deodorant-stick-be-active,deodorant-stick-fresh-laundry,lavender-deodorant,neutral-deodorant,mandarin-and-lemon-deodorant,peppermint-and-rosemary-deodorant,woodland-deodorant,soft-bamboo-sensitive-deodorant,refill-deo-stick-have-fun,refill-deo-stick-be-active,raspberry-lemonade-lip-balm,orange-vanilla-swirl-lip-balm,hand-creme-touch-me,body-butter-matcha,refill-body-wash-eucalyptus'
+  assign st_list = st_handles | split: ','
+  assign st_on = false
+  if st_list contains product.handle
+    assign st_on = true
+  endif
+  assign st_variant = product.variants.first
+  assign st_price = st_variant.price
+  if request.locale.iso_code == 'en'
+    assign st_one = 'piece'
+    assign st_more = 'pieces'
+    assign st_save = 'save'
+  else
+    assign st_one = 'stuk'
+    assign st_more = 'stuks'
+    assign st_save = 'bespaar'
+  endif
+-%}
+{%- if st_on -%}
+  <variant-radios-bundle class="lk-staffel" data-lk-staffel data-first-variant-id="{{ st_variant.id }}">
+    <fieldset class="product-variant-fieldset js product-form__input theme-m-f-vert theme-m-g-none theme-f-hor theme-f-top theme-f-left theme-g-3xs">
+      <legend class="theme-hidden">{{ st_more }}</legend>
+      {%- assign st_parts = st_tiers | split: ',' -%}
+      {%- for part in st_parts -%}
+        {%- liquid
+          assign st_pair = part | split: ':'
+          assign st_n = st_pair[0] | plus: 0
+          assign st_pct = st_pair[1] | plus: 0
+          assign st_total = st_price | times: st_n
+          assign st_disc = st_total | times: st_pct | divided_by: 100.0 | round
+          assign st_pay = st_total | minus: st_disc
+          assign st_each = st_pay | divided_by: st_n
+          if st_n == 1
+            assign st_label = '1 ' | append: st_one
+          else
+            assign st_label = st_n | append: ' ' | append: st_more
+          endif
+        -%}
+        <input type="radio" id="{{ section.id }}-staffel-{{ forloop.index0 }}" name="lk_staffel" value="{{ st_label | escape }}" {% if forloop.first %}checked{% endif %}
+          data-package-size="{{ st_n }}" data-price="{{ st_pay }}" data-compare-at="{% if st_disc > 0 %}{{ st_total }}{% endif %}" data-discount="{{ st_pct }}">
+        <label class="theme-m-w-100" for="{{ section.id }}-staffel-{{ forloop.index0 }}">
+          <div class="theme-f-vert theme-f-top theme-f-center theme-m-w-100 theme-m-f-vert theme-m-f-left">
+            <div class="label-button theme-f-vert theme-g-none theme-m-w-100 theme-m-f-hor theme-m-f-left theme-m-f-middle theme-m-g-xs">
+              <div class="main font-size-sm">{{ st_label }}</div>
+              <div class="sub">{{ st_n }}x <span class="per-item">{{ st_each | money }}</span></div>
+              {%- if st_pct > 0 -%}<span class="discount theme-d-hidden font-fam-bold font-size-xs">{{ st_save }} {{ st_pct }}%</span>{%- endif -%}
+            </div>
+            {%- if st_pct > 0 -%}<span class="discount theme-m-hidden font-fam-bold font-size-3xs color_red">{{ st_save }} {{ st_pct }}%</span>{%- endif -%}
+          </div>
+        </label>
+      {%- endfor -%}
+    </fieldset>
+  </variant-radios-bundle>
+{%- endif -%}

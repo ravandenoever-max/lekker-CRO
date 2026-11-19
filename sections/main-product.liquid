@@ -495,6 +495,11 @@
 
         {%- endcapture -%}
         {%- capture product__variant_picker_bundles -%}
+          {%- comment -%} 19 nov 2026: staffel (1, 3 of 6 stuks) uit snippets/lekker-staffel.liquid in plaats van uit varianten. Producten buiten de staffel-lijst houden het oude gedrag. {%- endcomment -%}
+          {%- capture lk_staffel_html -%}{%- render 'lekker-staffel', product: product, section: section -%}{%- endcapture -%}
+          {%- if lk_staffel_html contains 'data-lk-staffel' -%}
+            {{ lk_staffel_html }}
+          {%- else -%}
           {%- unless product.has_only_default_variant -%}
             <variant-radios-bundle class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}"              
               data-first-variant-id="{{ product.variants.first.id }}">
@@ -553,6 +558,7 @@
               <script type="application/json"> {{ product.variants | json }} </script>
             </variant-radios-bundle>
           {%- endunless -%}
+          {%- endif -%}
         {%- endcapture -%}          
 
       {%- when 'buy_buttons' -%}
@@ -819,7 +825,7 @@
                 <script src="{{ 'product-variants.js' | asset_url }}" defer="defer"></script>
               {%- elsif show____product__variant_bundles == true -%}
                 <div data-element="product__variant_picker" class="variant_picker variant_picker_bundles margin-b-xxs margin-xxs-b-xs">{{ product__variant_picker_bundles }}</div>
-                <script src="{{ 'product-variants-bundles.js' | asset_url }}" defer="defer"></script>
+                {%- unless lk_staffel_html contains 'data-lk-staffel' -%}<script src="{{ 'product-variants-bundles.js' | asset_url }}" defer="defer"></script>{%- endunless -%}
               {%- endif -%}
               {%- comment -%} CRO-project 2026: regel die laat zien wat je bespaart bij 3 of 6 stuks {%- endcomment -%}
               {%- render 'lekker-save-line' -%}
